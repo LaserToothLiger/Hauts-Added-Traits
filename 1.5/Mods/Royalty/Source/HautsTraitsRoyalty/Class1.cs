@@ -650,7 +650,7 @@ namespace HautsTraitsRoyalty
                     for (int i = 0; i < recipients.Count; i++)
                     {
                         Pawn recipient = recipients[i];
-                        if (recipient.RaceProps.Humanlike && recipient.story != null && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && pawn.relations.OpinionOf(recipient) >= 20)
+                        if (recipient.RaceProps.Humanlike && recipient.story != null && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && recipient.relations.OpinionOf(pawn) >= 60)
                         {
                             PsychicAwakeningUtility.AwakenPsychicTalentCheck(recipient, 3, true, "HVT_WokeChildGrewUp".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")), "HVT_WokeChildGrewUpFantasy".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")));
                         }
@@ -660,7 +660,7 @@ namespace HautsTraitsRoyalty
                     for (int i = 0; i < caravan.PawnsListForReading.Count; i++)
                     {
                         Pawn recipient = caravan.PawnsListForReading[i];
-                        if (recipient.RaceProps.Humanlike && recipient.story != null && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && pawn.relations.OpinionOf(recipient) >= 20)
+                        if (recipient.RaceProps.Humanlike && recipient.story != null && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && recipient.relations.OpinionOf(pawn) >= 60)
                         {
                             PsychicAwakeningUtility.AwakenPsychicTalentCheck(recipient, 3, true, "HVT_WokeChildGrewUp".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")), "HVT_WokeChildGrewUpFantasy".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")));
                         }

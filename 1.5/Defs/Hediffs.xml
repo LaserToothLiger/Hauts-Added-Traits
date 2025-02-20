@@ -204,7 +204,7 @@
 			<li>Intellectual</li>
 		</affectedSkills>
 		<nullifyingTraits><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li></nullifyingTraits>
-		<statMultiplier MayRequire="smartkar.athenaframework">Athena_SkillLoss</statMultiplier>
+		<statMultiplier MayRequire="EBSG.Framework">EBSG_SkillLossRate</statMultiplier>
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -241,7 +241,7 @@
 			<li>Intellectual</li>
 		</affectedSkills>
 		<nullifyingTraits><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li></nullifyingTraits>
-		<statMultiplier MayRequire="smartkar.athenaframework">Athena_SkillLoss</statMultiplier>
+		<statMultiplier MayRequire="EBSG.Framework">EBSG_SkillLossRate</statMultiplier>
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingGenes>
