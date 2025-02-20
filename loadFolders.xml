@@ -1,0 +1,12 @@
+<loadFolders>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="kikohi.cybernetic">1.5/Mods/COaNN</li>
+		<li IfModActive="doug.conn">1.5/Mods/COaNN</li>
+		<li IfModActive="Ludeon.RimWorld.Royalty">1.5/Mods/Royalty</li>
+		<li IfModActive="VanillaExpanded.VPsycastsE">1.5/Mods/VanillaPsycastsExpanded</li>
+		<li IfModActive="VanillaExpanded.VPE.Puppeteer">1.5/Mods/VPE_Puppeteer</li>
+		<li IfModActive="vanillaracesexpanded.highmate">1.5/Mods/VREHighmate</li>
+	</v1.5>
+</loadFolders>

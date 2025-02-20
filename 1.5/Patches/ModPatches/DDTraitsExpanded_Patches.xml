@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>DD Traits Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Melee Armor Penetration is not a modifiable stat (why it isn't is a whole 'nother technical discussion, but you can test this making two pawns with perfect health and identical melee
+					skill, giving one of them the hidden Tynan trait from this mod, putting identically heavily armored targets next to each, and having them attack those targets.
+					With that much armor penetration, the Tynan should land every blow while the regular pawn should occasionally bounce off the armor, but you will quickly find that the armor
+					penetration of both pawns is IDENTICAL.)
+					All this to say that I wanted to make Tenacious Fighter work as the mod author intended.-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TraitDef[defName="figter"]/degreeDatas/li[label="Tenacious fighter"]/statOffsets</xpath>
+					<value>
+						<Hauts_MeleeArmorPenetration>0.1</Hauts_MeleeArmorPenetration>
+					</value>
+				</li>
+				<!--Tranquil, as usual, exclusive w/ combat traits-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="figter"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="figter"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_Tranquil</li>
+								<li>HVT_Tranquil0</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="figter"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_Tranquil</li>
+							<li>HVT_Tranquil0</li>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

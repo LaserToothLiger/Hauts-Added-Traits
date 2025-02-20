@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Hauts' Added Traits</name>
+    <author>Hautarche</author>
+    <packageId>Hautarche.HautsTraits</packageId>
+    <supportedVersions>
+		<li>1.5</li>
+    </supportedVersions>
+	<description>Adds 42 fun traits for pawns (+15 with Ideology, +7 with Biotech, +4 with Royalty, and +5 with Anomaly; 73 with all DLCs). Most have unique mechanics, such as activatable combat abilities, new ways to get inspirations, and more. Also adds a serum that can be used to grant someone a trait of your choice.
+
+With Royalty: exposing those with the Latent Psychic trait to extraordinary or traumatic events may 'awaken' them, transforming them into powerful psycasters with extra capabilities, and opening the path for them to develop even further, unique psychic powers. A new start scenario lets you start with six Latent Psychics, either at an industrial or tribal tech level.
+
+With Biotech: there are genes which either grant certain traits from this mod or provide near-identical effects.
+
+See the full description here: https://docs.google.com/document/d/1AjWjya-8knskExfpUYtH3eyMT3oHOg1_BPJzgBO_3FE/edit?usp=sharing
+
+Patch notes: https://docs.google.com/document/d/1jLvy0yWXAKvogvb-y-sxlZylJt6sh1mE0hgibm2FFL0/edit?usp=sharing
+    </description>
+	<modIconPath IgnoreIfNoMatchingField="True">HautsLogo_Draft0</modIconPath>
+	<modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+            <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
+        </li>
+		<li>
+			<packageId>Hautarche.HautsFramework</packageId>
+			<displayName>Hauts Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3422815711</steamWorkshopUrl>
+			<downloadUrl>https://drive.google.com/drive/u/2/folders/1NHDZpL4TDIqgiq2ofa1f-1dXN8VUVG5u?fbclid=IwZXh0bgNhZW0CMTEAAR1UzkYW6Fj1VbcShQ0xB6JOt-WUbze81UWVjyXZFtyAqLKEoqVJUCWGqHo_aem_0-eVh1myTUvt2VXpuvK-ZQ</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>VanillaExpanded.VPsycastsE</li>
+		<li>VanillaExpanded.VPE.Puppeteer</li>
+		<li>kikohi.cybernetic</li>
+		<li>vanillaracesexpanded.highmate</li>
+		<li>Hautarche.HautsFramework</li>
+	</loadAfter>
+</ModMetaData>

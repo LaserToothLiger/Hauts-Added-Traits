@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Fallout Traits</li>
+			<li>Fallout Traits Continued</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Sniper exclusive w/ Iron Fist-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TraitDef[defName="FT_IronFist"]/conflictingTraits</xpath>
+					<value>
+						<li>HVT_Sniper</li>
+					</value>
+				</li>
+				<!--Staid, as usual, exclusive w/ art traits: in this case, Artisan and Perfectionist.-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TraitDef[defName="FT_Artisan" or defName="FT_Perfectionist"]/conflictingTraits</xpath>
+					<value>
+						<li>HVT_Staid</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
