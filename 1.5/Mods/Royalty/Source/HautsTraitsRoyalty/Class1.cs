@@ -699,27 +699,24 @@ namespace HautsTraitsRoyalty
             }
             if (pawn.Map != null)
             {
-                List<Pawn> recipients = (List<Pawn>)pawn.Map.mapPawns.AllPawnsSpawned;
+                List<Pawn> recipients = pawn.Map.mapPawns.AllHumanlikeSpawned;
                 for (int i = 0; i < recipients.Count; i++)
                 {
                     Pawn recipient = recipients[i];
-                    if (recipient != pawn && recipient.RaceProps.Humanlike && recipient.story != null)
+                    if (recipient != pawn && recipient.story != null)
                     {
-                        if (recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && pawn.RaceProps.Humanlike && Rand.Value <= 0.5f && recipient.relations.OpinionOf(pawn) >= 100)
+                        if (Current.ProgramState == ProgramState.Playing && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && (pawn.RaceProps.Humanlike ? (recipient.relations.OpinionOf(pawn) >= 100 || (recipient.relations.OpinionOf(pawn) >= 60 && Rand.Chance(0.5f))) : Rand.Chance(0.5f)))
                         {
                             string triggerEvent, triggerEventFantasy;
-                            if (Current.ProgramState == ProgramState.Playing)
+                            if (pawn.Name != null && pawn.Name.ToStringFull != null)
                             {
-                                if (pawn.Name != null && pawn.Name.ToStringFull != null)
-                                {
-                                    triggerEvent = "HVT_WokeNamedDeath".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")).AdjustedFor(pawn, "OTHER", true).Resolve();
-                                    triggerEventFantasy = "HVT_WokeNamedDeathFantasy".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")).AdjustedFor(pawn, "OTHER", true).Resolve();
-                                } else {
-                                    triggerEvent = "HVT_WokeNamelessDeath".Translate().Formatted(recipient.Named("PAWN")).AdjustedFor(recipient, "PAWN", true).Resolve();
-                                    triggerEventFantasy = "HVT_WokeNamelessDeathFantasy".Translate().Formatted(recipient.Named("PAWN")).AdjustedFor(recipient, "PAWN", true).Resolve();
-                                }
-                                PsychicAwakeningUtility.AwakenPsychicTalentCheck(recipient, 4, true, triggerEvent, triggerEventFantasy,false,0.5f,true);
+                                triggerEvent = "HVT_WokeNamedDeath".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")).AdjustedFor(pawn, "OTHER", true).Resolve();
+                                triggerEventFantasy = "HVT_WokeNamedDeathFantasy".Translate().Formatted(pawn.Named("OTHER"), recipient.Named("PAWN")).AdjustedFor(pawn, "OTHER", true).Resolve();
+                            } else {
+                                triggerEvent = "HVT_WokeNamelessDeath".Translate().Formatted(recipient.Named("PAWN")).AdjustedFor(recipient, "PAWN", true).Resolve();
+                                triggerEventFantasy = "HVT_WokeNamelessDeathFantasy".Translate().Formatted(recipient.Named("PAWN")).AdjustedFor(recipient, "PAWN", true).Resolve();
                             }
+                            PsychicAwakeningUtility.AwakenPsychicTalentCheck(recipient, 4, true, triggerEvent, triggerEventFantasy, false, 0.5f, true);
                         }
                         if (recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitDragon))
                         {
@@ -779,7 +776,7 @@ namespace HautsTraitsRoyalty
                     Pawn recipient = caravan.PawnsListForReading[i];
                     if (recipient != pawn && recipient.RaceProps.Humanlike && recipient.story != null)
                     {
-                        if (recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && pawn.RaceProps.Humanlike && Rand.Value <= 0.5f && recipient.relations.OpinionOf(pawn) >= 100 && Current.ProgramState == ProgramState.Playing)
+                        if (Current.ProgramState == ProgramState.Playing && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && (pawn.RaceProps.Humanlike ? (recipient.relations.OpinionOf(pawn) >= 100 || (recipient.relations.OpinionOf(pawn) >= 60 && Rand.Chance(0.5f))) : Rand.Chance(0.5f)))
                         {
                             string triggerEvent, triggerEventFantasy;
                             if (pawn.Name != null && pawn.Name.ToStringFull != null)
@@ -827,9 +824,7 @@ namespace HautsTraitsRoyalty
                                 {
                                     victimsPsylinks = psylink.level;
                                 }
-                            }
-                            else
-                            {
+                            } else {
                                 victimsPsylinks = pawn.GetPsylinkLevel();
                             }
                             hediff.Severity += victimsPsylinks * 33.33f;
