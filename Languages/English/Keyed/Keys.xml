@@ -97,7 +97,6 @@
 <HVT_TransAnimaScream>As it died, the anima tree's psychic cry seized the mind of {PAWN_nameDef} and thrust upon {PAWN_objective} a vision. Resultantly, </HVT_TransAnimaScream>
 <HVT_TransBreak>In the throes of madness brought on by a psychic drone, {PAWN_nameDef} touched on a vast psychic presence, and </HVT_TransBreak>
 <HVT_TransHighPsyLevel>Upon reaching a new level of psychic power, </HVT_TransHighPsyLevel>
-<HVT_TransMaxPsyLevel>Upon reaching the zenith of psionic accomplishment, </HVT_TransMaxPsyLevel>
 <HVT_TransArchogeneDelay>As an unforseen aftereffect of archite modification, {0} has spontaneously developed a specialized connection to the archotechs, resulting in transcendence.</HVT_TransArchogeneDelay>
 <HVT_TransDeath>Mere instants from death, {PAWN_nameDef} experienced an indescribable flare of psychic power, and </HVT_TransDeath>
 <HVT_TransArchoDeath>Mere instants from death, the mind of a machine god interfered with causality, and </HVT_TransArchoDeath>
@@ -341,7 +340,6 @@
 <HVT_TransAnimaScreamFantasy>As it died, the anima tree's anguished cry seized the mind of {PAWN_nameDef} and thrust upon {PAWN_objective} a vision. Resultantly, </HVT_TransAnimaScreamFantasy>
 <HVT_TransBreakFantasy>In the throes of eldritch madness, {PAWN_nameDef} touched on a vast astral presence, and </HVT_TransBreakFantasy>
 <HVT_TransHighPsyLevelFantasy>Upon reaching a new level of magical attunement, </HVT_TransHighPsyLevelFantasy>
-<HVT_TransMaxPsyLevelFantasy>Upon reaching the zenith of mystic accomplishment, </HVT_TransMaxPsyLevelFantasy>
 <HVT_TransArchogeneDelayFantasy>As an unforseen aftereffect of transmogrification with eldritch essences, {0} has partially transcended this realm.</HVT_TransArchogeneDelayFantasy>
 <HVT_TransDeathFantasy>Mere instants from death, {PAWN_nameDef} experienced an indescribable flare of otherworldly power, and </HVT_TransDeathFantasy>
 <HVT_TransArchoDeathFantasy>Mere instants from death, a deific presence reached out from its hallow, and </HVT_TransArchoDeathFantasy>

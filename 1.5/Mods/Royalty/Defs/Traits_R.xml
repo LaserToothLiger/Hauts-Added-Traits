@@ -382,12 +382,12 @@
 			<statOffsets>
 			  <PsychicSensitivity>0.6</PsychicSensitivity>
 			  <RoyalFavorValue>4</RoyalFavorValue>
+			  <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.1</StudyEfficiency>
 			</statOffsets>
 			<statFactors>
 			  <PsychicEntropyMax>3</PsychicEntropyMax>
 			  <MentalBreakThreshold>0.75</MentalBreakThreshold>
 			  <PainShockThreshold>1.5</PainShockThreshold>
-			  <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.1</StudyEfficiency>
 			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0</VAEI_SanityLossMultiplier>
 			</statFactors>
 		  </li>
