@@ -591,6 +591,7 @@
 			  <PawnBeauty>1</PawnBeauty>
 			  <Hauts_MechEnergyUsage MayRequire="Ludeon.RimWorld.Biotech">-0.25</Hauts_MechEnergyUsage>
 			  <Radiation MayRequire="Dubwise.Rimatomics">-0.35</Radiation>
+			  <VEF_EnergyShieldEnergyMaxFactor>0.35</VEF_EnergyShieldEnergyMaxFactor>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -1128,6 +1129,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
+			<li Class="HautsFramework.UnaffectedByDarkness" />
             <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFirefly</descKey><descKeyFantasy>HVT_TransFireflyFantasy</descKeyFantasy><category>transcendence</category></li>
         </modExtensions>
 	</TraitDef>
@@ -2011,9 +2013,6 @@
 			<label>psychic noctule</label>
 			<description>{PAWN_nameDef} becomes more physically and psychically powerful while in the dark, but wilts in the light. Becoming inspired or entering a mental break will always coincide with an eclipse.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
-			<statOffsets>
-			  <LTS_DarkVision MayRequire="lts.I">100</LTS_DarkVision>
-			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2025,6 +2024,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
+			<li Class="HautsFramework.UnaffectedByDarkness" />
             <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNoctule</descKey><descKeyFantasy>HVT_TransNoctuleFantasy</descKeyFantasy><category>transcendence</category></li>
         </modExtensions>
 	</TraitDef>
@@ -2535,6 +2535,9 @@
 			<label>psychic scarab</label>
 			<description>{PAWN_nameDef} is surrounded by a barrier which transforms incoming damage into neural heat. If {PAWN_pronoun} overloads {PAWN_possessive} neural heat limit, the barrier will vanish for a day, though it can be regenerated far faster via meditation.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <VEF_EnergyShieldEnergyMaxFactor>0.35</VEF_EnergyShieldEnergyMaxFactor>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>

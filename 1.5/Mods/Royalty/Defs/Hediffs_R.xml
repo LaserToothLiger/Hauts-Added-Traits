@@ -95,7 +95,7 @@
     <defName>HVT_LatentPsyHediff</defName>
     <label>latent psychic</label>
     <description>Tracks whether a latent psychic has met awakening conditions.</description>
-    <hediffClass>HautsTraitsRoyalty.Hediff_LPSkillMeter</hediffClass>
+    <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.8, 0.8, 0.8)</defaultLabelColor>
     <stages>
       <li>
@@ -104,6 +104,10 @@
       </li>
     </stages>
     <comps>
+	  <li Class="HautsTraitsRoyalty.HediffCompProperties_LPMastery">
+		<skillLevel>15</skillLevel>
+		<psylinkLevel>4</psylinkLevel>
+	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
 			<li>HVT_LatentPsychic</li>
@@ -282,7 +286,7 @@
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-6</severityPerDay>
       </li>
-	  <li Class="HautsFramework.HediffCompProperties_MoteConditional">
+	  <li Class="HautsTraitsRoyalty.HediffCompProperties_MoteTranscendent">
 		<mote>Mote_Bestow</mote>
 		<scale>0.5</scale>
 		<validRange>17.0~18.0</validRange>
@@ -6314,6 +6318,7 @@
 		  <PsychicSensitivity>0.35</PsychicSensitivity>
 		  <Hauts_PsyfocusRegenRate>0.35</Hauts_PsyfocusRegenRate>
 		  <LifespanFactor>2000</LifespanFactor>
+		  <VEF_EnergyShieldEnergyMaxFactor>1</VEF_EnergyShieldEnergyMaxFactor>
 		</statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>3</ImmunityGainSpeed>

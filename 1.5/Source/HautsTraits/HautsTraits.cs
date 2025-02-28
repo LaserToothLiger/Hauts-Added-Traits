@@ -1261,7 +1261,7 @@ namespace HautsTraits
         {
             get
             {
-                float num = 10f * pawn.GetStatValue(StatDefOf.PawnBeauty, true, -1);
+                float num = Math.Max(-40f,Math.Min(40f,5f * pawn.GetStatValue(StatDefOf.PawnBeauty, true, -1)));
                 for (int i = 0; i < this.pawn.apparel.WornApparelCount; i++)
                 {
                     Apparel apparel = this.pawn.apparel.WornApparel[i];

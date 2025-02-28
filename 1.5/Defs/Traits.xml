@@ -477,7 +477,7 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>Abrasive</li><li>HVT_Asocial</li><li>HVT_Sadist</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Asocial</li><li>HVT_Sadist</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
 	</TraitDef>
 	
@@ -590,7 +590,7 @@
 			  <MortarMissRadiusFactor>0.8</MortarMissRadiusFactor>
 			</statFactors>
 			<possessions>
-			  <Gun_SniperRifle />
+			  <Bow_Great />
 			</possessions>
 		  </li>
 		</degreeDatas>
@@ -764,7 +764,8 @@
 			<allowedMeditationFocusTypes><li MayRequire="VanillaExpanded.VPsycastsE">VPE_Wealth</li></allowedMeditationFocusTypes>
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 			<possessions>
-			  <Jade>10~20</Jade>
+			  <AC_Perfume MayRequire="sarg.alphacrafts">10~20</AC_Perfume>
+			  <AC_Soap MayRequire="sarg.alphacrafts">10~20</AC_Soap>
 			</possessions>
 		  </li>
 		</degreeDatas>
@@ -1550,7 +1551,7 @@
 		<degreeDatas>
 		  <li>
 			<label>haunted</label>
-			<description>{PAWN_nameDef} is inextricably connected to a lurking, invisible presence. It will infrequently attempt to attack {PAWN_objective}.</description>
+			<description>{PAWN_nameDef} is inextricably connected to a lurking, invisible presence. Day and night, it attempts to psychically torment {PAWN_objective}, and it will even infrequently attack {PAWN_objective} in the physical world.</description>
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 			<statOffsets>
 			  <PsychicSensitivity>0.25</PsychicSensitivity>

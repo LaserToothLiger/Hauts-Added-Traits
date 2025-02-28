@@ -20,7 +20,7 @@
 <HVT_SettingMaxTrans>Maximum number of psychic transcendences</HVT_SettingMaxTrans>
 <HVT_TooltipMaxTrans>The maximum number of times an awakened psychic can achieve transcendence in the normal course of play.</HVT_TooltipMaxTrans>
 <HVT_SettingVisibleFXTrans>Visible distortion around transcendent pawns</HVT_SettingVisibleFXTrans>
-<HVT_TooltipVisibleFXTrans>If this option is unchecked, transcendent pawns will no longer emanate a visible distortion effect. (It is on by default so that you can tell at a glance if a raider is transcendent)</HVT_TooltipVisibleFXTrans>
+<HVT_TooltipVisibleFXTrans>If this option is unchecked, transcendent pawns will no longer emanate a visible distortion effect. (It is on by default so that you can tell at a glance if a raider is transcendent)\n\nAlso governs the visible distortions around freshly awakened pawns.</HVT_TooltipVisibleFXTrans>
 <HVT_SettingWokeGenes>Chance awakened genes can grant transcendence</HVT_SettingWokeGenes>
 <HVT_TooltipWokeGenes>The lower this value, the less the chance that a situation capable of inducing transcendence will do so if the victim has only 'awakened psychic genes', but no 'awakened psychic traits'.</HVT_TooltipWokeGenes>
 <!--Trait-specific messages-->

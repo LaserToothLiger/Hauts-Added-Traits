@@ -1775,6 +1775,21 @@
 						</operations>
 					</match>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Anomaly</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_Haunted"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} is inextricably connected to a lurking, invisible presence. Day and night, its astral whispers torment {PAWN_objective}, and it will even infrequently attack {PAWN_objective} in the physical world.</description>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>

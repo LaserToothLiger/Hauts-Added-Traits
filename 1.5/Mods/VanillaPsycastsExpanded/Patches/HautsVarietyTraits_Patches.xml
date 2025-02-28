@@ -13,6 +13,13 @@
 			<awakenChance>0.12</awakenChance>
 		</value>
 	</Operation>
+	<!--Mastery-type LPs awaken at level 20, not level 4-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="HVT_LatentPsyHediff"]/comps/li[@Class="HautsTraitsRoyalty.HediffCompProperties_LPMastery"]/psylinkLevel</xpath>
+		<value>
+			<psylinkLevel>20</psylinkLevel>
+		</value>
+	</Operation>
 	<!-- Originally, Deluge and Perennial were exclusive to VPE; this is because without that mod, it's impossible to change the psyfocus cost of a psycast (without altering the psycast's definition, that is).
 		I ended up liking their designs enough to try 'backporting' them as much as possible into only requiring Royalty, but they're a little awkward. If you have VPE installed, they regain their original, more elegant design:
 		Deluges have slightly less 1st-level psycast cost offset; however, in VPE, this stat is not a "refund" but rather truly reduces the upfront cost of 1st-level psycasts, so.-->

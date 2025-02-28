@@ -516,21 +516,9 @@ namespace HautsTraitsRoyalty
                         {
                             if (__instance.level == pawn.GetMaxPsylinkLevel())
                             {
-                                if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic))
-                                {
-                                    Hediff hediff = HediffMaker.MakeHediff(HVTRoyaltyDefOf.HVT_AwakeningAfterglow, pawn, null);
-                                    pawn.health.AddHediff(hediff);
-                                    PsychicAwakeningUtility.AwakenPsychicTalent(pawn, true, "HVT_WokeMaxPsyLevel".Translate(), "HVT_WokeMaxPsyLevelFantasy".Translate());
-                                }
-                            } else if (__instance.level >= 4) {
-                                if (!ModsConfig.IsActive("VanillaExpanded.VPsycastsE"))
-                                {
-                                    PsychicAwakeningUtility.AwakenPsychicTalentCheck(pawn, 1, true, "HVT_WokeHighPsyLevel".Translate(__instance.level, pawn.Name.ToStringShort, pawn.gender.GetPossessive()).Formatted(pawn.Named("PAWN")), "HVT_WokeHighPsyLevelFantasy".Translate(__instance.level, pawn.Name.ToStringShort, pawn.gender.GetPossessive()).Formatted(pawn.Named("PAWN")));
-                                } else if (__instance.level >= 20) {
-                                    PsychicAwakeningUtility.AwakenPsychicTalentCheck(pawn, 1, true, "HVT_WokeHighPsyLevel".Translate(__instance.level, pawn.Name.ToStringShort, pawn.gender.GetPossessive()).Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), "HVT_WokeHighPsyLevelFantasy".Translate(__instance.level, pawn.Name.ToStringShort, pawn.gender.GetPossessive()).Formatted(pawn.Named("PAWN")));
-                                }
+                                PsychicAwakeningUtility.AwakenPsychicTalent(pawn, true, "HVT_WokeMaxPsyLevel".Translate(), "HVT_WokeMaxPsyLevelFantasy".Translate(), false);
                             }
-                        } else if (PsychicAwakeningUtility.IsAwakenedPsychic(pawn) && !PsychicAwakeningUtility.IsTranscendent(pawn) && !pawn.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_LatentPsyTerminus) && Rand.Value <= 0.01f) {
+                        } else if (PsychicAwakeningUtility.IsAwakenedPsychic(pawn) && !pawn.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_LatentPsyTerminus) && Rand.Value <= 0.01f) {
                             PsychicAwakeningUtility.AchieveTranscendence(pawn, "HVT_TransHighPsyLevel".Translate(), "HVT_TransHighPsyLevelFantasy".Translate(), 0.01f);
                         }
                     }
@@ -2122,24 +2110,6 @@ namespace HautsTraitsRoyalty
                 return false;
             }
             return true;
-        }
-    }
-    public class Hediff_LPSkillMeter : HediffWithComps
-    {
-        public override void PostTick()
-        {
-            base.PostTick();
-            if (this.pawn.IsHashIntervalTick(2500) && Current.ProgramState == ProgramState.Playing)
-            {
-                for (int i = 0; i < this.pawn.skills.skills.Count; i++)
-                {
-                    if (this.pawn.skills.skills[i].GetLevel() >= 15)
-                    {
-                        PsychicAwakeningUtility.AwakenPsychicTalentCheck(this.pawn, 1, true, "HVT_WokeSkillLevel".Translate(this.pawn.skills.skills[i].def.defName.ToLower(), this.pawn.Name.ToStringShort, this.pawn.gender.GetPossessive()).Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), "HVT_WokeSkillLevelFantasy".Translate(this.pawn.skills.skills[i].def.defName.ToLower(), this.pawn.Name.ToStringShort, this.pawn.gender.GetPossessive()).Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), false, 0f);
-                        break;
-                    }
-                }
-            }
         }
     }
     public class Hediff_LPLoveMeter : HediffWithComps
@@ -4177,6 +4147,44 @@ namespace HautsTraitsRoyalty
 
         }
         public float awakenChance = -1f;
+    }
+    public class HediffCompProperties_LPMastery : HediffCompProperties
+    {
+        public HediffCompProperties_LPMastery()
+        {
+            this.compClass = typeof(HediffComp_LPMastery);
+        }
+        public int skillLevel;
+        public int psylinkLevel;
+    }
+    public class HediffComp_LPMastery : HediffComp
+    {
+        public HediffCompProperties_LPMastery Props
+        {
+            get
+            {
+                return (HediffCompProperties_LPMastery)this.props;
+            }
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            if (this.Pawn.IsHashIntervalTick(60) && Current.ProgramState == ProgramState.Playing)
+            {
+                int gpl = this.Pawn.GetPsylinkLevel();
+                if (gpl >= this.Props.psylinkLevel)
+                {
+                    PsychicAwakeningUtility.AwakenPsychicTalentCheck(this.Pawn, 1, true, "HVT_WokeHighPsyLevel".Translate(gpl, this.Pawn.Name.ToStringShort, this.Pawn.gender.GetPossessive()).Formatted(this.Pawn.Named("PAWN")), "HVT_WokeHighPsyLevelFantasy".Translate(gpl, this.Pawn.Name.ToStringShort, this.Pawn.gender.GetPossessive()).Formatted(this.Pawn.Named("PAWN")));
+                }
+                for (int i = 0; i < this.Pawn.skills.skills.Count; i++)
+                {
+                    if (this.Pawn.skills.skills[i].GetLevel() >= this.Props.skillLevel)
+                    {
+                        PsychicAwakeningUtility.AwakenPsychicTalentCheck(this.Pawn, 1, true, "HVT_WokeSkillLevel".Translate(this.Pawn.skills.skills[i].def.defName.ToLower(), this.Pawn.Name.ToStringShort, this.Pawn.gender.GetPossessive()).Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), "HVT_WokeSkillLevelFantasy".Translate(this.Pawn.skills.skills[i].def.defName.ToLower(), this.Pawn.Name.ToStringShort, this.Pawn.gender.GetPossessive()).Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), false, 0f);
+                        break;
+                    }
+                }
+            }
+        }
     }
     public class HediffCompProperties_InflictTranscendence : HediffCompProperties
     {
