@@ -743,8 +743,10 @@ namespace HautsTraits
                 }
                 int ageDependentMin = Math.Min((int)HVT_Mod.settings.traitsMin,ageDependentMax);
                 int howManyTraits = Rand.RangeInclusive(ageDependentMin, ageDependentMax);
-                while (traitCount < howManyTraits)
+                int num = 10;
+                while (traitCount < howManyTraits && num > 0)
                 {
+                    num--;
                     Trait trait = PawnGenerator.GenerateTraitsFor(__result, 1, new PawnGenerationRequest?(request), true).FirstOrFallback(null);
                     if (trait != null)
                     {
