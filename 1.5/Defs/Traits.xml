@@ -259,6 +259,7 @@
 			  <LifespanFactor>0.2</LifespanFactor>
 			  <RestRateMultiplier>0.15</RestRateMultiplier>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.10</P42_AllergicSensitivity>
+			  <Hauts_HemogenContentFactor MayRequire="Ludeon.RimWorld.Biotech">0.33</Hauts_HemogenContentFactor>
 			</statOffsets>
 			<statFactors>
 			  <IncomingDamageFactor>0.85</IncomingDamageFactor>
