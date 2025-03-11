@@ -2466,6 +2466,9 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<randomMentalState>Wander_Psychotic</randomMentalState>
 			<randomMentalStateMtbDaysMoodCurve><points><li>(0, 30)</li></points></randomMentalStateMtbDaysMoodCurve>
+			<statFactors>
+			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2492,6 +2495,7 @@
 			</statOffsets>
 			<statFactors>
 			  <VEF_MassCarryCapacity>100</VEF_MassCarryCapacity>
+			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -2866,6 +2870,9 @@
 			<label>psychic arctic tern</label>
 			<description>While on a caravan, {PAWN_nameDef} covers impossible distances in mere moments.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statFactors>
+			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
