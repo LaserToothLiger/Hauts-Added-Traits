@@ -141,6 +141,7 @@
 <HVT_WraithText>{0} has avoided death by using the powers of a transcendent wraith to possess {1}.</HVT_WraithText>
 <HVT_PsychicWMD1>Psychically annihilated: {0}</HVT_PsychicWMD1>
 <HVT_PsychicWMD2>{0} has been removed from existence due to the transcendent powers wielded by {1}. All factions have turned against {2}.</HVT_PsychicWMD2>
+<HVT_DetermineNewAnimal>Reroll war queen animal</HVT_DetermineNewAnimal>
 <!--Error messages-->
 <HVT_NotBurglable>Burglary can only be performed on settlements willing to trade goods.</HVT_NotBurglable>
 <HVT_BurglaryNoSkulkers>How did you get this far without any Skulkers in your caravan? That shouldn't be possible.</HVT_BurglaryNoSkulkers>

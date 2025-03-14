@@ -3187,7 +3187,7 @@ namespace HautsTraitsRoyalty
                         if (!td.IsFloor && !td.affordances.Contains(TerrainAffordanceDefOf.SmoothableStone) && !td.IsRiver && !td.IsWater)
                         {
                             List<TerrainDef> tdList = HautsUtility.FertilityTerrainDefs(this.pawn.Map);
-                            IOrderedEnumerable<TerrainDef> source = from e in tdList.FindAll((TerrainDef e) => (double)e.fertility > (double)td.fertility)
+                            IOrderedEnumerable<TerrainDef> source = from e in tdList.FindAll((TerrainDef e) => (double)e.fertility > (double)td.fertility && !e.IsWater && !e.IsRiver)
                                                                     orderby e.fertility
                                                                     select e;
                             if (source.Count<TerrainDef>() != 0)
@@ -3729,9 +3729,24 @@ namespace HautsTraitsRoyalty
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
+            this.DetermineAnimalType();
+        }
+        public void DetermineAnimalType()
+        {
+            PawnKindDef oldType = this.animalType;
             this.animalType = (from pawnKind in DefDatabase<PawnKindDef>.AllDefsListForReading
-                               where pawnKind.RaceProps.Animal && pawnKind.RaceProps.trainability.intelligenceOrder >= 20
+                               where pawnKind.RaceProps.Animal && !pawnKind.RaceProps.Dryad && pawnKind.RaceProps.trainability.intelligenceOrder >= 20
                                select pawnKind).RandomElement();
+            if (oldType != this.animalType && !this.spawnedAnimals.NullOrEmpty())
+            {
+                for (int i = this.spawnedAnimals.Count - 1; i >= 0; i--)
+                {
+                    this.spawnedAnimals[i].Destroy();
+                    this.RemoveAnimal(this.spawnedAnimals[i]);
+                }
+            }
+            this.Severity = this.def.initialSeverity;
+            this.RecalculateMax();
         }
         public void RecalculateMax()
         {
@@ -3794,6 +3809,25 @@ namespace HautsTraitsRoyalty
         {
             this.spawnedAnimals.Remove(pawn);
             this.RecalculateMax();
+        }
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo gizmo in base.GetGizmos())
+            {
+                yield return gizmo;
+            }
+            if (DebugSettings.ShowDevGizmos && this.animalType != null)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "HVT_DetermineNewAnimal".Translate(),
+                    action = delegate
+                    {
+                        this.DetermineAnimalType();
+                    }
+                };
+            }
+            yield break;
         }
         public override void ExposeData()
         {
