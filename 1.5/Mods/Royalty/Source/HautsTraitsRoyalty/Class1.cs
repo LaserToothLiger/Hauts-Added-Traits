@@ -693,7 +693,7 @@ namespace HautsTraitsRoyalty
                     Pawn recipient = recipients[i];
                     if (recipient != pawn && recipient.story != null)
                     {
-                        if (Current.ProgramState == ProgramState.Playing && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && (pawn.RaceProps.Humanlike ? (recipient.relations.OpinionOf(pawn) >= 100 || (recipient.relations.OpinionOf(pawn) >= 60 && Rand.Chance(0.5f))) : Rand.Chance(0.5f)))
+                        if (Current.ProgramState == ProgramState.Playing && recipient.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) && (pawn.RaceProps.Humanlike ? (recipient.relations.OpinionOf(pawn) >= 100 || (recipient.relations.OpinionOf(pawn) >= 60 && Rand.Chance(0.5f))) : (Rand.Chance(0.5f) && recipient.relations.DirectRelationExists(PawnRelationDefOf.Bond,pawn))))
                         {
                             string triggerEvent, triggerEventFantasy;
                             if (pawn.Name != null && pawn.Name.ToStringFull != null)
