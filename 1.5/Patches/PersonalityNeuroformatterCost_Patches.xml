@@ -79,7 +79,7 @@
 		<xpath>/Defs/TraitDef[defName="Tough"]</xpath>
 		<value>
 			<li Class="HautsTraits.SpecificPNFChargeCost">
-				<chargeCosts><li><key>0</key><value>5</value></li></chargeCosts>
+				<chargeCosts><li><key>0</key><value>6</value></li></chargeCosts>
 			</li>
 		</value>
 	</Operation>

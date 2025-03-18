@@ -13,7 +13,7 @@
     <description>Carriers of this gene receive an immense bonus to psychic sensitivity.</description>
     <iconPath>PsychicTraits/Genes/HVT_Augur</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>3</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -37,7 +37,7 @@
     <description>Carriers of this gene charge archites in their body via psychic energy extracted from meditation. While charging, these archites produce additional psyfocus as a byproduct, and they maintain the carrier's body.</description>
     <iconPath>PsychicTraits/Genes/HVT_Chanshi</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <forcedTraits>
       <li>
         <def>HVT_ChanshiGene</def>
@@ -94,7 +94,7 @@
     <description>Carriers of this gene develop irregularities in the hippocampus, which shoulder an exceptional amount of computational burden involved in invoking first-level psycasts.</description>
     <iconPath>PsychicTraits/Genes/HVT_Deluge</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -116,7 +116,7 @@
     <description>Carriers of this gene gain additional psylink levels, as well as psytrainer-like modifications via archites which may cause them to develop additional expressions of psychic energy in various circumstances.</description>
     <iconPath>PsychicTraits/Genes/HVT_Erudite</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -137,7 +137,7 @@
     <description>Carriers of this gene mutate in response to psycasting knowledge, becoming physically and mentally stronger for each psycast known.</description>
     <iconPath>PsychicTraits/Genes/HVT_Incarnate</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -161,6 +161,7 @@
     <description>Carriers of this gene emit short-ranged ripples in the psychic manifold, which enhance the psycasting abilities of those nearby. However, this doesn't benefit the carrier.</description>
     <iconPath>PsychicTraits/Genes/HVT_Luminary</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -184,7 +185,7 @@
     <description>Carriers of this gene continually gain psyfocus.</description>
     <iconPath>PsychicTraits/Genes/HVT_Mantraist</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -206,7 +207,7 @@
     <description>Carriers of this gene develop a specialized lobe of archite-heavy grey matter that seems to impede regular utilization of psyfocus. However, it creates unique thoughtwaves that can be harnessed no more than once a day to communicate with the archotechs at an unprecedented level of ease and clarity, granting an 'hour of power' in which psycasts are virtually free to invoke.</description>
     <iconPath>PsychicTraits/Genes/HVT_Perennial</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <abilities>
       <li>HVT_ArchicSyzygy2</li>
     </abilities>
@@ -235,7 +236,7 @@
     <description>Carriers of this gene show high archite concentration throughout their central and peripheral nervous systems, improving their pain shock threshold, mental break threshold, and neural heat limit.</description>
     <iconPath>PsychicTraits/Genes/HVT_Sage</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -261,7 +262,7 @@
     <description>Carriers of this gene offload part of the behavior required to interact with the psychic field to their gut brain. For them, food not only provides physical nutrition; it also replenishes their psyfocus.</description>
     <iconPath>PsychicTraits/Genes/HVT_Siphoner</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -289,7 +290,7 @@
     <description>Carriers of this gene reinforce their bodies with psyfocus. Unspent psyfocus boosts their move speed, work speed, armor, healing, and immunity.</description>
     <iconPath>PsychicTraits/Genes/HVT_Titan</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>
@@ -313,7 +314,7 @@
     <description>Carriers of this gene are shrouded in a field that translates incoming physical harm into a psychic force, lowering their psyfocus instead of actually damaging them.</description>
     <iconPath>PsychicTraits/Genes/HVT_Undying</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
-    <marketValueFactor>2.5</marketValueFactor>
+    <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
 	<statOffsets>

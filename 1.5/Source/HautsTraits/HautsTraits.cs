@@ -1561,7 +1561,7 @@ namespace HautsTraits
             {
                 return 0f;
             }
-            int num = 0;
+            float num = 0f;
             if (this.pawn.Map != null)
             {
                 using (List<Pawn>.Enumerator enumerator = this.pawn.Map.mapPawns.FreeHumanlikesSpawnedOfFaction(this.pawn.Faction).GetEnumerator())
@@ -1583,11 +1583,9 @@ namespace HautsTraits
                     }
                 }
             }
-            if (num > 70)
-            {
-                num = 70;
-            }
-            return this.BaseMoodOffset * num;
+            num *= this.BaseMoodOffset;
+            num = Math.Max(Math.Min(num,20f),-40f);
+            return num;
         }
     }
     public class Thought_Situational_PollutionOnTile : Thought_Situational
