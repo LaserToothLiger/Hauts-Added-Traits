@@ -1183,7 +1183,7 @@
     <stages>
       <li>
         <label>environmentalism</label>
-        <description>Environmentalists are unhappy in more polluted tiles, but very happy in unpolluted ones.</description>
+        <description>Environmentalists are unhappy in more polluted lands, but very happy in unpolluted ones.</description>
         <baseMoodEffect>15</baseMoodEffect>
       </li>
     </stages>

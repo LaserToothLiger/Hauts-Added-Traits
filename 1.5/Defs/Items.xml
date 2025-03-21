@@ -11,10 +11,11 @@
     <techLevel>Archotech</techLevel>
     <tradeTags>
       <li>Artifact</li>
+      <!--<li>ExoticMisc</li>-->
     </tradeTags>
     <stackLimit>1</stackLimit>
     <statBases>
-      <MarketValue>4750</MarketValue>
+      <MarketValue>3500</MarketValue>
     </statBases>
     <thingCategories>
       <li>ItemsMisc</li>
@@ -26,7 +27,7 @@
 	  <li>MapGen_AncientComplex_SecurityCrate</li>
     </thingSetMakerTags>
     <comps>
-      <li Class="HautsFramework.CompProperties_ItemCharged">
+      <li Class="HautsTraits.CompProperties_PNF">
         <maxCharges>10</maxCharges>
         <destroyOnEmpty>true</destroyOnEmpty>
         <hotKey>Misc4</hotKey>

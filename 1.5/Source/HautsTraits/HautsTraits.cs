@@ -3095,6 +3095,27 @@ namespace HautsTraits
             }
         }
     }
+    public class CompProperties_PNF : CompProperties_ItemCharged
+    {
+        public CompProperties_PNF()
+        {
+            this.compClass = typeof(Comp_PNF);
+        }
+    }
+    public class Comp_PNF : Comp_ItemCharged
+    {
+        public new CompProperties_PNF Props
+        {
+            get
+            {
+                return this.props as CompProperties_PNF;
+            }
+        }
+        public override int InitialCharges()
+        {
+            return Math.Min(base.InitialCharges(),(int)HVT_Mod.settings.pnfStartingCharges);
+        }
+    }
     public class JobDriver_UseTraitGiverSerum : JobDriver
     {
         private Pawn Pawn
@@ -3821,6 +3842,7 @@ namespace HautsTraits
     {
         public bool disableStealthRaids = false;
         public bool disableHardStealthRaids = true;
+        public float pnfStartingCharges = 10;
         public float maxTranscendences = 2f;
         public float wokeGeneTransSuccessChance = 0.6f;
         public bool visibleTransEffect = true;
@@ -3834,7 +3856,8 @@ namespace HautsTraits
         {
             Scribe_Values.Look(ref disableStealthRaids, "disableStealthRaids", false);
             Scribe_Values.Look(ref disableHardStealthRaids, "disableHardStealthRaids", true);
-            Scribe_Values.Look(ref maxTranscendences, "maxTranscendences", 2);
+            Scribe_Values.Look(ref pnfStartingCharges, "pnfStartingCharges", 10f);
+            Scribe_Values.Look(ref maxTranscendences, "maxTranscendences", 2f);
             Scribe_Values.Look(ref wokeGeneTransSuccessChance, "wokeGeneTransSuccessChance", 0.6f);
             Scribe_Values.Look(ref visibleTransEffect, "visibleTransEffect", true);
             Scribe_Values.Look(ref traitsMin, "traitsMin", 1);
@@ -3924,8 +3947,25 @@ namespace HautsTraits
                 settings.traitsMin = settings.traitsMax;
                 displayMin = ((int)settings.traitsMin).ToString();
             }
+            y += 32;
+            Rect pnfRect = new Rect(x + 10, y, halfWidth - 15, 32);
+            displayPNF = ((int)settings.pnfStartingCharges).ToString();
+            float origPNF = settings.pnfStartingCharges;
+            settings.pnfStartingCharges = Widgets.HorizontalSlider(pnfRect, settings.pnfStartingCharges, 1f, 10f, true, "HVT_SettingPNFStartingCharges".Translate(), "1", "10", 1f);
+            TooltipHandler.TipRegion(pnfRect.LeftPart(1f), "HVT_TooltipPNFStartingCharges".Translate());
+            if (origPNF != settings.pnfStartingCharges)
+            {
+                displayPNF = ((int)settings.pnfStartingCharges).ToString();
+            }
+            y += 32;
+            string origStringPNF = displayPNF;
+            displayPNF = Widgets.TextField(new Rect(x + 10, y, 50, 32), displayPNF);
+            if (!displayPNF.Equals(origString))
+            {
+                this.ParseInput(displayPNF, settings.pnfStartingCharges, 10, out settings.pnfStartingCharges);
+            }
             //transcendence settings
-            y += 50;
+            y += 70;
             if (ModsConfig.RoyaltyActive)
             {
                 displayTransMax = ((int)settings.maxTranscendences).ToString();
@@ -3985,6 +4025,6 @@ namespace HautsTraits
             return "Hauts' Added Traits";
         }
         public static HVT_Settings settings;
-        public string displayMin, displayMax, displayTransMax, displayWokeGeneChance;
+        public string displayMin, displayMax, displayPNF, displayTransMax, displayWokeGeneChance;
     }
 }

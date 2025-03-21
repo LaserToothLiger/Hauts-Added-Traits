@@ -1397,7 +1397,7 @@
 	<!--mechanoid spectrum-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Biotech">
 		<defName>HVT_Mechaphile</defName>
-		<commonality>0.6</commonality>
+		<commonality>0.4</commonality>
 		<forcedPassions><li>Crafting</li></forcedPassions>
 		<degreeDatas>
 		  <li>

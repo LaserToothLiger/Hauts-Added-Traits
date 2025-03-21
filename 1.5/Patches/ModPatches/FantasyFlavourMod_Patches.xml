@@ -8,6 +8,125 @@
 			<operations>
 				<li Class="PatchOperationFindMod">
 					<mods>
+						<li>Biotech</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--tf are mechs?? so RPGAFP doesn't seem to have a particular renaming for mechs, but of Medieval Overhaul's added creatures, golems, schrats, and mimics are all teeeeechnically mechs. So 'animate constructs' makes sense, 'golems' if we need a shorthand-->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_Mechaphile"]/degreeDatas/li/label</xpath>
+								<value>
+									<label>golemphile</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_Mechaphile"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} likes having animate constructs around. {PAWN_pronoun} will be saddened if an allied construct dies.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_Mechaphobe"]/degreeDatas/li/label</xpath>
+								<value>
+									<label>golemphobe</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_Mechaphobe"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} hates animate constructs, and {PAWN_pronoun} dislikes and distrusts those who control them. This antipathy is so strong that {PAWN_pronoun} can project it to discombobulate constructs, provided {PAWN_pronoun} has the means to tap into the aetheric currents that would ordinarily be used to control them.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphileVsMechanitor" or defName = "HVT_MechaphobeVsMechanitor" or defName = "HVT_EnvironmentalistVsMechanitor"]/stages/li/label</xpath>
+								<value>
+									<label>golemancer</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphileIsMechanitor" or defName = "HVT_MechaphobeIsMechanitor" or defName = "HVT_EnvironmentalistIsMechanitor"]/stages/li/label</xpath>
+								<value>
+									<label>I'm a golemancer</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphileIsMechanitor"]/stages/li/description</xpath>
+								<value>
+									<description>I'm so glad I have the privilege to conduct animate constructs.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphobeIsMechanitor"]/stages/li/description</xpath>
+								<value>
+									<description>No one should have this insidious power... no good can come from it.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_Mechaphile_MechsInColony"]/stages/li/label</xpath>
+								<value>
+									<label>golemphile</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_Mechaphile_MechsInColony"]/stages/li/description</xpath>
+								<value>
+									<description>It is right for man and construct for coexist. The more animate constructs we have around, the better.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_Mechaphobe_MechsInColony"]/stages/li/label</xpath>
+								<value>
+									<label>golemphile</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_Mechaphobe_MechsInColony"]/stages/li/description</xpath>
+								<value>
+									<description>The more animate constructs we have around, the more I worry for our safety.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphileWitnessedMechDeath"]/stages/li/label</xpath>
+								<value>
+									<label>saw allied golem die</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphileWitnessedMechDeath"]/stages/li/description</xpath>
+								<value>
+									<description>People may say that golems lack a soul, but I know that's not true. We lost someone.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphobeKilledMech"]/stages/li/label</xpath>
+								<value>
+									<label>killed a golem</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThoughtDef[defName = "HVT_MechaphobeKilledMech"]/stages/li/description</xpath>
+								<value>
+									<description>A pile of junk has got no right to be walking around. Glad I set that right.</description>
+								</value>
+							</li>
+							<!--they call xenotypes 'bloodlines'-->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_GenePurist"]/degreeDatas/li/label</xpath>
+								<value>
+									<label>bloodline purist</label>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_GenePurist"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} really dislikes and distrusts those of different bloodlines. {PAWN_pronoun} may not mind variation in {PAWN_possessive} own kind, but even bloodlines very similar to {PAWN_possessive} own are disgusting in {PAWN_possessive} eyes.</description>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
 						<li>Royalty</li>
 					</mods>
 					<match Class="PatchOperationSequence">
