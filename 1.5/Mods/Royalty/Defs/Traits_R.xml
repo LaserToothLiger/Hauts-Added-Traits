@@ -1116,7 +1116,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic firefly</label>
-			<description>{PAWN_nameDef} generates unique solar pinholes with each psycast - the light they emit debilitates foes that get too close. {PAWN_pronoun} is also sustained by an exotic process akin to photosynthesis, greatly slowing {PAWN_possessive} hunger so long as {PAWN_pronoun} is in bright light.</description>
+			<description>{PAWN_nameDef} generates unique solar pinholes with each psycast - the light they emit debilitates foes that get too close. {PAWN_pronoun} can also see just fine in the dark, and is sustained by an exotic process akin to photosynthesis, greatly slowing {PAWN_possessive} hunger so long as {PAWN_pronoun} is in bright light.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -2097,7 +2097,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic orca</label>
-			<description>While in water, {PAWN_nameDef} moves faster and is protected from damage. Blasts of water to emit from the location of {PAWN_possessive} psycasts.</description>
+			<description>While in water, {PAWN_nameDef} moves faster and is protected from damage. Blasts of water emit from the location of {PAWN_possessive} psycasts.</description>
 			<allowedMeditationFocusTypes><li MayRequire="Arquebus.StagzMerfolk">Stagz_Water</li></allowedMeditationFocusTypes>
 			<statFactors>
 			  <ThirstRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.75</ThirstRateMultiplier>
@@ -2393,7 +2393,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic quahog</label>
-			<description>{PAWN_nameDef} constructively shapes inanimate material around {PAWN_objective}self. {PAWN_possessive} worn and wielded equipment is repaired over time. There is a small chance, while meditating, for part of {PAWN_possessive} gear will improve in quality, or for the spontaneous creation of a high-quality book or sculpture.</description>
+			<description>{PAWN_nameDef} constructively shapes inanimate material around {PAWN_objective}self. {PAWN_possessive} worn and wielded equipment is repaired over time. There is a small chance, while meditating, for part of {PAWN_possessive} gear to improve in quality, or for the spontaneous creation of a high-quality book or sculpture.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -3079,7 +3079,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic whalehead</label>
-			<description>A walking portent of death, {PAWN_nameDef} terrifies foes in a vast radius, and those closer to {PAWN_objective} may even be struck by an uncontrollable urge to flee. {PAWN_pronoun} is {PAWN_objective}self nearly immune to stress.</description>
+			<description>A walking portent of death, {PAWN_nameDef} terrifies foes in a vast radius, and those closer to {PAWN_objective} may even be struck by an uncontrollable urge to flee. {PAWN_pronoun} is also nearly immune to stress.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.35</SuppressionPower>

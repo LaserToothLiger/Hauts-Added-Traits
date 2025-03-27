@@ -8,7 +8,7 @@
 			<operations>
 				<!--get rid of the improvised swim speed boost for mariner-->
 				<li Class="PatchOperationRemove">
-					<xpath>/Defs/HediffDef[defName="HVT_ILoveWater"]/stages/li[minSeverity=0.3]/statFactors</xpath>
+					<xpath>/Defs/HediffDef[defName="HVT_ILoveWater"]/stages/li[minSeverity=0.3]/statFactors/MoveSpeed</xpath>
 				</li>
 				<!--now give it TRUE power-->
 				<li Class="PatchOperationAddModExtension">
@@ -29,7 +29,7 @@
 				<operations>
 					<!--get rid of the improvised swim speed boost for mariner-->
 					<li Class="PatchOperationReplace">
-						<xpath>/Defs/HediffDef[defName="HVT_ILoveWater"]/stages/li[minSeverity=0.3]/statFactors</xpath>
+						<xpath>/Defs/HediffDef[defName="HVT_ILoveWater"]/stages/li[minSeverity=0.3]/statFactors/MoveSpeed</xpath>
 					</li>
 				</operations>
 			</match>

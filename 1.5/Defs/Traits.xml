@@ -1638,6 +1638,7 @@
 			<statOffsets>
 			  <MeleeDPS>100</MeleeDPS>
 			  <MeleeArmorPenetration>100</MeleeArmorPenetration>
+			  <VEF_MeleeWeaponRange>3</VEF_MeleeWeaponRange>
 			</statOffsets>
 		  </li>
 		</degreeDatas>

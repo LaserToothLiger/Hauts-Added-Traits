@@ -20,7 +20,9 @@
     <thingCategories>
       <li>ItemsMisc</li>
     </thingCategories>
-    <tradeability>Buyable</tradeability>
+	<tradeNeverStack>true</tradeNeverStack>
+    <tradeNeverGenerateStacked>true</tradeNeverGenerateStacked>
+    <!--<tradeability>Buyable</tradeability>-->
     <thingSetMakerTags>
       <li>RewardStandardMidFreq</li>
       <li>MapGen_AncientTempleContents</li>

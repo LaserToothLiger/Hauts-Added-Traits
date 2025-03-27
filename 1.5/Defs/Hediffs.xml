@@ -343,7 +343,7 @@
 		<label>in water</label>
 		<minSeverity>0.3</minSeverity>
 		<statFactors>
-		  <MoveSpeed>2</MoveSpeed>
+		  <MoveSpeed>2.4</MoveSpeed>
         </statFactors>
 	    <becomeVisible>false</becomeVisible>
       </li>

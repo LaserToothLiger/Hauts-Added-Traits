@@ -324,7 +324,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitBudgerigar"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} appears in the dreams of sages around the world, and always in a favorable light. This gradually improves relations with other factions.</description>
+									<description>{PAWN_nameDef} appears in the dreams of sages and sensitives around the world, always in a favorable light. This gradually improves relations with other factions.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -390,7 +390,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitCuckoo"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} exudes an enchanting presence, which makes others love {PAWN_objective} more than almost anything else in existence.</description>
+									<description>{PAWN_nameDef} bewitches all who meet {PAWN_objective}, causing them to love {PAWN_objective} more than almost anything else in existence.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -420,7 +420,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitDove"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} has a mystically calming presence which blankets a wide area.</description>
+									<description>{PAWN_nameDef} has a mystically calming presence which blankets a wide area. {PAWN_possessive} spells end the mental breaks of anyone they affect.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -486,7 +486,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitFirefly"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} conjures stars with each spellcast, which light the way for friends and blind foes. {PAWN_pronoun} is also sustained by bright light; while bathed in it, {PAWN_pronoun} takes far longer to grow hungry.</description>
+									<description>{PAWN_nameDef} conjures stars with each spellcast, which light the way for friends and blind foes. {PAWN_pronoun} can also see fine in the dark, and is sustained by bright light; while in bright light, {PAWN_pronoun} takes far longer to grow hungry.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -701,7 +701,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitLeghorn"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} periodically receives high-quality food from beyond. While meditating, {PAWN_possessive} meditation mana gain rate speeds up this process.</description>
+									<description>{PAWN_nameDef} periodically manifests high-quality food from the aether. While meditating, {PAWN_possessive} meditation mana gain rate speeds up this process.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -713,7 +713,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitLocust"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} dreams new beings into existence. Every 24 hours, an ephemeral, fragile individual is manifest from the aether near {PAWN_objective}; they don't need to eat or sleep, and are allied with {PAWN_objective}. Additional such individuals are spawned per every additional 100% magic sensitivity.</description>
+									<description>{PAWN_nameDef} dreams new beings into existence. Every 24 hours, ephemeral, fragile individuals are manifest from the aether near {PAWN_objective}; they don't need to eat or sleep, and are allied with {PAWN_objective}, but fade out after another 24 hours. The number of individuals spawned increases with {PAWN_possessive} magic sensitivity.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -755,7 +755,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitMeerkat"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} has an incredibly powerful mind, and {PAWN_pronoun} emits a cerebral effect that stimulates learning and improves magic sensitivity.</description>
+									<description>{PAWN_nameDef} has an incredibly gifted mind, and {PAWN_pronoun} emits a cerebral effect that stimulates learning and improves magic sensitivity.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -773,7 +773,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitMynah"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} looks into the minds of those near {PAWN_objective}, copying the skills of nearby higher-leveled individuals and adding them to {PAWN_possessive} own experience. {PAWN_pronoun} may also learn spells simply by being affected by them enough times.</description>
+									<description>{PAWN_nameDef} looks into the minds of those near {PAWN_objective}, copying the skills of nearby higher-leveled individuals and adding them to {PAWN_possessive} own experience. {PAWN_pronoun} may also learn spells simply by conversing with other spellcasters.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -815,7 +815,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitNoctule"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} is physically and mystically empowered by the darkness, but is weakened by bright light. Becoming inspired or entering a mental break will darken the sun, causing an eclipse.</description>
+									<description>{PAWN_nameDef} is physically and mystically empowered by the darkness, and {PAWN_pronoun} can see just fine in it; however, {PAWN_pronoun} is weakened by bright light. Becoming inspired or entering a mental break will darken the sun, causing an eclipse.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -911,7 +911,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPeregrine"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} has a 34% chance to stun anyone {PAWN_pronoun} damages or bespells. The duration scales with the victim's sensitivity to magic.</description>
+									<description>{PAWN_nameDef} has a 40% chance to stun anyone {PAWN_pronoun} damages or bespells. The duration scales with the victim's sensitivity to magic.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -935,7 +935,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPitohui"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} is immune to all manner of poisons, venoms, and harmful alchemies; to an extent, {PAWN_pronoun} is even resistant to disease and foodborne illness. {PAWN_pronoun} can cure someone of any such afflictions (except a bloodborne chemical dependency) simply by affecting them with a spell.</description>
+									<description>{PAWN_nameDef} is immune to all manner of poisons, venoms, and harmful alchemies; to an extent, {PAWN_pronoun} is even resistant to disease and foodborne illness. {PAWN_pronoun} can cure someone of any such afflictions (except a bloodline chemical dependency) simply by affecting them with a spell.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1007,7 +1007,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitScarab"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} is shrouded in an arcane barrier, transforming incoming damage into arcane load. If {PAWN_pronoun} exceeds {PAWN_possessive} arcane load limit, the barrier will vanish and cannot be reformed for a day - though this can be speeded up via meditation.</description>
+									<description>{PAWN_nameDef} is shrouded in an arcane barrier, transforming incoming damage into arcane load. If {PAWN_pronoun} exceeds {PAWN_possessive} arcane load limit, the barrier will vanish and cannot be reformed for a day - though this can be sped up via meditation.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1031,7 +1031,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitScrubJay"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} has a bound personal demiplane which {PAWN_pronoun} can store and retrieve items from. While meditating, the demiplane may randomly acquire more items.</description>
+									<description>{PAWN_nameDef} has a bound personal demiplane which {PAWN_pronoun} can store and retrieve items from. While meditating, random items may suddenly appear in the demiplane.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1085,7 +1085,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitStork"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>When {PAWN_nameDef} spellcasts, the residual magic transforms into raw, shapeless life-force. After 1000% mana is spent, the accumulated life-force coalesces into a new person. The life-force takes cues from the life of {PAWN_nameDef}, so the newborn will have the same allegiances and seems to come from a similar walk of life.</description>
+									<description>When {PAWN_nameDef} spellcasts, the residual magic transforms into raw, shapeless life-force. After 1000% mana is spent, the accumulated life-force coalesces into a new person. The life-force takes cues from {PAWN_nameDef}, so the newborn will have the same allegiances and seems to come from a similar walk of life.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1163,7 +1163,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitThrumbo"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} augments {PAWN_possessive} melee attacks with Void magic, dealing bonus damage that ignores armor and most forms of damage resistance.</description>
+									<description>{PAWN_nameDef} augments {PAWN_possessive} melee attacks with the power of the Void, dealing bonus damage that ignores armor and most forms of damage resistance.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1326,7 +1326,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitHarpy"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>On eating the corpse of a fellow awakened or transcendent mage, {PAWN_nameDef} will develop one of their awakenings or transcendences, as well as potentially gain increase in magical attunement. Ordinary food, however, does little for {PAWN_objective}.</description>
+									<description>On eating the corpse of a fellow awakened or transcendent mage, {PAWN_nameDef} will develop one of their awakenings or transcendences, as well as potentially gain increased magical attunement. Ordinary food, however, does little for {PAWN_objective}.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1342,12 +1342,6 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitPhoenix"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>{PAWN_nameDef} can bring the dead back to life, temporarily turning them invincible. If {PAWN_pronoun} dies, {PAWN_pronoun} will automatically use this power on {PAWN_objective}self.</description>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitSeraph"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>spirit of the seraph</label>
@@ -1357,12 +1351,6 @@
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitSiren"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>spirit of the siren</label>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitSiren"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>{PAWN_nameDef} can assert mental control over others. This costs a level of magical attunement.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1429,7 +1417,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/AbilityDef[defName = "HVT_ErinysAbility"]/description</xpath>
 								<value>
-									<description>The caster erects a dam that cuts the victim off from the flows of magic. The dam can only be brought down if the victim spends at least a full day meditating or achieves a new level of magical attunement. A second application will kill the victim, but results in a lengthy cooldown. Psycasters killed by this ability leave behind physical manifestations of their magical attunement.\n\nThis ability can't kill awakened sorcerers. Its cooldown lengthens by an order of magnitude per the victim's level of magical attunement, to a max of 1 quadrum.</description>
+									<description>The caster erects a dam that cuts the victim off from the flows of magic. The dam can only be brought down if the victim spends at least a full day meditating or achieves a new level of magical attunement. A second application will kill the victim, but results in a lengthy cooldown. Spellcasters killed by this ability leave behind physical manifestations of their magical attunement.\n\nThis ability can't kill awakened sorcerers. Its cooldown lengthens by an order of magnitude per the victim's level of magical attunement, to a max of 1 quadrum.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
