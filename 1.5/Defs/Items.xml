@@ -15,7 +15,7 @@
     </tradeTags>
     <stackLimit>1</stackLimit>
     <statBases>
-      <MarketValue>3500</MarketValue>
+      <MarketValue>4000</MarketValue>
     </statBases>
     <thingCategories>
       <li>ItemsMisc</li>
