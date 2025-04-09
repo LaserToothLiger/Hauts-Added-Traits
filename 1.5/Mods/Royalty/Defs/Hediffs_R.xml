@@ -21,6 +21,8 @@
 		<affectsSelf>false</affectsSelf>
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>true</affectsHostiles>
+		<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid><!--4c radius ~= 50c to scan. As a map's pawn density increases, performance becomes more important, and a 50c scan will be more performant than iterating htru the map pawn list in the
+																		moments where performance is most necessary-->
 		<mote>Hauts_DefaultAuraGraphic</mote>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
@@ -4894,6 +4896,7 @@
 		<affectsSelf>false</affectsSelf>
 		<affectsHostiles>true</affectsHostiles>
 		<affectsMechs>false</affectsMechs>
+		<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid><!--it's so tiny this will almost always be better-->
 		<mote>Hauts_DefaultAuraGraphic</mote>
 	  </li>
       <li Class="HautsFramework.HediffCompProperties_MeditationSeverity">
@@ -5080,6 +5083,7 @@
 		<color>0.537,0.654,0.294,0.42</color>
 		<affectsSelf>false</affectsSelf>
 		<affectsHostiles>true</affectsHostiles>
+		<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid>
 		<mote>Hauts_DefaultAuraGraphic</mote>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">

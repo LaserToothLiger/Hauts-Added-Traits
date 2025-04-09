@@ -7,12 +7,12 @@
 <HVT_TooltipSkulkerEvents>If this option is unchecked, hostile factions will use Skulkers in new, rare raid types that present unique challenges.</HVT_TooltipSkulkerEvents>
 <HVT_SettingSkulkerEvents2>Disable most dangerous Skulker events</HVT_SettingSkulkerEvents2>
 <HVT_TooltipSkulkerEvents2>If both this AND the previous setting are unchecked, hostile factions can use Skulkers in challenging and potentially unfair raid types.</HVT_TooltipSkulkerEvents2>
-<HVT_GenePuristsHAR>Gene Purists hate aliens</HVT_GenePuristsHAR>
-<HVT_GenePuristsHARTooltip>If using Humanoid Alien Races, pawns with the Gene Purist trait will hate those of different species, not just those of different xenotypes.</HVT_GenePuristsHARTooltip>
+<HVT_GenePuristsHAR>Xenotypists hate aliens</HVT_GenePuristsHAR>
+<HVT_GenePuristsHARTooltip>If using a mod that allows for non-human sophonts (e.g. Humanoid Alien Races or Big and Small Genes Framework), pawns with the Xenotypist trait will hate those of different species, not just those of different xenotypes.</HVT_GenePuristsHARTooltip>
 <HVT_MonsterLoveXeno>Monster Lovers love different xenotypes</HVT_MonsterLoveXeno>
 <HVT_MonsterLoveXenoTooltip>Pawns with the Monster Lover trait will have increased opinion of those of different xenotypes.</HVT_MonsterLoveXenoTooltip>
 <HVT_MonsterLoveHAR>Monster Lovers love aliens</HVT_MonsterLoveHAR>
-<HVT_MonsterLoveHARTooltip>If using Humanoid Alien Races, pawns with the Monster Lover trait will have increased opinion of those of different species.</HVT_MonsterLoveHARTooltip>
+<HVT_MonsterLoveHARTooltip>If using a mod that allows for non-human sophonts (e.g. Humanoid Alien Races or Big and Small Genes Framework), pawns with the Monster Lover trait will have increased opinion of those of different species.</HVT_MonsterLoveHARTooltip>
 <HVT_SettingMinTraits>Minimum traits per pawn</HVT_SettingMinTraits>
 <HVT_TooltipMinTraits>The lowest number of traits a pawn can spawn with, barring particularly unusual circumstances.\n\nPawns young enough to still go through growth moments (Biotech DLC) are unaffected.</HVT_TooltipMinTraits>
 <HVT_SettingMaxTraits>Maximum traits per pawn</HVT_SettingMaxTraits>
