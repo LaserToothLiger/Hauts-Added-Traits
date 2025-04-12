@@ -6128,7 +6128,7 @@ namespace HautsTraitsRoyalty
             return target.Pawn != null && (target.Pawn.story == null || !PsychicAwakeningUtility.IsAwakenedPsychic(target.Pawn)) && (target.Pawn.GetStatValue(StatDefOf.PsychicSensitivity) > 1f || target.Pawn.GetStatValue(StatDefOf.PsychicSensitivity) <= float.Epsilon || Rand.Value < this.Props.aiUseFrequencyOnMundanes || (target.Pawn.HasPsylink && target.Pawn.GetStatValue(StatDefOf.PsychicSensitivity) > float.Epsilon));
         }
     }
-    public class CompProperties_AbilityResurrectSideEffect : CompProperties_AbilityEffect
+    public class CompProperties_AbilityResurrectSideEffect : CompProperties_AbilityAiScansForTargets
     {
         public List<HediffDef> hediffDefs;
         public HediffDef hediffDefToExplode;
@@ -6150,7 +6150,7 @@ namespace HautsTraitsRoyalty
         }
         public override bool AdditionalQualifiers(Thing thing)
         {
-            if (this.parent.pawn.Faction != null && thing is Corpse c && c.InnerPawn != null && c.InnerPawn.Faction == this.parent.pawn.Faction && c.InnerPawn.MarketValue >= 1000f && c.InnerPawn.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_PhoenixPostResurrection))
+            if (this.parent.pawn.Faction != null && thing is Corpse c && c.InnerPawn != null && c.InnerPawn.Faction != null && c.InnerPawn.Faction == this.parent.pawn.Faction && c.InnerPawn.MarketValue >= 1000f && !c.InnerPawn.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_PhoenixPostResurrection))
             {
                 return true;
             }
