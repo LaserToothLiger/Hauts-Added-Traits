@@ -391,10 +391,13 @@
         <compClass>HautsTraitsRoyalty.CompAbilityEffect_PulverizationBeam</compClass>
         <durationTicks>600</durationTicks>
       </li>
-	  <li Class="HautsFramework.CompProperties_AbilityAiScansForTargets">
-        <compClass>HautsFramework.CompAbilityEffect_AiScansForTargets</compClass>
-		<periodicity>2500</periodicity><!--this is the same AI targeting stuff as Erinys has, just tuned down to 1/h because unloading 10 ziz beams in quick succession would overkill anything that CAN take damage-->
-		<scanForPawnsOnly>true</scanForPawnsOnly>
+	  <li Class="HautsTraitsRoyalty.CompProperties_AbilityTargetForMassDestruction">
+        <compClass>HautsTraitsRoyalty.CompAbilityEffect_TargetForMassDestruction</compClass>
+		<periodicity>2000</periodicity><!--low frequency at 1.25/h, because the AI should only need one cast to kill almost everything it sees-->
+		<scanForPawnsOnly>false</scanForPawnsOnly><!--y'see, it will open fire on anything which puts...-->
+		<netMarketValueToFire>4000</netMarketValueToFire><!--a total of this much enemy turrets, enemy pawns, and the initial target's net market value in jeopardy...-->
+		<pastThisPercentDmgLoosenRestrictions>0.25</pastThisPercentDmgLoosenRestrictions><!--...or if quite damaged, just YOLOs it and opens fire on anything regardless of net market value.-->
+		<friendlyFireConsiderationFactor>0.1</friendlyFireConsiderationFactor><!--market value of non-hostile faction-owned things in jeopardy is multiplied by this much and subtracted from the net market value to fire-->
 		<onlyHostiles>true</onlyHostiles>
 	  </li>
       <li Class="HautsFramework.CompProperties_AbilityMeditationCooldown">

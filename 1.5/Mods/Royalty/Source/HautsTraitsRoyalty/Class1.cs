@@ -6613,6 +6613,43 @@ namespace HautsTraitsRoyalty
             return this.Caster.MapHeld != null && (this.Caster.PositionHeld.DistanceTo(target.Cell) > 15f || Rand.Value <= 0.5f) && this.Caster.MapHeld.listerThings.ThingsOfDef(HVTRoyaltyDefOf.HVT_PulverizationBeam).Count == 0;
         }
     }
+    public class CompProperties_AbilityTargetForMassDestruction : CompProperties_AbilityAiScansForTargets
+    {
+        public float netMarketValueToFire;
+        public float pastThisPercentDmgLoosenRestrictions;
+        public float friendlyFireConsiderationFactor;
+    }
+    public class CompAbilityEffect_TargetForMassDestruction : CompAbilityEffect_AiScansForTargets
+    {
+        public new CompProperties_AbilityTargetForMassDestruction Props
+        {
+            get
+            {
+                return (CompProperties_AbilityTargetForMassDestruction)this.props;
+            }
+        }
+        public override bool AdditionalQualifiers(Thing thing)
+        {
+            if (HautsUtility.MissingHitPointPercentageFor(this.parent.pawn) >= this.Props.pastThisPercentDmgLoosenRestrictions)
+            {
+                return true;
+            }
+            float marketValue = thing.MarketValue;
+            if ((thing is Pawn || (thing.def.building != null && (thing.def.building.IsTurret || thing.def.building.isTrap))) && GenSight.LineOfSight(this.parent.pawn.Position,thing.Position,thing.Map))
+            {
+                foreach (Thing t in GenRadial.RadialDistinctThingsAround(thing.Position, thing.Map, this.parent.def.EffectRadius, true))
+                {
+                    if (this.parent.pawn.HostileTo(t))
+                    {
+                        marketValue += t.MarketValue;
+                    } else if (t.Faction != null) {
+                        marketValue -= t.MarketValue * this.Props.friendlyFireConsiderationFactor;
+                    }
+                }
+            }
+            return marketValue > this.Props.netMarketValueToFire;
+        }
+    }
     public class Graphic_StandPower : Graphic_Mote
     {
         protected override bool ForcePropertyBlock
