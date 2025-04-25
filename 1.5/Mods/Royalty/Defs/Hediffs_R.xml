@@ -302,6 +302,9 @@
     <description>Wouldn't you like to know, weatherboy?</description>
     <hediffClass>HautsTraitsRoyalty.Hediff_Woke</hediffClass>
     <defaultLabelColor>(0.53, 0.8, 0.6)</defaultLabelColor>
+	<minSeverity>0.001</minSeverity>
+	<initialSeverity>0.001</initialSeverity>
+	<maxSeverity>466.561</maxSeverity>
     <stages>
       <li>
         <label>???</label>
@@ -312,6 +315,26 @@
 		</damageFactors>
       </li>
     </stages>
+    <comps>
+      <li Class="HautsTraitsRoyalty.HediffCompProperties_Transcendenceinator">
+        <ticksToReset>3600000</ticksToReset>
+		<severityPerPsyfocus>1</severityPerPsyfocus>
+		<aboutTransingStrings>
+		  <li>HVT_AboutTransingAlpha</li>
+		  <li>HVT_AboutTransingBravo</li>
+		  <li>HVT_AboutTransingCharlie</li>
+		  <li>HVT_AboutTransingDelta</li>
+		  <li>HVT_AboutTransingEcho</li>
+		  <li>HVT_AboutTransingFoxtrot</li>
+		  <li>HVT_AboutTransingGolf</li>
+		  <li MayRequire="Ludeon.RimWorld.Ideology">HVT_AboutTransingIdeologyExclusive</li>
+		  <li MayRequire="Ludeon.RimWorld.Biotech">HVT_AboutTransingBiotechExclusive</li>
+		</aboutTransingStrings>
+		<aboutTransingStringsMonolithRequired>
+		  <li>HVT_AboutTransingAnomalyExclusive</li>
+		</aboutTransingStringsMonolithRequired>
+      </li>
+    </comps>
   </HediffDef>
   <!--various awakenings-->
   <HediffDef ParentName="HVT_TraitHediffBase">
@@ -1567,6 +1590,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <Vaporize>0.8</Vaporize>
 		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
 		</damageFactors>
       </li>
     </stages>
@@ -1772,6 +1796,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.2</Beam>
 		  <Vaporize>0.2</Vaporize>
 		  <VEF_PermanentBurn>0.2</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 		</damageFactors>
       </li>
     </stages>
@@ -1819,6 +1844,7 @@
 			  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.4</Beam>
 			  <Vaporize>0.4</Vaporize>
 			  <VEF_PermanentBurn>0.4</VEF_PermanentBurn>
+			  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 			</damageFactors>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 		  </li>
@@ -2007,6 +2033,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <Vaporize>0.8</Vaporize>
 		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
 		</damageFactors>
       </li>
 	  <li>
@@ -2020,6 +2047,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <Vaporize>0.8</Vaporize>
 		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
 		</damageFactors>
 	  </li>
     </stages>
@@ -2095,6 +2123,7 @@
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0</AM_AcidSpit>
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		</damageFactors>
 	  </li>
     </stages>
@@ -2240,7 +2269,7 @@
 			  <verbClass>Verb_Shoot</verbClass>
 			  <label>psychic siege blast</label>
 			  <hasStandardCommand>true</hasStandardCommand>
-			  <defaultProjectile>PsychicFulmarProjectile</defaultProjectile>
+			  <defaultProjectile>HVT_PsychicFulmarProjectile</defaultProjectile>
 			  <warmupTime>25</warmupTime>
 			  <forcedMissRadius>5</forcedMissRadius>
 			  <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
@@ -2540,7 +2569,7 @@
 			  <verbClass>HautsTraitsRoyalty.Verb_Shoot_NeuralHeatAmmo</verbClass>
 			  <label>psychic blast</label>
 			  <hasStandardCommand>true</hasStandardCommand>
-			  <defaultProjectile>PsychicHornetProjectile</defaultProjectile>
+			  <defaultProjectile>HVT_PsychicHornetProjectile</defaultProjectile>
 			  <warmupTime>1</warmupTime>
 			  <range>10</range>
 			  <!--<rangeStat>PsychicSensitivity</rangeStat> tragically this does not work on certain verbs, any derivative of shoot included.-->
@@ -3555,6 +3584,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		</damageFactors>
       </li>
     </stages>
@@ -4859,6 +4889,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		</damageFactors>
       </li>
 	  <li>
@@ -4873,6 +4904,7 @@
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		</damageFactors>
 	  </li>
     </stages>
@@ -6281,9 +6313,9 @@
         <verbs>
 			<li>
 			  <verbClass>Verb_Shoot</verbClass>
-			  <label>psychic bolt</label>
+			  <label>psychic barb</label>
 			  <hasStandardCommand>true</hasStandardCommand>
-			  <defaultProjectile>PsychicYellowjacketProjectile</defaultProjectile>
+			  <defaultProjectile>HVT_PsychicYellowjacketProjectile</defaultProjectile>
 			  <warmupTime>1</warmupTime>
 			  <range>20</range>
 			  <burstShotCount>1</burstShotCount>
@@ -6294,9 +6326,9 @@
 		</verbs>
 		<verbProps>
 			<li>
-			  <label>psychic bolt</label>
+			  <label>psychic barb</label>
 			  <canBeToggled>true</canBeToggled>
-			  <description>Fires a long-ranged psychic bolt with heavy armor penetration. Range scales with psychic sensitivity.</description>
+			  <description>Fires a long-ranged psychic barb with heavy armor penetration. Range scales with psychic sensitivity.</description>
 			</li>
 		</verbProps>
       </li>
@@ -6326,6 +6358,8 @@
 		</statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>3</ImmunityGainSpeed>
+		  <Hauts_ApparelWearRateFactor>0.01</Hauts_ApparelWearRateFactor>
+		  <StaggerDurationFactor>0</StaggerDurationFactor>
 		</statFactors>
       </li>
     </stages>
@@ -6337,7 +6371,7 @@
 		<damageScalesSeverityLoss>true</damageScalesSeverityLoss>
 		<fleckOnBlock>ExplosionFlash</fleckOnBlock>
 		<throwDustPuffsOnBlock>true</throwDustPuffsOnBlock>
-		<priority>5</priority>
+		<priority>2</priority>
       </li>
 	</comps>
   </HediffDef>
@@ -6469,6 +6503,22 @@
 	</comps>
   </HediffDef>
   <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_ErinysBuff</defName>
+    <label>transcendent erinys</label>
+    <description>Transcendent erinyes gain psychic sensitivity when they kill another psycaster with their powers.</description>
+    <defaultLabelColor>(0.0, 0.6, 0.9)</defaultLabelColor>
+    <minSeverity>0.001</minSeverity>
+    <initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+		<statOffsets>
+          <PsychicSensitivity>1</PsychicSensitivity>
+		</statOffsets>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_HarpysHunger</defName>
     <label>transcendent hunger</label>
     <description>Psychic harpies can only truly be sated by the flesh of other psychics.</description>
@@ -6493,14 +6543,35 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_ThalassicGrandeur</defName>
     <label>transcendent leviathan</label>
-    <description>Transcendent leviathans may develop new transcendences at any time.</description>
+    <description>Transcendent leviathans regularly develop new awakenings, and may develop new transcendences at any time.</description>
 	<hediffClass>HautsTraitsRoyalty.Hediff_ThalassicGrandeur</hediffClass>
     <defaultLabelColor>(0.4, 0.44, 0.24)</defaultLabelColor>
+    <minSeverity>0.001</minSeverity>
+    <initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+		<statOffsets>
+          <PsychicSensitivity>0.06</PsychicSensitivity>
+		  <MeditationFocusGain>0.01</MeditationFocusGain>
+		  <PsychicEntropyRecoveryRate>0.01</PsychicEntropyRecoveryRate>
+		  <Hauts_PsycastFocusRefund>0.0001</Hauts_PsycastFocusRefund>
+		  <Hauts_PsyfocusFromFood>0.0001</Hauts_PsyfocusFromFood>
+		  <Hauts_PsyfocusGainOnKill>0.0001</Hauts_PsyfocusGainOnKill>
+          <Hauts_SkipcastRangeFactor>0.0075</Hauts_SkipcastRangeFactor>
+		</statOffsets>
+		<becomeVisible>false</becomeVisible>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+      </li>
+    </stages>
 	<comps>
-	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+	  <li Class="HediffCompProperties_SeverityPerDay">
+		<severityPerDay>0.06667</severityPerDay>
+	  </li>
+	  <li Class="HautsTraitsRoyalty.HediffCompProperties_LeWokisme">
 		<forcingTraits>
 			<li>HVT_TTraitLeviathan</li>
 		</forcingTraits>
+		<newAwakeningPeriodicity>21600000</newAwakeningPeriodicity> <!--360 days, or 6 years-->
 	  </li>
 	</comps>
   </HediffDef>
@@ -6614,16 +6685,16 @@
     </stages>
   </HediffDef>
   <HediffDef ParentName="HVT_TraitHediffBase">
-    <defName>HVT_ThunderbirdSphinxComa</defName>
-    <label>transcendent empowerment</label>
-    <description>A three-day transformative coma in which one adapts to newfound psychic power.</description>
+    <defName>HVT_ThunderbirdSphinxComa</defName><!--legacy name to not break existing saves-->
+    <label>transcendent riddle</label>
+    <description>A three-day transformative coma that can result in the formation of a new psylink.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.66, 1.0, 1.0)</defaultLabelColor>
-	<initialSeverity>3.0</initialSeverity>
-    <maxSeverity>3.0</maxSeverity>
+	<minSeverity>0.001</minSeverity>
+	<initialSeverity>3.001</initialSeverity>
+    <maxSeverity>3.001</maxSeverity>
     <stages>
       <li>
-        <minSeverity>0.001</minSeverity>
         <painFactor>0</painFactor>
         <capMods>
           <li>
@@ -6638,6 +6709,47 @@
         <severityPerDay>-1</severityPerDay>
         <showDaysToRecover>true</showDaysToRecover>
       </li>
+      <li Class="HautsTraitsRoyalty.HediffCompProperties_MaybeGrantPsylink">
+        <count>1</count>
+		<failureHediff>HVT_LeeringSphinx</failureHediff>
+		<succeedLetterLabel>Psychic riddle: {PAWN_nameDef}</succeedLetterLabel>
+        <succeedLetterText>The power of a transcendent sphinx has granted {PAWN_nameDef} a psylink level.</succeedLetterText>
+		<failLetterLabel>Failed psychic riddle: {PAWN_nameDef}</failLetterLabel>
+        <failLetterText>The power of a transcendent sphinx was too much for {PAWN_nameDef}. No psylink level was gained.</failLetterText>
+		<killLetterLabel>Failed psychic riddle: {PAWN_nameDef}</killLetterLabel>
+        <killLetterText>The power of a transcendent sphinx was too much for {PAWN_nameDef}. As this was the third failure, {PAWN_pronoun} has been killed.</killLetterText>
+	  </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_ActualThunderbirdComa</defName>
+    <label>transcendent wisdom</label>
+    <description>A three-day transformative coma that can result in the development of new powers.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.66, 1.0, 1.0)</defaultLabelColor>
+	<minSeverity>0.001</minSeverity>
+	<initialSeverity>3.001</initialSeverity>
+    <maxSeverity>3.001</maxSeverity>
+    <stages>
+      <li>
+        <painFactor>0</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.01</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+      <li Class="HautsTraitsRoyalty.HediffCompProperties_PsychicWisdom">
+        <chanceToAwaken>0.33</chanceToAwaken>
+	  </li>
       <li Class="HediffCompProperties_DisappearsOnDeath"/>
     </comps>
   </HediffDef>
@@ -6649,8 +6761,9 @@
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
 	<scenarioCanAdd>false</scenarioCanAdd>
-	<initialSeverity>24</initialSeverity>
-    <maxSeverity>24</maxSeverity>
+	<minSeverity>0.001</minSeverity>
+	<initialSeverity>0.001</initialSeverity>
+    <maxSeverity>24.001</maxSeverity>
     <defaultLabelColor>(0.53, 0.53, 0.7)</defaultLabelColor>
     <stages>
       <li>
@@ -6676,11 +6789,11 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_Wraithform</defName>
     <label>transcendent wraithform</label>
-    <description>Transcendent wraiths experience a surge of power after transferring to a new body.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <description>Transcendent wraiths become invincible shortly after transferring to a new body. However, if somehow killed during this period, transferrence will not occur. This invincibility can be overcome by persona weapons, and it does not function if psychic sensitivity drops to 0%.</description>
+    <hediffClass>HautsFramework.Hediff_PreDamageModification</hediffClass>
     <defaultLabelColor>(1.0, 1.0, 0.8)</defaultLabelColor>
-    <initialSeverity>1</initialSeverity>
-    <maxSeverity>1</maxSeverity>
+    <initialSeverity>24</initialSeverity>
+    <maxSeverity>24</maxSeverity>
     <stages>
       <li>
 		<capMods>
@@ -6692,27 +6805,51 @@
             <capacity>Moving</capacity>
             <postFactor>2</postFactor>
           </li>
-          <li>
-            <capacity>Manipulation</capacity>
-            <postFactor>2</postFactor>
-          </li>
         </capMods>
 		<statOffsets>
-		  <PainShockThreshold>100</PainShockThreshold>
-		  <Hauts_PsyfocusRegenRate>24</Hauts_PsyfocusRegenRate>
+			<PainShockThreshold>100</PainShockThreshold>
 		</statOffsets>
 		<statFactors>
-          <IncomingDamageFactor>0.5</IncomingDamageFactor>
 		  <InjuryHealingFactor>10</InjuryHealingFactor>
-		  <PsychicSensitivity>5</PsychicSensitivity>
+		  <Hauts_PsyfocusRegenRate>24</Hauts_PsyfocusRegenRate>
+		  <StaggerDurationFactor>0</StaggerDurationFactor>
 		</statFactors>
 	  </li>
+    </stages>
+    <comps>
+      <li Class="HautsTraits.HediffCompProperties_FastHealPermanentWounds" />
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-24</severityPerDay>
+      </li>
+      <li Class="HautsTraitsRoyalty.HediffCompProperties_DamageNegationWraith">
+		<severityOnHit>0</severityOnHit>
+		<fleckOnBlock>ExplosionFlash</fleckOnBlock>
+		<throwDustPuffsOnBlock>true</throwDustPuffsOnBlock>
+		<priority>3</priority>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_ZizBuff</defName>
+    <label>transcendent power surge</label>
+    <description>Pulverization beams not only fail to harm transcendent ziz, they empower them instead.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(229, 255, 215)</defaultLabelColor>
+	<initialSeverity>2</initialSeverity>
+	<maxSeverity>2</maxSeverity>
+    <stages>
       <li>
-		<minSeverity>0.75</minSeverity>
+		<statOffsets>
+		  <PsychicSensitivity>1</PsychicSensitivity>
+		</statOffsets>
+		<statFactors>
+		  <IncomingDamageFactor>0.01</IncomingDamageFactor>
+		</statFactors>
 		<capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <postFactor>3</postFactor>
+            <postFactor>2</postFactor>
           </li>
           <li>
             <capacity>Moving</capacity>
@@ -6723,21 +6860,47 @@
             <postFactor>2</postFactor>
           </li>
         </capMods>
-		<statOffsets>
-			<PainShockThreshold>100</PainShockThreshold>
-		</statOffsets>
-		<statFactors>
-          <IncomingDamageFactor>0.05</IncomingDamageFactor>
-		  <InjuryHealingFactor>10</InjuryHealingFactor>
-		  <PsychicSensitivity>5</PsychicSensitivity>
-		  <Hauts_PsyfocusRegenRate>1</Hauts_PsyfocusRegenRate>
-		</statFactors>
-	  </li>
+      </li>
     </stages>
     <comps>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-24</severityPerDay>
+	  <li Class="HautsFramework.HediffCompProperties_MoteConditional">
+		<mote>HVT_DocPhosph</mote>
+		<scale>1</scale>
+	  </li>
+      <li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+        <verbs>
+			<li>
+			  <verbClass>Verb_Shoot</verbClass>
+			  <label>erasure blast</label>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>HVT_ZizBlastProjectile</defaultProjectile>
+			  <warmupTime>0.2</warmupTime>
+			  <range>28</range>
+			  <burstShotCount>4</burstShotCount>
+			  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+			  <muzzleFlashScale>2</muzzleFlashScale>
+			  <commandIcon>PsychicTraits/Attacks/HVT_PkSting</commandIcon>
+			</li>
+		</verbs>
+		<verbProps>
+			<li>
+			  <label>erasure blast</label>
+			  <canBeToggled>true</canBeToggled>
+			  <comps>
+              <li Class="MVCF.VerbComps.VerbCompProperties_Turret">
+                <compClass>MVCF.VerbComps.VerbComp_Turret</compClass>
+					<invisible>true</invisible>
+					<uniqueTargets>true</uniqueTargets>
+              </li>
+            </comps>
+			  <description>Fires an energy orb that unravels space around it on impact.</description>
+			</li>
+		</verbProps>
       </li>
+	  <li Class="HediffCompProperties_SeverityPerDay">
+		<severityPerDay>-24</severityPerDay>
+		<showDaysToRecover>true</showDaysToRecover>
+	  </li>
     </comps>
   </HediffDef>
 </Defs>

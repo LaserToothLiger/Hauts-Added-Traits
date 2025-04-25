@@ -99,11 +99,11 @@
   <AbilityDef>
     <defName>HVT_ErinysAbility</defName>
     <label>psychic censure</label>
-    <description>The caster erects a dam that cuts the victim off from the psychic field. The dam can only be brought down if the victim spends at least a full day meditating or attains a new psylink level. A second application will kill the victim, but results in a lengthy cooldown. Psycasters killed by this ability drop a random number of their psylinks.\n\nThis ability can't kill awakened psychics. Its cooldown lengthens by an order of magnitude per the victim's psylink level, to a max of 1 quadrum.</description>
+    <description>The caster erects a dam that cuts the victim off from the psychic field. The dam can only be brought down if the victim spends at least a full day meditating or attains a new psylink level. A second application will kill the victim, but if the victim was a psycaster, the cooldown will be lengthened based on their psylink level (to a max of 1 quadrum). Psycasters killed by this ability drop a random number of their psylinks.\n\nThis ability can't kill awakened psychics. Its cooldown lengthens by an order of magnitude per the victim's psylink level, to a max of 1 quadrum.</description>
     <iconPath>PsychicTraits/Abilities/HVT_PkCensure</iconPath>
     <warmupMote>Mote_WarmupWordOf</warmupMote>
     <warmupSound>Psycast_WordOf_Warmup</warmupSound>
-	<cooldownTicksRange>600~900000</cooldownTicksRange>
+	<cooldownTicksRange>360~900000</cooldownTicksRange>
     <stunTargetWhileCasting>False</stunTargetWhileCasting>
     <showPsycastEffects>True</showPsycastEffects>
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
@@ -124,13 +124,6 @@
       </targetParams>
     </verbProperties>
     <comps>
-      <li Class="HautsFramework.CompProperties_AbilityTargetPsylinkLevelSetsCooldown">
-        <compClass>HautsFramework.CompAbilityEffect_TargetPsylinkLevelSetsCooldown</compClass>
-		<addedPerLevel>0</addedPerLevel>
-		<baseForExponent>10</baseForExponent>
-		<capsOutAtLevel>6</capsOutAtLevel>
-		<minCooldownIfNoPsylink>true</minCooldownIfNoPsylink>
-      </li>
       <li Class="HautsTraitsRoyalty.CompProperties_AbilityErinys">
         <compClass>HautsTraitsRoyalty.CompAbilityEffect_Erinys</compClass>
 		<goodwillImpact>-40</goodwillImpact>
@@ -138,6 +131,11 @@
 		<scanForPawnsOnly>true</scanForPawnsOnly><!--this and the two fields below dictate its AI use. this is true bc otherwise the AI will "scan for targets" by looking at EVERYTHING within 44 cells, which is horrendously nonperformant-->
 		<onlyHostiles>true</onlyHostiles>
 		<periodicity>500</periodicity><!--AI only looks for targets this often (500ticks=5 times an hour)-->
+		<cooldownOnDeafen>360</cooldownOnDeafen>
+		<cooldownOnNonPsycasterKill>360</cooldownOnNonPsycasterKill>
+		<baseCooldownOnPsycasterKill>2500</baseCooldownOnPsycasterKill><!--this gets multiplied by the square of the pawn's psylink level. caps at the max of cooldownTicksRange-->
+		<hediffToGrant>HVT_ErinysBuff</hediffToGrant>
+		<severityPerPsylinklevel>0.05</severityPerPsylinklevel>
       </li>
       <li Class="HautsFramework.CompProperties_AbilityForcedByOtherProperty">
         <compClass>HautsFramework.CompAbilityEffect_ForcedByOtherProperty</compClass>
@@ -232,7 +230,8 @@
 		<goodwillImpact>-40</goodwillImpact>
 		<setsIdeo>true</setsIdeo>
 		<permanent>true</permanent>
-		<failsOnAwokens>true</failsOnAwokens>
+		<failsOnAwokens>false</failsOnAwokens>
+		<failsOnTrans>true</failsOnTrans>
 		<aiMinMarketValueToTarget>1000</aiMinMarketValueToTarget>
 		<letterLabel>Mind control: {RECIPIENT_labelShort}</letterLabel>
         <letterText>Utilizing the powers of a transcendent siren, {INITIATOR_labelShort} aligned {RECIPIENT_labelShort} to {INITIATOR_possessive} cause.</letterText>
@@ -272,10 +271,11 @@
       <warmupTime>3.0</warmupTime>
       <targetParams>
         <canTargetAnimals>false</canTargetAnimals>
-        <canTargetSelf>false</canTargetSelf>
+        <canTargetSelf>true</canTargetSelf>
         <canTargetBuildings>false</canTargetBuildings>
         <canTargetMechs>false</canTargetMechs>
         <onlyTargetColonists>false</onlyTargetColonists>
+		<neverTargetIncapacitated>true</neverTargetIncapacitated>
       </targetParams>
     </verbProperties>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -286,17 +286,6 @@
         <onlyBrain>True</onlyBrain>
         <applicableToMechs>False</applicableToMechs>
         <canTargetBaby>True</canTargetBaby>
-      </li>
-      <li Class="HautsTraitsRoyalty.CompProperties_AbilityMaybeGivePsylink">
-        <compClass>HautsTraitsRoyalty.CompAbilityEffect_MaybeGivePsylink</compClass>
-        <count>1</count>
-		<failureHediff>HVT_LeeringSphinx</failureHediff>
-		<succeedLetterLabel>Psychic riddle: {RECIPIENT_labelShort}</succeedLetterLabel>
-        <succeedLetterText>{INITIATOR_labelShort} used {INITIATOR_possessive} power as a transcendent sphinx to grant {RECIPIENT_labelShort} a psylink level. {RECIPIENT_labelShort} will remain in a coma for three days, adapting to these changes.</succeedLetterText>
-		<failLetterLabel>Failed psychic riddle: {RECIPIENT_labelShort}</failLetterLabel>
-        <failLetterText>{INITIATOR_labelShort} attempted to grant a psylink level to {RECIPIENT_labelShort} via the power of a transcendent sphinx. However, it was too much for {RECIPIENT_labelShort} to handle, so no psylink level was gained.</failLetterText>
-		<killLetterLabel>Failed psychic riddle: {RECIPIENT_labelShort}</killLetterLabel>
-        <killLetterText>{INITIATOR_labelShort} attempted to grant a psylink level to {RECIPIENT_labelShort} via the power of a transcendent sphinx. However, as this was the third failure, {RECIPIENT_labelShort} has ceased to exist.</killLetterText>
       </li>
       <li Class="HautsFramework.CompProperties_AbilityForcedByOtherProperty">
         <compClass>HautsFramework.CompAbilityEffect_ForcedByOtherProperty</compClass>
@@ -314,7 +303,7 @@
     <iconPath>PsychicTraits/Abilities/HVT_PkWisdom</iconPath>
     <warmupMote>Mote_WarmupWordOf</warmupMote>
     <warmupSound>Psycast_WordOf_Warmup</warmupSound>
-	<cooldownTicksRange>900000</cooldownTicksRange>
+	<cooldownTicksRange>60000</cooldownTicksRange>
     <stunTargetWhileCasting>True</stunTargetWhileCasting>
     <showPsycastEffects>True</showPsycastEffects>
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
@@ -331,24 +320,25 @@
       <warmupTime>3.0</warmupTime>
       <targetParams>
         <canTargetAnimals>false</canTargetAnimals>
-        <canTargetSelf>false</canTargetSelf>
+        <canTargetSelf>true</canTargetSelf>
         <canTargetBuildings>false</canTargetBuildings>
         <canTargetMechs>false</canTargetMechs>
         <onlyTargetColonists>false</onlyTargetColonists>
+		<neverTargetIncapacitated>true</neverTargetIncapacitated>
       </targetParams>
     </verbProperties>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <comps>
       <li Class="CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>HVT_ThunderbirdSphinxComa</hediffDef>
+        <hediffDef>HVT_ActualThunderbirdComa</hediffDef>
         <onlyBrain>True</onlyBrain>
         <applicableToMechs>False</applicableToMechs>
         <canTargetBaby>True</canTargetBaby>
       </li>
 	  <li Class="HautsTraitsRoyalty.CompProperties_AbilityPsychicAwakening">
         <compClass>HautsTraitsRoyalty.CompAbilityEffect_PsychicAwakening</compClass>
-        <chanceToAwaken>0.33</chanceToAwaken>
+        <maxAwakenings>2</maxAwakenings>
 	  </li>
       <li Class="HautsFramework.CompProperties_AbilityForcedByOtherProperty">
         <compClass>HautsFramework.CompAbilityEffect_ForcedByOtherProperty</compClass>

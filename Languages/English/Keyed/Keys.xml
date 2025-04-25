@@ -23,6 +23,8 @@
 <HVT_TooltipMaxTrans>The maximum number of times an awakened psychic can achieve transcendence in the normal course of play.</HVT_TooltipMaxTrans>
 <HVT_SettingVisibleFXTrans>Visible distortion around transcendent pawns</HVT_SettingVisibleFXTrans>
 <HVT_TooltipVisibleFXTrans>If this option is unchecked, transcendent pawns will no longer emanate a visible distortion effect. (It is on by default so that you can tell at a glance if a raider is transcendent)\n\nAlso governs the visible distortions around freshly awakened pawns.</HVT_TooltipVisibleFXTrans>
+<HVT_SettingTransHints>Enable transcendence method hints</HVT_SettingTransHints>
+<HVT_TooltipTransHints>If enabled, shortly after awakening (or being hired, or spawned) awakened colonists will generate a "Revelation" letter that tells the player about one of the possible transcendence methods. Disable this if, for some reason, you don't want hints.</HVT_TooltipTransHints>
 <HVT_SettingWokeGenes>Chance awakened genes can grant transcendence</HVT_SettingWokeGenes>
 <HVT_TooltipWokeGenes>The lower this value, the less the chance that a situation capable of inducing transcendence will do so if the victim has only 'awakened psychic genes', but no 'awakened psychic traits'.</HVT_TooltipWokeGenes>
 <!--Trait-specific messages-->
@@ -36,6 +38,7 @@
 <HVT_VisionaryNovelDesc>Notes created by {PAWN_nameDef} during a visionary insight. These don't contain any actionable knowledge, but they make for fun reading (for a given definition of fun, at least).</HVT_VisionaryNovelDesc>
 <HVT_PeriodicConformation>Due to the Conformist trait, {PAWN_nameDef} has converted to {PAWN_possessive} faction's majority ideoligion.</HVT_PeriodicConformation>
 <HVT_HunterVsHorror>{INFECTED_nameDef}'s metalhorror emerged due to the vigilance of a keen monster hunter.</HVT_HunterVsHorror>
+<HVT_LostHumanity>{PAWN_nameDef} has become inhumanized. {PAWN_possessive} concern for health, family, friendship, and love have been broken.</HVT_LostHumanity>
 <!--UI-->
 <HVT_SFAIcon>Scout for Hostiles</HVT_SFAIcon>
 <HVT_SFATooltip>Skulkers in this caravan will use their talents for stealth to ascertain if there is an ambush lying in wait at this site without actually triggering the ambush. Skulkers with impaired senses may accidentally miss evidence of an ambush.</HVT_SFATooltip>
@@ -90,12 +93,29 @@
 <HVT_WokeSuperRelations>An overwhelming amount of goodwill for others has awakened {PAWN_nameDef} to {PAWN_possessive} psychic potential!</HVT_WokeSuperRelations>
 <HVT_WokeBeatIllness>Overcoming a life-threatening bout of {0} has awakened {1} to {2} psychic potential!</HVT_WokeBeatIllness>
 <HVT_WokeVoidEmbrace>An unprecedented suffusion of the void has awakened {PAWN_nameDef} to {PAWN_possessive} psychic potential!</HVT_WokeVoidEmbrace>
-<HVT_WokeVoidEmbrace2>The immensity of the void within {PAWN_nameDef} has magnified and distorted {PAWN_possessive} psychic signature.</HVT_WokeVoidEmbrace2>
+<HVT_WokeVoidClosure>The immense psychic energy unleashed by disrupting the void has awakened {PAWN_nameDef} to {PAWN_possessive} psychic potential!</HVT_WokeVoidClosure>
 <HVT_WokeBrainwash>The use of a brainwash device has awakened {PAWN_nameDef} to {PAWN_possessive} psychic potential!</HVT_WokeBrainwash>
 <HVT_WokeByLeviathan>As a transcendent leviathan, {PAWN_nameDef} has developed a new awakening!</HVT_WokeByLeviathan>
+<HVT_AboutTransingLabel>Revelation</HVT_AboutTransingLabel>
+<HVT_AboutTransingTextPrefix>{PAWN_nameDef} knows, somehow, that awakening is not the full expression of {PAWN_possessive} potential; under the right conditions, {PAWN_pronoun} may be able to transcend, unlocking new abilities. {PAWN_pronoun} senses there are many possible ways to transcend, and is certain of one such method:</HVT_AboutTransingTextPrefix>
+<HVT_AboutTransingAlpha>There is a slim chance to achieve transcendence by hearing the dying screams of an anima tree.</HVT_AboutTransingAlpha>
+<HVT_AboutTransingBravo>It is possible - though not guaranteed - to achieve transcendence by dying, or being resurrected.</HVT_AboutTransingBravo>
+<HVT_AboutTransingCharlie>Simply living long enough is sufficient to achieve transcendence. {PAWN_pronoun} does not know exactly how long that would take, but awakened individuals with a high amount of archite genes usually reach this point sooner.</HVT_AboutTransingCharlie>
+<HVT_AboutTransingCharlieFantasy>Simply living long enough is sufficient to achieve transcendence. {PAWN_pronoun} does not know exactly how long that would take, but awakened individuals of highly eldritch bloodlines (such as sanguophages) usually reach this point sooner.</HVT_AboutTransingCharlieFantasy>
+<HVT_AboutTransingDelta>There is a very slim chance to transcend on attaining new psylink levels.</HVT_AboutTransingDelta>
+<HVT_AboutTransingDeltaFantasy>There is a slim chance to transcend on reaching new levels of magical attunement.</HVT_AboutTransingDeltaFantasy>
+<HVT_AboutTransingEcho>Experiencing the full brunt of a neuroquake has a chance to force transcendence on awakened individuals.</HVT_AboutTransingEcho>
+<HVT_AboutTransingEchoFantasy>Experiencing the full brunt of a mindquake has a chance to force transcendence on awakened individuals.</HVT_AboutTransingEchoFantasy>
+<HVT_AboutTransingFoxtrot>There is a slim chance to find transcendence by giving in to madness during a psychic drone.</HVT_AboutTransingFoxtrot>
+<HVT_AboutTransingFoxtrotFantasy>There is a slim chance to find transcendence by giving in to madness during an eldritch drone.</HVT_AboutTransingFoxtrotFantasy>
+<HVT_AboutTransingGolf>Transcendence can be achieved by accumulating and spending a preposterous amount of psyfocus - 466.56%, or six to the sixth - within one year.</HVT_AboutTransingGolf>
+<HVT_AboutTransingGolfFantasy>Transcendence can be achieved by accumulating and spending a preposterous amount of mana - 466.56%, or six to the sixth - within one year.</HVT_AboutTransingGolfFantasy>
+<HVT_AboutTransingIdeologyExclusive>The archonexus will intervene if an awakened individual dies within its vicinity, causing both resurrection and transcendence.</HVT_AboutTransingIdeologyExclusive>
+<HVT_AboutTransingBiotechExclusive>There is a slim chance to achieve transcendence by being hit with the energy shockwave of a dying apocriton.</HVT_AboutTransingBiotechExclusive>
+<HVT_AboutTransingAnomalyExclusive>{PAWN_pronoun} has had a glimpse into the dark heart of the Void monolith. When it is fully activated, it will form a bridge between reality and the Void, and should one of the awakened cross into that dark heart, they will transcend.</HVT_AboutTransingAnomalyExclusive>
 <HVT_TheTransing>Transcendental experience: {0}</HVT_TheTransing>
 <HVT_TransSuffix>{PAWN_nameDef} glimpsed beyond the veil. {PAWN_pronoun} has been indelibly marked by the archotechs, magnifying and distorting {PAWN_possessive} psychic signature.</HVT_TransSuffix>
-<HVT_TransDefault>Through means unknown even to the author of this mod, </HVT_TransDefault>
+<HVT_TransDefault>Through means unknown even to the author of the transcendence system, </HVT_TransDefault>
 <HVT_TransAnimaScream>As it died, the anima tree's psychic cry seized the mind of {PAWN_nameDef} and thrust upon {PAWN_objective} a vision. Resultantly, </HVT_TransAnimaScream>
 <HVT_TransBreak>In the throes of madness brought on by a psychic drone, {PAWN_nameDef} touched on a vast psychic presence, and </HVT_TransBreak>
 <HVT_TransHighPsyLevel>Upon reaching a new level of psychic power, </HVT_TransHighPsyLevel>
@@ -103,8 +123,12 @@
 <HVT_TransDeath>Mere instants from death, {PAWN_nameDef} experienced an indescribable flare of psychic power, and </HVT_TransDeath>
 <HVT_TransArchoDeath>Mere instants from death, the mind of a machine god interfered with causality, and </HVT_TransArchoDeath>
 <HVT_TransNeuroquake>By being subjected to the mind-shattering effect of a neuroquake, </HVT_TransNeuroquake>
+<HVT_TransApocriton>Through proximity to a dying apocriton, </HVT_TransApocriton>
 <HVT_TransByLeviathan>Due to {PAWN_possessive} further growth as a transcendent leviathan, </HVT_TransByLeviathan>
 <HVT_TransResurrection>Upon being resurrected, </HVT_TransResurrection>
+<HVT_TransPsyfocuser>Due to the mental fluctuations involved in attaining and utilizing a truly staggering amount of psyfocus, </HVT_TransPsyfocuser>
+<HVT_WokeVoidEmbrace2>The immensity of the void within {PAWN_nameDef} has magnified and distorted {PAWN_possessive} psychic signature.</HVT_WokeVoidEmbrace2>
+<HVT_WokeVoidClosure2>The sudden repulsion of the void has magnified and distorted the psychic signature of {PAWN_nameDef}.</HVT_WokeVoidClosure2>
 <!--other woke and trans messages-->
 <HVT_CaravanAnimaRez>{PAWN_nameDef} was saved from death by the presence of a nearby anima tree!</HVT_CaravanAnimaRez>
 <HVT_PengwengGetLabel>Summoned stranger</HVT_PengwengGetLabel>
@@ -134,11 +158,11 @@
 <HVT_PhoenixRez>As a transcendent phoenix, even death is insufficient to stop {PAWN_nameDef}. It took {PAWN_objective} a bit longer than normal, but {PAWN_pronoun} has come back to life!</HVT_PhoenixRez>
 <HVT_SeraphLabel>Transcendent seraph transfer: {0}</HVT_SeraphLabel>
 <HVT_SeraphText>{0} has inherited the Psychic Seraph trait from {1}.</HVT_SeraphText>
-<HVT_GetThunderbirdstruck>Enlightenment, bestowed by a transcendent psychic!</HVT_GetThunderbirdstruck>
-<HVT_ThunderbirdLatencyLetter>Latent Psychic gained: {0}</HVT_ThunderbirdLatencyLetter>
-<HVT_ThunderbirdLatencyText>Thanks to {0}, {1} is now a latent psychic.</HVT_ThunderbirdLatencyText>
-<HVT_ThunderbirdFailLetter>Failure to awaken: {0}</HVT_ThunderbirdFailLetter>
-<HVT_ThunderbirdFailText>Despite the best efforts of {0}, {1} did not awaken.</HVT_ThunderbirdFailText>
+<HVT_GetThunderbirdstruck>The power of a transcendent thunderbird has awakened {PAWN_nameDef} to {PAWN_possessive} own abilities!</HVT_GetThunderbirdstruck>
+<HVT_ThunderbirdLatencyLetter>Latent Psychic gained: {PAWN_nameDef}</HVT_ThunderbirdLatencyLetter>
+<HVT_ThunderbirdLatencyText>The power of a transcendent thunderbird has made {PAWN_nameDef} a latent psychic.</HVT_ThunderbirdLatencyText>
+<HVT_ThunderbirdFailLetter>Failure to awaken: {PAWN_nameDef}</HVT_ThunderbirdFailLetter>
+<HVT_ThunderbirdFailText>The power of a transcendent thunderbird has failed to induce a new awakening in {PAWN_nameDef}.</HVT_ThunderbirdFailText>
 <HVT_WraithLabel>Transcendent wraith possession: {0}</HVT_WraithLabel>
 <HVT_WraithText>{0} has avoided death by using the powers of a transcendent wraith to possess {1}.</HVT_WraithText>
 <HVT_PsychicWMD1>Psychically annihilated: {0}</HVT_PsychicWMD1>
@@ -173,9 +197,14 @@
 <HVT_WontTargetDowned>Can't target a downed pawn.</HVT_WontTargetDowned>
 <HVT_WontTargetSameFaction>Can't mind control a member of your own faction.</HVT_WontTargetSameFaction>
 <HVT_WontTargetAwakened>Can't affect one of the awakened.</HVT_WontTargetAwakened>
-<HVT_WontTargetAwakened2>Can't affect someone with more than one awakening.</HVT_WontTargetAwakened2>
+<HVT_WontTargetAwakened2>Can't grant this target more awakenings.</HVT_WontTargetAwakened2>
+<HVT_WontTargetTrans>Can't affect one of the transcendent.</HVT_WontTargetTrans>
 <HVT_MassInversionOutOfRange>Target must be within 30 tiles.</HVT_MassInversionOutOfRange>
 <HVT_MassInversionNoTarget>No valid target found at selected tile.</HVT_MassInversionNoTarget>
+<!--creepjoiner messages-->
+<HVT_EverlivingMightRez>Though {PAWN_nameDef} has just died, it may not yet be {PAWN_possessive} end. {PAWN_possessive} regeneration has the potential to revive {PAWN_objective}, though it isn't guaranteed. Revivification could take up to 1 day.</HVT_EverlivingMightRez>
+<HVT_EverlivingRez>Unnatural regeneration has brought {PAWN_nameDef} back to life!</HVT_EverlivingRez>
+<HVT_GotCompromised>The psycho-technological programming hidden in {PAWN_possessive} consciousness has been activated by a Horaxian cultist, causing {PAWN_nameDef} to rejoin the cult.</HVT_GotCompromised>
 <!--psychic awakening utility dictionary-->
 <HVT_WokeAugur>{PAWN_possessive} psychic sensitivity has undergone an immense, multiplicative boost.</HVT_WokeAugur>
 <HVT_WokeChanshi>{PAWN_pronoun} gains nutrition, rest, and even more psyfocus from meditating.</HVT_WokeChanshi>
@@ -205,6 +234,7 @@
 <HVT_TransCassowary>{PAWN_pronoun} interfaces with persona weapons on a level others cannot even conceive of, vastly increasing their destructive potential.</HVT_TransCassowary>
 <HVT_TransCockatiel>{PAWN_pronoun} has an unfathomably brilliant mind, which continually contributes to ongoing research studies. If there are no research projects currently being undertaken, {PAWN_pronoun} instead turns {PAWN_possessive} genius inwards, gaining skill experience and psyfocus over time. Skill and research gain scale with psychic sensitivity, along with their usual speed-improving stats.</HVT_TransCockatiel>
 <HVT_TransCockroach>{PAWN_pronoun} rapidly regenerates from injuries, no matter how grievous. This effect is so strong that {PAWN_nameDef} can come back to life, though this takes somewhere between 3-15 days, and can be stopped by destroying the corpse.</HVT_TransCockroach>
+<HVT_TransCranchiid>Tissue-repairing water-activated archites are drawn to {PAWN_possessive} psychic presence. When {PAWN_pronoun} is injured, simply immersing {PAWN_objective} in water will trigger rapid regeneration. The kinetic forces produced by these archites also assist in swimming.</HVT_TransCranchiid>
 <HVT_TransCrane>Psychically-enhanced proprioception and short-range archosensory perception guide {PAWN_possessive} movements, making {PAWN_objective} unearthly in {PAWN_possessive} poise and effect.</HVT_TransCrane>
 <HVT_TransCuckoo>{PAWN_pronoun} passively warps the social topology of everyone nearby, making them love {PAWN_objective} to a ridiculous degree.</HVT_TransCuckoo>
 <HVT_TransDeimatic>{PAWN_pronoun} is the eye of a vast metaphysical storm which plays out across the fabric of causality. When a bad event would happen, there is a 50% chance for it to not occur instead.</HVT_TransDeimatic>
@@ -215,7 +245,7 @@
 <HVT_TransEiderduck>{PAWN_pronoun} emanates a field of quantum fluctuations that alter ambient heat, rendering anyone nearby resistant to fire and extreme temperatures. As the originator of the effect, {PAWN_pronoun} is especially affected by the field.</HVT_TransEiderduck>
 <HVT_TransElectrophorus>A field of picoscopic skipgates around {PAWN_objective} shuffle electrons and ionic molecules into different configurations, energizing nearby batteries and inflicting EMPs on anything {PAWN_pronoun} hits in melee. Psycasting also excites these skipgates, causing lightning to strike nearby foes.</HVT_TransElectrophorus>
 <HVT_TransAptenodytes>{PAWN_pronoun} has a psychic connection to the phenomenon known as the "man in black". This connection is triggered whenever an event occurs that would have awakened {PAWN_pronoun} if {PAWN_pronoun} was a latent psychic, causing a man in black to be routed to {PAWN_possessive} location. It also has a very low chance to trigger each day if {PAWN_pronoun} meets a persistent condition that could cause awakening, such as having at least 15 levels in one skill.</HVT_TransAptenodytes>
-<HVT_TransEvergreen>{PAWN_pronoun} is virtually immune to aging and the health complications it can cause.</HVT_TransEvergreen>
+<HVT_TransEvergreen>{PAWN_pronoun} is virtually immune to aging and the health complications it can cause. This effect even protects the integrity of {PAWN_possessive} worn apparel, which does not decay.</HVT_TransEvergreen>
 <HVT_TransFirefly>{PAWN_pronoun} has drawn the attention of an archotech system with an affinity for stars. When {PAWN_pronoun} psycasts, {PAWN_pronoun} creates a solar pinhole at the targeted location, which in addition to its normal function also emits psychic signals that dazzle {PAWN_possessive} enemies. Moreover, {PAWN_pronoun} psychically influences mechanites around {PAWN_objective} to absorb photonic energy - much like a solar panel would - and transfer it to {PAWN_objective}, causing {PAWN_objective} to take far longer to grow hungry while in bright light.</HVT_TransFirefly>
 <HVT_TransFirehawk>A field of picoscopic skipgates around {PAWN_objective} generate similarly tiny disturbances which act to reduce incoming thermal energy to acceptable amounts, protecting {PAWN_objective} from hot temperatures and heat-based attacks. This skipgate system acts up during meditation, emanating heat outward, and it also acts aggressively on {PAWN_possessive} behalf, skipping superhot particles into those {PAWN_pronoun} attacks, into nearby enemies, and even into foes affected by {PAWN_possessive} psycasts.</HVT_TransFirehawk>
 <HVT_TransFlamingo>{PAWN_pronoun} is inexplicably immune to toxins, high temperatures, EMPs, and many other environmental hazards.</HVT_TransFlamingo>
@@ -261,7 +291,7 @@
 <HVT_TransPitohui>A network of skipgates works to continuously remove toxic particles from {PAWN_possessive} body, preventing overdoses and rendering {PAWN_objective} immune to all other sorts of poisonous effects. When {PAWN_pronoun} performs a psycast, this effect is helpfully also applied to anyone {PAWN_pronoun} considers friendly.</HVT_TransPitohui>
 <HVT_TransPolux>{PAWN_nameDef} serves as a node of an archotech terraforming and ecological restoration program. Microscopic skipgates clean {PAWN_possessive} body of toxic and infectious agents, and when {PAWN_pronoun} meditates, it focuses the program's attention on {PAWN_possessive} surroundings, enabling it to gradually dry, fertilize, and unpollute nearby terrain.</HVT_TransPolux>
 <HVT_TransPoorwill>A continual flux of skipgate-delivered archites work to reduce {PAWN_possessive} reliance on common physiological and psychological needs, such as air, water, food, rest, and recreation. The field in which this effect occurs stretches beyond {PAWN_possessive} body, affecting others to a lesser extent; it is indiscriminate about whom it helps, however, and may even benefit {PAWN_possessive} foes.</HVT_TransPoorwill>
-<HVT_TransPtar>{PAWN_possessive} have a wider influence on the psychic field. When {PAWN_pronoun} is very happy, {PAWN_possessive} mood stimulates and energizes the minds of nearby allies, but when {PAWN_possessive} mood is low, the effect targets nearby foes instead, assailing them with distracting and debilitating distortions.</HVT_TransPtar>
+<HVT_TransPtar>{PAWN_possessive} emotions have a wider influence on the psychic field. When {PAWN_pronoun} is very happy, {PAWN_possessive} mood stimulates and energizes the minds of nearby allies, but when {PAWN_possessive} mood is low, the effect targets nearby foes instead, assailing them with distracting and debilitating distortions.</HVT_TransPtar>
 <HVT_TransQuahog>{PAWN_pronoun} is keyed into an archotech subroutine concerned with craft and artisanship. Microscopic skipgates reposition, remove, and add mass in {PAWN_possessive} arms and apparel as necessary in order to rapidly repair them. While meditating, this connection is enhanced, enabling a greater degree of sophistication in this restorative process which may sometimes result in one of {PAWN_possessive} equipment items improving in quality by one step, or more rarely result in the spontaneous and inexplicable synthesis of a brand-new, masterwork- or legendary-quality book or sculpture.</HVT_TransQuahog>
 <HVT_TransQuelea>Gravity is distorted by {PAWN_possessive} imprint on the psychic manifold, selectively weakening its pull on {PAWN_objective} and those nearby whom {PAWN_pronoun} trusts. Anyone affected can stay in the air for long periods of time, only briefly needing to touch down every so often to kick off again. This allows them to travel faster, ignore the movement cost penalties of terrain, and avoid triggering traps.</HVT_TransQuelea>
 <HVT_TransQuokka>{PAWN_pronoun} emits a gentle and friendly presence tuned towards animal minds. Animals cannot directly harm {PAWN_objective}, and {PAWN_pronoun} has more success in handling them. {PAWN_possessive} psycasts even remove scaria from any affected creature.</HVT_TransQuokka>
@@ -338,6 +368,8 @@
 <HVT_WokeBeatIllnessFantasy>Overcoming a life-threatening bout of {0} has awakened {1} to {2} sorcerous potential!</HVT_WokeBeatIllnessFantasy>
 <HVT_WokeVoidEmbraceFantasy>Total suffusion in the void has awakened {PAWN_nameDef} to {PAWN_possessive} sorcerous potential!</HVT_WokeVoidEmbraceFantasy>
 <HVT_WokeVoidEmbraceFantasy2>The immensity of the void within {PAWN_nameDef} has corrupted {PAWN_possessive} innate magic.</HVT_WokeVoidEmbraceFantasy2>
+<HVT_WokeVoidClosureFantasy>The immense mystical energy unleashed by disrupting the void has awakened {PAWN_nameDef} to {PAWN_possessive} sorcerous potential!</HVT_WokeVoidClosureFantasy>
+<HVT_WokeVoidClosureFantasy2>The sudden repulsion of the void has endowed {PAWN_nameDef} with new magic.</HVT_WokeVoidClosureFantasy2>
 <HVT_WokeBrainwashFantasy>The use of a mindwash relic has awakened {PAWN_nameDef} to {PAWN_possessive} sorcerous potential!</HVT_WokeBrainwashFantasy>
 <HVT_TransSuffixFantasy>{PAWN_nameDef} glimpsed beyond the veil. {PAWN_pronoun} has been indelibly marked by eldritch powers, making {PAWN_objective} more akin to a mystic being than a mortal.</HVT_TransSuffixFantasy>
 <HVT_TransAnimaScreamFantasy>As it died, the anima tree's anguished cry seized the mind of {PAWN_nameDef} and thrust upon {PAWN_objective} a vision. Resultantly, </HVT_TransAnimaScreamFantasy>
@@ -347,10 +379,10 @@
 <HVT_TransDeathFantasy>Mere instants from death, {PAWN_nameDef} experienced an indescribable flare of otherworldly power, and </HVT_TransDeathFantasy>
 <HVT_TransArchoDeathFantasy>Mere instants from death, a deific presence reached out from its hallow, and </HVT_TransArchoDeathFantasy>
 <HVT_TransNeuroquakeFantasy>By being subjected to the soul-harrowing effect of a mindquake, </HVT_TransNeuroquakeFantasy>
+<HVT_TransPsyfocuserFantasy>Harnessing a truly staggering amount of mana has caused {PAWN_possessive} soul to evolve, and so </HVT_TransPsyfocuserFantasy>
 <!--Fanta: other woke and trans messages-->
 <HVT_PitohuiGenDepFantasy>{PAWN_nameDef} used {PAWN_possessive} transcendent powers to be free of {PAWN_possessive} bloodline's substance dependencies.</HVT_PitohuiGenDepFantasy>
 <HVT_SeraphTextFantasy>{0} has inherited the Spirit of the Seraph trait from {1}.</HVT_SeraphTextFantasy>
-<HVT_GetThunderbirdstruckFantasy>Enlightenment, bestowed by a transcendent sorcerer!</HVT_GetThunderbirdstruckFantasy>
 <HVT_ThunderbirdLatencyLetterFantasy>Latent Sorcerer gained: {0}</HVT_ThunderbirdLatencyLetterFantasy>
 <HVT_ThunderbirdLatencyTextFantasy>Thanks to {0}, {1} is now a latent sorcerer.</HVT_ThunderbirdLatencyTextFantasy>
 <HVT_PsychicWMD1Fantasy>Astrally annihilated: {0}</HVT_PsychicWMD1Fantasy>
@@ -385,6 +417,7 @@
 <HVT_TransCanaryFantasy>{PAWN_possessive} spoken magics all carry an additional persuasive enchantment, which reduces prisoners' will and resistance, subverts unwavering loyalty, and either lowers non-believers' certainty or boosts mood.</HVT_TransCanaryFantasy>
 <HVT_TransCassowaryFantasy>{PAWN_pronoun} empowers enchanted weapons {PAWN_pronoun} wields, vastly increasing their destructive power.</HVT_TransCassowaryFantasy>
 <HVT_TransCockatielFantasy>{PAWN_pronoun} has an unfathomably brilliant mind, which continually contributes to ongoing research studies. If there are no research projects currently being undertaken, {PAWN_pronoun} instead turns {PAWN_possessive} genius inwards, gaining skill experience and mana over time. Skill and research gain scale with magic sensitivity, along with their usual speed-improving stats.</HVT_TransCockatielFantasy>
+<HVT_TransCranchiidFantasy>{PAWN_possessive} body is similar to that of a water elemental. Immersion in water will heal {PAWN_possessive} body and enable {PAWN_objective} to move faster.</HVT_TransCranchiidFantasy>
 <HVT_TransCraneFantasy>{PAWN_possessive} movements are unearthly in their celerity and surety.</HVT_TransCraneFantasy>
 <HVT_TransCuckooFantasy>{PAWN_pronoun} magically charms everyone {PAWN_pronoun} meets, making them love {PAWN_objective} to a ridiculous degree.</HVT_TransCuckooFantasy>
 <HVT_TransDiabolusFantasy>Alchemical fire runs through {PAWN_possessive} veins. When {PAWN_pronoun} casts any spell, it also coats an area around the target (as well as any foes affected) in an oily residue which is quick to catch fire; it soaks deeply into its victims, making flames much more deadly to them. Moreover, when {PAWN_pronoun} is near any enemy, {PAWN_pronoun} spontaneously catches on fire, fast enough to produce an explosion.</HVT_TransDiabolusFantasy>
@@ -394,7 +427,7 @@
 <HVT_TransEiderduckFantasy>{PAWN_possessive} presence pushes away elemental heat and cold, rendering those near {PAWN_objective} more resistant to temperature extremes and fire. {PAWN_pronoun} {PAWN_objective}self is especially protected.</HVT_TransEiderduckFantasy>
 <HVT_TransElectrophorusFantasy>{PAWN_pronoun} has taken on a measure of a storm-spirit's power. {PAWN_pronoun} causes lightning to crash upon nearby foes when {PAWN_pronoun} casts spells, and {PAWN_possessive} strikes suffuse their victims with overwhelming static.</HVT_TransElectrophorusFantasy>
 <HVT_TransAptenodytesFantasy>{PAWN_pronoun} has become favored by whatever otherworldly being sends the men in black to imperiled settlements. This connection is triggered whenever an event occurs that would have awakened {PAWN_pronoun} if {PAWN_pronoun} was a latent sorcerer, causing a man in black to be routed to {PAWN_possessive} location. It also has a very low chance to trigger each day if {PAWN_pronoun} meets a persistent condition that could cause awakening, such as having at least 15 levels in one skill.</HVT_TransAptenodytesFantasy>
-<HVT_TransEvergreenFantasy>{PAWN_pronoun} has attained the agelessness of the primordials. In addition to nigh-immortality, {PAWN_pronoun} will never develop age-related diseases.</HVT_TransEvergreenFantasy>
+<HVT_TransEvergreenFantasy>{PAWN_pronoun} has attained the agelessness of the primordials. In addition to nigh-immortality, {PAWN_pronoun} will never develop age-related diseases, and {PAWN_possessive} worn apparel does not experience wear and tear.</HVT_TransEvergreenFantasy>
 <HVT_TransFireflyFantasy>{PAWN_pronoun} pulls motes of astral light into the material realm whenever {PAWN_pronoun} casts a spell. These motes are empathically connected to {PAWN_objective}, and so they will seek to blind anyone nearby who means {PAWN_objective} harm. {PAWN_pronoun} is also physically nourished by immersion in sufficiently bright light.</HVT_TransFireflyFantasy>
 <HVT_TransFirehawkFantasy>Roiling elemental fire runs in {PAWN_possessive} blood, stoked further when {PAWN_pronoun} meditates. {PAWN_pronoun} is virtually immune to heat and flame, while {PAWN_possessive} spells can set nearby foes ablaze and heat the intended targets to an agonizing degree. Even {PAWN_possessive} fists and weapons speak with tongues of flame, burning anyone {PAWN_pronoun} strikes at.</HVT_TransFirehawkFantasy>
 <HVT_TransFodiatorFantasy>{PAWN_pronoun} harnesses an ill-understood magic to maneuver {PAWN_possessive} own body in short, rapid bursts. This allows {PAWN_objective} to perform uncanny dodges and even hurtle {PAWN_objective}self through the air at tremendous speeds, with small applications of this power on the way down ensuring a gentle landing.</HVT_TransFodiatorFantasy>

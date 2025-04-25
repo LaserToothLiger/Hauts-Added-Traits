@@ -1034,4 +1034,26 @@
 	  </li>
     </comps>
   </HediffDef>
+  
+  <!--heh... a pretzel is just ordinary bread to someone like me...-->
+  <HediffDef ParentName="HVT_TraitHediffBase" MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>HVT_TwistedHumanApathy</defName>
+    <label>twisted</label>
+    <description>Those with the "Twisted" trait find it harder to care about others, for better or for worse.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+      </li>
+    </stages>
+	<comps>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_Twisted</li>
+		</forcingTraits>
+	  </li>
+	</comps>
+  </HediffDef>
+  
 </Defs>

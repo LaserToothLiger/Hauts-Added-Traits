@@ -76,6 +76,8 @@ namespace HautsTraitsRoyalty
             {
                 harmony.Patch(AccessTools.Method(typeof(VoidAwakeningUtility), nameof(VoidAwakeningUtility.EmbraceTheVoid)),
                               postfix: new HarmonyMethod(patchType, nameof(HautsTraitsLPAny_EmbraceTheVoidPostfix)));
+                harmony.Patch(AccessTools.Method(typeof(VoidAwakeningUtility), nameof(VoidAwakeningUtility.DisruptTheLink)),
+                              postfix: new HarmonyMethod(patchType, nameof(HautsTraitsLPAny_DisruptTheLinkPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(BloodRainUtility), nameof(BloodRainUtility.TryTriggerBerserkShort)),
                               prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_TryTriggerBerserkShortPrefix)));
             }
@@ -97,8 +99,8 @@ namespace HautsTraitsRoyalty
                            prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTransDeath_KillPrefix)));
             harmony.Patch(AccessTools.Method(typeof(Pawn), nameof(Pawn.Kill)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTransDeath_KillPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(Pawn_GeneTracker), nameof(Pawn_GeneTracker.SetXenotype)),
-                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTranscend_SetXenotypePostfix)));
+            /*harmony.Patch(AccessTools.Method(typeof(Pawn_GeneTracker), nameof(Pawn_GeneTracker.SetXenotype)),
+                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTranscend_SetXenotypePostfix)));*/
             harmony.Patch(AccessTools.Method(typeof(GeneUtility), nameof(GeneUtility.ImplantXenogermItem)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_ImplantXenogermItemPostfix)));
             harmony.Patch(AccessTools.Method(typeof(CompAbilityEffect_Neuroquake), nameof(CompAbilityEffect_Neuroquake.Apply), new[] { typeof(LocalTargetInfo), typeof(LocalTargetInfo) }),
@@ -545,7 +547,7 @@ namespace HautsTraitsRoyalty
                     PsychicAwakeningUtility.AwakenPsychicTalentCheck(pawn, 2, true, "HVT_WokeMentalBreak".Translate(), "HVT_WokeMentalBreakFantasy".Translate());
                     return;
                 }
-                if (PsychicAwakeningUtility.IsAwakenedPsychic(pawn) && causedByMood && Rand.Value <= 0.03f) {
+                if (PsychicAwakeningUtility.IsAwakenedPsychic(pawn) && causedByMood && Rand.Value <= 0.04f) {
                     if (pawn.MapHeld != null)
                     {
                         if (pawn.MapHeld.gameConditionManager.GetHighestPsychicDroneLevelFor(pawn.gender) >= PsychicDroneLevel.BadLow)
@@ -882,6 +884,20 @@ namespace HautsTraitsRoyalty
                 }
             }
         }
+        public static void HautsTraitsLPAny_DisruptTheLinkPostfix(Pawn pawn)
+        {
+            if (pawn.story != null)
+            {
+                if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic))
+                {
+                    PsychicAwakeningUtility.AwakenPsychicTalent(pawn, true, "HVT_WokeVoidClosure".Translate(), "HVT_WokeVoidClosureFantasy".Translate());
+                }
+                if (PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                {
+                    PsychicAwakeningUtility.AchieveTranscendence(pawn, "HVT_WokeVoidClosure2".Translate(), "HVT_WokeVoidClosureFantasy2".Translate(), 1f);
+                }
+            }
+        }
         public static bool HautsTraitsAA_GainTraitPrefix(TraitSet __instance, Trait trait)
         {
             Pawn pawn = GetInstanceField(typeof(TraitSet), __instance, "pawn") as Pawn;
@@ -1048,7 +1064,7 @@ namespace HautsTraitsRoyalty
                 {
                     foreach (Pawn p in previousMap.mapPawns.AllPawnsSpawned)
                     {
-                        if (Rand.Value <= 0.03f && p.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(p))
+                        if (Rand.Value <= 0.04f && p.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(p))
                         {
                             PsychicAwakeningUtility.AchieveTranscendence(p, "HVT_TransAnimaScream".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), "HVT_TransAnimaScreamFantasy".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), 0.1f);
                         }
@@ -1066,7 +1082,7 @@ namespace HautsTraitsRoyalty
                     return false;
                 }
                 Hediff wraith = __instance.health.hediffSet.GetFirstHediffOfDef(HVTRoyaltyDefOf.HVT_THediffWraith);
-                if (wraith != null && wraith.Severity >= 23.999f)
+                if (wraith != null && wraith.Severity >= 24f)
                 {
                     PsychicAwakeningUtility.WraithTransfer(__instance);
                 }
@@ -1090,13 +1106,13 @@ namespace HautsTraitsRoyalty
                 }
             }
         }
-        public static void HautsTraitsTranscend_SetXenotypePostfix(Pawn_GeneTracker __instance, XenotypeDef xenotype)
+        /*public static void HautsTraitsTranscend_SetXenotypePostfix(Pawn_GeneTracker __instance, XenotypeDef xenotype)
         {
             if (PsychicAwakeningUtility.IsAwakenedPsychic(__instance.pawn))
             {
                 PsychicAwakeningUtility.InduceArchiteTranscendenceDelay(__instance.pawn, xenotype.AllGenes);
             }
-        }
+        }*/
         public static void HautsTraitsTrans_ImplantXenogermItemPostfix(Pawn pawn, Xenogerm xenogerm)
         {
             if (xenogerm.GeneSet != null && pawn.genes != null)
@@ -1888,6 +1904,7 @@ namespace HautsTraitsRoyalty
         public static TraitDef HVT_TTraitDragon;
         public static TraitDef HVT_TTraitHarpy;
         public static TraitDef HVT_TTraitLeviathan;
+        public static TraitDef HVT_TTraitPhoenix;
         public static TraitDef HVT_TTraitSeraph;
         public static TraitDef HVT_TTraitSphinx;
         public static TraitDef HVT_TTraitThunderbird;
@@ -1931,6 +1948,7 @@ namespace HautsTraitsRoyalty
         public static HediffDef HVT_PhoenixPostResurrection;
         public static HediffDef HVT_THediffWraith;
         public static HediffDef HVT_Wraithform;
+        public static HediffDef HVT_ZizBuff;
 
         public static EffecterDef HVT_Zomburst;
 
@@ -4068,14 +4086,6 @@ namespace HautsTraitsRoyalty
     }
     public class Hediff_Wraithly : HediffWithComps
     {
-        public override void Notify_PawnPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
-        {
-            base.Notify_PawnPostApplyDamage(dinfo, totalDamageDealt);
-            if (dinfo.Weapon != null && dinfo.Weapon.weaponTags != null && dinfo.Weapon.weaponTags.Contains("Bladelink"))
-            {
-                this.Severity = 0.002f;
-            }
-        }
         public override void PostTick()
         {
             base.PostTick();
@@ -4123,7 +4133,7 @@ namespace HautsTraitsRoyalty
         public bool transferredOut = false;
         public GeneDef geneToRemove = null;
     }
-    public class Hediff_Woke : Hediff
+    public class Hediff_Woke : HediffWithComps
     {
         public override void PostAdd(DamageInfo? dinfo)
         {
@@ -4134,9 +4144,22 @@ namespace HautsTraitsRoyalty
         {
             base.PostTick();
             this.justResurrected = false;
-            if (this.pawn.IsHashIntervalTick(60000) && Rand.MTBEventOccurs(250f, 3600000f, 60000f) && !this.pawn.IsMutant)
+            if (this.pawn.IsHashIntervalTick(60000) && !this.pawn.IsMutant)
             {
-                PsychicAwakeningUtility.AchieveTranscendence(this.pawn, "HVT_WokeningDefault".Translate().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), "HVT_WokeningDefaultFantasy".Translate().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), 0.25f, false, null, true, false, false);
+                float mtb = 250f;
+                if (ModsConfig.BiotechActive && this.pawn.genes != null)
+                {
+                    float denominator = 1f;
+                    foreach (Gene g in this.pawn.genes.GenesListForReading)
+                    {
+                        denominator += g.def.biostatArc > 0 ? 1f : 0f;
+                    }
+                    mtb /= denominator;
+                }
+                if (Rand.MTBEventOccurs(mtb, 3600000f, 60000f))
+                {
+                    PsychicAwakeningUtility.AchieveTranscendence(this.pawn, "HVT_WokeningDefault".Translate().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), "HVT_WokeningDefaultFantasy".Translate().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), 0.25f, false, null, true, false, false);
+                }
             }
         }
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
@@ -4174,6 +4197,97 @@ namespace HautsTraitsRoyalty
         }
         private bool justResurrected;
     }
+    public class HediffCompProperties_Transcendenceinator : HediffCompProperties_PsyfocusSpentTracker
+    {
+        public HediffCompProperties_Transcendenceinator()
+        {
+            this.compClass = typeof(HediffComp_Transcendenceinator);
+        }
+        public int ticksToReset;
+        public List<string> aboutTransingStrings;
+        public List<string> aboutTransingStringsMonolithRequired;
+    }
+    public class HediffComp_Transcendenceinator : HediffComp_PsyfocusSpentTracker
+    {
+        public new HediffCompProperties_Transcendenceinator Props
+        {
+            get
+            {
+                return (HediffCompProperties_Transcendenceinator)this.props;
+            }
+        }
+        private void StartNewTimer()
+        {
+            if (this.ticksToNextReset <= 0)
+            {
+                this.ticksToNextReset = this.Props.ticksToReset;
+            }
+        }
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            base.CompPostPostAdd(dinfo);
+            this.curPsyfocus = 0f;
+            this.ticksToNextReset = 0;
+            this.hasSentTransClueMessage = false;
+        }
+        public override void UpdatePsyfocusExpenditure(float offset)
+        {
+            base.UpdatePsyfocusExpenditure(offset);
+            this.StartNewTimer();
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (this.Pawn.IsHashIntervalTick(180) && !this.hasSentTransClueMessage && HVT_Mod.settings.enableTranscendenceHints && this.Pawn.Faction != null && this.Pawn.Faction == Faction.OfPlayerSilentFail && this.Pawn.story != null && !PsychicAwakeningUtility.IsTranscendent(this.Pawn))
+            {
+                string letterText = "HVT_AboutTransingTextPrefix".Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve();
+                List<string> possibleTransMethods = this.Props.aboutTransingStrings;
+                if (ModsConfig.AnomalyActive && Find.Anomaly.monolith != null)
+                {
+                    possibleTransMethods.AddRange(this.Props.aboutTransingStringsMonolithRequired);
+                }
+                letterText += "\n\n" + possibleTransMethods.RandomElement().CapitalizeFirst().Translate().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true);
+                Find.LetterStack.ReceiveLetter("HVT_AboutTransingLabel".Translate(), letterText, LetterDefOf.NeutralEvent, null, 0, true);
+                this.hasSentTransClueMessage = true;
+            }
+            Pawn_PsychicEntropyTracker ppet = this.Pawn.psychicEntropy;
+            if (ppet != null && ppet.IsCurrentlyMeditating)
+            {
+                this.StartNewTimer();
+            }
+            if (this.ticksToNextReset <= 0)
+            {
+                this.parent.Severity = this.parent.def.minSeverity;
+                return;
+            }
+            if (ppet != null)
+            {
+                if (ppet.CurrentPsyfocus != this.curPsyfocus)
+                {
+                    this.parent.Severity += Math.Max(0f,ppet.CurrentPsyfocus-this.curPsyfocus);
+                    this.curPsyfocus = ppet.CurrentPsyfocus;
+                }
+            }
+            if (this.parent.Severity == this.parent.def.maxSeverity)
+            {
+                this.ticksToNextReset = 0;
+                this.parent.Severity = this.parent.def.minSeverity;
+                PsychicAwakeningUtility.AchieveTranscendence(this.Pawn, "HVT_TransPsyfocuser".Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), "HVT_TransPsyfocuserFantasy".Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), 1f);
+                this.StartNewTimer();
+                return;
+            }
+        }
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look<int>(ref this.ticksToNextReset, "ticksToNextReset", 0, false);
+            Scribe_Values.Look<float>(ref this.curPsyfocus, "curPsyfocus", 0f, false);
+            Scribe_Values.Look<bool>(ref this.hasSentTransClueMessage, "hasSentTransClueMessage", false, false);
+        }
+        public int ticksToNextReset;
+        public float curPsyfocus;
+        public bool hasSentTransClueMessage = false;
+    }
     public class RemovedOnAwakening : DefModExtension
     {
         public RemovedOnAwakening()
@@ -4181,6 +4295,39 @@ namespace HautsTraitsRoyalty
 
         }
         public float awakenChance = -1f;
+    }
+    public class CompProperties_TranscendNearbyOnDeath : CompProperties
+    {
+        public CompProperties_TranscendNearbyOnDeath()
+        {
+            this.compClass = typeof(CompTranscendNearbyOnDeath);
+        }
+        public float chance;
+        public float radius;
+    }
+    public class CompTranscendNearbyOnDeath : ThingComp
+    {
+        public CompProperties_TranscendNearbyOnDeath Props
+        {
+            get
+            {
+                return (CompProperties_TranscendNearbyOnDeath)this.props;
+            }
+        }
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            if ((mode == DestroyMode.KillFinalize || mode == DestroyMode.KillFinalizeLeavingsOnly) && previousMap != null && this.parent.SpawnedOrAnyParentSpawned && Rand.Chance(this.Props.chance))
+            {
+                foreach (Pawn p in previousMap.mapPawns.AllHumanlikeSpawned)
+                {
+                    if (PsychicAwakeningUtility.IsAwakenedPsychic(p) && p.Position.DistanceTo(this.parent.PositionHeld) <= this.Props.radius)
+                    {
+                        PsychicAwakeningUtility.AchieveTranscendence(p, "HVT_TransApocriton".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), "HVT_TransApocriton".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), 1f);
+                    }
+                }
+            }
+        }
     }
     public class HediffCompProperties_LPMastery : HediffCompProperties
     {
@@ -4784,7 +4931,7 @@ namespace HautsTraitsRoyalty
                     Pawn p = corpse as Pawn;
                     float toTake = removedDamage;
                     if (corpse is Corpse c) {
-                        toTake = Math.Min(removedDamage/c.InnerPawn.BodySize,c.HitPoints);
+                        toTake = Math.Min(removedDamage*75/c.InnerPawn.health.LethalDamageThreshold,c.HitPoints);
                     }
                     FleckCreationData dataStatic = FleckMaker.GetDataStatic(corpse.PositionHeld.ToVector3(), corpse.MapHeld, FleckDefOf.Smoke, 1f);
                     dataStatic.rotationRate = Rand.Range(-30f, 30f);
@@ -6052,6 +6199,211 @@ namespace HautsTraitsRoyalty
             }
         }
     }
+    public class HediffCompProperties_LeWokisme : HediffCompProperties_ForcedByOtherProperty
+    {
+        public HediffCompProperties_LeWokisme()
+        {
+            this.compClass = typeof(HediffComp_LeWokisme);
+        }
+        public int newAwakeningPeriodicity;
+    }
+    public class HediffComp_LeWokisme : HediffComp_ForcedByOtherProperty
+    {
+        public new HediffCompProperties_LeWokisme Props
+        {
+            get
+            {
+                return (HediffCompProperties_LeWokisme)this.props;
+            }
+        }
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            base.CompPostPostAdd(dinfo);
+            this.ticksToNextAwakening = this.Props.newAwakeningPeriodicity;
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            this.ticksToNextAwakening--;
+            if (this.ticksToNextAwakening <= 0)
+            {
+                this.ticksToNextAwakening = this.Props.newAwakeningPeriodicity;
+                string wokeString = "HVT_WokeByLeviathan".Translate().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve();
+                PsychicAwakeningUtility.AwakenPsychicTalent(this.Pawn,true,wokeString, wokeString, true);
+            }
+        }
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look<int>(ref this.ticksToNextAwakening, "ticksToNextAwakening", 60000, false);
+        }
+        public int ticksToNextAwakening;
+    }
+    public class HediffCompProperties_MaybeGrantPsylink : HediffCompProperties
+    {
+        public HediffCompProperties_MaybeGrantPsylink()
+        {
+            this.compClass = typeof(HediffComp_MaybeGrantPsylink);
+        }
+        public int count;
+        public HediffDef failureHediff;
+        [MustTranslate]
+        public string succeedLetterLabel;
+        [MustTranslate]
+        public string succeedLetterText;
+        [MustTranslate]
+        public string failLetterLabel;
+        [MustTranslate]
+        public string failLetterText;
+        [MustTranslate]
+        public string killLetterLabel;
+        [MustTranslate]
+        public string killLetterText;
+    }
+    public class HediffComp_MaybeGrantPsylink : HediffComp
+    {
+        public HediffCompProperties_MaybeGrantPsylink Props
+        {
+            get
+            {
+                return (HediffCompProperties_MaybeGrantPsylink)this.props;
+            }
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (this.parent.Severity <= this.parent.def.minSeverity)
+            {
+                Pawn pawn = this.Pawn;
+                float successChance = 1f;
+                if (!PsychicAwakeningUtility.IsMythicTranscendent(pawn))
+                {
+                    if (ModsConfig.IsActive("VanillaExpanded.VPsycastsE"))
+                    {
+                        Hediff_Level psylink = (Hediff_Level)pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamedSilentFail("VPE_PsycastAbilityImplant"));
+                        if (psylink != null)
+                        {
+                            successChance -= ((float)psylink.level / 100f);
+                        }
+                    } else {
+                        successChance -= ((float)pawn.GetPsylinkLevel() / (float)pawn.GetMaxPsylinkLevel());
+                    }
+                }
+                if (Rand.Value <= successChance)
+                {
+                    pawn.ChangePsylinkLevel(this.Props.count, false);
+                    ChoiceLetter notification = LetterMaker.MakeLetter(
+                    this.Props.succeedLetterLabel.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), this.Props.succeedLetterText.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.PositiveEvent, new LookTargets(pawn), null, null, null);
+                    Find.LetterStack.ReceiveLetter(notification, null);
+                } else if (!pawn.health.hediffSet.HasHediff(this.Props.failureHediff)) {
+                    Hediff hediff = HediffMaker.MakeHediff(this.Props.failureHediff, pawn, null);
+                    pawn.health.AddHediff(hediff);
+                    ChoiceLetter notification = LetterMaker.MakeLetter(
+                    this.Props.failLetterLabel.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), this.Props.failLetterText.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.NegativeEvent, new LookTargets(pawn), null, null, null);
+                    Find.LetterStack.ReceiveLetter(notification, null);
+                } else {
+                    pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.failureHediff).Severity += 1f;
+                    if (pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.failureHediff).Severity < 2f)
+                    {
+                        ChoiceLetter notification = LetterMaker.MakeLetter(
+                        this.Props.failLetterLabel.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), this.Props.failLetterText.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.NegativeEvent, new LookTargets(pawn), null, null, null);
+                        Find.LetterStack.ReceiveLetter(notification, null);
+                    } else {
+                        ChoiceLetter notification = LetterMaker.MakeLetter(
+                        this.Props.killLetterLabel.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), this.Props.killLetterText.CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.NegativeEvent, new LookTargets(this.parent.pawn), null, null, null);
+                        Find.LetterStack.ReceiveLetter(notification, null);
+                    }
+                }
+                pawn.health.RemoveHediff(this.parent);
+            }
+        }
+    }
+    public class HediffCompProperties_PsychicWisdom : HediffCompProperties
+    {
+        public HediffCompProperties_PsychicWisdom()
+        {
+            this.compClass = typeof(HediffComp_PsychicWisdom);
+        }
+        public float chanceToAwaken;
+    }
+    public class HediffComp_PsychicWisdom : HediffComp
+    {
+        public HediffCompProperties_PsychicWisdom Props
+        {
+            get
+            {
+                return (HediffCompProperties_PsychicWisdom)this.props;
+            }
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (this.parent.Severity <= this.parent.def.minSeverity)
+            {
+                Pawn pawn = this.Pawn;
+                if (pawn.story != null)
+                {
+                    ChoiceLetter notification;
+                    if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) || PsychicAwakeningUtility.IsAwakenedPsychic(pawn, false))
+                    {
+                        if (Rand.Value <= this.Props.chanceToAwaken)
+                        {
+                            PsychicAwakeningUtility.AwakenPsychicTalent(pawn, true, "HVT_GetThunderbirdstruck".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), "HVT_GetThunderbirdstruck".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve());
+                        } else {
+                            notification = LetterMaker.MakeLetter(
+                        "HVT_ThunderbirdFailLetter".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), "HVT_ThunderbirdFailText".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.NeutralEvent, new LookTargets(pawn), null, null, null);
+                            Find.LetterStack.ReceiveLetter(notification, null);
+                        }
+                    } else {
+                        int degree = (int)Math.Ceiling(Rand.Value * HVTRoyaltyDefOf.HVT_LatentPsychic.degreeDatas.Count);
+                        Trait toGain = new Trait(HVTRoyaltyDefOf.HVT_LatentPsychic, degree);
+                        pawn.story.traits.GainTrait(toGain, true);
+                        if (HautsUtility.IsHighFantasy())
+                        {
+                            notification = LetterMaker.MakeLetter(
+                            "HVT_ThunderbirdLatencyLetterFantasy".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), "HVT_ThunderbirdLatencyTextFantasy".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.PositiveEvent, new LookTargets(pawn), null, null, null);
+                        }
+                        else
+                        {
+                            notification = LetterMaker.MakeLetter(
+                            "HVT_ThunderbirdLatencyLetter".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), "HVT_ThunderbirdLatencyText".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), LetterDefOf.PositiveEvent, new LookTargets(pawn), null, null, null);
+                        }
+                        Find.LetterStack.ReceiveLetter(notification, null);
+                    }
+                }
+                pawn.health.RemoveHediff(this.parent);
+            }
+        }
+    }
+    public class HediffCompProperties_DamageNegationWraith : HediffCompProperties_DamageNegation
+    {
+        public HediffCompProperties_DamageNegationWraith()
+        {
+            this.compClass = typeof(HediffComp_DamageNegationWraith);
+        }
+    }
+    public class HediffComp_DamageNegationWraith : HediffComp_DamageNegation
+    {
+        public new HediffCompProperties_DamageNegationWraith Props
+        {
+            get
+            {
+                return (HediffCompProperties_DamageNegationWraith)this.props;
+            }
+        }
+        public override bool ShouldDoEffect(DamageInfo dinfo)
+        {
+            if (this.Pawn.GetStatValue(StatDefOf.PsychicSensitivity) <= float.Epsilon)
+            {
+                return false;
+            }
+            if (dinfo.Weapon != null && dinfo.Weapon.weaponTags != null && dinfo.Weapon.weaponTags.Contains("Bladelink"))
+            {
+                return false;
+            }
+            return base.ShouldDoEffect(dinfo);
+        }
+    }
     public class CompProperties_AbilityCantTargetWoke : CompProperties_AbilityEffect
     {
     }
@@ -6084,6 +6436,12 @@ namespace HautsTraitsRoyalty
     public class CompProperties_AbilityErinys : CompProperties_AbilityAiScansForTargets
     {
         public float aiUseFrequencyOnMundanes;
+        public int cooldownOnDeafen;
+        public int cooldownOnNonPsycasterKill;
+        public int baseCooldownOnPsycasterKill;
+        public int psylinkLevelCapForCooldown = 999;
+        public HediffDef hediffToGrant;
+        public float severityPerPsylinklevel;
     }
     public class CompAbilityEffect_Erinys : CompAbilityEffect_AiScansForTargets
     {
@@ -6106,20 +6464,40 @@ namespace HautsTraitsRoyalty
                     Hediff hediff = HediffMaker.MakeHediff(HVTRoyaltyDefOf.HVT_ErinysCensure, pawn, null);
                     pawn.health.AddHediff(hediff);
                 }
-                if (psysens <= float.Epsilon && (pawn.story == null || !PsychicAwakeningUtility.IsAwakenedPsychic(pawn)))
+                bool lethal = psysens <= float.Epsilon && (pawn.story == null || !PsychicAwakeningUtility.IsAwakenedPsychic(pawn));
+                if (lethal)
                 {
-                    int psylinks = (int)Math.Ceiling(Rand.Value * pawn.GetPsylinkLevel());
-                    for (int i = 0; i < psylinks; i++)
+                    if (pawn.HasPsylink)
                     {
-                        Thing thing = ThingMaker.MakeThing(ThingDefOf.PsychicAmplifier, null);
-                        GenSpawn.Spawn(thing, pawn.Position, pawn.Map, Rot4.North, WipeMode.Vanish, false);
-                        pawn.ChangePsylinkLevel(-1, false);
+                        int psyLevel = pawn.GetPsylinkLevel();
+                        int funcPsyLevel = Math.Min(this.Props.psylinkLevelCapForCooldown, psyLevel);
+                        this.parent.StartCooldown(this.Props.baseCooldownOnPsycasterKill*(int)Math.Pow(funcPsyLevel, funcPsyLevel));
+                        this.parent.pawn.health.hediffSet.TryGetHediff(this.Props.hediffToGrant, out Hediff h);
+                        if (h != null)
+                        {
+                            h.Severity += psyLevel*this.Props.severityPerPsylinklevel;
+                        } else {
+                            h = HediffMaker.MakeHediff(this.Props.hediffToGrant,this.parent.pawn);
+                            this.parent.pawn.health.AddHediff(h);
+                            h.Severity = psyLevel * this.Props.severityPerPsylinklevel;
+                        }
+                        int psylinks = (int)Math.Ceiling(Rand.Value * pawn.GetPsylinkLevel());
+                        for (int i = 0; i < psylinks; i++)
+                        {
+                            Thing thing = ThingMaker.MakeThing(ThingDefOf.PsychicAmplifier, null);
+                            GenSpawn.Spawn(thing, pawn.Position, pawn.Map, Rot4.North, WipeMode.Vanish, false);
+                            pawn.ChangePsylinkLevel(-1, false);
+                        }
+                    } else {
+                        this.parent.StartCooldown(this.Props.cooldownOnNonPsycasterKill);
                     }
                     pawn.Kill(null);
-                    if (this.parent.CooldownTicksRemaining <= 5000)
-                    {
-                        this.parent.StartCooldown(5000);
-                    }
+                } else {
+                    this.parent.StartCooldown(this.Props.cooldownOnDeafen);
+                }
+                if (this.parent.CooldownTicksRemaining > this.parent.def.cooldownTicksRange.max)
+                {
+                    this.parent.StartCooldown(this.parent.def.cooldownTicksRange.max);
                 }
             }
         }
@@ -6160,7 +6538,7 @@ namespace HautsTraitsRoyalty
         {
             base.Apply(target, dest);
             Pawn innerPawn = ((Corpse)target.Thing).InnerPawn;
-            if (innerPawn.health.hediffSet.HasHediff(this.Props.hediffDefToExplode))
+            if (innerPawn.health.hediffSet.HasHediff(this.Props.hediffDefToExplode) && (innerPawn.story == null || !innerPawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitPhoenix)))
             {
                 if (PawnUtility.ShouldSendNotificationAbout(innerPawn))
                 {
@@ -6196,96 +6574,9 @@ namespace HautsTraitsRoyalty
             }
         }
     }
-    public class CompProperties_AbilityMaybeGivePsylink : CompProperties_AbilityEffect
-    {
-        public int count;
-        public HediffDef failureHediff;
-        [MustTranslate]
-        public string succeedLetterLabel;
-        [MustTranslate]
-        public string succeedLetterText;
-        [MustTranslate]
-        public string failLetterLabel;
-        [MustTranslate]
-        public string failLetterText;
-        [MustTranslate]
-        public string killLetterLabel;
-        [MustTranslate]
-        public string killLetterText;
-    }
-    public class CompAbilityEffect_MaybeGivePsylink : CompAbilityEffect
-    {
-        public new CompProperties_AbilityMaybeGivePsylink Props
-        {
-            get
-            {
-                return (CompProperties_AbilityMaybeGivePsylink)this.props;
-            }
-        }
-        public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
-        {
-            Pawn pawn;
-            if ((pawn = (target.Thing as Pawn)) != null)
-            {
-                if (pawn.Downed)
-                {
-                    if (throwMessages)
-                    {
-                        Messages.Message("HVT_WontTargetDowned".Translate(), pawn, MessageTypeDefOf.RejectInput, false);
-                    }
-                    return false;
-                }
-            }
-            return base.Valid(target, throwMessages);
-        }
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
-        {
-            base.Apply(target, dest);
-            Pawn pawn = target.Pawn;
-            float successChance = 1f;
-            if (ModsConfig.IsActive("VanillaExpanded.VPsycastsE"))
-            {
-                Hediff_Level psylink = (Hediff_Level)pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamedSilentFail("VPE_PsycastAbilityImplant"));
-                if (psylink != null)
-                {
-                    successChance -= ((float)psylink.level / 100f);
-                }
-            } else {
-                successChance -= ((float)pawn.GetPsylinkLevel()/(float)pawn.GetMaxPsylinkLevel());
-            }
-            if (pawn != null)
-            {
-                if (Rand.Value <= successChance)
-                {
-                    pawn.ChangePsylinkLevel(this.Props.count, false);
-                    ChoiceLetter notification = LetterMaker.MakeLetter(
-                    this.Props.succeedLetterLabel.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), this.Props.succeedLetterText.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), LetterDefOf.PositiveEvent, new LookTargets(pawn), null, null, null);
-                    Find.LetterStack.ReceiveLetter(notification, null);
-                } else if (!pawn.health.hediffSet.HasHediff(this.Props.failureHediff)) {
-                    Hediff hediff = HediffMaker.MakeHediff(this.Props.failureHediff, pawn, null);
-                    pawn.health.AddHediff(hediff);
-                    ChoiceLetter notification = LetterMaker.MakeLetter(
-                    this.Props.failLetterLabel.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), this.Props.failLetterText.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), LetterDefOf.NegativeEvent, new LookTargets(pawn), null, null, null);
-                    Find.LetterStack.ReceiveLetter(notification, null);
-                } else {
-                    pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.failureHediff).Severity += 1f;
-                    if (pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.failureHediff).Severity < 2f)
-                    {
-                        ChoiceLetter notification = LetterMaker.MakeLetter(
-                        this.Props.failLetterLabel.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), this.Props.failLetterText.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), LetterDefOf.NegativeEvent, new LookTargets(pawn), null, null, null);
-                        Find.LetterStack.ReceiveLetter(notification, null);
-                    } else {
-                        ChoiceLetter notification = LetterMaker.MakeLetter(
-                        this.Props.killLetterLabel.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), this.Props.killLetterText.Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), LetterDefOf.NegativeEvent, new LookTargets(this.parent.pawn), null, null, null);
-                        Find.LetterStack.ReceiveLetter(notification, null);
-                    }
-                }
-            }
-        }
-    }
     public class CompProperties_AbilityPsychicAwakening : CompProperties_AbilityEffect
     {
-        public float chanceToAwaken = 0.33f;
+        public float maxAwakenings = 2;
     }
     public class CompAbilityEffect_PsychicAwakening : CompAbilityEffect
     {
@@ -6313,7 +6604,7 @@ namespace HautsTraitsRoyalty
                         wokes++;
                     }
                 }
-                if (wokes >= 2)
+                if (wokes >= this.Props.maxAwakenings)
                 {
                     if (throwMessages)
                     {
@@ -6324,46 +6615,13 @@ namespace HautsTraitsRoyalty
             }
             return base.Valid(target, throwMessages);
         }
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
-        {
-            base.Apply(target, dest);
-            Pawn pawn = target.Pawn;
-            if (pawn != null && pawn.story != null)
-            {
-                ChoiceLetter notification;
-                if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LatentPsychic) || PsychicAwakeningUtility.IsAwakenedPsychic(pawn,false))
-                {
-                    if (Rand.Value <= this.Props.chanceToAwaken)
-                    {
-                        PsychicAwakeningUtility.AwakenPsychicTalent(pawn, true, "HVT_GetThunderbirdstruck".Translate(), "HVT_GetThunderbirdstruckFantasy".Translate());
-                    } else {
-                        notification = LetterMaker.MakeLetter(
-                    "HVT_ThunderbirdFailLetter".Translate().Formatted(pawn.Name.ToStringShort), "HVT_ThunderbirdFailText".Translate().Formatted(this.parent.pawn.Name.ToStringShort, pawn.Name.ToStringShort), LetterDefOf.NeutralEvent, new LookTargets(pawn), null, null, null);
-                        Find.LetterStack.ReceiveLetter(notification, null);
-                    }
-                    return;
-                }
-                int degree = (int)Math.Ceiling(Rand.Value*HVTRoyaltyDefOf.HVT_LatentPsychic.degreeDatas.Count);
-                Trait toGain = new Trait(HVTRoyaltyDefOf.HVT_LatentPsychic,degree);
-                pawn.story.traits.GainTrait(toGain, true);
-                if (HautsUtility.IsHighFantasy())
-                {
-                    notification = LetterMaker.MakeLetter(
-                    "HVT_ThunderbirdLatencyLetterFantasy".Translate().Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), "HVT_ThunderbirdLatencyTextFantasy".Translate().Formatted(this.parent.pawn.Named("INITIATOR"), pawn.Named("RECIPIENT")), LetterDefOf.PositiveEvent, new LookTargets(pawn), null, null, null);
-                } else {
-                    notification = LetterMaker.MakeLetter(
-                    "HVT_ThunderbirdLatencyLetter".Translate().Formatted(pawn.Name.ToStringShort), "HVT_ThunderbirdLatencyText".Translate().Formatted(this.parent.pawn.Name.ToStringShort, pawn.Name.ToStringShort), LetterDefOf.PositiveEvent, new LookTargets(pawn), null, null, null);
-                }
-                this.parent.ResetCooldown();
-                Find.LetterStack.ReceiveLetter(notification, null);
-            }
-        }
     }
     public class CompProperties_AbilityMindControl : CompProperties_AbilityAiScansForTargets
     {
         public bool setsIdeo = true;
         public bool permanent = true;
         public bool failsOnAwokens;
+        public bool failsOnTrans;
         public float durationHours = 1f;
         public float aiMinMarketValueToTarget;
         [MustTranslate]
@@ -6390,9 +6648,16 @@ namespace HautsTraitsRoyalty
                 {
                     return false;
                 }
-                if (this.Props.failsOnAwokens && pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                if (pawn.story != null)
                 {
-                    return false;
+                    if (this.Props.failsOnAwokens && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                    {
+                        return false;
+                    }
+                    if (this.Props.failsOnTrans && PsychicAwakeningUtility.IsTranscendent(pawn))
+                    {
+                        return false;
+                    }
                 }
             }
             return canTarget;
@@ -6415,13 +6680,24 @@ namespace HautsTraitsRoyalty
                     }
                     return false;
                 }
-                if (this.Props.failsOnAwokens && pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                if (pawn.story != null)
                 {
-                    if (throwMessages)
+                    if (this.Props.failsOnAwokens && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
                     {
-                        Messages.Message("HVT_WontTargetAwakened".Translate(), pawn, MessageTypeDefOf.RejectInput, false);
+                        if (throwMessages)
+                        {
+                            Messages.Message("HVT_WontTargetAwakened".Translate(), pawn, MessageTypeDefOf.RejectInput, false);
+                        }
+                        return false;
                     }
-                    return false;
+                    if (this.Props.failsOnTrans && PsychicAwakeningUtility.IsTranscendent(pawn))
+                    {
+                        if (throwMessages)
+                        {
+                            Messages.Message("HVT_WontTargetTrans".Translate(), pawn, MessageTypeDefOf.RejectInput, false);
+                        }
+                        return false;
+                    }
                 }
             }
             return base.Valid(target, throwMessages);
@@ -6432,9 +6708,16 @@ namespace HautsTraitsRoyalty
             Pawn pawn = target.Pawn;
             if (pawn != null)
             {
-                if (this.Props.failsOnAwokens && pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                if (pawn.story != null)
                 {
-                    return;
+                    if (this.Props.failsOnAwokens && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                    {
+                        return;
+                    }
+                    if (this.Props.failsOnTrans && PsychicAwakeningUtility.IsTranscendent(pawn))
+                    {
+                        return;
+                    }
                 }
                 if (pawn.InMentalState)
                 {
@@ -6848,8 +7131,16 @@ namespace HautsTraitsRoyalty
             for (int i = 0; i < PulverizationBeam.tmpThings.Count; i++)
             {
                 Pawn pawn = PulverizationBeam.tmpThings[i] as Pawn;
-                if (pawn == null || pawn.story == null || !pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitZiz))
+                if (pawn != null && pawn.story != null && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitZiz))
                 {
+                    pawn.health.hediffSet.TryGetHediff(HVTRoyaltyDefOf.HVT_ZizBuff,out Hediff zizBuff);
+                    if (zizBuff != null)
+                    {
+                        zizBuff.Severity = zizBuff.def.maxSeverity;
+                    } else {
+                        pawn.health.AddHediff(HVTRoyaltyDefOf.HVT_ZizBuff);
+                    }
+                } else {
                     BattleLogEntry_DamageTaken battleLogEntry_DamageTaken = null;
                     if (pawn != null)
                     {

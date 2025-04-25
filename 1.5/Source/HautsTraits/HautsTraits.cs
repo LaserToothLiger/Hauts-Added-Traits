@@ -16,6 +16,7 @@ using VFECore.Shields;
 using HautsFramework;
 using System.Linq.Expressions;
 using Verse.Noise;
+using RimWorld.QuestGen;
 
 namespace HautsTraits
 {
@@ -87,6 +88,8 @@ namespace HautsTraits
             {
                 harmony.Patch(AccessTools.Method(typeof(MetalhorrorUtility), nameof(MetalhorrorUtility.Infect)),
                                postfix: new HarmonyMethod(patchType, nameof(HVTInfectPostfix)));
+                harmony.Patch(AccessTools.Method(typeof(MentalBreaker), nameof(MentalBreaker.TryDoRandomMoodCausedMentalBreak)),
+                               postfix: new HarmonyMethod(patchType, nameof(HVTTwistedTryDoRandomMoodCausedMentalBreakPostfix)));
             }
             if (ModsConfig.RoyaltyActive || ModsConfig.AnomalyActive)
             {
@@ -399,7 +402,7 @@ namespace HautsTraits
         public static void HVTConversationalistTryStartMentalStatePrefix(MentalStateHandler __instance, bool causedByMood, bool causedByDamage, ref MentalStateDef stateDef)
         {
             Pawn pawn = GetInstanceField(typeof(MentalStateHandler), __instance, "pawn") as Pawn;
-            if (stateDef != MentalStateDefOf.SocialFighting && (causedByDamage || causedByMood) && pawn.story != null && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking) && pawn.story.traits.HasTrait(HVTDefOf.HVT_Conversationalist) && !pawn.story.traits.HasTrait(TraitDefOf.Kind))
+            if (stateDef != MentalStateDefOf.SocialFighting && (!ModsConfig.AnomalyActive || stateDef != MentalStateDefOf.HumanityBreak) && (causedByDamage || causedByMood) && pawn.story != null && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking) && pawn.story.traits.HasTrait(HVTDefOf.HVT_Conversationalist) && !pawn.story.traits.HasTrait(TraitDefOf.Kind))
             {
                 List<Pawn> candidates = new List<Pawn>();
                 InsultingSpreeMentalStateUtility.GetInsultCandidatesFor(pawn, candidates, false);
@@ -584,6 +587,21 @@ namespace HautsTraits
                             MetalhorrorUtility.TryEmerge(source, "HVT_HunterVsHorror".Translate(source.Named("INFECTED")), false);
                             continue;
                         }
+                    }
+                }
+            }
+        }
+        public static void HVTTwistedTryDoRandomMoodCausedMentalBreakPostfix(bool __result, MentalBreaker __instance)
+        {
+            if (__result == true && Rand.Chance(0.1f) && ModsConfig.AnomalyActive)
+            {
+                Pawn pawn = GetInstanceField(typeof(MentalBreaker), __instance, "pawn") as Pawn;
+                if (pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Twisted) && !pawn.Inhumanized())
+                {
+                    pawn.health.AddHediff(HediffDefOf.Inhumanized);
+                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                    {
+                        Messages.Message("HVT_LostHumanity".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.NeutralEvent, true);
                     }
                 }
             }
@@ -960,6 +978,8 @@ namespace HautsTraits
         public static TraitDef HVT_MonsterHunter;
         [MayRequireAnomaly]
         public static TraitDef HVT_MonsterLover;
+        [MayRequireAnomaly]
+        public static TraitDef HVT_Twisted;
 
         public static ThoughtDef HVT_Bibliophilia;
         public static ThoughtDef HVT_StimulatingConversation;
@@ -1228,6 +1248,24 @@ namespace HautsTraits
                 }
                 return num;
             }
+        }
+    }
+    public class ThoughtWorker_ClothistVsSelf : ThoughtWorker
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            return p.apparel.PsychologicallyNude;
+        }
+    }
+    public class ThoughtWorker_BroYourGroinOrChestIsUncovered : ThoughtWorker
+    {
+        protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn otherPawn)
+        {
+            if (!p.story.CaresAboutOthersAppearance)
+            {
+                return false;
+            }
+            return ThoughtWorker_Precept_GroinOrChestUncovered.HasUncoveredGroinOrChest(otherPawn);
         }
     }
     public class ThoughtWorker_VainApparelQuality : ThoughtWorker
@@ -1708,6 +1746,28 @@ namespace HautsTraits
                 }
             }
             return ThoughtState.Inactive;
+        }
+    }
+    public class ThoughtWorker_ThourtInhumanized : ThoughtWorker
+    {
+        protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn otherPawn)
+        {
+            if (!otherPawn.RaceProps.Humanlike || !RelationsUtility.PawnsKnowEachOther(p, otherPawn))
+            {
+                return false;
+            }
+            return otherPawn.Inhumanized() ? ThoughtState.ActiveAtStage(1) : ThoughtState.ActiveAtStage(0);
+        }
+    }
+    public class ThoughtWorker_TwistedYearning : ThoughtWorker
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            if (!ModsConfig.AnomalyActive)
+            {
+                return ThoughtState.Inactive;
+            }
+            return p.Inhumanized() ? ThoughtState.Inactive : ThoughtState.ActiveAtStage(0);
         }
     }
     public class Thought_Planetkiller : Thought_Situational
@@ -3031,6 +3091,83 @@ namespace HautsTraits
         }
         private int ticksToHeal;
     }
+    public class HediffCompProperties_ManchurianCandidacy : HediffCompProperties
+    {
+        public HediffCompProperties_ManchurianCandidacy()
+        {
+            this.compClass = typeof(HediffComp_ManchurianCandidacy);
+        }
+        public int periodicity;
+        public float range;
+        public float chance;
+        public FactionDef faction;
+        public string onFactionChangeMessage;
+    }
+    public class HediffComp_ManchurianCandidacy : HediffComp
+    {
+        public HediffCompProperties_ManchurianCandidacy Props
+        {
+            get
+            {
+                return (HediffCompProperties_ManchurianCandidacy)this.props;
+            }
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            if (this.Pawn.IsHashIntervalTick(this.Props.periodicity) && this.Pawn.Spawned && (this.Pawn.Faction == null || this.Pawn.Faction.def != this.Props.faction) && (this.Pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight) || this.Pawn.health.capacities.CapableOf(PawnCapacityDefOf.Hearing)))
+            {
+                foreach (Pawn p in this.Pawn.Map.mapPawns.AllHumanlikeSpawned)
+                {
+                    if (p.Faction != null && p.Faction.def == this.Props.faction && p.Position.DistanceTo(this.Pawn.Position) <= this.Props.range && GenSight.LineOfSight(p.Position,this.Pawn.Position,this.Pawn.Map) && Rand.Chance(this.Props.chance))
+                    {
+                        if (PawnUtility.ShouldSendNotificationAbout(this.Pawn))
+                        {
+                            Messages.Message(this.Props.onFactionChangeMessage.Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), this.Pawn, MessageTypeDefOf.NegativeEvent, true);
+                        }
+                        this.Pawn.SetFaction(p.Faction,p);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    public class HediffCompProperties_SuperSpreader : HediffCompProperties
+    {
+        public HediffCompProperties_SuperSpreader()
+        {
+            this.compClass = typeof(HediffComp_SuperSpreader);
+        }
+        public float mtbDays;
+    }
+    public class HediffComp_SuperSpreader : HediffComp
+    {
+        public HediffCompProperties_SuperSpreader Props
+        {
+            get
+            {
+                return (HediffCompProperties_SuperSpreader) this.props;
+            }
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            if (this.Pawn.IsHashIntervalTick(60) && Rand.MTBEventOccurs(this.Props.mtbDays, 60000f, 60f))
+            {
+                BiomeDef biome;
+                if (this.Pawn.Tile != -1)
+                {
+                    biome = Find.WorldGrid[this.Pawn.Tile].biome;
+                } else {
+                    biome = DefDatabase<BiomeDef>.GetRandom();
+                }
+                IncidentDef incidentDef = DefDatabase<IncidentDef>.AllDefs.Where((IncidentDef d) => d.category == IncidentCategoryDefOf.DiseaseHuman).RandomElementByWeightWithFallback((IncidentDef d) => biome.CommonalityOfDisease(d), null);
+                if (incidentDef != null)
+                {
+                    IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.DiseaseHuman, this.Pawn.Map ?? Find.Maps.Where((Map x) => x.IsPlayerHome).RandomElement<Map>());
+                    incidentDef.Worker.TryExecute(parms);
+                }
+            }
+        }
+    }
     public class CompProperties_TargetEffectGiveTrait : CompProperties
     {
         public CompProperties_TargetEffectGiveTrait()
@@ -3215,7 +3352,7 @@ namespace HautsTraits
             this.grantableTraits.Clear();
             foreach (TraitDef t in DefDatabase<TraitDef>.AllDefsListForReading)
             {
-                if (t.GetGenderSpecificCommonality(this.pawn.gender) > 0f && !isOtherDisallowedTrait(t))
+                if (t.GetGenderSpecificCommonality(this.pawn.gender) > 0f && !isOtherDisallowedTrait(t) && !this.pawn.WorkTagIsDisabled(t.requiredWorkTags))
                 {
                     if (t.HasModExtension<PersoneuroformatterScrambler>())
                     {
@@ -3846,6 +3983,7 @@ namespace HautsTraits
         public float maxTranscendences = 2f;
         public float wokeGeneTransSuccessChance = 0.6f;
         public bool visibleTransEffect = true;
+        public bool enableTranscendenceHints = true;
         public int MAX_TRAITS = -1;
         public float traitsMin = 1f;
         public float traitsMax = 3f;
@@ -3860,6 +3998,7 @@ namespace HautsTraits
             Scribe_Values.Look(ref maxTranscendences, "maxTranscendences", 2f);
             Scribe_Values.Look(ref wokeGeneTransSuccessChance, "wokeGeneTransSuccessChance", 0.6f);
             Scribe_Values.Look(ref visibleTransEffect, "visibleTransEffect", true);
+            Scribe_Values.Look(ref enableTranscendenceHints, "enableTranscendenceHints", true);
             Scribe_Values.Look(ref traitsMin, "traitsMin", 1);
             if (traitsMax < traitsMin)
             {
@@ -3986,12 +4125,13 @@ namespace HautsTraits
                     this.ParseInput(displayTransMax, settings.maxTranscendences, 5,out settings.maxTranscendences);
                 }
                 y += 35;
-                Rect inRect2 = new Rect(x, y, inRect.width, 32);
+                Rect inRect2 = new Rect(x, y, inRect.width, 65);
                 Listing_Standard l2 = new Listing_Standard();
                 l2.Begin(inRect2);
                 l2.CheckboxLabeled("HVT_SettingVisibleFXTrans".Translate(), ref settings.visibleTransEffect, "HVT_TooltipVisibleFXTrans".Translate());
+                l2.CheckboxLabeled("HVT_SettingTransHints".Translate(), ref settings.enableTranscendenceHints, "HVT_TooltipTransHints".Translate());
                 l2.End();
-                y += 50;
+                y += 70;
                 if (ModsConfig.BiotechActive)
                 {
                     origR = settings.wokeGeneTransSuccessChance;

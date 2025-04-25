@@ -572,6 +572,24 @@
 						</value>
 					</match>
 				</li>
+				<!--Textiles hate Scrapper since it forces no aversion to tattered apparel-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="VME_Scrapper"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="VME_Scrapper"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Textile</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="VME_Scrapper"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Textile</li>
+						</value>
+					</match>
+				</li>
 				<!--Vagabonds hate Gestalt, Nationalist, City Builders; Outdoorsies also hate City Builders; Tranquils also hate Nationalist-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_Gestalt"]/disagreeableTraits</xpath>

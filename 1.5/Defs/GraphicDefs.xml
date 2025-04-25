@@ -196,4 +196,28 @@
 		  <drawSize>2</drawSize>
 		</graphicData>
   </ThingDef>
+  <ThingDef ParentName="MoteBase" MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>HVT_DocPhosph</defName>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.3</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>9999</solidTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Mote/SolarPinhole</texPath>
+      <shaderType>MoteGlowDistorted</shaderType>
+      <color>(229, 255, 215, 242)</color>
+      <drawSize>4</drawSize>
+      <shaderParameters>
+        <_DistortionTex>/Other/Ripples</_DistortionTex>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_DistortionScale>0.4</_DistortionScale>
+        <_distortionScrollSpeed>(0.07, 0.07, 0.0)</_distortionScrollSpeed>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
 </Defs>

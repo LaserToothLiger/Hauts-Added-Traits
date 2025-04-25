@@ -461,6 +461,7 @@
 			  <PsychicSensitivity>0.6</PsychicSensitivity>
 			  <RoyalFavorValue>4</RoyalFavorValue>
 			  <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.1</StudyEfficiency>
+			  <Hauts_ApparelWearRateFactor>-0.3</Hauts_ApparelWearRateFactor>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -1097,6 +1098,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statFactors>
 			  <LifespanFactor>100000</LifespanFactor>
+			  <Hauts_ApparelWearRateFactor>0</Hauts_ApparelWearRateFactor>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			</statFactors>
 			<statOffsets>
@@ -2089,7 +2091,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOW</descKey><descKeyFantasy>HVT_TransOWFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOrbWeaver</descKey><descKeyFantasy>HVT_TransOrbWeaverFantasy</descKeyFantasy><category>transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3257,7 +3259,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic leviathan</label>
-			<description>{PAWN_nameDef} gradually develops further transcendent powers over the course of {PAWN_possessive} lifetime. {PAWN_pronoun} also has an additional awakening.</description>
+			<description>{PAWN_nameDef} gains increasing potency as a psycaster the longer {PAWN_pronoun} lives, develops a new awakening every six years, and gradually develops further transcendent powers over the course of {PAWN_possessive} lifetime.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statFactors>
 			  <LifespanFactor>100</LifespanFactor>
@@ -3385,7 +3387,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic wraith</label>
-			<description>When {PAWN_nameDef} is slain, {PAWN_pronoun} will transfer {PAWN_possessive} consciousness into someone else, replacing their mind with {PAWN_possessive} own. The only way to prevent this is to strike {PAWN_objective} with a persona weapon, which suppresses this ability for a day, or to kill {PAWN_objective} within an hour of transferring to a new body.</description>
+			<description>When {PAWN_nameDef} is slain, {PAWN_pronoun} will transfer {PAWN_possessive} consciousness into someone else, replacing their mind with {PAWN_possessive} own. For 24 hours afterward, {PAWN_pronoun} will be invulnerable to anything other than persona weapons, but will not be able to transfer to a new body.</description>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>

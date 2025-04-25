@@ -37,7 +37,7 @@
   </DamageDef>
   <!--fulmar-->
   <ThingDef ParentName="BaseBullet">
-    <defName>PsychicFulmarProjectile</defName>
+    <defName>HVT_PsychicFulmarProjectile</defName>
     <label>psychic siege blast</label>
 	<graphicData>
 	  <graphicClass>Graphic_Single</graphicClass>
@@ -69,7 +69,7 @@
   </ThingDef>
   <!--hornet-->
   <ThingDef ParentName="BaseBullet">
-    <defName>PsychicHornetProjectile</defName>
+    <defName>HVT_PsychicHornetProjectile</defName>
     <label>psychic blast projectile</label>
 	<graphicData>
 	  <graphicClass>Graphic_Single</graphicClass>
@@ -125,7 +125,7 @@
   </DamageDef>
   <!--yellowjacket-->
   <ThingDef ParentName="BaseBullet">
-    <defName>PsychicYellowjacketProjectile</defName>
+    <defName>HVT_PsychicYellowjacketProjectile</defName>
     <label>psychic bolt projectile</label>
 	<graphicData>
 	  <graphicClass>Graphic_Single</graphicClass>
@@ -165,4 +165,30 @@
     <isRanged>true</isRanged>
     <makesAnimalsFlee>true</makesAnimalsFlee>
   </DamageDef>
+  <!--ziz-->
+  <ThingDef ParentName="BaseBullet">
+    <defName>HVT_ZizBlastProjectile</defName>
+    <label>pulverization blast projectile</label>
+	<graphicData>
+	  <graphicClass>Graphic_Single</graphicClass>
+	  <texPath>Things/Mote/PsycastCast</texPath>
+	  <shaderType>MoteGlowDistorted</shaderType>
+	  <color>(229, 255, 215)</color>
+	  <drawSize>1</drawSize>
+	  <shaderParameters>
+		<_DistortionTex>/Other/Ripples</_DistortionTex>
+		<_distortionIntensity>0.11</_distortionIntensity>
+		<_DistortionScale>0.4</_DistortionScale>
+		<_distortionScrollSpeed>(0.5, 0.5, 0.0)</_distortionScrollSpeed>
+	  </shaderParameters>
+	</graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>80</speed>
+      <damageDef>Hauts_SkipFrag</damageDef>
+      <explosionRadius>1.9</explosionRadius>
+      <explosionDelay>10</explosionDelay>
+      <damageAmountBase>9</damageAmountBase>
+    </projectile>
+  </ThingDef>
 </Defs>

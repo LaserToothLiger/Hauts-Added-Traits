@@ -295,6 +295,24 @@
 						</value>
 					</match>
 				</li>
+				<!--Textiles hate Nudism-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="Nudism"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Nudism"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Textile</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Nudism"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Textile</li>
+						</value>
+					</match>
+				</li>
 				<!--Vagabonds like Individualist, dislike Collectivist. Libs into Individualism too-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="Individualist"]/agreeableTraits</xpath>
@@ -447,18 +465,18 @@
 									<xpath>/Defs/MemeDef[defName="Inhuman"]</xpath>
 									<value>
 										<agreeableTraits>
-											<li>HVT_Catastrophist</li>
 											<li>HVT_Corruptible</li>
 											<li>HVT_MonsterLover</li>
+											<li>HVT_Twisted</li>
 										</agreeableTraits>
 									</value>
 								</nomatch>
 								<match Class="PatchOperationAdd">
 									<xpath>/Defs/MemeDef[defName="Inhuman"]/agreeableTraits</xpath>
 									<value>
-										<li>HVT_Catastrophist</li>
 										<li>HVT_Corruptible</li>
 										<li>HVT_MonsterLover</li>
+										<li>HVT_Twisted</li>
 									</value>
 								</match>
 							</li>

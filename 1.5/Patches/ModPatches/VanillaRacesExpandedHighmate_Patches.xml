@@ -69,53 +69,69 @@
 						</li>
 					</value>
 				</li>
-				<li MayRequire="Ludeon.RimWorld.Royalty" Class="PatchOperationAdd">
-					<xpath>/Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef[defName="VRE_HighmateBondEffectDefs"]/bondHediffTraits/li[hediff="VRE_PsychicBondPsychicallyHypersensitive"]/traitRequirements</xpath>
-					<value>
-						<li>
-							<def>HVT_LatentPsychic</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedAugur</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedChanshi</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedDeluge</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedErudite</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedIncarnate</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedLuminary</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedMantraist</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedPerennial</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedSage</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedSiphoner</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedTitan</def>
-						</li>
-						<li>
-							<def>HVT_AwakenedUndying</def>
-						</li>
-					</value>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Royalty</li>
+					</mods>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef[defName="VRE_HighmateBondEffectDefs"]/bondHediffTraits/li[hediff="VRE_PsychicBondPsychicallyHypersensitive"]/traitRequirements</xpath>
+						<value>
+							<li>
+								<def>HVT_LatentPsychic</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedAugur</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedChanshi</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedDeluge</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedErudite</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedIncarnate</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedLuminary</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedMantraist</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedPerennial</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedSage</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedSiphoner</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedTitan</def>
+							</li>
+							<li>
+								<def>HVT_AwakenedUndying</def>
+							</li>
+						</value>
+					</match>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef[defName="VRE_HighmateBondEffectDefs"]/bondHediffTraits</xpath>
 					<value>
+						<li>
+							<traitRequirements>
+								<li>
+									<def>HVT_Textile</def>
+								</li>
+								<li>
+									<def>HVT_Vain</def>
+								</li>
+							</traitRequirements>
+							<hediff>HVT_PsychicBondClothier</hediff>
+						</li>
 						<li>
 							<traitRequirements>
 								<li>

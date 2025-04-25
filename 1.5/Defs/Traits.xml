@@ -654,6 +654,32 @@
 	</TraitDef>
 	
 	<TraitDef>
+		<defName>HVT_Textile</defName>
+		<commonality>0.4</commonality>
+		<degreeDatas>
+		  <li>
+			<label>textile</label>
+			<description>{PAWN_nameDef} places great importance on the wearing of garments. {PAWN_pronoun} dislikes being naked, and thinks poorly of others for not covering up at all times. {PAWN_pronoun} also can't stand wearing tattered apparel, so {PAWN_pronoun} takes good care of {PAWN_possessive} apparel.</description>
+			<statOffsets>
+			  <Hauts_ApparelWearRateFactor>-0.6</Hauts_ApparelWearRateFactor>
+			</statOffsets>
+			<skillGains>
+			  <Crafting>2</Crafting>
+			</skillGains>
+			<possessions>
+			  <Apparel_Pants />
+			  <DevilstrandCloth>40~75</DevilstrandCloth>
+			</possessions>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+        </modExtensions>
+		<conflictingTraits><li>Nudist</li></conflictingTraits>
+		<requiredWorkTags><li>Crafting</li></requiredWorkTags>
+    </TraitDef>
+	
+	<TraitDef>
 		<defName>HVT_Tranquil</defName>
 		<allowOnHostileSpawn>false</allowOnHostileSpawn>
 		<commonality>0</commonality>
@@ -764,6 +790,9 @@
 			<description>{PAWN_nameDef} is obsessed with {PAWN_possessive} own appearance. {PAWN_possessive} beauty and the quality of {PAWN_possessive} apparel impact {PAWN_possessive} mood.</description>
 			<allowedMeditationFocusTypes><li MayRequire="VanillaExpanded.VPsycastsE">VPE_Wealth</li></allowedMeditationFocusTypes>
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_ApparelWearRateFactor>-0.2</Hauts_ApparelWearRateFactor>
+			</statOffsets>
 			<possessions>
 			  <AC_Perfume MayRequire="sarg.alphacrafts">10~20</AC_Perfume>
 			  <AC_Soap MayRequire="sarg.alphacrafts">10~20</AC_Soap>
@@ -1344,6 +1373,7 @@
 			<description>{PAWN_nameDef} believes in a wide variety of superstitions. As {PAWN_pronoun} randomly comes across what {PAWN_pronoun} believes to be omens, {PAWN_possessive} mood will fluctuate.</description>
 			<statOffsets>
 			  <Hauts_IdeoThoughtFactor>0.25</Hauts_IdeoThoughtFactor>
+			  <PsychicRitualQualityOffset MayRequire="Ludeon.RimWorld.Anomaly">0.1</PsychicRitualQualityOffset>
 			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.50</VAEI_SanityLossMultiplier>
 			</statOffsets>
 		  </li>
@@ -1615,6 +1645,39 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="Ludeon.RimWorld.Biotech">HVT_GenePurist</li></conflictingTraits>
+	</TraitDef>
+	<TraitDef MayRequire="Ludeon.RimWorld.Anomaly">
+		<defName>HVT_Twisted</defName>
+		<commonality>0.3</commonality>
+		<degreeDatas>
+		  <li>
+			<label>twisted</label>
+			<description>{PAWN_nameDef} cares less about others and is prone to saying macabre, disturbing things when stressed to the breaking point. {PAWN_pronoun} is unperturbed by monsters and corpses, and has no issue with using either for sustenance or apparel. Ultimately, {PAWN_pronoun} feels restrained by {PAWN_possessive} humanity - and if {PAWN_pronoun} has an extreme mental break, {PAWN_pronoun} might just free {PAWN_objective}self from it.</description>
+			<allowedMeditationFocusTypes><li>Morbid</li></allowedMeditationFocusTypes>
+			<statOffsets>
+			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.75</VAEI_SanityLossMultiplier>
+			</statOffsets>
+			<theOnlyAllowedMentalBreaks>
+			  <li>DarkVisions</li>
+			  <li>InsaneRamblings</li>
+			</theOnlyAllowedMentalBreaks>
+			<possessions>
+			  <Meat_Twisted>30~60</Meat_Twisted>
+			  <VoidsightSerum>1~4</VoidsightSerum>
+			</possessions>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key>
+						<value><li>HVT_TwistedHumanApathy</li></value>
+					</li>
+				</grantedHediffs>
+            </li>
+        </modExtensions>
+		<conflictingTraits><li>HVT_MonsterHunter</li></conflictingTraits>
 	</TraitDef>
 	
 <!--this is a test trait that you can add to a pawn in Dev Mode. I made it after finding a dismayingly large number of mods whose authors seem to believe Melee DPS and Melee Armor Penetration do anything, even though it's

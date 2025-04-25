@@ -37,6 +37,7 @@
 						<HVT_Sniper>0</HVT_Sniper>
 						<HVT_Staid>0</HVT_Staid>
 						<HVT_Tempestophile>0</HVT_Tempestophile>
+						<HVT_Textile>0</HVT_Textile>
 						<HVT_Tranquil>0</HVT_Tranquil>
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vain>0</HVT_Vain>
@@ -199,6 +200,7 @@
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hotfoot>0</HVT_Hotfoot>
 						<HVT_Mariner>0</HVT_Mariner>
+						<HVT_Textile>0</HVT_Textile>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>
@@ -241,6 +243,7 @@
 						<HVT_Skulker>0</HVT_Skulker>
 						<HVT_Sniper>0</HVT_Sniper>
 						<HVT_Tempestophile>0</HVT_Tempestophile>
+						<HVT_Textile>0</HVT_Textile>
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Prideful>1</HVT_Prideful>
@@ -290,6 +293,7 @@
 						<HVT_PeoplePleaser>0</HVT_PeoplePleaser>
 						<HVT_Reveller>0</HVT_Reveller>
 						<HVT_Sadist>0</HVT_Sadist>
+						<HVT_Textile>0</HVT_Textile>
 						<HVT_Vain>0</HVT_Vain>
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
@@ -334,6 +338,7 @@
 						<HVT_Skulker>0</HVT_Skulker>
 						<HVT_Sniper>0</HVT_Sniper>
 						<HVT_Staid>0</HVT_Staid>
+						<HVT_Textile>0</HVT_Textile>
 						<HVT_Tranquil>0</HVT_Tranquil>
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vicious>0</HVT_Vicious>

@@ -617,6 +617,42 @@
     </stages>
   </ThoughtDef>
   
+  <!--textile vs self-->
+  <ThoughtDef>
+    <defName>HVT_TextileIsNaked</defName>
+    <workerClass>HautsTraits.ThoughtWorker_ClothistVsSelf</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Textile</li>
+    </requiredTraits>
+    <nullifyingGenes>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Furskin</li>
+    </nullifyingGenes>
+    <stages>
+      <li>
+        <label>textile naked</label>
+        <description>I'm naked. This is humiliating.</description>
+        <baseMoodEffect>-9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--textile vs other-->
+  <ThoughtDef>
+    <defName>HVT_TextileVsNaked</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>HautsTraits.ThoughtWorker_BroYourGroinOrChestIsUncovered</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Textile</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>textile vs naked</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
   <!--Vain moodlet for 10x personal beauty, +3 per every masterwork apparel worn, +6 per every legendary apparel worn-->
   <ThoughtDef>
     <defName>HVT_BeautyMoodletVain</defName>
@@ -1391,4 +1427,42 @@
       </li>
     </stages>
   </ThoughtDef>
+  
+  <!--twisted vs others-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>HVT_TwistedInhumanity</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>HautsTraits.ThoughtWorker_ThourtInhumanized</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Twisted</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>disappointingly human</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+      <li>
+        <label>inhumanized</label>
+        <baseOpinionOffset>25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--twisted wants to be inhuman-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>HVT_TwistedYearning</defName>
+    <workerClass>HautsTraits.ThoughtWorker_TwistedYearning</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredTraits>
+      <li>HVT_Twisted</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>twisted yearning</label>
+        <description>I am shackled by my humanity. Something glorious waits on the other side...</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
 </Defs>

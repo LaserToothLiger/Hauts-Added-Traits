@@ -2,6 +2,18 @@
 <Defs>
   <!--more hediffs gained from psychic bonding when specific traits are involved-->
 	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>HVT_PsychicBondClothier</defName>
+		<label>Psychic bond (Clothier)</label>
+		<description>Both psychically-bonded individuals benefit from reduced wear and tear of worn apparel.</description>
+		<stages>
+			<li>
+				<statFactors>
+					<Hauts_ApparelWearRateFactor>0.8</Hauts_ApparelWearRateFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>HVT_PsychicBondSocialite</defName>
 		<label>Psychic bond (Socialite)</label>
 		<description>Both psychically-bonded individuals benefit from increased social impact.</description>

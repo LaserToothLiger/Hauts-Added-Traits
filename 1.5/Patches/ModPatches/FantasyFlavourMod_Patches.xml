@@ -157,6 +157,37 @@
 									<description>[PAWN_nameDef] has a dormant gift for magic. It could awaken if [PAWN_pronoun] experiences something sufficiently grand or terrible, permanently transforming [PAWN_objective] into a powerful mage.</description>
 								</value>
 							</li>
+							<!--some transcendence clues need rewriting-->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/HediffDef[defName = "HVT_AwakenedDeathTracker"]/comps/li[@Class="HautsTraitsRoyalty.HediffCompProperties_Transcendenceinator"]/aboutTransingStrings/li[text()="HVT_AboutTransingCharlie"]</xpath>
+								<value>
+									<li>HVT_AboutTransingCharlieFantasy</li>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/HediffDef[defName = "HVT_AwakenedDeathTracker"]/comps/li[@Class="HautsTraitsRoyalty.HediffCompProperties_Transcendenceinator"]/aboutTransingStrings/li[text()="HVT_AboutTransingDelta"]</xpath>
+								<value>
+									<li>HVT_AboutTransingDeltaFantasy</li>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/HediffDef[defName = "HVT_AwakenedDeathTracker"]/comps/li[@Class="HautsTraitsRoyalty.HediffCompProperties_Transcendenceinator"]/aboutTransingStrings/li[text()="HVT_AboutTransingEcho"]</xpath>
+								<value>
+									<li>HVT_AboutTransingEchoFantasy</li>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/HediffDef[defName = "HVT_AwakenedDeathTracker"]/comps/li[@Class="HautsTraitsRoyalty.HediffCompProperties_Transcendenceinator"]/aboutTransingStrings/li[text()="HVT_AboutTransingFoxtrot"]</xpath>
+								<value>
+									<li>HVT_AboutTransingFoxtrotFantasy</li>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/HediffDef[defName = "HVT_AwakenedDeathTracker"]/comps/li[@Class="HautsTraitsRoyalty.HediffCompProperties_Transcendenceinator"]/aboutTransingStrings/li[text()="HVT_AboutTransingGolf"]</xpath>
+								<value>
+									<li>HVT_AboutTransingGolfFantasy</li>
+								</value>
+							</li>
 							<!--awakening rewrites, the names are fine but the descriptions all need slight rewrites-->
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_AwakenedAugur"]/degreeDatas/li/description</xpath>
@@ -348,7 +379,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitCassowary"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} deals 2.2x damage with enchanted weapons, further increased by {PAWN_possessive} own magic sensitivity.</description>
+									<description>{PAWN_nameDef} deals 2.2x damage with persona-enchanted weapons, further increased by {PAWN_possessive} own magic sensitivity.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1336,6 +1367,12 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_TTraitLeviathan"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} gains increasing potency as a spellcaster the longer {PAWN_pronoun} lives, develops a new awakening every six years, and gradually develops further transcendent powers over the course of {PAWN_possessive} lifetime.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPhoenix"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>spirit of the phoenix</label>
@@ -1386,7 +1423,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitWraith"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>When {PAWN_nameDef} is slain, {PAWN_pronoun} will possess someone else, replacing their mind with {PAWN_possessive} own. The only way to prevent this is to strike {PAWN_objective} with an enchanted weapon, which suppresses this ability for a day, or to kill {PAWN_objective} within a day after possessing a new body.</description>
+									<description>When {PAWN_nameDef} is slain, {PAWN_pronoun} will possess someone else, replacing their mind with {PAWN_possessive} own. For 24 hours afterward, {PAWN_pronoun} will be invulnerable to anything other than persona-enchanted weapons, but will not be able to transfer to a new body.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1417,7 +1454,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/AbilityDef[defName = "HVT_ErinysAbility"]/description</xpath>
 								<value>
-									<description>The caster erects a dam that cuts the victim off from the flows of magic. The dam can only be brought down if the victim spends at least a full day meditating or achieves a new level of magical attunement. A second application will kill the victim, but results in a lengthy cooldown. Spellcasters killed by this ability leave behind physical manifestations of their magical attunement.\n\nThis ability can't kill awakened sorcerers. Its cooldown lengthens by an order of magnitude per the victim's level of magical attunement, to a max of 1 quadrum.</description>
+									<description>The caster erects a dam that cuts the victim off from the flows of magic. The dam can only be brought down if the victim spends at least a full day meditating or achieves a new level of magical attunement. A second application will kill the victim, but if the victim was a psycaster, the cooldown will be lengthened based on their attunement level (to a max of 1 quadrum). Spellcasters killed by this ability leave behind physical manifestations of their magical attunement.\n\nThis ability can't kill awakened sorcerers.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -1778,7 +1815,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/HediffDef[defName = "HVT_ThunderbirdSphinxComa"]/description</xpath>
 								<value>
-									<description>A three-day transformative coma in which one adapts to newfound magical power.</description>
+									<description>A three-day transformative coma which can result in the attainment of a new magic attunement level.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
