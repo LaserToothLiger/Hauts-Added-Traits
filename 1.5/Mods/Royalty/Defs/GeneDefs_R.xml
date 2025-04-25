@@ -320,6 +320,7 @@
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
+		<Hauts_ApparelWearRateFactor>-0.25</Hauts_ApparelWearRateFactor>
 	</statOffsets>
 	<modExtensions>
 		<li Class="VanillaGenesExpanded.GeneExtension">
