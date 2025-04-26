@@ -1660,6 +1660,7 @@
 			<theOnlyAllowedMentalBreaks>
 			  <li>DarkVisions</li>
 			  <li>InsaneRamblings</li>
+			  <!--<li>HVT_HumanityBreak</li> while heavily likely to do this for extreme mental break, it's not the only one they can do-->
 			</theOnlyAllowedMentalBreaks>
 			<possessions>
 			  <Meat_Twisted>30~60</Meat_Twisted>

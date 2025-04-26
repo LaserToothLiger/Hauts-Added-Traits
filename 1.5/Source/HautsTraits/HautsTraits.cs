@@ -88,8 +88,8 @@ namespace HautsTraits
             {
                 harmony.Patch(AccessTools.Method(typeof(MetalhorrorUtility), nameof(MetalhorrorUtility.Infect)),
                                postfix: new HarmonyMethod(patchType, nameof(HVTInfectPostfix)));
-                harmony.Patch(AccessTools.Method(typeof(MentalBreaker), nameof(MentalBreaker.TryDoRandomMoodCausedMentalBreak)),
-                               postfix: new HarmonyMethod(patchType, nameof(HVTTwistedTryDoRandomMoodCausedMentalBreakPostfix)));
+                harmony.Patch(AccessTools.Method(typeof(InteractionWorker_InhumanRambling), nameof(InteractionWorker_InhumanRambling.RandomSelectionWeight)),
+                               postfix: new HarmonyMethod(patchType, nameof(HVTInhumanRambling_RandomSelectionWeightPostfix)));
             }
             if (ModsConfig.RoyaltyActive || ModsConfig.AnomalyActive)
             {
@@ -591,19 +591,11 @@ namespace HautsTraits
                 }
             }
         }
-        public static void HVTTwistedTryDoRandomMoodCausedMentalBreakPostfix(bool __result, MentalBreaker __instance)
+        public static void HVTInhumanRambling_RandomSelectionWeightPostfix(Pawn initiator, ref float __result)
         {
-            if (__result == true && Rand.Chance(0.1f) && ModsConfig.AnomalyActive)
+            if (initiator.MentalStateDef != null && initiator.MentalStateDef == HVTDefOf.HVT_HumanityBreak)
             {
-                Pawn pawn = GetInstanceField(typeof(MentalBreaker), __instance, "pawn") as Pawn;
-                if (pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Twisted) && !pawn.Inhumanized())
-                {
-                    pawn.health.AddHediff(HediffDefOf.Inhumanized);
-                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
-                    {
-                        Messages.Message("HVT_LostHumanity".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.NeutralEvent, true);
-                    }
-                }
+                __result = 999f;
             }
         }
         public static void HautsTraitsEnterPrefix(Caravan caravan, CaravanEnterMode enterMode)
@@ -996,6 +988,9 @@ namespace HautsTraits
         public static ThoughtDef HVT_MonsterHunterWorld;
 
         public static JobDef HVT_UseTraitGiverSerum;
+
+        [MayRequireAnomaly]
+        public static MentalStateDef HVT_HumanityBreak;
 
         public static HediffDef HVT_RRUnleashed;
         public static HediffDef HVT_SkulkerSurpriseStealth;

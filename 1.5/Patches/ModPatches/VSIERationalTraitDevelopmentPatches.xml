@@ -86,6 +86,7 @@
 						<HVT_Haunted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Haunted>
 						<HVT_MonsterHunter MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterHunter>
 						<HVT_MonsterLover MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterLover>
+						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -114,6 +115,7 @@
 						<HVT_Catastrophist MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Catastrophist>
 						<HVT_Corruptible MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Corruptible>
 						<HVT_Haunted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Haunted>
+						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -157,6 +159,7 @@
 						<HVT_Corruptible MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Corruptible>
 						<HVT_Haunted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Haunted>
 						<HVT_MonsterHunter MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterHunter>
+						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -188,6 +191,7 @@
 						<HVT_Caretaker MayRequire="Ludeon.RimWorld.Biotech">0</HVT_Caretaker>
 						<HVT_Mentor MayRequire="Ludeon.RimWorld.Biotech">0</HVT_Mentor>
 						<HVT_Catastrophist MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Catastrophist>
+						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -364,6 +368,7 @@
 						<HVT_Haunted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Haunted>
 						<HVT_MonsterHunter MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterHunter>
 						<HVT_MonsterLover MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterLover>
+						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
 					</value>
 				</li>
 			</operations>
