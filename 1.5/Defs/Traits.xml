@@ -636,7 +636,7 @@
 	
 	<TraitDef>
 		<defName>HVT_Tempestophile</defName>
-		<commonality>0.6</commonality>
+		<commonality>1</commonality>
 		<degreeDatas>
 		  <li>
 			<label>tempestophile</label>
