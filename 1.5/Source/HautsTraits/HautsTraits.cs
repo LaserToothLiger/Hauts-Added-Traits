@@ -3857,7 +3857,7 @@ namespace HautsTraits
                         skulkersInCaravan.Add(p);
                     }
                 }
-                float kleptoFactor, meleeDmgFactor, burgleCooldown;
+                float kleptoFactor = 1f, meleeDmgFactor, burgleCooldown;
                 foreach (Pawn p in skulkersInCaravan)
                 {
                     burglaryMaxWeight += MassUtility.Capacity(p,null) - MassUtility.GearAndInventoryMass(p);
@@ -3873,7 +3873,10 @@ namespace HautsTraits
                     } else {
                         burgleCooldown = 1f;
                     }
-                    kleptoFactor = p.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamedSilentFail("VTE_Kleptomaniac")) ? 1.3f : 1f;
+                    if (ModsConfig.IsActive("VanillaExpanded.VanillaTraitsExpanded"))
+                    {
+                        kleptoFactor = p.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamedSilentFail("VTE_Kleptomaniac")) ? 1.3f : 1f;
+                    }
                     meleeDmgFactor = p.GetStatValue(StatDefOf.MeleeDamageFactor)+p.GetStatValue(VFECore.VFEDefOf.VEF_MeleeAttackDamageFactor)-1f;
                     burglaryMaxValue += 100f*(p.health.capacities.GetLevel(PawnCapacityDefOf.Manipulation)+(p.GetStatValue(StatDefOf.MoveSpeed)/4.6f)*(p.health.capacities.GetLevel(PawnCapacityDefOf.Sight)+(p.health.capacities.GetLevel(PawnCapacityDefOf.Hearing)/2))*meleeDmgFactor)*kleptoFactor;
                     successChance += burgleCooldown*(p.GetStatValue(StatDefOf.MoveSpeed) / 4.6f) * (p.health.capacities.GetLevel(PawnCapacityDefOf.Sight) + (p.health.capacities.GetLevel(PawnCapacityDefOf.Hearing) / 2) + ((1 -p.GetStatValue(HautsDefOf.Hauts_TrackSize))/5))/(kleptoFactor*p.GetStatValue(StatDefOf.PawnTrapSpringChance)*1.9f);
