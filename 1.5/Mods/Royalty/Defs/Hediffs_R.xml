@@ -1585,6 +1585,7 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <Frostbite>0.15</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -1791,6 +1792,7 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <Frostbite>0.2</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.2</FSFFrostbite>
 		  <Burn>0.2</Burn>
 		  <Flame>0.2</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.2</Beam>
@@ -1839,6 +1841,7 @@
 			</statFactors>
 			<damageFactors>
 			  <Frostbite>0.4</Frostbite>
+			  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.4</FSFFrostbite>
 			  <Burn>0.4</Burn>
 			  <Flame>0.4</Flame>
 			  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.4</Beam>
@@ -2028,6 +2031,7 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <Frostbite>0.15</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -2042,6 +2046,7 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <Frostbite>0.15</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -2115,6 +2120,7 @@
 		<damageFactors>
 		  <EMP>0</EMP>
 		  <Frostbite>0</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <Burn>0.25</Burn>
 		  <Flame>0.25</Flame>
 		  <VEF_PermanentBurn>0.25</VEF_PermanentBurn>
@@ -3579,6 +3585,7 @@
 	    <becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <Frostbite>0</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -4884,6 +4891,7 @@
 		<totalBleedFactor>0</totalBleedFactor>
 		<damageFactors>
 		  <Frostbite>0</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -4899,6 +4907,7 @@
 		<totalBleedFactor>0</totalBleedFactor>
 		<damageFactors>
 		  <Frostbite>0</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
