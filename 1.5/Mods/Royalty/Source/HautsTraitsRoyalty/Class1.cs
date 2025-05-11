@@ -1041,7 +1041,7 @@ namespace HautsTraitsRoyalty
                         PsychicAwakeningUtility.AchieveTranscendence(__result, "", "", 0f, true);
                     }
                 }
-                if (request.Context != PawnGenerationContext.PlayerStarter)
+                if (request.Context != PawnGenerationContext.PlayerStarter && !__result.IsMutant)
                 {
                     Trait t = __result.story.traits.GetTrait(HVTRoyaltyDefOf.HVT_LatentPsychic);
                     if (t != null)
@@ -4394,40 +4394,26 @@ namespace HautsTraitsRoyalty
             }
         }
     }
-    public class HediffCompProperties_Chanshi : HediffCompProperties
+    public class HediffCompProperties_Chanshi : HediffCompProperties_SatisfiesNeeds
     {
         public HediffCompProperties_Chanshi()
         {
             this.compClass = typeof(HediffComp_Chanshi);
         }
-        public int periodicity;
-        public Dictionary<NeedDef, float> needsSatisfied;
-        public bool satisfiesDrugAddictions;
-        public float drugAddictionSatisfaction;
     }
-    public class HediffComp_Chanshi : HediffComp
+    public class HediffComp_Chanshi : HediffComp_SatisfiesNeeds
     {
-        public HediffCompProperties_Chanshi Props
+        public new HediffCompProperties_Chanshi Props
         {
             get
             {
                 return (HediffCompProperties_Chanshi)this.props;
             }
         }
-        public override void CompPostTick(ref float severityAdjustment)
-        {
-            base.CompPostTick(ref severityAdjustment);
-            if (this.Pawn.IsHashIntervalTick(this.Props.periodicity) && this.Pawn.psychicEntropy != null && this.Pawn.psychicEntropy.IsCurrentlyMeditating)
+        public override bool ConditionsMetToSatisfyNeeds {
+            get
             {
-                foreach (Need n in this.Pawn.needs.AllNeeds)
-                {
-                    if (this.Props.needsSatisfied.ContainsKey(n.def))
-                    {
-                        n.CurLevel += this.Props.needsSatisfied.TryGetValue(n.def);
-                    } else if (this.Props.satisfiesDrugAddictions && n.def.needClass == typeof(Need_Chemical)) {
-                        n.CurLevel += this.Props.drugAddictionSatisfaction;
-                    }
-                }
+                return this.Pawn.psychicEntropy != null && this.Pawn.psychicEntropy.IsCurrentlyMeditating;
             }
         }
     }
@@ -5170,6 +5156,35 @@ namespace HautsTraitsRoyalty
                         healables.Remove(h2);
                     }
                     plants.Remove(plant);
+                }
+            }
+        }
+    }
+    public class HediffCompProperties_AuraLadybug : HediffCompProperties_AuraHediff
+    {
+        public HediffCompProperties_AuraLadybug()
+        {
+            this.compClass = typeof(HediffComp_AuraLadybug);
+        }
+        public List<ThingDef> exemptFilthTypes;
+    }
+    public class HediffComp_AuraLadybug : HediffComp_AuraHediff
+    {
+        public new HediffCompProperties_AuraLadybug Props
+        {
+            get
+            {
+                return (HediffCompProperties_AuraLadybug)this.props;
+            }
+        }
+        public override void AffectSelf()
+        {
+            base.AffectSelf();
+            foreach (Filth filth in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.Props.range, true).OfType<Filth>().Distinct<Filth>())
+            {
+                if (!this.Props.exemptFilthTypes.Contains(filth.def))
+                {
+                    filth.ThinFilth();
                 }
             }
         }

@@ -1586,6 +1586,7 @@
 		<damageFactors>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -1793,6 +1794,7 @@
 		<damageFactors>
 		  <Frostbite>0.2</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.2</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.2</OTCCryo>
 		  <Burn>0.2</Burn>
 		  <Flame>0.2</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.2</Beam>
@@ -1842,6 +1844,7 @@
 			<damageFactors>
 			  <Frostbite>0.4</Frostbite>
 			  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.4</FSFFrostbite>
+			  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.4</OTCCryo>
 			  <Burn>0.4</Burn>
 			  <Flame>0.4</Flame>
 			  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.4</Beam>
@@ -2032,6 +2035,7 @@
 		<damageFactors>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -2047,6 +2051,7 @@
 		<damageFactors>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -2121,12 +2126,16 @@
 		  <EMP>0</EMP>
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
 		  <Burn>0.25</Burn>
 		  <Flame>0.25</Flame>
 		  <VEF_PermanentBurn>0.25</VEF_PermanentBurn>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
 		  <AcidBurn>0</AcidBurn>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0</AM_AcidSpit>
+		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0</OTCAcid>
+		  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">0</OEUnstableToxins>
+		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0</OMGNecrobane>
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
@@ -2893,7 +2902,7 @@
       </li>
     </stages>
     <comps>
-      <li Class="HautsFramework.HediffCompProperties_AuraHediff">
+      <li Class="HautsTraitsRoyalty.HediffCompProperties_AuraLadybug">
         <range>8</range>
         <hediffs>
 		  <li>HVT_LadybugBuff</li>
@@ -2902,6 +2911,12 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>false</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<exemptFilthTypes>
+		  <li MayRequire="Ludeon.RimWorld.Anomaly">Filth_RevenantSmear</li>
+		  <li MayRequire="Ludeon.RimWorld.Anomaly">Filth_RevenantBloodPool</li>
+		  <li MayRequire="Ludeon.RimWorld.Anomaly">Filth_GrayFlesh</li>
+		  <li MayRequire="Ludeon.RimWorld.Anomaly">Filth_GrayFleshNoticeable</li>
+		</exemptFilthTypes>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -3586,6 +3601,7 @@
 		<damageFactors>
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -3772,6 +3788,9 @@
 		<damageFactors>
 		  <AcidBurn>0.9</AcidBurn>
 		  <VEF_SecondaryAcidBurn>0.9</VEF_SecondaryAcidBurn>
+		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0.9</OTCAcid>
+		  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">0.9</OEUnstableToxins>
+		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0.9</OMGNecrobane>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0.9</AM_AcidSpit>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0.9</ToxGas>
 		  <Burn>0.8</Burn>
@@ -4325,6 +4344,9 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <AcidBurn>0.25</AcidBurn>
+		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0.25</OTCAcid>
+		  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">0.25</OEUnstableToxins>
+		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0.25</OMGNecrobane>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0.25</AM_AcidSpit>
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
@@ -4892,6 +4914,7 @@
 		<damageFactors>
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -4908,6 +4931,7 @@
 		<damageFactors>
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.25</Beam>
@@ -5891,6 +5915,9 @@
         </capMods>
 		<damageFactors>
 		  <AcidBurn>0</AcidBurn>
+		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0</OTCAcid>
+		  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">0</OEUnstableToxins>
+		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0</OMGNecrobane>
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0</AM_AcidSpit>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
@@ -5953,6 +5980,9 @@
 			</statFactors>
 			<damageFactors>
 			  <AcidBurn>1.25</AcidBurn>
+			  <OTCAcid MayRequire="ObsidiaExpansion.Core">1.25</OTCAcid>
+			  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">1.25</OEUnstableToxins>
+			  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">1.25</OMGNecrobane>
 			  <VEF_SecondaryAcidBurn>1.25</VEF_SecondaryAcidBurn>
 			</damageFactors>
 		  </li>
