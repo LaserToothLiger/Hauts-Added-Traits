@@ -433,6 +433,13 @@
 		</degreeDatas>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>7</value></li></chargeCosts></li>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_MetaFreak</li></value>
+					</li>
+				</grantedHediffs>
+            </li>
         </modExtensions>
 	</TraitDef>
 	

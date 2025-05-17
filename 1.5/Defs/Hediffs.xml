@@ -4,7 +4,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_AsocialDontHangOut</defName>
     <label>asociality</label>
-    <description>Prevents those with the "Asocial" trait from engaging in social recreation types</description>
+    <description>Prevents those with the "Asocial" trait from engaging in social recreation types.</description>
 	<hediffClass>HediffWithComps</hediffClass>
     <stages>
       <li>
@@ -404,6 +404,32 @@
 			<li>30, 4</li>
 		  </points>
 		</severityPerCaravanRiverSize>
+	  </li>
+	</comps>
+  </HediffDef>
+  
+  <!--makes metafreaks not eat chocolate-->
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_MetaFreak</defName>
+    <label>food does not spark joy</label>
+    <description>Prevents those with the "Metabolic Freak" trait from using food for recreation.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+	<comps>
+	  <li Class="HautsFramework.HediffCompProperties_BoredomAdjustment">
+		<boredoms>
+			<li><key>Gluttonous</key><value>-99999</value></li>
+		</boredoms>
+		<ticks>250</ticks>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_MetabolicFreak</li>
+		</forcingTraits>
 	  </li>
 	</comps>
   </HediffDef>
