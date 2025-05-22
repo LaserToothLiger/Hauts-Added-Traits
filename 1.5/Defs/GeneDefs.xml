@@ -610,11 +610,11 @@
     <capMods>
 	  <li>
 		<capacity>Sight</capacity>
-		<postFactor>0.92</postFactor>
+		<offset>-0.1</offset>
 	  </li>
 	  <li>
 		<capacity>Hearing</capacity>
-		<postFactor>0.92</postFactor>
+		<offset>-0.1</offset>
 	  </li>
     </capMods>
     <biostatCpx>1</biostatCpx>
