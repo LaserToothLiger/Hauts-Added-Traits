@@ -729,7 +729,7 @@
 			<degreeDatas>
 			  <li>
 				<label>tranquil</label>
-				<description>{PAWN_nameDef} is utterly at peace. {PAWN_pronoun} will not participate in violence, and can't mentally break. Ever.</description>
+				<description>{PAWN_nameDef} is utterly at peace. {PAWN_pronoun} will not participate in violence, and can't mentally break. Ever.\n\n\n\nFor technical reasons, this trait does not actually disable violence until the game starts.</description>
 				<socialFightChanceFactor>0</socialFightChanceFactor>
 				<allowedMeditationFocusTypes><li>Minimal</li></allowedMeditationFocusTypes>
 				<statFactors>

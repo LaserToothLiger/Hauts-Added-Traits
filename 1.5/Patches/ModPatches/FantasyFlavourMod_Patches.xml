@@ -135,7 +135,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_PsychicallyBlank"]/degreeDatas/li/label</xpath>
 								<value>
-									<label>magic void</label>
+									<label>magically blank</label>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
