@@ -108,6 +108,9 @@ namespace HautsTraits
                            postfix: new HarmonyMethod(patchType, nameof(HVTIsGrowthBirthdayPostfix)));
             harmony.Patch(AccessTools.Property(typeof(Pawn_AgeTracker), nameof(Pawn_AgeTracker.GrowthPointsPerDay)).GetGetMethod(),
                            postfix: new HarmonyMethod(patchType, nameof(HVTGrowthPointsPerDayPostfix)));
+            MethodInfo methodInfo2 = typeof(Pawn_AgeTracker).GetMethod("BirthdayBiological", BindingFlags.NonPublic | BindingFlags.Instance);
+            harmony.Patch(methodInfo2,
+                          postfix: new HarmonyMethod(patchType, nameof(HVTBirthdayBiologicalPostfix)));
             harmony.Patch(AccessTools.Method(typeof(ChoiceLetter_GrowthMoment), nameof(ChoiceLetter_GrowthMoment.MakeChoices)),
                            prefix: new HarmonyMethod(patchType, nameof(HVTMakeChoicesPrefix)));
             harmony.Patch(AccessTools.Method(typeof(ChoiceLetter_GrowthMoment), nameof(ChoiceLetter_GrowthMoment.MakeChoices)),
@@ -797,6 +800,7 @@ namespace HautsTraits
                     if (age == 10 || age == 7)
                     {
                         __result = true;
+
                     }
                     break;
                 default:
@@ -835,6 +839,34 @@ namespace HautsTraits
                 }
             }
         }
+        public static void HVTBirthdayBiologicalPostfix(Pawn_AgeTracker __instance)
+        {
+            Pawn pawn = GetInstanceField(typeof(Pawn_AgeTracker), __instance, "pawn") as Pawn;
+            int age = pawn.ageTracker.AgeBiologicalYears;
+            if (HVT_Mod.settings.traitsMax == 6 && (age == 7 || age == 10 || age == 13))
+            {
+                Hediff hediff = HediffMaker.MakeHediff(HVTDefOf.HVT_DoubleGrowthMoments, pawn, null);
+                pawn.health.AddHediff(hediff, null, null, null);
+                pawn.ageTracker.TryChildGrowthMoment(pawn.ageTracker.AgeBiologicalYears, out int passionChoiceCount, out int num, out int num2);
+                List<LifeStageWorkSettings> lifeStageWorkSettings = pawn.RaceProps.lifeStageWorkSettings;
+                List<WorkTypeDef> tmpEnabledWorkTypes = new List<WorkTypeDef>();
+                for (int i = 0; i < lifeStageWorkSettings.Count; i++)
+                {
+                    if (lifeStageWorkSettings[i].minAge == pawn.ageTracker.AgeBiologicalYears)
+                    {
+                        tmpEnabledWorkTypes.Add(lifeStageWorkSettings[i].workType);
+                    }
+                }
+                List<string> enabledWorkTypes = (from w in tmpEnabledWorkTypes
+                                                 select w.labelShort.CapitalizeFirst()).ToList<string>();
+                ChoiceLetter_GrowthMoment choiceLetter_GrowthMoment = (ChoiceLetter_GrowthMoment)LetterMaker.MakeLetter(LetterDefOf.ChildBirthday);
+                choiceLetter_GrowthMoment.ConfigureGrowthLetter(pawn, passionChoiceCount, num, num2, enabledWorkTypes, pawn.Name);
+                choiceLetter_GrowthMoment.Label = ("HVT_BonusGrowthMoment".Translate(pawn.Name.ToStringShort));
+                choiceLetter_GrowthMoment.StartTimeout(120000);
+                pawn.ageTracker.canGainGrowthPoints = false;
+                Find.LetterStack.ReceiveLetter(choiceLetter_GrowthMoment, null);
+            }
+        }
         public static void HVTMakeChoicesPrefix(ref float __state, ChoiceLetter_GrowthMoment __instance)
         {
             __state = __instance.pawn.ageTracker.growthPoints;
@@ -858,50 +890,12 @@ namespace HautsTraits
                         refundGrowthPoints = true;
                     }
                     break;
-                case 6:
-                    if ((age == 13 || age == 10 || age == 7) && !pawn.health.hediffSet.HasHediff(HVTDefOf.HVT_DoubleGrowthMoments))
-                    {
-                        refundGrowthPoints = true;
-                    }
-                    break;
                 default:
                     break;
             }
             if (refundGrowthPoints)
             {
                 pawn.ageTracker.growthPoints = __state;
-            }
-            if (HVT_Mod.settings.traitsMax == 6 && (age == 7 || age == 10 || age == 13))
-            {
-                if (pawn.health.hediffSet.HasHediff(HVTDefOf.HVT_DoubleGrowthMoments))
-                {
-                    Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HVTDefOf.HVT_DoubleGrowthMoments);
-                    pawn.health.RemoveHediff(hediff);
-                } else {
-                    Hediff hediff = HediffMaker.MakeHediff(HVTDefOf.HVT_DoubleGrowthMoments, pawn, null);
-                    pawn.health.AddHediff(hediff, null, null, null);
-                    int passionChoiceCount;
-                    int num;
-                    int num2;
-                    pawn.ageTracker.TryChildGrowthMoment(pawn.ageTracker.AgeBiologicalYears, out passionChoiceCount, out num, out num2);
-                    List<LifeStageWorkSettings> lifeStageWorkSettings = pawn.RaceProps.lifeStageWorkSettings;
-                    List<WorkTypeDef> tmpEnabledWorkTypes = new List<WorkTypeDef>();
-                    for (int i = 0; i < lifeStageWorkSettings.Count; i++)
-                    {
-                        if (lifeStageWorkSettings[i].minAge == pawn.ageTracker.AgeBiologicalYears)
-                        {
-                            tmpEnabledWorkTypes.Add(lifeStageWorkSettings[i].workType);
-                        }
-                    }
-                    List<string> enabledWorkTypes = (from w in tmpEnabledWorkTypes
-                                                     select w.labelShort.CapitalizeFirst()).ToList<string>();
-                    ChoiceLetter_GrowthMoment choiceLetter_GrowthMoment = (ChoiceLetter_GrowthMoment)LetterMaker.MakeLetter(LetterDefOf.ChildBirthday);
-                    choiceLetter_GrowthMoment.ConfigureGrowthLetter(__instance.pawn, passionChoiceCount, num, num2, enabledWorkTypes, pawn.Name);
-                    choiceLetter_GrowthMoment.Label = ("HVT_BonusGrowthMoment".Translate(__instance.pawn.Name.ToStringShort));
-                    choiceLetter_GrowthMoment.StartTimeout(120000);
-                    pawn.ageTracker.canGainGrowthPoints = false;
-                    Find.LetterStack.ReceiveLetter(choiceLetter_GrowthMoment, null);
-                }
             }
         }
     }
