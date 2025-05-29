@@ -248,14 +248,15 @@ namespace HautsTraitsRoyalty
                     return false;
                 }
             } else if (PsychicAwakeningUtility.IsTranscendentTrait(trait.def)) {
-                if (!PsychicAwakeningUtility.IsAwakenedPsychic(pawn) && !PsychicAwakeningUtility.CanTranscendAnyways(pawn))
-                {
-                    Log.Error("HVT_CantGrantTrans".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve());
-                    return false;
-                }
                 if (PsychicAwakeningUtility.PsychicDeafMutantDeafInteraction(pawn, false))
                 {
                     Log.Error("HVT_NoTransMutants".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve());
+                    return false;
+                }
+                if (!PsychicAwakeningUtility.IsAwakenedPsychic(pawn) && !PsychicAwakeningUtility.CanTranscendAnyways(pawn))
+                {
+                    Log.Error("HVT_CantGrantTrans".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve());
+                    PsychicAwakeningUtility.AwakenPsychicTalent(pawn, false, "HVT_WokeningDefault".Translate(), "HVT_WokeningDefaultFantasy".Translate());
                     return false;
                 }
             }
@@ -4513,12 +4514,28 @@ namespace HautsTraitsRoyalty
         {
             this.compClass = typeof(HediffComp_MoteTranscendent);
         }
+        public bool mustBeTranscendent;
     }
     public class HediffComp_MoteTranscendent : HediffComp_MoteConditional
     {
+        public new HediffCompProperties_MoteTranscendent Props
+        {
+            get
+            {
+                return (HediffCompProperties_MoteTranscendent)this.props;
+            }
+        }
         public override bool DisableMote()
         {
             return !HVT_Mod.settings.visibleTransEffect;
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (this.Pawn.IsHashIntervalTick(2500) && this.Props.mustBeTranscendent && !PsychicAwakeningUtility.IsTranscendent(this.Pawn))
+            {
+                this.Pawn.health.RemoveHediff(this.parent);
+            }
         }
     }
     public class HediffCompProperties_TechnopathicControl : HediffCompProperties_ExtraOnHitEffects

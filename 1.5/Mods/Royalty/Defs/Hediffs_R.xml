@@ -835,6 +835,7 @@
 	  <li Class="HautsTraitsRoyalty.HediffCompProperties_MoteTranscendent">
 		<mote>Mote_Bestow</mote>
 		<scale>0.75</scale>
+		<mustBeTranscendent>true</mustBeTranscendent>
 	  </li>
     </comps>
   </HediffDef>
