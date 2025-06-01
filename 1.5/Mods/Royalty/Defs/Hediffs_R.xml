@@ -26,8 +26,8 @@
 		<mote>Hauts_DefaultAuraGraphic</mote>
 		<canToggleVisualization>true</canToggleVisualization>
 		<visLabel>Blank aura visibility</visLabel>
-		<visTooltip>Toggle the visibility of the Psychic Blank aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, its aura will become visible again.</visTooltip>
-		<visTooltipFantasy>Toggle the visibility of the Magic Blank aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, its aura will become visible again.</visTooltipFantasy>
+		<visTooltip>Adjust the visibility of the Psychic Blank aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Magic Blank aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -435,8 +435,8 @@
 		<mote>Hauts_DefaultAuraGraphic</mote>
 		<canToggleVisualization>true</canToggleVisualization>
 		<visLabel>Luminary aura visibility</visLabel>
-		<visTooltip>Toggle the visibility of the luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, its aura will become visible again.</visTooltip>
-		<visTooltipFantasy>Toggle the visibility of the luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, its aura will become visible again.</visTooltipFantasy>
+		<visTooltip>Adjust the visibility of the Awakened Luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Awakened Luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -469,8 +469,8 @@
 		<mote>Hauts_DefaultAuraGraphic</mote>
 		<canToggleVisualization>true</canToggleVisualization>
 		<visLabel>Luminary aura visibility</visLabel>
-		<visTooltip>Toggle the visibility of the luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, its aura will become visible again.</visTooltip>
-		<visTooltipFantasy>Toggle the visibility of the luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, its aura will become visible again.</visTooltipFantasy>
+		<visTooltip>Adjust the visibility of the Awakened Luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Awakened Luminary aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingGenes MayRequire="Ludeon.RimWorld.Biotech">

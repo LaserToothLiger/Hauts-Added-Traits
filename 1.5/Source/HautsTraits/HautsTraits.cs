@@ -750,6 +750,40 @@ namespace HautsTraits
                             ageDependentMax = 2;
                         }
                         break;
+                    case 7:
+                        if (ageBiologicalYears > 13)
+                        {
+                            ageDependentMax = 7;
+                        } else if (ageBiologicalYears > 11) {
+                            ageDependentMax = 5;
+                        } else if (ageBiologicalYears > 9) {
+                            ageDependentMax = 3;
+                        } else if (ageBiologicalYears > 6) {
+                            ageDependentMax = 1;
+                        }
+                        break;
+                    case 8:
+                        if (ageBiologicalYears > 13)
+                        {
+                            ageDependentMax = 8;
+                        } else if (ageBiologicalYears > 11) {
+                            ageDependentMax = 6;
+                        } else if (ageBiologicalYears > 9) {
+                            ageDependentMax = 4;
+                        } else if (ageBiologicalYears > 6) {
+                            ageDependentMax = 2;
+                        }
+                        break;
+                    case 9:
+                        if (ageBiologicalYears > 13)
+                        {
+                            ageDependentMax = 9;
+                        } else if (ageBiologicalYears > 10) {
+                            ageDependentMax = 6;
+                        } else if (ageBiologicalYears > 7) {
+                            ageDependentMax = 3;
+                        }
+                        break;
                     default:
                         ageDependentMax = (int)HVT_Mod.settings.traitsMax;
                         break;
@@ -776,35 +810,14 @@ namespace HautsTraits
             {
                 __result = true;
             }
-            switch ((int)HVT_Mod.settings.traitsMax)
+            int traitsMax = (int)HVT_Mod.settings.traitsMax;
+            if ((traitsMax%3) == 0 && (age == 10 || age == 7))
             {
-                case 3:
-                    if (age == 10 || age == 7)
-                    {
-                        __result = true;
-                    }
-                    break;
-                case 4:
-                    if (age == 11 || age == 9 || age == 6)
-                    {
-                        __result = true;
-                    }
-                    break;
-                case 5:
-                    if (age == 11 || age == 9 || age == 7 || age == 5)
-                    {
-                        __result = true;
-                    }
-                    break;
-                case 6:
-                    if (age == 10 || age == 7)
-                    {
-                        __result = true;
-
-                    }
-                    break;
-                default:
-                    break;
+                __result = true;
+            } else if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8) && (age == 11 || age == 9 || age == 6)) {
+                __result = true;
+            } else if (traitsMax == 5 && (age == 11 || age == 9 || age == 7 || age == 5)) {
+                __result = true;
             }
         }
         public static void HVTGrowthPointsPerDayPostfix(ref float __result, Pawn_AgeTracker __instance)
@@ -814,27 +827,22 @@ namespace HautsTraits
                 Pawn pawn = GetInstanceField(typeof(Pawn_AgeTracker), __instance, "pawn") as Pawn;
                 if (pawn != null)
                 {
-                    switch ((int)HVT_Mod.settings.traitsMax)
-                    {
-                        case 4:
-                            if ((float)__instance.AgeBiologicalYearsFloat < 7f)
-                            {
-                                __result /= 0.75f;
-                            }
-                            if ((float)__instance.AgeBiologicalYearsFloat > 9f)
-                            {
-                                __result *= 1.5f;
-                            }
-                            break;
-                        case 5:
-                            if ((float)__instance.AgeBiologicalYearsFloat < 7f)
-                            {
-                                __result /= 0.75f;
-                            }
+                    int traitsMax = (int)HVT_Mod.settings.traitsMax;
+                    if (traitsMax == 4 || traitsMax == 7 || traitsMax == 8) {
+                        if ((float)__instance.AgeBiologicalYearsFloat < 7f)
+                        {
+                            __result /= 0.75f;
+                        }
+                        if ((float)__instance.AgeBiologicalYearsFloat > 9f)
+                        {
                             __result *= 1.5f;
-                            break;
-                        default:
-                            break;
+                        }
+                    } else if (traitsMax == 5) {
+                        if ((float)__instance.AgeBiologicalYearsFloat < 7f)
+                        {
+                            __result /= 0.75f;
+                        }
+                        __result *= 1.5f;
                     }
                 }
             }
@@ -843,28 +851,36 @@ namespace HautsTraits
         {
             Pawn pawn = GetInstanceField(typeof(Pawn_AgeTracker), __instance, "pawn") as Pawn;
             int age = pawn.ageTracker.AgeBiologicalYears;
-            if (HVT_Mod.settings.traitsMax == 6 && (age == 7 || age == 10 || age == 13))
+            int traitsMax = (int)HVT_Mod.settings.traitsMax;
+            switch (traitsMax)
             {
-                Hediff hediff = HediffMaker.MakeHediff(HVTDefOf.HVT_DoubleGrowthMoments, pawn, null);
-                pawn.health.AddHediff(hediff, null, null, null);
-                pawn.ageTracker.TryChildGrowthMoment(pawn.ageTracker.AgeBiologicalYears, out int passionChoiceCount, out int num, out int num2);
-                List<LifeStageWorkSettings> lifeStageWorkSettings = pawn.RaceProps.lifeStageWorkSettings;
-                List<WorkTypeDef> tmpEnabledWorkTypes = new List<WorkTypeDef>();
-                for (int i = 0; i < lifeStageWorkSettings.Count; i++)
-                {
-                    if (lifeStageWorkSettings[i].minAge == pawn.ageTracker.AgeBiologicalYears)
+                case 6:
+                    if (age == 7 || age == 10 || age == 13)
                     {
-                        tmpEnabledWorkTypes.Add(lifeStageWorkSettings[i].workType);
+                        HVTUtility.DoBonusGrowthMoment(pawn);
                     }
-                }
-                List<string> enabledWorkTypes = (from w in tmpEnabledWorkTypes
-                                                 select w.labelShort.CapitalizeFirst()).ToList<string>();
-                ChoiceLetter_GrowthMoment choiceLetter_GrowthMoment = (ChoiceLetter_GrowthMoment)LetterMaker.MakeLetter(LetterDefOf.ChildBirthday);
-                choiceLetter_GrowthMoment.ConfigureGrowthLetter(pawn, passionChoiceCount, num, num2, enabledWorkTypes, pawn.Name);
-                choiceLetter_GrowthMoment.Label = ("HVT_BonusGrowthMoment".Translate(pawn.Name.ToStringShort));
-                choiceLetter_GrowthMoment.StartTimeout(120000);
-                pawn.ageTracker.canGainGrowthPoints = false;
-                Find.LetterStack.ReceiveLetter(choiceLetter_GrowthMoment, null);
+                    break;
+                case 7:
+                    if (age == 9 || age == 11 || age == 13)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    break;
+                case 8:
+                    if (age == 6 || age == 9 || age == 11 || age == 13)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    break;
+                case 9:
+                    if (age == 7 || age == 10 || age == 13)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
         public static void HVTMakeChoicesPrefix(ref float __state, ChoiceLetter_GrowthMoment __instance)
@@ -876,22 +892,12 @@ namespace HautsTraits
             bool refundGrowthPoints = false;
             Pawn pawn = __instance.pawn;
             int age = pawn.ageTracker.AgeBiologicalYears;
-            switch ((int)HVT_Mod.settings.traitsMax)
+            int traitsMax = (int)HVT_Mod.settings.traitsMax;
+            if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8) && (age == 10 || age == 7))
             {
-                case 4:
-                    if (age == 10 || age == 7)
-                    {
-                        refundGrowthPoints = true;
-                    }
-                    break;
-                case 5:
-                    if (age == 10)
-                    {
-                        refundGrowthPoints = true;
-                    }
-                    break;
-                default:
-                    break;
+                refundGrowthPoints = true;
+            } else if (traitsMax == 5 && age == 10) {
+                refundGrowthPoints = true;
             }
             if (refundGrowthPoints)
             {
@@ -3960,6 +3966,30 @@ namespace HautsTraits
             }
 			return list;
 		}*/
+        public static void DoBonusGrowthMoment(Pawn pawn)
+        {
+            //Hediff hediff = HediffMaker.MakeHediff(HVTDefOf.HVT_DoubleGrowthMoments, pawn, null);
+            //pawn.health.AddHediff(hediff, null, null, null);
+            pawn.ageTracker.TryChildGrowthMoment(pawn.ageTracker.AgeBiologicalYears, out int passionChoiceCount, out int num, out int num2);
+            List<LifeStageWorkSettings> lifeStageWorkSettings = pawn.RaceProps.lifeStageWorkSettings;
+            List<WorkTypeDef> tmpEnabledWorkTypes = new List<WorkTypeDef>();
+            passionChoiceCount = num2;
+            for (int i = 0; i < lifeStageWorkSettings.Count; i++)
+            {
+                if (lifeStageWorkSettings[i].minAge == pawn.ageTracker.AgeBiologicalYears)
+                {
+                    tmpEnabledWorkTypes.Add(lifeStageWorkSettings[i].workType);
+                }
+            }
+            List<string> enabledWorkTypes = (from w in tmpEnabledWorkTypes
+                                             select w.labelShort.CapitalizeFirst()).ToList<string>();
+            ChoiceLetter_GrowthMoment choiceLetter_GrowthMoment = (ChoiceLetter_GrowthMoment)LetterMaker.MakeLetter(LetterDefOf.ChildBirthday);
+            choiceLetter_GrowthMoment.ConfigureGrowthLetter(pawn, passionChoiceCount, num, num2, enabledWorkTypes, pawn.Name);
+            choiceLetter_GrowthMoment.Label = ("HVT_BonusGrowthMoment".Translate(pawn.Name.ToStringShort));
+            choiceLetter_GrowthMoment.StartTimeout(120000);
+            pawn.ageTracker.canGainGrowthPoints = false;
+            Find.LetterStack.ReceiveLetter(choiceLetter_GrowthMoment, null);
+        }
     }
     [StaticConstructorOnStartup]
     public class HVTIcons
@@ -4060,7 +4090,7 @@ namespace HautsTraits
             y -= 32;
             orig = settings.traitsMax;
             Rect traitsMaxRect = new Rect(x + 5 + halfWidth, y, halfWidth - 15, 32);
-            settings.traitsMax = Widgets.HorizontalSlider(traitsMaxRect, settings.traitsMax, 3f, 6f, true, "HVT_SettingMaxTraits".Translate(), "3", "6", 1f);
+            settings.traitsMax = Widgets.HorizontalSlider(traitsMaxRect, settings.traitsMax, 3f, 9f, true, "HVT_SettingMaxTraits".Translate(), "3", "9", 1f);
             TooltipHandler.TipRegion(traitsMaxRect.LeftPart(1f), "HVT_TooltipMaxTraits".Translate());
             if (orig != settings.traitsMax)
             {
