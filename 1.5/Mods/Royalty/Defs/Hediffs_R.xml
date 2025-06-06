@@ -316,6 +316,8 @@
 		<damageFactors>
 		  <Hauts_SkipFrag>0.75</Hauts_SkipFrag>
 		  <AM_SoulDrain MayRequire="sarg.alphamechs">0.9</AM_SoulDrain>
+		  <VREA_Sear MayRequire="vanillaracesexpanded.archon">0.9</VREA_Sear>
+		  <CoolPsycasts_SkipCut MayRequire="metalocif.coolerpsycasts">0.75</CoolPsycasts_SkipCut>
 		</damageFactors>
       </li>
     </stages>
@@ -1149,6 +1151,7 @@
 		  <Flame>0.5</Flame>
 		  <VEF_PermanentBurn>0.5</VEF_PermanentBurn>
 		  <Beam MayRequire="Ludeon.RimWorld.Biotech">0.5</Beam>
+		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1981,6 +1984,9 @@
         </capMods>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
 		<becomeVisible>false</becomeVisible>
+		<damageFactors>
+		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
+		</damageFactors>
       </li>
 	  <li>
         <minSeverity>0.51</minSeverity>
@@ -1994,6 +2000,9 @@
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
 		<hungerRateFactor>0.1</hungerRateFactor>
 		<becomeVisible>false</becomeVisible>
+		<damageFactors>
+		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
+		</damageFactors>
       </li>
     </stages>
 	<comps>
@@ -2211,6 +2220,8 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <Hauts_SkipFrag>0.05</Hauts_SkipFrag>
+		  <VREA_Sear MayRequire="vanillaracesexpanded.archon">0.1</VREA_Sear>
+		  <CoolPsycasts_SkipCut MayRequire="metalocif.coolerpsycasts">0.05</CoolPsycasts_SkipCut>
 		</damageFactors>
       </li>
     </stages>
@@ -3181,6 +3192,7 @@
 			  <GlobalLearningFactor>2</GlobalLearningFactor>
 			  <PsychicSensitivity>1.1</PsychicSensitivity>
 			  <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1.5</LanguageLearningAbility>
 			</statFactors>
 		  </li>
 		</stages>

@@ -1180,6 +1180,10 @@ namespace HautsTraitsRoyalty
                 }
                 if (ingester.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitHarbinger))
                 {
+                    if (pawn.Faction != null)
+                    {
+                        HautsUtility.LearnLanguage(ingester,pawn, 0.4f * (pawn.GetStatValue(StatDefOf.PsychicSensitivity) + ingester.GetStatValue(StatDefOf.PsychicSensitivity)));
+                    }
                     if (pawn.skills != null && ingester.skills != null)
                     {
                         SkillDef sd = (from sdef in DefDatabase<SkillDef>.AllDefsListForReading
@@ -2757,7 +2761,7 @@ namespace HautsTraitsRoyalty
             {
                 if (this.pawn.psychicEntropy != null && this.pawn.psychicEntropy.IsCurrentlyMeditating)
                 {
-                    PsychicAwakeningUtility.KeaOffsetPsyfocusLearning(this.pawn,0.0002f*this.pawn.GetStatValue(StatDefOf.MeditationFocusGain));
+                    PsychicAwakeningUtility.KeaOffsetPsyfocusLearning(this.pawn,0.0002f*this.pawn.GetStatValue(StatDefOf.MeditationFocusGain),0.01f);
                 }
             }
         }
@@ -2766,9 +2770,9 @@ namespace HautsTraitsRoyalty
             base.Notify_PawnUsedVerb(verb, target);
             if (verb is RimWorld.Verb_CastAbility vca && vca.ability is Psycast psycast)
             {
-                PsychicAwakeningUtility.KeaOffsetPsyfocusLearning(this.pawn, psycast.FinalPsyfocusCost(target));
+                PsychicAwakeningUtility.KeaOffsetPsyfocusLearning(this.pawn, psycast.FinalPsyfocusCost(target),1f);
             } else if (verb is VFECore.Abilities.Verb_CastAbility vcavfe && HautsUtility.IsVPEPsycast(vcavfe.ability)) {
-                PsychicAwakeningUtility.KeaOffsetPsyfocusLearning(this.pawn, HautsUtility.GetVPEPsyfocusCost(vcavfe.ability));
+                PsychicAwakeningUtility.KeaOffsetPsyfocusLearning(this.pawn, HautsUtility.GetVPEPsyfocusCost(vcavfe.ability),1f);
             }
         }
     }
@@ -4681,6 +4685,10 @@ namespace HautsTraitsRoyalty
                         this.Pawn.skills.Learn(sr.def, this.Props.skillPerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) / 10f);
                     }
                 }
+                if (this.Pawn.IsHashIntervalTick(2500))
+                {
+                    HautsUtility.LearnLanguage(this.Pawn,null,0.05f*this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar));
+                }
             }
         }
     }
@@ -5342,6 +5350,10 @@ namespace HautsTraitsRoyalty
                             s.Learn(lvlDiff*this.Props.baseXPgainPerPeriod*self.GetStatValue(this.Props.effectScalar),true);
                         }
                     }
+                }
+                if (pawn.Faction != null)
+                {
+                    HautsUtility.LearnLanguage(self, pawn, 0.015f*self.GetStatValue(this.Props.effectScalar));
                 }
             }
         }
@@ -8081,7 +8093,7 @@ namespace HautsTraitsRoyalty
                 p.needs.mood.thoughts.memories.TryGainMemory(HVTRoyaltyDefOf.HVT_CanarySong);
             }
         }
-        public static void KeaOffsetPsyfocusLearning(Pawn pawn, float offset)
+        public static void KeaOffsetPsyfocusLearning(Pawn pawn, float offset, float languageChance)
         {
             if (pawn.skills != null)
             {
@@ -8093,9 +8105,7 @@ namespace HautsTraitsRoyalty
                     {
                         maxSkill = Math.Max((int)(psylink.level / 4), 1);
                     }
-                }
-                else
-                {
+                } else {
                     maxSkill = 3 * pawn.GetPsylinkLevel();
                 }
                 foreach (SkillRecord skillRecord in pawn.skills.skills)
@@ -8108,6 +8118,10 @@ namespace HautsTraitsRoyalty
                             skillRecord.Level = maxSkill;
                         }
                     }
+                }
+                if (Rand.Chance(languageChance))
+                {
+                    HautsUtility.LearnLanguage(pawn, null, 0.06f);
                 }
             }
         }

@@ -728,6 +728,9 @@
 			<label>psychic budgie</label>
 			<description>{PAWN_nameDef} has a far-reaching psychic influence that gradually improves relations with other factions.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.5</LanguageLearningAbility>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
@@ -900,6 +903,7 @@
 			  <TradePriceImprovement>0.02</TradePriceImprovement>
 			  <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.09</ConversionPower>
 			  <ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.02</ActivitySuppressionRate>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.5</LanguageLearningAbility>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -1075,6 +1079,9 @@
 			<label>psychic emperor penguin</label>
 			<description>Whenever {PAWN_nameDef} undergoes an event that would awaken a latent psychic, a man in black appears. If {PAWN_pronoun} fulfills a condition that would awaken a latent psychic, there is a persistent but very small chance for men in black to appear nearby.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.25</LanguageLearningAbility>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1720,6 +1727,9 @@
 			<label>psychic locust</label>
 			<description>Every 24 hours, {PAWN_nameDef} manifests random allies - the higher {PAWN_possessive} psychic sensitivity, the more allies are created. They're fragile and will disappear after 24 hours, but they're more psychically sensitive, and they don't need to eat or sleep.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.25</LanguageLearningAbility>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2469,6 +2479,9 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<randomMentalState>Wander_Psychotic</randomMentalState>
 			<randomMentalStateMtbDaysMoodCurve><points><li>(0, 30)</li></points></randomMentalStateMtbDaysMoodCurve>
+			<statOffsets>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1</LanguageLearningAbility>
+			</statOffsets>
 			<statFactors>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
 			</statFactors>
@@ -2739,6 +2752,9 @@
 			<label>psychic stork</label>
 			<description>Every 1000% psyfocus {PAWN_nameDef} spends causes another entity to appear somewhere nearby. This new entity is allied with {PAWN_objective} and comes from a similar background.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.25</LanguageLearningAbility>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -3329,6 +3345,9 @@
 			<label>psychic siren</label>
 			<description>{PAWN_nameDef} can assert permanent mental control over others. The cooldown scales with the victim's market value.</description>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
+			<statOffsets>
+			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1</LanguageLearningAbility>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
