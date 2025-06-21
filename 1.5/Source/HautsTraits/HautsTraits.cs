@@ -1430,6 +1430,10 @@ namespace HautsTraits
     {
         public override float MoodOffset()
         {
+            if (ThoughtUtility.ThoughtNullified(this.pawn, this.def))
+            {
+                return 0f;
+            }
             if (!this.pawn.IsSlave)
             {
                 if (FactionUtility.GetSlavesInFactionCount(this.pawn.Faction) > 0)
@@ -1461,7 +1465,7 @@ namespace HautsTraits
     {
         public override float MoodOffset()
         {
-            if (this.pawn.Faction == null)
+            if (this.pawn.Faction == null || ThoughtUtility.ThoughtNullified(this.pawn, this.def))
             {
                 return 0f;
             }
@@ -1498,6 +1502,10 @@ namespace HautsTraits
     {
         public override float MoodOffset()
         {
+            if (ThoughtUtility.ThoughtNullified(this.pawn, this.def))
+            {
+                return 0f;
+            }
             if (this.pawn.Faction == null)
             {
                 return -10f;
@@ -1590,7 +1598,7 @@ namespace HautsTraits
     {
         public override float MoodOffset()
         {
-            if (this.pawn.Faction == null)
+            if (this.pawn.Faction == null || ThoughtUtility.ThoughtNullified(this.pawn, this.def))
             {
                 return 0f;
             }
@@ -1625,7 +1633,7 @@ namespace HautsTraits
     {
         public override float MoodOffset()
         {
-            if (!this.pawn.Spawned)
+            if (ThoughtUtility.ThoughtNullified(this.pawn, this.def))
             {
                 return 0f;
             }
@@ -1636,20 +1644,15 @@ namespace HautsTraits
                 pollution = Find.WorldGrid[this.pawn.Map.Tile].PollutionLevel();
             } else if (pawn.GetCaravan() != null) {
                 pollution = Find.WorldGrid[pawn.GetCaravan().GetTileCurrentlyOver()].PollutionLevel();
-            } else
-            {
+            } else {
                 return 0f;
             }
             if (pollution == PollutionLevel.Light)
             {
                 num -= 15;
-            }
-            else if (pollution == PollutionLevel.Moderate)
-            {
+            } else if (pollution == PollutionLevel.Moderate) {
                 num -= 26;
-            }
-            else if (pollution == PollutionLevel.Extreme)
-            {
+            } else if (pollution == PollutionLevel.Extreme) {
                 num -= 37;
             }
             return this.BaseMoodOffset + num;
@@ -3973,7 +3976,6 @@ namespace HautsTraits
             pawn.ageTracker.TryChildGrowthMoment(pawn.ageTracker.AgeBiologicalYears, out int passionChoiceCount, out int num, out int num2);
             List<LifeStageWorkSettings> lifeStageWorkSettings = pawn.RaceProps.lifeStageWorkSettings;
             List<WorkTypeDef> tmpEnabledWorkTypes = new List<WorkTypeDef>();
-            passionChoiceCount = num2;
             for (int i = 0; i < lifeStageWorkSettings.Count; i++)
             {
                 if (lifeStageWorkSettings[i].minAge == pawn.ageTracker.AgeBiologicalYears)
@@ -3984,7 +3986,7 @@ namespace HautsTraits
             List<string> enabledWorkTypes = (from w in tmpEnabledWorkTypes
                                              select w.labelShort.CapitalizeFirst()).ToList<string>();
             ChoiceLetter_GrowthMoment choiceLetter_GrowthMoment = (ChoiceLetter_GrowthMoment)LetterMaker.MakeLetter(LetterDefOf.ChildBirthday);
-            choiceLetter_GrowthMoment.ConfigureGrowthLetter(pawn, passionChoiceCount, num, num2, enabledWorkTypes, pawn.Name);
+            choiceLetter_GrowthMoment.ConfigureGrowthLetter(pawn, 0, num, 0, enabledWorkTypes, pawn.Name);
             choiceLetter_GrowthMoment.Label = ("HVT_BonusGrowthMoment".Translate(pawn.Name.ToStringShort));
             choiceLetter_GrowthMoment.StartTimeout(120000);
             pawn.ageTracker.canGainGrowthPoints = false;

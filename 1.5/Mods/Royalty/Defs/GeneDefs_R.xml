@@ -146,7 +146,7 @@
 	</statOffsets>
 	<modExtensions>
 		<li Class="VanillaGenesExpanded.GeneExtension">
-			<hediffToWholeBody>HVT_PsychicIncarnate</hediffToWholeBody>
+			<hediffToWholeBody>HVT_PsychicIncarnate2</hediffToWholeBody>
 		</li>
 		<li Class="HautsTraits.SuperPsychicGene">
 			<category>awakening</category>

@@ -5,6 +5,7 @@
     <packageId>Hautarche.HautsTraits</packageId>
     <supportedVersions>
 		<li>1.5</li>
+		<li>1.6</li>
     </supportedVersions>
 	<description>Adds 43 fun traits for pawns (+15 with Ideology, +7 with Biotech, +4 with Royalty, and +6 with Anomaly; 75 with all DLCs). Most have unique mechanics, such as activatable combat abilities, new ways to get inspirations, and more. To experience more trait goodness, this mod also includes a serum that adds traits of your choice to pawns, and the mod settings enable you to tweak the number of traits pawns can spawn with, from anywhere between 1 to 9.
 
@@ -16,7 +17,7 @@ With Anomaly: there are two new benefits and two new downsides available to 'cre
 
 See the full description here: https://docs.google.com/document/d/1AjWjya-8knskExfpUYtH3eyMT3oHOg1_BPJzgBO_3FE/edit?usp=sharing
     </description>
-	<modIconPath IgnoreIfNoMatchingField="True">HautsLogo_Draft0</modIconPath>
+	<modIconPath IgnoreIfNoMatchingField="True">UI/HautsLogo_Draft0</modIconPath>
 	<modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>

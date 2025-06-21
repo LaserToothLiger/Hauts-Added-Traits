@@ -42,6 +42,7 @@
 <!--UI-->
 <HVT_SFAIcon>Scout for Hostiles</HVT_SFAIcon>
 <HVT_SFATooltip>Skulkers in this caravan will use their talents for stealth to ascertain if there is an ambush lying in wait at this site without actually triggering the ambush. Skulkers with impaired senses may accidentally miss evidence of an ambush.</HVT_SFATooltip>
+<HVT_SFALabel>Scout for hostiles ({0}% success chance)</HVT_SFALabel>
 <HVT_BurgleIcon>Burgle</HVT_BurgleIcon>
 <HVT_BurgleTooltip>Skulkers in this caravan will infiltrate this settlement to steal as many trade goods as they can carry.\n\nMaximum stealable value of goods is dependent on manipulation, move speed, sight (and hearing to a lesser extent), and melee damage factor.\n\nChance to avoid being caught is dependent on move speed, sight, hunter stealth, trap spring chance, and to a lesser extent, hearing, filth rate, and filth avoidance chance.\n\nGenerally, a settlement that cannot be traded with cannot be burgled from; either because they have nothing to steal, or because their lack of intention to trade allows them to use tighter, more inconvenient security measures for their goods.</HVT_BurgleTooltip>
 <HVT_BonusGrowthMoment>Bonus growth moment for {0}</HVT_BonusGrowthMoment>
@@ -108,8 +109,8 @@
 <HVT_AboutTransingEchoFantasy>Experiencing the full brunt of a mindquake has a chance to force transcendence on awakened individuals.</HVT_AboutTransingEchoFantasy>
 <HVT_AboutTransingFoxtrot>There is a slim chance to find transcendence by giving in to madness during a psychic drone.</HVT_AboutTransingFoxtrot>
 <HVT_AboutTransingFoxtrotFantasy>There is a slim chance to find transcendence by giving in to madness during an eldritch drone.</HVT_AboutTransingFoxtrotFantasy>
-<HVT_AboutTransingGolf>Transcendence can be achieved by accumulating and spending a preposterous amount of psyfocus - 466.56%, or six to the sixth - within one year.</HVT_AboutTransingGolf>
-<HVT_AboutTransingGolfFantasy>Transcendence can be achieved by accumulating and spending a preposterous amount of mana - 466.56%, or six to the sixth - within one year.</HVT_AboutTransingGolfFantasy>
+<HVT_AboutTransingGolf>Transcendence can be achieved by accumulating and spending a preposterous amount of psyfocus - 46656%, or six to the sixth - within one year.</HVT_AboutTransingGolf>
+<HVT_AboutTransingGolfFantasy>Transcendence can be achieved by accumulating and spending a preposterous amount of mana - 46656%, or six to the sixth - within one year.</HVT_AboutTransingGolfFantasy>
 <HVT_AboutTransingIdeologyExclusive>The archonexus will intervene if an awakened individual dies within its vicinity, causing both resurrection and transcendence.</HVT_AboutTransingIdeologyExclusive>
 <HVT_AboutTransingBiotechExclusive>There is a slim chance to achieve transcendence by being hit with the energy shockwave of a dying apocriton.</HVT_AboutTransingBiotechExclusive>
 <HVT_AboutTransingAnomalyExclusive>{PAWN_pronoun} has had a glimpse into the dark heart of the Void monolith. When it is fully activated, it will form a bridge between reality and the Void, and should one of the awakened cross into that dark heart, they will transcend.</HVT_AboutTransingAnomalyExclusive>
@@ -123,7 +124,7 @@
 <HVT_TransDeath>Mere instants from death, {PAWN_nameDef} experienced an indescribable flare of psychic power, and </HVT_TransDeath>
 <HVT_TransArchoDeath>Mere instants from death, the mind of a machine god interfered with causality, and </HVT_TransArchoDeath>
 <HVT_TransNeuroquake>By being subjected to the mind-shattering effect of a neuroquake, </HVT_TransNeuroquake>
-<HVT_TransApocriton>Through proximity to a dying apocriton, </HVT_TransApocriton>
+<HVT_TransApocritonBeow>Through proximity to a dying apocriton, </HVT_TransApocritonBeow>
 <HVT_TransByLeviathan>Due to {PAWN_possessive} further growth as a transcendent leviathan, </HVT_TransByLeviathan>
 <HVT_TransResurrection>Upon being resurrected, </HVT_TransResurrection>
 <HVT_TransPsyfocuser>Due to the mental fluctuations involved in attaining and utilizing a truly staggering amount of psyfocus, </HVT_TransPsyfocuser>
@@ -155,7 +156,7 @@
 <EgregoreIDFactorDesc>Transcendent egregore with {0} psychic sensitivity </EgregoreIDFactorDesc>
 <HVT_ErinysCensureTooltip>Meditate for {0} to cure</HVT_ErinysCensureTooltip>
 <HVT_PhoenixCanRez>As a transcendent phoenix, even death is insufficient to stop {PAWN_nameDef}... but it's not safe for {PAWN_objective} to resurrect right this moment. {PAWN_pronoun} will be back in a day unless {PAWN_possessive} body is destroyed.</HVT_PhoenixCanRez>
-<HVT_PhoenixRez>As a transcendent phoenix, even death is insufficient to stop {PAWN_nameDef}. It took {PAWN_objective} a bit longer than normal, but {PAWN_pronoun} has come back to life!</HVT_PhoenixRez>
+<HVT_PhoenixRez>As a transcendent phoenix, even death is insufficient to stop {PAWN_nameDef}. It took {PAWN_objective} a bit longer than trying to resurrect someone else, but {PAWN_pronoun} has come back to life!</HVT_PhoenixRez>
 <HVT_SeraphLabel>Transcendent seraph transfer: {0}</HVT_SeraphLabel>
 <HVT_SeraphText>{0} has inherited the Psychic Seraph trait from {1}.</HVT_SeraphText>
 <HVT_GetThunderbirdstruck>The power of a transcendent thunderbird has awakened {PAWN_nameDef} to {PAWN_possessive} own abilities!</HVT_GetThunderbirdstruck>

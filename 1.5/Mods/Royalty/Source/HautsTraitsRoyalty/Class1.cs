@@ -21,6 +21,7 @@ using Verse.Noise;
 using Verse.Sound;
 using VFECore;
 using VFECore.Shields;
+using static RimWorld.IdeoFoundation_Deity;
 using static RimWorld.PsychicRitualRoleDef;
 using static System.Net.Mime.MediaTypeNames;
 using static UnityEngine.GraphicsBuffer;
@@ -78,8 +79,8 @@ namespace HautsTraitsRoyalty
                               postfix: new HarmonyMethod(patchType, nameof(HautsTraitsLPAny_EmbraceTheVoidPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(VoidAwakeningUtility), nameof(VoidAwakeningUtility.DisruptTheLink)),
                               postfix: new HarmonyMethod(patchType, nameof(HautsTraitsLPAny_DisruptTheLinkPostfix)));
-                harmony.Patch(AccessTools.Method(typeof(BloodRainUtility), nameof(BloodRainUtility.TryTriggerBerserkShort)),
-                              prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_TryTriggerBerserkShortPrefix)));
+                harmony.Patch(AccessTools.Method(typeof(BloodRainUtility), nameof(BloodRainUtility.ExposedToBloodRain)),
+                              prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_ExposedToBloodRainPrefix)));
             }
             harmony.Patch(AccessTools.Method(typeof(TraitSet), nameof(TraitSet.GainTrait)),
                           prefix: new HarmonyMethod(patchType, nameof(HautsTraitsAA_GainTraitPrefix)));
@@ -1544,7 +1545,7 @@ namespace HautsTraitsRoyalty
         }
         public static void HautsTraitsTrans_AdjustedMeleeDamageAmountPostfix(ref float __result, Tool tool, Pawn attacker, Thing equipment)
         {
-            if (tool != null && equipment != null && attacker != null && attacker.story != null && attacker.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCassowary))
+            if (tool != null && equipment != null && equipment.def.comps != null && attacker != null && attacker.story != null && attacker.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCassowary))
             {
                 for (int i = 0; i < equipment.def.comps.Count; i++)
                 {
@@ -1645,7 +1646,7 @@ namespace HautsTraitsRoyalty
         {
             if (worker.story != null)
             {
-                if (worker.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitWeaverbird) && Rand.Chance(1.5f))
+                if (worker.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitWeaverbird) && Rand.Chance(0.5f))
                 {
                     foreach (Thing product in __result)
                     {
@@ -1790,7 +1791,7 @@ namespace HautsTraitsRoyalty
                 PsychicAwakeningUtility.MynahAbilityCopy(recipient, pawn);
             }
         }
-        public static bool HautsTraitsTrans_TryTriggerBerserkShortPrefix(Pawn pawn)
+        public static bool HautsTraitsTrans_ExposedToBloodRainPrefix(Pawn pawn)
         {
             if (pawn.story != null)
             {
@@ -1976,7 +1977,7 @@ namespace HautsTraitsRoyalty
     {
         public override float MoodOffset()
         {
-            if (this.pawn.Faction == null)
+            if (this.pawn.Faction == null || ThoughtUtility.ThoughtNullified(this.pawn, this.def))
             {
                 return 0f;
             }
@@ -2051,7 +2052,7 @@ namespace HautsTraitsRoyalty
     {
         public override float MoodOffset()
         {
-            if (this.pawn.Faction == null)
+            if (this.pawn.Faction == null || ThoughtUtility.ThoughtNullified(this.pawn, this.def))
             {
                 return 0f;
             }
@@ -2072,9 +2073,7 @@ namespace HautsTraitsRoyalty
                         }
                     }
                 }
-            }
-            else if (pawn.GetCaravan() != null)
-            {
+            } else if (pawn.GetCaravan() != null) {
                 foreach (Pawn p in pawn.GetCaravan().pawns.InnerListForReading)
                 {
                     if (p != this.pawn && p.Faction != null && this.pawn.Faction == p.Faction)
@@ -2097,9 +2096,7 @@ namespace HautsTraitsRoyalty
                             }
                         }
                     }
-                }
-                else if (pawn.GetCaravan() != null)
-                {
+                } else if (pawn.GetCaravan() != null) {
                     foreach (Pawn p in pawn.GetCaravan().pawns.InnerListForReading)
                     {
                         if (p != this.pawn && p.Faction != null && this.pawn.Faction == p.Faction && p.ideo != null && p.ideo.Ideo == this.pawn.ideo.Ideo && p.ideo.Ideo.GetRole(p) != null)
@@ -2171,6 +2168,7 @@ namespace HautsTraitsRoyalty
                         if (Rand.Value <= 0.2f)
                         {
                             PsychicAwakeningUtility.AwakenPsychicTalentCheck(this.pawn, 5, true, "HVT_WokeBeatIllness".Translate(h.Label, this.pawn.Name.ToStringShort, this.pawn.gender.GetPossessive()).Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), "HVT_WokeBeatIllnessFantasy".Translate(h.Label, this.pawn.Name.ToStringShort, this.pawn.gender.GetPossessive()).Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), false, 0f);
+                            break;
                         } else {
                             this.Severity = 0.001f;
                         }
@@ -2276,7 +2274,22 @@ namespace HautsTraitsRoyalty
                 {
                     if (this.pawn.Spawned)
                     {
-                        GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_AlbatrossSquall, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
+                        Thing t = this.pawn.Position.GetFirstThing(this.pawn.Map, HVTRoyaltyDefOf.HVT_AlbatrossSquall);
+                        if (t != null)
+                        {
+                            CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                            if (cdad != null)
+                            {
+                                cdad.spawnTick = Find.TickManager.TicksGame;
+                            }
+                            CompWindSource cws = t.TryGetComp<CompWindSource>();
+                            if (cws != null)
+                            {
+                                cws.wind = Math.Max(2f, cws.wind + 0.025f);
+                            }
+                        } else {
+                            GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_AlbatrossSquall, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
+                        }
                     }
                 }
             }
@@ -2402,29 +2415,32 @@ namespace HautsTraitsRoyalty
         public override void PostTick()
         {
             base.PostTick();
-            if (this.pawn.IsHashIntervalTick(2500) && Rand.Chance(0.0001f))
+            if (this.pawn.IsHashIntervalTick(2500))
             {
-                for (int i = 0; i < this.pawn.skills.skills.Count; i++)
+                if (Rand.Chance(0.0001f))
                 {
-                    if (this.pawn.skills.skills[i].GetLevel() >= 15)
+                    for (int i = 0; i < this.pawn.skills.skills.Count; i++)
+                    {
+                        if (this.pawn.skills.skills[i].GetLevel() >= 15)
+                        {
+                            PsychicAwakeningUtility.ColonyHuddle(this.pawn);
+                            return;
+                        }
+                    }
+                    if (this.Severity >= 500f)
                     {
                         PsychicAwakeningUtility.ColonyHuddle(this.pawn);
-                        return;
                     }
                 }
-                if (this.Severity >= 500f)
+                foreach (Hediff h in this.pawn.health.hediffSet.hediffs)
                 {
-                    PsychicAwakeningUtility.ColonyHuddle(this.pawn);
-                }
-            }
-            foreach (Hediff h in this.pawn.health.hediffSet.hediffs)
-            {
-                if (h.CurStage != null && h.CurStage.lifeThreatening && h.FullyImmune())
-                {
-                    if (Rand.Value <= 0.2f)
+                    if (h.CurStage != null && h.CurStage.lifeThreatening && h.FullyImmune())
                     {
-                        PsychicAwakeningUtility.ColonyHuddle(this.pawn);
-                        return;
+                        if (Rand.Value <= 0.075f)
+                        {
+                            PsychicAwakeningUtility.ColonyHuddle(this.pawn);
+                            return;
+                        }
                     }
                 }
             }
@@ -2453,8 +2469,15 @@ namespace HautsTraitsRoyalty
             {
                 if (this.Severity >= 0.5f && this.pawn.psychicEntropy != null && this.pawn.psychicEntropy.IsCurrentlyMeditating)
                 {
-                    if (this.pawn.Spawned)
+                    Thing t = this.pawn.Position.GetFirstThing(this.pawn.Map, HVTRoyaltyDefOf.HVT_BowerShield);
+                    if (t != null)
                     {
+                        CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                        if (cdad != null)
+                        {
+                            cdad.spawnTick = Find.TickManager.TicksGame;
+                        }
+                    } else {
                         GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_BowerShield, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
                     }
                     if (this.pawn.IsHashIntervalTick(625))
@@ -2530,6 +2553,11 @@ namespace HautsTraitsRoyalty
                 this.pawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
             }
         }
+        public override void Notify_Resurrected()
+        {
+            base.Notify_Resurrected();
+            this.pawn.health.RemoveHediff(this);
+        }
     }
     public class Hediff_InnerWildfire : HediffWithComps
     {
@@ -2542,7 +2570,17 @@ namespace HautsTraitsRoyalty
                 {
                     if (this.pawn.Spawned)
                     {
-                        GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_InnerWildfire, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
+                        Thing t = this.pawn.Position.GetFirstThing(this.pawn.Map, HVTRoyaltyDefOf.HVT_InnerWildfire);
+                        if (t != null)
+                        {
+                            CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                            if (cdad != null)
+                            {
+                                cdad.spawnTick = Find.TickManager.TicksGame;
+                            }
+                        } else {
+                            GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_InnerWildfire, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
+                        }
                     }
                 }
             }
@@ -3260,7 +3298,7 @@ namespace HautsTraitsRoyalty
                 if (this.pawn.IsHashIntervalTick(2400) && this.Severity >= 1f)
                 {
                     float mfg = this.pawn.GetStatValue(StatDefOf.MeditationFocusGain);
-                    if (Rand.Chance(0.07f*mfg))
+                    if (Rand.Chance(0.08f*mfg))
                     {
                         List<CompQuality> items = new List<CompQuality>();
                         if (this.pawn.apparel != null)
@@ -3343,8 +3381,8 @@ namespace HautsTraitsRoyalty
                             }
                         }
                     }
+                    this.Severity -= 1f;
                 }
-                this.Severity -= 1f;
             }
             base.Tick();
         }
@@ -3397,21 +3435,29 @@ namespace HautsTraitsRoyalty
         public override void PostTick()
         {
             base.PostTick();
-            if (this.pawn.IsHashIntervalTick(300) && this.pawn.GetCaravan() != null && this.pawn.GetCaravan().pather.MovingNow && Rand.Chance(Math.Min(0.05f, 0.004f * this.pawn.GetStatValue(StatDefOf.PsychicSensitivity))))
+            if (this.pawn.IsHashIntervalTick(300) && this.pawn.GetCaravan() != null && this.pawn.GetCaravan().pather.MovingNow && Rand.Chance(Math.Min(10.05f, 10.004f * this.pawn.GetStatValue(StatDefOf.PsychicSensitivity))))
             {
                 float maxValue = Rand.Chance(0.9f) ? Math.Min(6f, this.pawn.GetPsylinkLevel()) * 600f : -1f;
                 ThingDef tDef = (from tdef in DefDatabase<ThingDef>.AllDefsListForReading
-                                 where (tdef.BaseMarketValue <= maxValue || maxValue < 0f) && (tdef.category == ThingCategory.Item || (tdef.category == ThingCategory.Building && tdef.Minifiable))
+                                 where ((tdef.BaseMarketValue <= maxValue || maxValue < 0f) && (tdef.category == ThingCategory.Item || (tdef.category == ThingCategory.Building && tdef.Minifiable)) && !tdef.thingClass.IsAssignableFrom(typeof(MinifiedThing)) && !tdef.thingClass.IsAssignableFrom(typeof(MinifiedTree)) && !tdef.thingClass.IsAssignableFrom(typeof(Corpse)) && !tdef.thingClass.IsAssignableFrom(typeof(UnfinishedThing)))
                                  select tdef).RandomElement();
                 if (tDef != null)
                 {
                     Thing thing = ThingMaker.MakeThing(tDef, GenStuff.RandomStuffFor(tDef));
+                    CompQuality cq = thing.TryGetComp<CompQuality>();
+                    if (cq != null)
+                    {
+                        cq.SetQuality(QualityUtility.GenerateQuality(Rand.Chance(0.8f) ? QualityGenerator.BaseGen : QualityGenerator.Reward), ArtGenerationContext.Outsider);
+                    }
+                    thing.PostPostMake();
                     thing.stackCount = Math.Min(tDef.stackLimit, maxValue > 0f ? (int)Math.Ceiling(maxValue / tDef.BaseMarketValue) : tDef.stackLimit);
                     if (tDef.Minifiable)
                     {
-                        thing.MakeMinified();
+                        Thing thing2 = thing.MakeMinified();
+                        this.pawn.GetCaravan().AddPawnOrItem(thing2, true);
+                    } else {
+                        this.pawn.GetCaravan().AddPawnOrItem(thing, true);
                     }
-                    this.pawn.GetCaravan().AddPawnOrItem(thing, true);
                     Messages.Message("HVT_RobinGetItem".Translate().CapitalizeFirst().Formatted(this.pawn.Name.ToStringShort, thing.Label).Resolve(), null, MessageTypeDefOf.PositiveEvent, true);
                 }
             }
@@ -3428,12 +3474,16 @@ namespace HautsTraitsRoyalty
                 {
                     this.pawn.health.RemoveHediff(this.pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Hypothermia));
                 }
-                if (this.pawn.psychicEntropy != null && this.pawn.psychicEntropy.IsCurrentlyMeditating)
+                Thing t = this.pawn.Position.GetFirstThing(this.pawn.Map, HVTRoyaltyDefOf.HVT_ColdColdHeart);
+                if (t != null)
                 {
-                    if (this.pawn.Spawned)
+                    CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                    if (cdad != null)
                     {
-                        GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_ColdColdHeart, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
+                        cdad.spawnTick = Find.TickManager.TicksGame;
                     }
+                } else {
+                    GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_ColdColdHeart, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
                 }
             }
         }
@@ -4260,6 +4310,7 @@ namespace HautsTraitsRoyalty
             {
                 this.StartNewTimer();
             }
+            this.ticksToNextReset--;
             if (this.ticksToNextReset <= 0)
             {
                 this.parent.Severity = this.parent.def.minSeverity;
@@ -4328,7 +4379,7 @@ namespace HautsTraitsRoyalty
                 {
                     if (PsychicAwakeningUtility.IsAwakenedPsychic(p) && p.Position.DistanceTo(this.parent.PositionHeld) <= this.Props.radius)
                     {
-                        PsychicAwakeningUtility.AchieveTranscendence(p, "HVT_TransApocriton".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), "HVT_TransApocriton".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), 1f);
+                        PsychicAwakeningUtility.AchieveTranscendence(p, "HVT_TransApocritonBeow".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), "HVT_TransApocriton".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), 1f);
                     }
                 }
             }
@@ -4568,7 +4619,7 @@ namespace HautsTraitsRoyalty
         public override void DoExtraEffects(Pawn victim, float valueToScale, BodyPartRecord hitPart = null)
         {
             base.DoExtraEffects(victim, valueToScale, hitPart);
-            if (victim.RaceProps.IsMechanoid)
+            if (victim.RaceProps.IsMechanoid && !victim.kindDef.isBoss)
             {
                 if (this.Props.hediff != null && (this.Props.victimScalar == null || victim.GetStatValue(this.Props.victimScalar) > float.Epsilon))
                 {
@@ -5167,12 +5218,12 @@ namespace HautsTraitsRoyalty
                 while (healables.Count > 0 && plants.Count > 0)
                 {
                     Plant plant = plants.RandomElement();
-                    plant.TakeDamage(new DamageInfo(this.Props.damageType, this.Props.damage));
                     FleckCreationData dataStatic = FleckMaker.GetDataStatic(plant.PositionHeld.ToVector3(), plant.MapHeld, FleckDefOf.Smoke, 1f);
                     dataStatic.rotationRate = Rand.Range(-30f, 30f);
                     dataStatic.velocityAngle = (float)Rand.Range(30, 40);
                     dataStatic.velocitySpeed = Rand.Range(0.5f, 0.7f);
                     plant.MapHeld.flecks.CreateFleck(dataStatic);
+                    plant.TakeDamage(new DamageInfo(this.Props.damageType, this.Props.damage));
                     Hediff h2 = healables.RandomElement();
                     h2.Severity -= this.Props.lifeLeech;
                     if (h2.ShouldRemove)
@@ -7254,7 +7305,7 @@ namespace HautsTraitsRoyalty
         }
         protected override void ModifyPawnPostGenerate(Pawn pawn, bool redressed)
         {
-            if (pawn.story == null || pawn.story.traits == null)
+            if (pawn.story == null || pawn.story.traits == null || pawn.IsMutant)
             {
                 return;
             }

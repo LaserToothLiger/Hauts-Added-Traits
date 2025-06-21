@@ -139,7 +139,7 @@
   <!--bookworm mood from reading-->
   <ThoughtDef>
     <defName>HVT_Bibliophilia</defName>
-    <durationDays>0.334</durationDays>
+    <durationDays>0.5</durationDays>
     <stackLimit>10</stackLimit>
     <stackedEffectMultiplier>1.0</stackedEffectMultiplier>
     <validWhileDespawned>true</validWhileDespawned>
@@ -653,7 +653,7 @@
     </stages>
   </ThoughtDef>
   
-  <!--Vain moodlet for 10x personal beauty, +3 per every masterwork apparel worn, +6 per every legendary apparel worn-->
+  <!--Vain moodlet for 5x personal beauty, +3 per every masterwork apparel worn, +6 per every legendary apparel worn-->
   <ThoughtDef>
     <defName>HVT_BeautyMoodletVain</defName>
     <thoughtClass>HautsTraits.Thought_VanityBeautyAndGreatItems</thoughtClass>
@@ -665,7 +665,7 @@
     <stages>
       <li>
         <label>beauty vanity</label>
-        <description>Mood from the 'vain' trait, equal to 10 times one's own beauty score, and further modified by the number of masterwork or legendary items worn.</description>
+        <description>Mood from the 'vain' trait, equal to 5 times one's own beauty score, and further modified by the number of masterwork or legendary items worn.</description>
         <baseMoodEffect>0</baseMoodEffect>
       </li>
     </stages>
@@ -1170,7 +1170,7 @@
       <li>
         <label>mechaphobe</label>
         <description>The more mechanoids we have around, the more I worry for our safety.</description>
-        <baseMoodEffect>-1</baseMoodEffect>
+        <baseMoodEffect>-0.5</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -1213,6 +1213,7 @@
     <defName>HVT_Environmentalist_HatesPollution</defName>
     <thoughtClass>HautsTraits.Thought_Situational_PollutionOnTile</thoughtClass>
     <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
     <requiredTraits>
       <li>HVT_Environmentalist</li>
     </requiredTraits>
@@ -1300,7 +1301,7 @@
     <stages>
       <li>
         <label>planetkiller catastrophe</label>
-        <description>A planetkiller is on its way. It will be here soon - and oh, when it does, everything will be unmade in glorious fire.</description>
+        <description>A planetkiller is on its way. It will be here soon - and oh, when it arrives, everything will be unmade in glorious fire.</description>
       </li>
     </stages>
   </ThoughtDef>
@@ -1349,7 +1350,7 @@
       </li>
       <li>
         <label>utter corruption</label>
-        <description>I understand now! The binding force of the universe is hatred. It runs thick, hot, lightless; braiding and twining madly in the space-beneath-space. This cosmos, with its stars and its lives and its hope and happiness and laughter - it is all some sick, malformed joke!</description>
+        <description>I understand now! The binding force of the universe is hatred! It runs thick, hot, lightless; braiding and twining madly in the space-beneath-space. This cosmos, with its stars and its lives and its hope and happiness and laughter - it is all some sick, malformed joke!</description>
         <baseMoodEffect>-20</baseMoodEffect>
       </li>
       <li>

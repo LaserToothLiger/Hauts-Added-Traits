@@ -288,6 +288,7 @@
     <description>When someone with the 'Hysteric' trait is at risk of a mood-induced mental break, those nearby feel worse as well.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.0, 0, 0.76)</defaultLabelColor>
+	<minSeverity>0.001</minSeverity>
 	<initialSeverity>0.001</initialSeverity>
     <maxSeverity>6.0</maxSeverity>
     <stages>

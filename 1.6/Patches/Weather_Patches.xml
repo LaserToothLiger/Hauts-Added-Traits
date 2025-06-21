@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch><!--here's the 'game conditions' that Tempestophiles don't like-->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>/Defs/WeatherDef[defName="Clear"]</xpath>
+		<value>
+			<li Class="HautsTraits.TempestophileDisLikedCondition" />
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>/Defs/WeatherDef[@Name="Weather_Underground"]</xpath>
+		<value>
+			<li Class="HautsTraits.TempestophileDisLikedCondition" />
+		</value>
+	</Operation>
+</Patch>

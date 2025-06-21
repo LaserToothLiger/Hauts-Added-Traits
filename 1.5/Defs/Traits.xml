@@ -702,6 +702,12 @@
 			  <VAEI_SanityMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.15</VAEI_SanityMultiplier>
 			</statFactors>
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
+			<theOnlyAllowedMentalBreaks><!--0x mbt doesn't actually make mental breaks impossible. Tranquil instantly ends any mental states, but doesn't prevent mental breaks so the game engine can "let off steam". this means there's one more thing to do: prevent low mood from causing mental breaks that DON'T cause mental states and therefore can't be prematurely ended by Tranquil-->
+			  <li>Wander_Sad</li>
+			  <li>Wander_OwnRoom</li>
+			  <li>Wander_Psychotic</li>
+			  <li>GiveUpExit</li>
+			</theOnlyAllowedMentalBreaks>
 		  </li>
 		</degreeDatas>
 		<conflictingTraits>
@@ -886,6 +892,7 @@
 			  <NegotiationAbility>0.08</NegotiationAbility>
 			  <SocialImpact>0.03</SocialImpact>
 			  <TradePriceImprovement>0.02</TradePriceImprovement>
+			  <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.03</SuppressionPower>
 			  <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.09</ConversionPower>
 			  <RecruitRelationshipDamage MayRequire="Orion.Hospitality">5</RecruitRelationshipDamage>
 			  <ForcedRecruitRelationshipDamage MayRequire="Orion.Hospitality">5</ForcedRecruitRelationshipDamage>

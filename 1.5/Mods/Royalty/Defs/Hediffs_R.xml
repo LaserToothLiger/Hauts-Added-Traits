@@ -408,6 +408,39 @@
 		<forcingTraits>
 			<li>HVT_AwakenedIncarnate</li>
 		</forcingTraits>
+	  </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_PsychicIncarnate2</defName>
+    <label>psychic incarnate</label>
+    <description>The minds and bodies of awakened incarnates improve with every psycast known.</description>
+    <hediffClass>HautsTraitsRoyalty.Hediff_IncarnatePsycastsKnown</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>20000.0</maxSeverity>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+        <statOffsets>
+          <ArmorRating_Sharp>0.009</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.009</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.009</ArmorRating_Heat>
+		  <LifespanFactor>0.009</LifespanFactor>
+          <MoveSpeed>0.06</MoveSpeed>
+		  <PawnBeauty>0.06</PawnBeauty>
+          <InjuryHealingFactor>0.05</InjuryHealingFactor>
+		  <MeleeDamageFactor>0.05</MeleeDamageFactor>
+		  <VEF_RangeAttackSpeedFactor>0.05</VEF_RangeAttackSpeedFactor>
+          <ImmunityGainSpeed>0.03</ImmunityGainSpeed>
+		  <RestFallRateFactor>-0.004</RestFallRateFactor>
+		  <PawnTrapSpringChance>-0.004</PawnTrapSpringChance>
+		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.01</P42_AllergicSensitivity>
+        </statOffsets>
+		<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+      </li>
+    </stages>
+    <comps>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingGenes MayRequire="Ludeon.RimWorld.Biotech">
 			<li MayRequire="Ludeon.RimWorld.Biotech">HVT_AIncarnateGene</li>
 		</forcingGenes>
@@ -1713,7 +1746,6 @@
 		  <li Class="HediffCompProperties_KillAfterDays">
 			<days>3</days>
 		  </li>
-		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
 	  </HediffDef>
   <!--E-->
@@ -1942,6 +1974,9 @@
 		</forcingTraits>
 	  </li>
     </comps>
+	<modExtensions>
+      <li Class="HautsFramework.NoEMPReaction" />
+	</modExtensions>
   </HediffDef>
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_THediffAptenodytes</defName>
@@ -3784,7 +3819,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <minSeverity>0.001</minSeverity>
-    <initialSeverity>0.001</initialSeverity>
+    <initialSeverity>0.052</initialSeverity>
     <maxSeverity>100</maxSeverity>
     <stages>
       <li>
@@ -4387,6 +4422,7 @@
 		<hediffsToCure><!--PPOH already takes care of food poisoning, overdoses, and addictions... this is just a surplus XML-modifiable list of things it can reduce the severity of (not just outright cure)-->
 		  <li>ToxicBuildup</li>
 		  <li MayRequire="Ludeon.RimWorld.Biotech">ToxGasExposure</li>
+		  <li MayRequire="Ludeon.RimWorld.Anomaly">BloodRage</li>
 		  <li>VEF_ToxicBuildup</li>
 		  <li MayRequire="SirMashedPotato.Ashlands">Mashed_Ashlands_AshBuildup</li>
 		  <li MayRequire="OskarPotocki.VanillaFactionsExpanded.MedievalModule">VFEM_AntisepticSmell</li>
@@ -4823,7 +4859,6 @@
 		<statFactors>
 		  <PsychicEntropyRecoveryRate>1.65</PsychicEntropyRecoveryRate>
 		</statFactors>
-		<becomeVisible>false</becomeVisible>
       </li>
     </stages>
     <comps>
@@ -6551,6 +6586,7 @@
     <hediffClass>HautsTraitsRoyalty.Hediff_Censure</hediffClass>
     <defaultLabelColor>(1.0, 0.8, 0.9)</defaultLabelColor>
     <initialSeverity>60000</initialSeverity>
+	<maxSeverity>3600000</maxSeverity>
     <stages>
       <li>
 		<statFactors>
@@ -6731,7 +6767,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_LeeringSphinx</defName>
     <label>leering sphinx</label>
-    <description>Due to failed use of the psychic instruction ability, this character's psychic presence has become deleteriously tangled. The 'leering sphinx', as it is called by tribal folklorists, isn't harmful at the outset. However, if the condition builds up too much - due to three failed uses of psychic instruction - the victim perishes suddenly, and is nigh-impossible to revive by even the most advanced means.</description>
+    <description>Due to failed use of the psychic instruction ability, this character's psychic presence has become deleteriously tangled. The 'leering sphinx', as it is called by tribal folklorists, isn't harmful at the outset. However, if the condition builds up too much - due to three failed uses of psychic instruction - the victim perishes suddenly.</description>
 	<hediffClass>HautsTraitsRoyalty.Hediff_LeeringSphinx</hediffClass>
     <defaultLabelColor>(0.8, 0.18, 0)</defaultLabelColor>
 	<initialSeverity>0.001</initialSeverity>
@@ -6820,7 +6856,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_THediffWraith</defName>
     <label>transcendent wraith</label>
-    <description>On death, transcendent wraiths transfer their consciousnesses to another psychically sensitive non-psychic being. However, this transfer can't occur if it's been used within the last hour, nor if they've been struck by a persona weapon within the last day.</description>
+    <description>On death, transcendent wraiths transfer their consciousnesses to another psychically sensitive non-psychic being. Transferrence can't occur more than once in a 24-hour period, but during that time a wraith is invulnerable to all vectors of attack except persona weapons.</description>
     <hediffClass>HautsTraitsRoyalty.Hediff_Wraithly</hediffClass>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
