@@ -1732,6 +1732,7 @@
 			<description>Every 24 hours, {PAWN_nameDef} manifests random allies - the higher {PAWN_possessive} psychic sensitivity, the more allies are created. They're fragile and will disappear after 24 hours, but they're more psychically sensitive, and they don't need to eat or sleep.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
+			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.25</LanguageLearningAbility>
 			</statOffsets>
 		  </li>
@@ -2178,6 +2179,9 @@
 			<label>psychic oxpecker</label>
 			<description>{PAWN_nameDef} intermittently psychically tames a random animal. This effect can occur over long distances, and its frequency is based on {PAWN_possessive} psychic sensitivity.\n\nWhen {PAWN_pronoun} affects an animal with a psycast, its health is either boosted (if non-hostile) or impaired (if hostile).</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
 		<requiredWorkTags><li>Animals</li></requiredWorkTags>
@@ -2456,6 +2460,9 @@
 			<label>psychic quokka</label>
 			<description>{PAWN_nameDef} broadcasts a psychic serenity detectable by animals, improving {PAWN_possessive} interactions with them, preventing them from harming {PAWN_objective}, and even causing {PAWN_possessive} psycasts to cure affected animals' scaria.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
+			</statOffsets>
 			<statFactors>
 			  <TameAnimalChance>2</TameAnimalChance>
 			  <TrainAnimalChance>5</TrainAnimalChance>
@@ -3068,6 +3075,9 @@
 			<label>psychic war queen</label>
 			<description>{PAWN_nameDef} periodically skips psychically tamed animals of a specific type to {PAWN_possessive} location. This effect occurs faster while meditating. New animals won't be summoned if doing so would cause the sum body size of all current ones to exceed twice {PAWN_possessive} psylink level.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>

@@ -6432,7 +6432,7 @@
 			  <burstShotCount>1</burstShotCount>
 			  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 			  <muzzleFlashScale>2</muzzleFlashScale>
-			  <commandIcon>UI/Abilities/Neuroquake</commandIcon>
+			  <commandIcon>PsychicTraits/Attacks/HVT_PkSting</commandIcon>
 			</li>
 		</verbs>
 		<verbProps>
