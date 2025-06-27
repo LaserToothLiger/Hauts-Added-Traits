@@ -612,6 +612,7 @@
           <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
           <ArmorRating_Heat>0.20</ArmorRating_Heat>
 		  <MeleeDamageFactor>0.25</MeleeDamageFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.2</VacuumResistance>
         </statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>1.2</ImmunityGainSpeed>
@@ -638,6 +639,7 @@
           <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
           <ArmorRating_Heat>0.40</ArmorRating_Heat>
 		  <MeleeDamageFactor>0.5</MeleeDamageFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.4</VacuumResistance>
         </statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>1.4</ImmunityGainSpeed>
@@ -664,6 +666,7 @@
           <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
           <ArmorRating_Heat>0.60</ArmorRating_Heat>
 		  <MeleeDamageFactor>0.75</MeleeDamageFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.6</VacuumResistance>
         </statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>1.6</ImmunityGainSpeed>
@@ -712,6 +715,7 @@
           <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
           <ArmorRating_Heat>0.15</ArmorRating_Heat>
 		  <MeleeDamageFactor>0.2</MeleeDamageFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.15</VacuumResistance>
         </statOffsets>
 		<statFactors>
 		  <InjuryHealingFactor>2.25</InjuryHealingFactor>
@@ -737,6 +741,7 @@
           <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
           <ArmorRating_Heat>0.30</ArmorRating_Heat>
 		  <MeleeDamageFactor>0.4</MeleeDamageFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
         </statOffsets>
 		<statFactors>
 		  <InjuryHealingFactor>4.5</InjuryHealingFactor>
@@ -762,6 +767,7 @@
           <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
           <ArmorRating_Heat>0.45</ArmorRating_Heat>
 		  <MeleeDamageFactor>0.6</MeleeDamageFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.45</VacuumResistance>
         </statOffsets>
 		<statFactors>
 		  <InjuryHealingFactor>6.75</InjuryHealingFactor>
@@ -3939,6 +3945,9 @@
 			<statFactors>
 			  <RestFallRateFactor>0.85</RestFallRateFactor>
 			</statFactors>
+			<statOffsets>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.2</VacuumResistance>
+			</statOffsets>
 			<hungerRateFactor>0.85</hungerRateFactor>
 		  </li>
 		</stages>
@@ -4553,6 +4562,9 @@
 			  <HygieneRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.2</HygieneRateMultiplier>
 			  <BladderRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.2</BladderRateMultiplier>
 			</statFactors>
+			<statOffsets>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.25</VacuumResistance>
+			</statOffsets>
 			<capMods>
 			  <li>
 				<capacity>Breathing</capacity>
@@ -4830,7 +4842,9 @@
     <maxSeverity>120</maxSeverity>
     <stages>
       <li>
-		<becomeVisible>false</becomeVisible>
+		<statOffsets>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+		</statOffsets>
       </li>
     </stages>
     <comps>
@@ -6466,6 +6480,7 @@
 		  <Hauts_PsyfocusRegenRate>0.35</Hauts_PsyfocusRegenRate>
 		  <LifespanFactor>2000</LifespanFactor>
 		  <VEF_EnergyShieldEnergyMaxFactor>1</VEF_EnergyShieldEnergyMaxFactor>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 		</statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>3</ImmunityGainSpeed>
@@ -6516,6 +6531,7 @@
 		  <Hauts_MeleeArmorPenetration>0.1</Hauts_MeleeArmorPenetration>
 		  <Hauts_RangedArmorPenetration>0.1</Hauts_RangedArmorPenetration>
 		  <PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.01</VacuumResistance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.05</P42_AllergicSensitivity>
         </statOffsets>
 		<statFactors>
@@ -6920,6 +6936,7 @@
         </capMods>
 		<statOffsets>
 			<PainShockThreshold>100</PainShockThreshold>
+		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 		</statOffsets>
 		<statFactors>
 		  <InjuryHealingFactor>10</InjuryHealingFactor>

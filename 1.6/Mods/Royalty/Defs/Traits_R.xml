@@ -490,8 +490,9 @@
 			<description>{PAWN_nameDef} hovers, negating movement penalties from the terrain, and {PAWN_pronoun} also gains armor based on the current wind level. While meditating, {PAWN_pronoun} causes the wind to howl.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
-			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.5</VacuumResistance>
+			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -820,6 +821,7 @@
 			<description>{PAWN_nameDef} regenerates from wounds, even permanent ones, unnaturally fast. {PAWN_pronoun} can even come back from death, taking somewhere between 3-15 days.</description>
 			<statOffsets>
 				<InjuryHealingFactor>99</InjuryHealingFactor>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			</statOffsets>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
@@ -1109,6 +1111,7 @@
 			<statFactors>
 			  <LifespanFactor>100000</LifespanFactor>
 			  <Hauts_ApparelWearRateFactor>0</Hauts_ApparelWearRateFactor>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			</statFactors>
 			<statOffsets>
@@ -1221,6 +1224,7 @@
 			<description>{PAWN_nameDef} is immune to fire, poison, and most environmental phenomena.</description>
 			<statFactors>
 			  <Flammability>0</Flammability>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
 			</statFactors>
@@ -1286,6 +1290,9 @@
 			<label>fossilized psychic</label>
 			<description>{PAWN_nameDef} has had {PAWN_possessive} entire body replaced and augmented by a cyber-organic, archite-empowered material. {PAWN_pronoun} no longer bleeds, surgeries cannot fail on {PAWN_objective}, and {PAWN_possessive} bodily functions are greatly enhanced.\n\n{PAWN_possessive} psychic potential has been stymied as a result of this change; {PAWN_pronoun} can no longer gain new transcendences.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1352,6 +1359,7 @@
 			<statOffsets>
 			  <ToxicResistance>0.25</ToxicResistance>
 			  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.5</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">1</Mashed_Ashlands_AshResistance>
 			</statOffsets>
@@ -2367,6 +2375,7 @@
 			<statFactors>
 			  <JoyFallRateFactor>0.05</JoyFallRateFactor>
 			  <RestFallRateFactor>0.05</RestFallRateFactor>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.9</VacuumResistance>
 			  <ThirstRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.05</ThirstRateMultiplier>
 			  <HygieneRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.05</HygieneRateMultiplier>
 			  <BladderRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.05</BladderRateMultiplier>
@@ -2676,9 +2685,10 @@
 			<description>{PAWN_nameDef} can manipulate the weather. {PAWN_pronoun} also hovers, allowing {PAWN_objective} to ignore the pathing costs of terrain.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.5</VacuumResistance>
+			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">2</Mashed_Ashlands_AshResistance>
-			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
 			</statOffsets>
 		  </li>
 		</degreeDatas>

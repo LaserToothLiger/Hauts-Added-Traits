@@ -25,6 +25,7 @@ using static System.Net.Mime.MediaTypeNames;
 using static UnityEngine.GraphicsBuffer;
 using VEF.Hediffs;
 using MVCF.Utilities;
+using static RimWorld.FleshTypeDef;
 
 namespace HautsTraitsRoyalty
 {
@@ -4312,15 +4313,20 @@ namespace HautsTraitsRoyalty
             base.CompPostTickInterval(ref severityAdjustment, delta);
             if (this.Pawn.IsHashIntervalTick(180, delta) && !this.hasSentTransClueMessage && HVT_Mod.settings.enableTranscendenceHints && this.Pawn.Faction != null && this.Pawn.Faction == Faction.OfPlayerSilentFail && this.Pawn.story != null && !PsychicAwakeningUtility.IsTranscendent(this.Pawn))
             {
-                string letterText = "HVT_AboutTransingTextPrefix".Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve();
-                List<string> possibleTransMethods = this.Props.aboutTransingStrings;
-                if (ModsConfig.AnomalyActive && Find.Anomaly.monolith != null)
+                if (PsychicAwakeningUtility.IsTranscendent(this.Pawn))
                 {
-                    possibleTransMethods.AddRange(this.Props.aboutTransingStringsMonolithRequired);
+                    this.hasSentTransClueMessage = true;
+                } else {
+                    string letterText = "HVT_AboutTransingTextPrefix".Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve();
+                    List<string> possibleTransMethods = this.Props.aboutTransingStrings;
+                    if (ModsConfig.AnomalyActive && Find.Anomaly.monolith != null)
+                    {
+                        possibleTransMethods.AddRange(this.Props.aboutTransingStringsMonolithRequired);
+                    }
+                    letterText += "\n\n" + possibleTransMethods.RandomElement().CapitalizeFirst().Translate().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true);
+                    Find.LetterStack.ReceiveLetter("HVT_AboutTransingLabel".Translate(), letterText, LetterDefOf.NeutralEvent, null, 0, true);
+                    this.hasSentTransClueMessage = true;
                 }
-                letterText += "\n\n" + possibleTransMethods.RandomElement().CapitalizeFirst().Translate().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true);
-                Find.LetterStack.ReceiveLetter("HVT_AboutTransingLabel".Translate(), letterText, LetterDefOf.NeutralEvent, null, 0, true);
-                this.hasSentTransClueMessage = true;
             }
             Pawn_PsychicEntropyTracker ppet = this.Pawn.psychicEntropy;
             if (ppet != null && ppet.IsCurrentlyMeditating)
@@ -6659,7 +6665,7 @@ namespace HautsTraitsRoyalty
                         Messages.Message("HVT_PhoenixOverload".Translate().CapitalizeFirst().Formatted(innerPawn.Named("PAWN")).AdjustedFor(innerPawn, "PAWN", true).Resolve(), innerPawn, MessageTypeDefOf.NegativeEvent, true);
                     }
                 }
-                GenExplosion.DoExplosion(target.Cell, target.Thing.Map, 1f * this.parent.pawn.GetStatValue(StatDefOf.PsychicSensitivity), DamageDefOf.Flame, null, 12, -1f, null, null, null, null, null, 0f, 1, null, null, 255, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f);
+                GenExplosion.DoExplosion(target.Cell, target.Thing.Map, 1f * this.parent.pawn.GetStatValue(StatDefOf.PsychicSensitivity), DamageDefOf.Flame, null, 12, -1f, null, null, null, null, null, 0f, 1, null, null, 255, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, preExplosionSpawnSingleThingDef: ThingDefOf.Filth_BlastMark);
                 target.Thing.Destroy();
                 return;
             }
