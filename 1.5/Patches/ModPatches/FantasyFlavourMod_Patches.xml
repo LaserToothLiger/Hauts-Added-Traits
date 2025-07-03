@@ -1856,21 +1856,9 @@
 											</value>
 										</li>
 										<li Class="PatchOperationReplace">
-											<xpath>Defs/AbilityDef[defName = "HVT_ArchicSyzygy"]/label</xpath>
-											<value>
-												<label>thaumatic syzygy</label>
-											</value>
-										</li>
-										<li Class="PatchOperationReplace">
 											<xpath>Defs/AbilityDef[defName = "HVT_ArchicSyzygy"]/description</xpath>
 											<value>
 												<description>The caster draws on the nearest leylines. For the next hour, spellcasting incurs far less arcane load and costs far less mana.</description>
-											</value>
-										</li>
-										<li Class="PatchOperationReplace">
-											<xpath>Defs/HediffDef[defName = "HVT_SyzygyBuff"]/label</xpath>
-											<value>
-												<label>thaumatic syzygy</label>
 											</value>
 										</li>
 										<li Class="PatchOperationReplace">

@@ -541,7 +541,7 @@
 	  </HediffDef>
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_SyzygyBuff</defName>
-    <label>archic syzygy</label>
+    <label>archonic syzygy</label>
     <description>Vastly reduces neural heat gain and completely refunds psycasts' psyfocus costs.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.53, 0.86, 0.53)</defaultLabelColor>

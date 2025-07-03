@@ -13,7 +13,7 @@
 	
 	<!--Mindbender has two 1st-level psycasts: Word of Ennui, and Word of Verve.
 	Word of Ennui inflicts an 'apathy'-themed trait on a target for 5 days, duration scaled by their psychic sensitivity.-->
-	<VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+	<VEF.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>HVT_WordOfEnnui</defName>
 		<label>word of ennui</label>
 		<description>Speak to the target while psychically suppressing specific parts of their behavioral reward pathways, temporarily imparting the effects of a concern-nullifying trait of the target's choice. The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
@@ -31,15 +31,11 @@
 				<entropyGain>0</entropyGain>
 				<psychic>true</psychic>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
-				<fleckDef>WordOfApply</fleckDef>
-				<sound>Psycast_WordOf_Effect</sound>
-			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
 				<hediff>HVT_WordOfEnnuiSelf</hediff>
 			</li>
 		</modExtensions>
-	</VFECore.Abilities.AbilityDef>
+	</VEF.Abilities.AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_WordOfEnnuiSelf</defName>
     <label>choose ennui trait</label>
@@ -184,7 +180,7 @@
   </HediffDef>
   
   <!--Word of Verve inflicts a 'nice'-themed trait on a target for 5 days, duration scaled by their psychic sensitivity.-->
-  <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+  <VEF.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>HVT_WordOfVerve</defName>
 		<label>word of verve</label>
 		<description>Speak to the target while psychically stimulating their love for life, temporarily imparting the effects of a positive personality trait of the target's choice. The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
@@ -202,15 +198,11 @@
 				<entropyGain>0</entropyGain>
 				<psychic>true</psychic>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
-				<fleckDef>WordOfApply</fleckDef>
-				<sound>Psycast_WordOf_Effect</sound>
-			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
 				<hediff>HVT_WordOfVerveSelf</hediff>
 			</li>
 		</modExtensions>
-	</VFECore.Abilities.AbilityDef>
+	</VEF.Abilities.AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_WordOfVerveSelf</defName>
     <label>choose verve trait</label>
@@ -357,12 +349,12 @@
   <!--There's two second-level mindbender psycasts: Excise Trait and Joyzone.-->
 	<!--Excise trait removes a random non-sexuality, non-psychic-trait-tree trait from the target. Combines nicely with the neuroformatter to let you 'craft' trait sets.
 		If you've got Biotech, before using Excise Trait, you can add a trait via the Mindbender 1st-level psycasts to temporarily suppress a conflicting trait you want to protect from excision.-->
-  <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
 		<defName>HVT_ExciseTrait</defName>
 		<label>excise trait</label>
 		<description>Remove a random non-suppressed trait from the target.\n\nConsidered a hostile action. Will not remove sexuality traits, Latent Psychic, awakenings, or transcendences.</description>
 		<iconPath>VPE/HVT_ExciseTrait</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
 		<drawAimPie>false</drawAimPie>
 		<warmupMote>VPE_Mote_CastPsycast</warmupMote>
 		<warmupSound>VPE_PsycastCastingEffect</warmupSound>
@@ -386,22 +378,22 @@
 			</prerequisites>
 		  </li>
 		  <li Class="Hauts_VPE.AbilityExtension_ExciseTrait"></li>
-		  <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+		  <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
 			<effecterDef>Skip_Exit</effecterDef>
 			<maintainForTicks>60</maintainForTicks>
 			<scale>0.42</scale>
 		  </li>
 		</modExtensions>
-	</VFECore.Abilities.AbilityDef>
+	</VEF.Abilities.AbilityDef>
 	
   <!--Joyzone creates a large area in which pawns essentially some of the benefits of the Joy Addict trait. The skill learning boost works out to granting skill xp at 1.4x the rate a job would,
 	and it stacks multiplicatively with Joy Addict for some wacky high skill gain.-->
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>HVT_Joyzone</defName>
 		<label>joyzone</label>
 		<description>Create a distortion in the psychic field localized to the target area, eroding the boredom of anyone inside it while vastly increasing their ability to learn from recreation.</description>
 		<iconPath>VPE/HVT_Joyzone</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+		<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
 		<needsTicking>true</needsTicking>
 		<castTime>120</castTime>
 		<castSound>PsychicSoothePulserCast</castSound>
@@ -415,18 +407,18 @@
 				<path>HVT_Mindbender</path>
 				<level>2</level>
 				<order>4</order>
-				<psyfocusCost>0.4</psyfocusCost>
+				<psyfocusCost>0.36</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 				  <li>HVT_WordOfEnnui</li>
 				  <li>HVT_WordOfVerve</li>
 				</prerequisites>
 			</li>
-		    <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+		    <li Class="VEF.Abilities.AbilityExtension_Spawn">
 				<thing>HVT_JoyzoneActual</thing>
 		    </li>
 		</modExtensions>
-    </VFECore.Abilities.AbilityDef>
+    </VEF.Abilities.AbilityDef>
     <ThingDef ParentName="EtherealThingBase">
         <defName>HVT_JoyzoneActual</defName>
         <label>joyzone center</label>
@@ -523,12 +515,12 @@
 	
 	<!--there are 2 level-3 Mindbender psycasts: Viciousness and Word of Genius.
 	Viciousness inflicts a buff identical to that granted by the Vicious trait, except its duration is psychic-sensitivity scaling.-->
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>HVT_Viciousness</defName>
       <label>viciousness</label>
       <description>Stimulate a phenomenal talent for violence in the target, increasing their attack speed, accuracy, armor penetration, and damage for a duration scaling with the target’s psychic sensitivity.</description>
       <iconPath>Genes/HVT_Vicious</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+	  <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
 	  <!--<abilityClass>HautsFramework.Ability_AiBuffACombatant</abilityClass>
 	  <needsTicking>true</needsTicking>needs to be true for the ability class to work-->
 	  <castTime>15</castTime>
@@ -557,13 +549,13 @@
             <li>HVT_ExciseTrait</li>
           </prerequisites>
         </li>
-		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
 			<hediff>HVT_ViciousBuff</hediff>
 			<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			<bodyPartToApply>Brain</bodyPartToApply>
 		</li>
       </modExtensions>
-    </VFECore.Abilities.AbilityDef>
+    </VEF.Abilities.AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_ViciousBuff</defName>
     <label>psychic viciousness</label>
@@ -598,7 +590,7 @@
   </HediffDef>
   
   <!--Word of Genius inflicts a production-enhancing trait for 5 days, scaled by victim's psychic sensitivity.-->
-  <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+  <VEF.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>HVT_WordOfGenius</defName>
 		<label>word of genius</label>
 		<description>Speak to the target while stimulating their abilities to process and synthesize information, temporarily imparting the effects of a skill- or productivity-boosting personality trait of the caster's choice. The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
@@ -619,15 +611,11 @@
 				  <li>HVT_Joyzone</li>
 			    </prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
-				<fleckDef>WordOfApply</fleckDef>
-				<sound>Psycast_WordOf_Effect</sound>
-			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
 				<hediff>HVT_WordOfGeniusSelf</hediff>
 			</li>
 		</modExtensions>
-	</VFECore.Abilities.AbilityDef><HediffDef ParentName = "PsycastHediffBase">
+	</VEF.Abilities.AbilityDef><HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_WordOfGeniusSelf</defName>
     <label>choose genius trait</label>
     <description>Choose a skill- or productivity-boosting trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
@@ -772,12 +760,12 @@
 	
   <!--There are three level 4 psycasts, Move Unseen, Wimpzone, and Muscular Innervation. 
   Move Unseen grants the target pawn invisibility. However, this invisibility wears off prematurely on attack or cast.-->
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>HVT_MoveUnseen</defName>
       <label>move unseen</label>
       <description>Enhance the stealth capabilities the target, preventing them from being noticed by hostiles unless they attack or use abilities. The duration scales with the target’s psychic sensitivity.</description>
       <iconPath>VPE/HVT_GroupSnoop</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+      <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
 	  <castTime>120</castTime>
 	  <durationTime>7500</durationTime>
 	  <range>20</range>
@@ -796,7 +784,7 @@
           <path>HVT_Mindbender</path>
           <level>4</level>
           <order>1</order>
-          <psyfocusCost>0.14</psyfocusCost>
+          <psyfocusCost>0.13</psyfocusCost>
           <entropyGain>40</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
@@ -804,12 +792,12 @@
 			  <li>HVT_WordOfGenius</li>
           </prerequisites>
         </li>
-		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
 			<hediff>HVT_SnoopingAroundISee</hediff>
 			<durationMultiplier>PsychicSensitivity</durationMultiplier>
 		</li>
       </modExtensions>
-    </VFECore.Abilities.AbilityDef>
+    </VEF.Abilities.AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_SnoopingAroundISee</defName>
     <label>psychic stealth</label>
@@ -837,12 +825,12 @@
   
   <!--Wimpzone creates a large area in which biological pawns get the effects of the Wimp trait. Mechs get negative EMP resistance... this is an Anomaly/Biotech stat, though, so this doesn't apply if you don't
 	have Biotech.-->
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>HVT_Wimpzone</defName>
 		<label>wimpzone</label>
 		<description>Create a distortion in the psychic field localized to the target area. Beings inside the field are more sensitive to pain, and mechanoids become more vulnerable to EMPs.</description>
 		<iconPath>VPE/HVT_Wimpzone</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+		<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
 		<needsTicking>true</needsTicking>
 		<castTime>120</castTime>
 		<castSound>PsychicAnimalPulserCast</castSound>
@@ -856,18 +844,18 @@
 				<path>HVT_Mindbender</path>
 				<level>4</level>
 				<order>3</order>
-				<psyfocusCost>0.4</psyfocusCost>
+				<psyfocusCost>0.32</psyfocusCost>
 				<entropyGain>15</entropyGain>
 			    <prerequisites>
 				  <li>HVT_Viciousness</li>
 				  <li>HVT_WordOfGenius</li>
 			    </prerequisites>
 			</li>
-		    <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+		    <li Class="VEF.Abilities.AbilityExtension_Spawn">
 				<thing>HVT_WimpzoneActual</thing>
 		    </li>
 		</modExtensions>
-    </VFECore.Abilities.AbilityDef>
+    </VEF.Abilities.AbilityDef>
     <ThingDef ParentName="EtherealThingBase">
         <defName>HVT_WimpzoneActual</defName>
         <label>wimpzone center</label>
@@ -962,7 +950,7 @@
 	
 	<!--Muscular Innervation grants buffs identical to the effects of the Mighty trait to any pawns in the target area at time of cast.
 		Most of the effects last for 4 hours, but the carry cap boost lasts for 24h so it's decent to cast on caravans.-->
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>HVT_MuscularInnervation</defName>
       <label>muscular innervation</label>
       <description>Protect and stimulate the muscles of anyone near the target point with psychic energy. Those affected gain higher melee damage for a duration scaling with their psychic sensitivity, as well as higher carrying capacity for a longer duration.</description>
@@ -985,7 +973,7 @@
           <path>HVT_Mindbender</path>
           <level>4</level>
           <order>5</order>
-          <psyfocusCost>0.7</psyfocusCost>
+          <psyfocusCost>0.36</psyfocusCost>
           <entropyGain>30</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
@@ -993,13 +981,13 @@
 			  <li>HVT_WordOfGenius</li>
           </prerequisites>
         </li>
-		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
 			<hediff>HVT_MuscularInnervationBuff</hediff>
 			<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			<bodyPartToApply>Brain</bodyPartToApply>
 		</li>
       </modExtensions>
-    </VFECore.Abilities.AbilityDef>
+    </VEF.Abilities.AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_MuscularInnervationBuff</defName>
     <label>muscle innervation (damage)</label>
@@ -1048,7 +1036,7 @@
 	psysens-scaling duration, and develops a new trait with an MTB of 2 days, until it hits the max amount of traits as determined by HVT's mod settings. Thus you could keep casting Excise Trait until you get an acceptable set of traits.
 	The level 5 ability used to be "Personaclone", which replaces the traits of one target with those of another target. Awakenings and transcendences were unaffected.
 	Then I saw the Vanilla Expanded patreon post about the Puppeteer path and decided it was too similar to what they were doing.-->
-  <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
     <defName>HVT_TabulaRasa</defName>
     <label>tabula rasa</label>
     <description>Infuse a dead body with psychic energy, bringing it back to life but wiping its personality. It will convert to the caster's faction, but lose its traits, skills, and backstory. Its learning speed is vastly increased for a duration based on the caster's psychic sensitivity, and it will develop new traits roughly every 2 days until it reaches the maximum number of traits.\n\nBeware; if the caster dies, anyone they've raised who does not yet have all their traits will perish as well.</description>
@@ -1085,12 +1073,12 @@
         <showCastBubble>false</showCastBubble>
         <psychic>true</psychic>
       </li>
-	  <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+	  <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
 		<effecterDef>Skip_Exit</effecterDef>
 		<maintainForTicks>60</maintainForTicks>
 	  </li>
     </modExtensions>
-  </VFECore.Abilities.AbilityDef>
+  </VEF.Abilities.AbilityDef>
 	  <BackstoryDef>
 		<defName>HVT_TabulaRasaChild</defName>
 		<title>wiped away</title>

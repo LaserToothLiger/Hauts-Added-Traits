@@ -15,7 +15,7 @@ using HautsTraits;
 using MonoMod.Utils;
 using RimWorld.Planet;
 using VanillaPsycastsExpanded;
-using VFECore.Abilities;
+using VEF.Abilities;
 using HautsTraitsRoyalty;
 using HautsFramework;
 using HautsFrameworkVPE;
@@ -40,13 +40,13 @@ namespace Hauts_VPE
                             postfix: new HarmonyMethod(patchType, nameof(HVT_VPE_GetPsyfocusUsedByPawnPostfix)));
             harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.ValidateTarget)),
                             postfix: new HarmonyMethod(patchType, nameof(HVT_VPE_ValidateTargetPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.Cast), new[] { typeof(GlobalTargetInfo[]), typeof(VFECore.Abilities.Ability) }),
+            harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.Cast), new[] { typeof(GlobalTargetInfo[]), typeof(VEF.Abilities.Ability) }),
                             prefix: new HarmonyMethod(patchType, nameof(HVT_VPE_CastPrefix)));
-            harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.Cast), new[] { typeof(GlobalTargetInfo[]), typeof(VFECore.Abilities.Ability) }),
+            harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.Cast), new[] { typeof(GlobalTargetInfo[]), typeof(VEF.Abilities.Ability) }),
                             postfix: new HarmonyMethod(patchType, nameof(HVT_VPE_CastPostfix)));
             harmony.Patch(AccessTools.Method(typeof(TraitSet), nameof(TraitSet.GainTrait)),
                           prefix: new HarmonyMethod(patchType, nameof(HVT_VPE_GainTraitPrefix)));
-            harmony.Patch(AccessTools.Method(typeof(AbilityExtension_JoinFaction), nameof(AbilityExtension_JoinFaction.Cast), new[] { typeof(GlobalTargetInfo[]), typeof(VFECore.Abilities.Ability)}),
+            harmony.Patch(AccessTools.Method(typeof(AbilityExtension_JoinFaction), nameof(AbilityExtension_JoinFaction.Cast), new[] { typeof(GlobalTargetInfo[]), typeof(VEF.Abilities.Ability)}),
                             prefix: new HarmonyMethod(patchType, nameof(HVT_VPE_JoinFactionCastPrefix)));
             harmony.Patch(AccessTools.Method(typeof(HediffComp_MindControl), nameof(HediffComp_MindControl.CompPostPostAdd)),
                             prefix: new HarmonyMethod(patchType, nameof(HVT_VPE_MindControl_CompPostPostPrefix1)));
@@ -66,7 +66,7 @@ namespace Hauts_VPE
             if (comp != null)
             {
                 float psycastsKnown = 0f;
-                foreach (VFECore.Abilities.Ability a in comp.LearnedAbilities)
+                foreach (VEF.Abilities.Ability a in comp.LearnedAbilities)
                 {
                     if (a.def.HasModExtension<AbilityExtension_Psycast>())
                     {
@@ -94,7 +94,7 @@ namespace Hauts_VPE
                 }
             }
         }
-        public static void HVT_VPE_ValidateTargetPostfix(ref bool __result, LocalTargetInfo target, VFECore.Abilities.Ability ability, bool throwMessages = false)
+        public static void HVT_VPE_ValidateTargetPostfix(ref bool __result, LocalTargetInfo target, VEF.Abilities.Ability ability, bool throwMessages = false)
         {
             if (target.Thing != null && target.Thing is Pawn p && p.story != null && p.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitDragon) && ability.pawn.HostileTo(p))
             {
@@ -105,7 +105,7 @@ namespace Hauts_VPE
                 __result = false;
             }
         }
-        public static void HVT_VPE_CastPrefix(AbilityExtension_Psycast __instance, GlobalTargetInfo[] targets, VFECore.Abilities.Ability ability, out List<Thing> __state)
+        public static void HVT_VPE_CastPrefix(AbilityExtension_Psycast __instance, GlobalTargetInfo[] targets, VEF.Abilities.Ability ability, out List<Thing> __state)
         {
             __state = new List<Thing>();
             if (ability.pawn != null && ability.pawn.story != null)
@@ -120,7 +120,7 @@ namespace Hauts_VPE
                     List<IntVec3> iv3s = new List<IntVec3>();
                     for (int i = 0; i < targets.Length; i += 2)
                     {
-                        if (targets[i].Cell != null && targets[i].Cell.InBounds(targets[i].Map) && targets.Length > i+1 && targets[i+1].Cell != null && targets[i + 1].Cell.InBounds(targets[i].Map) && targets[i].Map == targets[i+1].Map)
+                        if (targets[i].Cell.IsValid && targets[i].Cell.InBounds(targets[i].Map) && targets.Length > i+1 && targets[i+1].Cell.IsValid && targets[i + 1].Cell.InBounds(targets[i].Map) && targets[i].Map == targets[i+1].Map)
                         {
                             if (targets[i].Cell != targets[i+1].Cell)
                             {
@@ -165,7 +165,7 @@ namespace Hauts_VPE
                 }
             }
         }
-        public static void HVT_VPE_CastPostfix(AbilityExtension_Psycast __instance, GlobalTargetInfo[] targets, VFECore.Abilities.Ability ability, List<Thing> __state)
+        public static void HVT_VPE_CastPostfix(AbilityExtension_Psycast __instance, GlobalTargetInfo[] targets, VEF.Abilities.Ability ability, List<Thing> __state)
         {
             Pawn pawn = ability.pawn;
             for (int i = __state.Count - 1; i >= 0; i--)
@@ -224,7 +224,7 @@ namespace Hauts_VPE
                                     Mesh boltMesh = LightningBoltMeshPool.RandomBoltMesh;
                                     if (!strikeLoc.Fogged(p.Map))
                                     {
-                                        GenExplosion.DoExplosion(strikeLoc, p.Map, 1.9f, DamageDefOf.Flame, null, -1, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f);
+                                        GenExplosion.DoExplosion(strikeLoc, p.Map, 1.9f, DamageDefOf.Flame, null, -1, -1f, null, null, null, null, null, 0f, 1, null, null, 255, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f);
                                         Vector3 loc = strikeLoc.ToVector3Shifted();
                                         for (int i = 0; i < 4; i++)
                                         {
@@ -447,7 +447,7 @@ namespace Hauts_VPE
                                 {
                                     for (int i = 0; i < Math.Floor(4f*pawn.GetStatValue(StatDefOf.PsychicSensitivity)); i++)
                                     {
-                                        MechRepairUtility.RepairTick(pawn2);
+                                        MechRepairUtility.RepairTick(pawn2, 1);
                                     }
                                 }
                             }
@@ -644,10 +644,10 @@ namespace Hauts_VPE
                 pawnLink.thoseRisen.Remove(this.pawn);
             }
         }
-        public override void PostTick()
+        public override void PostTickInterval(int delta)
         {
-            base.PostTick();
-            if (this.pawn.IsHashIntervalTick(60) && this.pawn.story != null)
+            base.PostTickInterval(delta);
+            if (this.pawn.IsHashIntervalTick(60, delta) && this.pawn.story != null)
             {
                 if (Rand.MTBEventOccurs(2, 60000f, 60f))
                 {
@@ -703,7 +703,7 @@ namespace Hauts_VPE
     }
     public class AbilityExtension_ExciseTrait : AbilityExtension_AbilityMod
     {
-        public override void Cast(GlobalTargetInfo[] targets, VFECore.Abilities.Ability ability)
+        public override void Cast(GlobalTargetInfo[] targets, VEF.Abilities.Ability ability)
         {
             base.Cast(targets, ability);
             foreach (GlobalTargetInfo globalTargetInfo in targets)

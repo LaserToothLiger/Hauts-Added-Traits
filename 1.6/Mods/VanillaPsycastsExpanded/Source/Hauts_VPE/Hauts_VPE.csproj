@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\HarmonyMod\1.4\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\HarmonyMod\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -40,11 +40,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HautsFramework">
-      <HintPath>..\..\..\..\..\..\Hauts Framework\1.5\Assemblies\HautsFramework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Hauts Framework\1.6\Assemblies\HautsFramework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HautsFrameworkVPE">
-      <HintPath>..\..\..\..\..\..\Hauts Framework\1.5\Mods\VanillaPsycastsExpanded\Assemblies\HautsFrameworkVPE.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Hauts Framework\1.6\Mods\VanillaPsycastsExpanded\Assemblies\HautsFrameworkVPE.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HautsTraits">
@@ -71,20 +71,16 @@
       <HintPath>..\..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.TextCoreModule">
-      <HintPath>..\..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextCoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>..\..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VanillaPsycastsExpanded">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\VanillaPsycastsExpanded-main\1.5\Assemblies\VanillaPsycastsExpanded.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\VanillaPsycastsExpanded-main\1.6\Assemblies\VanillaPsycastsExpanded.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="VFECore">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\VanillaExpandedFramework-main\1.5\Assemblies\VFECore.dll</HintPath>
+    <Reference Include="VEF">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\VanillaExpandedFramework-main\1.6\Assemblies\VEF.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

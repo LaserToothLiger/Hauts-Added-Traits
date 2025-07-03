@@ -29,6 +29,8 @@
       <trapPeacefulWildAnimalsSpringChanceFactor>0.25</trapPeacefulWildAnimalsSpringChanceFactor>
       <expandHomeArea>false</expandHomeArea>
       <ai_chillDestination>false</ai_chillDestination>
+	  <claimable>false</claimable>
+	  <deconstructible>false</deconstructible>
     </building>
 	<modExtensions>
 	  <li Class="HautsTraits.SabotageExplosive"/>
@@ -38,7 +40,7 @@
   <ThingDef ParentName="SabotageIEDBase">
     <defName>Hauts_SabotageIED_HighExplosive</defName>
     <label>IED trap</label>
-    <description>A pair of high-explosive shells connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.\n\nSaboteur IEDs can be deconstructed once claimed, but uninstalling them causes them to harmlessly fall apart.</description>
+    <description>A pair of high-explosive shells connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.\n\nSaboteur IEDs cannot be uninstalled, claimed, or deconstructed; they can only be disarmed. Disarming attempts should ideally be made by colonists with high Construction skill.</description>
     <graphicData>
       <texPath>Things/Building/Security/IEDHighExplosive</texPath>
     </graphicData>
@@ -65,7 +67,7 @@
   <ThingDef ParentName="SabotageIEDBase">
     <defName>Hauts_SabotageIED_AntigrainWarhead</defName>
     <label>IED antigrain warhead trap</label>
-    <description>An antimatter-powered antigrain warhead connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.\n\nSaboteur IEDs can be deconstructed once claimed, but uninstalling them causes them to harmlessly fall apart.</description>
+    <description>An antimatter-powered antigrain warhead connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.\n\nSaboteur IEDs cannot be uninstalled, claimed, or deconstructed; they can only be disarmed. Disarming attempts should ideally be made by colonists with high Construction skill.</description>
     <graphicData>
       <texPath>Things/Building/Security/IEDAntigrainWarhead</texPath>
     </graphicData>

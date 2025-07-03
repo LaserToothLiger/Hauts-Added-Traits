@@ -2,7 +2,7 @@
 <Defs>
   <AbilityDef>
     <defName>HVT_ArchicSyzygy</defName>
-    <label>archic syzygy</label>
+    <label>archonic syzygy</label>
     <description>The caster blooms with a swelling current of psychic energy. For the next hour, psycasting incurs far less neural heat and costs far less psyfocus.</description>
     <jobDef>CastAbilityOnThing</jobDef>
     <targetRequired>False</targetRequired>
@@ -469,7 +469,7 @@
   <!--for genes-->
   <AbilityDef>
     <defName>HVT_ArchicSyzygy2</defName>
-    <label>archic syzygy</label>
+    <label>archonic syzygy</label>
     <description>The caster blooms with a swelling current of psychic energy. For the next hour, psycasting incurs far less neural heat and costs far less psyfocus.</description>
     <jobDef>CastAbilityOnThing</jobDef>
     <targetRequired>False</targetRequired>

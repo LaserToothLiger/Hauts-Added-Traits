@@ -69,6 +69,11 @@
 <HVT_HediffMenu>Choose a trait for {0} to temporarily gain.</HVT_HediffMenu>
 <HVT_TabulaRasad>While under the effects of the tabula rasa psycast, {0} gained the {1} trait.</HVT_TabulaRasad>
 <HVT_EndTabulaRasa> {0} will not gain further traits from the tabula rasa effect.</HVT_EndTabulaRasa>
+<!--skulker raid stuff-->
+<DisarmGizmo>Disarm...</DisarmGizmo>
+<CannotChooseDisarmer>Cannot disarm</CannotChooseDisarmer>
+<CommandChooseDisarmer>Choose disarmer</CommandChooseDisarmer>
+<DisarmDesc>Choose a colonist to disarm this.</DisarmDesc>
 <!--woke and trans trigger events-->
 <HVT_TheWokening>Psychic awakening: {0}</HVT_TheWokening>
 <HVT_WokeningDefault>Somehow, {PAWN_nameDef} has awakened to {PAWN_possessive} psychic potential!</HVT_WokeningDefault>

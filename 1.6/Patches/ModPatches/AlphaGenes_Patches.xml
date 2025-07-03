@@ -23,7 +23,7 @@
 									</value>
 								</match>
 							</li>
-							<!--<li Class="PatchOperationAdd">
+							<li Class="PatchOperationAdd">
 								<xpath>/Defs/AlphaGenes.BlackListedTraitsDef[defName="AG_BlackListedTraits"]/blackListedTraits</xpath>
 								<value>
 									<li>HVT_AwakenedAugur</li>
@@ -38,7 +38,6 @@
 									<li>HVT_AwakenedSiphoner</li>
 									<li>HVT_AwakenedTitan</li>
 									<li>HVT_AwakenedUndying</li>
-									<li>HVT_TTraitAlbatross</li>
 									<li>HVT_TTraitAlbatross</li>
 									<li>HVT_TTraitAnaconda</li>
 									<li>HVT_TTraitAnimalume</li>
@@ -162,7 +161,7 @@
 									<li>HVT_TTraitWraith</li>
 									<li>HVT_TTraitZiz</li>
 								</value>
-							</li>-->
+							</li>
 						</operations>
 					</match>
 				</li>

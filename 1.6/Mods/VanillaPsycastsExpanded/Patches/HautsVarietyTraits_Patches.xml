@@ -29,7 +29,7 @@
 			<Hauts_TierOnePsycastCostOffset>-0.25</Hauts_TierOnePsycastCostOffset>
 		</value>
 	</Operation>
-	<!--Perennials no longer lose additional psyfocus when psycasting; instead, the costs of their psycasts are increased upfront. This is balanced out by completely ignoring psyfocus costs during archic syzygy.-->
+	<!--Perennials no longer lose additional psyfocus when psycasting; instead, the costs of their psycasts are increased upfront. This is balanced out by completely ignoring psyfocus costs during archonic syzygy.-->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/TraitDef[defName="HVT_AwakenedPerennial"]/degreeDatas/li</xpath>
 		<value>

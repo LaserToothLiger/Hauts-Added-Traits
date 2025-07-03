@@ -5,7 +5,7 @@
     <workerClass>HautsTraits.RaidStrategyWorker_Burglary</workerClass>
     <selectionWeightPerPointsCurve>
       <points>
-        <li>(0, 0.12)</li>
+        <li>(0, 0.24)</li>
       </points>
     </selectionWeightPerPointsCurve>
     <pointsFactorCurve>
@@ -25,7 +25,7 @@
     <workerClass>HautsTraits.RaidStrategyWorker_Assassinate</workerClass>
     <selectionWeightPerPointsCurve>
       <points>
-        <li>(0, 0.08)</li>
+        <li>(0, 0.18)</li>
       </points>
     </selectionWeightPerPointsCurve>
     <pointsFactorCurve>
@@ -44,7 +44,7 @@
     <workerClass>HautsTraits.RaidStrategyWorker_Espionage</workerClass>
     <selectionWeightPerPointsCurve>
       <points>
-        <li>(0, 0.12)</li>
+        <li>(0, 0.24)</li>
       </points>
     </selectionWeightPerPointsCurve>
     <pointsFactorCurve>
@@ -64,7 +64,7 @@
     <workerClass>HautsTraits.RaidStrategyWorker_Sabotage</workerClass>
     <selectionWeightPerPointsCurve>
       <points>
-        <li>(0, 0.08)</li>
+        <li>(0, 0.18)</li>
       </points>
     </selectionWeightPerPointsCurve>
     <pointsFactorCurve>
