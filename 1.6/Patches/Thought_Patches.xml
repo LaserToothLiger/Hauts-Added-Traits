@@ -866,7 +866,7 @@
 		</value>
 	</Operation>
 	
-	<!--Imperceptives don't care about disturbed sleep, and all sense traits have their own comfort meter-->
+	<!--Imperceptives don't care about disturbed sleep-->
 	<Operation Class="PatchOperationConditional">
 		<xpath>/Defs/ThoughtDef[defName="SleepDisturbed"]/nullifyingTraits</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -883,35 +883,6 @@
 				<li>HVT_Imperceptive</li>
 			</value>
 		</match>
-	</Operation>
-	<Operation Class="PatchOperationConditional">
-		<xpath>/Defs/ThoughtDef[defName="NeedComfort"]/nullifyingTraits</xpath>
-		<nomatch Class="PatchOperationAdd">
-			<xpath>/Defs/ThoughtDef[defName="NeedComfort"]</xpath>
-			<value>
-				<nullifyingTraits>
-					<li>HVT_Imperceptive</li>
-				</nullifyingTraits>
-			</value>
-		</nomatch>
-		<match Class="PatchOperationAdd">
-			<xpath>/Defs/ThoughtDef[defName="NeedComfort"]/nullifyingTraits</xpath>
-			<value>
-				<li>HVT_Imperceptive</li>
-			</value>
-		</match>
-	</Operation><Operation Class="PatchOperationAddModExtension">
-		<xpath>/Defs/ThoughtDef[defName="NeedComfort"]</xpath>
-		<value>
-			<li Class="HautsFramework.ModifyingTraits">
-				<multiplierTraits>
-				  <li>
-					<key>HVT_Perceptive</key>
-					<value>1.35</value>
-				  </li>
-				</multiplierTraits>
-			</li>
-		</value>
 	</Operation>
 	
 	<!--ideology-exclusive-->
@@ -2252,6 +2223,24 @@
 		<mods>
 			<li>Biotech</li>
 		</mods>
+		<nomatch Class="PatchOperationSequence">
+			<operations>
+			<!--good sense traits affect comfort-->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="NeedComfort"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_Perceptive</key>
+								<value>1.35</value>
+							  </li>
+							</multiplierTraits>
+						</li>
+					</value>
+				</li>
+			</operations>
+		</nomatch>
 		<match Class="PatchOperationSequence">
 			<operations>
 			<!--Outdoorsies love the outdoors, even when it doesn't love them back-->
@@ -2280,7 +2269,7 @@
 						</value>
 					</match>
 				</li>
-			<!--imperceptive gene nullifies disturbed sleep, and has its own comfort meter-->
+			<!--imperceptive gene nullifies disturbed sleep-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/ThoughtDef[defName="SleepDisturbed"]/nullifyingGenes</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -2298,26 +2287,29 @@
 						</value>
 					</match>
 				</li>
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/ThoughtDef[defName="NeedComfort"]/nullifyingGenes</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/ThoughtDef[defName="NeedComfort"]</xpath>
-						<value>
-							<nullifyingGenes>
-								<li>HVT_ImperceptiveGene</li>
-								<li>HVT_KeenSensesGene</li>
-								<li>HVT_PowerfulSensesGene</li>
-							</nullifyingGenes>
-						</value>
-					</nomatch>
-					<match Class="PatchOperationAdd">
-						<xpath>/Defs/ThoughtDef[defName="NeedComfort"]/nullifyingGenes</xpath>
-						<value>
-							<li>HVT_ImperceptiveGene</li>
-							<li>HVT_KeenSensesGene</li>
-							<li>HVT_PowerfulSensesGene</li>
-						</value>
-					</match>
+			<!--comfort matters to sense traits-->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="NeedComfort"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_Perceptive</key>
+								<value>1.35</value>
+							  </li>
+							</multiplierTraits>
+							<multiplierGenes>
+							  <li>
+								<key>HVT_KeenSensesGene</key>
+								<value>1.35</value>
+							  </li>
+							  <li>
+								<key>HVT_PowerfulSensesGene</key>
+								<value>1.35</value>
+							  </li>
+							</multiplierGenes>
+						</li>
+					</value>
 				</li>
 	
 			<!--stop asking misopedists when they're going to have a baby GOSH-->

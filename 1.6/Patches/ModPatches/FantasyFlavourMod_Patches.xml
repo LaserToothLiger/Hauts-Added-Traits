@@ -952,6 +952,12 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_TTraitPitohui"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} is immune to all manner of poisons, venoms, and harmful alchemies; to an extent, {PAWN_pronoun} is even resistant to disease and foodborne illness. {PAWN_pronoun} can cure someone of any such afflictions (except for diseases) simply by affecting them with a spell.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPipistrelle"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>pipistrelle spirit</label>
@@ -961,12 +967,6 @@
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPipistrelle"]/degreeDatas/li/description</xpath>
 								<value>
 									<description>{PAWN_nameDef} receives otherworldly impressions of {PAWN_possessive} surroundings whenever {PAWN_pronoun} spellcasts, improving {PAWN_possessive} senses and manipulation. The effect’s duration increases the more mana is spent, but its effect decays over time.</description>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitPitohui"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>{PAWN_nameDef} is immune to all manner of poisons, venoms, and harmful alchemies; to an extent, {PAWN_pronoun} is even resistant to disease and foodborne illness. {PAWN_pronoun} can cure someone of any such afflictions (except a bloodline chemical dependency) simply by affecting them with a spell.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

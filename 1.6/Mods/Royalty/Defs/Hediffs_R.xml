@@ -1129,7 +1129,7 @@
     <defName>HVT_THediffApocriton</defName>
     <label>transcendent apocriton</label>
     <description>Tribal folklorists invoke the fearsome, wasp-like apocriton to describe psychics with a similar degree of control over mechanoids.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
 	<stages>
 	  <li>
@@ -1184,7 +1184,7 @@
     <defName>HVT_THediffArcturan</defName>
     <label>transcendent arcturan</label>
     <description>Tribal folklorists invoke the arcturan sky eel and its potent shock to describe psychics whose presence visibly warps electric currents.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
 	<defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
@@ -1642,7 +1642,7 @@
     <defName>HVT_THediffDiabolus</defName>
     <label>transcendent diabolus</label>
     <description>Tribal folklorists invoke the diabolus and its fearsome thermal weaponry to describe psychics who combust on their foes and saturate the landscape in chemfuel.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.53, 0.53, 0.7)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
     <maxSeverity>1.0</maxSeverity>
@@ -1931,7 +1931,7 @@
     <defName>HVT_THediffElectrophorus</defName>
     <label>transcendent electrophorus</label>
     <description>Tribal folklorists invoke the galvanic discharge of either electric eels or arcturan sky eels to describe psychics with command over lightning.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(1.0, 0.89, 0.0)</defaultLabelColor>
     <stages>
       <li>
@@ -3343,7 +3343,7 @@
     <defName>HVT_THediffMosquito</defName>
     <label>transcendent mosquito</label>
     <description>Tribal folklorists invoke the blood-sucking mosquito to describe psychics who can steal the vitality of others.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(1, 0.53, 0.53)</defaultLabelColor>
     <stages>
       <li>
@@ -3970,7 +3970,7 @@
     <defName>HVT_THediffOxpecker</defName>
     <label>transcendent oxpecker</label>
     <description>Tribal folklorists invoke the oxpecker, which eats ticks off the bodies of large mammals but may also feed on their blood, to describe psychics with beneficial and harmful powers over animals.</description>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
@@ -3989,7 +3989,7 @@
 		<canAffectEntities>false</canAffectEntities>
 		<canAffectMutants>false</canAffectMutants>
 		<canAffectAnimals>true</canAffectAnimals>
-		<tameMTBdaysBase>0.051</tameMTBdaysBase>
+		<tameMTBdaysBase>1</tameMTBdaysBase>
 		<tameMTBcurve>
 		  <points>
 			<li>0, 0</li>
@@ -4159,7 +4159,7 @@
     <defName>HVT_THediffPeregrine</defName>
     <label>transcendent peregrine</label>
     <description>Tribal folklorists invoke the peregrine and its powerful, stunning dive to describe psychics who can render their foes insensate with any strike.</description>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
@@ -4410,7 +4410,7 @@
     <defName>HVT_THediffPitohui</defName>
     <label>transcendent pitohui</label>
     <description>The pitohui consumes a highly poisonous diet with no issue; tribal folklorists invoke its name to describe psychics strong in body, unaffected by even the most powerful toxins.</description>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
@@ -5313,7 +5313,7 @@
     <defName>HVT_THediffStrix</defName>
     <label>transcendent strix</label>
     <description>Tribal folklorists invoke the predatory, nocturnal, and ominous associations of the owl to describe psychics who wield madness as a weapon.</description>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
@@ -5900,7 +5900,7 @@
     <defName>HVT_THediffThrumbo</defName>
     <label>transcendent thrumbo</label>
     <description>Tribal folklorists invoke the thrumbo's preternaturally sharp horn to describe psychics whose melee attacks deal heavy armor-penetrating damage.</description>
-	<hediffClass>HediffWithComps</hediffClass>
+	<hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
@@ -6178,7 +6178,7 @@
     <defName>HVT_THediffWarbler</defName>
     <label>transcendent warbler</label>
     <description>Tribal folklorists invoke the sedge warbler and its endless variety of songs to describe psychics who are seemingly constantly inspired.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>

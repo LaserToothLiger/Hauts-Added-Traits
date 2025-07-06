@@ -975,6 +975,9 @@
 				<ComfyTemperatureMax>4.4</ComfyTemperatureMax>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.10</P42_AllergicSensitivity>
 			</statOffsets>
+			<disablesNeeds>
+				<li>Comfort</li>
+			</disablesNeeds>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1709,7 +1712,7 @@
 		  <li>
 			<label>game developer</label>
 			<description>Buy Tynan's book. Otherwise, you'll find out that {PAWN_possessive} melee dps and armor penetration are over NINE THOUSAND!!1!\n\n({PAWN_nameDef} isn't actually any better at doing damage).</description>
-			<!--<statFactors>
+			<statFactors>
 			  <MeleeDPS>100</MeleeDPS>
 			  <MeleeArmorPenetration>100</MeleeArmorPenetration>
 			</statFactors>
@@ -1717,10 +1720,6 @@
 			  <MeleeDPS>100</MeleeDPS>
 			  <MeleeArmorPenetration>100</MeleeArmorPenetration>
 			  <VEF_MeleeWeaponRange>3</VEF_MeleeWeaponRange>
-			</statOffsets>-->
-			<statOffsets>
-			  <Hauts_MeleeArmorPenetration>1</Hauts_MeleeArmorPenetration>
-			  <Hauts_RangedArmorPenetration>1</Hauts_RangedArmorPenetration>
 			</statOffsets>
 		  </li>
 		</degreeDatas>

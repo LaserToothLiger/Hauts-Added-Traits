@@ -2575,7 +2575,7 @@ namespace HautsTraitsRoyalty
             this.pawn.health.RemoveHediff(this);
         }
     }
-    public class Hediff_InnerWildfire : HediffWithComps
+    public class Hediff_InnerWildfire : Hediff_HasExtraOnHitEffects
     {
         public override void PostTickInterval(int delta)
         {
@@ -2648,7 +2648,7 @@ namespace HautsTraitsRoyalty
             }
         }
     }
-    public class Hediff_BlotOutTheSun : HediffWithComps
+    public class Hediff_BlotOutTheSun : Hediff_HasExtraOnHitEffects
     {
         public override void PostTickInterval(int delta)
         {
@@ -3480,7 +3480,7 @@ namespace HautsTraitsRoyalty
             }
         }
     }
-    public class Hediff_ColdColdHeart : HediffWithComps
+    public class Hediff_ColdColdHeart : Hediff_HasExtraOnHitEffects
     {
         public override void PostTickInterval(int delta)
         {

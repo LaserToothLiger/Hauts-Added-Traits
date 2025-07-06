@@ -2306,7 +2306,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic pitohui</label>
-			<description>{PAWN_nameDef} is immune to most forms of toxicity, which includes chemical overdoses, addictions, and dependencies; food poisoning; and, to a meager extent, disease. {PAWN_pronoun} can cure someone of any such afflictions (except a genetic chemical dependency) by affecting them with a psycast.</description>
+			<description>{PAWN_nameDef} is immune to most forms of toxicity, which includes chemical overdoses, addictions, and dependencies; food poisoning; and, to a meager extent, disease. {PAWN_pronoun} can cure someone of any such afflictions (except for diseases) by affecting them with a psycast.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <ToxicResistance>2000</ToxicResistance>

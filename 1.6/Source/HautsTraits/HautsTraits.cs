@@ -344,8 +344,9 @@ namespace HautsTraits
                         }
                         if (skillToTeach != null)
                         {
-                            float xp = (200f + (Rand.Value * 800f)) * pawn.skills.GetSkill(skillToTeach).LearnRateFactor(true) * recipient.skills.GetSkill(skillToTeach).LearnRateFactor(false);
-                            recipient.skills.Learn(skillToTeach, xp);
+                            float xpBase = pawn.GetStatValue(HautsDefOf.Hauts_InstructiveAbility) * pawn.skills.GetSkill(skillToTeach).LearnRateFactor(true) * recipient.skills.GetSkill(skillToTeach).LearnRateFactor(false);
+                            Log.Error("xpbase: " + xpBase);
+                            recipient.skills.Learn(skillToTeach, (67f + (Rand.Value * 267f)) * xpBase);
                         }
                     }
                 }

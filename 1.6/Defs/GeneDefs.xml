@@ -607,6 +607,9 @@
 		<ComfyTemperatureMin>-4.4</ComfyTemperatureMin>
 		<ComfyTemperatureMax>4.4</ComfyTemperatureMax>
 	</statOffsets>
+    <disablesNeeds>
+      <li>Comfort</li>
+    </disablesNeeds>
     <capMods>
 	  <li>
 		<capacity>Sight</capacity>
