@@ -16,5 +16,7 @@
 		<li IfModActive="Ludeon.RimWorld.Royalty">1.6/Mods/Royalty</li>
 		<li IfModActive="Ludeon.RimWorld.Anomaly">1.6/Mods/Anomaly</li>
 		<li IfModActive="VanillaExpanded.VPsycastsE">1.6/Mods/VanillaPsycastsExpanded</li>
+		<li IfModActive="VanillaExpanded.VPE.Puppeteer">1.6/Mods/VPE_Puppeteer</li>
+		<li IfModActive="vanillaracesexpanded.highmate">1.6/Mods/VREHighmate</li>
 	</v1.6>
 </loadFolders>

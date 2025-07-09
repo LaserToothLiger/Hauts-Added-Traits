@@ -550,7 +550,7 @@
 			</statOffsets>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>Kind</li></conflictingTraits>
+		<conflictingTraits><li>Ascetic</li><li>Kind</li><li>HVT_Humble</li></conflictingTraits>
 		<modExtensions>
             <li Class="HautsFramework.ConceitedTrait" />
 		</modExtensions>
