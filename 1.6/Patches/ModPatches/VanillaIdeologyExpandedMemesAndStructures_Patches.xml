@@ -252,6 +252,26 @@
 						</value>
 					</match>
 				</li>
+				<!--Champion and Conversationalist hate Isolationist-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="VFEA_Isolationist"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="VFEA_Isolationist"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Champion</li>
+								<li>HVT_Conversationalist</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="VFEA_Isolationist"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Champion</li>
+							<li>HVT_Conversationalist</li>
+						</value>
+					</match>
+				</li>
 				<!--Conversationalist likes Party Life, as do Hedonist and Reveller-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_PartyLife"]/agreeableTraits</xpath>

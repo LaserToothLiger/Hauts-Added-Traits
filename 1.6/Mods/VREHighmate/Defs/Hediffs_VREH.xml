@@ -198,4 +198,50 @@
 			</li>
 		</stages>
 	</HediffDef>
+	<HediffDef MayRequire="Ludeon.RimWorld.Anomaly" ParentName="VRE_BondHediff_Base">
+		<defName>HVT_PsychicBondVoidFascination</defName>
+		<label>Psychic bond (Voidtouched)</label>
+		<description>Both psychically-bonded individuals benefit from increased anomalous study efficiency.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<StudyEfficiency>0.1</StudyEfficiency>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef MayRequire="Ludeon.RimWorld.Anomaly" ParentName="VRE_BondHediff_Base">
+		<defName>HVT_PsychicBondVoidHunter</defName>
+		<label>Psychic bond (Slayer)</label>
+		<description>Both psychically-bonded individuals benefit from increased damage against unnatural entities.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<Hauts_EntityDamageFactor>0.12</Hauts_EntityDamageFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef MayRequire="Ludeon.RimWorld.Anomaly" ParentName="VRE_BondHediff_Base">
+		<defName>HVT_PsychicBondTwisted</defName>
+		<label>Psychic bond (Twisted)</label>
+		<description>Both psychically-bonded individuals have weaker opinions of others.</description>
+		<stages>
+			<li>
+				<opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="VRE_BondHediff_Base">
+		<defName>HVT_PsychicBondSuperstitious</defName>
+		<label>Psychic bond (Ritualistic)</label>
+		<description>Both psychically-bonded individuals benefit from increased psychic ritual quality offset.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicRitualQualityOffset MayRequire="Ludeon.RimWorld.Anomaly">0.04</PsychicRitualQualityOffset>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

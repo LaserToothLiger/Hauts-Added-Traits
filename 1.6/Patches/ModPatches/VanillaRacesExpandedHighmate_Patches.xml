@@ -211,20 +211,89 @@
 						<li>
 							<traitRequirements>
 								<li>
-									<def>HVT_Faithful</def>
-								</li>
-							</traitRequirements>
-							<hediff>HVT_PsychicBondIdeoImpact</hediff>
-						</li>
-						<li>
-							<traitRequirements>
-								<li>
 									<def>HVT_Mechaphile</def>
 								</li>
 							</traitRequirements>
 							<hediff>HVT_PsychicBondMechaphile</hediff>
 						</li>
 					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Ideology</li>
+					</mods>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef[defName="VRE_HighmateBondEffectDefs"]/bondHediffTraits</xpath>
+						<value>
+							<li>
+								<traitRequirements>
+									<li>
+										<def>HVT_Faithful</def>
+									</li>
+								</traitRequirements>
+								<hediff>HVT_PsychicBondIdeoImpact</hediff>
+							</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Anomaly</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef[defName="VRE_HighmateBondEffectDefs"]/bondHediffTraits</xpath>
+								<value>
+									<li>
+										<traitRequirements>
+											<li>
+												<def>HVT_Corruptible</def>
+											</li>
+											<li>
+												<def>HVT_MonsterLover</def>
+											</li>
+										</traitRequirements>
+										<hediff>HVT_PsychicBondVoidFascination</hediff>
+									</li>
+									<li>
+										<traitRequirements>
+											<li>
+												<def>HVT_MonsterHunter</def>
+											</li>
+										</traitRequirements>
+										<hediff>HVT_PsychicBondVoidHunter</hediff>
+									</li>
+									<li>
+										<traitRequirements>
+											<li>
+												<def>HVT_Twisted</def>
+											</li>
+										</traitRequirements>
+										<hediff>HVT_PsychicBondTwisted</hediff>
+									</li>
+								</value>
+							</li>
+							<li Class="PatchOperationFindMod">
+								<mods>
+									<li>Ideology</li>
+								</mods>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef[defName="VRE_HighmateBondEffectDefs"]/bondHediffTraits</xpath>
+									<value>
+										<li>
+											<traitRequirements>
+												<li>
+													<def>HVT_Superstitious</def>
+												</li>
+											</traitRequirements>
+											<hediff>HVT_PsychicBondSuperstitious</hediff>
+										</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
 				</li>
 			</operations>
 		</match>
