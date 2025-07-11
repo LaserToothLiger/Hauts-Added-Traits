@@ -4758,6 +4758,7 @@
 			</statFactors>
 			<statOffsets>
 			  <MoveSpeed>0.12</MoveSpeed>
+			  <CaravanBonusSpeedFactor>0.25</CaravanBonusSpeedFactor>
 			  <SwimSpeed MayRequire="pyrce.swimming.modkit">0.12</SwimSpeed>
 			</statOffsets>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
@@ -6336,7 +6337,7 @@
       <li Class="HediffCompProperties">
         <compClass>VEF.Hediffs.HediffComp_Phasing</compClass>
       </li>
-	  <li Class="VEF.AnimalBehaviours.HediffCompProperties_Floating"/>
+	  <!--<li Class="VEF.AnimalBehaviours.HediffCompProperties_Floating"/>-->
 	  <li Class="HautsFramework.HediffCompProperties_ChangeBelowSeverity">
 		<atOrBelowThisSeverity>0.35</atOrBelowThisSeverity>
 		<alternativeHediff>HVT_THediffWoodpecker0</alternativeHediff>

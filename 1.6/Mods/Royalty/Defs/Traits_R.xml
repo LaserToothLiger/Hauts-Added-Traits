@@ -490,7 +490,7 @@
 			<description>{PAWN_nameDef} hovers, negating movement penalties from the terrain, and {PAWN_pronoun} also gains armor based on the current wind level. While meditating, {PAWN_pronoun} causes the wind to howl.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
-			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
+			  <Hauts_SpewRangeFactor>0.5</Hauts_SpewRangeFactor>
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.5</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			</statOffsets>
@@ -640,7 +640,7 @@
 			<description>Word psycasts used by {PAWN_nameDef} cost +7.5% psyfocus, but affect all nearby valid targets. The radius of this effect is equal to twice {PAWN_possessive} psylink level.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
-			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
+			  <Hauts_SpewRangeFactor>0.5</Hauts_SpewRangeFactor>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -922,6 +922,9 @@
 			<label>deimatic psychic</label>
 			<description>{PAWN_nameDef} repels vectors of harm on an abstract, indirect level. {PAWN_possessive} mere existence has a 50% chance to prevent many kinds of bad events from happening.\n\nHas no effect on events that occur as part of quests.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1262,7 +1265,8 @@
 			</statFactors>
 			<statOffsets>
 			  <Hauts_JumpRangeFactor>1</Hauts_JumpRangeFactor>
-			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
+			  <Hauts_SpewRangeFactor>0.5</Hauts_SpewRangeFactor>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
 			</statOffsets>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -1641,6 +1645,7 @@
 			<statOffsets>
 			  <Hauts_MeleeArmorPenetration>1.5</Hauts_MeleeArmorPenetration>
 			  <Hauts_RangedArmorPenetration>1.5</Hauts_RangedArmorPenetration>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.75</PilotingAbility>
 			</statOffsets>
 			<statFactors>
 			  <MeleeHitChance>100</MeleeHitChance>
@@ -2505,6 +2510,7 @@
 			<randomMentalStateMtbDaysMoodCurve><points><li>(0, 30)</li></points></randomMentalStateMtbDaysMoodCurve>
 			<statOffsets>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1</LanguageLearningAbility>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.75</PilotingAbility>
 			</statOffsets>
 			<statFactors>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
@@ -2532,6 +2538,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <ForagedNutritionPerDay>1</ForagedNutritionPerDay>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.1</PilotingAbility>
 			</statOffsets>
 			<statFactors>
 			  <VEF_MassCarryCapacity>100</VEF_MassCarryCapacity>
@@ -2688,8 +2695,9 @@
 			<description>{PAWN_nameDef} can manipulate the weather. {PAWN_pronoun} also hovers, allowing {PAWN_objective} to ignore the pathing costs of terrain.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
+			  <Hauts_SpewRangeFactor>0.5</Hauts_SpewRangeFactor>
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.5</VacuumResistance>
-			  <Hauts_SpewRangeFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</Hauts_SpewRangeFactor>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.1</PilotingAbility>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">2</Mashed_Ashlands_AshResistance>
 			</statOffsets>
@@ -2917,6 +2925,9 @@
 			<label>psychic arctic tern</label>
 			<description>While on a caravan, {PAWN_nameDef} covers impossible distances in mere moments.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.4</PilotingAbility>
+			</statOffsets>
 			<statFactors>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
 			</statFactors>

@@ -2945,7 +2945,7 @@ namespace HautsTraitsRoyalty
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
-            if (this.Severity == this.def.maxSeverity && (this.doppelganger == null || this.doppelganger.Dead || this.doppelganger.Discarded || this.doppelganger.Destroyed))
+            if (this.Severity == this.def.maxSeverity && (this.doppelganger == null || this.doppelganger.Dead || this.doppelganger.Discarded || this.doppelganger.Destroyed) && this.pawn.Spawned)
             {
                 this.MakeDoppelganger();
             }
@@ -3492,16 +3492,19 @@ namespace HautsTraitsRoyalty
                 {
                     this.pawn.health.RemoveHediff(hypo);
                 }
-                Thing t = this.pawn.Position.GetFirstThing(this.pawn.Map, HVTRoyaltyDefOf.HVT_ColdColdHeart);
-                if (t != null)
+                if (this.pawn.psychicEntropy != null && this.pawn.psychicEntropy.IsCurrentlyMeditating && this.pawn.Spawned)
                 {
-                    CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
-                    if (cdad != null)
+                    Thing t = this.pawn.Position.GetFirstThing(this.pawn.Map, HVTRoyaltyDefOf.HVT_ColdColdHeart);
+                    if (t != null)
                     {
-                        cdad.spawnTick = Find.TickManager.TicksGame;
+                        CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                        if (cdad != null)
+                        {
+                            cdad.spawnTick = Find.TickManager.TicksGame;
+                        }
+                    } else {
+                        GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_ColdColdHeart, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
                     }
-                } else {
-                    GenSpawn.Spawn(HVTRoyaltyDefOf.HVT_ColdColdHeart, this.pawn.Position, this.pawn.Map, WipeMode.Vanish);
                 }
             }
         }
@@ -3850,6 +3853,10 @@ namespace HautsTraitsRoyalty
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
+            if (!this.pawn.Spawned)
+            {
+                return;
+            }
             if (this.pawn.IsHashIntervalTick(2500, delta))
             {
                 this.RecalculateMax();
@@ -4058,7 +4065,7 @@ namespace HautsTraitsRoyalty
             if (this.pawn.Faction != null && this.pawn.story != null && this.pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitSeraph))
             {
                 List<Pawn> eligiblePawns = new List<Pawn>();
-                if (this.pawn.Map != null)
+                if (this.pawn.MapHeld != null)
                 {
                     foreach (Pawn p in this.pawn.Map.mapPawns.AllPawns)
                     {
@@ -7945,8 +7952,10 @@ namespace HautsTraitsRoyalty
                 guy.SetFaction(pawn.GetCaravan().Faction);
                 pawn.GetCaravan().AddPawn(guy,true);
                 guy.SetFaction(pawn.Faction);
+            } else {
+                return;
             }
-            ChoiceLetter choiceLetter = LetterMaker.MakeLetter("HVT_PengwengGetLabel".Translate(), "HVT_PengwengGetText".Translate(pawn.Name.ToStringShort,guy.Name.ToStringShort), LetterDefOf.PositiveEvent, guy);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("HVT_PengwengGetLabel".Translate(), "HVT_PengwengGetText".Translate(pawn.Name.ToStringShort, guy.Name.ToStringShort), LetterDefOf.PositiveEvent, guy);
             Find.LetterStack.ReceiveLetter(choiceLetter, null, 0, true);
 
         }
