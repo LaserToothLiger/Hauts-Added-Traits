@@ -2189,6 +2189,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
+			  <FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">0.2</FishingSpeed>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -2471,6 +2472,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
+			  <FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">0.2</FishingSpeed>
 			</statOffsets>
 			<statFactors>
 			  <TameAnimalChance>2</TameAnimalChance>
@@ -2560,6 +2562,7 @@
 			<statFactors>
 			  <ButcheryFleshEfficiency>2</ButcheryFleshEfficiency>
 			  <ButcheryMechanoidEfficiency>2</ButcheryMechanoidEfficiency>
+			  <FishingYield MayRequire="Ludeon.RimWorld.Odyssey">2</FishingYield>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
