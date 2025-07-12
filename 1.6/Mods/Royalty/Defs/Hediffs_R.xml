@@ -4488,7 +4488,7 @@
     </stages>
     <comps>
       <li Class="HautsFramework.HediffCompProperties_MeditationSeverity">
-        <perMeditationTick>0.0118</perMeditationTick>
+        <perMeditationTick>0.002</perMeditationTick>
         <whileNotMeditating>0.001</whileNotMeditating>
 		<medFocusSpeedMatters>true</medFocusSpeedMatters>
       </li>

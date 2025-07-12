@@ -189,6 +189,23 @@ namespace Hauts_VPE
             {
                 if (pawn.story != null)
                 {
+                    if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_AwakenedErudite))
+                    {
+                        if (__instance.abilityDef.abilityClass == typeof(Ability_WordOf))
+                        {
+                            Hediff hediff = HediffMaker.MakeHediff(HautsDefOf.Hauts_PsycastLoopBreaker, pawn);
+                            pawn.health.AddHediff(hediff);
+                        }
+                        Hediff_PsycastAbilities hediff_PsycastAbilities = pawn.Psycasts();
+                        if (hediff_PsycastAbilities != null)
+                        {
+                            hediff_PsycastAbilities.GainExperience(__instance.psyfocusCost * 100f * PsycastsMod.Settings.XPPerPercent, true);
+                        }
+                    }
+                    if (pawn.MapHeld == null)
+                    {
+                        return;
+                    }
                     if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBouldermit) && __instance.level >= 5 && Rand.Chance(0.1f))
                     {
                         IncidentParms parms = new IncidentParms
@@ -197,12 +214,12 @@ namespace Hauts_VPE
                         };
                         DefDatabase<IncidentDef>.GetNamedSilentFail("MeteoriteImpact").Worker.TryExecute(parms);
                     }
-                    if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitElectrophorus))
+                    if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitElectrophorus) && !pawn.MapHeld.Biome.inVacuum)
                     {
                         List<Pawn> pawns = new List<Pawn>();
                         foreach (Pawn p in pawn.Map.mapPawns.AllPawnsSpawned)
                         {
-                            if (p.HostileTo(pawn))
+                            if (p.HostileTo(pawn) && !p.Position.Roofed(p.Map))
                             {
                                 pawns.Add(p);
                             }
@@ -451,19 +468,6 @@ namespace Hauts_VPE
                                     }
                                 }
                             }
-                        }
-                    }
-                    if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_AwakenedErudite))
-                    {
-                        if (__instance.abilityDef.abilityClass == typeof(Ability_WordOf))
-                        {
-                            Hediff hediff = HediffMaker.MakeHediff(HautsDefOf.Hauts_PsycastLoopBreaker, pawn);
-                            pawn.health.AddHediff(hediff);
-                        }
-                        Hediff_PsycastAbilities hediff_PsycastAbilities = pawn.Psycasts();
-                        if (hediff_PsycastAbilities != null)
-                        {
-                            hediff_PsycastAbilities.GainExperience(__instance.psyfocusCost * 100f * PsycastsMod.Settings.XPPerPercent, true);
                         }
                     }
                 }

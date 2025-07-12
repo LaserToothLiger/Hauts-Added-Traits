@@ -31,6 +31,21 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Odyssey</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/WeatherDef[defName="Orbit"]</xpath>
+					<value>
+						<li Class="HautsTraitsRoyalty.NotStormable" />
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Alpha Biomes</li>
 		</mods>
 		<match Class="PatchOperationSequence">

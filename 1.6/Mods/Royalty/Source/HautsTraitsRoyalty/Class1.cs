@@ -3262,17 +3262,20 @@ namespace HautsTraitsRoyalty
                             this.pawn.Map.pollutionGrid.SetPolluted(c, false, false);
                             done = true;
                         }
-                        if (!td.IsFloor && !td.affordances.Contains(TerrainAffordanceDefOf.SmoothableStone) && !td.IsRiver && !td.IsWater)
+                        if (!td.IsFloor && !td.affordances.Contains(TerrainAffordanceDefOf.SmoothableStone) && !td.IsRiver && !td.IsWater && !td.isFoundation && td.canEverTerraform && (td.tags == null || !td.tags.Contains("Space")))
                         {
-                            List<TerrainDef> tdList = HautsUtility.FertilityTerrainDefs(this.pawn.Map);
-                            IOrderedEnumerable<TerrainDef> source = from e in tdList.FindAll((TerrainDef e) => (double)e.fertility > (double)td.fertility && !e.IsWater && !e.IsRiver)
-                                                                    orderby e.fertility
-                                                                    select e;
-                            if (source.Count<TerrainDef>() != 0)
+                            List<TerrainDef> tdList = HautsUtility.FertilityTerrainDefs(this.pawn.Map,false);
+                            if (!tdList.NullOrEmpty())
                             {
-                                TerrainDef newTerr = source.First<TerrainDef>();
-                                this.pawn.Map.terrainGrid.SetTerrain(c, newTerr);
-                                done = Rand.Chance(0.2f);
+                                IOrderedEnumerable<TerrainDef> source = from e in tdList.FindAll((TerrainDef e) => (double)e.fertility > (double)td.fertility && !e.IsWater && !e.IsRiver)
+                                                                        orderby e.fertility
+                                                                        select e;
+                                if (source.Count<TerrainDef>() != 0)
+                                {
+                                    TerrainDef newTerr = source.First<TerrainDef>();
+                                    this.pawn.Map.terrainGrid.SetTerrain(c, newTerr);
+                                    done = Rand.Chance(0.2f);
+                                }
                             }
                         }
                     }
@@ -3530,7 +3533,7 @@ namespace HautsTraitsRoyalty
                 return this.causedConditions.Values;
             }
         }
-        public int MyTile
+        public PlanetTile MyTile
         {
             get
             {
@@ -3542,7 +3545,7 @@ namespace HautsTraitsRoyalty
                 {
                     return this.pawn.GetCaravan().Tile;
                 }
-                return -1;
+                return PlanetTile.Invalid;
             }
         }
         public override IEnumerable<Gizmo> GetGizmos()
@@ -3582,9 +3585,9 @@ namespace HautsTraitsRoyalty
                 yield return g;
             }
         }
-        public bool InAoE(int tile)
+        public bool InAoE(PlanetTile tile)
         {
-            return this.MyTile != -1 && tile != -1 && Find.WorldGrid.ApproxDistanceInTiles(tile, this.MyTile) < Math.Max(6f,(float)this.pawn.GetPsylinkLevel());
+            return this.MyTile.Valid && tile.Valid && !tile.Tile.PrimaryBiome.inVacuum && (tile == this.MyTile || (tile.Layer == this.MyTile.Layer && Find.WorldGrid.ApproxDistanceInTiles(tile, this.MyTile) < Math.Max(6f, (float)this.pawn.GetPsylinkLevel())));
         }
         public GameCondition GetAndNullifyConditionInstance(Map map)
         {
@@ -7290,6 +7293,11 @@ namespace HautsTraitsRoyalty
             }
             return "HVT_ForcedLatentPsychic".Translate();
         }
+        public override void DoEditInterface(Listing_ScenEdit listing)
+        {
+            Rect scenPartRect = listing.GetScenPartRect(this, ScenPart.RowHeight * 2f);
+            base.DoPawnModifierEditInterface(scenPartRect.BottomPartPixels(ScenPart.RowHeight * 2f));
+        }
         protected override void ModifyPawnPostGenerate(Pawn pawn, bool redressed)
         {
             if (pawn.story == null || pawn.story.traits == null)
@@ -7313,11 +7321,23 @@ namespace HautsTraitsRoyalty
                 }
             }
             pawn.story.traits.GainTrait(new Trait(HVTRoyaltyDefOf.HVT_LatentPsychic, degree, true), false);
-            foreach (Trait t in pawn.story.traits.allTraits)
+            if (!pawn.story.traits.allTraits.NullOrEmpty())
             {
-                if (PsychicAwakeningUtility.IsAwakenedTrait(t.def) || PsychicAwakeningUtility.IsTranscendentTrait(t.def))
+                for (int i = pawn.story.traits.allTraits.Count - 1; i >= 0; i--)
                 {
-                    pawn.story.traits.RemoveTrait(t);
+                    Trait t = pawn.story.traits.allTraits[i];
+                    if (PsychicAwakeningUtility.IsTranscendentTrait(t.def))
+                    {
+                        pawn.story.traits.RemoveTrait(t);
+                    }
+                }
+                for (int i = pawn.story.traits.allTraits.Count - 1; i >= 0; i--)
+                {
+                    Trait t = pawn.story.traits.allTraits[i];
+                    if (PsychicAwakeningUtility.IsAwakenedTrait(t.def))
+                    {
+                        pawn.story.traits.RemoveTrait(t);
+                    }
                 }
             }
         }
@@ -7332,6 +7352,11 @@ namespace HautsTraitsRoyalty
             }
             return "HVT_ForcedAwakenedPsychic".Translate();
         }
+        public override void DoEditInterface(Listing_ScenEdit listing)
+        {
+            Rect scenPartRect = listing.GetScenPartRect(this, ScenPart.RowHeight * 2f);
+            base.DoPawnModifierEditInterface(scenPartRect.BottomPartPixels(ScenPart.RowHeight * 2f));
+        }
         protected override void ModifyPawnPostGenerate(Pawn pawn, bool redressed)
         {
             if (pawn.story == null || pawn.story.traits == null || pawn.IsMutant)
@@ -7341,8 +7366,12 @@ namespace HautsTraitsRoyalty
             if (!PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
             {
                 PsychicAwakeningUtility.AwakenPsychicTalent(pawn, false, "", "", true);
-                foreach (Trait t in pawn.story.traits.allTraits)
+            }
+            if (!pawn.story.traits.allTraits.NullOrEmpty())
+            {
+                for (int i = pawn.story.traits.allTraits.Count - 1; i >= 0; i--)
                 {
+                    Trait t = pawn.story.traits.allTraits[i];
                     if (t.def == HVTRoyaltyDefOf.HVT_LatentPsychic)
                     {
                         pawn.story.traits.RemoveTrait(t);
@@ -7976,12 +8005,12 @@ namespace HautsTraitsRoyalty
                     }
                     if (pawn.Map != null)
                     {
-                        if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitElectrophorus))
+                        if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitElectrophorus) && !pawn.Map.Biome.inVacuum)
                         {
                             List<Pawn> pawns = new List<Pawn>();
                             foreach (Pawn p in pawn.Map.mapPawns.AllPawnsSpawned)
                             {
-                                if (p.HostileTo(pawn))
+                                if (p.HostileTo(pawn) && !p.Position.Roofed(p.Map))
                                 {
                                     pawns.Add(p);
                                 }
