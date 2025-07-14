@@ -2368,7 +2368,7 @@ namespace HautsTraitsRoyalty
                 {
                     this.pawn.SetFaction(this.newFaction);
                     this.pawn.jobs.StopAll(false, true);
-                    if (originalCaster != null)
+                    if (this.originalCaster != null)
                     {
                         LordMaker.MakeNewLord(this.pawn.Faction, new LordJob_DefendPoint(this.pawn.Position), this.pawn.Map, Gen.YieldSingle<Pawn>(pawn));
                     }

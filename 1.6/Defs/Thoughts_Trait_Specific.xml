@@ -1100,8 +1100,8 @@
   <!--mechaphiles weep when an allied mech dies-->
   <ThoughtDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_MechaphileWitnessedMechDeath</defName>
-    <durationDays>3</durationDays>
-    <stackLimit>50</stackLimit>
+    <durationDays>6</durationDays>
+    <stackLimit>10</stackLimit>
     <stackedEffectMultiplier>1.0</stackedEffectMultiplier>
     <nullifyingHediffs>
       <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -1110,7 +1110,7 @@
       <li>
         <label>saw allied mechanoid die</label>
         <description>Mechs can be rebuilt, but they never come back the same. We lost someone.</description>
-        <baseMoodEffect>-2</baseMoodEffect>
+        <baseMoodEffect>-3</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

@@ -18,5 +18,6 @@
 		<li IfModActive="VanillaExpanded.VPsycastsE">1.6/Mods/VanillaPsycastsExpanded</li>
 		<li IfModActive="VanillaExpanded.VPE.Puppeteer">1.6/Mods/VPE_Puppeteer</li>
 		<li IfModActive="vanillaracesexpanded.highmate">1.6/Mods/VREHighmate</li>
+		<li IfModActive="doug.conn">1.6/Mods/COaNN</li>
 	</v1.6>
 </loadFolders>

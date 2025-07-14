@@ -124,21 +124,30 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="BioluminescentSpores"]</xpath>
+					<value>
+						<li Class="HautsTraits.TempestophileLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/GameConditionDef[defName="VolcanicAsh"]</xpath>
 					<value>
 						<li Class="HautsTraits.CatastrophistLikedCondition" />
+						<li Class="HautsTraits.TempestophileLikedCondition" />
 					</value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/GameConditionDef[defName="VolcanicDebris"]</xpath>
 					<value>
 						<li Class="HautsTraits.CatastrophistLikedCondition" />
+						<li Class="HautsTraits.TempestophileLikedCondition" />
 					</value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/GameConditionDef[defName="LavaFlow"]</xpath>
 					<value>
 						<li Class="HautsTraits.CatastrophistLikedCondition" />
+						<li Class="HautsTraits.TempestophileLikedCondition" />
 					</value>
 				</li>
 				<li Class="PatchOperationAddModExtension">

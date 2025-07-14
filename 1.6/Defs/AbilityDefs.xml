@@ -303,7 +303,7 @@
     <targetRequired>true</targetRequired>
     <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
     <iconPath>Genes/HVT_Mechaphobe</iconPath>
-    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
     <showPsycastEffects>False</showPsycastEffects>
     <writeCombatLog>True</writeCombatLog>
     <uiOrder>3</uiOrder>
@@ -319,7 +319,7 @@
       <range>35</range>
       <drawAimPie>true</drawAimPie>
       <requireLineOfSight>true</requireLineOfSight>
-      <warmupTime>3.0</warmupTime>
+      <warmupTime>0.1</warmupTime>
       <targetParams>
         <canTargetSelf>false</canTargetSelf>
         <canTargetPawns>true</canTargetPawns>
@@ -363,7 +363,7 @@
 			</li>
 			<li>
 				<key>PsychicSensitivity</key>
-				<value>1</value>
+				<value>0.001</value>
 			</li>
 		</minStats>
 		<hideIfDisabled>true</hideIfDisabled>
@@ -676,7 +676,7 @@
     <targetRequired>true</targetRequired>
     <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
     <iconPath>Genes/HVT_Mechaphobe</iconPath>
-    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
     <showPsycastEffects>False</showPsycastEffects>
     <writeCombatLog>True</writeCombatLog>
     <uiOrder>3</uiOrder>
@@ -692,7 +692,7 @@
       <range>35</range>
       <drawAimPie>true</drawAimPie>
       <requireLineOfSight>true</requireLineOfSight>
-      <warmupTime>3.0</warmupTime>
+      <warmupTime>0.1</warmupTime>
       <targetParams>
         <canTargetSelf>false</canTargetSelf>
         <canTargetPawns>true</canTargetPawns>
@@ -725,7 +725,7 @@
 			</li>
 			<li>
 				<key>PsychicSensitivity</key>
-				<value>1</value>
+				<value>0.001</value>
 			</li>
 		</minStats>
 		<hideIfDisabled>true</hideIfDisabled>

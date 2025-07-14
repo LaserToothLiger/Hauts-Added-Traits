@@ -219,7 +219,7 @@
             </li>
         </modExtensions>
 		<conflictingPassions><li>Intellectual</li></conflictingPassions>
-		<conflictingTraits><li>GreatMemory</li><li>TooSmart</li><li>HVT_Visionary</li><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li></conflictingTraits>
+		<conflictingTraits><li>GreatMemory</li><li>TooSmart</li><li>HVT_Visionary</li><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li><li MayRequire="RavingLegend.MoreTraits">RT_Perfectionist</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>
@@ -431,6 +431,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
+		<conflictingTraits><li MayRequire="RavingLegend.MoreTraits">RT_Gluttonous</li></conflictingTraits>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>7</value></li></chargeCosts></li>
             <li Class="HautsFramework.TraitGrantedStuff">
@@ -900,7 +901,7 @@
 			</statOffsets>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>AnnoyingVoice</li><li>CreepyBreathing</li></conflictingTraits>
+		<conflictingTraits><li>AnnoyingVoice</li><li>CreepyBreathing</li><li MayRequire="RavingLegend.MoreTraits">RT_Unwanted</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
 	</TraitDef>
 	
@@ -1071,6 +1072,7 @@
 			</statOffsets>
 		  </li>
 		</degreeDatas>
+		<conflictingTraits><li MayRequire="RavingLegend.MoreTraits">RT_Weak</li></conflictingTraits>
         <modExtensions>
             <li Class="HautsFramework.TraitGrantedStuff">
 				<forcedBodyTypes>
@@ -1152,7 +1154,7 @@
 				</chargeCosts>
 			</li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Doubtful</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Doubtful</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
 		<defName>HVT_Doubtful</defName>
@@ -1171,7 +1173,7 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Faithful</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
 	</TraitDef>
 		<!--tolerance "spectrum"-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
@@ -1661,7 +1663,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="Ludeon.RimWorld.Biotech">HVT_GenePurist</li></conflictingTraits>
+		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="Ludeon.RimWorld.Biotech">HVT_GenePurist</li><li MayRequire="RavingLegend.MoreTraits">RT_Weird</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Anomaly">
 		<defName>HVT_Twisted</defName>
@@ -1695,7 +1697,7 @@
 				</grantedHediffs>
             </li>
         </modExtensions>
-		<conflictingTraits><li>HVT_MonsterHunter</li></conflictingTraits>
+		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="RavingLegend.MoreTraits">RT_Weird</li></conflictingTraits>
 	</TraitDef>
 	
 <!--this is a test trait that you can add to a pawn in Dev Mode. I made it after finding a dismayingly large number of mods whose authors seem to believe Melee DPS and Melee Armor Penetration do anything, even though it's

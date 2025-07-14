@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\HarmonyMod\1.4\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\HarmonyMod\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -40,15 +40,15 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="CONN">
-      <HintPath>..\..\..\..\..\..\..\..\..\workshop\content\294100\2045064990\1.4\Assemblies\CONN.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Users\ianti\OneDrive\Pictures\modstuff\Rimworld-CyberneticOrganismNeuralNetwork-main\1.6\Assemblies\CONN.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HautsFramework">
-      <HintPath>..\..\..\..\..\..\Hauts Framework\1.5\Assemblies\HautsFramework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Hauts Framework\1.6\Assemblies\HautsFramework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HautsF_COaNN">
-      <HintPath>..\..\..\..\..\..\Hauts Framework\1.5\Mods\COaNN\Assemblies\HautsF_COaNN.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Hauts Framework\1.6\Mods\COaNN\Assemblies\HautsF_COaNN.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HautsTraits">
