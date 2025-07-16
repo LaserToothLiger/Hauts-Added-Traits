@@ -153,6 +153,11 @@ namespace HautsTraitsRoyalty
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsIsOtherDisallowedTraitPostfix)));
             harmony.Patch(AccessTools.Method(typeof(Hediff_Psylink), nameof(Hediff_Psylink.PostAdd)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_PostAddPostfix)));
+            if (ModsConfig.OdysseyActive)
+            {
+                harmony.Patch(AccessTools.Method(typeof(GravshipUtility), nameof(GravshipUtility.AbandonMap)),
+                               prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_GravshipUtility_AbandonMapPrefix)));
+            }
             harmony.Patch(AccessTools.Method(typeof(TraitSerumWindow), nameof(TraitSerumWindow.isBadTraitCombo)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsIsBadTraitComboPostfix)));
             harmony.Patch(AccessTools.Method(typeof(HautsUtility), nameof(HautsUtility.COaNN_TraitReset_ShouldDoBonusEffect)),
@@ -1820,6 +1825,24 @@ namespace HautsTraitsRoyalty
                     __instance.pawn.health.RemoveHediff(hc);
                 }
             }
+        }
+        public static bool HautsTraitsTrans_GravshipUtility_AbandonMapPrefix(Map map)
+        {
+            List<Pawn> list = map.mapPawns.AllPawnsSpawned.ToList<Pawn>();
+            foreach (Pawn p in list)
+            {
+                if (p.story != null)
+                {
+                    foreach (Trait t in p.story.traits.allTraits)
+                    {
+                        if (t.def.HasModExtension<LivingGravAnchor>())
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
         }
         public static void HautsTraitsIsBadTraitComboPostfix(ref bool __result, TraitDef t, Pawn pawn)
         {
@@ -7412,6 +7435,13 @@ namespace HautsTraitsRoyalty
 
         }
         public GameConditionDef conditionDef;
+    }
+    public class LivingGravAnchor : DefModExtension
+    {
+        public LivingGravAnchor()
+        {
+
+        }
     }
     public static class PsychicAwakeningUtility
     {

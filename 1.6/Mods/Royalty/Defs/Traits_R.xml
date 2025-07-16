@@ -1285,6 +1285,7 @@
 				</grantedHediffs>
             </li>
             <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFodiator</descKey><descKeyFantasy>HVT_TransFodiatorFantasy</descKeyFantasy><category>transcendence</category></li>
+			<li Class="HautsTraitsRoyalty.LivingGravAnchor" />
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2466,6 +2467,7 @@
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
             <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuelea</descKey><descKeyFantasy>HVT_TransQueleaFantasy</descKeyFantasy><category>transcendence</category></li>
+			<li Class="HautsTraitsRoyalty.LivingGravAnchor" />
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">

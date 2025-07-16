@@ -58,7 +58,7 @@
 						</operations>
 					</match>
 				</li>
-				<!--Agrizoophobe hates Insectoid Supremacy and Fishing Culture; Outdoorsies like Fishing Culture instead-->
+				<!--Agrizoophobe hates Insectoid Supremacy and Fishing Culture; Outdoorsies, Anglers, and Pescatarians like Fishing Culture instead-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_InsectoidSupremacy"]/disagreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -106,6 +106,8 @@
 									<value>
 										<agreeableTraits>
 											<li>HVT_Outdoorsy</li>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 										</agreeableTraits>
 									</value>
 								</nomatch>
@@ -113,6 +115,8 @@
 									<xpath>/Defs/MemeDef[defName="VME_Angler"]/agreeableTraits</xpath>
 									<value>
 										<li>HVT_Outdoorsy</li>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 									</value>
 								</match>
 							</li>
@@ -832,7 +836,7 @@
 									</value>
 								</match>
 							</li>
-							<!--Environmentalists like Scrapper but not City Builders-->
+							<!--Environmentalists like Scrapper (as do Scavengers) but not City Builders-->
 							<li Class="PatchOperationConditional">
 								<xpath>/Defs/MemeDef[defName="VME_Scrapper"]/agreeableTraits</xpath>
 								<nomatch Class="PatchOperationAdd">
@@ -840,6 +844,7 @@
 									<value>
 										<agreeableTraits>
 											<li>HVT_Environmentalist</li>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Scavenger</li>
 										</agreeableTraits>
 									</value>
 								</nomatch>
@@ -847,6 +852,7 @@
 									<xpath>/Defs/MemeDef[defName="VME_Scrapper"]/agreeableTraits</xpath>
 									<value>
 										<li>HVT_Environmentalist</li>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Scavenger</li>
 									</value>
 								</match>
 							</li>
@@ -1036,6 +1042,33 @@
 											<li>HVT_AwakenedSiphoner</li>
 											<li>HVT_AwakenedTitan</li>
 											<li>HVT_AwakenedUndying</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Odyssey</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--Pescatarians hate Veganism. Sorry Todd-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="VME_Vegan"]/disagreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="VME_Vegan"]</xpath>
+									<value>
+										<disagreeableTraits>
+											<li>HVT_Pescatarian</li>
+										</disagreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="VME_Vegan"]/disagreeableTraits</xpath>
+									<value>
+										<li>HVT_Pescatarian</li>
 									</value>
 								</match>
 							</li>

@@ -1719,7 +1719,7 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Agrizoophobe</li></conflictingTraits>
-		<requiredWorkTags><li>Animals</li></requiredWorkTags>
+		<requiredWorkTags><li>Animals</li><li>Violent</li></requiredWorkTags>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
@@ -1765,7 +1765,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<requiredWorkTags><li>Animals</li></requiredWorkTags><!--because the unique draw of the trait requires the pawn to be able to fish, rather than for any diegetic reason-->
+		<requiredWorkTags><li>Animals</li><li>Violent</li></requiredWorkTags><!--because the unique draw of the trait requires the pawn to be able to fish, rather than for any diegetic reason-->
 	</TraitDef>
 	
 <!--this is a test trait that you can add to a pawn in Dev Mode. I made it after finding a dismayingly large number of mods whose authors seem to believe Melee DPS and Melee Armor Penetration do anything, even though it's

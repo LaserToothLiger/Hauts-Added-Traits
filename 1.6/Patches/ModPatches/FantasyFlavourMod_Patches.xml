@@ -539,10 +539,31 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitFodiator"]/degreeDatas/li/description</xpath>
+								<xpath>Defs/TraitDef[defName = "HVT_TTraitQuelea"]/degreeDatas/li/label</xpath>
 								<value>
-									<description>Capable of sudden and unnatural movements, {PAWN_nameDef} can dodge blows with ease and jump far further. {PAWN_pronoun} can even leap great distances without the aid of artifacts or spells.</description>
+									<label>quelea spirit</label>
 								</value>
+							</li>
+							<li Class="PatchOperationFindMod">
+								<mods>
+									<li>Odyssey</li>
+								</mods>
+								<nomatch Class="PatchOperationSequence">
+									<operations>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitFodiator"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>Capable of sudden and unnatural movements, {PAWN_nameDef} can dodge blows with ease and jump far further. {PAWN_pronoun} can even leap great distances without the aid of artifacts or spells.</description>
+											</value>
+										</li>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitQuelea"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>{PAWN_nameDef} is surrounded by winds that hold {PAWN_objective} and nearby allies aloft, keeping them from triggering traps and allowing them to move faster, heedless of the difficulty of the terrain.</description>
+											</value>
+										</li>
+									</operations>
+								</nomatch>
 							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitFossil"]/degreeDatas/li/label</xpath>
@@ -991,18 +1012,6 @@
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitQuahog"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>quahog spirit</label>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitQuelea"]/degreeDatas/li/label</xpath>
-								<value>
-									<label>quelea spirit</label>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitQuelea"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>{PAWN_nameDef} is surrounded by winds that hold {PAWN_objective} and nearby allies aloft, keeping them from triggering traps and allowing them to move faster, heedless of the difficulty of the terrain.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
