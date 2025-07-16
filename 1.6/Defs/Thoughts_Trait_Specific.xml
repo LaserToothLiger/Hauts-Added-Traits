@@ -1389,4 +1389,56 @@
     </stages>
   </ThoughtDef>
   
+  <!--angler mood from fishing-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_FishinsReelyFun</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>1.0</stackedEffectMultiplier>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Angler</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>angler fished recently</label>
+        <description>Fishing is a joy.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--angler can't stand fishless maps-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_WhereHaveTheFishGone</defName>
+    <workerClass>HautsTraits.ThoughtWorker_AnglerYearning</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredTraits>
+      <li>HVT_Angler</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>no fish nearby</label>
+        <description>How am I gonna fish... WITHOUT FISH!?</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--pescatarians love fish-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_TheSnackThatSmilesBack</defName>
+    <durationDays>0.8</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Pescatarian</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>pescatarian ate fish</label>
+        <description>Fish are food, not friends. And what tasty food they are!</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
 </Defs>

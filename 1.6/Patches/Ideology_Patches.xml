@@ -71,7 +71,7 @@
 						</value>
 					</match>
 				</li>
-				<!--AZphobes are human primacists, obviously; daw/ the pro-animal memes, Animal Personhood and Nature Primacy-->
+				<!--AZphobes are human primacists, obviously; daw/ the pro-animal memes, Animal Personhood and Nature Primacy. Anglers also hate AP-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="HumanPrimacy"]/agreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -96,6 +96,8 @@
 						<value>
 							<disagreeableTraits>
 								<li>HVT_Agrizoophobe</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 							</disagreeableTraits>
 						</value>
 					</nomatch>
@@ -103,6 +105,8 @@
 						<xpath>/Defs/MemeDef[defName="AnimalPersonhood"]/disagreeableTraits</xpath>
 						<value>
 							<li>HVT_Agrizoophobe</li>
+							<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+							<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 						</value>
 					</match>
 				</li>

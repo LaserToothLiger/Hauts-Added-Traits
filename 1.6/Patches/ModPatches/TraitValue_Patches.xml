@@ -765,6 +765,45 @@
 						</operations>
 					</match>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Odyssey</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAddModExtension">
+								<xpath>*/TraitDef[defName = "HVT_Angler"]</xpath>
+							  <value>
+								<li Class="SyrTraitValue.TraitValueExtension">
+								  <traitValues>
+									<li>5</li>
+								  </traitValues>
+								</li>
+							  </value>
+							</li>
+							<li Class="PatchOperationAddModExtension">
+								<xpath>*/TraitDef[defName = "HVT_Pescatarian"]</xpath>
+							  <value>
+								<li Class="SyrTraitValue.TraitValueExtension">
+								  <traitValues>
+									<li>8</li>
+								  </traitValues>
+								</li>
+							  </value>
+							</li>
+							<li Class="PatchOperationAddModExtension">
+								<xpath>*/TraitDef[defName = "HVT_Scavenger"]</xpath>
+							  <value>
+								<li Class="SyrTraitValue.TraitValueExtension">
+								  <traitValues>
+									<li>15</li>
+								  </traitValues>
+								</li>
+							  </value>
+							</li>
+						</operations>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>

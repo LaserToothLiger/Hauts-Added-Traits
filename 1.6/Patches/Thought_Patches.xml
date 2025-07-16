@@ -3510,6 +3510,111 @@
 						</operations>
 					</match>
 				</li>
+				<!--anglers and pescatarians are fine with fishing-->
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Ideology</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Prohibited"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Prohibited"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li>HVT_Angler</li>
+											<li>HVT_Pescatarian</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Prohibited"]/nullifyingTraits</xpath>
+									<value>
+										<li>HVT_Angler</li>
+										<li>HVT_Pescatarian</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Prohibited_Mood"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Prohibited_Mood"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li>HVT_Angler</li>
+											<li>HVT_Pescatarian</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Prohibited_Mood"]/nullifyingTraits</xpath>
+									<value>
+										<li>HVT_Angler</li>
+										<li>HVT_Pescatarian</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Disapproved"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Disapproved"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li>HVT_Angler</li>
+											<li>HVT_Pescatarian</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Disapproved"]/nullifyingTraits</xpath>
+									<value>
+										<li>HVT_Angler</li>
+										<li>HVT_Pescatarian</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Disapproved"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Disapproved"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li>HVT_Angler</li>
+											<li>HVT_Pescatarian</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Disapproved"]/nullifyingTraits</xpath>
+									<value>
+										<li>HVT_Angler</li>
+										<li>HVT_Pescatarian</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Disapproved_Mood"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Disapproved_Mood"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li>HVT_Angler</li>
+											<li>HVT_Pescatarian</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="SlaughteredFish_Know_Disapproved_Mood"]/nullifyingTraits</xpath>
+									<value>
+										<li>HVT_Angler</li>
+										<li>HVT_Pescatarian</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>

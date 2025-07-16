@@ -19,6 +19,7 @@
 					<xpath>Defs/TraitDef[defName="BOT_Dysgeusia" or defName="BOT_Eclectic_Palate"]/conflictingTraits</xpath>
 					<value>
 						<li>HVT_MetabolicFreak</li>
+						<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 					</value>
 				</li>
 				<!--PplPlser ew/ Apathetic, Misanthrope, Vulgar-->

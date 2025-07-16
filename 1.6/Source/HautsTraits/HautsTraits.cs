@@ -17,7 +17,9 @@ using HautsFramework;
 using System.Linq.Expressions;
 using Verse.Noise;
 using RimWorld.QuestGen;
-using System.Reflection.Emit;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
+using VEF.OptionalFeatures;
+using System.Security.Cryptography;
 
 namespace HautsTraits
 {
@@ -91,6 +93,15 @@ namespace HautsTraits
                                postfix: new HarmonyMethod(patchType, nameof(HVTInfectPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(InteractionWorker_InhumanRambling), nameof(InteractionWorker_InhumanRambling.RandomSelectionWeight)),
                                postfix: new HarmonyMethod(patchType, nameof(HVTInhumanRambling_RandomSelectionWeightPostfix)));
+            }
+            if (ModsConfig.OdysseyActive)
+            {
+                harmony.Patch(AccessTools.Method(typeof(FishingUtility), nameof(FishingUtility.GetNegativeFishingOutcomes)),
+                               postfix: new HarmonyMethod(patchType, nameof(HVTAnglerGetNegativeFishingOutcomesPostfix)));
+                harmony.Patch(AccessTools.Method(typeof(Thing), nameof(Thing.Ingested)),
+                              postfix: new HarmonyMethod(patchType, nameof(HVTPescatarianIngestedPostfix)));
+                harmony.Patch(AccessTools.Method(typeof(FishingUtility), nameof(FishingUtility.GetCatchesFor)),
+                              postfix: new HarmonyMethod(patchType, nameof(HVTTSeekerGetCatchesForPostfix)));
             }
             harmony.Patch(AccessTools.Method(typeof(CaravanEnterMapUtility), nameof(CaravanEnterMapUtility.Enter), new[] { typeof(Caravan), typeof(Map), typeof(CaravanEnterMode), typeof(CaravanDropInventoryMode), typeof(bool), typeof(Predicate<IntVec3>) }),
                           prefix: new HarmonyMethod(patchType, nameof(HautsTraitsEnterPrefix)));
@@ -345,7 +356,6 @@ namespace HautsTraits
                         if (skillToTeach != null)
                         {
                             float xpBase = pawn.GetStatValue(HautsDefOf.Hauts_InstructiveAbility) * pawn.skills.GetSkill(skillToTeach).LearnRateFactor(true) * recipient.skills.GetSkill(skillToTeach).LearnRateFactor(false);
-                            Log.Error("xpbase: " + xpBase);
                             recipient.skills.Learn(skillToTeach, (67f + (Rand.Value * 267f)) * xpBase);
                         }
                     }
@@ -600,6 +610,59 @@ namespace HautsTraits
             if (initiator.MentalStateDef != null && initiator.MentalStateDef == HVTDefOf.HVT_HumanityBreak)
             {
                 __result = 999f;
+            }
+        }
+        public static void HVTAnglerGetNegativeFishingOutcomesPostfix(ref List<NegativeFishingOutcomeDef> __result, Pawn pawn)
+        {
+            if (pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Angler) && pawn.needs.mood != null)
+            {
+                pawn.needs.mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_FishinsReelyFun);
+                if (Rand.Chance(0.5f) && !__result.NullOrEmpty())
+                {
+                    __result.Clear();
+                }
+            }
+        }
+        public static void HVTPescatarianIngestedPostfix(Thing __instance, Pawn ingester)
+        {
+            if (ingester.story != null && ingester.story.traits.HasTrait(HVTDefOf.HVT_Pescatarian) && ingester.needs.mood != null)
+            {
+                bool addThought = false;
+                CompIngredients compIngredients = __instance.TryGetComp<CompIngredients>();
+                if (compIngredients == null)
+                {
+                    if (HVTUtility.IsThisFoodFish(__instance.def))
+                    {
+                        addThought = true;
+                    }
+                } else if (!compIngredients.ingredients.NullOrEmpty<ThingDef>()) {
+                    for (int i = 0; i < compIngredients.ingredients.Count; i++)
+                    {
+                        if (HVTUtility.IsThisFoodFish(compIngredients.ingredients[i]))
+                        {
+                            addThought = true;
+                            break;
+                        }
+                    }
+                }
+                if (addThought)
+                {
+                    Thought_Memory thought_Memory = ThoughtMaker.MakeThought(HVTDefOf.HVT_TheSnackThatSmilesBack, null);
+                    ingester.needs.mood.thoughts.memories.TryGainMemory(thought_Memory, null);
+                }
+            }
+        }
+        public static void HVTTSeekerGetCatchesForPostfix(ref List<Thing> __result, Pawn pawn)
+        {
+            if (pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Scavenger))
+            {
+                if (pawn.Map.Biome.fishTypes.rareCatchesSetMaker != null && (DebugSettings.alwaysRareCatches || pawn.Map.waterBodyTracker.lastRareCatchTick == 0 || GenTicks.TicksGame - pawn.Map.waterBodyTracker.lastRareCatchTick > 300000) && Rand.Chance(0.015f))
+                {
+                    List<Thing> sweetCatch = pawn.Map.Biome.fishTypes.rareCatchesSetMaker.root.Generate();
+                    __result.AddRange(sweetCatch);
+                    pawn.Map.waterBodyTracker.lastRareCatchTick = Find.TickManager.TicksGame;
+                    Find.LetterStack.ReceiveLetter("LetterLabelRareCatch".Translate(), "LetterTextRareCatch".Translate(pawn.Named("PAWN")) + ":\n" + sweetCatch.Select((Thing x) => x.LabelCap).ToLineList("  - ", false), LetterDefOf.PositiveEvent, sweetCatch, null, null, null, null, 0, true);
+                }
             }
         }
         public static void HautsTraitsEnterPrefix(Caravan caravan, CaravanEnterMode enterMode)
@@ -958,6 +1021,12 @@ namespace HautsTraits
         public static TraitDef HVT_MonsterLover;
         [MayRequireAnomaly]
         public static TraitDef HVT_Twisted;
+        [MayRequireOdyssey]
+        public static TraitDef HVT_Angler;
+        [MayRequireOdyssey]
+        public static TraitDef HVT_Pescatarian;
+        [MayRequireOdyssey]
+        public static TraitDef HVT_Scavenger;
 
         public static ThoughtDef HVT_Bibliophilia;
         public static ThoughtDef HVT_StimulatingConversation;
@@ -972,6 +1041,10 @@ namespace HautsTraits
         public static ThoughtDef HVT_MechaphobeKilledMech;
         [MayRequireAnomaly]
         public static ThoughtDef HVT_MonsterHunterWorld;
+        [MayRequireOdyssey]
+        public static ThoughtDef HVT_FishinsReelyFun;
+        [MayRequireOdyssey]
+        public static ThoughtDef HVT_TheSnackThatSmilesBack;
 
         public static JobDef HVT_UseTraitGiverSerum;
         public static JobDef HVT_DisarmExplosive;
@@ -1855,6 +1928,17 @@ namespace HautsTraits
                 return ThoughtState.ActiveDefault;
             }
             return ThoughtState.Inactive;
+        }
+    }
+    public class ThoughtWorker_AnglerYearning : ThoughtWorker
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            if (!ModsConfig.OdysseyActive || p.MapHeld == null)
+            {
+                return ThoughtState.Inactive;
+            }
+            return (p.MapHeld.waterBodyTracker == null || !p.MapHeld.waterBodyTracker.AnyBodyContainsFish) ? ThoughtState.ActiveDefault : ThoughtState.Inactive;
         }
     }
     /*public class RitualOutcomeComp_SpecificTrait : RitualOutcomeComp_Quality
@@ -4067,6 +4151,14 @@ namespace HautsTraits
             {
                 Messages.Message(message, pawn, MessageTypeDefOf.PositiveEvent, true);
             }
+        }
+        public static bool IsThisFoodFish(ThingDef foodDef)
+        {
+            if (!foodDef.thingCategories.NullOrEmpty() && foodDef.thingCategories.Contains(ThingCategoryDefOf.Fish))
+            {
+                return true;
+            }
+            return false;
         }
         public static bool HasASkulker(Caravan caravan)
         {

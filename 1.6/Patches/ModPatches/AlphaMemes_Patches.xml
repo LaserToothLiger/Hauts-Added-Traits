@@ -554,6 +554,33 @@
 						</operations>
 					</match>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Odyssey</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--Anglers are fishbrained, not horsebrained (the two genders...)-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="AM_Cowboys"]/disagreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="AM_Cowboys"]</xpath>
+									<value>
+										<disagreeableTraits>
+											<li>HVT_Angler</li>
+										</disagreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="AM_Cowboys"]/disagreeableTraits</xpath>
+									<value>
+										<li>HVT_Angler</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>
