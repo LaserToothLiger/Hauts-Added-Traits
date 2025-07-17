@@ -1082,4 +1082,58 @@
 	</comps>
   </HediffDef>
   
+  <!--celestial celerity-->
+  <HediffDef ParentName="HVT_TraitHediffBase" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_SpaceSpeed</defName>
+    <label>celestial celerity</label>
+    <description>The 'Celestial Celerity' trait grants moving and manipulation while in orbit.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1.001</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.001</minSeverity>
+		<capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.04</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.04</offset>
+          </li>
+        </capMods>
+	  </li>
+	  <li>
+        <minSeverity>1.001</minSeverity>
+		<capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+	  <li Class="HautsFramework.HediffCompProperties_PlanetLayerSeverity">
+		<defaultSeverity>0.001</defaultSeverity>
+		<setToInLayer>
+			<li><key>Orbit</key><value>1.001</value></li>
+		</setToInLayer>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_SeverityDeterminesVisibility">
+		<invisibleWithin>0~1</invisibleWithin>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_CelestialCelerity</li>
+		</forcingTraits>
+	  </li>
+    </comps>
+  </HediffDef>
+  
 </Defs>

@@ -157,6 +157,8 @@ namespace HautsTraitsRoyalty
             {
                 harmony.Patch(AccessTools.Method(typeof(GravshipUtility), nameof(GravshipUtility.AbandonMap)),
                                prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_GravshipUtility_AbandonMapPrefix)));
+                harmony.Patch(AccessTools.Method(typeof(FishingUtility), nameof(FishingUtility.GetCatchesFor)),
+                               postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_GetCatchesForPostfix)));
             }
             harmony.Patch(AccessTools.Method(typeof(TraitSerumWindow), nameof(TraitSerumWindow.isBadTraitCombo)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsIsBadTraitComboPostfix)));
@@ -1636,6 +1638,25 @@ namespace HautsTraitsRoyalty
                 thing.stackCount = (int)Math.Ceiling(Math.Max(1f, __instance.def.building.EffectiveMineableYield * Math.Min(1f, pawn.GetStatValue(StatDefOf.PsychicSensitivity) - 1f) / 3f));
                 GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Near, null, null, default);
 
+            }
+        }
+        public static void HautsTraitsTrans_GetCatchesForPostfix(ref List<Thing> __result, Pawn pawn)
+        {
+            if (pawn != null && pawn.story != null && pawn.Spawned && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitRook))
+            {
+                foreach (Thing thing in __result)
+                {
+                    if (thing.def.thingCategories.Contains(ThingCategoryDefOf.Fish))
+                    {
+                        Thing thing2 = ThingMaker.MakeThing(thing.def,null);
+                        thing2.stackCount = GenMath.RoundRandom((float)(thing.stackCount * (pawn.GetStatValue(StatDefOf.PsychicSensitivity) / 3f)));
+                        if (pawn.Faction != Faction.OfPlayerSilentFail)
+                        {
+                            thing2.SetForbidden(true, true);
+                        }
+                        GenPlace.TryPlaceThing(thing2, pawn.Position, pawn.Map, ThingPlaceMode.Near, null, null, default(Rot4));
+                    }
+                }
             }
         }
         public static void HautsTraitsTrans_MakeRecipeProductsPostfix(IEnumerable<Thing> __result, RecipeDef recipeDef, Pawn worker, List<Thing> ingredients, Precept_ThingStyle precept, ThingStyleDef style, int? overrideGraphicIndex)
@@ -3917,6 +3938,7 @@ namespace HautsTraitsRoyalty
                 this.spawnedAnimals.Add(newPawn);
                 this.RecalculateMax();
             }
+            PsychicAwakeningUtility.AddMoreFish(this.pawn, delta, 0.01f);
         }
         private void TrainAnimal(Pawn newPawn)
         {
@@ -5615,6 +5637,7 @@ namespace HautsTraitsRoyalty
                     }
                 }
             }
+            PsychicAwakeningUtility.AddMoreFish(this.Pawn,delta,0.01f);
         }
         public float CommonalityOfAnimalNow(Map map, PawnKindDef def)
         {
@@ -8322,6 +8345,16 @@ namespace HautsTraitsRoyalty
             if (toHeals.Count > 0)
             {
                 patient.health.RemoveHediff(toHeals.RandomElement());
+            }
+        }
+        public static void AddMoreFish(Pawn pawn, int delta, float percentMaxPopulation)
+        {
+            if (ModsConfig.OdysseyActive && pawn.IsHashIntervalTick(2500, delta) && pawn.SpawnedOrAnyParentSpawned && pawn.MapHeld.waterBodyTracker != null && !pawn.MapHeld.waterBodyTracker.Bodies.NullOrEmpty())
+            {
+                foreach (WaterBody body in pawn.MapHeld.waterBodyTracker.Bodies)
+                {
+                    body.Population += body.MaxPopulation * percentMaxPopulation;
+                }
             }
         }
         public static bool IsEligibleForWraithJump(Pawn p, Pawn wraith)

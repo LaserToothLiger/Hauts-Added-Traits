@@ -557,9 +557,21 @@
 											</value>
 										</li>
 										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitOxpecker"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>Animals randomly become tame in the presence of {PAWN_nameDef}. This effect can occur over long distances, and its frequency is based on {PAWN_possessive} magic sensitivity.\n\nWhen {PAWN_pronoun} affects an animal with a spell, its health is either boosted (if non-hostile) or impaired (if hostile).</description>
+											</value>
+										</li>
+										<li Class="PatchOperationReplace">
 											<xpath>Defs/TraitDef[defName = "HVT_TTraitQuelea"]/degreeDatas/li/description</xpath>
 											<value>
 												<description>{PAWN_nameDef} is surrounded by winds that hold {PAWN_objective} and nearby allies aloft, keeping them from triggering traps and allowing them to move faster, heedless of the difficulty of the terrain.</description>
+											</value>
+										</li>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitWQ"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>{PAWN_nameDef} periodically conjures tame animals of a specific type to {PAWN_possessive} location. This effect occurs faster while meditating. New animals won't be summoned if doing so would cause the sum body size of all current ones to exceed twice {PAWN_possessive} attunement level.</description>
 											</value>
 										</li>
 									</operations>
@@ -931,12 +943,6 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitOxpecker"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>Animals randomly become tame in the presence of {PAWN_nameDef}. This effect can occur over long distances, and its frequency is based on {PAWN_possessive} magic sensitivity.\n\nWhen {PAWN_pronoun} affects an animal with a spell, its health is either boosted (if non-hostile) or impaired (if hostile).</description>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPeacock"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>peacock spirit</label>
@@ -1271,12 +1277,6 @@
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitWQ"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>war queen spirit</label>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitWQ"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>{PAWN_nameDef} periodically conjures tame animals of a specific type to {PAWN_possessive} location. This effect occurs faster while meditating. New animals won't be summoned if doing so would cause the sum body size of all current ones to exceed twice {PAWN_possessive} attunement level.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

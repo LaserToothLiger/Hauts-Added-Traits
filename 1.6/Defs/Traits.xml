@@ -1704,7 +1704,37 @@
 		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="RavingLegend.MoreTraits">RT_Weird</li></conflictingTraits>
 	</TraitDef>
 	
-	<!--odyssey traits-->
+	<!--odyssey traits, starting with the aerospace spectrum-->
+	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>HVT_Earthborne</defName>
+		<commonality>0.5</commonality>
+		<degreeDatas>
+		  <li>
+			<label>terrestrial</label>
+			<description>{PAWN_nameDef} hates aerial travel of any kind, and doesn't like being in space. These things make {PAWN_objective} nauseous.</description>
+			<statOffsets>
+			  <Hauts_JumpRangeFactor>-0.1</Hauts_JumpRangeFactor>
+			</statOffsets>
+			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+        </modExtensions>
+		<conflictingTraits><li>HVT_Skybound</li><li>HVT_CelestialCelerity</li></conflictingTraits>
+	</TraitDef>
+	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>HVT_Skybound</defName>
+		<commonality>0.5</commonality>
+		<degreeDatas>
+		  <li>
+			<label>skybound</label>
+			<description>{PAWN_nameDef} yearns for the open sky and the feeling of the wind. {PAWN_pronoun} enjoys aerial travel of any kind, and {PAWN_pronoun} likes the sensation of being in high orbit.</description>
+		  </li>
+		</degreeDatas>
+		<conflictingTraits><li>Undergrounder</li><li>HVT_Earthborne</li></conflictingTraits>
+	</TraitDef>
+	<!--the rest of the odyssey traits-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Angler</defName>
 		<commonality>0.4</commonality>
@@ -1719,7 +1749,7 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Agrizoophobe</li></conflictingTraits>
-		<requiredWorkTags><li>Animals</li><li>Violent</li></requiredWorkTags>
+		<requiredWorkTags><li>Animals</li><li>Violent</li><li>Shooting</li></requiredWorkTags>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
@@ -1745,6 +1775,26 @@
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>HVT_CelestialCelerity</defName>
+		<commonality>0.2</commonality>
+		<degreeDatas>
+		  <li>
+			<label>orbital celerity</label>
+			<description>{PAWN_nameDef} moves in a strange way. {PAWN_pronoun} is a little awkward in surface gravity, but becomes more graceful out in space.</description>
+		  </li>
+		</degreeDatas>
+		<conflictingTraits><li>HVT_Earthborne</li></conflictingTraits>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_SpaceSpeed</li></value>
+					</li>
+				</grantedHediffs>
+            </li>
+        </modExtensions>
+	</TraitDef>
+	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Scavenger</defName>
 		<commonality>0.1</commonality>
 		<degreeDatas>
@@ -1765,7 +1815,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<requiredWorkTags><li>Animals</li><li>Violent</li></requiredWorkTags><!--because the unique draw of the trait requires the pawn to be able to fish, rather than for any diegetic reason-->
+		<requiredWorkTags><li>Animals</li><li>Violent</li><li>Shooting</li></requiredWorkTags><!--because the unique draw of the trait requires the pawn to be able to fish, rather than for any diegetic reason-->
 	</TraitDef>
 	
 <!--this is a test trait that you can add to a pawn in Dev Mode. I made it after finding a dismayingly large number of mods whose authors seem to believe Melee DPS and Melee Armor Penetration do anything, even though it's

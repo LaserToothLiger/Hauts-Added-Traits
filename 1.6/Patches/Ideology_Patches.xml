@@ -486,6 +486,85 @@
 						</operations>
 					</match>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Odyssey</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--Earthborne hates Shipborn; Skybound likes-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Shipborn"]/disagreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<value>
+										<disagreeableTraits>
+											<li>HVT_Earthborne</li>
+										</disagreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]/disagreeableTraits</xpath>
+									<value>
+										<li>HVT_Earthborne</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Shipborn"]/agreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<value>
+										<agreeableTraits>
+											<li>HVT_Skybound</li>
+										</agreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]/agreeableTraits</xpath>
+									<value>
+										<li>HVT_Skybound</li>
+									</value>
+								</match>
+							</li>
+							<!--reverse those for Tunneler-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Shipborn"]/agreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<value>
+										<agreeableTraits>
+											<li>HVT_Earthborne</li>
+										</agreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]/agreeableTraits</xpath>
+									<value>
+										<li>HVT_Earthborne</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Shipborn"]/disagreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<value>
+										<disagreeableTraits>
+											<li>HVT_Skybound</li>
+										</disagreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]/disagreeableTraits</xpath>
+									<value>
+										<li>HVT_Skybound</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>

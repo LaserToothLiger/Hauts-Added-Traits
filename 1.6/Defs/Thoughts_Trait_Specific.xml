@@ -1389,6 +1389,71 @@
     </stages>
   </ThoughtDef>
   
+  <!--earthborne hates orbit; skybound loves it-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_IHateSpace</defName>
+    <workerClass>HautsTraits.ThoughtWorker_NotInKansasAnymore</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredTraits>
+      <li>HVT_Earthborne</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>earthborne in space</label>
+        <description>This is too high up. I miss the solid ground...</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_ILoveSpace</defName>
+    <workerClass>HautsTraits.ThoughtWorker_NotInKansasAnymore</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredTraits>
+      <li>HVT_Skybound</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>skybound in space</label>
+        <description>Can we get much higher? ... Maybe, but this is pretty good.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--earthborne hates transporter/gravship travel; skybound loves-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_IHateFlying</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Earthborne</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>earthborne forced to fly</label>
+        <description>I hate flying! I never want to leave the ground ever again.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_ILoveFlying</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>HVT_Skybound</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>skybound got to fly</label>
+        <description>What a rush! What a thrill! Let's do it again!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
   <!--angler mood from fishing-->
   <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
     <defName>HVT_FishinsReelyFun</defName>

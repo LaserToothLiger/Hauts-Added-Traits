@@ -20,6 +20,7 @@ using RimWorld.QuestGen;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 using VEF.OptionalFeatures;
 using System.Security.Cryptography;
+using UnityEngine.Assertions.Must;
 
 namespace HautsTraits
 {
@@ -101,7 +102,13 @@ namespace HautsTraits
                 harmony.Patch(AccessTools.Method(typeof(Thing), nameof(Thing.Ingested)),
                               postfix: new HarmonyMethod(patchType, nameof(HVTPescatarianIngestedPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(FishingUtility), nameof(FishingUtility.GetCatchesFor)),
-                              postfix: new HarmonyMethod(patchType, nameof(HVTTSeekerGetCatchesForPostfix)));
+                              postfix: new HarmonyMethod(patchType, nameof(HVTScavengerGetCatchesForPostfix)));
+                MethodInfo methodInfoO1 = typeof(WorldComponent_GravshipController).GetMethod("LandingEnded", BindingFlags.NonPublic | BindingFlags.Instance);
+                harmony.Patch(methodInfoO1,
+                              prefix: new HarmonyMethod(patchType, nameof(HVTLandingEndedPrefix)));
+                MethodInfo methodInfoO2 = typeof(TravellingTransporters).GetMethod("DoArrivalAction", BindingFlags.NonPublic | BindingFlags.Instance);
+                harmony.Patch(methodInfoO2,
+                              prefix: new HarmonyMethod(patchType, nameof(HVTDoArrivalActionPrefix)));
             }
             harmony.Patch(AccessTools.Method(typeof(CaravanEnterMapUtility), nameof(CaravanEnterMapUtility.Enter), new[] { typeof(Caravan), typeof(Map), typeof(CaravanEnterMode), typeof(CaravanDropInventoryMode), typeof(bool), typeof(Predicate<IntVec3>) }),
                           prefix: new HarmonyMethod(patchType, nameof(HautsTraitsEnterPrefix)));
@@ -652,7 +659,7 @@ namespace HautsTraits
                 }
             }
         }
-        public static void HVTTSeekerGetCatchesForPostfix(ref List<Thing> __result, Pawn pawn)
+        public static void HVTScavengerGetCatchesForPostfix(ref List<Thing> __result, Pawn pawn)
         {
             if (pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Scavenger))
             {
@@ -662,6 +669,34 @@ namespace HautsTraits
                     __result.AddRange(sweetCatch);
                     pawn.Map.waterBodyTracker.lastRareCatchTick = Find.TickManager.TicksGame;
                     Find.LetterStack.ReceiveLetter("LetterLabelRareCatch".Translate(), "LetterTextRareCatch".Translate(pawn.Named("PAWN")) + ":\n" + sweetCatch.Select((Thing x) => x.LabelCap).ToLineList("  - ", false), LetterDefOf.PositiveEvent, sweetCatch, null, null, null, null, 0, true);
+                }
+            }
+        }
+        public static void HVTLandingEndedPrefix(WorldComponent_GravshipController __instance)
+        {
+            Gravship gship = GetInstanceField(typeof(WorldComponent_GravshipController), __instance, "gravship") as Gravship;
+            if (gship != null)
+            {
+                foreach (Pawn pawn in gship.Pawns)
+                {
+                    HVTUtility.DoAerospaceFlyingThoughts(pawn);
+                }
+            }
+        }
+        public static void HVTDoArrivalActionPrefix(TravellingTransporters __instance)
+        {
+            List<ActiveTransporterInfo> atis = GetInstanceField(typeof(TravellingTransporters), __instance, "transporters") as List<ActiveTransporterInfo>;
+            if (atis != null)
+            {
+                foreach (ActiveTransporterInfo ati in atis)
+                {
+                    foreach (Thing thing in ati.innerContainer)
+                    {
+                        if (thing is Pawn pawn)
+                        {
+                            HVTUtility.DoAerospaceFlyingThoughts(pawn);
+                        }
+                    }
                 }
             }
         }
@@ -1022,6 +1057,10 @@ namespace HautsTraits
         [MayRequireAnomaly]
         public static TraitDef HVT_Twisted;
         [MayRequireOdyssey]
+        public static TraitDef HVT_Earthborne;
+        [MayRequireOdyssey]
+        public static TraitDef HVT_Skybound;
+        [MayRequireOdyssey]
         public static TraitDef HVT_Angler;
         [MayRequireOdyssey]
         public static TraitDef HVT_Pescatarian;
@@ -1041,6 +1080,10 @@ namespace HautsTraits
         public static ThoughtDef HVT_MechaphobeKilledMech;
         [MayRequireAnomaly]
         public static ThoughtDef HVT_MonsterHunterWorld;
+        [MayRequireOdyssey]
+        public static ThoughtDef HVT_IHateFlying;
+        [MayRequireOdyssey]
+        public static ThoughtDef HVT_ILoveFlying;
         [MayRequireOdyssey]
         public static ThoughtDef HVT_FishinsReelyFun;
         [MayRequireOdyssey]
@@ -1928,6 +1971,17 @@ namespace HautsTraits
                 return ThoughtState.ActiveDefault;
             }
             return ThoughtState.Inactive;
+        }
+    }
+    public class ThoughtWorker_NotInKansasAnymore : ThoughtWorker
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            if (!ModsConfig.OdysseyActive || p.Tile == null)
+            {
+                return ThoughtState.Inactive;
+            }
+            return p.Tile.Layer == Find.WorldGrid.Orbit ? ThoughtState.ActiveDefault : ThoughtState.Inactive;
         }
     }
     public class ThoughtWorker_AnglerYearning : ThoughtWorker
@@ -4159,6 +4213,30 @@ namespace HautsTraits
                 return true;
             }
             return false;
+        }
+        public static void DoAerospaceFlyingThoughts(Pawn pawn)
+        {
+            if (pawn.story != null)
+            {
+                Need_Mood mood = pawn.needs.mood;
+                if (pawn.story.traits.HasTrait(HVTDefOf.HVT_Earthborne))
+                {
+                    Pawn_HealthTracker health = pawn.health;
+                    if (health != null)
+                    {
+                        health.AddHediff(HediffDefOf.GravNausea, null, null, null);
+                    }
+                    if (mood != null)
+                    {
+                        mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_IHateFlying);
+                    }
+                } else if (pawn.story.traits.HasTrait(HVTDefOf.HVT_Skybound)) {
+                    if (mood != null)
+                    {
+                        mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_ILoveFlying);
+                    }
+                }
+            }
         }
         public static bool HasASkulker(Caravan caravan)
         {

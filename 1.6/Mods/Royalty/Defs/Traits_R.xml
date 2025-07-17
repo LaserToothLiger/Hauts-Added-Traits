@@ -2564,14 +2564,13 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic rook</label>
-			<description>{PAWN_nameDef} derives more usable material from plants, animals, and mining.</description>
+			<description>{PAWN_nameDef} derives more usable material from harvesting plants, butchering animals, and mining. Animals {PAWN_pronoun} extracts resources from regrow that material quicker.</description>
 			<statOffsets>
 			  <RBSF_NatureConnection MayRequire="Rooboid.Faun">0.35</RBSF_NatureConnection>
 			</statOffsets>
 			<statFactors>
 			  <ButcheryFleshEfficiency>2</ButcheryFleshEfficiency>
 			  <ButcheryMechanoidEfficiency>2</ButcheryMechanoidEfficiency>
-			  <FishingYield MayRequire="Ludeon.RimWorld.Odyssey">2</FishingYield>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
