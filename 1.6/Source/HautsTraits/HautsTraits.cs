@@ -24,12 +24,6 @@ using UnityEngine.Assertions.Must;
 
 namespace HautsTraits
 {
-
-    /*Log.Warning(string.Concat(new object[]
-    {
-        "Pawn Name Is: ",
-        pawn.Name.ToStringShort
-    }));*/
     [StaticConstructorOnStartup]
     public static class HautsTraits
     {
@@ -1995,6 +1989,18 @@ namespace HautsTraits
             return (p.MapHeld.waterBodyTracker == null || !p.MapHeld.waterBodyTracker.AnyBodyContainsFish) ? ThoughtState.ActiveDefault : ThoughtState.Inactive;
         }
     }
+    public class ThoughtWorker_GlobetrotHediff : ThoughtWorker_Hediff
+    {
+        public override float MoodMultiplier(Pawn p)
+        {
+            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(this.def.hediff, false);
+            if (firstHediffOfDef != null)
+            {
+                return base.MoodMultiplier(p) *firstHediffOfDef.Severity;
+            }
+            return base.MoodMultiplier(p);
+        }
+    }
     /*public class RitualOutcomeComp_SpecificTrait : RitualOutcomeComp_Quality
     {
         public RitualOutcomeComp_SpecificTrait(TraitDef trait, SimpleCurve curve, string label)
@@ -3120,6 +3126,43 @@ namespace HautsTraits
                 HVTUtility.ConformistConversion(this.pawn, this.pawn.Faction.ideos.PrimaryIdeo, "HVT_PeriodicConformation".Translate().CapitalizeFirst().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve());
             }
         }
+    }
+    public class Hediff_IveBeenEverywhereMan : HediffWithComps
+    {
+        public override void TickInterval(int delta)
+        {
+            if (this.pawn.IsHashIntervalTick(250,delta))
+            {
+                if (this.pawn.Spawned && !this.pawn.Downed && !this.pawn.Suspended && this.pawn.Tile != null && this.pawn.Tile.Valid && this.pawn.Tile.Tile != null)
+                {
+                    Tile tile = this.pawn.Tile.Tile;
+                    if (tile.PrimaryBiome != null && !this.witnessedBiomes.Contains(tile.PrimaryBiome))
+                    {
+                        this.witnessedBiomes.Add(tile.PrimaryBiome);
+                    }
+                    if (!tile.Mutators.NullOrEmpty())
+                    {
+                        foreach (TileMutatorDef tmd in tile.Mutators)
+                        {
+                            if (!this.witnessedTileMutators.Contains(tmd))
+                            {
+                                this.witnessedTileMutators.Add(tmd);
+                            }
+                        }
+                    }
+                }
+                this.Severity = this.witnessedBiomes.Count() + this.witnessedTileMutators.Count();
+            }
+            base.TickInterval(delta);
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Collections.Look<BiomeDef>(ref this.witnessedBiomes, "witnessedBiomes", LookMode.Def, Array.Empty<object>());
+            Scribe_Collections.Look<TileMutatorDef>(ref this.witnessedTileMutators, "witnessedTileMutators", LookMode.Def, Array.Empty<object>());
+        }
+        public List<BiomeDef> witnessedBiomes = new List<BiomeDef>();
+        public List<TileMutatorDef> witnessedTileMutators = new List<TileMutatorDef>();
     }
     public class HediffCompProperties_IdeoMajoritySeverity : HediffCompProperties
     {

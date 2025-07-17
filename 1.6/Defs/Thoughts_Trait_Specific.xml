@@ -488,6 +488,7 @@
     <requiredTraits>
       <li>HVT_Outdoorsy</li>
       <li>HVT_Vagabond</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
     </requiredTraits>
     <stages>
       <li>
@@ -1502,6 +1503,22 @@
         <label>pescatarian ate fish</label>
         <description>Fish are food, not friends. And what tasty food they are!</description>
         <baseMoodEffect>9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--globetrotters gain mood per witnessed biome or landmark-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_GlobetrotterMood</defName>
+    <workerClass>HautsTraits.ThoughtWorker_GlobetrotHediff</workerClass>
+    <hediff>HVT_GlobetrotterTracker</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>globetrotter</label>
+        <description>The "Globetrotter" trait grants +1 mood per unique biome or landmark feature witnessed.</description>
+        <baseMoodEffect>1</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

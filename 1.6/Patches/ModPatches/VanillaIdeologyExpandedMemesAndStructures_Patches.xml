@@ -410,7 +410,7 @@
 						</value>
 					</match>
 				</li>
-				<!--Outdoorsies like Nomad-->
+				<!--Outdoorsies like Nomad, so do Globetrotters-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_Nomad"]/agreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -418,6 +418,7 @@
 						<value>
 							<agreeableTraits>
 								<li>HVT_Outdoorsy</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
 							</agreeableTraits>
 						</value>
 					</nomatch>
@@ -425,6 +426,7 @@
 						<xpath>/Defs/MemeDef[defName="VME_Nomad"]/agreeableTraits</xpath>
 						<value>
 							<li>HVT_Outdoorsy</li>
+							<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
 						</value>
 					</match>
 				</li>

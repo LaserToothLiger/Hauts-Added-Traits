@@ -1710,7 +1710,7 @@
 		<commonality>0.5</commonality>
 		<degreeDatas>
 		  <li>
-			<label>terrestrial</label>
+			<label>earthborne</label>
 			<description>{PAWN_nameDef} hates aerial travel of any kind, and doesn't like being in space. These things make {PAWN_objective} nauseous.</description>
 			<statOffsets>
 			  <Hauts_JumpRangeFactor>-0.1</Hauts_JumpRangeFactor>
@@ -1755,6 +1755,48 @@
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>HVT_CelestialCelerity</defName>
+		<commonality>0.2</commonality>
+		<degreeDatas>
+		  <li>
+			<label>celestial celerity</label>
+			<description>{PAWN_nameDef} moves in a strange way. {PAWN_pronoun} is a little awkward in surface gravity, but becomes more graceful out in space.</description>
+		  </li>
+		</degreeDatas>
+		<conflictingTraits><li>HVT_Earthborne</li></conflictingTraits>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_SpaceSpeed</li></value>
+					</li>
+				</grantedHediffs>
+            </li>
+        </modExtensions>
+	</TraitDef>
+	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>HVT_Globetrotter</defName>
+		<commonality>0.7</commonality>
+		<degreeDatas>
+		  <li>
+			<label>globetrotter</label>
+			<description>{PAWN_nameDef} wants to witness all the wonders of the world. {PAWN_pronoun} gains a permanent mood bonus per unique biome or landmark feature visited.</description>
+			<statOffsets>
+			  <CaravanBonusSpeedFactor>0.1</CaravanBonusSpeedFactor>
+			</statOffsets>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_GlobetrotterTracker</li></value>
+					</li>
+				</grantedHediffs>
+            </li>
+        </modExtensions>
+	</TraitDef>
+	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Pescatarian</defName>
 		<commonality>0.3</commonality>
 		<degreeDatas>
@@ -1772,26 +1814,6 @@
 		</degreeDatas>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
-        </modExtensions>
-	</TraitDef>
-	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
-		<defName>HVT_CelestialCelerity</defName>
-		<commonality>0.2</commonality>
-		<degreeDatas>
-		  <li>
-			<label>orbital celerity</label>
-			<description>{PAWN_nameDef} moves in a strange way. {PAWN_pronoun} is a little awkward in surface gravity, but becomes more graceful out in space.</description>
-		  </li>
-		</degreeDatas>
-		<conflictingTraits><li>HVT_Earthborne</li></conflictingTraits>
-        <modExtensions>
-            <li Class="HautsFramework.TraitGrantedStuff">
-				<grantedHediffs>
-					<li>
-						<key>0</key><value><li>HVT_SpaceSpeed</li></value>
-					</li>
-				</grantedHediffs>
-            </li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">

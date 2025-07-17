@@ -812,6 +812,16 @@
 							  </value>
 							</li>
 							<li Class="PatchOperationAddModExtension">
+								<xpath>*/TraitDef[defName = "HVT_Globetrotter"]</xpath>
+							  <value>
+								<li Class="SyrTraitValue.TraitValueExtension">
+								  <traitValues>
+									<li>20</li>
+								  </traitValues>
+								</li>
+							  </value>
+							</li>
+							<li Class="PatchOperationAddModExtension">
 								<xpath>*/TraitDef[defName = "HVT_Pescatarian"]</xpath>
 							  <value>
 								<li Class="SyrTraitValue.TraitValueExtension">

@@ -262,7 +262,7 @@
 					</mods>
 					<match Class="PatchOperationSequence">
 						<operations>
-							<!--Sadists, Vickies, and Subjugators dislike Vow of Nonviolence-->
+							<!--Sadists, Vickies, and Subjugators dislike Vow of Nonviolence; so do the fishing traits, either bc fishing requires violence or bc eating fish is eating meat-->
 							<li Class="PatchOperationConditional">
 								<xpath>/Defs/MemeDef[defName="AM_NonViolence"]/disagreeableTraits</xpath>
 								<nomatch Class="PatchOperationAdd">
@@ -272,6 +272,8 @@
 											<li>HVT_Sadist</li>
 											<li>HVT_Vicious</li>
 											<li>HVT_Subjugator</li>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 										</disagreeableTraits>
 									</value>
 								</nomatch>
@@ -281,6 +283,8 @@
 										<li>HVT_Sadist</li>
 										<li>HVT_Vicious</li>
 										<li>HVT_Subjugator</li>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
 									</value>
 								</match>
 							</li>

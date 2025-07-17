@@ -19,5 +19,6 @@
 		<li IfModActive="VanillaExpanded.VPE.Puppeteer">1.6/Mods/VPE_Puppeteer</li>
 		<li IfModActive="vanillaracesexpanded.highmate">1.6/Mods/VREHighmate</li>
 		<li IfModActive="doug.conn">1.6/Mods/COaNN</li>
+		<li IfModActive="SmashPhil.VehicleFramework">1.6/Mods/VehicleFramework</li>
 	</v1.6>
 </loadFolders>

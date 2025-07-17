@@ -91,6 +91,7 @@
 						<HVT_Skybound MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Skybound>
 						<HVT_Angler MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Angler>
 						<HVT_CelestialCelerity MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_CelestialCelerity>
+						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
 						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 						<HVT_Scavenger MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Scavenger>
 					</value>
@@ -124,6 +125,7 @@
 						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
 						<HVT_Earthborne MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Earthborne>
 						<HVT_CelestialCelerity MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_CelestialCelerity>
+						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
 						<HVT_Scavenger MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Scavenger>
 					</value>
 				</li>
@@ -169,6 +171,7 @@
 						<HVT_Haunted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Haunted>
 						<HVT_MonsterHunter MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterHunter>
 						<HVT_Twisted MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_Twisted>
+						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -236,8 +239,9 @@
 						<HVT_Misopedist MayRequire="Ludeon.RimWorld.Biotech">0</HVT_Misopedist>
 						<HVT_GenePurist MayRequire="Ludeon.RimWorld.Biotech">0</HVT_GenePurist>
 						<HVT_Mentor MayRequire="Ludeon.RimWorld.Biotech">0</HVT_Mentor>
-						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 						<HVT_CelestialCelerity MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_CelestialCelerity>
+						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
+						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 						<HVT_Scavenger MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Scavenger>
 					</value>
 				</li>
@@ -293,6 +297,7 @@
 						<HVT_Earthborne MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Earthborne>
 						<HVT_Skybound MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Skybound>
 						<HVT_Angler MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Angler>
+						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
 						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 					</value>
 				</li>
@@ -341,6 +346,7 @@
 						<HVT_MonsterLover MayRequire="Ludeon.RimWorld.Anomaly">0</HVT_MonsterLover>
 						<HVT_Earthborne MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Earthborne>
 						<HVT_Skybound MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Skybound>
+						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
 						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 					</value>
 				</li>
