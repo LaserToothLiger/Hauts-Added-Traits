@@ -1707,7 +1707,7 @@
 	<!--odyssey traits, starting with the aerospace spectrum-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Earthborne</defName>
-		<commonality>0.5</commonality>
+		<commonality>0.6</commonality>
 		<degreeDatas>
 		  <li>
 			<label>earthborne</label>
@@ -1725,7 +1725,7 @@
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Skybound</defName>
-		<commonality>0.5</commonality>
+		<commonality>0.6</commonality>
 		<degreeDatas>
 		  <li>
 			<label>skybound</label>
@@ -1737,12 +1737,15 @@
 	<!--the rest of the odyssey traits-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Angler</defName>
-		<commonality>0.4</commonality>
+		<commonality>0.6</commonality>
 		<forcedPassions><li>Animals</li></forcedPassions>
 		<degreeDatas>
 		  <li>
 			<label>angler</label>
 			<description>Fishing makes {PAWN_nameDef} happy, and {PAWN_possessive} skill at fishing makes {PAWN_objective} half as prone to fumble a catch or get hurt by a fish. However, {PAWN_pronoun} will be sad if there are no fish nearby.</description>
+			<statOffsets>
+			  <FishingSpeed>0.1</FishingSpeed>
+			</statOffsets>
 			<possessions>
 			  <Fish_Bass>5~15</Fish_Bass>
 			</possessions>
@@ -1776,7 +1779,7 @@
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Globetrotter</defName>
-		<commonality>0.7</commonality>
+		<commonality>0.4</commonality>
 		<degreeDatas>
 		  <li>
 			<label>globetrotter</label>
@@ -1798,7 +1801,7 @@
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Pescatarian</defName>
-		<commonality>0.3</commonality>
+		<commonality>0.5</commonality>
 		<degreeDatas>
 		  <li>
 			<label>pescatarian</label>
@@ -1818,12 +1821,13 @@
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Scavenger</defName>
-		<commonality>0.1</commonality>
+		<commonality>0.2</commonality>
 		<degreeDatas>
 		  <li>
-			<label>scavenger</label>
-			<description>{PAWN_nameDef} is always on the lookout for precious baubles. Most notably, while {PAWN_pronoun} fishes slower, {PAWN_pronoun} has two and a half times the normal chance to get rare catches while fishing.</description>
+			<label>treasure seeker</label>
+			<description>{PAWN_nameDef} is always on the lookout for precious baubles.\n\nAmong other things, {PAWN_pronoun} fishes in an unorthodox manner that grants {PAWN_objective} a higher chance to find rare items instead of fish.</description>
 			<statOffsets>
+			  <Hauts_SurveySpeed>0.2</Hauts_SurveySpeed>
 			  <FishingSpeed>-0.1</FishingSpeed>
 			  <MiningSpeed MayRequire="sarg.alphaskills">-0.2</MiningSpeed>
 			  <AS_ExtraComponentsYield MayRequire="sarg.alphaskills">0.02</AS_ExtraComponentsYield>
@@ -1837,7 +1841,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<requiredWorkTags><li>Animals</li><li>Violent</li><li>Shooting</li></requiredWorkTags><!--because the unique draw of the trait requires the pawn to be able to fish, rather than for any diegetic reason-->
+		<requiredWorkTags><li>AllWork</li></requiredWorkTags>
 	</TraitDef>
 	
 <!--this is a test trait that you can add to a pawn in Dev Mode. I made it after finding a dismayingly large number of mods whose authors seem to believe Melee DPS and Melee Armor Penetration do anything, even though it's

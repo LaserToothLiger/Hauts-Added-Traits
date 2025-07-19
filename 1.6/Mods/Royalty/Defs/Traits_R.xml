@@ -2511,6 +2511,7 @@
 			<randomMentalState>Wander_Psychotic</randomMentalState>
 			<randomMentalStateMtbDaysMoodCurve><points><li>(0, 30)</li></points></randomMentalStateMtbDaysMoodCurve>
 			<statOffsets>
+			  <Hauts_SurveySpeed>0.2</Hauts_SurveySpeed>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1</LanguageLearningAbility>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.75</PilotingAbility>
 			</statOffsets>

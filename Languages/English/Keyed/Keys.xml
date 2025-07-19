@@ -66,14 +66,16 @@
 <HVT_SFAoutcome3>There are {0} separate hostile parties lying in wait at {1}!</HVT_SFAoutcome3>
 <HVT_ForcedLatentPsychic>Each starting character will be a latent psychic. This overrides other psychic traits from Hauts' Added Traits.</HVT_ForcedLatentPsychic>
 <HVT_ForcedAwakenedPsychic>Each starting character will have a random psychic awakening. This overrides the Latent Psychic trait.</HVT_ForcedAwakenedPsychic>
+<HVT_GlobetrotterBiomeLister>Biomes witnessed</HVT_GlobetrotterBiomeLister>
+<HVT_GlobetrotterMutatorLister>Landmark features witnessed</HVT_GlobetrotterMutatorLister>
 <HVT_HediffMenu>Choose a trait for {0} to temporarily gain.</HVT_HediffMenu>
 <HVT_TabulaRasad>While under the effects of the tabula rasa psycast, {0} gained the {1} trait.</HVT_TabulaRasad>
 <HVT_EndTabulaRasa> {0} will not gain further traits from the tabula rasa effect.</HVT_EndTabulaRasa>
 <!--skulker raid stuff-->
-<DisarmGizmo>Disarm...</DisarmGizmo>
-<CannotChooseDisarmer>Cannot disarm</CannotChooseDisarmer>
-<CommandChooseDisarmer>Choose disarmer</CommandChooseDisarmer>
-<DisarmDesc>Choose a colonist to disarm this.</DisarmDesc>
+<HVT_DisarmGizmo>Disarm...</HVT_DisarmGizmo>
+<HVT_CannotChooseDisarmer>Cannot disarm</HVT_CannotChooseDisarmer>
+<HVT_CommandChooseDisarmer>Choose disarmer</HVT_CommandChooseDisarmer>
+<HVT_DisarmDesc>Choose a colonist to disarm this.</HVT_DisarmDesc>
 <!--woke and trans trigger events-->
 <HVT_TheWokening>Psychic awakening: {0}</HVT_TheWokening>
 <HVT_WokeningDefault>Somehow, {PAWN_nameDef} has awakened to {PAWN_possessive} psychic potential!</HVT_WokeningDefault>

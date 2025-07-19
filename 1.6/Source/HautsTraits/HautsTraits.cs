@@ -3127,6 +3127,7 @@ namespace HautsTraits
             }
         }
     }
+    [StaticConstructorOnStartup]
     public class Hediff_IveBeenEverywhereMan : HediffWithComps
     {
         public override void TickInterval(int delta)
@@ -3155,6 +3156,27 @@ namespace HautsTraits
             }
             base.TickInterval(delta);
         }
+        public override string GetTooltip(Pawn pawn, bool showHediffsDebugInfo)
+        {
+            string result = base.GetTooltip(pawn, showHediffsDebugInfo) + "\n";
+            if (!this.witnessedBiomes.NullOrEmpty())
+            {
+                result += "\n" + "HVT_GlobetrotterBiomeLister".Translate() + ":\n";
+                foreach (BiomeDef biome in this.witnessedBiomes)
+                {
+                    result += "-" + biome.LabelCap + "\n";
+                }
+            }
+            if (!this.witnessedTileMutators.NullOrEmpty())
+            {
+                result += "\n" + "HVT_GlobetrotterMutatorLister".Translate() + ":\n";
+                foreach (TileMutatorDef tmd in this.witnessedTileMutators)
+                {
+                    result += "-" + tmd.LabelCap + "\n";
+                }
+            }
+            return result;
+        }
         public override void ExposeData()
         {
             base.ExposeData();
@@ -3163,6 +3185,7 @@ namespace HautsTraits
         }
         public List<BiomeDef> witnessedBiomes = new List<BiomeDef>();
         public List<TileMutatorDef> witnessedTileMutators = new List<TileMutatorDef>();
+        private static readonly Texture2D DisarmTexture = ContentFinder<Texture2D>.Get("UI/Commands/Hack", true);
     }
     public class HediffCompProperties_IdeoMajoritySeverity : HediffCompProperties
     {
@@ -3405,8 +3428,8 @@ namespace HautsTraits
         {
             Command_Action command_Action = new Command_Action
             {
-                defaultLabel = "DisarmGizmo".Translate(),
-                defaultDesc = "DisarmDesc".Translate(),
+                defaultLabel = "HVT_DisarmGizmo".Translate(),
+                defaultDesc = "HVT_DisarmDesc".Translate(),
                 icon = CompSabExp.DisarmTexture,
                 action = delegate
                 {
@@ -3431,10 +3454,10 @@ namespace HautsTraits
                         Pawn pawn3 = target.Pawn;
                         if (pawn3 != null && pawn3.IsColonistPlayerControlled && !acceptanceReport2.Accepted)
                         {
-                            Widgets.MouseAttachedLabel(("CannotChooseDisarmer".Translate() + ": " + acceptanceReport2.Reason.CapitalizeFirst()).Colorize(ColorLibrary.RedReadable), 0f, 0f, null);
+                            Widgets.MouseAttachedLabel(("HVT_CannotChooseDisarmer".Translate() + ": " + acceptanceReport2.Reason.CapitalizeFirst()).Colorize(ColorLibrary.RedReadable), 0f, 0f, null);
                             return;
                         }
-                        Widgets.MouseAttachedLabel("CommandChooseDisarmer".Translate(), 0f, 0f, null);
+                        Widgets.MouseAttachedLabel("HVT_CommandChooseDisarmer".Translate(), 0f, 0f, null);
                     }, null);
                 }
             };

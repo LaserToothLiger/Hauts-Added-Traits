@@ -1139,13 +1139,13 @@
   <!--globetrotter mood tracker-->
   <HediffDef ParentName="HVT_TraitHediffBase" MayRequire="Ludeon.RimWorld.Odyssey">
     <defName>HVT_GlobetrotterTracker</defName>
-    <label>globetrotter mood tracker</label>
-    <description>The "Globetrotter" trait grants +1 mood per unique biome or landmark feature witnessed.</description>
+    <label>globetrotter's experience</label>
+    <description>The "Globetrotter" trait grants +0.5 mood per unique biome or landmark feature witnessed.</description>
     <hediffClass>HautsTraits.Hediff_IveBeenEverywhereMan</hediffClass>
     <initialSeverity>0.001</initialSeverity>
     <stages>
       <li>
-		<becomeVisible>false</becomeVisible>
+		<becomeVisible>true</becomeVisible>
       </li>
     </stages>
     <comps>
