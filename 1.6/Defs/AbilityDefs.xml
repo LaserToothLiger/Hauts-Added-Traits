@@ -298,7 +298,7 @@
   <AbilityDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_MechaphobeScramble</defName>
     <label>scramble mechanoid</label>
-    <description>Overwhelm the target mechanoid with antipathy, stunning it and impairing its ability to defend itself for a duration scaling with the victim's psychic sensitivity.\n\nCoodown is reduced by the caster's max bandwidth, with diminishing returns.\n\nRequires at least 100% psychic sensitivity, as well as an installed mechlink or other source of bandwidth.</description>
+    <description>Overwhelm the target mechanoid with antipathy, stunning it and impairing its ability to defend itself for a duration scaling with the victim's psychic sensitivity.\n\nCoodown is reduced by the caster's max bandwidth, with diminishing returns.\n\nRequires at least 1% psychic sensitivity, as well as an installed mechlink or other source of bandwidth.</description>
     <jobDef>CastAbilityOnThing</jobDef>
     <targetRequired>true</targetRequired>
     <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
@@ -671,7 +671,7 @@
   <AbilityDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_MechaphobeScramble2</defName>
     <label>scramble mechanoid</label>
-    <description>Overwhelm the target mechanoid with antipathy, stunning it and impairing its ability to defend itself for a duration scaling with the victim's psychic sensitivity.\n\nCoodown is reduced by the caster's max bandwidth, with diminishing returns.\n\nRequires at least 100% psychic sensitivity, as well as an installed mechlink or other source of bandwidth.</description>
+    <description>Overwhelm the target mechanoid with antipathy, stunning it and impairing its ability to defend itself for a duration scaling with the victim's psychic sensitivity.\n\nCoodown is reduced by the caster's max bandwidth, with diminishing returns.\n\nRequires at least 1% psychic sensitivity, as well as an installed mechlink or other source of bandwidth.</description>
     <jobDef>CastAbilityOnThing</jobDef>
     <targetRequired>true</targetRequired>
     <canUseAoeToGetTargets>False</canUseAoeToGetTargets>

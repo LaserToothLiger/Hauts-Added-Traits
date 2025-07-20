@@ -1832,6 +1832,7 @@
 			  <MiningSpeed MayRequire="sarg.alphaskills">-0.2</MiningSpeed>
 			  <AS_ExtraComponentsYield MayRequire="sarg.alphaskills">0.02</AS_ExtraComponentsYield>
 			  <AS_ExtraGoldYield MayRequire="sarg.alphaskills">0.02</AS_ExtraGoldYield>
+			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">0.1</EL_ArcheologySpeed>
 			</statOffsets>
 			<statFactors>
 			  <ForagedNutritionPerDay>2</ForagedNutritionPerDay>
