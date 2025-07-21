@@ -529,9 +529,9 @@
 							</li>
 							<!--reverse those for Tunneler-->
 							<li Class="PatchOperationConditional">
-								<xpath>/Defs/MemeDef[defName="Shipborn"]/agreeableTraits</xpath>
+								<xpath>/Defs/MemeDef[defName="Tunneler"]/agreeableTraits</xpath>
 								<nomatch Class="PatchOperationAdd">
-									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<xpath>/Defs/MemeDef[defName="Tunneler"]</xpath>
 									<value>
 										<agreeableTraits>
 											<li>HVT_Earthborne</li>
@@ -539,16 +539,16 @@
 									</value>
 								</nomatch>
 								<match Class="PatchOperationAdd">
-									<xpath>/Defs/MemeDef[defName="Shipborn"]/agreeableTraits</xpath>
+									<xpath>/Defs/MemeDef[defName="Tunneler"]/agreeableTraits</xpath>
 									<value>
 										<li>HVT_Earthborne</li>
 									</value>
 								</match>
 							</li>
 							<li Class="PatchOperationConditional">
-								<xpath>/Defs/MemeDef[defName="Shipborn"]/disagreeableTraits</xpath>
+								<xpath>/Defs/MemeDef[defName="Tunneler"]/disagreeableTraits</xpath>
 								<nomatch Class="PatchOperationAdd">
-									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<xpath>/Defs/MemeDef[defName="Tunneler"]</xpath>
 									<value>
 										<disagreeableTraits>
 											<li>HVT_Skybound</li>
@@ -556,7 +556,7 @@
 									</value>
 								</nomatch>
 								<match Class="PatchOperationAdd">
-									<xpath>/Defs/MemeDef[defName="Shipborn"]/disagreeableTraits</xpath>
+									<xpath>/Defs/MemeDef[defName="Tunneler"]/disagreeableTraits</xpath>
 									<value>
 										<li>HVT_Skybound</li>
 									</value>
