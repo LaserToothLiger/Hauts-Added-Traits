@@ -1743,6 +1743,7 @@
 		  <li>
 			<label>angler</label>
 			<description>Fishing makes {PAWN_nameDef} happy, and {PAWN_possessive} skill at fishing makes {PAWN_objective} half as prone to fumble a catch or get hurt by a fish. However, {PAWN_pronoun} will be sad if there are no fish nearby.</description>
+			<allowedMeditationFocusTypes><li MayRequire="Arquebus.StagzMerfolk">Stagz_Water</li></allowedMeditationFocusTypes>
 			<statOffsets>
 			  <FishingSpeed>0.1</FishingSpeed>
 			</statOffsets>
@@ -1826,6 +1827,7 @@
 		  <li>
 			<label>treasure seeker</label>
 			<description>{PAWN_nameDef} is always on the lookout for precious baubles.\n\nAmong other things, {PAWN_pronoun} fishes in an unorthodox manner that grants {PAWN_objective} a higher chance to find rare items instead of fish.</description>
+			<allowedMeditationFocusTypes><li MayRequire="VanillaExpanded.VPsycastsE">VPE_Wealth</li></allowedMeditationFocusTypes>
 			<statOffsets>
 			  <Hauts_SurveySpeed>0.2</Hauts_SurveySpeed>
 			  <FishingSpeed>-0.1</FishingSpeed>
