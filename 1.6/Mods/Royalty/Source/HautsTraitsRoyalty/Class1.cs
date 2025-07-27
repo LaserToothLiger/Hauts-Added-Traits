@@ -5335,11 +5335,14 @@ namespace HautsTraitsRoyalty
         public override void AffectSelf()
         {
             base.AffectSelf();
-            foreach (Filth filth in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.Props.range, true).OfType<Filth>().Distinct<Filth>())
+            if (this.Pawn.Spawned)
             {
-                if (!this.Props.exemptFilthTypes.Contains(filth.def))
+                foreach (Filth filth in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.Props.range, true).OfType<Filth>().Distinct<Filth>())
                 {
-                    filth.ThinFilth();
+                    if (!this.Props.exemptFilthTypes.Contains(filth.def))
+                    {
+                        filth.ThinFilth();
+                    }
                 }
             }
         }
