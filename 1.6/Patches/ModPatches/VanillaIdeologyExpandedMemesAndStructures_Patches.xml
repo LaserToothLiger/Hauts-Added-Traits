@@ -616,7 +616,7 @@
 						</value>
 					</match>
 				</li>
-				<!--Vagabonds hate Gestalt, Nationalist, City Builders; Outdoorsies also hate City Builders; Tranquils also hate Nationalist-->
+				<!--Vagabonds hate Gestalt, Nationalist, City Builders; Outdoorsies and Globetrotters also hate City Builders; Tranquils also hate Nationalist-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_Gestalt"]/disagreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -665,6 +665,7 @@
 							<disagreeableTraits>
 								<li>HVT_Outdoorsy</li>
 								<li>HVT_Vagabond</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
 							</disagreeableTraits>
 						</value>
 					</nomatch>
@@ -673,9 +674,50 @@
 						<value>
 							<li>HVT_Outdoorsy</li>
 							<li>HVT_Vagabond</li>
+							<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
 						</value>
 					</match>
 				</li>
+					<!--vagabonds and globetrotters a-ok w traveling-->
+					<li Class="PatchOperationConditional">
+						<xpath>/Defs/ThoughtDef[defName="VME_Travel_Despised"]/nullifyingTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/ThoughtDef[defName="VME_Travel_Despised"]</xpath>
+							<value>
+								<nullifyingTraits>
+									<li>HVT_Vagabond</li>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
+								</nullifyingTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/ThoughtDef[defName="VME_Travel_Despised"]/nullifyingTraits</xpath>
+							<value>
+								<li>HVT_Vagabond</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
+							</value>
+						</match>
+					</li>
+					<!--outdoorsies and vagabonds don't care for permanent bases-->
+					<li Class="PatchOperationConditional">
+						<xpath>/Defs/ThoughtDef[defName="VME_PermanentBases_Desired"]/nullifyingTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/ThoughtDef[defName="VME_PermanentBases_Desired"]</xpath>
+							<value>
+								<nullifyingTraits>
+									<li>HVT_Outdoorsy</li>
+									<li>HVT_Vagabond</li>
+								</nullifyingTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/ThoughtDef[defName="VME_PermanentBases_Desired"]/nullifyingTraits</xpath>
+							<value>
+								<li>HVT_Outdoorsy</li>
+								<li>HVT_Vagabond</li>
+							</value>
+						</match>
+					</li>
 				<!--Pridefuls, Subjugators and Serviles like Aristocratic-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_Aristocratic"]/agreeableTraits</xpath>
