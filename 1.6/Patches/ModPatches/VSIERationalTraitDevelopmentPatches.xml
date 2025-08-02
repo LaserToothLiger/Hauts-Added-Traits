@@ -43,6 +43,7 @@
 						<HVT_Vain>0</HVT_Vain>
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
+						<HVT_WeaponArtist>0</HVT_WeaponArtist>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>
@@ -177,13 +178,14 @@
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/VSIERationalTraitDevelopment.TraitPoolDef[defName = "VSIE_CatarhisAfterMentalBreak"]/traits</xpath>
 					<value>
+						<HVT_Allegiant>0</HVT_Allegiant>
 						<HVT_Champion>0</HVT_Champion>
 						<HVT_Hale>0</HVT_Hale>
 						<HVT_Outdoorsy>0</HVT_Outdoorsy>
 						<HVT_Tempestophile>0</HVT_Tempestophile>
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
-						<HVT_Allegiant>0</HVT_Allegiant>
+						<HVT_WeaponArtist>0</HVT_WeaponArtist>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>
 						<HVT_Strong>1</HVT_Strong>
@@ -269,6 +271,7 @@
 						<HVT_Textile>0</HVT_Textile>
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vicious>0</HVT_Vicious>
+						<HVT_WeaponArtist>0</HVT_WeaponArtist>
 						<HVT_Prideful>1</HVT_Prideful>
 						<HVT_Prideful>2</HVT_Prideful>
 						<HVT_Faithful MayRequire="Ludeon.RimWorld.Ideology">-2</HVT_Faithful>
@@ -325,6 +328,7 @@
 						<HVT_Vain>0</HVT_Vain>
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
+						<HVT_WeaponArtist>0</HVT_WeaponArtist>
 						<HVT_Humble>0</HVT_Humble>
 						<HVT_Prideful>1</HVT_Prideful>
 						<HVT_Prideful>2</HVT_Prideful>
@@ -374,6 +378,7 @@
 						<HVT_Tranquil>0</HVT_Tranquil>
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vicious>0</HVT_Vicious>
+						<HVT_WeaponArtist>0</HVT_WeaponArtist>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>

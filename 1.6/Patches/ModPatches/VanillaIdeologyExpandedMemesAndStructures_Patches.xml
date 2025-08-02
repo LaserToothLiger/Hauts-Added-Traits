@@ -450,7 +450,7 @@
 						</value>
 					</match>
 				</li>
-				<!--Sadist likes Blood Court; hates Egalitarian, Emancipation, and Pacifist. Vicious likes Blood Court and hates Pacifist too. Gravers like Blood Court since it produces corpses.
+				<!--Sadist likes Blood Court; hates Egalitarian, Emancipation, and Pacifist. Vicious and WArtist like Blood Court and hate Pacifist too. Gravers like Blood Court since it produces corpses.
 					Subjugator also hates Egalitarian, Emancipation, Pacifist; Servile hates Egalitarian; Intolerants hate Egal-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_BloodCourt"]/agreeableTraits</xpath>
@@ -461,14 +461,17 @@
 								<li>HVT_Graver</li>
 								<li>HVT_Sadist</li>
 								<li>HVT_Vicious</li>
+								<li>HVT_WeaponArtist</li>
 							</agreeableTraits>
 						</value>
 					</nomatch>
 					<match Class="PatchOperationAdd">
 						<xpath>/Defs/MemeDef[defName="VME_BloodCourt"]/agreeableTraits</xpath>
 						<value>
+							<li>HVT_Graver</li>
 							<li>HVT_Sadist</li>
 							<li>HVT_Vicious</li>
+							<li>HVT_WeaponArtist</li>
 						</value>
 					</match>
 				</li>
@@ -523,6 +526,7 @@
 								<li>HVT_Sniper</li>
 								<li>HVT_Sadist</li>
 								<li>HVT_Vicious</li>
+								<li>HVT_WeaponArtist</li>
 								<li>HVT_Subjugator</li>
 							</disagreeableTraits>
 						</value>
@@ -533,6 +537,7 @@
 							<li>HVT_Sniper</li>
 							<li>HVT_Sadist</li>
 							<li>HVT_Vicious</li>
+							<li>HVT_WeaponArtist</li>
 							<li>HVT_Subjugator</li>
 						</value>
 					</match>

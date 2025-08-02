@@ -21,6 +21,7 @@ using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 using VEF.OptionalFeatures;
 using System.Security.Cryptography;
 using UnityEngine.Assertions.Must;
+using VEF.Apparels;
 
 namespace HautsTraits
 {
@@ -1409,6 +1410,21 @@ namespace HautsTraits
                 }
                 return num;
             }
+        }
+    }
+    public class ThoughtWorker_ButThisOneIsMine : ThoughtWorker
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            if (p.equipment != null)
+            {
+                ThingWithComps twc = p.equipment.Primary;
+                if (twc != null && twc.HasComp<CompUniqueWeapon>())
+                {
+                    return ThoughtState.ActiveDefault;
+                }
+            }
+            return ThoughtState.Inactive;
         }
     }
     public class ThoughtWorker_Winsome : ThoughtWorker
@@ -3127,65 +3143,101 @@ namespace HautsTraits
             }
         }
     }
-    [StaticConstructorOnStartup]
-    public class Hediff_IveBeenEverywhereMan : HediffWithComps
+    public class HediffCompProperties_ColinWallis : HediffCompProperties
     {
-        public override void TickInterval(int delta)
+        public HediffCompProperties_ColinWallis()
         {
-            if (this.pawn.IsHashIntervalTick(250,delta))
+            this.compClass = typeof(HediffComp_ColinWallis);
+        }
+        public Dictionary<WeaponClassDef, HediffDef> hediffPerClass;
+    }
+    public class HediffComp_ColinWallis : HediffComp
+    {
+        public HediffCompProperties_ColinWallis Props
+        {
+            get
             {
-                if (this.pawn.Spawned && !this.pawn.Downed && !this.pawn.Suspended && this.pawn.Tile != null && this.pawn.Tile.Valid && this.pawn.Tile.Tile != null)
+                return (HediffCompProperties_ColinWallis)this.props;
+            }
+        }
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+        {
+            base.CompPostTickInterval(ref severityAdjustment, delta);
+            if (this.Pawn.IsHashIntervalTick(15,delta))
+            {
+                List<WeaponClassDef> wcds = new List<WeaponClassDef>();
+                if (this.Pawn.equipment != null)
                 {
-                    Tile tile = this.pawn.Tile.Tile;
-                    if (tile.PrimaryBiome != null && !this.witnessedBiomes.Contains(tile.PrimaryBiome))
+                    ThingWithComps twc = this.Pawn.equipment.Primary;
+                    if (twc != null)
                     {
-                        this.witnessedBiomes.Add(tile.PrimaryBiome);
+                        wcds = twc.def.weaponClasses;
                     }
-                    if (!tile.Mutators.NullOrEmpty())
+                }
+                List<HediffDef> validWeaponArts = new List<HediffDef>();
+                foreach (WeaponClassDef wcd in wcds)
+                {
+                    if (this.Props.hediffPerClass.ContainsKey(wcd))
                     {
-                        foreach (TileMutatorDef tmd in tile.Mutators)
+                        HediffDef hd = this.Props.hediffPerClass.TryGetValue(wcd);
+                        validWeaponArts.Add(hd);
+                        this.Pawn.health.AddHediff(hd);
+                    }
+                }
+                List<Hediff> toRemove = new List<Hediff>();
+                foreach (Hediff h in this.Pawn.health.hediffSet.hediffs)
+                {
+                    if (h is Hediff_WeaponArt)
+                    {
+                        if (!validWeaponArts.Contains(h.def))
                         {
-                            if (!this.witnessedTileMutators.Contains(tmd))
-                            {
-                                this.witnessedTileMutators.Add(tmd);
-                            }
+                            toRemove.Add(h);
                         }
                     }
                 }
-                this.Severity = this.witnessedBiomes.Count() + this.witnessedTileMutators.Count();
-            }
-            base.TickInterval(delta);
-        }
-        public override string GetTooltip(Pawn pawn, bool showHediffsDebugInfo)
-        {
-            string result = base.GetTooltip(pawn, showHediffsDebugInfo) + "\n";
-            if (!this.witnessedBiomes.NullOrEmpty())
-            {
-                result += "\n" + "HVT_GlobetrotterBiomeLister".Translate() + ":\n";
-                foreach (BiomeDef biome in this.witnessedBiomes)
+                foreach (Hediff h in toRemove)
                 {
-                    result += "-" + biome.LabelCap + "\n";
+                    this.Pawn.health.RemoveHediff(h);
                 }
             }
-            if (!this.witnessedTileMutators.NullOrEmpty())
+        }
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+            List<Hediff> toRemove = new List<Hediff>();
+            foreach (Hediff h in this.Pawn.health.hediffSet.hediffs)
             {
-                result += "\n" + "HVT_GlobetrotterMutatorLister".Translate() + ":\n";
-                foreach (TileMutatorDef tmd in this.witnessedTileMutators)
+                if (h is Hediff_WeaponArt)
                 {
-                    result += "-" + tmd.LabelCap + "\n";
+                    toRemove.Add(h);
                 }
             }
-            return result;
+            foreach (Hediff h in toRemove)
+            {
+                this.Pawn.health.RemoveHediff(h);
+            }
         }
-        public override void ExposeData()
+    }
+    public class Hediff_WeaponArt : HediffWithComps
+    {
+
+    }
+    public class Hediff_MeleeWeaponArt : Hediff_WeaponArt
+    {
+        public override void PostAdd(DamageInfo? dinfo)
         {
-            base.ExposeData();
-            Scribe_Collections.Look<BiomeDef>(ref this.witnessedBiomes, "witnessedBiomes", LookMode.Def, Array.Empty<object>());
-            Scribe_Collections.Look<TileMutatorDef>(ref this.witnessedTileMutators, "witnessedTileMutators", LookMode.Def, Array.Empty<object>());
+            base.PostAdd(dinfo);
+            if (this.pawn.equipment != null)
+            {
+                ThingWithComps twc = this.pawn.equipment.Primary;
+                if (twc != null) {
+                    if (!twc.def.UsableWithShields())
+                    {
+                        this.Severity = this.def.maxSeverity;
+                    }
+                }
+            }
         }
-        public List<BiomeDef> witnessedBiomes = new List<BiomeDef>();
-        public List<TileMutatorDef> witnessedTileMutators = new List<TileMutatorDef>();
-        private static readonly Texture2D DisarmTexture = ContentFinder<Texture2D>.Get("UI/Commands/Hack", true);
     }
     public class HediffCompProperties_IdeoMajoritySeverity : HediffCompProperties
     {
@@ -3359,6 +3411,66 @@ namespace HautsTraits
                 }
             }
         }
+    }
+    [StaticConstructorOnStartup]
+    public class Hediff_IveBeenEverywhereMan : HediffWithComps
+    {
+        public override void TickInterval(int delta)
+        {
+            if (this.pawn.IsHashIntervalTick(250, delta))
+            {
+                if (this.pawn.Spawned && !this.pawn.Downed && !this.pawn.Suspended && this.pawn.Tile != null && this.pawn.Tile.Valid && this.pawn.Tile.Tile != null)
+                {
+                    Tile tile = this.pawn.Tile.Tile;
+                    if (tile.PrimaryBiome != null && !this.witnessedBiomes.Contains(tile.PrimaryBiome))
+                    {
+                        this.witnessedBiomes.Add(tile.PrimaryBiome);
+                    }
+                    if (!tile.Mutators.NullOrEmpty())
+                    {
+                        foreach (TileMutatorDef tmd in tile.Mutators)
+                        {
+                            if (!this.witnessedTileMutators.Contains(tmd))
+                            {
+                                this.witnessedTileMutators.Add(tmd);
+                            }
+                        }
+                    }
+                }
+                this.Severity = this.witnessedBiomes.Count() + this.witnessedTileMutators.Count();
+            }
+            base.TickInterval(delta);
+        }
+        public override string GetTooltip(Pawn pawn, bool showHediffsDebugInfo)
+        {
+            string result = base.GetTooltip(pawn, showHediffsDebugInfo) + "\n";
+            if (!this.witnessedBiomes.NullOrEmpty())
+            {
+                result += "\n" + "HVT_GlobetrotterBiomeLister".Translate() + ":\n";
+                foreach (BiomeDef biome in this.witnessedBiomes)
+                {
+                    result += "-" + biome.LabelCap + "\n";
+                }
+            }
+            if (!this.witnessedTileMutators.NullOrEmpty())
+            {
+                result += "\n" + "HVT_GlobetrotterMutatorLister".Translate() + ":\n";
+                foreach (TileMutatorDef tmd in this.witnessedTileMutators)
+                {
+                    result += "-" + tmd.LabelCap + "\n";
+                }
+            }
+            return result;
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Collections.Look<BiomeDef>(ref this.witnessedBiomes, "witnessedBiomes", LookMode.Def, Array.Empty<object>());
+            Scribe_Collections.Look<TileMutatorDef>(ref this.witnessedTileMutators, "witnessedTileMutators", LookMode.Def, Array.Empty<object>());
+        }
+        public List<BiomeDef> witnessedBiomes = new List<BiomeDef>();
+        public List<TileMutatorDef> witnessedTileMutators = new List<TileMutatorDef>();
+        private static readonly Texture2D DisarmTexture = ContentFinder<Texture2D>.Get("UI/Commands/Hack", true);
     }
     public class CompProperties_TargetEffectGiveTrait : CompProperties
     {

@@ -578,6 +578,181 @@
     </comps>
   </HediffDef>
   
+  <!--weapon artist governance hediff-->
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_WeaponArts</defName>
+    <label>weapon artist</label>
+    <description>The "Weapon Artist" trait grants stat bonuses depending on the classes the currently equipped weapon belongs to.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+	  <li Class="HautsTraits.HediffCompProperties_ColinWallis">
+		<hediffPerClass>
+			<li><key>Melee</key><value>HVT_WeaponArt_Melee</value></li>
+			<li><key>Ranged</key><value>HVT_WeaponArt_Ranged</value></li>
+			<li><key>MeleePiercer</key><value>HVT_WeaponArt_MeleePiercer</value></li>
+			<li><key>MeleeBlunt</key><value>HVT_WeaponArt_MeleeBlunt</value></li>
+			<li><key>RangedLight</key><value>HVT_WeaponArt_RangedLight</value></li>
+			<li><key>RangedHeavy</key><value>HVT_WeaponArt_RangedHeavy</value></li>
+			<li><key>LongShots</key><value>HVT_WeaponArt_LongShots</value></li>
+			<li><key>ShortShots</key><value>HVT_WeaponArt_ShortShots</value></li>
+			<li><key>Neolithic</key><value>HVT_WeaponArt_Neolithic</value></li>
+			<li><key>Ultratech</key><value>HVT_WeaponArt_Ultratech</value></li>
+		</hediffPerClass>
+	  </li>
+    </comps>
+  </HediffDef>
+	  <HediffDef Name="HVT_WeaponArtBase" ParentName="HVT_TraitHediffBase" Abstract="True">
+		<hediffClass>HautsTraits.Hediff_WeaponArt</hediffClass>
+		<comps>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_Melee</defName>
+		<label>weapon artist (melee)</label>
+		<description>While wielding a melee weapon, this character gains accuracy with all melee attacks. Melee weapons that can be wielded with shields also grant more melee attack speed, while ones that cannot grant more melee attack damage.</description>
+		<hediffClass>HautsTraits.Hediff_MeleeWeaponArt</hediffClass>
+		<minSeverity>0.001</minSeverity>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <MeleeHitChance>3</MeleeHitChance>
+			  <MeleeCooldownFactor>0.15</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		  <li>
+			<minSeverity>1</minSeverity>
+			<statOffsets>
+			  <MeleeHitChance>3</MeleeHitChance>
+			  <MeleeDamageFactor>0.2</MeleeDamageFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_Ranged</defName>
+		<label>weapon artist (ranged)</label>
+		<description>While wielding a ranged weapon, this character gains accuracy and attack speed with all ranged attacks.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+			  <RangedCooldownFactor>-0.08</RangedCooldownFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_MeleePiercer</defName>
+		<label>weapon artist (piercer)</label>
+		<description>While wielding a piercing melee weapon, this character gains armor penetration with all melee attacks.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <Hauts_MeleeArmorPenetration>0.1</Hauts_MeleeArmorPenetration>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_MeleeBlunt</defName>
+		<label>weapon artist (blunt)</label>
+		<description>While wielding a blunt melee weapon, this character gains a chance to stun with each melee hit.</description>
+		<stages>
+		  <li />
+		</stages>
+		<comps>
+		  <li Class="HautsFramework.HediffCompProperties_StunOnHit">
+			<stunTicksRange>180~240</stunTicksRange>
+			<appliedViaAttacks>true</appliedViaAttacks>
+			<cellRange>1.5</cellRange>
+			<minDmgToTrigger>0</minDmgToTrigger>
+			<chance>0.05</chance>
+		  </li>
+		</comps>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_RangedLight</defName>
+		<label>weapon artist (light)</label>
+		<description>While wielding a light ranged weapon, this character gains attack speed with ranged attacks.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <RangedCooldownFactor>-0.12</RangedCooldownFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_RangedHeavy</defName>
+		<label>weapon artist (heavy)</label>
+		<description>While wielding a heavy ranged weapon, this character gains damage with ranged attacks.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <VEF_RangeAttackDamageFactor>0.1</VEF_RangeAttackDamageFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_LongShots</defName>
+		<label>weapon artist (long-ranged)</label>
+		<description>While wielding a long-ranged weapon, this character gains further attack range with ranged attacks.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <VEF_VerbRangeFactor>0.1</VEF_VerbRangeFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_ShortShots</defName>
+		<label>weapon artist (short-ranged)</label>
+		<description>While wielding a short-ranged weapon, this character aims faster with ranged attacks.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <AimingDelayFactor>-0.12</AimingDelayFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_Neolithic</defName>
+		<label>weapon artist (neolithic)</label>
+		<description>This character skillfully uses the currently wielded simple weapon as a useful tool.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  <HediffDef ParentName="HVT_WeaponArtBase">
+		<defName>HVT_WeaponArt_Ultratech</defName>
+		<label>weapon artist (ultratech)</label>
+		<description>This character's intellect is stimulated by the advanced functions of the currently wielded ultratech weapon.</description>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <GlobalLearningFactor>0.05</GlobalLearningFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+
+
+  
   <!--entitled/prideful-->
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_Entitlement</defName>

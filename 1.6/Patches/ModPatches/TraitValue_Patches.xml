@@ -368,6 +368,16 @@
 				  </value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
+					<xpath>*/TraitDef[defName = "HVT_WeaponArtist"]</xpath>
+				  <value>
+					<li Class="SyrTraitValue.TraitValueExtension">
+					  <traitValues>
+						<li>15</li>
+					  </traitValues>
+					</li>
+				  </value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
 					<xpath>*/TraitDef[defName = "HVT_Winsome"]</xpath>
 				  <value>
 					<li Class="SyrTraitValue.TraitValueExtension">

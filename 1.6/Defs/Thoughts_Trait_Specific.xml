@@ -713,6 +713,23 @@
     </stages>
   </ThoughtDef>
   
+  <!--weapon artists want to have unique weapons-->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>HVT_WAUW</defName>
+    <workerClass>HautsTraits.ThoughtWorker_ButThisOneIsMine</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredTraits>
+      <li>HVT_WeaponArtist</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>wielding unique weapon</label>
+        <description>I can express my art to its fullest potential with this beautiful weapon.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
   <!--winsome stay winning-->
   <ThoughtDef>
     <defName>HVT_WinsomeLiked</defName>

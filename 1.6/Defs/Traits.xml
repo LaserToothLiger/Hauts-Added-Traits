@@ -723,6 +723,7 @@
 		  <li>HVT_RepressedRage</li>
 		  <li>HVT_Sniper</li>
 		  <li>HVT_Vicious</li>
+		  <li>HVT_WeaponArtist</li>
 		  <li>HVT_Tranquil0</li>
 		</conflictingTraits>
 		<conflictingPassions><li>Shooting</li><li>Melee</li></conflictingPassions>
@@ -758,6 +759,7 @@
 			  <li>HVT_RepressedRage</li>
 			  <li>HVT_Sniper</li>
 			  <li>HVT_Vicious</li>
+			  <li>HVT_WeaponArtist</li>
 			  <li>HVT_Tranquil</li>
 			</conflictingTraits>
 			<modExtensions>
@@ -882,6 +884,31 @@
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Drudge</li></conflictingTraits>
 		<requiredWorkTags><li>Intellectual</li></requiredWorkTags>
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>HVT_WeaponArtist</defName>
+		<commonality>0.3</commonality>
+		<forcedPassions><li>Shooting</li><li>Melee</li></forcedPassions>
+		<degreeDatas>
+		  <li>
+			<label>weapon artist</label>
+			<description>{PAWN_nameDef} intuitively leans into the strengths of any weapon {PAWN_pronoun} wields, gaining different bonuses depending on the currently wielded weapon’s nature.</description>
+			<possessions>
+			  <MeleeWeapon_LongSword />
+			</possessions>
+		  </li>
+		</degreeDatas>
+		<modExtensions>
+			<li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_WeaponArts</li></value>
+					</li>
+				</grantedHediffs>
+			</li>
+		</modExtensions>
+		<requiredWorkTags><li>Violent</li></requiredWorkTags>
 	</TraitDef>
 	
 	<TraitDef>

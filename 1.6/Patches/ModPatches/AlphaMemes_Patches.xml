@@ -194,6 +194,24 @@
 						</value>
 					</match>
 				</li>
+				<!--WArtist agrees w/ the combat memes-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="AM_Bulwark" or defName="AM_Gladiator" or defName="AM_Sharpshooter"]/agreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_Bulwark" or defName="AM_Gladiator" or defName="AM_Sharpshooter"]</xpath>
+						<value>
+							<agreeableTraits>
+								<li>HVT_WeaponArtist</li>
+							</agreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_Bulwark" or defName="AM_Gladiator" or defName="AM_Sharpshooter"]/agreeableTraits</xpath>
+						<value>
+							<li>HVT_WeaponArtist</li>
+						</value>
+					</match>
+				</li>
 				<!--Prideful dislikes Monastic-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="AM_Monastic"]/disagreeableTraits</xpath>
@@ -262,7 +280,7 @@
 					</mods>
 					<match Class="PatchOperationSequence">
 						<operations>
-							<!--Sadists, Vickies, and Subjugators dislike Vow of Nonviolence; so do the fishing traits, either bc fishing requires violence or bc eating fish is eating meat-->
+							<!--Sadists, Vickies, WArtists, and Subjugators dislike Vow of Nonviolence; so do the fishing traits, either bc fishing requires violence or bc eating fish is eating meat-->
 							<li Class="PatchOperationConditional">
 								<xpath>/Defs/MemeDef[defName="AM_NonViolence"]/disagreeableTraits</xpath>
 								<nomatch Class="PatchOperationAdd">
@@ -271,6 +289,7 @@
 										<disagreeableTraits>
 											<li>HVT_Sadist</li>
 											<li>HVT_Vicious</li>
+											<li>HVT_WeaponArtist</li>
 											<li>HVT_Subjugator</li>
 											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
 											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
@@ -282,6 +301,7 @@
 									<value>
 										<li>HVT_Sadist</li>
 										<li>HVT_Vicious</li>
+										<li>HVT_WeaponArtist</li>
 										<li>HVT_Subjugator</li>
 										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
 										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
