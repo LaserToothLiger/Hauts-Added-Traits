@@ -1201,6 +1201,7 @@
 		  <Flame>0.5</Flame>
 		  <VEF_PermanentBurn>0.5</VEF_PermanentBurn>
 		  <Beam>0.5</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.5</BeamBypassShields>
 		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
@@ -1656,6 +1657,7 @@
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <Vaporize>0.8</Vaporize>
 		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
@@ -1702,6 +1704,7 @@
 			  <Burn>1.5</Burn>
 			  <Flame>1.5</Flame>
 			  <Beam>1.5</Beam>
+			  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">1.5</BeamBypassShields>
 			  <Vaporize>1.5</Vaporize>
 			  <VEF_PermanentBurn>1.5</VEF_PermanentBurn>
 			</damageFactors>
@@ -1863,6 +1866,7 @@
 		  <Burn>0.2</Burn>
 		  <Flame>0.2</Flame>
 		  <Beam>0.2</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.2</BeamBypassShields>
 		  <Vaporize>0.2</Vaporize>
 		  <VEF_PermanentBurn>0.2</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
@@ -1913,6 +1917,7 @@
 			  <Burn>0.4</Burn>
 			  <Flame>0.4</Flame>
 			  <Beam>0.4</Beam>
+			  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.4</BeamBypassShields>
 			  <Vaporize>0.4</Vaporize>
 			  <VEF_PermanentBurn>0.4</VEF_PermanentBurn>
 			  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
@@ -2113,6 +2118,7 @@
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <Vaporize>0.8</Vaporize>
 		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
@@ -2129,6 +2135,7 @@
 		  <Burn>0</Burn>
 		  <Flame>0</Flame>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <Vaporize>0.8</Vaporize>
 		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
@@ -2205,6 +2212,7 @@
 		  <Flame>0.25</Flame>
 		  <VEF_PermanentBurn>0.25</VEF_PermanentBurn>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <AcidBurn>0</AcidBurn>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0</AM_AcidSpit>
 		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0</OTCAcid>
@@ -3682,6 +3690,7 @@
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
@@ -3873,6 +3882,7 @@
 		  <Burn>0.8</Burn>
 		  <Flame>0.8</Flame>
 		  <Beam>0.95</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.95</BeamBypassShields>
 		  <Vaporize>0.95</Vaporize>
 		  <VEF_PermanentBurn>0.8</VEF_PermanentBurn>
 		</damageFactors>
@@ -5005,6 +5015,7 @@
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
@@ -5022,6 +5033,7 @@
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>

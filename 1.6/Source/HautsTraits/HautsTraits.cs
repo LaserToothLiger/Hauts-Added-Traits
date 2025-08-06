@@ -3092,7 +3092,7 @@ namespace HautsTraits
         public override void PostTick()
         {
             base.PostTick();
-            if (this.pawn.story != null)
+            if (this.pawn.story != null && this.pawn.Spawned)
             {
                 if ((this.pawn.Faction != Faction.OfPlayerSilentFail && (this.pawn.Faction.HostileTo(Faction.OfPlayerSilentFail) || (this.pawn.equipment != null && this.pawn.equipment.Primary != null)))  || this.pawn.kindDef.requiredWorkTags == WorkTags.Violent)
                 {
@@ -3100,8 +3100,10 @@ namespace HautsTraits
                     {
                         this.pawn.story.traits.GainTrait(new Trait(TraitDefOf.Kind),true);
                     }
-                } else {
+                } else if (!this.pawn.story.traits.HasTrait(HVTDefOf.HVT_Tranquil)) {
                     this.pawn.story.traits.GainTrait(new Trait(HVTDefOf.HVT_Tranquil));
+                } else {
+                    this.pawn.health.RemoveHediff(this);
                 }
                 for (int i = this.pawn.story.traits.allTraits.Count - 1; i >= 0; i--)
                 {
@@ -3227,16 +3229,36 @@ namespace HautsTraits
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
+            this.HanderCheck();
+        }
+        public override void PostTickInterval(int delta)
+        {
+            base.PostTickInterval(delta);
+            this.HanderCheck();
+        }
+        public void HanderCheck()
+        {
             if (this.pawn.equipment != null)
             {
                 ThingWithComps twc = this.pawn.equipment.Primary;
-                if (twc != null) {
+                if (twc != null)
+                {
                     if (!twc.def.UsableWithShields())
                     {
                         this.Severity = this.def.maxSeverity;
+                    } else {
+                        this.Severity = this.def.minSeverity;
                     }
                 }
             }
+        }
+    }
+    public class Hediff_WeaponArtExtraOnHitEffects : Hediff_WeaponArt
+    {
+        public override void Notify_PawnDamagedThing(Thing thing, DamageInfo dinfo, DamageWorker.DamageResult result)
+        {
+            base.Notify_PawnDamagedThing(thing, dinfo, result);
+            HautsUtility.DoExtraOnHitEffects(this, thing, dinfo, result);
         }
     }
     public class HediffCompProperties_IdeoMajoritySeverity : HediffCompProperties
