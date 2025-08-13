@@ -93,6 +93,7 @@
 						<HVT_Angler MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Angler>
 						<HVT_CelestialCelerity MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_CelestialCelerity>
 						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
+						<HVT_Navigator MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Navigator>
 						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 						<HVT_Scavenger MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Scavenger>
 					</value>
@@ -301,6 +302,7 @@
 						<HVT_Skybound MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Skybound>
 						<HVT_Angler MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Angler>
 						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
+						<HVT_Navigator MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Navigator>
 						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 					</value>
 				</li>
@@ -351,6 +353,7 @@
 						<HVT_Earthborne MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Earthborne>
 						<HVT_Skybound MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Skybound>
 						<HVT_Globetrotter MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Globetrotter>
+						<HVT_Navigator MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Navigator>
 						<HVT_Pescatarian MayRequire="Ludeon.RimWorld.Odyssey">0</HVT_Pescatarian>
 					</value>
 				</li>

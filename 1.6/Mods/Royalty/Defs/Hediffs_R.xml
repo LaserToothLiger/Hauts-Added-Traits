@@ -335,6 +335,7 @@
 		  <li>HVT_AboutTransingGolf</li>
 		  <li MayRequire="Ludeon.RimWorld.Ideology">HVT_AboutTransingIdeologyExclusive</li>
 		  <li MayRequire="Ludeon.RimWorld.Biotech">HVT_AboutTransingBiotechExclusive</li>
+		  <li MayRequire="Ludeon.RimWorld.Odyssey">HVT_AboutTransingOdysseyExclusive</li>
 		</aboutTransingStrings>
 		<aboutTransingStringsMonolithRequired>
 		  <li>HVT_AboutTransingAnomalyExclusive</li>

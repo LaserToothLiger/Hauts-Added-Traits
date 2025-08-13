@@ -26,6 +26,7 @@ using static UnityEngine.GraphicsBuffer;
 using VEF.Hediffs;
 using MVCF.Utilities;
 using static RimWorld.FleshTypeDef;
+using RimWorld.QuestGen;
 
 namespace HautsTraitsRoyalty
 {
@@ -159,6 +160,9 @@ namespace HautsTraitsRoyalty
                                prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_GravshipUtility_AbandonMapPrefix)));
                 harmony.Patch(AccessTools.Method(typeof(FishingUtility), nameof(FishingUtility.GetCatchesFor)),
                                postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_GetCatchesForPostfix)));
+                MethodInfo methodInfoCC = typeof(CompCerebrexCore).GetMethod("DeactivateCore", BindingFlags.NonPublic | BindingFlags.Instance);
+                harmony.Patch(methodInfoCC,
+                              prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_DeactivateCorePrefix)));
             }
             harmony.Patch(AccessTools.Method(typeof(TraitSerumWindow), nameof(TraitSerumWindow.isBadTraitCombo)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsIsBadTraitComboPostfix)));
@@ -1655,6 +1659,22 @@ namespace HautsTraitsRoyalty
                             thing2.SetForbidden(true, true);
                         }
                         GenPlace.TryPlaceThing(thing2, pawn.Position, pawn.Map, ThingPlaceMode.Near, null, null, default(Rot4));
+                    }
+                }
+            }
+        }
+        public static void HautsTraitsTrans_DeactivateCorePrefix(CompCerebrexCore __instance, bool scavenging)
+        {
+            if (!scavenging)
+            {
+                if (__instance.parent.Map != null)
+                {
+                    foreach (Pawn p in __instance.parent.Map.mapPawns.AllPawnsSpawned)
+                    {
+                        if (p.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(p))
+                        {
+                            PsychicAwakeningUtility.AchieveTranscendence(p, "HVT_TransCerebrexScream".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), "HVT_TransCerebrexScreamFantasy".Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve(), 0.1f);
+                        }
                     }
                 }
             }

@@ -1828,6 +1828,29 @@
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>HVT_Navigator</defName>
+		<commonality>0.6</commonality>
+		<degreeDatas>
+		  <li>
+			<label>navigator</label>
+			<description>{PAWN_nameDef} has an impressive sense of direction, as well as great situational awareness. {PAWN_pronoun} rarely gets lost, surprised by traps, or otherwise inconvenienced by difficulties during travel.</description>
+			<statOffsets>
+			  <CaravanBonusSpeedFactor>0.15</CaravanBonusSpeedFactor>
+			  <PilotingAbility>0.1</PilotingAbility>
+			  <Hauts_CaravanVisibilityOffset>-0.5</Hauts_CaravanVisibilityOffset>
+			</statOffsets>
+			<statFactors>
+			  <PawnTrapSpringChance>0.2</PawnTrapSpringChance>
+			</statFactors>
+			<possessions>
+			  <Map>1~2</Map>
+			</possessions>
+		  </li>
+		</degreeDatas>
+		<conflictingTraits><li>HVT_Imperceptive</li></conflictingTraits>
+		<requiredWorkTags><li>Intellectual</li></requiredWorkTags>
+	</TraitDef>
+	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Pescatarian</defName>
 		<commonality>0.5</commonality>
 		<degreeDatas>

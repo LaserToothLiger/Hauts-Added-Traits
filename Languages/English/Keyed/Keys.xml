@@ -120,6 +120,7 @@
 <HVT_AboutTransingGolfFantasy>Transcendence can be achieved by accumulating and spending a preposterous amount of mana - 46656%, or six to the sixth - within one year.</HVT_AboutTransingGolfFantasy>
 <HVT_AboutTransingIdeologyExclusive>The archonexus will intervene if an awakened individual dies within its vicinity, causing both resurrection and transcendence.</HVT_AboutTransingIdeologyExclusive>
 <HVT_AboutTransingBiotechExclusive>There is a slim chance to achieve transcendence by being hit with the energy shockwave of a dying apocriton.</HVT_AboutTransingBiotechExclusive>
+<HVT_AboutTransingOdysseyExclusive>The mind controlling the global mechhive possesses a vast psychic presence. Being in its vicinity when it dies will cause transcendence.</HVT_AboutTransingOdysseyExclusive>
 <HVT_AboutTransingAnomalyExclusive>{PAWN_pronoun} has had a glimpse into the dark heart of the Void monolith. When it is fully activated, it will form a bridge between reality and the Void, and should one of the awakened cross into that dark heart, they will transcend.</HVT_AboutTransingAnomalyExclusive>
 <HVT_TheTransing>Transcendental experience: {0}</HVT_TheTransing>
 <HVT_TransSuffix>{PAWN_nameDef} glimpsed beyond the veil. {PAWN_pronoun} has been indelibly marked by the archotechs, magnifying and distorting {PAWN_possessive} psychic signature.</HVT_TransSuffix>
@@ -137,6 +138,7 @@
 <HVT_TransPsyfocuser>Due to the mental fluctuations involved in attaining and utilizing a truly staggering amount of psyfocus, </HVT_TransPsyfocuser>
 <HVT_WokeVoidEmbrace2>The immensity of the void within {PAWN_nameDef} has magnified and distorted {PAWN_possessive} psychic signature.</HVT_WokeVoidEmbrace2>
 <HVT_WokeVoidClosure2>The sudden repulsion of the void has magnified and distorted the psychic signature of {PAWN_nameDef}.</HVT_WokeVoidClosure2>
+<HVT_TransCerebrexScream>As it died, the cerebrex core released a psychic signal of profound complexity, which affected {PAWN_nameDef} in some way. Resultantly, </HVT_TransCerebrexScream>
 <!--other woke and trans messages-->
 <HVT_CaravanAnimaRez>{PAWN_nameDef} was saved from death by the presence of a nearby anima tree!</HVT_CaravanAnimaRez>
 <HVT_PengwengGetLabel>Summoned stranger</HVT_PengwengGetLabel>
@@ -388,6 +390,7 @@
 <HVT_TransArchoDeathFantasy>Mere instants from death, a deific presence reached out from its hallow, and </HVT_TransArchoDeathFantasy>
 <HVT_TransNeuroquakeFantasy>By being subjected to the soul-harrowing effect of a mindquake, </HVT_TransNeuroquakeFantasy>
 <HVT_TransPsyfocuserFantasy>Harnessing a truly staggering amount of mana has caused {PAWN_possessive} soul to evolve, and so </HVT_TransPsyfocuserFantasy>
+<HVT_TransCerebrexScreamFantasy>As it died, the cerebrex core released a wail of spiritual energy, which affected {PAWN_nameDef} in some way. Resultantly, </HVT_TransCerebrexScreamFantasy>
 <!--Fanta: other woke and trans messages-->
 <HVT_PitohuiGenDepFantasy>{PAWN_nameDef} used {PAWN_possessive} transcendent powers to be free of {PAWN_possessive} bloodline's substance dependencies.</HVT_PitohuiGenDepFantasy>
 <HVT_SeraphTextFantasy>{0} has inherited the Spirit of the Seraph trait from {1}.</HVT_SeraphTextFantasy>
