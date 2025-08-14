@@ -3,6 +3,7 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>ReGrowth: Core</li>
+			<li>ReGrowth 2: Core</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
@@ -75,6 +76,68 @@
 							<li MayRequire="Ludeon.RimWorld.Royalty">HVT_TTraitShearwater</li>
 						</value>
 					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ReGrowth 2: Core</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Mariner loves bathing-->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="RG_BathingMarsh"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_Mariner</key>
+								<value>2</value>
+							  </li>
+							</multiplierTraits>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="RG_BathingWater"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_Mariner</key>
+								<value>2</value>
+							  </li>
+							</multiplierTraits>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="RG_BathingOcean"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_Mariner</key>
+								<value>2</value>
+							  </li>
+							</multiplierTraits>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="RG_HotSpringBathing"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_Mariner</key>
+								<value>2</value>
+							  </li>
+							</multiplierTraits>
+						</li>
+					</value>
 				</li>
 			</operations>
 		</match>

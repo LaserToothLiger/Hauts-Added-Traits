@@ -380,6 +380,8 @@
       <li Class="HautsTraitsRoyalty.CompProperties_PulverizationBeam">
         <compClass>HautsTraitsRoyalty.CompAbilityEffect_PulverizationBeam</compClass>
         <durationTicks>600</durationTicks>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>40</clamorRadius>
       </li>
 	  <li Class="HautsTraitsRoyalty.CompProperties_AbilityTargetForMassDestruction">
         <compClass>HautsTraitsRoyalty.CompAbilityEffect_TargetForMassDestruction</compClass>

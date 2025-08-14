@@ -74,7 +74,7 @@
 	
 	<TraitDef>
 		<defName>HVT_Asocial</defName>
-		<commonality>0.6</commonality>
+		<commonality>0.8</commonality>
 		<degreeDatas>
 		  <li>
 			<label>asocial</label>
@@ -218,6 +218,7 @@
 					</li>
 				</grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingPassions><li>Intellectual</li></conflictingPassions>
 		<conflictingTraits><li>GreatMemory</li><li>TooSmart</li><li>HVT_Visionary</li><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li><li MayRequire="RavingLegend.MoreTraits">RT_Perfectionist</li></conflictingTraits>
@@ -395,7 +396,7 @@
 	
 	<TraitDef>
 		<defName>HVT_Mariner</defName>
-		<commonality>0.7</commonality>
+		<commonality>1</commonality>
 		<degreeDatas>
 		  <li>
 			<label>mariner</label>
@@ -668,7 +669,7 @@
 		<degreeDatas>
 		  <li>
 			<label>textile</label>
-			<description>{PAWN_nameDef} places great importance on the wearing of garments. {PAWN_pronoun} dislikes being naked, and thinks poorly of others for not covering up at all times. {PAWN_pronoun} also can't stand wearing tattered apparel, so {PAWN_pronoun} takes good care of {PAWN_possessive} apparel.</description>
+			<description>{PAWN_nameDef} places great importance on the wearing of garments. {PAWN_pronoun} dislikes being naked, and thinks poorly of others for not covering up at all times. {PAWN_pronoun} also can't stand wearing tattered apparel, so {PAWN_pronoun} takes good care of what {PAWN_pronoun} wears.</description>
 			<statOffsets>
 			  <Hauts_ApparelWearRateFactor>-0.6</Hauts_ApparelWearRateFactor>
 			</statOffsets>
@@ -777,7 +778,7 @@
 	
 	<TraitDef>
 		<defName>HVT_Vagabond</defName>
-		<commonality>0.6</commonality>
+		<commonality>0.7</commonality>
 		<degreeDatas>
 		  <li>
 			<label>vagabond</label>
@@ -1849,10 +1850,13 @@
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Imperceptive</li></conflictingTraits>
 		<requiredWorkTags><li>Intellectual</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>6</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
 		<defName>HVT_Pescatarian</defName>
-		<commonality>0.5</commonality>
+		<commonality>0.6</commonality>
 		<degreeDatas>
 		  <li>
 			<label>pescatarian</label>

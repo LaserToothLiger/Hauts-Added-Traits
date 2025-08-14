@@ -348,12 +348,6 @@
       <li Class="CompProperties_AbilityFleckOnTarget">
         <fleckDef>AtomizerFlashGrowing</fleckDef>
       </li>
-	  <!--<li Class="HautsFramework.CompProperties_AbilityAiScansForTargets"> AI combatants will use this ability very liberally anyways, so there's no need to jig the AI into doing it
-        <compClass>HautsFramework.CompAbilityEffect_AiScansForTargets</compClass>
-		<periodicity>2500</periodicity>
-		<scanForPawnsOnly>true</scanForPawnsOnly>
-		<onlyHostiles>true</onlyHostiles>
-	  </li>-->
       <li Class="HautsFramework.CompProperties_AbilityRequiresMinimumStat">
         <compClass>HautsFramework.CompAbilityEffect_RequiresMinimumStat</compClass>
 		<minStats>

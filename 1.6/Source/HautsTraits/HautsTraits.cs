@@ -619,6 +619,10 @@ namespace HautsTraits
             if (pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Angler) && pawn.needs.mood != null)
             {
                 pawn.needs.mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_FishinsReelyFun);
+                if (ModsConfig.RoyaltyActive && pawn.psychicEntropy != null)
+                {
+                    pawn.psychicEntropy.OffsetPsyfocusDirectly(0.03f);
+                }
                 if (Rand.Chance(0.5f) && !__result.NullOrEmpty())
                 {
                     __result.Clear();
@@ -3750,6 +3754,10 @@ namespace HautsTraits
             {
                 return this.props as CompProperties_PNF;
             }
+        }
+        public override bool AllowStackWith(Thing other)
+        {
+            return false;
         }
         public override int InitialCharges()
         {

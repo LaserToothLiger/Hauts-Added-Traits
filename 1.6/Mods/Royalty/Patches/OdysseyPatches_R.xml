@@ -42,6 +42,12 @@
 									<description>{PAWN_nameDef} periodically conjures tame animals of a specific type to {PAWN_possessive} location. This effect occurs faster while meditating. New animals won't be summoned if doing so would cause the sum body size of all current ones to exceed twice {PAWN_possessive} attunement level.\n\nThis conjuration magic also gradually helps replenish local populations of fish.</description>
 								</value>
 							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>/Defs/TraitDef[defName="HVT_Angler"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>Fishing makes {PAWN_nameDef} happy, and {PAWN_possessive} skill at fishing makes {PAWN_objective} half as prone to fumble a catch or get hurt by a fish. However, {PAWN_pronoun} will be sad if there are no fish nearby.\n\nIf {PAWN_pronoun} is a spellcaster, {PAWN_pronoun} will find fishing sufficiently meditative to gain 3% mana per fishing attempt.</description>
+								</value>
+							</li>
 						</operations>
 					</match>
 					<nomatch Class="PatchOperationSequence">
@@ -68,6 +74,12 @@
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitWQ"]/degreeDatas/li/description</xpath>
 								<value>
 									<description>{PAWN_nameDef} periodically skips psychically tamed animals of a specific type to {PAWN_possessive} location. This effect occurs faster while meditating. New animals won't be summoned if doing so would cause the sum body size of all current ones to exceed twice {PAWN_possessive} psylink level.\n\nThis skipgate system also gradually helps replenish local populations of fish.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>/Defs/TraitDef[defName="HVT_Angler"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>Fishing makes {PAWN_nameDef} happy, and {PAWN_possessive} skill at fishing makes {PAWN_objective} half as prone to fumble a catch or get hurt by a fish. However, {PAWN_pronoun} will be sad if there are no fish nearby.\n\nIf {PAWN_pronoun} is a psycaster, {PAWN_pronoun} will find fishing sufficiently meditative to gain 3% psyfocus per fishing attempt.</description>
 								</value>
 							</li>
 						</operations>

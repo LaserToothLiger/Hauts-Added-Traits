@@ -1132,6 +1132,11 @@
     <description>Tribal folklorists invoke the fearsome, wasp-like apocriton to describe psychics with a similar degree of control over mechanoids.</description>
     <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
+    <abilities>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">CallMechanoids</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">CallDropPods</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">DeactivateMechanoid</li>
+    </abilities>
 	<stages>
 	  <li>
 		<becomeVisible>false</becomeVisible>
@@ -4182,10 +4187,11 @@
         <stunTicksRange>180~200</stunTicksRange>
 		<appliedViaAttacks>true</appliedViaAttacks>
 		<appliedViaPsycasts>true</appliedViaPsycasts>
+		<canAffectFriendlies>false</canAffectFriendlies>
 		<victimScalar>PsychicSensitivity</victimScalar>
 		<cellRange>99999</cellRange>
 		<worldTileRange>99999</worldTileRange>
-		<chance>0.4</chance>
+		<chance>0.85</chance>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -5061,6 +5067,7 @@
 		<affectsSelf>false</affectsSelf>
 		<affectsHostiles>true</affectsHostiles>
 		<affectsMechs>false</affectsMechs>
+		<affectsDrones>false</affectsDrones>
 		<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid><!--it's so tiny this will almost always be better-->
 		<mote>Hauts_DefaultAuraGraphic</mote>
 	  </li>
@@ -6055,6 +6062,7 @@
 		<affectsSelf>false</affectsSelf>
 		<affectsHostiles>true</affectsHostiles>
 		<affectsMechs>false</affectsMechs>
+		<affectsDrones>false</affectsDrones>
 		<mote>Hauts_DefaultAuraGraphic</mote>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">

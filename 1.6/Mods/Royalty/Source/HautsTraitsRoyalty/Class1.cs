@@ -27,6 +27,7 @@ using VEF.Hediffs;
 using MVCF.Utilities;
 using static RimWorld.FleshTypeDef;
 using RimWorld.QuestGen;
+using System.Security.Cryptography;
 
 namespace HautsTraitsRoyalty
 {
@@ -2428,7 +2429,7 @@ namespace HautsTraitsRoyalty
             this.originalFaction = this.pawn.Faction;
             if (this.pawn.RaceProps.mechWeightClass != MechWeightClassDefOf.UltraHeavy)
             {
-                if (this.newFaction != null && this.pawn.RaceProps.IsMechanoid && this.pawn.Spawned)
+                if (this.newFaction != null && (this.pawn.RaceProps.IsMechanoid || this.pawn.RaceProps.IsDrone) && this.pawn.Spawned)
                 {
                     this.pawn.SetFaction(this.newFaction);
                     this.pawn.jobs.StopAll(false, true);
@@ -2463,6 +2464,11 @@ namespace HautsTraitsRoyalty
             }
             if (!this.pawn.Dead)
             {
+                if (this.pawn.RaceProps.IsDrone)
+                {
+                    this.pawn.Kill(null);
+                    return;
+                }
                 this.pawn.SetFaction(this.originalFaction);
                 if (this.pawn.jobs != null)
                 {
@@ -4713,12 +4719,22 @@ namespace HautsTraitsRoyalty
         }
         public override float ChanceForVictim(Pawn victim)
         {
-            return this.Props.chancesPerWeight.ContainsKey(victim.RaceProps.mechWeightClass) ? this.Props.chancesPerWeight.TryGetValue(victim.RaceProps.mechWeightClass) : this.Props.fallbackWeight;
+            if (victim.RaceProps.IsDrone)
+            {
+                return 1f;
+            } else {
+                MechWeightClassDef mw = victim.RaceProps.mechWeightClass;
+                if (mw != null && this.Props.chancesPerWeight.ContainsKey(mw))
+                {
+                    return this.Props.chancesPerWeight.TryGetValue(mw);
+                }
+            }
+            return this.Props.fallbackWeight;
         }
         public override void DoExtraEffects(Pawn victim, float valueToScale, BodyPartRecord hitPart = null)
         {
             base.DoExtraEffects(victim, valueToScale, hitPart);
-            if (victim.RaceProps.IsMechanoid && !victim.kindDef.isBoss)
+            if ((victim.RaceProps.IsMechanoid || victim.RaceProps.IsDrone) && !victim.kindDef.isBoss)
             {
                 if (this.Props.hediff != null && (this.Props.victimScalar == null || victim.GetStatValue(this.Props.victimScalar) > float.Epsilon))
                 {
@@ -4743,6 +4759,65 @@ namespace HautsTraitsRoyalty
                 }
             }
         }
+    }
+    public class HediffCompProperties_TheLastChipFactory : HediffCompProperties
+    {
+        public HediffCompProperties_TheLastChipFactory()
+        {
+            this.compClass = typeof(HediffComp_TheLastChipFactory);
+        }
+        public Dictionary<ThingDef, IntRange> productionSet;
+    }
+    public class HediffComp_TheLastChipFactory : HediffComp
+    {
+        public HediffCompProperties_TheLastChipFactory Props
+        {
+            get
+            {
+                return (HediffCompProperties_TheLastChipFactory)this.props;
+            }
+        }
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+        {
+            base.CompPostTickInterval(ref severityAdjustment, delta);
+            if (this.productionQueues == null)
+            {
+                this.productionQueues = new List<ChipProductionLine>();
+            }
+            if (this.Pawn.IsHashIntervalTick(2500, delta) && this.Pawn.inventory != null && (Faction.OfMechanoids == null || Faction.OfMechanoids.deactivated))
+            {
+                foreach (KeyValuePair<ThingDef, IntRange> kvp in this.Props.productionSet)
+                {
+                    if (!this.productionQueues.ContainsAny((ChipProductionLine cpl) => cpl.thingDef == kvp.Key))
+                    {
+                        this.productionQueues.Add(new ChipProductionLine(kvp.Key,kvp.Value.RandomInRange));
+                    }
+                }
+                foreach (ChipProductionLine cpl2 in this.productionQueues)
+                {
+                    if (cpl2.hoursRemaining <= 0)
+                    {
+                        Thing thing = ThingMaker.MakeThing(cpl2.thingDef, null);
+                        this.Pawn.inventory.innerContainer.TryAdd(thing, true);
+                        this.Props.productionSet.TryGetValue(cpl2.thingDef, out IntRange ir);
+                        cpl2.hoursRemaining = ir != null ? ir.RandomInRange : 24;
+                    } else {
+                        cpl2.hoursRemaining--;
+                    }
+                }
+            }
+        }
+        public List<ChipProductionLine> productionQueues;
+    }
+    public class ChipProductionLine
+    {
+        public ChipProductionLine(ThingDef td, int hours)
+        {
+            this.thingDef = td;
+            this.hoursRemaining = hours;
+        }
+        public ThingDef thingDef;
+        public int hoursRemaining;
     }
     public class HediffCompProperties_AndItsMyOwnHeart : HediffCompProperties_ExtraDamageOnHit
     {
@@ -6724,7 +6799,7 @@ namespace HautsTraitsRoyalty
         }
         public override bool AdditionalQualifiers(Thing thing)
         {
-            if (this.parent.pawn.Faction != null && thing is Corpse c && c.InnerPawn != null && c.InnerPawn.Faction != null && c.InnerPawn.Faction == this.parent.pawn.Faction && c.InnerPawn.MarketValue >= 1000f && !c.InnerPawn.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_PhoenixPostResurrection))
+            if (this.parent.pawn.Faction != null && thing is Corpse c && c.InnerPawn != null && c.InnerPawn.Faction != null && c.InnerPawn.Faction == this.parent.pawn.Faction && !c.InnerPawn.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_PhoenixPostResurrection))
             {
                 return true;
             }

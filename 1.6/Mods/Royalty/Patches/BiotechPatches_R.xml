@@ -13,7 +13,7 @@
 						<value>
 							<comps>
 								<li Class="HautsTraitsRoyalty.CompProperties_TranscendNearbyOnDeath">
-									<chance>1.03</chance>
+									<chance>0.04</chance>
 									<radius>30.9</radius>
 								</li>
 							</comps>
@@ -28,6 +28,61 @@
 							</li>
 						</value>
 					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Alpha Mechs</li>
+					</mods>
+					<nomatch Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/HediffDef[defName="HVT_THediffApocriton"]/comps</xpath>
+								<value>
+								  <li Class="HautsTraitsRoyalty.HediffCompProperties_TheLastChipFactory">
+									<productionSet>
+										<li><key>SignalChip</key><value>144~288</value></li>
+										<li><key>PowerfocusChip</key><value>240~480</value></li>
+										<li><key>NanostructuringChip</key><value>360~720</value></li>
+									</productionSet>
+								  </li>
+								</value>
+							</li>
+						</operations>
+					</nomatch>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/HediffDef[defName="HVT_THediffApocriton"]/comps</xpath>
+								<value>
+								  <li Class="HautsTraitsRoyalty.HediffCompProperties_TheLastChipFactory">
+									<productionSet>
+										<li><key>SignalChip</key><value>144~288</value></li>
+										<li><key>PowerfocusChip</key><value>240~480</value></li>
+										<li><key>NanostructuringChip</key><value>360~720</value></li>
+										<li><key>AM_HyperLinkageChip</key><value>576~864</value></li>
+										<li><key>AM_StellarProcessingChip</key><value>720~1080</value></li>
+										<li><key>AM_QuantumMatrixChip</key><value>1200~2400</value></li>
+									</productionSet>
+								  </li>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>RPG Adventure Flavour Pack</li>
+					</mods>
+					<nomatch Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_TTraitApocriton"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} can exert a form of mind control on mechanoids. When {PAWN_pronoun} affects mechanoids with a psycast, they may become allied with {PAWN_objective} for up to an hour. The heavier the mech, the less likely this is to work.\n\nIn the absence of an active mechhive, archites in {PAWN_possessive} body will slowly synthesize various mechanoid chips.</description>
+								</value>
+							</li>
+						</operations>
+					</nomatch>
 				</li>
 			</operations>
 		</match>
