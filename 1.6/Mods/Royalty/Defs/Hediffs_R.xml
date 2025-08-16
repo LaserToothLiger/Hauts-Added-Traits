@@ -1133,8 +1133,6 @@
     <hediffClass>HautsFramework.Hediff_HasExtraOnHitEffects</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <abilities>
-      <li MayRequire="Ludeon.RimWorld.Odyssey">CallMechanoids</li>
-      <li MayRequire="Ludeon.RimWorld.Odyssey">CallDropPods</li>
       <li MayRequire="Ludeon.RimWorld.Odyssey">DeactivateMechanoid</li>
     </abilities>
 	<stages>
