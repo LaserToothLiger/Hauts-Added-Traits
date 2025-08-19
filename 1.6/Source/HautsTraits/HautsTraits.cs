@@ -89,6 +89,8 @@ namespace HautsTraits
                                postfix: new HarmonyMethod(patchType, nameof(HVTInfectPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(InteractionWorker_InhumanRambling), nameof(InteractionWorker_InhumanRambling.RandomSelectionWeight)),
                                postfix: new HarmonyMethod(patchType, nameof(HVTInhumanRambling_RandomSelectionWeightPostfix)));
+                harmony.Patch(AccessTools.Method(typeof(CreepJoinerUtility), nameof(CreepJoinerUtility.GenerateAndSpawn), new[] { typeof(CreepJoinerFormKindDef), typeof(CreepJoinerBenefitDef), typeof(CreepJoinerDownsideDef), typeof(CreepJoinerAggressiveDef), typeof(CreepJoinerRejectionDef), typeof(Map) }),
+                               postfix: new HarmonyMethod(patchType, nameof(HVTGenerateAndSpawnPostfix)));
             }
             if (ModsConfig.OdysseyActive)
             {
@@ -696,6 +698,18 @@ namespace HautsTraits
                             HVTUtility.DoAerospaceFlyingThoughts(pawn);
                         }
                     }
+                }
+            }
+        }
+        public static void HVTGenerateAndSpawnPostfix(ref Pawn __result, CreepJoinerBenefitDef benefit)
+        {
+            CreepjoinerRandomTrait crt = benefit.GetModExtension<CreepjoinerRandomTrait>();
+            if (crt != null && !crt.possibleTraits.NullOrEmpty())
+            {
+                BackstoryTrait bt = crt.possibleTraits.RandomElement();
+                if (__result.story != null && !__result.story.traits.HasTrait(bt.def))
+                {
+                    __result.story.traits.GainTrait(new Trait(bt.def, bt.degree, true), false);
                 }
             }
         }
@@ -3364,6 +3378,14 @@ namespace HautsTraits
             return "ticksToHeal: " + this.ticksToHeal;
         }
         private int ticksToHeal;
+    }
+    public class CreepjoinerRandomTrait : DefModExtension
+    {
+        public CreepjoinerRandomTrait()
+        {
+
+        }
+        public List<BackstoryTrait> possibleTraits;
     }
     public class HediffCompProperties_ManchurianCandidacy : HediffCompProperties
     {

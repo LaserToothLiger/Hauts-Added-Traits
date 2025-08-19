@@ -16,6 +16,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>3</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.8</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -45,6 +48,9 @@
     </forcedTraits>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -97,6 +103,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -119,6 +128,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -140,6 +152,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -164,6 +179,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -188,6 +206,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -216,6 +237,9 @@
     </descriptionHyperlinks>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -239,6 +263,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -265,6 +292,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -293,6 +323,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
@@ -317,6 +350,9 @@
     <marketValueFactor>2</marketValueFactor>
     <biostatCpx>5</biostatCpx>
     <biostatArc>6</biostatArc>
+    <exclusionTags>
+      <li>HVT_SuperPsyGene</li>
+    </exclusionTags>
 	<statOffsets>
 		<PsychicSensitivity>0.6</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>

@@ -477,6 +477,7 @@
     </stages>
     <comps>
 	  <li Class="HautsFramework.HediffCompProperties_BreakRiskSeverity">
+	    <severityForMoodless>4</severityForMoodless>
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_SeverityDeterminesVisibility">
 		<invisibleWithin>3.001~9.5</invisibleWithin>
