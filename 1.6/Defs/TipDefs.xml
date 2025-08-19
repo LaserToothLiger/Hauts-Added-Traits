@@ -15,4 +15,11 @@
     </tips>
   </TipSetDef>
 
+  <TipSetDef MayRequire="VanillaExpanded.VPsycastsE">
+    <defName>HVT_TraitCrafting</defName>
+    <tips>
+      <li>The Mindbender psycast path can be used to add and remove traits. While each individual psycast has its own use, together they can be used to craft personalities of your choice.</li>
+    </tips>
+  </TipSetDef>
+
 </Defs>

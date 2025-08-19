@@ -35,6 +35,7 @@ See the full description here: https://docs.google.com/document/d/1AjWjya-8knskE
 	<loadAfter>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 		<li>VanillaExpanded.VPsycastsE</li>
+		<li>Danzen.VPE.BiotechIntegration</li>
 		<li>VanillaExpanded.VPE.Puppeteer</li>
 		<li>kikohi.cybernetic</li>
 		<li>vanillaracesexpanded.highmate</li>
