@@ -11,7 +11,28 @@
   <TipSetDef>
     <defName>HVT_SkulkerCaravans</defName>
     <tips>
-      <li>If you have a colonist with the Skulker trait, bring them along on your caravans. Each Skulker lowers the chance the caravan will be detected and ambushed by hostile parties, and when the Skulkers leave the caravan they will temporarily become invisible. Caravans with Skulkers have additional options for interacting with various kinds of world sites, including settlements.</li>
+      <li>Bring colonists with the Skulker trait on your caravans. Each Skulker lowers the chance the caravan will be detected and ambushed by hostile parties, and when the Skulkers leave the caravan they will temporarily become invisible. Caravans with Skulkers have additional options for interacting with various kinds of world sites, including settlements.</li>
+    </tips>
+  </TipSetDef>
+
+  <TipSetDef>
+    <defName>HVT_SniperSquared</defName>
+    <tips>
+      <li>A sniper rifle, augmented by the range bonus from the Sniper trait, will outrange every other weapon in the base game - except for another Sniper wielding a sniper rifle.</li>
+    </tips>
+  </TipSetDef>
+
+  <TipSetDef>
+    <defName>HVT_WArtistWhatIsItGoodFor</defName>
+    <tips>
+      <li>The Weapon Artist trait grants different combat stat bonuses depending on the type of weapon wielded. If you need more melee damage, equip them with a sharp weapon; if you need more melee crowd control, equip them with a blunt one.</li>
+    </tips>
+  </TipSetDef>
+
+  <TipSetDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>HVT_OffensiveLuminaryUsage</defName>
+    <tips>
+      <li>Awakened Luminaries grant psychic sensitivity to anyone nearby - even their enemies. By positioning a Luminary near a psychically deaf pawn, it will become vulnerable to psycasts.</li>
     </tips>
   </TipSetDef>
 

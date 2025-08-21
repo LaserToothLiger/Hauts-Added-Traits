@@ -225,7 +225,7 @@
     <defName>HVT_APerennialGene</defName>
     <label>psycasting power surge</label>
     <labelShortAdj>awakened perennial</labelShortAdj>
-    <description>Carriers of this gene develop a specialized lobe of archite-heavy grey matter that seems to impede regular utilization of psyfocus. However, it creates unique thoughtwaves that can be harnessed no more than once a day to communicate with the archotechs at an unprecedented level of ease and clarity, granting an 'hour of power' in which psycasts are virtually free to invoke.</description>
+    <description>Carriers of this gene develop a specialized lobe of archite-heavy grey matter. This lobe can be harnessed once a day to communicate with the archotechs at an unprecedented level of ease and clarity, granting an 'hour of power' in which psycasts cost much less to invoke.</description>
     <iconPath>PsychicTraits/Genes/HVT_Perennial</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
     <marketValueFactor>2</marketValueFactor>
@@ -241,10 +241,8 @@
       <li>HVT_SuperPsyGene</li>
     </exclusionTags>
 	<statOffsets>
-		<PsychicSensitivity>0.6</PsychicSensitivity>
+		<PsychicSensitivity>0.4</PsychicSensitivity>
 		<RoyalFavorValue>4</RoyalFavorValue>
-		<Hauts_PsycastFocusRefund>-0.15</Hauts_PsycastFocusRefund>
-		<VPE_PsyfocusCostFactor MayRequire="VanillaExpanded.VPsycastsE">0.3</VPE_PsyfocusCostFactor>
 	</statOffsets>
 	<modExtensions>
 		<li Class="HautsTraits.SuperPsychicGene">

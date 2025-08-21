@@ -349,13 +349,12 @@
 		<degreeDatas>
 		  <li>
 			<label>awakened perennial</label>
-			<description>Once a day, {PAWN_nameDef} can draw upon a confluence of power within the psychic field, greatly enhancing {PAWN_possessive} psycasting for an hour. Outside of this period, {PAWN_pronoun} finds psycasting requires more psyfocus.</description>
+			<description>Once a day, {PAWN_nameDef} can draw upon a confluence of power within the psychic field, greatly enhancing {PAWN_possessive} psycasting for an hour.</description>
 			<marketValueFactorOffset>1.5</marketValueFactorOffset>
 			<allowedMeditationFocusTypes><li MayRequire="VanillaExpanded.VPsycastsE">VPE_Archotech</li></allowedMeditationFocusTypes>
 			<statOffsets>
 			  <PsychicSensitivity>0.6</PsychicSensitivity>
 			  <RoyalFavorValue>4</RoyalFavorValue>
-			  <Hauts_PsycastFocusRefund>-0.1</Hauts_PsycastFocusRefund>
 			  <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.1</StudyEfficiency>
 			</statOffsets>
 		  </li>

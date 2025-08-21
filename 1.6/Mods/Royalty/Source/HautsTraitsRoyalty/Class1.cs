@@ -1005,7 +1005,7 @@ namespace HautsTraitsRoyalty
                     bool hasAnyMFD = false;
                     foreach (Trait t in p.story.traits.allTraits)
                     {
-                        if (t.CurrentData.allowedMeditationFocusTypes != null && t.CurrentData.allowedMeditationFocusTypes.Count > 0)
+                        if (!t.CurrentData.allowedMeditationFocusTypes.NullOrEmpty())
                         {
                             hasAnyMFD = true;
                             if (t.CurrentData.allowedMeditationFocusTypes.Contains(type))
@@ -1015,7 +1015,7 @@ namespace HautsTraitsRoyalty
                             }
                         }
                     }
-                    if (p.story.Childhood.spawnCategories.Contains("Tribal") || p.story.Childhood.spawnCategories.Contains("ChildTribal"))
+                    if (p.story.Childhood != null && (p.story.Childhood.spawnCategories.Contains("Tribal") || p.story.Childhood.spawnCategories.Contains("ChildTribal")))
                     {
                         return;
                     }

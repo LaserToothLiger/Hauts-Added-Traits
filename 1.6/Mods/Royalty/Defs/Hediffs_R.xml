@@ -554,7 +554,7 @@
 		  <PsychicEntropyGain>0.1</PsychicEntropyGain>
         </statFactors>
 		<statOffsets>
-		  <Hauts_PsycastFocusRefund>2</Hauts_PsycastFocusRefund>
+		  <Hauts_PsycastFocusRefund>0.5</Hauts_PsycastFocusRefund>
 		</statOffsets>
       </li>
     </stages>
