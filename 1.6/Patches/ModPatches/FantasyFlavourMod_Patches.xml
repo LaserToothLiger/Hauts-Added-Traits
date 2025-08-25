@@ -969,7 +969,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitPeregrine"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} nearly always stuns any foe {PAWN_pronoun} damages or bespells. The duration scales with the victim's sensitivity to magic.</description>
+									<description>{PAWN_nameDef} nearly always stuns any foe {PAWN_pronoun} damages with an attack. The duration scales with the victim's sensitivity to magic.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

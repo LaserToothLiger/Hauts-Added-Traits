@@ -8251,48 +8251,7 @@ namespace HautsTraitsRoyalty
         }
         public static void MakeGoodEvent(Pawn p)
         {
-            List<IncidentDef> incidents = HautsUtility.goodEventPool;
-            if (incidents.Count > 0)
-            {
-                bool incidentFired = false;
-                int tries = 0;
-                while (!incidentFired && tries <= 50)
-                {
-                    IncidentDef toTryFiring = incidents.RandomElement<IncidentDef>();
-                    IncidentParms parms = null;
-                    if (toTryFiring.TargetAllowed(Find.World))
-                    {
-                        parms = new IncidentParms
-                        {
-                            target = Find.World
-                        };
-                    }
-                    else if (Find.Maps.Count > 0)
-                    {
-                        Map mapToHit = Find.Maps.RandomElement<Map>();
-                        if (Find.AnyPlayerHomeMap != null && Rand.Value <= 0.5f)
-                        {
-                            mapToHit = Find.AnyPlayerHomeMap;
-                        }
-                        parms = new IncidentParms
-                        {
-                            target = mapToHit
-                        };
-                    }
-                    if (parms != null)
-                    {
-                        IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(toTryFiring.category, parms.target);
-                        incidentParms.forced = true;
-                        if (toTryFiring.Worker.CanFireNow(parms))
-                        {
-                            incidentFired = true;
-                            toTryFiring.Worker.TryExecute(parms);
-                            break;
-                        }
-                    }
-                    tries++;
-                }
-            }
+            HautsUtility.MakeGoodEvent(p);
         }
         public static void DoCanaryEffects(Pawn canary, Pawn p)
         {

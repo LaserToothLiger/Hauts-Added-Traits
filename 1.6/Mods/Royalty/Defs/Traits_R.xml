@@ -2266,7 +2266,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic peregrine</label>
-			<description>{PAWN_nameDef} nearly always stuns any foe {PAWN_pronoun} damages or affects with a psycast. The duration scales with the victim's psychic sensitivity.</description>
+			<description>{PAWN_nameDef} nearly always stuns any foe {PAWN_pronoun} harms with an attack. The duration scales with the victim's psychic sensitivity.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statFactors>
 				<MeleeDamageFactor>1.1</MeleeDamageFactor>

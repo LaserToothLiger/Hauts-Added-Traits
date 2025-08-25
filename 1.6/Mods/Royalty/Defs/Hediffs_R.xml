@@ -4184,8 +4184,8 @@
 	  <li Class="HautsFramework.HediffCompProperties_StunOnHit">
         <stunTicksRange>180~200</stunTicksRange>
 		<appliedViaAttacks>true</appliedViaAttacks>
-		<appliedViaPsycasts>true</appliedViaPsycasts>
-		<canAffectFriendlies>false</canAffectFriendlies>
+		<appliedViaPsycasts>false</appliedViaPsycasts>
+		<canAffectFriendlies>true</canAffectFriendlies>
 		<victimScalar>PsychicSensitivity</victimScalar>
 		<cellRange>99999</cellRange>
 		<worldTileRange>99999</worldTileRange>
@@ -5236,6 +5236,14 @@
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
 	<initialSeverity>0.001</initialSeverity>
     <maxSeverity>10000.1</maxSeverity>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+    <abilities>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">EggSpew</li>
+    </abilities>
 	<comps>
 	  <li Class="HautsFramework.HediffCompProperties_PsyfocusSpentTracker">
 		<severityPerPsyfocus>100</severityPerPsyfocus>
@@ -6010,6 +6018,9 @@
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
 	<initialSeverity>0.001</initialSeverity>
     <maxSeverity>1000.0</maxSeverity>
+    <abilities>
+      <li MayRequire="Ludeon.RimWorld.Biotech">AcidSpray</li>
+    </abilities>
     <stages>
       <li>
 		<capMods>
