@@ -182,6 +182,9 @@
 		<commonality>0</commonality>
 		<conflictingTraits><li>HVT_LatentPsychic</li></conflictingTraits>
 		<canBeSuppressed>false</canBeSuppressed>
+        <modExtensions>
+			<li Class="HautsTraits.PersoneuroformatterScrambler" />
+        </modExtensions>
   </TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
 		<defName>HVT_AwakenedAugur</defName>

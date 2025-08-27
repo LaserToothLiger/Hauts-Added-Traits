@@ -165,8 +165,6 @@ namespace HautsTraitsRoyalty
                 harmony.Patch(methodInfoCC,
                               prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_DeactivateCorePrefix)));
             }
-            harmony.Patch(AccessTools.Method(typeof(TraitSerumWindow), nameof(TraitSerumWindow.isBadTraitCombo)),
-                           postfix: new HarmonyMethod(patchType, nameof(HautsTraitsIsBadTraitComboPostfix)));
             harmony.Patch(AccessTools.Method(typeof(HautsUtility), nameof(HautsUtility.COaNN_TraitReset_ShouldDoBonusEffect)),
                            postfix: new HarmonyMethod(patchType, nameof(HautsTraitsCOaNNIsLatentPsychicPostfix)));
             harmony.Patch(AccessTools.Method(typeof(HautsUtility), nameof(HautsUtility.COaNN_TraitReset_BonusEffects)),
@@ -1885,13 +1883,6 @@ namespace HautsTraitsRoyalty
                 }
             }
             return true;
-        }
-        public static void HautsTraitsIsBadTraitComboPostfix(ref bool __result, TraitDef t, Pawn pawn)
-        {
-            if (t == HVTRoyaltyDefOf.HVT_LatentPsychic && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
-            {
-                __result = true;
-            }
         }
         public static void HautsTraitsCOaNNIsLatentPsychicPostfix(ref bool __result, TraitDef def)
         {

@@ -3895,12 +3895,20 @@ namespace HautsTraits
         {
             base.PreOpen();
             this.grantableTraits.Clear();
+            if (this.pawn.story == null)
+            {
+                return;
+            }
             foreach (TraitDef t in DefDatabase<TraitDef>.AllDefsListForReading)
             {
                 if (t.GetGenderSpecificCommonality(this.pawn.gender) > 0f && !isOtherDisallowedTrait(t) && !this.pawn.WorkTagIsDisabled(t.requiredWorkTags))
                 {
                     if (t.HasModExtension<PersoneuroformatterScrambler>())
                     {
+                        if (this.pawn.story.traits.allTraits.ContainsAny((Trait trait) => trait.def.HasModExtension<PersoneuroformatterScrambler>()))
+                        {
+                            continue;
+                        }
                         if (this.pawn.story.traits.GetTrait(t) == null)
                         {
                             GrantableTrait newGT = new GrantableTrait(t, t.degreeDatas.RandomElement().degree, this.pawn);
