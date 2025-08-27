@@ -10,6 +10,7 @@
   </CreepJoinerDownsideDef>
 	  <TraitDef>
 		<defName>HVT_Compromised</defName>
+		<canBeSuppressed>false</canBeSuppressed>
 		<commonality>0</commonality>
 		<degreeDatas>
 		  <li>
@@ -61,11 +62,12 @@
   </CreepJoinerDownsideDef>
 	  <TraitDef>
 		<defName>HVT_Pathogenic</defName>
+		<canBeSuppressed>false</canBeSuppressed>
 		<commonality>0</commonality>
 		<degreeDatas>
 		  <li>
 			<label>pathogenic</label>
-			<description>{PAWN_nameDef} carries dozens, if not hundreds, of different strains of disease within HIS body. HIS mere presence often leads to disease outbreaks.</description>
+			<description>{PAWN_nameDef} carries dozens, if not hundreds, of different strains of disease within {PAWN_possessive} body. {PAWN_possessive} mere presence often leads to disease outbreaks.</description>
 			<statOffsets>
 			  <ImmunityGainSpeed>5</ImmunityGainSpeed>
 			</statOffsets>

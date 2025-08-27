@@ -8,18 +8,10 @@
     <traits>
       <HVT_Everliving/>
     </traits>
-	<modExtensions>
-		<li Class="HautsTraits.CreepjoinerRandomTrait">
-			<possibleTraits>
-			  <SpeedOffset>2</SpeedOffset>
-			  <HVT_Strong>1</HVT_Strong>
-			  <Tough/>
-			</possibleTraits>
-		</li>
-	</modExtensions>
   </CreepJoinerBenefitDef>
 	  <TraitDef>
 		<defName>HVT_Everliving</defName>
+		<canBeSuppressed>false</canBeSuppressed>
 		<commonality>0</commonality>
 		<degreeDatas>
 		  <li>
@@ -68,13 +60,21 @@
 			<shouldSendMessage>true</shouldSendMessage>
 			<chance>0.25</chance>
 		  </li>
-		  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		  <li Class="HautsTraits.HediffCompProperties_CreepjoinerBonusTraitPool">
 			<forcingTraits>
 				<li>HVT_Everliving</li>
 			</forcingTraits>
+			<possibleTraits>
+			  <HVT_Strong>1</HVT_Strong>
+			  <HVT_Hale/>
+			  <Tough/>
+			  <HVT_Perceptive>1</HVT_Perceptive>
+			  <HVT_Hotfoot/>
+			</possibleTraits>
 		  </li>
 		</comps>
 	  </HediffDef>
+	  
   <CreepJoinerBenefitDef>
     <defName>HVT_Jaeger</defName>
     <label>jaeger</label>
@@ -89,11 +89,12 @@
   </CreepJoinerBenefitDef>
 	  <TraitDef>
 		<defName>HVT_Vanquisher</defName>
+		<canBeSuppressed>false</canBeSuppressed>
 		<commonality>0</commonality>
 		<degreeDatas>
 		  <li>
 			<label>vanquisher</label>
-			<description>{PAWN_nameDef} has an uncanny sixth sense for weak spots, allowing {PAWN_objective} to take down buildings, strike through armor, and hobble unnatural entities with ease.</description>
+			<description>{PAWN_nameDef} has an uncanny sixth sense for weak spots, allowing {PAWN_objective} to topple buildings, strike through armor, and hobble unnatural entities with ease.</description>
 			<statOffsets>
 			  <MeleeHitChance>4</MeleeHitChance>
 			  <ShootingAccuracyPawn>4</ShootingAccuracyPawn>

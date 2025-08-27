@@ -89,8 +89,6 @@ namespace HautsTraits
                                postfix: new HarmonyMethod(patchType, nameof(HVTInfectPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(InteractionWorker_InhumanRambling), nameof(InteractionWorker_InhumanRambling.RandomSelectionWeight)),
                                postfix: new HarmonyMethod(patchType, nameof(HVTInhumanRambling_RandomSelectionWeightPostfix)));
-                harmony.Patch(AccessTools.Method(typeof(CreepJoinerUtility), nameof(CreepJoinerUtility.GenerateAndSpawn), new[] { typeof(CreepJoinerFormKindDef), typeof(CreepJoinerBenefitDef), typeof(CreepJoinerDownsideDef), typeof(CreepJoinerAggressiveDef), typeof(CreepJoinerRejectionDef), typeof(Map) }),
-                               postfix: new HarmonyMethod(patchType, nameof(HVTGenerateAndSpawnPostfix)));
             }
             if (ModsConfig.OdysseyActive)
             {
@@ -318,7 +316,7 @@ namespace HautsTraits
                         recipient.needs.mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_StimulatingConversation, null);
                     }
                 }
-                if (pawn.story.traits.HasTrait(HVTDefOf.HVT_Mentor) && recipient.skills != null)
+                if (ModsConfig.BiotechActive && pawn.story.traits.HasTrait(HVTDefOf.HVT_Mentor) && recipient.skills != null)
                 {
                     SkillDef skillToTeach = null;
                     List<SkillDef> tutorableSkills = new List<SkillDef>();
@@ -698,18 +696,6 @@ namespace HautsTraits
                             HVTUtility.DoAerospaceFlyingThoughts(pawn);
                         }
                     }
-                }
-            }
-        }
-        public static void HVTGenerateAndSpawnPostfix(ref Pawn __result, CreepJoinerBenefitDef benefit)
-        {
-            CreepjoinerRandomTrait crt = benefit.GetModExtension<CreepjoinerRandomTrait>();
-            if (crt != null && !crt.possibleTraits.NullOrEmpty())
-            {
-                BackstoryTrait bt = crt.possibleTraits.RandomElement();
-                if (__result.story != null && !__result.story.traits.HasTrait(bt.def))
-                {
-                    __result.story.traits.GainTrait(new Trait(bt.def, bt.degree, true), false);
                 }
             }
         }
@@ -3379,13 +3365,39 @@ namespace HautsTraits
         }
         private int ticksToHeal;
     }
-    public class CreepjoinerRandomTrait : DefModExtension
+    public class HediffCompProperties_CreepjoinerBonusTraitPool : HediffCompProperties_ForcedByOtherProperty
     {
-        public CreepjoinerRandomTrait()
+        public HediffCompProperties_CreepjoinerBonusTraitPool()
         {
-
+            this.compClass = typeof(HediffComp_CreepjoinerBonusTraitPool);
         }
         public List<BackstoryTrait> possibleTraits;
+    }
+    public class HediffComp_CreepjoinerBonusTraitPool : HediffComp_ForcedByOtherProperty
+    {
+        public new HediffCompProperties_CreepjoinerBonusTraitPool Props
+        {
+            get
+            {
+                return (HediffCompProperties_CreepjoinerBonusTraitPool)this.props;
+            }
+        }
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            base.CompPostPostAdd(dinfo);
+            if (!this.Props.possibleTraits.NullOrEmpty())
+            {
+                Pawn_StoryTracker story = this.Pawn.story;
+                if (story != null)
+                {
+                    BackstoryTrait bt = this.Props.possibleTraits.Where((BackstoryTrait bst) => !story.traits.HasTrait(bst.def) && !story.traits.allTraits.Any((Trait tr) => bst.def.ConflictsWith(tr))).RandomElement();
+                    if (bt != null)
+                    {
+                        story.traits.GainTrait(new Trait(bt.def, bt.degree, true), false);
+                    }
+                }
+            }
+        }
     }
     public class HediffCompProperties_ManchurianCandidacy : HediffCompProperties
     {
@@ -3448,7 +3460,7 @@ namespace HautsTraits
         public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             base.CompPostTickInterval(ref severityAdjustment, delta);
-            if (this.Pawn.IsHashIntervalTick(60, delta) && Rand.MTBEventOccurs(this.Props.mtbDays, 60000f, 60f))
+            if (this.Pawn.IsHashIntervalTick(60, delta) && this.Pawn.Faction != null && this.Pawn.Faction == Faction.OfPlayerSilentFail && Rand.MTBEventOccurs(this.Props.mtbDays, 60000f, 60f))
             {
                 BiomeDef biome = (this.Pawn.Tile.Valid ? Find.WorldGrid[this.Pawn.Tile].PrimaryBiome : DefDatabase<BiomeDef>.GetRandom());
                 IncidentDef incidentDef = DefDatabase<IncidentDef>.AllDefs.Where((IncidentDef d) => d.category == IncidentCategoryDefOf.DiseaseHuman).RandomElementByWeightWithFallback((IncidentDef d) => biome.CommonalityOfDisease(d), null);

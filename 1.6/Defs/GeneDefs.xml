@@ -897,9 +897,9 @@
   
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_EnvironmentalistGene</defName>
-    <label>negative pollution reaction</label>
+    <label>anti-pollution mood</label>
     <labelShortAdj>environmentalist</labelShortAdj>
-    <description>Dopamine uptake in carriers of this gene is adversely affected by particles commonly found in pollution - in other words, the more polluted their surroundings, the less happy they feel.</description>
+    <description>Dopamine uptake in carriers of this gene is much higher than normal, but is adversely affected by particles commonly found in pollution. In other words, while their mood is naturally higher, they are very unhappy in highly polluted areas.</description>
     <iconPath>Genes/HVT_Environmentalist</iconPath>
     <displayCategory>HautsTraits</displayCategory>
     <displayOrderInCategory>23</displayOrderInCategory>
