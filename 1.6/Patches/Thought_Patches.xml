@@ -3492,7 +3492,7 @@
 					<match Class="PatchOperationSequence">
 						<operations>
 							<li Class="PatchOperationAddModExtension">
-								<xpath>/Defs/ThoughtDef[defName="DestroyedMechhive"]</xpath>
+								<xpath>/Defs/ThoughtDef[defName="DestroyedMechhive" or defName="DestroyedMechhiveMainPawn"]</xpath>
 								<value>
 									<li Class="HautsFramework.ModifyingTraits">
 										<multiplierTraits>

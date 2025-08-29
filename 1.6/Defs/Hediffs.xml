@@ -625,7 +625,7 @@
 		  <li>
 			<statOffsets>
 			  <MeleeHitChance>3</MeleeHitChance>
-			  <MeleeCooldownFactor>0.15</MeleeCooldownFactor>
+			  <MeleeCooldownFactor>-0.15</MeleeCooldownFactor>
 			</statOffsets>
 		  </li>
 		  <li>
