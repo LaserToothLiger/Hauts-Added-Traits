@@ -11,7 +11,7 @@
   <TipSetDef>
     <defName>HVT_SkulkerCaravans</defName>
     <tips>
-      <li>Bring colonists with the Skulker trait on your caravans. Each Skulker lowers the chance the caravan will be detected and ambushed by hostile parties, and when the Skulkers leave the caravan they will temporarily become invisible. Caravans with Skulkers have additional options for interacting with various kinds of world sites, including settlements.</li>
+      <li>Bring colonists with the Skulker trait on your caravans. They passively reduce the chances of the caravan being ambushed, and can perform special interactions with any sites or settlements the caravan reaches.</li>
     </tips>
   </TipSetDef>
 
@@ -25,7 +25,7 @@
   <TipSetDef>
     <defName>HVT_WArtistWhatIsItGoodFor</defName>
     <tips>
-      <li>The Weapon Artist trait grants different combat stat bonuses depending on the type of weapon wielded. If you need more melee damage, equip them with a sharp weapon; if you need more melee crowd control, equip them with a blunt one.</li>
+      <li>The Weapon Artist trait grants different combat stat bonuses depending on the weapon wielded. If you need more melee damage, use a sharp weapon; if you need more melee crowd control, use a blunt one.</li>
     </tips>
   </TipSetDef>
 
