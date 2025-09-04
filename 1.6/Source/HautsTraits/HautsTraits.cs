@@ -3286,7 +3286,7 @@ namespace HautsTraits
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
-            if ((!ModsConfig.IdeologyActive || this.Pawn.ideo == null) && !this.Pawn.IsMutant)
+            if (!ModsConfig.IdeologyActive || this.Pawn.ideo == null)
             {
                 Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Def);
                 this.Pawn.health.RemoveHediff(hediff);
@@ -3295,12 +3295,10 @@ namespace HautsTraits
         public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             base.CompPostTickInterval(ref severityAdjustment, delta);
-            if (this.Pawn.Faction != null && this.Pawn.ideo != null && this.Pawn.Ideo != null && this.Pawn.Ideo == this.Pawn.Faction.ideos.PrimaryIdeo)
+            if (!this.Pawn.ShouldHaveIdeo || (this.Pawn.Faction != null && this.Pawn.ideo != null && this.Pawn.Ideo != null && this.Pawn.Ideo == this.Pawn.Faction.ideos.PrimaryIdeo))
             {
                 this.parent.Severity = this.Props.severityWhileInMajority;
-            }
-            else
-            {
+            } else {
                 this.parent.Severity = this.Props.severityWhileInMinority;
             }
         }

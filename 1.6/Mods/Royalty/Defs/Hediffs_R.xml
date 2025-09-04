@@ -2803,7 +2803,7 @@
 		<boredoms>
 			<li><key>Telescope</key><value>99999</value></li>
 		</boredoms>
-		<likelihood>10.01</likelihood>
+		<likelihood>0.01</likelihood>
 		<ticks>250</ticks>
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
