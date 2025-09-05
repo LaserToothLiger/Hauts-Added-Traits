@@ -2289,8 +2289,11 @@ namespace HautsTraitsRoyalty
             base.PostTickInterval(delta);
             if (this.pawn.IsHashIntervalTick(250, delta) && ModsConfig.AnomalyActive && this.pawn.IsMutant)
             {
-                Messages.Message("HVT_ImmuneToGhoulizing".Translate().CapitalizeFirst().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, false);
-                this.pawn.mutant.Revert();
+                if (this.pawn.mutant.HasTurned)
+                {
+                    Messages.Message("HVT_ImmuneToGhoulizing".Translate().CapitalizeFirst().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, false);
+                    this.pawn.mutant.Revert();
+                }
             }
         }
         public override void PostRemoved()
