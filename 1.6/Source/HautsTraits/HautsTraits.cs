@@ -3093,29 +3093,36 @@ namespace HautsTraits
     }
     public class Hediff_BaskInTheSun : HediffWithComps
     {
-        public override void PostTick()
+        public override void PostTickInterval(int delta)
         {
-            base.PostTick();
-            IntVec3 iv3 = this.pawn.PositionHeld;
-            if (iv3.IsValid && iv3.InBounds(this.pawn.MapHeld))
+            base.PostTickInterval(delta);
+            if (this.pawn.SpawnedOrAnyParentSpawned)
             {
-                Map m = this.pawn.MapHeld;
-                if (!m.roofGrid.Roofed(iv3) && m.skyManager.CurSkyGlow > 0.3f)
+                IntVec3 iv3 = this.pawn.PositionHeld;
+                if (iv3.IsValid && iv3.InBounds(this.pawn.MapHeld))
+                {
+                    Map m = this.pawn.MapHeld;
+                    if (!m.roofGrid.Roofed(iv3) && m.skyManager.CurSkyGlow > 0.3f)
+                    {
+                        this.Severity = this.def.maxSeverity;
+                        return;
+                    } else {
+                        this.Severity = this.def.minSeverity;
+                        return;
+                    }
+                }
+                PlanetTile pt = this.pawn.Tile;
+                if (pt != null && GenCelestial.CelestialSunGlow(pt, Find.TickManager.TicksAbs) > 0.3f)
                 {
                     this.Severity = this.def.maxSeverity;
                     return;
-                } else {
-                    this.Severity = this.def.minSeverity;
-                    return;
                 }
+                this.Severity = this.def.minSeverity;
             }
-            PlanetTile pt = this.pawn.Tile;
-            if (pt != null && GenCelestial.CelestialSunGlow(pt,Find.TickManager.TicksAbs) > 0.3f)
-            {
-                this.Severity = this.def.maxSeverity;
-                return;
-            }
-            this.Severity = this.def.minSeverity;
+        }
+        public override void PostTick()
+        {
+            base.PostTick();
         }
     }
     public class Hediff_TYNAN : HediffWithComps
