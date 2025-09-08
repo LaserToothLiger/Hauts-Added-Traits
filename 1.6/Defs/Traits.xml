@@ -433,7 +433,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li MayRequire="RavingLegend.MoreTraits">RT_Gluttonous</li></conflictingTraits>
+		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li><li MayRequire="RavingLegend.MoreTraits">RT_Gluttonous</li></conflictingTraits>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>7</value></li></chargeCosts></li>
             <li Class="HautsFramework.TraitGrantedStuff">
@@ -642,6 +642,31 @@
             </li>
         </modExtensions>
 		<conflictingTraits><li>TorturedArtist</li><li>HVT_Aestheticist</li><li>HVT_Bookworm</li><li>HVT_Daydreamer</li><li>HVT_Hedonist</li></conflictingTraits>
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>HVT_Sunbather</defName>
+		<commonality>0.6</commonality>
+		<degreeDatas>
+		  <li>
+			<label>sunbather</label>
+			<description>{PAWN_nameDef} luxuriates in the sunlight, and loves soaking up its rays. Being in direct sunlight makes {PAWN_objective} happier but also makes {PAWN_objective} work slower.</description>
+			<statOffsets>
+			  <ComfyTemperatureMax>4</ComfyTemperatureMax>
+			</statOffsets>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_BaskInTheSun</li></value>
+					</li>
+				</grantedHediffs>
+            </li>
+        </modExtensions>
+		<conflictingTraits><li>NightOwl</li><li>Undergrounder</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>

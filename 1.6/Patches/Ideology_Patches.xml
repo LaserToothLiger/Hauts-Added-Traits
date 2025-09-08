@@ -261,7 +261,7 @@
 						</value>
 					</match>
 				</li>
-				<!--Skulkers like Darkness-->
+				<!--Skulkers like Darkness, Sunbathers hate it-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="Darkness"]/agreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -279,13 +279,31 @@
 						</value>
 					</match>
 				</li>
-				<!--Tempestophiles and Outdoorsies hate Tunneler-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="Darkness"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Darkness"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Sunbather</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Darkness"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Sunbather</li>
+						</value>
+					</match>
+				</li>
+				<!--Sunbathers, Tempestophiles, and Outdoorsies hate Tunneler-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="Tunneler"]/disagreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
 						<xpath>/Defs/MemeDef[defName="Tunneler"]</xpath>
 						<value>
 							<disagreeableTraits>
+								<li>HVT_Sunbather</li>
 								<li>HVT_Tempestophile</li>
 								<li>HVT_Outdoorsy</li>
 							</disagreeableTraits>
@@ -294,6 +312,7 @@
 					<match Class="PatchOperationAdd">
 						<xpath>/Defs/MemeDef[defName="Tunneler"]/disagreeableTraits</xpath>
 						<value>
+							<li>HVT_Sunbather</li>
 							<li>HVT_Tempestophile</li>
 							<li>HVT_Outdoorsy</li>
 						</value>

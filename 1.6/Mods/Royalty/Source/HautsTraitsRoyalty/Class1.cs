@@ -2287,12 +2287,31 @@ namespace HautsTraitsRoyalty
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
-            if (this.pawn.IsHashIntervalTick(250, delta) && ModsConfig.AnomalyActive && this.pawn.IsMutant)
+            if (this.pawn.IsHashIntervalTick(250, delta) && ModsConfig.AnomalyActive && this.pawn.IsMutant && !this.pawn.Downed)
             {
-                if (this.pawn.mutant.HasTurned)
+                Pawn_MutantTracker pmt = this.pawn.mutant;
+                MutantDef md = pmt.Def;
+                BecomeEvilIfRevertedByTrans beirbt = md.GetModExtension<BecomeEvilIfRevertedByTrans>();
+                if (beirbt == null || beirbt.canRevert)
                 {
+                    pmt.GetType().GetField("hasTurned", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(pmt, true);
                     Messages.Message("HVT_ImmuneToGhoulizing".Translate().CapitalizeFirst().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, false);
                     this.pawn.mutant.Revert();
+                    if (beirbt != null && Faction.OfHoraxCult != null)
+                    {
+                        this.pawn.SetFaction(Faction.OfHoraxCult);
+                        if (this.pawn.Spawned)
+                        {
+                            List<Pawn> thisPawn = new List<Pawn>();
+                            thisPawn.Add(this.pawn);
+                            Lord lord = LordMaker.MakeNewLord(this.pawn.Faction, new LordJob_AssaultColony(this.pawn.Faction, true, true, false, false, true, false, false), this.pawn.Map, null);
+                            lord.AddPawns(thisPawn, true);
+                        }
+                        if (this.pawn.guest != null && Rand.Chance(beirbt.unwaveringLoyaltyChance))
+                        {
+                            this.pawn.guest.Recruitable = false;
+                        }
+                    }
                 }
             }
         }
@@ -2429,7 +2448,7 @@ namespace HautsTraitsRoyalty
                     this.pawn.jobs.StopAll(false, true);
                     if (this.originalCaster != null)
                     {
-                        LordMaker.MakeNewLord(this.pawn.Faction, new LordJob_DefendPoint(this.pawn.Position), this.pawn.Map, Gen.YieldSingle<Pawn>(pawn));
+                        LordMaker.MakeNewLord(this.pawn.Faction, new LordJob_DefendPoint(this.pawn.Position), this.pawn.Map, Gen.YieldSingle<Pawn>(this.pawn));
                     }
                     if (this.pawn.Faction != null && this.pawn.Faction != Faction.OfPlayer && this.pawn.HostileTo(Faction.OfPlayer))
                     {
@@ -7557,6 +7576,15 @@ namespace HautsTraitsRoyalty
         {
 
         }
+    }
+    public class BecomeEvilIfRevertedByTrans : DefModExtension
+    {
+        public BecomeEvilIfRevertedByTrans()
+        {
+
+        }
+        public float unwaveringLoyaltyChance = 0.5f;
+        public bool canRevert = true;
     }
     public static class PsychicAwakeningUtility
     {

@@ -2480,6 +2480,7 @@
       <li Class="HediffCompProperties_Invisibility">
         <visibleToPlayer>true</visibleToPlayer>
       </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
       <li Class="HautsFramework.HediffCompProperties_GasSeverity">
         <gasTypes>
 			<li>ToxGas</li>
@@ -2721,6 +2722,7 @@
       <li Class="HediffCompProperties_Invisibility">
         <visibleToPlayer>true</visibleToPlayer>
       </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 	  <li Class="HautsFramework.HediffCompProperties_ChangeSeverityOnVerbUse">
 		<severityGainedOnUse>1.0</severityGainedOnUse>
 	  </li>
@@ -3327,6 +3329,7 @@
       <li Class="HediffCompProperties_Invisibility">
         <visibleToPlayer>true</visibleToPlayer>
       </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
       <li Class="HediffCompProperties">
         <compClass>VEF.Hediffs.HediffComp_Phasing</compClass>
       </li>

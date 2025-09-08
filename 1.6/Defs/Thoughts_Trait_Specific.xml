@@ -602,6 +602,27 @@
     </stages>
   </ThoughtDef>
   
+  <!--sunbathers like sun-->
+  <ThoughtDef>
+    <defName>HVT_SunSunSun</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>HVT_BaskInTheSun</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>yearning for sunlight</label>
+        <description>I love the feel of the sun on my skin.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>basking in the sun</label>
+        <description>It's so relaxing to feel the sun on my skin.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
   <!--tempestophiles love stormy weather-->
   <ThoughtDef>
     <defName>HVT_TempestophileWeather</defName>

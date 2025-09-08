@@ -219,14 +219,14 @@
 						<xpath>/Defs/MemeDef[defName="AM_Monastic"]</xpath>
 						<value>
 							<disagreeableTraits>
-								<li>HVT_Staid</li>
+								<li>HVT_Prideful</li>
 							</disagreeableTraits>
 						</value>
 					</nomatch>
 					<match Class="PatchOperationAdd">
 						<xpath>/Defs/MemeDef[defName="AM_Monastic"]/disagreeableTraits</xpath>
 						<value>
-							<li>HVT_Staid</li>
+							<li>HVT_Prideful</li>
 						</value>
 					</match>
 				</li>

@@ -603,6 +603,24 @@
 						</value>
 					</match>
 				</li>
+				<!--Sunbather likes light-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="VME_Light"]/agreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="VME_Light"]</xpath>
+						<value>
+							<agreeableTraits>
+								<li>HVT_Sunbather</li>
+							</agreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="VME_Light"]/agreeableTraits</xpath>
+						<value>
+							<li>HVT_Sunbather</li>
+						</value>
+					</match>
+				</li>
 				<!--Textiles hate Scrapper since it forces no aversion to tattered apparel-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_Scrapper"]/disagreeableTraits</xpath>

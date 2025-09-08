@@ -524,6 +524,40 @@
 	</comps>
   </HediffDef>
   
+  <!--sunbather effect-->
+  <HediffDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HVT_BaskInTheSun</defName>
+    <label>sunbather</label>
+    <description>The "Sunbather" trait grants increased mood but also lowers work speed while exposed to sunlight.</description>
+    <hediffClass>HautsTraits.Hediff_BaskInTheSun</hediffClass>
+    <defaultLabelColor>(0.976, 0.436, 0.428)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+	<minSeverity>0.001</minSeverity>
+	<maxSeverity>1.001</maxSeverity>
+    <stages>
+	  <li>
+        <minSeverity>0.001</minSeverity>
+        <label>inactive</label>
+      </li>
+	  <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+	  <li Class="HautsFramework.HediffCompProperties_SeverityDeterminesVisibility">
+		<invisibleWithin>0.001~1</invisibleWithin>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_Sunbather</li>
+		</forcingTraits>
+	  </li>
+    </comps>
+  </HediffDef>
+  
   <!--turns the Tranquil0 trait into Tranquil.-->
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_TranquilWorkaround</defName>

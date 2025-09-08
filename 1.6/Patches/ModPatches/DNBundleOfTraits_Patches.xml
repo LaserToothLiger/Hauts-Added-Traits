@@ -14,9 +14,9 @@
 						<li>HVT_Vagabond</li>
 					</value>
 				</li>
-				<!--Metafreak exclusive w/ Dysgeusia and Eclectic Palate-->
+				<!--Metafreak and Angler exclusive w/ Dysgeusia and Eclectic Palate-->
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/TraitDef[defName="BOT_Dysgeusia" or defName="BOT_Eclectic_Palate"]/conflictingTraits</xpath>
+					<xpath>Defs/TraitDef[defName="BOT_Dysgeusia" or defName="BOT_Eclectic_Palate" or defName="BOT_SoylentNeed"]/conflictingTraits</xpath>
 					<value>
 						<li>HVT_MetabolicFreak</li>
 						<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
@@ -50,13 +50,52 @@
 						<li>HVT_WeaponArtist</li>
 					</value>
 				</li>
-				<!--Tranquil, as usual, exclusive w/ combat traits-->
+				<!--Tranquil, as usual, exclusive w/ combat traits, but also w/ Composed (as is Hysteric)-->
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/TraitDef[defName="BOT_GunCrazy"]/conflictingTraits</xpath>
 					<value>
 						<li>HVT_Tranquil</li>
 						<li>HVT_Tranquil0</li>
 					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/TraitDef[defName="BOT_Composed"]/conflictingTraits</xpath>
+					<value>
+						<li>HVT_Hysteric</li>
+						<li>HVT_Tranquil</li>
+						<li>HVT_Tranquil0</li>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Biotech</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--Tranquil also ew/ Pressure Cooker-->
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/TraitDef[defName="BOT_PressureCooker"]/conflictingTraits</xpath>
+								<value>
+									<li>HVT_Tranquil</li>
+									<li>HVT_Tranquil0</li>
+								</value>
+							</li>
+							<!--Caretaker ew/ Hates Children; Misopedist ew/ Hates Children AND Family Oriented-->
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/TraitDef[defName="BOT_ChildHate"]/conflictingTraits</xpath>
+								<value>
+									<li>HVT_Caretaker</li>
+									<li>HVT_Misopedist</li>
+								</value>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/TraitDef[defName="BOT_FamilyOriented"]/conflictingTraits</xpath>
+								<value>
+									<li>HVT_Misopedist</li>
+								</value>
+							</li>
+						</operations>
+					</match>
 				</li>
 				<!--It was a conscious decision on my part to make Vicious not exclusive w/ Pacifist. I think that would be very funny.-->
 			</operations>

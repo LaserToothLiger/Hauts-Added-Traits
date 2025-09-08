@@ -38,6 +38,23 @@
 						</value>
 					</match>
 				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/GeneDef[defName="UVSensitivity_Mild" or defName="UVSensitivity_Intense"]/suppressedTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName="UVSensitivity_Mild" or defName="UVSensitivity_Intense"]</xpath>
+						<value>
+							<suppressedTraits>
+								<li><def>HVT_Sunbather</def></li>
+							</suppressedTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName="UVSensitivity_Mild" or defName="UVSensitivity_Intense"]/suppressedTraits</xpath>
+						<value>
+							<li><def>HVT_Sunbather</def></li>
+						</value>
+					</match>
+				</li>
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>Royalty</li><!--makes Undying and its corresponding gene stack appropriately-->

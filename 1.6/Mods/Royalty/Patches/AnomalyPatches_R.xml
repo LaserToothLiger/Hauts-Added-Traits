@@ -6,6 +6,41 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<!--governs extent to which transcendence undoes specific mutanthoods-->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/MutantDef[defName="Shambler"]</xpath>
+					<value>
+						<li Class="HautsTraitsRoyalty.BecomeEvilIfRevertedByTrans">
+						  <unwaveringLoyaltyChance>0.5</unwaveringLoyaltyChance>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/MutantDef[defName="AwokenCorpse"]</xpath>
+					<value>
+						<li Class="HautsTraitsRoyalty.BecomeEvilIfRevertedByTrans">
+						  <canRevert>false</canRevert>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Cybranian - Anomaly Ghosts</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAddModExtension">
+								<xpath>/Defs/MutantDef[defName="Ghost"]</xpath>
+								<value>
+									<li Class="HautsTraitsRoyalty.BecomeEvilIfRevertedByTrans">
+									  <unwaveringLoyaltyChance>0.5</unwaveringLoyaltyChance>
+									</li>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<!--tooltips-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitHarbinger"]/degreeDatas/li/description</xpath>
 					<value>

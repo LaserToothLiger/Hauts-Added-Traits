@@ -278,6 +278,16 @@
 				  </value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
+					<xpath>*/TraitDef[defName = "HVT_Sunbather"]</xpath>
+				  <value>
+					<li Class="SyrTraitValue.TraitValueExtension">
+					  <traitValues>
+						<li>-5</li>
+					  </traitValues>
+					</li>
+				  </value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
 					<xpath>*/TraitDef[defName = "HVT_Tempestophile"]</xpath>
 				  <value>
 					<li Class="SyrTraitValue.TraitValueExtension">
