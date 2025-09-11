@@ -1161,7 +1161,7 @@
 			<drawerType>RealtimeOnly</drawerType>
 			<drawOffscreen>true</drawOffscreen>
 			<seeThroughFog>true</seeThroughFog>
-			<category>PsychicEmitter</category>
+			<!--<category>PsychicEmitter</category>-->
 			<altitudeLayer>MoteOverheadLow</altitudeLayer>
 			<graphicData>
 			  <graphicClass>Graphic_Single</graphicClass>
@@ -1185,6 +1185,7 @@
 					<li>HVT_FireflyFlash</li>
 				</hediffs>
 				<range>4</range>
+				<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid>
 				<affectNeutrals>false</affectNeutrals>
 				<affectOwnFaction>false</affectOwnFaction>
 				<requiredStat>PsychicSensitivity</requiredStat>

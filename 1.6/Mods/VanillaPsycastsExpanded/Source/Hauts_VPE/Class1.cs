@@ -350,13 +350,39 @@ namespace Hauts_VPE
                                 }
                             }
                         }
-                        if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitFirefly))
+                        if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitFirefly) && loc.ToIntVec3().Walkable(pawn.Map))
                         {
-                            ThingWithComps firefly = (ThingWithComps)ThingMaker.MakeThing(HVTRoyaltyDefOf.HVT_FireflyLight);
-                            firefly.GetComp<CompAuraEmitter>().creator = pawn;
-                            GenSpawn.Spawn(firefly, loc.ToIntVec3(), map, WipeMode.Vanish);
-                            CompAbilityEffect_Teleport.SendSkipUsedSignal(new LocalTargetInfo(loc.ToIntVec3()), pawn);
-                            SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(loc.ToIntVec3(), map, false));
+                            bool alreadyExists = false;
+                            List<Thing> thingList = loc.ToIntVec3().GetThingList(pawn.Map);
+                            if (!thingList.NullOrEmpty())
+                            {
+                                foreach (Thing t in thingList)
+                                {
+                                    if (t.def == HVTRoyaltyDefOf.HVT_FireflyLight)
+                                    {
+                                        alreadyExists = true;
+                                        CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                                        if (cdad != null)
+                                        {
+                                            cdad.spawnTick = Find.TickManager.TicksGame;
+                                        }
+                                        CompAuraEmitterHediff caeh = t.TryGetComp<CompAuraEmitterHediff>();
+                                        if (caeh != null)
+                                        {
+                                            caeh.faction = pawn.Faction;
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!alreadyExists)
+                            {
+                                ThingWithComps firefly = (ThingWithComps)ThingMaker.MakeThing(HVTRoyaltyDefOf.HVT_FireflyLight);
+                                firefly.GetComp<CompAuraEmitter>().creator = pawn;
+                                GenSpawn.Spawn(firefly, loc.ToIntVec3(), pawn.Map, WipeMode.Vanish);
+                                CompAbilityEffect_Teleport.SendSkipUsedSignal(new LocalTargetInfo(loc.ToIntVec3()), pawn);
+                                SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(loc.ToIntVec3(), pawn.Map, false));
+                            }
                         }
                         if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitOilbird))
                         {

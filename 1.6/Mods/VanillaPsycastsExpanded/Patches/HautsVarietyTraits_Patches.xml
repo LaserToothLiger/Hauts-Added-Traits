@@ -29,11 +29,11 @@
 			<Hauts_TierOnePsycastCostOffset>-0.25</Hauts_TierOnePsycastCostOffset>
 		</value>
 	</Operation>
-	<!--Perennials no longer lose additional psyfocus when psycasting; instead, the costs of their psycasts are increased upfront. This is balanced out by completely ignoring psyfocus costs during archonic syzygy.-->
+	<!--Perennials use cost factor instead of refund-->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/HediffDef[defName="HVT_SyzygyBuff"]/stages/li/statFactors</xpath>
 		<value>
-			<VPE_PsyfocusCostFactor>0.5</VPE_PsyfocusCostFactor>
+			<VPE_PsyfocusCostFactor>0.4</VPE_PsyfocusCostFactor>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationRemove">

@@ -525,7 +525,7 @@
   </HediffDef>
   
   <!--sunbather effect-->
-  <HediffDef MayRequire="Ludeon.RimWorld.Ideology">
+  <HediffDef>
     <defName>HVT_BaskInTheSun</defName>
     <label>sunbather</label>
     <description>The "Sunbather" trait grants increased mood but also lowers work speed while exposed to sunlight.</description>

@@ -1403,11 +1403,37 @@ namespace HautsTraitsRoyalty
                     }
                     if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitFirefly) && target.Cell.WalkableByAny(pawn.Map))
                     {
-                        ThingWithComps firefly = (ThingWithComps)ThingMaker.MakeThing(HVTRoyaltyDefOf.HVT_FireflyLight);
-                        firefly.GetComp<CompAuraEmitter>().creator = pawn;
-                        GenSpawn.Spawn(firefly, target.Cell, pawn.Map, WipeMode.Vanish);
-                        CompAbilityEffect_Teleport.SendSkipUsedSignal(target, pawn);
-                        SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(target.Cell, pawn.Map, false));
+                        bool alreadyExists = false;
+                        List<Thing> thingList = target.Cell.GetThingList(pawn.Map);
+                        if (!thingList.NullOrEmpty())
+                        {
+                            foreach (Thing t in thingList)
+                            {
+                                if (t.def == HVTRoyaltyDefOf.HVT_FireflyLight)
+                                {
+                                    alreadyExists = true;
+                                    CompDestroyAfterDelay cdad = t.TryGetComp<CompDestroyAfterDelay>();
+                                    if (cdad != null)
+                                    {
+                                        cdad.spawnTick = Find.TickManager.TicksGame;
+                                    }
+                                    CompAuraEmitterHediff caeh = t.TryGetComp<CompAuraEmitterHediff>();
+                                    if (caeh != null)
+                                    {
+                                        caeh.faction = pawn.Faction;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                        if (!alreadyExists)
+                        {
+                            ThingWithComps firefly = (ThingWithComps)ThingMaker.MakeThing(HVTRoyaltyDefOf.HVT_FireflyLight);
+                            firefly.GetComp<CompAuraEmitter>().creator = pawn;
+                            GenSpawn.Spawn(firefly, target.Cell, pawn.Map, WipeMode.Vanish);
+                            CompAbilityEffect_Teleport.SendSkipUsedSignal(target, pawn);
+                            SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(target.Cell, pawn.Map, false));
+                        }
                     }
                     if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitOilbird))
                     {
@@ -2312,6 +2338,10 @@ namespace HautsTraitsRoyalty
                             this.pawn.guest.Recruitable = false;
                         }
                     }
+                }
+                if (!this.pawn.HasPsylink)
+                {
+                    PawnUtility.ChangePsylinkLevel(this.pawn, 1, false);
                 }
             }
         }
