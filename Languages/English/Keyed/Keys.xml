@@ -223,7 +223,7 @@
 <HVT_WokeErudite>{PAWN_pronoun} has gained incredible knowledge of psycasting. {PAWN_pronoun} may also harness more transcendences than others.</HVT_WokeErudite>
 <HVT_WokeLuminary>{PAWN_pronoun} alters the topology of the local psychic manifold, enhancing nearby psycasters' abilities.</HVT_WokeLuminary>
 <HVT_WokeMantraist>{PAWN_pronoun} passively regenerates psyfocus.</HVT_WokeMantraist>
-<HVT_WokePerennial>{PAWN_pronoun} requires more psyfocus to psycast, but can enter an 'hour of power' once a day during which all psycasts are free and have vastly reduced neural heat costs.</HVT_WokePerennial>
+<HVT_WokePerennial>{PAWN_pronoun} can enter an 'hour of power' once a day during which all psycasts have vastly reduced costs.</HVT_WokePerennial>
 <HVT_WokeSage>{PAWN_pronoun} has improved mental break threshold, pain shock threshold, and neural heat limit.</HVT_WokeSage>
 <HVT_WokeSiphoner>{PAWN_pronoun} gains psyfocus equal to 5% of any nutrition ingested.</HVT_WokeSiphoner>
 <HVT_WokeTitan>{PAWN_pronoun} channels psychic energies through {PAWN_possessive} body, gaining bonus move and work speed, carrying capacity, resilience, and melee damage based on {PAWN_possessive} current psyfocus.</HVT_WokeTitan>
@@ -408,7 +408,7 @@
 <HVT_WokeEruditeFantasy>{PAWN_pronoun} has gained incredible knowledge of spellcasting. {PAWN_pronoun} may also master more transcendences than others.</HVT_WokeEruditeFantasy>
 <HVT_WokeLuminaryFantasy>{PAWN_possessive} presence weakens the boundaries between realms, enhancing nearby spellcasters' abilities.</HVT_WokeLuminaryFantasy>
 <HVT_WokeMantraistFantasy>{PAWN_pronoun} passively generates mana.</HVT_WokeMantraistFantasy>
-<HVT_WokePerennialFantasy>{PAWN_pronoun} requires more mana to cast spells, but can enter an 'hour of power' once a day during which all spells are free and incur vastly less arcane load.</HVT_WokePerennialFantasy>
+<HVT_WokePerennialFantasy>{PAWN_pronoun} can enter an 'hour of power' once a day during which all spells have vastly reduced costs.</HVT_WokePerennialFantasy>
 <HVT_WokeSageFantasy>{PAWN_pronoun} has improved mental break threshold, pain shock threshold, and arcane load limit.</HVT_WokeSageFantasy>
 <HVT_WokeSiphonerFantasy>{PAWN_pronoun} gains mana equal to 5% of any nutrition ingested.</HVT_WokeSiphonerFantasy>
 <HVT_WokeTitanFantasy>{PAWN_pronoun} channels eldritch energies through {PAWN_possessive} body, gaining bonus move and work speed, carrying capacity, resilience, and melee damage based on {PAWN_possessive} current mana.</HVT_WokeTitanFantasy>

@@ -13,4 +13,17 @@
 			</operations>
 		</match>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Layered Atmosphere and Orbit</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_SpaceSpeed"]/comps/li[@Class="HautsFramework.HediffCompProperties_PlanetLayerSeverity"]/setToInLayer</xpath>
+					<value><li><key>LAO_HighOrbit</key><value>1.001</value></li></value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
 </Patch>
