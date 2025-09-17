@@ -96,6 +96,8 @@
 			<li>HVT_Staidness</li>
 			<li>HVT_Teetotality</li>
 		</hediffs>
+		<menuString>HVT_HediffMenu</menuString>
+		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
         <onlyApplyToSelf>True</onlyApplyToSelf>
         <!--<replaceExisting>true</replaceExisting>-->
@@ -263,6 +265,8 @@
 			<li>HVT_Sanguinity</li>
 			<li>HVT_Winsomeness</li>
 		</hediffs>
+		<menuString>HVT_HediffMenu</menuString>
+		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
         <onlyApplyToSelf>True</onlyApplyToSelf>
         <!--<replaceExisting>true</replaceExisting>-->
@@ -675,6 +679,8 @@
 			<li>HVT_ArtisticTorture</li>
 			<li>HVT_Neuroticism</li>
 		</hediffs>
+		<menuString>HVT_HediffMenu</menuString>
+		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
         <onlyApplyToSelf>True</onlyApplyToSelf>
         <!--<replaceExisting>true</replaceExisting>-->
