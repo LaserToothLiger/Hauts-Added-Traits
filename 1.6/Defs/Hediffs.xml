@@ -349,38 +349,6 @@
         </statFactors>
 	    <becomeVisible>false</becomeVisible>
       </li>
-      <li>
-	    <becomeVisible>false</becomeVisible>
-		<minSeverity>10</minSeverity>
-	  </li>
-      <li>
-	    <becomeVisible>false</becomeVisible>
-		<statFactors>
-		  <MoveSpeed>1.05</MoveSpeed>
-        </statFactors>
-		<minSeverity>11</minSeverity>
-	  </li>
-      <li>
-	    <becomeVisible>false</becomeVisible>
-		<statFactors>
-		  <MoveSpeed>1.1</MoveSpeed>
-        </statFactors>
-		<minSeverity>12</minSeverity>
-	  </li>
-      <li>
-	    <becomeVisible>false</becomeVisible>
-		<statFactors>
-		  <MoveSpeed>1.2</MoveSpeed>
-        </statFactors>
-		<minSeverity>13</minSeverity>
-	  </li>
-      <li>
-	    <becomeVisible>false</becomeVisible>
-		<statFactors>
-		  <MoveSpeed>1.5</MoveSpeed>
-        </statFactors>
-		<minSeverity>14</minSeverity>
-	  </li>
     </stages>
     <comps>
 	  <li Class="HautsFramework.HediffCompProperties_BoredomAdjustment" MayRequire="Dubwise.DubsBadHygiene">
@@ -396,16 +364,7 @@
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_WaterImmersionSeverity">
 		<rainCountsFor>0</rainCountsFor>
-		<baseSeverityCaravan>10</baseSeverityCaravan>
-		<severityPerCaravanRiverSize>
-		  <points>
-			<li>0, 0</li>
-			<li>4, 1</li>
-			<li>6, 2</li>
-			<li>14, 3</li>
-			<li>30, 4</li>
-		  </points>
-		</severityPerCaravanRiverSize>
+		<disabledIfNotSlowedInWater>true</disabledIfNotSlowedInWater>
 	  </li>
 	</comps>
   </HediffDef>

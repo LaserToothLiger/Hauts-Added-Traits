@@ -3417,19 +3417,33 @@ namespace HautsTraits
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
-            if (!this.Props.possibleTraits.NullOrEmpty())
+        }
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+        {
+            base.CompPostTickInterval(ref severityAdjustment, delta);
+            if (!this.alreadyGrantedTrait)
             {
-                Pawn_StoryTracker story = this.Pawn.story;
-                if (story != null)
+                this.alreadyGrantedTrait = true;
+                if (!this.Props.possibleTraits.NullOrEmpty())
                 {
-                    BackstoryTrait bt = this.Props.possibleTraits.Where((BackstoryTrait bst) => !story.traits.HasTrait(bst.def) && !story.traits.allTraits.Any((Trait tr) => bst.def.ConflictsWith(tr))).RandomElement();
-                    if (bt != null)
+                    Pawn_StoryTracker story = this.Pawn.story;
+                    if (story != null)
                     {
-                        story.traits.GainTrait(new Trait(bt.def, bt.degree, true), false);
+                        BackstoryTrait bt = this.Props.possibleTraits.Where((BackstoryTrait bst) => !story.traits.HasTrait(bst.def) && !story.traits.allTraits.Any((Trait tr) => bst.def.ConflictsWith(tr))).RandomElement();
+                        if (bt != null)
+                        {
+                            story.traits.GainTrait(new Trait(bt.def, bt.degree, true), false);
+                        }
                     }
                 }
             }
         }
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look<bool>(ref this.alreadyGrantedTrait, "alreadyGrantedTrait", true, false);
+        }
+        public bool alreadyGrantedTrait = false;
     }
     public class HediffCompProperties_ManchurianCandidacy : HediffCompProperties
     {

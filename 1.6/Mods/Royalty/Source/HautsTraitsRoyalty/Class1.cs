@@ -2214,23 +2214,30 @@ namespace HautsTraitsRoyalty
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            if (this.pawn.relations != null)
-            {
-                foreach (DirectPawnRelation dpr in this.pawn.relations.DirectRelations)
-                {
-                    PsychicAwakeningUtility.LPLoveCheckRelations(dpr.def, this.pawn, dpr.otherPawn, PawnGenerator.IsBeingGenerated(this.pawn));
-                    break;
-                }
-            }
+            this.didCheck = false;
         }
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
+            if (!this.didCheck && this.pawn.relations != null && Current.ProgramState == ProgramState.Playing)
+            {
+                this.didCheck = true;
+                foreach (DirectPawnRelation dpr in this.pawn.relations.DirectRelations)
+                {
+                    PsychicAwakeningUtility.LPLoveCheckRelations(dpr.def, this.pawn, dpr.otherPawn, PawnGenerator.IsBeingGenerated(this.pawn));
+                }
+            }
             if (this.Severity >= 500f && Current.ProgramState == ProgramState.Playing)
             {
                 PsychicAwakeningUtility.AwakenPsychicTalentCheck(pawn, 3, true, "HVT_WokeSuperRelations".Translate().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), "HVT_WokeSuperRelationsFantasy".Translate().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), false, 0f);
             }
         }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<bool>(ref this.didCheck, "didCheck", true, false);
+        }
+        public bool didCheck = true;
     }
     public class Hediff_LPLifeMeter : HediffWithComps
     {

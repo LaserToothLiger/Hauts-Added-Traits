@@ -4491,7 +4491,7 @@
     <defaultLabelColor>(0.53, 0.53, 0.7)</defaultLabelColor>
     <minSeverity>0.001</minSeverity>
     <initialSeverity>0.001</initialSeverity>
-    <maxSeverity>10</maxSeverity>
+    <maxSeverity>5</maxSeverity>
     <stages>
       <li>
 		<capMods>
