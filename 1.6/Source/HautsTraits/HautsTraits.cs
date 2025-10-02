@@ -2331,13 +2331,14 @@ namespace HautsTraits
         public override void Arrive(List<Pawn> pawns, IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            for (int i = 0; i < pawns.Count; i++)
+            List<Pawn> pawnList = pawns.InRandomOrder().ToList();
+            for (int i = 0; i < pawnList.Count; i++)
             {
-                if (pawns[i].story != null && !pawns[i].story.traits.HasTrait(HVTDefOf.HVT_Skulker))
+                if (pawnList[i].story != null && !pawnList[i].story.traits.HasTrait(HVTDefOf.HVT_Skulker))
                 {
                     if (Rand.Value < 0.66f || i == 1)
                     {
-                        pawns[i].story.traits.GainTrait(new Trait(HVTDefOf.HVT_Skulker, 0, true));
+                        pawnList[i].story.traits.GainTrait(new Trait(HVTDefOf.HVT_Skulker, 0, true));
                     }
                 }
             }
@@ -2347,41 +2348,39 @@ namespace HautsTraits
             if (hostFaction == Faction.OfPlayer)
             {
                 enumerable = enumerable.Concat(map.listerBuildings.allBuildingsColonist.Cast<Thing>());
-            }
-            else
-            {
+            } else {
                 enumerable = enumerable.Concat(from x in map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial)
                                                where x.Faction == hostFaction
                                                select x);
             }
             int num = 0;
             float num2 = 65f;
-            IntVec3 intVec;
-            for (; ; )
+            IntVec3 intVec = IntVec3.Invalid;
+            foreach (IntVec3 iv3 in map.AllCells.Where((IntVec3 c) => c.Standable(map) && !c.GetTerrain(map).dangerous && !c.Fogged(map)).InRandomOrder())
             {
-                intVec = CellFinder.RandomCell(map);
                 num++;
-                if (!intVec.Fogged(map))
+                if (num > 300)
                 {
-                    if (num > 300)
+                    intVec = iv3;
+                }
+                num2 -= 0.2f;
+                bool flag = false;
+                foreach (Thing thing in enumerable)
+                {
+                    if ((float)(intVec - thing.Position).LengthHorizontalSquared < num2 * num2)
                     {
+                        flag = true;
                         break;
                     }
-                    num2 -= 0.2f;
-                    bool flag = false;
-                    foreach (Thing thing in enumerable)
-                    {
-                        if ((float)(intVec - thing.Position).LengthHorizontalSquared < num2 * num2)
-                        {
-                            flag = true;
-                            break;
-                        }
-                    }
-                    if (!flag && map.reachability.CanReachFactionBase(intVec, hostFaction))
-                    {
-                        loc = intVec;
-                    }
                 }
+                if (!flag && map.reachability.CanReachFactionBase(intVec, hostFaction))
+                {
+                    intVec = iv3;
+                }
+            }
+            if (!intVec.IsValid)
+            {
+                intVec = CellFinderLoose.RandomCellWith((IntVec3 c) => c.Standable(map) && !c.GetTerrain(map).dangerous && !c.Fogged(map), map, 1000);
             }
             loc = intVec;
             GenSpawn.Spawn(pawns[0], loc, map, parms.spawnRotation, WipeMode.Vanish, false);
@@ -2389,7 +2388,7 @@ namespace HautsTraits
             {
                 for (int i = 1; i < pawns.Count; i++)
                 {
-                    IntVec3 loc2 = CellFinder.RandomClosewalkCellNear(loc, map, 3, null);
+                    IntVec3 loc2 = CellFinder.RandomClosewalkCellNear(loc, map, 3, (IntVec3 c) => c.Standable(map) && !c.GetTerrain(map).dangerous && !c.Fogged(map));
                     GenSpawn.Spawn(pawns[i], loc2, map, parms.spawnRotation, WipeMode.Vanish, false);
                 }
             }
@@ -2468,11 +2467,11 @@ namespace HautsTraits
                     {
                         int randomCell = (int)(Rand.Value * map.listerBuildings.allBuildingsColonist.Count);
                         toSpawn = map.listerBuildings.allBuildingsColonist[randomCell].Position;
-                        toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, null);
+                        toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, (IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous && !p.Fogged(map));
                     } else {
-                        CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => !map.roofGrid.Roofed(p) && p.Walkable(map), map, CellFinder.EdgeRoadChance_Hostile, out toSpawn);
+                        CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous, map, CellFinder.EdgeRoadChance_Hostile, out toSpawn);
                     }
-                } while (!toSpawn.Walkable(map));
+                } while (!toSpawn.Standable(map));
                 parms.spawnCenter = toSpawn;
             }
             return true;
@@ -2538,11 +2537,11 @@ namespace HautsTraits
                     {
                         int randomCell = (int)(Rand.Value * map.listerBuildings.allBuildingsColonist.Count);
                         toSpawn = map.listerBuildings.allBuildingsColonist[randomCell].Position;
-                        toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, null);
+                        toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, (IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous && !p.Fogged(map));
                     } else {
-                        CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => !map.roofGrid.Roofed(p) && p.Walkable(map), map, CellFinder.EdgeRoadChance_Hostile, out toSpawn);
+                        CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous, map, CellFinder.EdgeRoadChance_Hostile, out toSpawn);
                     }
-                } while (!toSpawn.Walkable(map));
+                } while (!toSpawn.Standable(map));
                 parms.spawnCenter = toSpawn;
             }
             return true;
@@ -2631,8 +2630,12 @@ namespace HautsTraits
                 IntVec3 toSpawn;
                 int randomCell = (int)(Rand.Value * map.mapPawns.FreeColonistsAndPrisoners.Count);
                 toSpawn = map.mapPawns.FreeColonistsAndPrisoners[randomCell].Position;
-                toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, null);
+                toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, (IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous && !p.Fogged(map));
                 parms.spawnCenter = toSpawn;
+                if (!parms.spawnCenter.IsValid)
+                {
+                    CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous, map, CellFinder.EdgeRoadChance_Hostile, out parms.spawnCenter);
+                }
             }
             return true;
         }

@@ -7860,7 +7860,10 @@ namespace HautsTraitsRoyalty
             if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitAptenodytes))
             {
                 PsychicAwakeningUtility.ColonyHuddle(pawn);
-                return;
+                if (!pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitLeviathan))
+                {
+                    return;
+                }
             }
             Hediff hediff = HediffMaker.MakeHediff(HVTRoyaltyDefOf.HVT_LatentPsyTerminus, pawn, null);
             pawn.health.AddHediff(hediff);

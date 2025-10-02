@@ -1547,7 +1547,7 @@
         <ticksToHeal>1000~1300</ticksToHeal>
       </li>
       <li Class="HautsFramework.HediffCompProperties_DelayedResurrection">
-        <rareTickDelay>15~29</rareTickDelay><!--rare ticks only occur once every 250 ticks. 720-3600 thus means 3-15 days-->
+        <rareTickDelay>720~3600</rareTickDelay><!--rare ticks only occur once every 250 ticks. 720-3600 thus means 3-15 days-->
 		<onDeathMessage>HVT_CockroachCanRez</onDeathMessage>
 		<onRezMessage>HVT_CockroachRez</onRezMessage>
 		<shouldTranslateOnDeath>true</shouldTranslateOnDeath>
