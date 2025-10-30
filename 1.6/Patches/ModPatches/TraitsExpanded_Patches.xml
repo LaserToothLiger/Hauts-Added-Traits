@@ -31,6 +31,24 @@
 						</value>
 					</match>
 				</li>
+				<!--Forgettable exclusive w/ Valuable.-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="Valuable"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="Valuable"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_Forgettable</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="Valuable"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_Forgettable</li>
+						</value>
+					</match>
+				</li>
 				<!--Staid exclusive w/ Mercantile - the forced inspiration will just do nothing.-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/TraitDef[defName="Socialite"]/conflictingTraits</xpath>

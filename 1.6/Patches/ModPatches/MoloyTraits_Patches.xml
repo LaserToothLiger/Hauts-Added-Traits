@@ -6,6 +6,51 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<!--Forgettable cannot have various unforgettable personalities, and Tranquil commands no-one to battle-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TraitDef[defName="MT_Charismatic" or defName="MT_Tyrant"]/conflictingTraits</xpath>
+					<value>
+						<li>HVT_Forgettable</li>
+					</value>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="MT_Conductor" or defName="MT_Luminary"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="MT_Conductor" or defName="MT_Luminary"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_Forgettable</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="MT_Conductor" or defName="MT_Luminary"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_Forgettable</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="MT_Commander"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="MT_Commander"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_Tranquil</li>
+								<li>HVT_Tranquil0</li>
+								<li>HVT_Forgettable</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="MT_Commander"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_Tranquil</li>
+							<li>HVT_Tranquil0</li>
+							<li>HVT_Forgettable</li>
+						</value>
+					</match>
+				</li>
 				<!--Staid, as usual, exclusive w/ inspiration traits: in this case, Peppy & Volatile Crafter.-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/TraitDef[defName="MT_Peppy"]/conflictingTraits</xpath>
@@ -29,26 +74,6 @@
 					<value>
 						<li>HVT_Staid</li>
 					</value>
-				</li>
-				<!--Tranquil commands no-one to battle-->
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/TraitDef[defName="MT_Commander"]/conflictingTraits</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="MT_Commander"]</xpath>
-						<value>
-							<conflictingTraits>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
-							</conflictingTraits>
-						</value>
-					</nomatch>
-					<match Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="MT_Commander"]/conflictingTraits</xpath>
-						<value>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
-						</value>
-					</match>
 				</li>
 			</operations>
 		</match>

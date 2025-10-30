@@ -82,8 +82,8 @@ namespace HautsTraitsRoyalty
                               postfix: new HarmonyMethod(patchType, nameof(HautsTraitsLPAny_EmbraceTheVoidPostfix)));
                 harmony.Patch(AccessTools.Method(typeof(VoidAwakeningUtility), nameof(VoidAwakeningUtility.DisruptTheLink)),
                               postfix: new HarmonyMethod(patchType, nameof(HautsTraitsLPAny_DisruptTheLinkPostfix)));
-                harmony.Patch(AccessTools.Method(typeof(BloodRainUtility), nameof(BloodRainUtility.ExposedToBloodRain)),
-                              prefix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_ExposedToBloodRainPrefix)));
+                harmony.Patch(AccessTools.Method(typeof(Hediff_BloodRage), nameof(Hediff_BloodRage.PostAdd)),
+                              postfix: new HarmonyMethod(patchType, nameof(HautsTraitsTrans_BloodRage_PostAddPostfix)));
             }
             harmony.Patch(AccessTools.Method(typeof(TraitSet), nameof(TraitSet.GainTrait)),
                           prefix: new HarmonyMethod(patchType, nameof(HautsTraitsAA_GainTraitPrefix)));
@@ -1853,19 +1853,19 @@ namespace HautsTraitsRoyalty
                 PsychicAwakeningUtility.MynahAbilityCopy(recipient, pawn);
             }
         }
-        public static bool HautsTraitsTrans_ExposedToBloodRainPrefix(Pawn pawn)
+        public static void HautsTraitsTrans_BloodRage_PostAddPostfix(Hediff_BloodRage __instance)
         {
-            if (pawn.story != null)
+            if (__instance.pawn.story != null)
             {
-                foreach (Trait t in pawn.story.traits.TraitsSorted)
+                foreach (Trait t in __instance.pawn.story.traits.TraitsSorted)
                 {
                     if (t.def.HasModExtension<BloodRainImmune>())
                     {
-                        return false;
+                        __instance.pawn.health.RemoveHediff(__instance);
+                        return;
                     }
                 }
             }
-            return true;
         }
         public static void HautsTraitsTrans_CanApplyPsycastToPostfix(ref bool __result, LocalTargetInfo target, Psycast __instance)
         {

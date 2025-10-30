@@ -23,6 +23,13 @@
 						<li>HVT_Drudge</li>
 					</value>
 				</li>
+				<!--Forgettable ew/ traits that grant notable personalities-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TraitDef[defName="FT_Charisma" or defName="FT_Intimidation" or defName="FT_Inspiration" or defName="FT_NaturalLeader" or defName="FT_Magnetic"]/conflictingTraits</xpath>
+					<value>
+						<li>HVT_Forgettable</li>
+					</value>
+				</li>
 				<!--Staid, as usual, exclusive w/ art traits: in this case, Artisan and Perfectionist.-->
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/TraitDef[defName="FT_Artisan" or defName="FT_Perfectionist"]/conflictingTraits</xpath>

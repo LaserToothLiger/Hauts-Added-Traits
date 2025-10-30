@@ -765,11 +765,11 @@
   </HediffDef>
 	
   <!--There are three level 4 psycasts, Move Unseen, Wimpzone, and Muscular Innervation. 
-  Move Unseen grants the target pawn invisibility. However, this invisibility wears off prematurely on attack or cast.-->
+  Move Unseen grants invisibility for a long duration. However, this invisibility wears off prematurely on attack or cast.-->
 	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>HVT_MoveUnseen</defName>
       <label>move unseen</label>
-      <description>Enhance the stealth capabilities the target, preventing them from being noticed by hostiles unless they attack or use abilities. The duration scales with the target’s psychic sensitivity.</description>
+      <description>Enhance the stealth capabilities of the target, preventing them from being noticed by hostiles unless they attack or use abilities. The duration scales with the target’s psychic sensitivity.</description>
       <iconPath>VPE/HVT_GroupSnoop</iconPath>
       <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
 	  <castTime>120</castTime>
@@ -825,6 +825,7 @@
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ChangeSeverityOnVerbUse">
 		<setSeverity>0.0</setSeverity>
+		<pilferingCountsAsVerb>true</pilferingCountsAsVerb>
 	  </li>
     </comps>
   </HediffDef>

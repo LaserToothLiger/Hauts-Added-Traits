@@ -983,6 +983,7 @@
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ChangeSeverityOnVerbUse">
 		<setSeverity>0.0</setSeverity>
+		<pilferingCountsAsVerb>true</pilferingCountsAsVerb>
 	  </li>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-24</severityPerDay>

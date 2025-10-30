@@ -56,6 +56,8 @@ namespace HautsTraits
                           postfix: new HarmonyMethod(patchType, nameof(HVTBookwormOnBookReadTickPostfix)));
             harmony.Patch(AccessTools.Method(typeof(Pawn_InteractionsTracker), nameof(Pawn_InteractionsTracker.TryInteractWith)),
                           prefix: new HarmonyMethod(patchType, nameof(HVTConversationalistTryInteractWithPrefix)));
+            harmony.Patch(AccessTools.Method(typeof(Pawn_RelationsTracker), nameof(Pawn_RelationsTracker.OpinionOf)),
+                          postfix: new HarmonyMethod(patchType, nameof(HVTForgettableOpinionOfPostfix)));
             harmony.Patch(AccessTools.Method(typeof(MentalStateHandler), nameof(MentalStateHandler.TryStartMentalState)),
                           prefix: new HarmonyMethod(patchType, nameof(HVTConversationalistTryStartMentalStatePrefix)));
             harmony.Patch(AccessTools.Method(typeof(Corpse), nameof(Corpse.GiveObservedHistoryEvent)),
@@ -113,8 +115,6 @@ namespace HautsTraits
                           prefix: new HarmonyMethod(patchType, nameof(HVTNotifyNearbyPawnsOfDangerousExplosivePrefix)));
             harmony.Patch(AccessTools.Method(typeof(CaravanArrivalAction_VisitSite), nameof(CaravanArrivalAction_VisitSite.GetFloatMenuOptions)),
                           postfix: new HarmonyMethod(patchType, nameof(HVT_GetFloatMenuOptionsPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(Caravan), nameof(Caravan.GetGizmos)),
-                          postfix: new HarmonyMethod(patchType, nameof(HVTGetGizmosPostfix)));
             harmony.Patch(AccessTools.Method(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn), new[] { typeof(PawnGenerationRequest)}),
                            postfix: new HarmonyMethod(patchType, nameof(HVTGeneratePawnPostfix)));
             harmony.Patch(AccessTools.Method(typeof(GrowthUtility), nameof(GrowthUtility.IsGrowthBirthday)),
@@ -460,6 +460,13 @@ namespace HautsTraits
             }
             return true;
         }
+        public static void HVTForgettableOpinionOfPostfix(Pawn other, ref int __result)
+        {
+            if (other.story != null && other.story.traits.HasTrait(HVTDefOf.HVT_Forgettable))
+            {
+                __result = (int)(__result*0.65f);
+            }
+        }
         public static void HVTGraverGiveObservedHistoryEventPrefix(Corpse __instance, Pawn observer)
         {
             if (__instance.InnerPawn.RaceProps.Humanlike && __instance.StoringThing() == null && observer.story != null && observer.story.traits.HasTrait(HVTDefOf.HVT_Graver))
@@ -751,30 +758,6 @@ namespace HautsTraits
                 }
             }
         }
-        public static IEnumerable<Gizmo> HVTGetGizmosPostfix(IEnumerable<Gizmo> __result, Caravan __instance)
-        {
-            foreach (Gizmo gizmo in __result)
-            {
-                yield return gizmo;
-            }
-            if (HVTUtility.HasASkulker(__instance) && Find.WorldObjects.AnySettlementAt(__instance.Tile))
-            {
-                Settlement settlement = Find.WorldObjects.SettlementAt(__instance.Tile);
-                if (settlement.Faction != __instance.Faction && settlement.trader != null)
-                {
-                    yield return (new Command_Action
-                    {
-                        icon = ContentFinder<Texture2D>.Get("UI/Commands/Trade", true),
-                        defaultLabel = "HVT_BurgleIcon".Translate(),
-                        defaultDesc = "HVT_BurgleTooltip".Translate(),
-                        action = delegate ()
-                        {
-                            HVTUtility.Burgle(__instance, settlement);
-                        }
-                    });
-                }
-            }
-        }
         public static void HVTGeneratePawnPostfix(ref Pawn __result, PawnGenerationRequest request)
         {
             if (__result.story != null)
@@ -1004,6 +987,7 @@ namespace HautsTraits
         public static TraitDef HVT_Champion;
         public static TraitDef HVT_Conversationalist;
         public static TraitDef HVT_Daydreamer;
+        public static TraitDef HVT_Forgettable;
         public static TraitDef HVT_Graver;
         public static TraitDef HVT_Hedonist;
         public static TraitDef HVT_Judgemental;
@@ -3511,13 +3495,7 @@ namespace HautsTraits
             base.CompPostTickInterval(ref severityAdjustment, delta);
             if (this.Pawn.IsHashIntervalTick(60, delta) && this.Pawn.Faction != null && this.Pawn.Faction == Faction.OfPlayerSilentFail && Rand.MTBEventOccurs(this.Props.mtbDays, 60000f, 60f))
             {
-                BiomeDef biome = (this.Pawn.Tile.Valid ? Find.WorldGrid[this.Pawn.Tile].PrimaryBiome : DefDatabase<BiomeDef>.GetRandom());
-                IncidentDef incidentDef = DefDatabase<IncidentDef>.AllDefs.Where((IncidentDef d) => d.category == IncidentCategoryDefOf.DiseaseHuman).RandomElementByWeightWithFallback((IncidentDef d) => biome.CommonalityOfDisease(d), null);
-                if (incidentDef != null)
-                {
-                    IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.DiseaseHuman, this.Pawn.Map ?? Find.Maps.Where((Map x) => x.IsPlayerHome).RandomElement<Map>());
-                    incidentDef.Worker.TryExecute(parms);
-                }
+                HautsUtility.DoRandomDiseaseOutbreak(this.Pawn);
             }
         }
     }
@@ -4113,207 +4091,6 @@ namespace HautsTraits
         private Vector2 scrollPosition;
         private List<GrantableTrait> grantableTraits = new List<GrantableTrait>();
     }
-    public class BurgleWindow : Window
-    {
-        public BurgleWindow(Caravan caravan, List<Pawn> burglars, Settlement settlement, float burglaryMaxValue, float burglaryMaxWeight, float successChance)
-        {
-            this.burglars.Clear();
-            this.thingsStolen.Clear();
-            this.targetedThingCategories.Clear();
-            this.categories.Clear();
-            this.goodsList.Clear();
-            this.caravan = caravan;
-            this.burglars = burglars;
-            this.forcePause = true;
-            this.settlement = settlement;
-            this.burglaryMaxValue = burglaryMaxValue;
-            this.burglaryMaxWeight = burglaryMaxWeight;
-            this.valueRemaining = burglaryMaxValue;
-            this.weightRemaining = burglaryMaxWeight;
-            this.successChance = successChance;
-            this.goodsList = this.settlement.Goods.ToList<Thing>();
-            foreach (Thing t in goodsList)
-            {
-                if (t.def.thingCategories != null)
-                {
-                    foreach (ThingCategoryDef d in t.def.thingCategories)
-                    {
-                        if (!this.categories.Contains(d))
-                        {
-                            this.categories.Add(d);
-                        }
-                    }
-                }
-            }
-        }
-        private float Height
-        {
-            get
-            {
-                return 459f + Window.CloseButSize.y + this.Margin * 2f;
-            }
-        }
-        public override Vector2 InitialSize
-        {
-            get
-            {
-                return new Vector2(1000f, this.Height);
-            }
-        }
-        public override void DoWindowContents(Rect inRect)
-        {
-            inRect.yMax -= 4f + Window.CloseButSize.y;
-            Text.Font = GameFont.Small;
-            Rect viewRect = new Rect(inRect.x, inRect.y, inRect.width * 0.8f, this.scrollHeight);
-            Widgets.BeginScrollView(inRect, ref this.scrollPosition, viewRect, true);
-            float num = 0f;
-            Widgets.Label(0f, ref num, viewRect.width, "HVT_BurgleWindow1".Translate((int)this.burglaryMaxValue,this.settlement.Name,this.burglaryMaxWeight,(this.successChance*100f)), default(TipSignal));
-            num += 14f;
-            Text.Font = GameFont.Tiny;
-            Widgets.Label(0f, ref num, viewRect.width, "HVT_BurgleWindow2".Translate(), default(TipSignal));
-            Text.Font = GameFont.Small;
-            Widgets.Label(0f, ref num, viewRect.width, "HVT_BurgleWindow3".Translate(), default(TipSignal));
-            Listing_Standard listing_Standard = new Listing_Standard();
-            Rect rect = new Rect(0f, num, inRect.width - 30f, 99999f);
-            listing_Standard.Begin(rect);
-            foreach (ThingCategoryDef t in this.categories)
-            {
-                bool flag = this.targetedThingCategories.Contains(t);
-                bool flag2 = flag;
-                listing_Standard.CheckboxLabeled("HVT_BurgleWindowCategories".Translate(t.label), ref flag, 15f);
-                if (flag != flag2)
-                {
-                    if (flag)
-                    {
-                        this.targetedThingCategories.Add(t);
-                    } else {
-                        this.targetedThingCategories.Remove(t);
-                    }
-                }
-            }
-            listing_Standard.End();
-            num += listing_Standard.CurHeight + 10f + 4f;
-            if (Event.current.type == EventType.Layout)
-            {
-                this.scrollHeight = Mathf.Max(num, inRect.height);
-            }
-            Widgets.EndScrollView();
-            Rect rect2 = new Rect(0f, inRect.yMax + 4f, inRect.width, Window.CloseButSize.y);
-            AcceptanceReport acceptanceReport = this.CanClose();
-            if (Widgets.ButtonText(rect2, "OK".Translate(), true, true, true, null))
-            {
-                if (acceptanceReport.Accepted)
-                {
-                    List<Thing> settlementGoods = new List<Thing>();
-                    foreach (Thing t in this.goodsList)
-                    {
-                        if (this.targetedThingCategories.Any<ThingCategoryDef>())
-                        {
-                            foreach (ThingCategoryDef d in this.targetedThingCategories)
-                            {
-                                if (t.HasThingCategory(d))
-                                {
-                                    settlementGoods.Add(t);
-                                }
-                            }
-                        } else {
-                            settlementGoods = this.settlement.Goods.ToList<Thing>();
-                        }
-                    }
-                    while (this.weightRemaining > 0f && this.valueRemaining > 0f && settlementGoods.Count > 0)
-                    {
-                        int triesRemaining = 30;
-                        while (triesRemaining > 0)
-                        {
-                            triesRemaining--;
-                            Thing t = settlementGoods.RandomElement<Thing>();
-                            int lowerBoundStack = Math.Min(t.def.stackLimit, t.stackCount);
-                            float stackMarketValue = lowerBoundStack * t.MarketValue;
-                            float stackMass = lowerBoundStack * t.GetStatValue(StatDefOf.Mass);
-                            if (stackMarketValue <= this.valueRemaining && stackMass <= this.weightRemaining)
-                            {
-                                this.valueRemaining -= stackMarketValue;
-                                this.weightRemaining -= stackMass;
-                                if (lowerBoundStack < t.stackCount)
-                                {
-                                    this.thingsStolen.Add(t.SplitOff(lowerBoundStack));
-                                }
-                                else
-                                {
-                                    this.thingsStolen.Add(t);
-                                    settlementGoods.Remove(t);
-                                }
-                                break;
-                            }
-                        }
-                        if (triesRemaining <= 0)
-                        {
-                            break;
-                        }
-                    }
-                    foreach (Pawn p in this.burglars)
-                    {
-                        Hediff hediff = HediffMaker.MakeHediff(HVTDefOf.HVT_BurgleCooldown, p, null);
-                        p.health.AddHediff(hediff, p.health.hediffSet.GetBrain(), null, null);
-                    }
-                    this.Close(true);
-                    if (Rand.Value <= this.successChance)
-                    {
-                        if (this.thingsStolen.Count == 0)
-                        {
-                            TaggedString message = "HVT_BurgleOutcome1".Translate();
-                            LookTargets toLook = new LookTargets(this.caravan);
-                            ChoiceLetter tieLetter = LetterMaker.MakeLetter("HVT_BurgleLetter1".Translate(), message, LetterDefOf.NeutralEvent, toLook, null, null, null);
-                            Find.LetterStack.ReceiveLetter(tieLetter, null);
-                        } else {
-                            TaggedString message = "HVT_BurgleOutcome2".Translate();
-                            foreach (Thing t in this.thingsStolen)
-                            {
-                                //Log.Message(t.Label + " x" + t.stackCount);
-                                this.settlement.trader.GetDirectlyHeldThings().Remove(t);
-                                CaravanInventoryUtility.GiveThing(this.caravan, t);
-                            }
-                            LookTargets toLook = new LookTargets(this.caravan);
-                            ChoiceLetter winLetter = LetterMaker.MakeLetter("HVT_BurgleLetter2".Translate(), message, LetterDefOf.PositiveEvent, toLook, null, null, null);
-                            Find.LetterStack.ReceiveLetter(winLetter, null);
-                        }
-                    } else {
-                        int lostGoodwill = -1*(int)((this.burglaryMaxValue - this.valueRemaining)/40f);
-                        TaggedString message = "HVT_BurgleOutcome3".Translate(this.settlement.Faction,lostGoodwill);
-                        LookTargets toLook = new LookTargets(this.caravan);
-                        ChoiceLetter sadLetter = LetterMaker.MakeLetter("HVT_BurgleLetter3".Translate(), message, LetterDefOf.NegativeEvent, toLook, null, null, null);
-                        Find.LetterStack.ReceiveLetter(sadLetter, null);
-                        this.caravan.Faction.TryAffectGoodwillWith(this.settlement.Faction, lostGoodwill);
-                    }
-                    this.thingsStolen.Clear();
-                    this.targetedThingCategories.Clear();
-                    this.burglars.Clear();
-                    this.categories.Clear();
-                    this.goodsList.Clear();
-                } else {
-                    Messages.Message(acceptanceReport.Reason, null, MessageTypeDefOf.RejectInput, false);
-                }
-            }
-        }
-        private AcceptanceReport CanClose()
-        {
-            return AcceptanceReport.WasAccepted;
-        }
-        private Caravan caravan;
-        private List<Pawn> burglars = new List<Pawn>();
-        private Settlement settlement;
-        private float scrollHeight;
-        private float burglaryMaxWeight;
-        private float burglaryMaxValue;
-        private float successChance;
-        private float weightRemaining;
-        private float valueRemaining;
-        private List<ThingCategoryDef> targetedThingCategories = new List<ThingCategoryDef>();
-        private List<Thing> thingsStolen = new List<Thing>();
-        List<ThingCategoryDef> categories = new List<ThingCategoryDef>();
-        List<Thing> goodsList = new List<Thing>();
-        private Vector2 scrollPosition;
-    }
     public class CaravanArrivalAction_ScoutForAmbushes : CaravanArrivalAction
     {
         public override string Label
@@ -4589,78 +4366,6 @@ namespace HautsTraits
         public static CaravanArrivalAction GoToScoutForAmbushes(Caravan caravan, Site site)
         {
             return new CaravanArrivalAction_ScoutForAmbushes(site);
-        }
-        public static void Burgle(Caravan caravan, Settlement settlement)
-        {
-            if (settlement.trader == null)
-            {
-                TaggedString message = "HVT_NotBurglable".Translate();
-                Messages.Message(message, settlement, MessageTypeDefOf.RejectInput, true);
-                return;
-            } else {
-                float burglaryMaxWeight = 0f;
-                float burglaryMaxValue = 0f;
-                float successChance = 0f;
-                List<Pawn> skulkersInCaravan = new List<Pawn>();
-                foreach (Pawn p in caravan.PawnsListForReading)
-                {
-                    if (p.story != null && p.story.traits.HasTrait(HVTDefOf.HVT_Skulker))
-                    {
-                        skulkersInCaravan.Add(p);
-                    }
-                }
-                float kleptoFactor = 1f, meleeDmgFactor, burgleCooldown;
-                foreach (Pawn p in skulkersInCaravan)
-                {
-                    burglaryMaxWeight += MassUtility.Capacity(p,null) - MassUtility.GearAndInventoryMass(p);
-                    if (p.health.hediffSet.HasHediff(HVTDefOf.HVT_BurgleCooldown))
-                    {
-                        Hediff hediff = p.health.hediffSet.GetFirstHediffOfDef(HVTDefOf.HVT_BurgleCooldown);
-                        if (hediff.Severity >= 6.001f)
-                        {
-                            burgleCooldown = -200f;
-                        } else {
-                            burgleCooldown = 0.5f;
-                        }
-                    } else {
-                        burgleCooldown = 1f;
-                    }
-                    if (ModsConfig.IsActive("VanillaExpanded.VanillaTraitsExpanded"))
-                    {
-                        kleptoFactor = p.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamedSilentFail("VTE_Kleptomaniac")) ? 1.3f : 1f;
-                    }
-                    meleeDmgFactor = p.GetStatValue(StatDefOf.MeleeDamageFactor)+p.GetStatValue(VEF.VEFDefOf.VEF_MeleeAttackDamageFactor)-1f;
-                    burglaryMaxValue += 100f*(p.health.capacities.GetLevel(PawnCapacityDefOf.Manipulation)+(p.GetStatValue(StatDefOf.MoveSpeed)/4.6f)*(p.health.capacities.GetLevel(PawnCapacityDefOf.Sight)+(p.health.capacities.GetLevel(PawnCapacityDefOf.Hearing)/2))*meleeDmgFactor)*kleptoFactor;
-                    successChance += burgleCooldown*(p.GetStatValue(StatDefOf.MoveSpeed) / 4.6f) * (p.health.capacities.GetLevel(PawnCapacityDefOf.Sight) + (p.health.capacities.GetLevel(PawnCapacityDefOf.Hearing) / 2) + ((1 -p.GetStatValue(HautsDefOf.Hauts_TrackSize))/5))/(kleptoFactor*p.GetStatValue(StatDefOf.PawnTrapSpringChance)*1.9f);
-                }
-                successChance /= skulkersInCaravan.Count;
-                if (skulkersInCaravan.Count == 0)
-                {
-                    TaggedString message = "HVT_BurglaryNoSkulkers".Translate();
-                    Messages.Message(message, settlement, MessageTypeDefOf.RejectInput, true);
-                    return;
-                }
-                if (burglaryMaxWeight <= 0f)
-                {
-                    TaggedString message = "HVT_BurglaryNoCarryCap".Translate();
-                    Messages.Message(message, settlement, MessageTypeDefOf.RejectInput, true);
-                    return;
-                }
-                else if (burglaryMaxValue <= 0f)
-                {
-                    TaggedString message = "HVT_BurglaryTooWeak".Translate();
-                    Messages.Message(message, settlement, MessageTypeDefOf.RejectInput, true);
-                    return;
-                }
-                else if (successChance <= 0f)
-                {
-                    TaggedString message = "HVT_BurglaryTooConspicuous".Translate();
-                    Messages.Message(message, settlement, MessageTypeDefOf.RejectInput, true);
-                    return;
-                } else {
-                    Find.WindowStack.Add(new BurgleWindow(caravan, skulkersInCaravan, settlement, burglaryMaxValue, burglaryMaxWeight, successChance));
-                }
-            }
         }
         public static void DoBonusGrowthMoment(Pawn pawn)
         {

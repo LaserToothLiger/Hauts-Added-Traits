@@ -18,6 +18,7 @@
 						<HVT_Conversationalist>0</HVT_Conversationalist>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Drudge>0</HVT_Drudge>
+						<HVT_Forgettable>0</HVT_Forgettable>
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hale>0</HVT_Hale>
 						<HVT_Hedonist>0</HVT_Hedonist>
@@ -106,6 +107,7 @@
 						<HVT_Asocial>0</HVT_Asocial>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Drudge>0</HVT_Drudge>
+						<HVT_Forgettable>0</HVT_Forgettable>
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hedonist>0</HVT_Hedonist>
 						<HVT_Hysteric>0</HVT_Hysteric>
@@ -141,6 +143,7 @@
 						<HVT_Champion>0</HVT_Champion>
 						<HVT_Conversationalist>0</HVT_Conversationalist>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
+						<HVT_Forgettable>0</HVT_Forgettable>
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hale>0</HVT_Hale>
 						<HVT_Hedonist>0</HVT_Hedonist>
@@ -366,6 +369,7 @@
 						<HVT_Aestheticist>0</HVT_Aestheticist>
 						<HVT_Allegiant>0</HVT_Allegiant>
 						<HVT_Asocial>0</HVT_Asocial>
+						<HVT_Forgettable>0</HVT_Forgettable>
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hale>0</HVT_Hale>
 						<HVT_Hotfoot>0</HVT_Hotfoot>

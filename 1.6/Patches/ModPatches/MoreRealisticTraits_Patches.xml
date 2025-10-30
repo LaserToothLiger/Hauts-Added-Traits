@@ -6,7 +6,7 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
-				<!--Meanwhile, Conversationalist, Proclaimer, Guru, Caretaker, and Mentor are exclusive w/ Mute. BTW: the Mute trait does not actually render a pawn mute, they just won't do social jobs.-->
+				<!--Conversationalist, Proclaimer, Guru, Caretaker, and Mentor are exclusive w/ Mute. BTW: the Mute trait does not actually render a pawn mute, they just won't do social jobs.-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/TraitDef[defName="Mute"]/conflictingTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -29,6 +29,24 @@
 							<li MayRequire="Ludeon.RimWorld.Ideology">HVT_Guru</li>
 							<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Caretaker</li>
 							<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Mentor</li>
+						</value>
+					</match>
+				</li>
+				<!--Forgettable ew/ Natural Leader-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="NaturalLeader"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="NaturalLeader"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_Forgettable</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="NaturalLeader"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_Forgettable</li>
 						</value>
 					</match>
 				</li>

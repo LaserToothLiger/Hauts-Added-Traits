@@ -98,6 +98,16 @@
 				  </value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
+					<xpath>*/TraitDef[defName = "HVT_Forgettable"]</xpath>
+				  <value>
+					<li Class="SyrTraitValue.TraitValueExtension">
+					  <traitValues>
+						<li>0</li>
+					  </traitValues>
+					</li>
+				  </value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
 					<xpath>*/TraitDef[defName = "HVT_Graver"]</xpath>
 				  <value>
 					<li Class="SyrTraitValue.TraitValueExtension">

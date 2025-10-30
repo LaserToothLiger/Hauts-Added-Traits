@@ -225,6 +225,28 @@
 	</TraitDef>
 	
 	<TraitDef>
+		<defName>HVT_Forgettable</defName>
+		<commonality>0.3</commonality>
+		<degreeDatas>
+		  <li>
+			<label>forgettable</label>
+			<description>With {PAWN_possessive} bland demeanor and generic appearance, it can be easy to forget {PAWN_nameDef} is around. Others’ opinions of {PAWN_objective} (both positive and negative) are only two-thirds as strong as normal.</description>
+			<skillGains>
+			  <Social>-2</Social>
+			</skillGains>
+			<statOffsets>
+			  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
+			</statOffsets>
+			<statFactors>
+			  <SocialImpact>0.8</SocialImpact>
+			  <PawnBeauty>0.5</PawnBeauty>
+			</statFactors>
+		  </li>
+		</degreeDatas>
+		<conflictingTraits><li>Abrasive</li><li>HVT_Winsome</li><li MayRequire="RavingLegend.MoreTraits">RT_Celebrity</li></conflictingTraits>
+	</TraitDef>
+	
+	<TraitDef>
 		<defName>HVT_Graver</defName>
 		<commonality>0.6</commonality>
 		<degreeDatas>
@@ -433,7 +455,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li><li MayRequire="RavingLegend.MoreTraits">RT_Gluttonous</li></conflictingTraits>
+		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li><li MayRequire="RavingLegend.MoreTraits">RT_Gluttonous</li><li MayRequire="RavingLegend.MoreTraits">RT_Anorexic</li></conflictingTraits>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>7</value></li></chargeCosts></li>
             <li Class="HautsFramework.TraitGrantedStuff">
@@ -574,6 +596,7 @@
 			<statOffsets>
 			  <Hauts_CaravanVisibilityOffset>-0.5</Hauts_CaravanVisibilityOffset>
 			  <Hauts_TrackSize>-2</Hauts_TrackSize>
+			  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -757,7 +780,7 @@
 		<TraitDef><!--RimWorld is usually pretty robust about making sure pawns that are supposed to be capable of violence don't get things that make them incapable of violence, but trade caravan guards are supposed to be capable of violence and yet their protections are
 						insufficient to prevent them from possibly getting violence-disabling traits. If a pawn that's supposed to be violence-capable gets generated as incapable of violence, the game "aborts" them as well as any other pawns they were generated alongside,
 						which means that Tranquil will sometimes cause trade caravans to fail to spawn. Therefore, to get around this we have this dummy trait here, which does nothing except TURN INTO Tranquil once the pawn experiences the flow of time, which necessarily
-						happens after pawn generation is complete. (If the pawn has to be capable of violence, though, it will either just disappear if the pawn has at least one other trait, or turn into the Kind trait otherwise)-->
+						happens after pawn generation is complete. (If the pawn has to be capable of violence, though, this trait will either just disappear if the pawn has at least one other trait, or turn into the Kind trait otherwise)-->
 			<defName>HVT_Tranquil0</defName>
 			<allowOnHostileSpawn>false</allowOnHostileSpawn>
 			<commonality>0.4</commonality>
@@ -958,7 +981,7 @@
 			</statOffsets>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>AnnoyingVoice</li><li>CreepyBreathing</li><li MayRequire="RavingLegend.MoreTraits">RT_Unwanted</li></conflictingTraits>
+		<conflictingTraits><li>AnnoyingVoice</li><li>CreepyBreathing</li><li>HVT_Forgettable</li><li MayRequire="RavingLegend.MoreTraits">RT_Unwanted</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
 	</TraitDef>
 	
@@ -1211,7 +1234,7 @@
 				</chargeCosts>
 			</li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Doubtful</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Doubtful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Stubborn</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
 		<defName>HVT_Doubtful</defName>
@@ -1230,7 +1253,7 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Stubborn</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
 	</TraitDef>
 		<!--tolerance "spectrum"-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
@@ -1914,6 +1937,7 @@
 			  <AS_ExtraComponentsYield MayRequire="sarg.alphaskills">0.02</AS_ExtraComponentsYield>
 			  <AS_ExtraGoldYield MayRequire="sarg.alphaskills">0.02</AS_ExtraGoldYield>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">0.1</EL_ArcheologySpeed>
+			  <Hauts_MaxPilferingValue>40</Hauts_MaxPilferingValue>
 			</statOffsets>
 			<statFactors>
 			  <ForagedNutritionPerDay>2</ForagedNutritionPerDay>

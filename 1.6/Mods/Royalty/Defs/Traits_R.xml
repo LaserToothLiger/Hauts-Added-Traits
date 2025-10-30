@@ -909,6 +909,7 @@
 			  <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.03</SuppressionPower>
 			  <ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.02</ActivitySuppressionRate>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.5</LanguageLearningAbility>
+			  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -926,6 +927,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
+			  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -1650,6 +1652,7 @@
 			  <Hauts_MeleeArmorPenetration>1.5</Hauts_MeleeArmorPenetration>
 			  <Hauts_RangedArmorPenetration>1.5</Hauts_RangedArmorPenetration>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.75</PilotingAbility>
+			  <Hauts_MaxPilferingValue>40</Hauts_MaxPilferingValue>
 			</statOffsets>
 			<statFactors>
 			  <MeleeHitChance>100</MeleeHitChance>
@@ -1853,6 +1856,9 @@
 			<label>psychic magpie</label>
 			<description>{PAWN_nameDef} manifests additional rewards when a quest is completed.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_MaxPilferingValue>500</Hauts_MaxPilferingValue>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1930,6 +1936,9 @@
 			<label>psychic mite</label>
 			<description>{PAWN_nameDef} shrinks after spending enough time meditating. In this state, {PAWN_pronoun} is invisible to the naked eye and can move through ordinarily impassable obstacles. {PAWN_pronoun} returns to normal size on attacking or casting an ability.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2517,6 +2526,8 @@
 			  <Hauts_SurveySpeed>0.2</Hauts_SurveySpeed>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1</LanguageLearningAbility>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.75</PilotingAbility>
+			  <Hauts_PilferingStealth>0.25</Hauts_PilferingStealth>
+			  <Hauts_MaxPilferingValue>60</Hauts_MaxPilferingValue>
 			</statOffsets>
 			<statFactors>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
@@ -2545,6 +2556,7 @@
 			<statOffsets>
 			  <ForagedNutritionPerDay>1</ForagedNutritionPerDay>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.1</PilotingAbility>
+			  <Hauts_MaxPilferingValue>80</Hauts_MaxPilferingValue>
 			</statOffsets>
 			<statFactors>
 			  <VEF_MassCarryCapacity>100</VEF_MassCarryCapacity>
@@ -2571,6 +2583,7 @@
 			<description>{PAWN_nameDef} derives more usable material from harvesting plants, butchering animals, and mining. Animals {PAWN_pronoun} extracts resources from regrow that material quicker.</description>
 			<statOffsets>
 			  <RBSF_NatureConnection MayRequire="Rooboid.Faun">0.35</RBSF_NatureConnection>
+			  <Hauts_MaxPilferingValue>80</Hauts_MaxPilferingValue>
 			</statOffsets>
 			<statFactors>
 			  <ButcheryFleshEfficiency>2</ButcheryFleshEfficiency>
@@ -2648,6 +2661,7 @@
 			<statFactors>
 			  <CarryingCapacity>100</CarryingCapacity>
 			  <VEF_MassCarryCapacity>100</VEF_MassCarryCapacity>
+			  <Hauts_MaxPilferingValue>10</Hauts_MaxPilferingValue>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -2981,6 +2995,9 @@
 			<label>psychic touch-me-not</label>
 			<description>{PAWN_nameDef} turns invisible, phases through obstacles, and moves faster for a short while after being hit (even if the hit did no damage).</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <Hauts_PilferingStealth>0.3</Hauts_PilferingStealth>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>

@@ -43,21 +43,9 @@
 <HVT_SFAIcon>Scout for Hostiles</HVT_SFAIcon>
 <HVT_SFATooltip>Skulkers in this caravan will use their talents for stealth to ascertain if there is an ambush lying in wait at this site without actually triggering the ambush. Skulkers with impaired senses may accidentally miss evidence of an ambush.</HVT_SFATooltip>
 <HVT_SFALabel>Scout for hostiles ({0}% success chance)</HVT_SFALabel>
-<HVT_BurgleIcon>Burgle</HVT_BurgleIcon>
-<HVT_BurgleTooltip>Skulkers in this caravan will infiltrate this settlement to steal as many trade goods as they can carry.\n\nMaximum stealable value of goods is dependent on manipulation, move speed, sight (and hearing to a lesser extent), and melee damage factor.\n\nChance to avoid being caught is dependent on move speed, sight, hunter stealth, trap spring chance, and to a lesser extent, hearing, filth rate, and filth avoidance chance.\n\nGenerally, a settlement that cannot be traded with cannot be burgled from; either because they have nothing to steal, or because their lack of intention to trade allows them to use tighter, more inconvenient security measures for their goods.</HVT_BurgleTooltip>
 <HVT_BonusGrowthMoment>Bonus growth moment for {0}</HVT_BonusGrowthMoment>
 <HVT_TraitSerumLabel>{PAWN_nameDef} can now gain a trait from the list below. Rarer traits cost more charges, shown in parentheses.</HVT_TraitSerumLabel>
 <HVT_TraitSerumSuccess>{PAWN_nameDef} has gained the {0} trait.</HVT_TraitSerumSuccess>
-<HVT_BurgleWindow1>You can steal up to {0} silver worth of goods from {1}, weighing up to {2}kg.\n\nChance of success: {3}%</HVT_BurgleWindow1>
-<HVT_BurgleWindow2>The maximum weight of goods you can steal depends on your Skulkers' carrying capacity.\nThe maximum value depends on their manipulation, sight, move speed, melee damage factor, and to a lesser extent hearing.\nSuccess chance is similar, but also depends on track size, hunting stealth, and trap spring chance, not melee damage factor.</HVT_BurgleWindow2>
-<HVT_BurgleWindow3>Select specific types of goods to steal. If you don't select any, random goods will be stolen.</HVT_BurgleWindow3>
-<HVT_BurgleWindowCategories>Prioritize stealing {0}</HVT_BurgleWindowCategories>
-<HVT_BurgleLetter1>Burglary found nothing</HVT_BurgleLetter1>
-<HVT_BurgleOutcome1>Your burglars weren't caught, but they couldn't find anything of value.\n\nAny participants in this burglary will automatically fail future burglary attempts within the next day, and have halved chance to avoid being caught for four days after that.</HVT_BurgleOutcome1>
-<HVT_BurgleLetter2>Burglary successful</HVT_BurgleLetter2>
-<HVT_BurgleOutcome2>The burglary went off without a hitch! Check your caravan's inventory for the stolen goods.\n\nAny participants in this burglary will automatically fail future burglary attempts within the next day, and have halved chance to avoid being caught for four days after that.</HVT_BurgleOutcome2>
-<HVT_BurgleLetter3>Burglary foiled!</HVT_BurgleLetter3>
-<HVT_BurgleOutcome3>Relations with {0} have changed by {1}, and you have received no goods.\n\nAny participants in this burglary will automatically fail future burglary attempts within the next day, and have halved chance to avoid being caught for four days after that.</HVT_BurgleOutcome3>
 <HVT_SFAletter1>No hostiles detected at {0}</HVT_SFAletter1>
 <HVT_SFAoutcome1>No hostile parties were detected at {0}. However, if your scouts' senses were impaired, they may have missed evidence.</HVT_SFAoutcome1>
 <HVT_SFAletter2>Hostile party detected at {0}</HVT_SFAletter2>
@@ -179,11 +167,6 @@
 <HVT_PsychicWMD2>{0} has been removed from existence due to the transcendent powers wielded by {1}. All factions have turned against {2}.</HVT_PsychicWMD2>
 <HVT_DetermineNewAnimal>Reroll war queen animal</HVT_DetermineNewAnimal>
 <!--Error messages-->
-<HVT_NotBurglable>Burglary can only be performed on settlements willing to trade goods.</HVT_NotBurglable>
-<HVT_BurglaryNoSkulkers>How did you get this far without any Skulkers in your caravan? That shouldn't be possible.</HVT_BurglaryNoSkulkers>
-<HVT_BurglaryNoCarryCap>Can't perform burglary: your Skulkers lack the carrying capacity to carry any stolen goods. This is dependent on body size, carrying capacity, and manipulation.</HVT_BurglaryNoCarryCap>
-<HVT_BurglaryTooWeak>Can't perform burglary: your Skulkers are physically incapable of stealing goods. This is dependent on manipulation, move speed, sight, melee damage factor, and to a lesser extent hearing.</HVT_BurglaryTooWeak>
-<HVT_BurglaryTooConspicuous>Can't perform burglary: your Skulkers aren't stealthy enough to stand even a chance of avoiding notice. This is dependent on manipulation, move speed, sight, filthiness, hunter stealth, trap spring chance, and to a lesser extent hearing.</HVT_BurglaryTooConspicuous>
 <HVT_TraitSerumNeedsChoice>Please select a trait to gain.</HVT_TraitSerumNeedsChoice>
 <HVT_TraitSerumLPWokeException>Can't inflict Latent Psychic on someone who has already undergone awakening.</HVT_TraitSerumLPWokeException>
 <HVT_NoWokeMutants>Psychically deaf unnatural entities cannot awaken.</HVT_NoWokeMutants>
@@ -198,7 +181,6 @@
 <HVT_PhoenixOverload>{PAWN_nameDef} has been resurrected too recently by the power of the phoenix, and could not resurrect. The strain on the psychic manifold caused {PAWN_possessive} body to explode.</HVT_PhoenixOverload>
 <HVT_WraithResurrection>Since this is the former host body of a transcendent wraith, its awakenings and transcendences have "left" it for whoever the newest host is.</HVT_WraithResurrection>
 <HVT_WraithLost>Transferral of one's consciousness over such vast distances carries a heavy price. Temporary incapacitation or disorientation has resulted in {PAWN_nameDef} becoming lost.</HVT_WraithLost>
-<HVT_HediffMenuException>Please select a condition to gain.</HVT_HediffMenuException>
 <HVT_ExciseTraitExemptionFailure>Excise Trait failed to work on {PAWN_nameDef}. Reason: {PAWN_nameDef} had no traits which Excise Trait is capable of removing.</HVT_ExciseTraitExemptionFailure>
 <HVT_ExciseTraitTraitlessFailure>Excise Trait failed to work on {PAWN_nameDef}. Reason: {PAWN_nameDef} is incapable of having traits.</HVT_ExciseTraitTraitlessFailure>
 <HVT_StayedWoke>Due to {PAWN_possessive} awakened powers, {PAWN_nameDef} was able to resist mental domination.</HVT_StayedWoke>

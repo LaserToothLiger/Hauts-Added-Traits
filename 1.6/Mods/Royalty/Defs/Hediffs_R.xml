@@ -804,6 +804,9 @@
     <stages>
       <li>
 		<becomeVisible>false</becomeVisible>
+		<statFactors>
+		  <Flammability>0</Flammability>
+		</statFactors>
       </li>
     </stages>
 	<comps>
@@ -6363,6 +6366,8 @@
 		<becomeVisible>false</becomeVisible>
 		<statOffsets>
 		  <Hauts_MeleeArmorPenetration>2</Hauts_MeleeArmorPenetration>
+		  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
+		  <Hauts_MaxPilferingValue>400</Hauts_MaxPilferingValue>
 		</statOffsets>
       </li>
     </stages>
@@ -6567,6 +6572,7 @@
 		  <PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.01</VacuumResistance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.05</P42_AllergicSensitivity>
+		  <Hauts_PilferingStealth>0.025</Hauts_PilferingStealth>
         </statOffsets>
 		<statFactors>
 		  <IncomingDamageFactor>0.98</IncomingDamageFactor>
