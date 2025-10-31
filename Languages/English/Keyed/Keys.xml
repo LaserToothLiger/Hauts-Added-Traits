@@ -13,10 +13,6 @@
 <HVT_MonsterLoveXenoTooltip>Pawns with the Monster Lover trait will have increased opinion of those of different xenotypes.</HVT_MonsterLoveXenoTooltip>
 <HVT_MonsterLoveHAR>Monster Lovers love aliens</HVT_MonsterLoveHAR>
 <HVT_MonsterLoveHARTooltip>If using a mod that allows for non-human sophonts (e.g. Humanoid Alien Races or Big and Small Genes Framework), pawns with the Monster Lover trait will have increased opinion of those of different species.</HVT_MonsterLoveHARTooltip>
-<HVT_SettingMinTraits>Minimum traits per pawn</HVT_SettingMinTraits>
-<HVT_TooltipMinTraits>The lowest number of traits a pawn can spawn with, barring particularly unusual circumstances.\n\nPawns young enough to still go through growth moments (Biotech DLC) are unaffected.</HVT_TooltipMinTraits>
-<HVT_SettingMaxTraits>Maximum traits per pawn</HVT_SettingMaxTraits>
-<HVT_TooltipMaxTraits>Pawns will be able to spawn with up to this many traits, except in rare circumstances that force additional traits.\n\n\nWith the Biotech DLC, the number and spacing of growth moments for children adjusts as follows:\n\n3 max traits) Growth moments happen on the 7th, 10th, and 13th birthdays; growth points gain at the usual rate (25% slower for the first one, then at 1x speed).\n\n4mt) Growth moments on bdays 6, 9, 11, and 13; growth points gain 50% faster for the last two.\n\n5mt) Growth moments on bdays 5, 7, 9, 11, and 13; growth points gain 50% faster.\n\n6mt) Identical to 3mt, but there are two growth moments for each such birthday.\n\n7mt) One growth moment on bday 6, and two growth moments on bdays 9, 11, and 13; growth points gain 50% faster for the last two.\n\n8mt) Two growth moments each on bdays 6, 9, 11, and 13; growth points gain 50% faster for the last two.\n\n9mt) Identical to 3mt, but there are three growth moments for each such birthday.</HVT_TooltipMaxTraits>
 <HVT_SettingPNFStartingCharges>Personality neuroformatter initial charge count</HVT_SettingPNFStartingCharges>
 <HVT_TooltipPNFStartingCharges>Determines how many charges a personality neuroformatter starts with. A lower amount will result in each neuroformatter being able to grant not only less traits, but a smaller variety as well, since some traits cost more charges than others.\n\nDoes not apply to neuroformatters that have already been created.</HVT_TooltipPNFStartingCharges>
 <HVT_SettingMaxTrans>Maximum number of psychic transcendences</HVT_SettingMaxTrans>
@@ -43,7 +39,6 @@
 <HVT_SFAIcon>Scout for Hostiles</HVT_SFAIcon>
 <HVT_SFATooltip>Skulkers in this caravan will use their talents for stealth to ascertain if there is an ambush lying in wait at this site without actually triggering the ambush. Skulkers with impaired senses may accidentally miss evidence of an ambush.</HVT_SFATooltip>
 <HVT_SFALabel>Scout for hostiles ({0}% success chance)</HVT_SFALabel>
-<HVT_BonusGrowthMoment>Bonus growth moment for {0}</HVT_BonusGrowthMoment>
 <HVT_TraitSerumLabel>{PAWN_nameDef} can now gain a trait from the list below. Rarer traits cost more charges, shown in parentheses.</HVT_TraitSerumLabel>
 <HVT_TraitSerumSuccess>{PAWN_nameDef} has gained the {0} trait.</HVT_TraitSerumSuccess>
 <HVT_SFAletter1>No hostiles detected at {0}</HVT_SFAletter1>

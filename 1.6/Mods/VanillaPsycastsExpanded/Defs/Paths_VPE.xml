@@ -769,7 +769,7 @@
 	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>HVT_MoveUnseen</defName>
       <label>move unseen</label>
-      <description>Enhance the stealth capabilities of the target, preventing them from being noticed by hostiles unless they attack or use abilities. The duration scales with the target’s psychic sensitivity.</description>
+      <description>Enhance the stealth capabilities of the target, preventing them from being noticed by hostiles unless they attack, use abilities, or start a pickpocketing attempt. The duration scales with the target’s psychic sensitivity.</description>
       <iconPath>VPE/HVT_GroupSnoop</iconPath>
       <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
 	  <castTime>120</castTime>
@@ -807,7 +807,7 @@
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_SnoopingAroundISee</defName>
     <label>psychic stealth</label>
-    <description>Invisibility which prematurely wears off on attacking or casting an ability.</description>
+    <description>Invisibility which prematurely wears off on attacking, casting an ability, or starting a pickpocketing attempt.</description>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
     <hediffClass>HediffWithComps</hediffClass>

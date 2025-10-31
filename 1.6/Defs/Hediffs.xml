@@ -966,7 +966,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_SkulkerSurpriseStealth</defName>
     <label>exemplary stealth</label>
-    <description>"Invisibility" which prematurely wears off on attacking or casting an ability.</description>
+    <description>"Invisibility" which prematurely wears off on attacking, casting an ability, or starting a pickpocketing attempt.</description>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
     <hediffClass>HediffWithComps</hediffClass>
