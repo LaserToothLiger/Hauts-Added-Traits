@@ -390,11 +390,15 @@
           <ArmorRating_Sharp>0.015</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.015</ArmorRating_Blunt>
           <ArmorRating_Heat>0.015</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.01</ArmorRating_Electric>
+		  <MeleeParryChance MayRequire="CETeam.CombatExtended">0.004</MeleeParryChance>
 		  <LifespanFactor>0.015</LifespanFactor>
           <MoveSpeed>0.1</MoveSpeed>
 		  <PawnBeauty>0.1</PawnBeauty>
           <InjuryHealingFactor>0.07</InjuryHealingFactor>
 		  <MeleeDamageFactor>0.07</MeleeDamageFactor>
+		  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.004</MeleeCritChance>
+		  <MeleeParryChance MayRequire="CETeam.CombatExtended">0.004</MeleeParryChance><!--the melee damage factor is removed if you are running Combat Extended, in favor of these two stats-->
 		  <VEF_RangeAttackSpeedFactor>0.07</VEF_RangeAttackSpeedFactor>
           <ImmunityGainSpeed>0.04</ImmunityGainSpeed>
 		  <RestFallRateFactor>-0.005</RestFallRateFactor>
@@ -426,11 +430,14 @@
           <ArmorRating_Sharp>0.009</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.009</ArmorRating_Blunt>
           <ArmorRating_Heat>0.009</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.006</ArmorRating_Electric>
 		  <LifespanFactor>0.009</LifespanFactor>
           <MoveSpeed>0.06</MoveSpeed>
 		  <PawnBeauty>0.06</PawnBeauty>
           <InjuryHealingFactor>0.05</InjuryHealingFactor>
 		  <MeleeDamageFactor>0.05</MeleeDamageFactor>
+		  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.003</MeleeCritChance>
+		  <MeleeParryChance MayRequire="CETeam.CombatExtended">0.003</MeleeParryChance>
 		  <VEF_RangeAttackSpeedFactor>0.05</VEF_RangeAttackSpeedFactor>
           <ImmunityGainSpeed>0.03</ImmunityGainSpeed>
 		  <RestFallRateFactor>-0.004</RestFallRateFactor>
@@ -571,7 +578,7 @@
   </HediffDef>
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_SiphonerEating</defName>
-    <label>psy-assisted mastication</label>
+    <label>awakened siphoner</label>
     <description>Awakened siphoners eat faster, since part of the food dissolves into psychic immateria instead of needing to be chewed.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <stages>
@@ -612,6 +619,7 @@
           <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
           <ArmorRating_Heat>0.20</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.12</ArmorRating_Electric>
 		  <MeleeDamageFactor>0.25</MeleeDamageFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.2</VacuumResistance>
         </statOffsets>
@@ -639,6 +647,7 @@
           <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
           <ArmorRating_Heat>0.40</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.24</ArmorRating_Electric>
 		  <MeleeDamageFactor>0.5</MeleeDamageFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.4</VacuumResistance>
         </statOffsets>
@@ -666,6 +675,7 @@
           <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
           <ArmorRating_Heat>0.60</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.36</ArmorRating_Electric>
 		  <MeleeDamageFactor>0.75</MeleeDamageFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.6</VacuumResistance>
         </statOffsets>
@@ -715,6 +725,7 @@
           <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
           <ArmorRating_Heat>0.15</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.09</ArmorRating_Electric>
 		  <MeleeDamageFactor>0.2</MeleeDamageFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.15</VacuumResistance>
         </statOffsets>
@@ -741,6 +752,7 @@
           <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
           <ArmorRating_Heat>0.30</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.18</ArmorRating_Electric>
 		  <MeleeDamageFactor>0.4</MeleeDamageFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
         </statOffsets>
@@ -767,6 +779,7 @@
           <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
           <ArmorRating_Heat>0.45</ArmorRating_Heat>
+          <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.27</ArmorRating_Electric>
 		  <MeleeDamageFactor>0.6</MeleeDamageFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.45</VacuumResistance>
         </statOffsets>
@@ -906,6 +919,7 @@
         </capMods>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.25</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -925,6 +939,7 @@
 		</statOffsets>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.25</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -944,6 +959,7 @@
 		</statOffsets>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.25</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -963,6 +979,7 @@
 		</statOffsets>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.25</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -982,6 +999,7 @@
 		</statOffsets>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.25</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1001,6 +1019,7 @@
 		</statOffsets>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.25</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1050,6 +1069,7 @@
 		  <MeleeHitChance>1</MeleeHitChance>
 		  <MeleeDodgeChance>-1</MeleeDodgeChance>
 		  <PawnTrapSpringChance>0.05</PawnTrapSpringChance>
+		  <VEF_MassCarryCapacity>5</VEF_MassCarryCapacity>
 		</statOffsets>
 		<becomeVisible>false</becomeVisible>
         <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
@@ -1204,12 +1224,22 @@
 		</capMods>
 		<damageFactors>
 		  <EMP>0</EMP>
+		  <Taser MayRequire="CETeam.CombatExtended">0</Taser>
+		  <Electrical MayRequire="CETeam.CombatExtended">0</Electrical>
+		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
+		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
 		  <Burn>0.5</Burn>
 		  <Flame>0.5</Flame>
 		  <VEF_PermanentBurn>0.5</VEF_PermanentBurn>
 		  <Beam>0.5</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.5</BeamBypassShields>
-		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.5</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.5</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.5</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.5</PrometheumFlame>
+		  <Neuralizer MayRequire="CETeam.CombatExtended">0.5</Neuralizer>
+		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0.5</Neuralizer_weak>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1658,16 +1688,22 @@
       <li>
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
+		  <Burn>0</Burn>
+		  <Flame>0</Flame>
+		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
-		  <Burn>0</Burn>
-		  <Flame>0</Flame>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
-		  <Vaporize>0.8</Vaporize>
-		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
+		  <Vaporize>0.8</Vaporize>
 		</damageFactors>
       </li>
     </stages>
@@ -1714,6 +1750,10 @@
 			  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">1.5</BeamBypassShields>
 			  <Vaporize>1.5</Vaporize>
 			  <VEF_PermanentBurn>1.5</VEF_PermanentBurn>
+			  <ArrowFire MayRequire="CETeam.CombatExtended">1.5</ArrowFire>
+			  <Flame_Secondary MayRequire="CETeam.CombatExtended">1.5</Flame_Secondary>
+			  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">1.5</Flame_Secondary_Incendiary>
+			  <PrometheumFlame MayRequire="CETeam.CombatExtended">1.5</PrometheumFlame>
 			</damageFactors>
 		  </li>
 		</stages>
@@ -1791,6 +1831,9 @@
 		  <Nerve>0</Nerve>
 		  <Psychic MayRequire="Ludeon.RimWorld.Anomaly">0</Psychic>
 		  <AM_SoulDrain MayRequire="sarg.alphamechs">0</AM_SoulDrain>
+		  <Neuralizer MayRequire="CETeam.CombatExtended">0</Neuralizer>
+		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0</Neuralizer_weak>
+		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
 		</damageFactors>
       </li>
     </stages>
@@ -1823,6 +1866,9 @@
 		<stages>
 		  <li>
 		    <painOffset>0.25</painOffset>
+			<statOffsets>
+				<Suppressability MayRequire="CETeam.CombatExtended">0.2</Suppressability>
+			</statOffsets>
 		  </li>
 		</stages>
 		<comps>
@@ -1876,6 +1922,12 @@
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.2</BeamBypassShields>
 		  <Vaporize>0.2</Vaporize>
 		  <VEF_PermanentBurn>0.2</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.2</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.2</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.2</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.2</PrometheumFlame>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.2</CE_Laser>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.2</Thermobaric>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 		</damageFactors>
       </li>
@@ -1927,6 +1979,12 @@
 			  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.4</BeamBypassShields>
 			  <Vaporize>0.4</Vaporize>
 			  <VEF_PermanentBurn>0.4</VEF_PermanentBurn>
+			  <ArrowFire MayRequire="CETeam.CombatExtended">0.4</ArrowFire>
+			  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.4</Flame_Secondary>
+			  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.4</Flame_Secondary_Incendiary>
+			  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.4</PrometheumFlame>
+			  <CE_Laser MayRequire="CETeam.CombatExtended">0.4</CE_Laser>
+			  <Thermobaric MayRequire="CETeam.CombatExtended">0.4</Thermobaric>
 			  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 			</damageFactors>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
@@ -1950,6 +2008,10 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <EMP>0</EMP>
+		  <Taser MayRequire="CETeam.CombatExtended">0</Taser>
+		  <Electrical MayRequire="CETeam.CombatExtended">0</Electrical>
+		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
 		</damageFactors>
       </li>
     </stages>
@@ -2050,6 +2112,8 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
+		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
 		</damageFactors>
       </li>
 	  <li>
@@ -2066,6 +2130,8 @@
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
 		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
+		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
 		</damageFactors>
       </li>
     </stages>
@@ -2119,16 +2185,22 @@
         <label>inactive</label>
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
+		  <Burn>0</Burn>
+		  <Flame>0</Flame>
+		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
-		  <Burn>0</Burn>
-		  <Flame>0</Flame>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
-		  <Vaporize>0.8</Vaporize>
-		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
+		  <Vaporize>0.8</Vaporize>
 		</damageFactors>
       </li>
 	  <li>
@@ -2136,16 +2208,22 @@
         <label>pushing heat</label>
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
+		  <Burn>0</Burn>
+		  <Flame>0</Flame>
+		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
-		  <Burn>0</Burn>
-		  <Flame>0</Flame>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
-		  <Vaporize>0.8</Vaporize>
-		  <VEF_PermanentBurn>0</VEF_PermanentBurn>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
+		  <Vaporize>0.8</Vaporize>
 		</damageFactors>
 	  </li>
     </stages>
@@ -2215,6 +2293,13 @@
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
+		  <Neuralizer MayRequire="CETeam.CombatExtended">0</Neuralizer>
+		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0</Neuralizer_weak>
+		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
+		  <Taser MayRequire="CETeam.CombatExtended">0</Taser>
+		  <Frostbite>0.15</Frostbite>
+		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
+		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
 		  <Burn>0.25</Burn>
 		  <Flame>0.25</Flame>
 		  <VEF_PermanentBurn>0.25</VEF_PermanentBurn>
@@ -2228,6 +2313,14 @@
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.25</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.25</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.25</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
+		  <Electrical MayRequire="CETeam.CombatExtended">0.25</Electrical>
+		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
+		  <ArrowVenom MayRequire="CETeam.CombatExtended">0.25</ArrowVenom>
 		</damageFactors>
 	  </li>
     </stages>
@@ -3662,7 +3755,9 @@
 			<ArmorRating_Blunt>0.0125</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.0125</ArmorRating_Sharp>
 			<ArmorRating_Heat>0.0125</ArmorRating_Heat>
-		  <PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
+			<ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.0125</ArmorRating_Electric>
+			<MoveSpeed>0.03</MoveSpeed>
+			<PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
 		</statOffsets>
         <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
       </li>
@@ -3697,13 +3792,19 @@
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.15</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.15</PrometheumFlame>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
-		  <Beam>0.25</Beam>
-		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
-		  <Vaporize>0.7</Vaporize>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
+		  <Beam>0.25</Beam>
+		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.7</Thermobaric>
+		  <Vaporize>0.7</Vaporize>
 		</damageFactors>
       </li>
     </stages>
@@ -3877,11 +3978,17 @@
 		  <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
 		  <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
 		  <ArmorRating_Heat>0.5</ArmorRating_Heat>
+		  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.5</ArmorRating_Electric>
 		</statOffsets>
 		<statFactors>
 		  <MoveSpeed>2</MoveSpeed>
 		</statFactors>
 		<damageFactors>
+		  <Burn>0.8</Burn>
+		  <Flame>0.8</Flame>
+		  <VEF_PermanentBurn>0.8</VEF_PermanentBurn>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.8</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.8</Flame_Secondary_Incendiary>
 		  <AcidBurn>0.9</AcidBurn>
 		  <VEF_SecondaryAcidBurn>0.9</VEF_SecondaryAcidBurn>
 		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0.9</OTCAcid>
@@ -3889,12 +3996,13 @@
 		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0.9</OMGNecrobane>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0.9</AM_AcidSpit>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0.9</ToxGas>
-		  <Burn>0.8</Burn>
-		  <Flame>0.8</Flame>
 		  <Beam>0.95</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.95</BeamBypassShields>
 		  <Vaporize>0.95</Vaporize>
-		  <VEF_PermanentBurn>0.8</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.95</ArrowFire>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.95</PrometheumFlame>
+		  <CE_Laser MayRequire="CETeam.CombatExtended">0.95</CE_Laser>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.95</Thermobaric>
 		</damageFactors>
 		<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
@@ -4138,6 +4246,7 @@
 			</capMods>
 			<statOffsets>
 			  <PawnBeauty>1</PawnBeauty>
+			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.4</NightVisionEfficiency>
 			</statOffsets>
 		  </li>
 		</stages>
@@ -4444,13 +4553,14 @@
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
+		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
+		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
 		  <AcidBurn>0.25</AcidBurn>
 		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0.25</OTCAcid>
 		  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">0.25</OEUnstableToxins>
 		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0.25</OMGNecrobane>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0.25</AM_AcidSpit>
-		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
-		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
+		  <ArrowVenom MayRequire="CETeam.CombatExtended">0.25</ArrowVenom>
 		</damageFactors>
       </li>
     </stages>
@@ -4462,7 +4572,6 @@
 		<totallyRemoveOnCure>false</totallyRemoveOnCure><!--well, false for the list below, anyways. it IS a straight up instant cure for food poisoning, ODs, and addictions-->
 		<hediffsToCure><!--PPOH already takes care of food poisoning, overdoses, and addictions... this is just a surplus XML-modifiable list of things it can reduce the severity of (not just outright cure)-->
 		  <li>ToxicBuildup</li>
-		  <li MayRequire="Ludeon.RimWorld.Biotech">ToxGasExposure</li>
 		  <li MayRequire="Ludeon.RimWorld.Anomaly">BloodRage</li>
 		  <li>VEF_ToxicBuildup</li>
 		  <li MayRequire="SirMashedPotato.Ashlands">Mashed_Ashlands_AshBuildup</li>
@@ -4475,9 +4584,13 @@
 		  <li MayRequire="phil42.allergies">P42_ChronicSinusitis</li>
 		  <li MayRequire="phil42.allergies">P42_AllergenBuildup</li>
 		  <li MayRequire="phil42.allergies">Asthma</li>
+		  <li MayRequire="CETeam.CombatExtended">SmokeInhalation</li>
+		  <li MayRequire="CETeam.CombatExtended">VenomBuildup</li>
+		  <li MayRequire="CETeam.CombatExtended">PrometheumSoaked</li>
+		  <li MayRequire="CETeam.CombatExtended">Tranquilizer</li>
 		</hediffsToCure>
 		<victimScalar>PsychicSensitivity</victimScalar>
-		<severityLostOnCure>0.2~0.2</severityLostOnCure><!--this is -20% on hit for the above hediffs, which scale in severity from 0 to 1. If you add other hediffs to this list, keep this info in mind.-->
+		<severityLostOnCure>0.2</severityLostOnCure><!--this is -20% on hit for the above hediffs, which scale in severity from 0 to 1. If you add other hediffs to this list, keep this info in mind.-->
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -4696,7 +4809,12 @@
 			  <AimingDelayFactor>1.4</AimingDelayFactor>
 			  <MeleeCooldownFactor>1.4</MeleeCooldownFactor>
 			  <Hauts_PsyfocusRegenRate>-0.15</Hauts_PsyfocusRegenRate>
+			  <Suppressability MayRequire="CETeam.CombatExtended">0.5</Suppressability>
 			</statOffsets>
+			<damageFactors>
+			  <Neuralizer MayRequire="CETeam.CombatExtended">1.35</Neuralizer>
+			  <Neuralizer_weak MayRequire="CETeam.CombatExtended">1.35</Neuralizer_weak>
+			</damageFactors>
 		  </li>
 		</stages>
 		<comps>
@@ -4867,6 +4985,9 @@
 		<statOffsets>
 			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 		</statOffsets>
+		<statFactors>
+			<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.1</SmokeSensitivity>
+		</statFactors>
       </li>
     </stages>
     <comps>
@@ -5023,13 +5144,18 @@
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.15</VQE_CryptoCut>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
+		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.15</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
 		  <Vaporize>0.7</Vaporize>
-		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.7</Thermobaric>
 		</damageFactors>
       </li>
 	  <li>
@@ -5041,13 +5167,18 @@
 		  <Frostbite>0</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0</OTCCryo>
+		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.15</VQE_CryptoCut>
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
+		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
+		  <ArrowFire MayRequire="CETeam.CombatExtended">0.15</ArrowFire>
+		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
+		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
 		  <Vaporize>0.7</Vaporize>
-		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
+		  <Thermobaric MayRequire="CETeam.CombatExtended">0.7</Thermobaric>
 		</damageFactors>
 	  </li>
     </stages>
@@ -5221,6 +5352,7 @@
         </capMods>
 		<damageFactors>
 		  <TornadoScratch>0</TornadoScratch>
+		  <Fragment MayRequire="CETeam.CombatExtended">0.5</Fragment>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -6043,6 +6175,9 @@
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0</AM_AcidSpit>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
+		  <ArrowVenom MayRequire="CETeam.CombatExtended">0</ArrowVenom>
+		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
+		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
 		<becomeVisible>false</becomeVisible>
@@ -6099,6 +6234,7 @@
 		  <li>
 			<statFactors>
 			  <ToxicResistance>0.1</ToxicResistance>
+			  <ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
 			  <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
 			</statFactors>
 			<damageFactors>
@@ -6107,6 +6243,8 @@
 			  <OEUnstableToxins MayRequire="ObsidiaExpansion.Core">1.25</OEUnstableToxins>
 			  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">1.25</OMGNecrobane>
 			  <VEF_SecondaryAcidBurn>1.25</VEF_SecondaryAcidBurn>
+			  <ArrowVenom MayRequire="CETeam.CombatExtended">1.25</ArrowVenom>
+			  <Tranquilizer MayRequire="CETeam.CombatExtended">1.25</Tranquilizer>
 			</damageFactors>
 		  </li>
 		</stages>
@@ -6141,6 +6279,7 @@
 		  <MeleeHitChance>1</MeleeHitChance>
 		  <MeleeDodgeChance>-1</MeleeDodgeChance>
 		  <PawnTrapSpringChance>0.05</PawnTrapSpringChance>
+		  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.02</SmokeSensitivity>
 		</statOffsets>
 		<statFactors>
 		  <IncomingDamageFactor>0.96</IncomingDamageFactor>
@@ -6342,6 +6481,9 @@
 			  <PainShockThreshold>0.5</PainShockThreshold>
 			  <IncomingDamageFactor>1.1</IncomingDamageFactor>
 			</statFactors>
+			<statOffsets>
+			  <Suppressability MayRequire="CETeam.CombatExtended">0.8</Suppressability>
+			</statOffsets>
 			<statFactorEffectMultiplier>PsychicSensitivity</statFactorEffectMultiplier>
 		  </li>
 		</stages>
@@ -6363,7 +6505,6 @@
     <maxSeverity>1.0</maxSeverity>
     <stages>
       <li>
-		<becomeVisible>false</becomeVisible>
 		<statOffsets>
 		  <Hauts_MeleeArmorPenetration>2</Hauts_MeleeArmorPenetration>
 		  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>
@@ -6481,7 +6622,7 @@
 			  <hasStandardCommand>true</hasStandardCommand>
 			  <defaultProjectile>HVT_PsychicYellowjacketProjectile</defaultProjectile>
 			  <warmupTime>1</warmupTime>
-			  <range>20</range>
+			  <range>29.9</range>
 			  <burstShotCount>1</burstShotCount>
 			  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 			  <muzzleFlashScale>2</muzzleFlashScale>
@@ -6520,6 +6661,7 @@
 		  <LifespanFactor>2000</LifespanFactor>
 		  <VEF_EnergyShieldEnergyMaxFactor>1</VEF_EnergyShieldEnergyMaxFactor>
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-1</Suppressability>
 		</statOffsets>
 		<statFactors>
 		  <ImmunityGainSpeed>3</ImmunityGainSpeed>
@@ -6573,6 +6715,8 @@
 		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.01</VacuumResistance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.05</P42_AllergicSensitivity>
 		  <Hauts_PilferingStealth>0.025</Hauts_PilferingStealth>
+		  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.01</SmokeSensitivity>
+		  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.05</NightVisionEfficiency>
         </statOffsets>
 		<statFactors>
 		  <IncomingDamageFactor>0.98</IncomingDamageFactor>

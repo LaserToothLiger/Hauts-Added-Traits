@@ -891,7 +891,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitNotothen"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} gains armor and arcane load recovery rate as it gets colder.</description>
+									<description>{PAWN_nameDef} gains armor, vigor, and arcane load recovery rate as it gets colder.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

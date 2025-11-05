@@ -606,6 +606,8 @@
     <statOffsets>
 		<ComfyTemperatureMin>-4.4</ComfyTemperatureMin>
 		<ComfyTemperatureMax>4.4</ComfyTemperatureMax>
+		<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.10</P42_AllergicSensitivity>
+		<Suppressability MayRequire="CETeam.CombatExtended">-0.2</Suppressability>
 	</statOffsets>
     <disablesNeeds>
       <li>Comfort</li>
@@ -655,6 +657,9 @@
     <statOffsets>
 		<ComfyTemperatureMin>2.2</ComfyTemperatureMin>
 		<ComfyTemperatureMax>-2.2</ComfyTemperatureMax>
+		<P42_AllergicSensitivity MayRequire="phil42.allergies">0.05</P42_AllergicSensitivity>
+		<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.2</NightVisionEfficiency>
+		<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.1</SmokeSensitivity>
 	</statOffsets>
     <capMods>
 	  <li>
@@ -707,6 +712,9 @@
     <statOffsets>
 		<ComfyTemperatureMin>4.4</ComfyTemperatureMin>
 		<ComfyTemperatureMax>-4.4</ComfyTemperatureMax>
+		<P42_AllergicSensitivity MayRequire="phil42.allergies">0.10</P42_AllergicSensitivity>
+		<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.4</NightVisionEfficiency>
+		<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.2</SmokeSensitivity>
 	</statOffsets>
     <capMods>
 	  <li>

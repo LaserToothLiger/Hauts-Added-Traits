@@ -171,6 +171,9 @@
     <hediff>HVT_PtarmiganBright</hediff>
     <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>HVT_TTraitPtarmigan</li>
+    </nullifyingTraits>
     <stages>
       <li>
         <label>happy transcendent ptarmigan</label>

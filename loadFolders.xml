@@ -21,5 +21,6 @@
 		<li IfModActive="vanillaracesexpanded.highmate">1.6/Mods/VREHighmate</li>
 		<li IfModActive="doug.conn">1.6/Mods/COaNN</li>
 		<li IfModActive="SmashPhil.VehicleFramework">1.6/Mods/VehicleFramework</li>
+		<li IfModActive="CETeam.CombatExtended">1.6/Mods/CombatExtended</li>
 	</v1.6>
 </loadFolders>

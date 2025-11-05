@@ -391,6 +391,7 @@
 			  <MentalBreakThreshold>0.75</MentalBreakThreshold>
 			  <PainShockThreshold>1.5</PainShockThreshold>
 			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0</VAEI_SanityLossMultiplier>
+			  <Suppressability MayRequire="CETeam.CombatExtended">0.33</Suppressability>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -495,6 +496,7 @@
 			  <Hauts_SpewRangeFactor>0.5</Hauts_SpewRangeFactor>
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.5</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.5</SmokeSensitivity>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -565,6 +567,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <MechControlGroups MayRequire="Ludeon.RimWorld.Biotech">1</MechControlGroups>
+			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.25</ArmorRating_Electric>
 			</statOffsets>
 			<statFactors>
 			  <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">1.25</MechBandwidth>
@@ -596,6 +599,7 @@
 			  <Hauts_MechEnergyUsage MayRequire="Ludeon.RimWorld.Biotech">-0.25</Hauts_MechEnergyUsage>
 			  <Radiation MayRequire="Dubwise.Rimatomics">-0.35</Radiation>
 			  <VEF_EnergyShieldEnergyMaxFactor>0.35</VEF_EnergyShieldEnergyMaxFactor>
+			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.4</ArmorRating_Electric>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -823,7 +827,7 @@
 			<description>{PAWN_nameDef} regenerates from wounds, even permanent ones, unnaturally fast. {PAWN_pronoun} can even come back from death, taking somewhere between 3-15 days.</description>
 			<statOffsets>
 				<InjuryHealingFactor>99</InjuryHealingFactor>
-			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
+				<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			</statOffsets>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
@@ -976,7 +980,10 @@
 			  <li>Wander_Sad</li>
 			  <li>Wander_OwnRoom</li>
 			</theOnlyAllowedMentalBreaks>
-			<statOffsets><ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.06</ActivitySuppressionRate></statOffsets>
+			<statOffsets>
+			  <ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.06</ActivitySuppressionRate>
+			  <Suppressability MayRequire="CETeam.CombatExtended">-1</Suppressability>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1070,6 +1077,9 @@
 			<label>psychic electrophorus</label>
 			<description>{PAWN_nameDef} emanates electrical disturbances, charging nearby batteries, calling lightning on nearby foes with each psycast, and sending EMPs through anything {PAWN_pronoun} hits in melee.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.6</ArmorRating_Electric>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1140,6 +1150,9 @@
 			<label>psychic firefly</label>
 			<description>{PAWN_nameDef} generates unique solar pinholes with each psycast - the light they emit debilitates foes that get too close. {PAWN_pronoun} can also see just fine in the dark, and is sustained by an exotic process akin to photosynthesis, greatly slowing {PAWN_possessive} hunger so long as {PAWN_pronoun} is in bright light.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">1</NightVisionEfficiency>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1235,6 +1248,7 @@
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
 			</statFactors>
 			<statOffsets><!--yes, I know you get 100% toxic resistance at a value of 1. This is to make it so effects that would induce toxic susceptibility have to chew through an extreme amount of "overcapped" resistance.-->
 			  <ToxicResistance>100</ToxicResistance>
@@ -1243,6 +1257,7 @@
 			  <ComfyTemperatureMax>2000</ComfyTemperatureMax>
 			  <ArmorRating_Heat>1</ArmorRating_Heat>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">100</Mashed_Ashlands_AshResistance>
+			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">1</ArmorRating_Electric>
 			</statOffsets>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -1373,6 +1388,9 @@
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">1</Mashed_Ashlands_AshResistance>
 			</statOffsets>
+			<statFactors>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1560,6 +1578,9 @@
 			<label>psychic indigo bunting</label>
 			<description>{PAWN_nameDef} has enhanced eyesight. {PAWN_pronoun} never gets bored of watching the stars, and using the telescope for long enough can cause a good event to occur.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.5</NightVisionEfficiency>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1661,6 +1682,8 @@
 			  <ShootingAccuracyFactor_Short>100</ShootingAccuracyFactor_Short>
 			  <ShootingAccuracyFactor_Medium>100</ShootingAccuracyFactor_Medium>
 			  <ShootingAccuracyFactor_Long>100</ShootingAccuracyFactor_Long>
+			  <AimingAccuracy MayRequire="CETeam.CombatExtended">100</AimingAccuracy>
+			  <MeleeCritChance MayRequire="CETeam.CombatExtended">5</MeleeCritChance>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -1786,6 +1809,7 @@
 				  <ThirstRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0</ThirstRateMultiplier>
 				  <HygieneRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0</HygieneRateMultiplier>
 				  <BladderRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0</BladderRateMultiplier>
+				  <Suppressability MayRequire="CETeam.CombatExtended">0</Suppressability>
 				</statFactors>
 				<hungerRateFactor>0</hungerRateFactor>
 			  </li>
@@ -2057,6 +2081,9 @@
 			<label>psychic noctule</label>
 			<description>{PAWN_nameDef} becomes more physically and psychically powerful while in the dark, but wilts in the light. Becoming inspired or entering a mental break will always coincide with an eclipse.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">1</NightVisionEfficiency>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2077,7 +2104,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic notothen</label>
-			<description>{PAWN_nameDef} gains armor and neural heat recovery rate as it gets colder.</description>
+			<description>{PAWN_nameDef} gains armor, vigor, and neural heat recovery rate as it gets colder.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statFactors>
 			  <Flammability>0</Flammability>
@@ -2232,6 +2259,9 @@
 			<label>psychic peacock</label>
 			<description>{PAWN_nameDef} exudes an aura which improves the vision of allies near {PAWN_objective} and makes everything it touches look gorgeous.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">1</NightVisionEfficiency>
+			</statOffsets>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2330,6 +2360,7 @@
 			<statOffsets>
 			  <ToxicResistance>2000</ToxicResistance>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">0.5</Mashed_Ashlands_AshResistance>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-2</SmokeSensitivity>
 			</statOffsets>
 			<statFactors>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
@@ -2361,6 +2392,7 @@
 			<statOffsets>
 			  <ToxicResistance>5</ToxicResistance>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">5</Mashed_Ashlands_AshResistance>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.4</SmokeSensitivity>
 			</statOffsets>
 			<statFactors>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
@@ -2720,6 +2752,9 @@
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">2</Mashed_Ashlands_AshResistance>
 			</statOffsets>
+			<statFactors>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -3023,6 +3058,7 @@
 			  <ToxicResistance>2000</ToxicResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">0.25</Mashed_Ashlands_AshResistance>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.5</SmokeSensitivity>
 			</statOffsets>
 		  </li>
 		</degreeDatas>

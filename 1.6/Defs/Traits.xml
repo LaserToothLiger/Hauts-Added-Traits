@@ -52,6 +52,7 @@
 			<disallowedMentalStates><li>GiveUpExit</li></disallowedMentalStates>
 			<statOffsets>
 			  <VAEI_SanityGainMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.20</VAEI_SanityGainMultiplier>
+			  <Suppressability MayRequire="CETeam.CombatExtended">-0.25</Suppressability>
 			</statOffsets>
 			<statFactors>
 			  <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.5</CertaintyLossFactor>
@@ -284,6 +285,7 @@
 			  <RestRateMultiplier>0.15</RestRateMultiplier>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.10</P42_AllergicSensitivity>
 			  <Hauts_HemogenContentFactor MayRequire="Ludeon.RimWorld.Biotech">0.33</Hauts_HemogenContentFactor>
+			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.1</SmokeSensitivity>
 			</statOffsets>
 			<statFactors>
 			  <IncomingDamageFactor>0.85</IncomingDamageFactor>
@@ -751,6 +753,7 @@
 			<statFactors>
 			  <MentalBreakThreshold>0</MentalBreakThreshold>
 			  <VAEI_SanityMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.15</VAEI_SanityMultiplier>
+			  <Suppressability MayRequire="CETeam.CombatExtended">0</Suppressability>
 			</statFactors>
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 			<theOnlyAllowedMentalBreaks><!--0x mbt doesn't actually make mental breaks impossible. Tranquil instantly ends any mental states, but doesn't prevent mental breaks so the game engine can "let off steam". this means there's one more thing to do: prevent low mood from causing mental breaks that DON'T cause mental states and therefore can't be prematurely ended by Tranquil-->
@@ -943,6 +946,9 @@
 		  <li>
 			<label>weapon artist</label>
 			<description>{PAWN_nameDef} intuitively leans into the strengths of any weapon {PAWN_pronoun} wields, gaining different bonuses depending on the currently wielded weapon’s nature.</description>
+			<statOffsets>
+			  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.05</MeleeCritChance>
+			</statOffsets>
 			<possessions>
 			  <MeleeWeapon_LongSword />
 			</possessions>
@@ -1055,6 +1061,7 @@
 				<ComfyTemperatureMin>-4.4</ComfyTemperatureMin>
 				<ComfyTemperatureMax>4.4</ComfyTemperatureMax>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.10</P42_AllergicSensitivity>
+				<Suppressability MayRequire="CETeam.CombatExtended">-0.2</Suppressability>
 			</statOffsets>
 			<disablesNeeds>
 				<li>Comfort</li>
@@ -1084,6 +1091,8 @@
 				<ComfyTemperatureMax>-2.2</ComfyTemperatureMax>
 				<ComfyTemperatureMin>2.2</ComfyTemperatureMin>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">0.05</P42_AllergicSensitivity>
+				<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.2</NightVisionEfficiency>
+				<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.1</SmokeSensitivity>
 			</statOffsets>
 			<possessions>
 			  <Apparel_Blindfold MayRequire="Ludeon.RimWorld.Ideology"/>
@@ -1097,6 +1106,8 @@
 				<ComfyTemperatureMax>-4.4</ComfyTemperatureMax>
 				<ComfyTemperatureMin>4.4</ComfyTemperatureMin>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">0.10</P42_AllergicSensitivity>
+				<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.4</NightVisionEfficiency>
+				<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.2</SmokeSensitivity>
 			</statOffsets>
 			<possessions>
 			  <Apparel_Blindfold MayRequire="Ludeon.RimWorld.Ideology"/>
@@ -1408,6 +1419,7 @@
 			<description>{PAWN_nameDef} feels restless and unhappy when {PAWN_possessive} ideoligion is in the majority. Conversely, {PAWN_pronoun} works harder and is more determined when in the minority.</description>
 			<statOffsets>
 			  <MentalBreakThreshold>0.15</MentalBreakThreshold>
+			  <Suppressability MayRequire="CETeam.CombatExtended">0.2</Suppressability>
 			</statOffsets>
 			<statFactors>
 			  <CertaintyLossFactor>0.2</CertaintyLossFactor>

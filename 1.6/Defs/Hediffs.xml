@@ -46,6 +46,7 @@
 		  <PainShockThreshold>0.06</PainShockThreshold>
 		  <WorkSpeedGlobal>0.03</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.03</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.06</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.94</MentalBreakThreshold>
@@ -58,6 +59,7 @@
 		  <PainShockThreshold>0.12</PainShockThreshold>
 		  <WorkSpeedGlobal>0.06</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.06</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.12</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.88</MentalBreakThreshold>
@@ -70,6 +72,7 @@
 		  <PainShockThreshold>0.18</PainShockThreshold>
 		  <WorkSpeedGlobal>0.09</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.09</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.18</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.82</MentalBreakThreshold>
@@ -82,6 +85,7 @@
 		  <PainShockThreshold>0.24</PainShockThreshold>
 		  <WorkSpeedGlobal>0.12</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.12</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.24</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.76</MentalBreakThreshold>
@@ -94,6 +98,7 @@
 		  <PainShockThreshold>0.3</PainShockThreshold>
 		  <WorkSpeedGlobal>0.15</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.15</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.3</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.7</MentalBreakThreshold>
@@ -106,6 +111,7 @@
 		  <PainShockThreshold>0.36</PainShockThreshold>
 		  <WorkSpeedGlobal>0.18</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.18</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.36</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.64</MentalBreakThreshold>
@@ -118,6 +124,7 @@
 		  <PainShockThreshold>0.42</PainShockThreshold>
 		  <WorkSpeedGlobal>0.21</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.21</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.42</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.58</MentalBreakThreshold>
@@ -130,6 +137,7 @@
 		  <PainShockThreshold>0.48</PainShockThreshold>
 		  <WorkSpeedGlobal>0.24</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.24</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.48</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.52</MentalBreakThreshold>
@@ -142,6 +150,7 @@
 		  <PainShockThreshold>0.54</PainShockThreshold>
 		  <WorkSpeedGlobal>0.27</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.27</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.54</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.46</MentalBreakThreshold>
@@ -154,6 +163,7 @@
 		  <PainShockThreshold>0.72</PainShockThreshold>
 		  <WorkSpeedGlobal>0.36</WorkSpeedGlobal>
 		  <GlobalLearningFactor>0.36</GlobalLearningFactor>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.72</Suppressability>
         </statOffsets>
         <statFactors>
 		  <MentalBreakThreshold>0.28</MentalBreakThreshold>
@@ -416,6 +426,7 @@
 		<statFactors>
           <IncomingDamageFactor>0.8</IncomingDamageFactor>
 		  <PsychicSensitivity>0.9</PsychicSensitivity>
+		  <Suppressability MayRequire="CETeam.CombatExtended">0.5</Suppressability>
         </statFactors>
 	  </li>
 	  <li>
@@ -433,6 +444,7 @@
 		<statFactors>
           <IncomingDamageFactor>0.4</IncomingDamageFactor>
 		  <PsychicSensitivity>0.3</PsychicSensitivity>
+		  <Suppressability MayRequire="CETeam.CombatExtended">0</Suppressability>
         </statFactors>
       </li>
     </stages>
@@ -550,6 +562,7 @@
           <MeleeHitChance>5</MeleeHitChance>
           <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
 		  <MoveSpeed>0.2</MoveSpeed>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.25</Suppressability>
         </statOffsets>
 		<statFactors>
           <AimingDelayFactor>0.5</AimingDelayFactor>
@@ -618,6 +631,8 @@
 		<maxSeverity>1.001</maxSeverity>
 		<stages>
 		  <li>
+			<minSeverity>0.001</minSeverity>
+			<label>one-handed</label>
 			<statOffsets>
 			  <MeleeHitChance>3</MeleeHitChance>
 			  <MeleeCooldownFactor>-0.15</MeleeCooldownFactor>
@@ -625,6 +640,7 @@
 		  </li>
 		  <li>
 			<minSeverity>1</minSeverity>
+			<label>two-handed</label>
 			<statOffsets>
 			  <MeleeHitChance>3</MeleeHitChance>
 			  <MeleeDamageFactor>0.2</MeleeDamageFactor>
@@ -1064,6 +1080,7 @@
         <statOffsets>
           <WorkSpeedGlobal>0.40</WorkSpeedGlobal>
 		  <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+		  <Suppressability MayRequire="CETeam.CombatExtended">-0.45</Suppressability>
         </statOffsets>
       </li>
     </stages>

@@ -23,9 +23,13 @@
           <li>Arrow</li>
           <li>ArrowHighVelocity</li>
         </startWickOnDamageTaken>
+		<preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
       </li>
     </comps>
     <specialDisplayRadius>3.9</specialDisplayRadius>
+	<modExtensions>
+	  <li Class="HautsTraits.SabotageExplosive"/>
+	</modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="Hauts_SabotageIEDBase">
@@ -55,9 +59,13 @@
           <li>Arrow</li>
           <li>ArrowHighVelocity</li>
         </startWickOnDamageTaken>
+		<preExplosionSpawnSingleThingDef>CraterMedium</preExplosionSpawnSingleThingDef>
       </li>
     </comps>
     <specialDisplayRadius>14.9</specialDisplayRadius>
+	<modExtensions>
+	  <li Class="HautsTraits.SabotageExplosive"/>
+	</modExtensions>
   </ThingDef>
 
 </Defs>

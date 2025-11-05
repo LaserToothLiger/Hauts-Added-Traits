@@ -41,6 +41,7 @@ See the full description here: https://docs.google.com/document/d/1AjWjya-8knskE
 		<li>vanillaracesexpanded.highmate</li>
 		<li>Dynamic.DynamicsTraits</li>
 		<li>Hautarche.HautsFramework</li>
+		<li>CETeam.CombatExtended</li>
 	</loadAfter>
 	<incompatibleWith>
 		<li>Hautarche.IncreasedTraitLimit</li>
