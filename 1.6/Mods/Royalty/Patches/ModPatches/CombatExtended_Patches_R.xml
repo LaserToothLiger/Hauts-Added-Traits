@@ -792,6 +792,20 @@
 						<Hauts_RangedArmorPenetration>0.04</Hauts_RangedArmorPenetration>
 					</value>
 				</li>
+				<!--Erinys-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AbilityDef[defName="HVT_ErinysAbility"]/verbProperties/range</xpath>
+					<value>
+						<range>70</range>
+					</value>
+				</li>
+				<!--Siren-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AbilityDef[defName="HVT_SirenAbility"]/verbProperties/range</xpath>
+					<value>
+						<range>35</range>
+					</value>
+				</li>
 				<!--Ziz-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_ZizBuff"]/comps/li[@Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver"]/verbs</xpath>

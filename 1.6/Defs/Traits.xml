@@ -667,6 +667,9 @@
             </li>
         </modExtensions>
 		<conflictingTraits><li>TorturedArtist</li><li>HVT_Aestheticist</li><li>HVT_Bookworm</li><li>HVT_Daydreamer</li><li>HVT_Hedonist</li></conflictingTraits>
+		<exclusionTags><!--used for Obsidia Expansion - Paths and Stories-->
+		  <li>OEUnstableTrait</li>
+		</exclusionTags>
 	</TraitDef>
 	
 	<TraitDef>
@@ -779,6 +782,9 @@
 		  <li>HVT_Tranquil0</li>
 		</conflictingTraits>
 		<conflictingPassions><li>Shooting</li><li>Melee</li></conflictingPassions>
+		<exclusionTags><!--see Staid-->
+		  <li>OEUnstableTrait</li>
+		</exclusionTags>
 	</TraitDef>
 		<TraitDef><!--RimWorld is usually pretty robust about making sure pawns that are supposed to be capable of violence don't get things that make them incapable of violence, but trade caravan guards are supposed to be capable of violence and yet their protections are
 						insufficient to prevent them from possibly getting violence-disabling traits. If a pawn that's supposed to be violence-capable gets generated as incapable of violence, the game "aborts" them as well as any other pawns they were generated alongside,
@@ -825,6 +831,9 @@
 				</li>
 			</modExtensions>
 			<conflictingPassions><li>Shooting</li><li>Melee</li></conflictingPassions>
+			<exclusionTags>
+			  <li>OEUnstableTrait</li>
+			</exclusionTags>
 		</TraitDef>
 	
 	<TraitDef>
@@ -947,7 +956,8 @@
 			<label>weapon artist</label>
 			<description>{PAWN_nameDef} intuitively leans into the strengths of any weapon {PAWN_pronoun} wields, gaining different bonuses depending on the currently wielded weapon’s nature.</description>
 			<statOffsets>
-			  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.05</MeleeCritChance>
+			  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.03</MeleeCritChance>
+			  <MeleeParryChance MayRequire="CETeam.CombatExtended">0.02</MeleeParryChance>
 			</statOffsets>
 			<possessions>
 			  <MeleeWeapon_LongSword />
