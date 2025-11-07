@@ -808,6 +808,12 @@
 				</li>
 				<!--Ziz-->
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/AbilityDef[defName="HVT_ZizAbility"]/verbProperties/range</xpath>
+					<value>
+						<range>70</range>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_ZizBuff"]/comps/li[@Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver"]/verbs</xpath>
 					<value>
 						<verbs>

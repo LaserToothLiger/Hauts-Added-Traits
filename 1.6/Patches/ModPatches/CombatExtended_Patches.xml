@@ -44,6 +44,9 @@
 					</value>
 				</li>
 				<!--Hotfoot removes mass carry capacity because they just *like* carrying less, they're not actually physically weaker. Therefore it gets replaced w a bulk malus-->
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/TraitDef[defName="HVT_Hotfoot"]/degreeDatas/li/statFactors/CarryingCapacity</xpath>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_Hotfoot"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>
 					<value>
