@@ -4369,8 +4369,29 @@ namespace HautsTraits
         }
         public static void DoBonusGrowthMoment(Pawn pawn)
         {
-            //Hediff hediff = HediffMaker.MakeHediff(HVTDefOf.HVT_DoubleGrowthMoments, pawn, null);
-            //pawn.health.AddHediff(hediff, null, null, null);
+            if (pawn.story == null)
+            {
+                return;
+            }
+            if (Faction.OfPlayer == null || pawn.Faction != Faction.OfPlayer)
+            {
+                SkillDef sd = ChoiceLetter_GrowthMoment.PassionOptions(pawn, 2, true).FirstOrFallback(null);
+                if (sd != null && pawn.skills != null)
+                {
+                    SkillRecord skill = pawn.skills.GetSkill(sd);
+                    if (skill != null)
+                    {
+                        skill.passion = skill.passion.IncrementPassion();
+                    }
+                }
+                Trait t = PawnGenerator.GenerateTraitsFor(pawn, 1, null, true).FirstOrFallback(null);
+                if (t != null)
+                {
+                    pawn.story.traits.GainTrait(t);
+                    TraitUtility.ApplySkillGainFromTrait(pawn, t);
+                }
+                return;
+            }
             pawn.ageTracker.TryChildGrowthMoment(pawn.ageTracker.AgeBiologicalYears, out int passionChoiceCount, out int num, out int num2);
             List<LifeStageWorkSettings> lifeStageWorkSettings = pawn.RaceProps.lifeStageWorkSettings;
             List<WorkTypeDef> tmpEnabledWorkTypes = new List<WorkTypeDef>();
