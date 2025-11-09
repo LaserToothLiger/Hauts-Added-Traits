@@ -2504,12 +2504,20 @@ namespace HautsTraitsRoyalty
             this.pawn.SetFaction(this.originalFaction);
             this.pawn.jobs.StopAll(false, true);
             this.Severity = 0f;
+            if (this.pawn.lord != null)
+            {
+                this.pawn.lord.RemovePawn(this.pawn);
+            }
         }
         public override void PostRemoved()
         {
             base.PostRemoved();
             if (ModsConfig.BiotechActive && this.pawn.GetOverseer() != null)
             {
+                if (this.pawn.lord != null)
+                {
+                    this.pawn.lord.RemovePawn(this.pawn);
+                }
                 return;
             }
             if (!this.pawn.Dead)
@@ -2524,9 +2532,14 @@ namespace HautsTraitsRoyalty
                 {
                     this.pawn.jobs.StopAll(false, true);
                 }
-                if (this.pawn.Faction != Faction.OfPlayer && this.pawn.HostileTo(Faction.OfPlayer))
+                if (this.pawn.Faction != Faction.OfPlayer)
                 {
-                    LordMaker.MakeNewLord(pawn.Faction, new LordJob_AssaultColony(pawn.Faction, true, true, false, false, true, false, false), pawn.Map, Gen.YieldSingle<Pawn>(pawn));
+                    if (this.pawn.HostileTo(Faction.OfPlayer))
+                    {
+                        LordMaker.MakeNewLord(pawn.Faction, new LordJob_AssaultColony(pawn.Faction, true, true, false, false, true, false, false), pawn.Map, Gen.YieldSingle<Pawn>(pawn));
+                    }
+                } else if (this.pawn.lord != null) {
+                    this.pawn.lord.RemovePawn(this.pawn);
                 }
             }
         }
