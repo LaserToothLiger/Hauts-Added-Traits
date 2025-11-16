@@ -30,25 +30,16 @@
 						</value>
 					</match>
 				</li>
-				<!--Hale. Traits that grant mass carry capacity do so because they are strong enough to carry more, so they get a carry weight buff, not a carry bulk one; Tough is nerfed to only be two thirds as strong, so that applies here too-->
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/TraitDef[defName="HVT_Hale"]/degreeDatas/li/statOffsets/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>30</CarryWeight>
-					</value>
-				</li>
+				<!--Hale. Tough is nerfed to only be two thirds as strong, so that applies here too-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_Hale"]/degreeDatas/li/statFactors/IncomingDamageFactor</xpath>
 					<value>
 						<IncomingDamageFactor>0.9</IncomingDamageFactor>
 					</value>
 				</li>
-				<!--Hotfoot removes mass carry capacity because they just *like* carrying less, they're not actually physically weaker. Therefore it gets replaced w a bulk malus-->
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/TraitDef[defName="HVT_Hotfoot"]/degreeDatas/li/statFactors/CarryingCapacity</xpath>
-				</li>
+				<!--Hotfoot removes mass carry capacity because they just *like* carrying less, they're not actually physically weaker. Therefore it gets a bulk malus but not a weight one. VEF Mass Carry Capacity remains, as it's the only form of abstraction we have for carrying stuff on a caravan-->
 				<li Class="PatchOperationReplace">
-					<xpath>/Defs/TraitDef[defName="HVT_Hotfoot"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>
+					<xpath>/Defs/TraitDef[defName="HVT_Hotfoot"]/degreeDatas/li/statFactors/CarryingCapacity</xpath>
 					<value>
 						<CarryBulk>0.65</CarryBulk>
 					</value>
@@ -179,23 +170,11 @@
 						<AimingDelayFactor>-0.09</AimingDelayFactor>
 					</value>
 				</li>
-				<!--Strength traits. See Hale for mass carry cap; melee damage factor of Biotech's strength genes was reduced in magnitude by 0.5x in both directions, so it should work like that for these too-->
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/TraitDef[defName="HVT_Strong"]/degreeDatas/li[degree="1"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>1.4</CarryWeight>
-					</value>
-				</li>
+				<!--Strength traits. Melee damage factor of Biotech's strength genes was reduced in magnitude by 0.5x in both directions, so it should work like that for these too-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_Strong"]/degreeDatas/li[degree="1"]/statOffsets/MeleeDamageFactor</xpath>
 					<value>
 						<MeleeDamageFactor>0.3</MeleeDamageFactor>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/TraitDef[defName="HVT_Strong"]/degreeDatas/li[degree="2"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>1.8</CarryWeight>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -222,6 +201,38 @@
 								<value>
 									<range>40</range>
 								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Anomaly</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--only creepjoiner trait that needs adjustment is vanquisher-->
+							<li Class="PatchOperationRemove">
+								<xpath>/Defs/TraitDef[defName="HVT_Vanquisher"]/degreeDatas/li/statOffsets/ShootingAccuracyPawn</xpath>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/TraitDef[defName="HVT_Vanquisher"]/degreeDatas/li/statFactors</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/TraitDef[defName="HVT_Vanquisher"]/degreeDatas/li</xpath>
+									<value>
+										<statFactors>
+											<ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+											<AimingAccuracy>1.35</AimingAccuracy>
+										</statFactors>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/TraitDef[defName="HVT_Vanquisher"]/degreeDatas/li/statFactors</xpath>
+									<value>
+										<ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+										<AimingAccuracy>1.35</AimingAccuracy>
+									</value>
+								</match>
 							</li>
 						</operations>
 					</match>

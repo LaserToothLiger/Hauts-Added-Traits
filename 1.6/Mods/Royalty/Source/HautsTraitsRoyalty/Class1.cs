@@ -2858,7 +2858,7 @@ namespace HautsTraitsRoyalty
                     catch { }
                 }
                 Traverse traverse = Traverse.Create(verbPropsCopy).Field("range");
-                traverse.SetValue(Math.Max(1f, this.baseRange * this.pawn.GetStatValue(StatDefOf.PsychicSensitivity) * this.pawn.GetStatValue(VEFDefOf.VEF_VerbRangeFactor)));
+                traverse.SetValue(Math.Max(this.baseRange, this.baseRange * this.pawn.GetStatValue(StatDefOf.PsychicSensitivity) * this.pawn.GetStatValue(VEFDefOf.VEF_VerbRangeFactor)));
                 verb.verbProps = verbPropsCopy;
             }
         }

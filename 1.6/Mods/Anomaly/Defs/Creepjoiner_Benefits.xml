@@ -65,11 +65,11 @@
 				<li>HVT_Everliving</li>
 			</forcingTraits>
 			<possibleTraits>
-			  <HVT_Strong>1</HVT_Strong>
-			  <HVT_Hale/>
 			  <Tough/>
-			  <HVT_Perceptive>1</HVT_Perceptive>
+			  <HVT_Hale/>
 			  <HVT_Hotfoot/>
+			  <HVT_Perceptive>1</HVT_Perceptive>
+			  <HVT_Strong>1</HVT_Strong>
 			</possibleTraits>
 		  </li>
 		</comps>
@@ -97,6 +97,7 @@
 			<description>{PAWN_nameDef} has an uncanny sixth sense for weak spots, allowing {PAWN_objective} to topple buildings, strike through armor, and hobble unnatural entities with ease.</description>
 			<statOffsets>
 			  <MeleeHitChance>4</MeleeHitChance>
+			  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.1</MeleeCritChance>
 			  <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 			  <Hauts_BreachDamageFactor>1</Hauts_BreachDamageFactor>
 			  <Hauts_MeleeArmorPenetration>0.6</Hauts_MeleeArmorPenetration>

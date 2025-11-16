@@ -83,13 +83,6 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_PsychicTitan"]/stages/li[minSeverity="0.002"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>2</CarryWeight>
-						<CarryBulk>1.2</CarryBulk>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_PsychicTitan"]/stages/li[minSeverity="0.25"]/statOffsets/ArmorRating_Sharp</xpath>
 					<value>
 						<ArmorRating_Sharp>3.65</ArmorRating_Sharp>
@@ -111,13 +104,6 @@
 					<xpath>/Defs/HediffDef[defName="HVT_PsychicTitan"]/stages/li[minSeverity="0.25"]/statFactors/IncomingDamageFactor</xpath>
 					<value>
 						<IncomingDamageFactor>0.9</IncomingDamageFactor>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_PsychicTitan"]/stages/li[minSeverity="0.25"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>2.5</CarryWeight>
-						<CarryBulk>1.4</CarryBulk>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -144,13 +130,6 @@
 						<IncomingDamageFactor>0.85</IncomingDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_PsychicTitan"]/stages/li[minSeverity="0.5"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>3</CarryWeight>
-						<CarryBulk>1.6</CarryBulk>
-					</value>
-				</li>
 				<!--titan corresponding gene is proportionally weaker-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.002"]/statOffsets/ArmorRating_Sharp</xpath>
@@ -168,13 +147,6 @@
 					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.002"]/statOffsets/MeleeDamageFactor</xpath>
 					<value>
 						<MeleeDamageFactor>0.1</MeleeDamageFactor>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.002"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>2</CarryWeight>
-						<CarryBulk>1.2</CarryBulk>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -196,13 +168,6 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.25"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>2.5</CarryWeight>
-						<CarryBulk>1.4</CarryBulk>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.5"]/statOffsets/ArmorRating_Sharp</xpath>
 					<value>
 						<ArmorRating_Sharp>5.06</ArmorRating_Sharp>
@@ -218,13 +183,6 @@
 					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.5"]/statOffsets/MeleeDamageFactor</xpath>
 					<value>
 						<MeleeDamageFactor>0.3</MeleeDamageFactor>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_TitanpowerGene"]/stages/li[minSeverity="0.5"]/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>3</CarryWeight>
-						<CarryBulk>1.6</CarryBulk>
 					</value>
 				</li>
 				<!--transcendence time
@@ -297,10 +255,9 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffAnaconda"]/stages/li/statOffsets/VEF_MassCarryCapacity</xpath>
+					<xpath>/Defs/HediffDef[defName="HVT_THediffAnaconda"]/stages/li/statOffsets/MeleeDodgeChance</xpath>
 					<value>
-						<CarryWeight>2.5</CarryWeight>
-						<CarryBulk>2</CarryBulk>
+						<MeleeDodgeChance>-0.01</MeleeDodgeChance>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -333,14 +290,6 @@
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitBluejay"]/degreeDatas/li/statOffsets/ArmorRating_Blunt</xpath>
 					<value>
 						<ArmorRating_Blunt>3.1</ArmorRating_Blunt>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/TraitDef[defName="HVT_TTraitBluejay"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>1.5</CarryWeight>
-						<CarryBulk>1.5</CarryBulk>
-						<ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -423,6 +372,8 @@
 								<burstShotCount>1</burstShotCount>
 								<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 								<muzzleFlashScale>2</muzzleFlashScale>
+								<soundCast>Shot_ChargeRifle</soundCast>
+								<soundCastTail>GunTail_Medium</soundCastTail>
 							  <commandIcon>PsychicTraits/Attacks/HVT_PkSting</commandIcon>
 							</li>
 						</verbs>
@@ -489,10 +440,10 @@
 						<totalBleedFactor>0.1</totalBleedFactor>
 					</value>
 				</li>
-				<!--Quelea-->
+				<!--Quelea
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/HediffDef[defName="HVT_QueleaFlock"]/stages/li/statFactors/CarryingCapacity</xpath>
-				</li>
+				</li>-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_QueleaFlock"]/stages/li/statFactors/VEF_MassCarryCapacity</xpath>
 					<value>
@@ -500,15 +451,7 @@
 						<CarryBulk>1.1</CarryBulk>
 					</value>
 				</li>
-				<!--Robin-->
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/TraitDef[defName="HVT_TTraitRobin"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>40</CarryWeight>
-						<CarryBulk>40</CarryBulk>
-					</value>
-				</li>
-				<!--Scrub Jay-->
+				<!--Scrub Jay
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitScrubJay"]/degreeDatas/li/statFactors/CarryingCapacity</xpath>
 				</li>
@@ -518,7 +461,7 @@
 						<CarryWeight>150</CarryWeight>
 						<CarryBulk>150</CarryBulk>
 					</value>
-				</li>
+				</li>-->
 				<!--Sedge Warbler: half of CE's take on Shooting Frenzy-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitWarbler"]/degreeDatas/li/statOffsets/ShootingAccuracyPawn</xpath>
@@ -532,6 +475,12 @@
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitStoat"]/degreeDatas/li/statFactors/IncomingDamageFactor</xpath>
 					<value>
 						<IncomingDamageFactor>0.6</IncomingDamageFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffStoat"]/stages/li/damageFactors/Hauts_SkipFrag</xpath>
+					<value>
+						<Hauts_SkipFrag>0.6</Hauts_SkipFrag>
 					</value>
 				</li>
 				<!--Swan-->
@@ -551,144 +500,151 @@
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li/statOffsets/MeleeDamageFactor</xpath>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="1"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="1"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>13</CarryWeight>
 						<MeleeDamageFactor>0.05</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="2"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="2"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>26</CarryWeight>
 						<MeleeDamageFactor>0.1</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="3"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="3"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>39</CarryWeight>
 						<MeleeDamageFactor>0.15</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="4"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="4"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>52</CarryWeight>
 						<MeleeDamageFactor>0.2</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="5"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="5"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>65</CarryWeight>
 						<MeleeDamageFactor>0.25</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="6"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="6"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>78</CarryWeight>
 						<MeleeDamageFactor>0.3</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="7"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="7"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>91</CarryWeight>
 						<MeleeDamageFactor>0.35</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="8"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="8"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>104</CarryWeight>
 						<MeleeDamageFactor>0.4</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="9"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="9"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>117</CarryWeight>
 						<MeleeDamageFactor>0.45</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="10"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="10"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>130</CarryWeight>
 						<MeleeDamageFactor>0.5</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="11"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="11"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>143</CarryWeight>
 						<MeleeDamageFactor>0.55</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="12"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="12"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>156</CarryWeight>
 						<MeleeDamageFactor>0.6</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="13"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="13"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>169</CarryWeight>
 						<MeleeDamageFactor>0.65</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="14"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="14"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>182</CarryWeight>
 						<MeleeDamageFactor>0.7</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="15"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="15"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>195</CarryWeight>
 						<MeleeDamageFactor>0.75</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="16"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="16"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>208</CarryWeight>
 						<MeleeDamageFactor>0.8</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="17"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="17"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>221</CarryWeight>
 						<MeleeDamageFactor>0.85</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="18"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="18"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>234</CarryWeight>
 						<MeleeDamageFactor>0.9</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="19"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="19"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>247</CarryWeight>
 						<MeleeDamageFactor>0.95</MeleeDamageFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="20"]/statOffsets/VEF_MassCarryCapacity</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffTanager"]/stages/li[minSeverity="20"]/statOffsets</xpath>
 					<value>
 						<CarryWeight>260</CarryWeight>
 						<MeleeDamageFactor>1</MeleeDamageFactor>
+					</value>
+				</li>
+				<!--Thrumbo-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/TraitDef[defName="HVT_TTraitThrumbo"]/degreeDatas/li/statOffsets/Hauts_MeleeArmorPenetration</xpath>
+					<value>
+						<Hauts_MeleeArmorPenetration>999.99</Hauts_MeleeArmorPenetration>
 					</value>
 				</li>
 				<!--Uhu. Remember, each 1x stack is 2 hours-->
@@ -702,6 +658,12 @@
 					<xpath>/Defs/HediffDef[defName="HVT_THediffUhu"]/stages/li/statFactors/IncomingDamageFactor</xpath>
 					<value>
 						<IncomingDamageFactor>0.97</IncomingDamageFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/HediffDef[defName="HVT_THediffUhu"]/stages/li/statOffsets/MeleeDodgeChance</xpath>
+					<value>
+						<MeleeDodgeChance>-0.01</MeleeDodgeChance>
 					</value>
 				</li>
 				<!--Woodpecker-->
@@ -740,6 +702,8 @@
 								<burstShotCount>1</burstShotCount>
 								<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 								<muzzleFlashScale>2</muzzleFlashScale>
+								<soundCast>Shot_ChargeRifle</soundCast>
+								<soundCastTail>GunTail_Medium</soundCastTail>
 							  <commandIcon>PsychicTraits/Attacks/HVT_PkSting</commandIcon>
 							</li>
 						</verbs>
@@ -760,13 +724,6 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/HediffDef[defName="HVT_THediffEgregore"]/stages/li/statOffsets/CarryingCapacity</xpath>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_THediffEgregore"]/stages/li/statOffsets/VEF_MassCarryCapacity</xpath>
-					<value>
-						<CarryWeight>12</CarryWeight>
-						<CarryBulk>10</CarryBulk>
-					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_THediffEgregore"]/stages/li/statOffsets/MeleeDamageFactor</xpath>

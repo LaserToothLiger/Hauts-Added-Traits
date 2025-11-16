@@ -99,7 +99,7 @@
             </li>
         </modExtensions>
 		<conflictingPassions><li>Social</li></conflictingPassions>
-		<conflictingTraits><li>HVT_Conversationalist</li><li>HVT_Reveller</li><li MayRequire="Ludeon.RimWorld.Ideology">HVT_Proclaimer</li><li MayRequire="Ludeon.RimWorld.Biotech">HVT_Mentor</li><li MayRequire="Ludeon.RimWorld.Anomaly">Occultist</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Conversationalist</li><li>HVT_Reveller</li><li MayRequire="Ludeon.RimWorld.Ideology">HVT_Proclaimer</li><li MayRequire="Ludeon.RimWorld.Biotech">HVT_Mentor</li><li MayRequire="Ludeon.RimWorld.Anomaly">Occultist</li><li MayRequire="Goji.TheSimsTraits">ST_Chatterbox</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>
@@ -222,7 +222,7 @@
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingPassions><li>Intellectual</li></conflictingPassions>
-		<conflictingTraits><li>GreatMemory</li><li>TooSmart</li><li>HVT_Visionary</li><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li><li MayRequire="RavingLegend.MoreTraits">RT_Perfectionist</li></conflictingTraits>
+		<conflictingTraits><li>GreatMemory</li><li>TooSmart</li><li>HVT_Visionary</li><li MayRequire="Ludeon.RimWorld.Anomaly">PerfectMemory</li><li MayRequire="RavingLegend.MoreTraits">RT_Perfectionist</li><li MayRequire="Goji.TheSimsTraits">ST_Procrastinator</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>
@@ -279,6 +279,7 @@
 			<description>{PAWN_nameDef} is filled with vigor. {PAWN_pronoun} is difficult to harm, and is quick to bounce back from exhaustion, injury, and illness.</description>
 			<statOffsets>
 			  <VEF_MassCarryCapacity>20</VEF_MassCarryCapacity>
+			  <CarryWeight MayRequire="CETeam.CombatExtended">30</CarryWeight>
 			  <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
 			  <InjuryHealingFactor>0.2</InjuryHealingFactor>
 			  <LifespanFactor>0.2</LifespanFactor>
@@ -386,7 +387,7 @@
 			</statFactors>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>Ascetic</li><li>Kind</li><li>HVT_Humble</li></conflictingTraits>
+		<conflictingTraits><li>Ascetic</li><li>Kind</li><li>HVT_Humble</li><li MayRequire="Goji.TheSimsTraits">ST_Naive</li></conflictingTraits>
 		<modExtensions>
             <li Class="HautsFramework.ConceitedTrait" />
 		</modExtensions>
@@ -415,7 +416,7 @@
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>Asexual</li></conflictingTraits>
+		<conflictingTraits><li>Asexual</li><li MayRequire="Goji.TheSimsTraits">ST_NonCommital</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>
@@ -666,7 +667,7 @@
 				</grantedHediffs>
             </li>
         </modExtensions>
-		<conflictingTraits><li>TorturedArtist</li><li>HVT_Aestheticist</li><li>HVT_Bookworm</li><li>HVT_Daydreamer</li><li>HVT_Hedonist</li></conflictingTraits>
+		<conflictingTraits><li>TorturedArtist</li><li>HVT_Aestheticist</li><li>HVT_Bookworm</li><li>HVT_Daydreamer</li><li>HVT_Hedonist</li><li MayRequire="Goji.TheSimsTraits">ST_PartyAnimal</li><li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Biotech">ST_Childish</li></conflictingTraits>
 		<exclusionTags><!--used for Obsidia Expansion - Paths and Stories-->
 		  <li>OEUnstableTrait</li>
 		</exclusionTags>
@@ -769,16 +770,15 @@
 		</degreeDatas>
 		<conflictingTraits>
 		  <li>Abrasive</li>
-		  <li>Bloodlust</li>
-		  <li>Brawler</li>
 		  <li>TorturedArtist</li>
 		  <li>Nerves</li>
-		  <li>ShootingAccuracy</li>
 		  <li>HVT_Daydreamer</li>
 		  <li>HVT_RepressedRage</li>
 		  <li>HVT_Sniper</li>
 		  <li>HVT_Vicious</li>
 		  <li>HVT_WeaponArtist</li>
+		  <li MayRequire="Goji.TheSimsTraits">ST_Emotional</li>
+		  <li MayRequire="Goji.TheSimsTraits">ST_Insane</li>
 		  <li>HVT_Tranquil0</li>
 		</conflictingTraits>
 		<conflictingPassions><li>Shooting</li><li>Melee</li></conflictingPassions>
@@ -806,20 +806,6 @@
 				<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 			  </li>
 			</degreeDatas>
-			<conflictingTraits>
-			  <li>Abrasive</li>
-			  <li>Bloodlust</li>
-			  <li>Brawler</li>
-			  <li>TorturedArtist</li>
-			  <li>Nerves</li>
-			  <li>ShootingAccuracy</li>
-			  <li>HVT_Daydreamer</li>
-			  <li>HVT_RepressedRage</li>
-			  <li>HVT_Sniper</li>
-			  <li>HVT_Vicious</li>
-			  <li>HVT_WeaponArtist</li>
-			  <li>HVT_Tranquil</li>
-			</conflictingTraits>
 			<modExtensions>
 				<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
 				<li Class="HautsFramework.TraitGrantedStuff">
@@ -859,7 +845,7 @@
         <modExtensions>
             <li Class="HautsFramework.TraitGrantedStuff"><prisonerResolveFactor><li><key>0</key><value>1.5</value></li></prisonerResolveFactor></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Allegiant</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Allegiant</li><li MayRequire="Goji.TheSimsTraits">ST_Loyal</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>
@@ -1054,6 +1040,7 @@
 		  <li>HVT_Judgemental</li>
 		  <li>HVT_Prideful</li>
 		  <li MayRequire="Ludeon.RimWorld.Ideology">HVT_Subjugator</li>
+		  <li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Royalty">ST_HighMaintenance</li>
 		</conflictingTraits>
 		<requiredWorkTags><li>ManualDumb</li></requiredWorkTags>
 	</TraitDef>
@@ -1087,7 +1074,7 @@
 				</grantedHediffs>
             </li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Perceptive</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Perceptive</li><li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Biotech">ST_Observant</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef>
 		<defName>HVT_Perceptive</defName>
@@ -1150,6 +1137,7 @@
 			<description>{PAWN_nameDef} hones {PAWN_possessive} body to a state of notable physical fitness, allowing {PAWN_objective} to carry more and hit harder.</description>
 			<statFactors>
 			  <VEF_MassCarryCapacity>1.8</VEF_MassCarryCapacity>
+			  <CarryWeight MayRequire="CETeam.CombatExtended">1.4</CarryWeight>
 			  <MiningSpeed>1.3</MiningSpeed>
 			</statFactors>
 			<statOffsets>
@@ -1164,6 +1152,7 @@
 			<description>{PAWN_nameDef} is immensely, ridiculously strong, allowing {PAWN_objective} to carry far more and hit far harder.</description>
 			<statFactors>
 			  <VEF_MassCarryCapacity>2.6</VEF_MassCarryCapacity>
+			  <CarryWeight MayRequire="CETeam.CombatExtended">1.8</CarryWeight>
 			  <MiningSpeed>1.6</MiningSpeed>
 			</statFactors>
 			<statOffsets>
@@ -1274,7 +1263,7 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Stubborn</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Stubborn</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li><li MayRequire="Goji.TheSimsTraits">ST_Devout</li></conflictingTraits>
 	</TraitDef>
 		<!--tolerance "spectrum"-->
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
@@ -1303,7 +1292,7 @@
 				</otherHediffsToRemoveOnRemoval>
             </li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Tolerant</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Tolerant</li><li MayRequire="Goji.TheSimsTraits">ST_Naive</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
 		<defName>HVT_Tolerant</defName>
@@ -1524,7 +1513,7 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Caretaker</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Caretaker</li><li MayRequire="Goji.TheSimsTraits">ST_Naive</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Biotech">
 		<defName>HVT_Caretaker</defName>
@@ -1645,7 +1634,7 @@
 			<description>{PAWN_nameDef} really dislikes and distrusts those of different xenotypes. {PAWN_pronoun} may not mind variation in the genetics of {PAWN_possessive} own kind, but even xenotypes very similar to {PAWN_possessive} own are disgusting in {PAWN_possessive} eyes.</description>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Anomaly">HVT_MonsterLover</li></conflictingTraits>
+		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Anomaly">HVT_MonsterLover</li><li MayRequire="Goji.TheSimsTraits">ST_Naive</li></conflictingTraits>
 	</TraitDef>
 	
 	<!--anomaly traits-->
@@ -1940,6 +1929,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
+		<conflictingTraits><li MayRequire="Goji.TheSimsTraits">ST_Vegan</li></conflictingTraits>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>

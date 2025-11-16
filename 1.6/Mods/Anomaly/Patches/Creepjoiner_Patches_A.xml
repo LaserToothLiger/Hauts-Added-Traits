@@ -86,9 +86,5 @@
 			</operations>
 		</match>
 	</Operation>
-	HVT_Evolved
-	HVT_Jaeger
-	HVT_Compromised
-	HVT_Pathogenic
 
 </Patch>

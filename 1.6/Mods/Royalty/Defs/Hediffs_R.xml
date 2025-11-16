@@ -628,6 +628,7 @@
 		  <InjuryHealingFactor>2.5</InjuryHealingFactor>
 		  <IncomingDamageFactor>0.93</IncomingDamageFactor>
 		  <VEF_MassCarryCapacity>4</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2</CarryWeight>
 		</statFactors>
         <capMods>
           <li>
@@ -656,6 +657,7 @@
 		  <InjuryHealingFactor>5</InjuryHealingFactor>
 		  <IncomingDamageFactor>0.86</IncomingDamageFactor>
 		  <VEF_MassCarryCapacity>5</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2.5</CarryWeight>
 		</statFactors>
         <capMods>
           <li>
@@ -684,6 +686,7 @@
 		  <InjuryHealingFactor>7.5</InjuryHealingFactor>
 		  <IncomingDamageFactor>0.79</IncomingDamageFactor>
 		  <VEF_MassCarryCapacity>6</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">3</CarryWeight>
 		</statFactors>
         <capMods>
           <li>
@@ -733,6 +736,7 @@
 		  <InjuryHealingFactor>2.25</InjuryHealingFactor>
 		  <ImmunityGainSpeed>1.25</ImmunityGainSpeed>
 		  <VEF_MassCarryCapacity>4</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2</CarryWeight>
 		</statFactors>
         <capMods>
           <li>
@@ -760,6 +764,7 @@
 		  <InjuryHealingFactor>4.5</InjuryHealingFactor>
 		  <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
 		  <VEF_MassCarryCapacity>5</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2.5</CarryWeight>
 		</statFactors>
         <capMods>
           <li>
@@ -787,6 +792,7 @@
 		  <InjuryHealingFactor>6.75</InjuryHealingFactor>
 		  <ImmunityGainSpeed>1.75</ImmunityGainSpeed>
 		  <VEF_MassCarryCapacity>6</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">3</CarryWeight>
 		</statFactors>
         <capMods>
           <li>
@@ -1070,6 +1076,8 @@
 		  <MeleeDodgeChance>-1</MeleeDodgeChance>
 		  <PawnTrapSpringChance>0.05</PawnTrapSpringChance>
 		  <VEF_MassCarryCapacity>5</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2.5</CarryWeight>
+		  <CarryBulk MayRequire="CETeam.CombatExtended">2</CarryBulk>
 		</statOffsets>
 		<becomeVisible>false</becomeVisible>
         <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
@@ -1240,6 +1248,7 @@
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.5</PrometheumFlame>
 		  <Neuralizer MayRequire="CETeam.CombatExtended">0.5</Neuralizer>
 		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0.5</Neuralizer_weak>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.5</BioferriteFlame>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1573,6 +1582,7 @@
     <stages>
       <li>
 		<becomeVisible>false</becomeVisible>
+		<totalBleedFactor>0.2</totalBleedFactor>
       </li>
     </stages>
     <comps>
@@ -1695,6 +1705,7 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</BioferriteFlame>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
@@ -1754,6 +1765,7 @@
 			  <Flame_Secondary MayRequire="CETeam.CombatExtended">1.5</Flame_Secondary>
 			  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">1.5</Flame_Secondary_Incendiary>
 			  <PrometheumFlame MayRequire="CETeam.CombatExtended">1.5</PrometheumFlame>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">1.5</BioferriteFlame>
 			</damageFactors>
 		  </li>
 		</stages>
@@ -1834,6 +1846,7 @@
 		  <Neuralizer MayRequire="CETeam.CombatExtended">0</Neuralizer>
 		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0</Neuralizer_weak>
 		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
+		  <NerveBioferrite MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</NerveBioferrite>
 		</damageFactors>
       </li>
     </stages>
@@ -1928,6 +1941,7 @@
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.2</PrometheumFlame>
 		  <CE_Laser MayRequire="CETeam.CombatExtended">0.2</CE_Laser>
 		  <Thermobaric MayRequire="CETeam.CombatExtended">0.2</Thermobaric>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.2</BioferriteFlame>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 		</damageFactors>
       </li>
@@ -1985,6 +1999,7 @@
 			  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.4</PrometheumFlame>
 			  <CE_Laser MayRequire="CETeam.CombatExtended">0.4</CE_Laser>
 			  <Thermobaric MayRequire="CETeam.CombatExtended">0.4</Thermobaric>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.4</BioferriteFlame>
 			  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 			</damageFactors>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
@@ -2192,6 +2207,7 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</BioferriteFlame>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
@@ -2215,6 +2231,7 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</BioferriteFlame>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
@@ -2317,6 +2334,7 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.25</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.25</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.25</BioferriteFlame>
 		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
 		  <Electrical MayRequire="CETeam.CombatExtended">0.25</Electrical>
 		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
@@ -2776,6 +2794,8 @@
 			  <burstShotCount>1</burstShotCount>
 			  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 			  <muzzleFlashScale>2</muzzleFlashScale>
+			  <soundCast>Shot_ChargeRifle</soundCast>
+			  <soundCastTail>GunTail_Medium</soundCastTail>
 			  <commandIcon>PsychicTraits/Attacks/HVT_PkSting</commandIcon>
 			</li>
 		</verbs>
@@ -2784,12 +2804,12 @@
 			  <label>psychic blast</label>
 			  <canBeToggled>true</canBeToggled>
 			  <comps>
-              <li Class="MVCF.VerbComps.VerbCompProperties_Turret">
-                <compClass>MVCF.VerbComps.VerbComp_Turret</compClass>
-					<invisible>true</invisible>
-					<uniqueTargets>true</uniqueTargets>
-              </li>
-            </comps>
+				  <li Class="MVCF.VerbComps.VerbCompProperties_Turret">
+					<compClass>MVCF.VerbComps.VerbComp_Turret</compClass>
+						<invisible>true</invisible>
+						<uniqueTargets>true</uniqueTargets>
+				  </li>
+			  </comps>
 			  <description>Fires an energy orb that explodes on impact. Requires at least 1 neural heat. Range scales with psychic sensitivity.</description>
 			</li>
 		</verbProps>
@@ -3799,6 +3819,7 @@
 		  <Burn>0.15</Burn>
 		  <Flame>0.15</Flame>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.15</BioferriteFlame>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
@@ -3989,6 +4010,7 @@
 		  <VEF_PermanentBurn>0.8</VEF_PermanentBurn>
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.8</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.8</Flame_Secondary_Incendiary>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.8</BioferriteFlame>
 		  <AcidBurn>0.9</AcidBurn>
 		  <VEF_SecondaryAcidBurn>0.9</VEF_SecondaryAcidBurn>
 		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0.9</OTCAcid>
@@ -5151,6 +5173,7 @@
 		  <ArrowFire MayRequire="CETeam.CombatExtended">0.15</ArrowFire>
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.15</BioferriteFlame>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
@@ -5174,6 +5197,7 @@
 		  <ArrowFire MayRequire="CETeam.CombatExtended">0.15</ArrowFire>
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
+		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.15</BioferriteFlame>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
@@ -5428,6 +5452,9 @@
             <postFactor>1.05</postFactor>
           </li>
         </capMods>
+		<damageFactors>
+		  <Hauts_SkipFrag>0.4</Hauts_SkipFrag>
+		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
 	  </li>
 	</stages>
@@ -6626,6 +6653,8 @@
 			  <burstShotCount>1</burstShotCount>
 			  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 			  <muzzleFlashScale>2</muzzleFlashScale>
+			  <soundCast>Shot_ChargeRifle</soundCast>
+			  <soundCastTail>GunTail_Medium</soundCastTail>
 			  <commandIcon>PsychicTraits/Attacks/HVT_PkSting</commandIcon>
 			</li>
 		</verbs>
@@ -6707,6 +6736,8 @@
 		  <MeleeDamageFactor>1</MeleeDamageFactor>
 		  <CarryingCapacity>15</CarryingCapacity>
 		  <VEF_MassCarryCapacity>25</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">12</CarryWeight>
+		  <CarryBulk MayRequire="CETeam.CombatExtended">10</CarryBulk>
 		  <VEF_RangeAttackDamageFactor>1</VEF_RangeAttackDamageFactor>
           <VEF_RangeAttackSpeedFactor>0.5</VEF_RangeAttackSpeedFactor>
 		  <Hauts_MeleeArmorPenetration>0.1</Hauts_MeleeArmorPenetration>

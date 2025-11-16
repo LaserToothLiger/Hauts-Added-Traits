@@ -128,6 +128,24 @@ namespace HautsTraits
                            prefix: new HarmonyMethod(patchType, nameof(HVTMakeChoicesPrefix)));
             harmony.Patch(AccessTools.Method(typeof(ChoiceLetter_GrowthMoment), nameof(ChoiceLetter_GrowthMoment.MakeChoices)),
                            postfix: new HarmonyMethod(patchType, nameof(HVTMakeChoicesPostfix)));
+            if (HVTDefOf.HVT_Tranquil.conflictingTraits == null)
+            {
+                HVTDefOf.HVT_Tranquil.conflictingTraits = new List<TraitDef>();
+            }
+            List<TraitDef> tranquilConflicts = HVTDefOf.HVT_Tranquil.conflictingTraits;
+            foreach (TraitDef td in DefDatabase<TraitDef>.AllDefsListForReading)
+            {
+                if (!tranquilConflicts.Contains(td) && td.requiredWorkTags == WorkTags.Violent)
+                {
+                    tranquilConflicts.Add(td);
+                }
+            }
+            HVTDefOf.HVT_Tranquil.conflictingTraits = tranquilConflicts;
+            HVTDefOf.HVT_Tranquil0.conflictingTraits = tranquilConflicts;
+            if (HVTDefOf.HVT_Tranquil0.conflictingTraits != null && !HVTDefOf.HVT_Tranquil0.conflictingTraits.Contains(HVTDefOf.HVT_Tranquil))
+            {
+                HVTDefOf.HVT_Tranquil0.conflictingTraits.Add(HVTDefOf.HVT_Tranquil);
+            }
             Log.Message("HVT_Initialize".Translate().CapitalizeFirst());
         }
         internal static object GetInstanceField(Type type, object instance, string fieldName)
@@ -1738,7 +1756,7 @@ namespace HautsTraits
             }
             int num = 0;
             PollutionLevel pollution;
-            if (this.pawn.Map != null)
+            if (this.pawn.Map != null && this.pawn.Map.Tile != null && this.pawn.Map.Tile.Valid)
             {
                 pollution = Find.WorldGrid[this.pawn.Map.Tile].PollutionLevel();
             } else if (pawn.GetCaravan() != null) {

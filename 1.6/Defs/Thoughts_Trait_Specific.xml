@@ -334,6 +334,7 @@
       <li>Psychopath</li>
       <li>HVT_Sadist</li>
 	  <li MayRequire="Side1iner.TraitsPlus">S1_AllOutOfFucks</li>
+	  <li MayRequire="Goji.TheSimsTraits">ST_NonCommital</li>
     </nullifyingTraits>
     <nullifyingHediffs>
       <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -355,6 +356,7 @@
       <li>Psychopath</li>
       <li>HVT_Sadist</li>
 	  <li MayRequire="Side1iner.TraitsPlus">S1_AllOutOfFucks</li>
+	  <li MayRequire="Goji.TheSimsTraits">ST_NonCommital</li>
     </nullifyingTraits>
     <nullifyingHediffs>
       <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
