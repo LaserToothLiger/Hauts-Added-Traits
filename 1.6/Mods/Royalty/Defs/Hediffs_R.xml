@@ -399,12 +399,14 @@
 		  <MeleeDamageFactor>0.07</MeleeDamageFactor>
 		  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.004</MeleeCritChance>
 		  <MeleeParryChance MayRequire="CETeam.CombatExtended">0.004</MeleeParryChance><!--the melee damage factor is removed if you are running Combat Extended, in favor of these two stats-->
-		  <VEF_RangeAttackSpeedFactor>0.07</VEF_RangeAttackSpeedFactor>
           <ImmunityGainSpeed>0.04</ImmunityGainSpeed>
 		  <RestFallRateFactor>-0.005</RestFallRateFactor>
 		  <PawnTrapSpringChance>-0.005</PawnTrapSpringChance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.01</P42_AllergicSensitivity>
         </statOffsets>
+		<statFactors>
+		  <RangedCooldownFactor>0.99</RangedCooldownFactor>
+		</statFactors>
 		<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
       </li>
     </stages>
@@ -438,12 +440,14 @@
 		  <MeleeDamageFactor>0.05</MeleeDamageFactor>
 		  <MeleeCritChance MayRequire="CETeam.CombatExtended">0.003</MeleeCritChance>
 		  <MeleeParryChance MayRequire="CETeam.CombatExtended">0.003</MeleeParryChance>
-		  <VEF_RangeAttackSpeedFactor>0.05</VEF_RangeAttackSpeedFactor>
           <ImmunityGainSpeed>0.03</ImmunityGainSpeed>
 		  <RestFallRateFactor>-0.004</RestFallRateFactor>
 		  <PawnTrapSpringChance>-0.004</PawnTrapSpringChance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.01</P42_AllergicSensitivity>
         </statOffsets>
+		<statFactors>
+		  <RangedCooldownFactor>0.99</RangedCooldownFactor>
+		</statFactors>
 		<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
       </li>
     </stages>
@@ -6739,7 +6743,6 @@
 		  <CarryWeight MayRequire="CETeam.CombatExtended">12</CarryWeight>
 		  <CarryBulk MayRequire="CETeam.CombatExtended">10</CarryBulk>
 		  <VEF_RangeAttackDamageFactor>1</VEF_RangeAttackDamageFactor>
-          <VEF_RangeAttackSpeedFactor>0.5</VEF_RangeAttackSpeedFactor>
 		  <Hauts_MeleeArmorPenetration>0.1</Hauts_MeleeArmorPenetration>
 		  <Hauts_RangedArmorPenetration>0.1</Hauts_RangedArmorPenetration>
 		  <PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
@@ -6752,6 +6755,7 @@
 		<statFactors>
 		  <IncomingDamageFactor>0.98</IncomingDamageFactor>
 		  <MeleeCooldownFactor>0.98</MeleeCooldownFactor>
+          <RangedCooldownFactor>0.98</RangedCooldownFactor>
 		</statFactors>
 		<capMods>
           <li>

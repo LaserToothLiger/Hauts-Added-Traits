@@ -26,12 +26,6 @@
 						<ArmorRating_Blunt>0.16</ArmorRating_Blunt>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_PsychicIncarnate"]/stages/li/statOffsets/VEF_RangeAttackSpeedFactor</xpath>
-					<value>
-						<VEF_RangeAttackSpeedFactor>0.035</VEF_RangeAttackSpeedFactor>
-					</value>
-				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/HediffDef[defName="HVT_PsychicIncarnate"]/stages/li/statOffsets/MeleeDamageFactor</xpath>
 				</li>
@@ -46,12 +40,6 @@
 					<xpath>/Defs/HediffDef[defName="HVT_PsychicIncarnate2"]/stages/li/statOffsets/ArmorRating_Blunt</xpath>
 					<value>
 						<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/HediffDef[defName="HVT_PsychicIncarnate2"]/stages/li/statOffsets/VEF_RangeAttackSpeedFactor</xpath>
-					<value>
-						<VEF_RangeAttackSpeedFactor>0.025</VEF_RangeAttackSpeedFactor>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
