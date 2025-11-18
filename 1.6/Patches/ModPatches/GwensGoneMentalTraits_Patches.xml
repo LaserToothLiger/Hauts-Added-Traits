@@ -121,7 +121,6 @@
 					<value>
 						<li>HVT_Staid</li>
 						<li>HVT_Tranquil</li>
-						<li>HVT_Tranquil0</li>
 						<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Environmentalist</li>
 					</value>
 				</li>

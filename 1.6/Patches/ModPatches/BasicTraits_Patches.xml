@@ -62,44 +62,21 @@
 						</value>
 					</match>
 				</li>
-				<!--Tranquil ew/ violence- or stress-focused traits. Tranquil you cause me so much work. Also Sniper ew/ melee traits-->
+				<!--Sniper ew/ melee traits-->
 				<li Class="PatchOperationConditional">
-					<xpath>/Defs/TraitDef[defName="BT_Brawler"]/conflictingTraits</xpath>
+					<xpath>/Defs/TraitDef[defName="BT_MeleeExpert"]/conflictingTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Brawler"]</xpath>
+						<xpath>/Defs/TraitDef[defName="BT_MeleeExpert"]</xpath>
 						<value>
 							<conflictingTraits>
 								<li>HVT_Sniper</li>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
 							</conflictingTraits>
 						</value>
 					</nomatch>
 					<match Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Brawler"]/conflictingTraits</xpath>
+						<xpath>/Defs/TraitDef[defName="BT_MeleeExpert"]/conflictingTraits</xpath>
 						<value>
 							<li>HVT_Sniper</li>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
-						</value>
-					</match>
-				</li>
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/TraitDef[defName="BT_Brawny"]/conflictingTraits</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Brawny"]</xpath>
-						<value>
-							<conflictingTraits>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
-							</conflictingTraits>
-						</value>
-					</nomatch>
-					<match Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Brawny"]/conflictingTraits</xpath>
-						<value>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
 						</value>
 					</match>
 				</li>
@@ -110,8 +87,6 @@
 						<value>
 							<conflictingTraits>
 								<li>HVT_Sniper</li>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
 							</conflictingTraits>
 						</value>
 					</nomatch>
@@ -119,49 +94,10 @@
 						<xpath>/Defs/TraitDef[defName="BT_Bruiser"]/conflictingTraits</xpath>
 						<value>
 							<li>HVT_Sniper</li>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
 						</value>
 					</match>
 				</li>
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/TraitDef[defName="BT_Deadeye"]/conflictingTraits</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Deadeye"]</xpath>
-						<value>
-							<conflictingTraits>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
-							</conflictingTraits>
-						</value>
-					</nomatch>
-					<match Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Deadeye"]/conflictingTraits</xpath>
-						<value>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
-						</value>
-					</match>
-				</li>
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/TraitDef[defName="BT_Marksman"]/conflictingTraits</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Marksman"]</xpath>
-						<value>
-							<conflictingTraits>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
-							</conflictingTraits>
-						</value>
-					</nomatch>
-					<match Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Patient"]/conflictingTraits</xpath>
-						<value>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
-						</value>
-					</match>
-				</li>
+				<!--Tranquil don't like traits mostly about altering mental break threshold-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/TraitDef[defName="BT_Patient"]/conflictingTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -169,7 +105,6 @@
 						<value>
 							<conflictingTraits>
 								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
 							</conflictingTraits>
 						</value>
 					</nomatch>
@@ -177,26 +112,6 @@
 						<xpath>/Defs/TraitDef[defName="BT_Patient"]/conflictingTraits</xpath>
 						<value>
 							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
-						</value>
-					</match>
-				</li>
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/TraitDef[defName="BT_Shooter"]/conflictingTraits</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Shooter"]</xpath>
-						<value>
-							<conflictingTraits>
-								<li>HVT_Tranquil</li>
-								<li>HVT_Tranquil0</li>
-							</conflictingTraits>
-						</value>
-					</nomatch>
-					<match Class="PatchOperationAdd">
-						<xpath>/Defs/TraitDef[defName="BT_Shooter"]/conflictingTraits</xpath>
-						<value>
-							<li>HVT_Tranquil</li>
-							<li>HVT_Tranquil0</li>
 						</value>
 					</match>
 				</li>

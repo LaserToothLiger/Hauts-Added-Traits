@@ -12,8 +12,6 @@
 					<xpath>/Defs/TraitDef[defName="FT_IronFist"]/conflictingTraits</xpath>
 					<value>
 						<li>HVT_Sniper</li>
-						<li>HVT_Tranquil</li>
-						<li>HVT_Tranquil0</li>
 					</value>
 				</li>
 				<!--Drudge ew/ Intellectual-based traits and Idiot Savant-->
@@ -37,14 +35,6 @@
 						<li>HVT_Staid</li>
 					</value>
 				</li>
-				<!--Tranquil, as usual, exclusive w/ mental break and violence-centered traits-->
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs/TraitDef[defName="FT_AimOffset" or defName="FT_GunNut"]/conflictingTraits</xpath>
-					<value>
-						<li>HVT_Tranquil</li>
-						<li>HVT_Tranquil0</li>
-					</value>
-				</li>
 				<!--Visionary ew/ Stupid-->
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/TraitDef[defName="FT_Stupid"]/conflictingTraits</xpath>
@@ -66,23 +56,6 @@
 						<li>HVT_Imperceptive</li>
 						<li>HVT_Perceptive</li>
 					</value>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>Carry Capacity Fixed (Continued)</li>
-					</mods>
-					<match Class="PatchOperationSequence">
-						<operations>
-							<!--Tranquil ew/ traits mostly or entirely about violence-->
-							<li Class="PatchOperationAdd">
-								<xpath>/Defs/TraitDef[defName="FT_Bandolier"]/conflictingTraits</xpath>
-								<value>
-									<li>HVT_Tranquil</li>
-									<li>HVT_Tranquil0</li>
-								</value>
-							</li>
-						</operations>
-					</match>
 				</li>
 			</operations>
 		</match>

@@ -59,7 +59,6 @@
 					<value>
 						<li>HVT_Sniper</li>
 						<li>HVT_Tranquil</li>
-						<li>HVT_Tranquil0</li>
 						<li>HVT_Vicious</li>
 						<li>HVT_WeaponArtist</li>
 					</value>
@@ -77,7 +76,6 @@
 					<value>
 						<li>HVT_Hysteric</li>
 						<li>HVT_Tranquil</li>
-						<li>HVT_Tranquil0</li>
 					</value>
 				</li>
 				<li Class="PatchOperationFindMod">
@@ -91,7 +89,6 @@
 								<xpath>Defs/TraitDef[defName="BOT_PressureCooker"]/conflictingTraits</xpath>
 								<value>
 									<li>HVT_Tranquil</li>
-									<li>HVT_Tranquil0</li>
 								</value>
 							</li>
 							<!--Caretaker ew/ Hates Children; Misopedist ew/ Hates Children AND Family Oriented-->

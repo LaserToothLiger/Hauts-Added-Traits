@@ -1225,7 +1225,7 @@
   <ThoughtDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_EnviNoxiousHaze</defName>
     <validWhileDespawned>true</validWhileDespawned>
-    <workerClass>ThoughtWorker_NoxiousHaze</workerClass>
+    <workerClass>HautsTraits.ThoughtWorker_NoxiousHazeUndefeatable</workerClass>
     <requiredTraits>
       <li>HVT_Environmentalist</li>
     </requiredTraits>

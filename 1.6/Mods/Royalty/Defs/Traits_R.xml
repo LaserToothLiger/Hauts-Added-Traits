@@ -11,6 +11,17 @@
 			<statOffsets>
 			  <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">-0.08</SuppressionPower>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">ExpectationsSlave</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Honorable_SlavesInColony</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Honorable_NoSlavesInColony</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">SoldSlave_Honorable</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">EnslavedPrisoner_Honorable</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">SoldSlave_Know_Honorable</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">SoldSlave_Know_Honorable_Mood</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">EnslavedPrisoner_Know_Honorable</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">EnslavedPrisoner_Know_Honorable_Mood</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -393,6 +404,10 @@
 			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0</VAEI_SanityLossMultiplier>
 			  <Suppressability MayRequire="CETeam.CombatExtended">0.33</Suppressability>
 			</statFactors>
+			<disallowedThoughts>
+			  <li>PsychicDrone</li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -498,6 +513,9 @@
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.5</SmokeSensitivity>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">NoxiousHaze</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -988,6 +1006,10 @@
 			  <ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.06</ActivitySuppressionRate>
 			  <Suppressability MayRequire="CETeam.CombatExtended">-1</Suppressability>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">SpokeToDisturbingMood</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">HeardInhumanRambling</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1014,6 +1036,11 @@
 			  <Hauts_RangedArmorPenetration>0.2</Hauts_RangedArmorPenetration>
 			  <Hauts_PsyfocusGainOnKill>0.01</Hauts_PsyfocusGainOnKill>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeadlifeDust</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathPall</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathRefusalSickness</li>
+			</disallowedThoughts>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -1263,6 +1290,9 @@
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">100</Mashed_Ashlands_AshResistance>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">1</ArmorRating_Electric>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li>SoakingWet</li>
+			</disallowedThoughts>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -1395,6 +1425,9 @@
 			<statFactors>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
 			</statFactors>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">NoxiousHaze</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1457,10 +1490,15 @@
 			<label>psychic harbinger</label>
 			<description>{PAWN_nameDef} can eat corpses to gain some of their skill experience, as well as potentially heal {PAWN_objective}self of an injury or ailment. The chance to heal scales with the corpse's body size. Moreover, {PAWN_pronoun} defers incoming damage to nearby corpses.</description>
 			<allowedMeditationFocusTypes><li>Morbid</li></allowedMeditationFocusTypes>
-			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <Hauts_EntityDamageFactor MayRequire="Ludeon.RimWorld.Anomaly">0.5</Hauts_EntityDamageFactor>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeadlifeDust</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathPall</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathRefusalSickness</li>
+			</disallowedThoughts>
+			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2087,10 +2125,15 @@
 		  <li>
 			<label>psychic noctule</label>
 			<description>{PAWN_nameDef} becomes more physically and psychically powerful while in the dark, but wilts in the light. Becoming inspired or entering a mental break will always coincide with an eclipse.</description>
-			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">1</NightVisionEfficiency>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li>EnvironmentDark</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">SwallowedByDarkness</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">UnnaturalDarkness</li>
+			</disallowedThoughts>
+			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2762,6 +2805,10 @@
 			<statFactors>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
 			</statFactors>
+			<disallowedThoughts>
+			  <li>SoakingWet</li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">NoxiousHaze</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2876,6 +2923,10 @@
 			<statFactors>
 			  <VAEI_SanityMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.25</VAEI_SanityMultiplier>
 			</statFactors>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">SpokeToDisturbingMood</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">HeardInhumanRambling</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -3068,6 +3119,9 @@
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">0.25</Mashed_Ashlands_AshResistance>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.5</SmokeSensitivity>
 			</statOffsets>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">NoxiousHaze</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -3111,6 +3165,11 @@
 		  <li>
 			<label>psychic vulture</label>
 			<description>Random corpses appear near {PAWN_nameDef} as {PAWN_pronoun} spends psyfocus.</description>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeadlifeDust</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathPall</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathRefusalSickness</li>
+			</disallowedThoughts>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -3212,6 +3271,10 @@
 			<statFactors>
 				<MentalBreakThreshold>0</MentalBreakThreshold>
 			</statFactors>
+			<disallowedThoughts>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">SpokeToDisturbingMood</li>
+			  <li MayRequire="Ludeon.RimWorld.Anomaly">HeardInhumanRambling</li>
+			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -3305,6 +3368,10 @@
 		  <li>
 			<label>psychic dragon</label>
 			<description>When another psycaster or latent psychic dies nearby, {PAWN_nameDef} partakes of their dissipating psychic thalergy and accumulates a 'hoard' of energy. This energy strengthens {PAWN_possessive} psycasting and health, while also shielding {PAWN_objective} from harm. However, the energy lessens whenever it prevents damage. More powerful psycasters grant more energy.\n\n{PAWN_pronoun} also cannot be directly affected by {PAWN_possessive} enemies' psycasts.</description>
+			<disallowedThoughts>
+			  <li>PsychicDrone</li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
+			</disallowedThoughts>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>

@@ -52,7 +52,6 @@
 					<xpath>/Defs/TraitDef[defName="LC_Fighter" or defName="LC_Gunslinger"]/conflictingTraits</xpath>
 					<value>
 						<li>HVT_Tranquil</li>
-						<li>HVT_Tranquil0</li>
 					</value>
 				</li>
 			</operations>

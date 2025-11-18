@@ -1779,6 +1779,17 @@ namespace HautsTraits
             return this.BaseMoodOffset + num;
         }
     }
+    public class ThoughtWorker_NoxiousHazeUndefeatable : ThoughtWorker
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            if (NoxiousHazeUtility.IsExposedToNoxiousHaze(p))
+            {
+                return ThoughtState.ActiveDefault;
+            }
+            return ThoughtState.Inactive;
+        }
+    }
     public class ThoughtWorker_GenePurism : ThoughtWorker
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn pawn, Pawn other)
