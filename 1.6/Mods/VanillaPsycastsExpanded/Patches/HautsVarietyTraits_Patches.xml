@@ -62,6 +62,18 @@
 			</operations>
 		</match>
 	</Operation>
+	<!--VPE Neurophage-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Neurophage</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/VEF.Abilities.AbilityDef[defName="VPE_Neurophage_Neurophagy_Ability_STNL" or defName="VPE_Neurophage_PsychicTakeover_STNL" or defName="VPE_Neurophage_NeuralString_STNL"]/modExtensions</xpath>
+			<value>
+				<li Class="Hauts_VPE.AbilityExtension_CantTargetWoke" />
+			</value>
+		</match>
+	</Operation>
 	<!--fantasy renamings-->
 	<Operation Class="PatchOperationFindMod">
 		<mods>

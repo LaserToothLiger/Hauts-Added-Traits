@@ -8,7 +8,7 @@
   
   <GeneDef>
     <defName>HVT_AllegiantGene</defName>
-    <label>group loyalty instinct</label>
+    <label>group loyalty</label>
     <labelShortAdj>allegiant</labelShortAdj>
     <description>Carriers of this gene develop a strong sense of loyalty to whichever group they belong to.</description>
     <iconPath>Genes/HVT_Allegiant</iconPath>
@@ -87,7 +87,7 @@
   
   <GeneDef>
     <defName>HVT_ConversationalistGene</defName>
-    <label>way with words</label>
+    <label>wordsmithery</label>
     <labelShortAdj>conversationalist</labelShortAdj>
     <description>Carriers of this gene exhibit more activity and further glial development in parts of the brain associated with socializing, and to some extent empathy. Their social behaviors become more pleasing to others. However, this forced recalibration of problem-solving neural architecture towards social interaction also makes carriers prone to lashing out verbally when stressed.</description>
     <iconPath>Genes/HVT_Conversationalist</iconPath>
@@ -172,7 +172,7 @@
   
   <GeneDef>
     <defName>HVT_DrudgeGene</defName><!--as the description says, this one actually isn't one-to-one with the corresponding trait!-->
-    <label>simple task hyperspecialization</label>
+    <label>simple task specialization</label>
     <labelShortAdj>drudge</labelShortAdj>
     <description>Carriers of this gene become exceptionally adept at any tasks they can conceptualize. Unfortunately, this neurological effect also degrades their ability to retain advanced information, so they rapidly lose any non-combat, non-social skill levels above 10.\n\nUnlike the Drudge trait, this takes aptitude from genes into account.</description>
     <iconPath>Genes/HVT_Drudge</iconPath>
@@ -408,7 +408,7 @@
   
   <GeneDef>
     <defName>HVT_SkulkerGene</defName>
-    <label>stealthy adaptation</label>
+    <label>stealth adaptations</label>
     <labelShortAdj>skulker</labelShortAdj>
     <description>Carriers of this gene exhibit a multitude of effects geared towards stealth, the predominant one being octopus-like skin layers that can adjust color and texture to blend in to one's surroundings. This skin can even bind loose detritus and secretions such as sweat to itself until they can be shed in a safer place, and the skin can 'breathe' to some degree; together this makes it difficult to track carriers by their tracks, scent, or even sound of breathing. Secondary effects on the central nervous system reward the carrier for staying unseen by others.</description>
     <iconPath>Genes/HVT_Skulker</iconPath>
@@ -451,7 +451,7 @@
   
   <GeneDef>
     <defName>HVT_StaidGene</defName>
-    <label>missing inner spark</label>
+    <label>no inner spark</label>
     <labelShortAdj>staid</labelShortAdj>
     <description>Carriers of this gene experience subtle neurological changes which render them unable to conceive of or enjoy aesthetics or recreation, as well as prevent them from ever becoming inspired.</description>
     <iconPath>Genes/HVT_Staid</iconPath>
@@ -486,7 +486,7 @@
   
   <GeneDef>
     <defName>HVT_TempestophileGene</defName>
-    <label>atmosphere sensitivity</label>
+    <label>weather enjoyment</label>
     <labelShortAdj>tempestophile</labelShortAdj>
     <description>Carriers of this gene experience changes in air pressure, humidity, temperature, ambient light, and even aerosol particulate as subtle, pleasing sensations.</description>
     <iconPath>Genes/HVT_Tempestophile</iconPath>
@@ -517,7 +517,7 @@
   
   <GeneDef>
     <defName>HVT_ViciousGene</defName>
-    <label>combat energy reserves</label>
+    <label>combat flow state</label>
     <labelShortAdj>vicious</labelShortAdj>
     <description>Carriers of this gene develop specialized fast-twitch muscles and alterations in their cerebellum, which they can tap into to enter a state of hyper-coordination and immense strength. This is reliant on achieving a high concentration of a unique hormone that negatively impacts mood and is metabolized with every attack.</description>
     <iconPath>Genes/HVT_Vicious</iconPath>
@@ -648,7 +648,7 @@
   </GeneDef>
   <GeneDef>
     <defName>HVT_KeenSensesGene</defName>
-    <label>improved senses</label>
+    <label>good senses</label>
     <labelShortAdj>keen senses</labelShortAdj>
     <description>Carriers of this gene have heightened aptitude for processing sensory information, resulting in more perceptive sight and hearing, but also increased sensitivity to discomfort and extreme temperatures.</description>
     <iconPath>Genes/HVT_Senses1</iconPath>
@@ -703,7 +703,7 @@
   </GeneDef>
   <GeneDef>
     <defName>HVT_PowerfulSensesGene</defName>
-    <label>highly improved senses</label>
+    <label>very good senses</label>
     <labelShortAdj>powerful senses</labelShortAdj>
     <description>Carriers of this gene have greatly heightened aptitude for processing sensory information, resulting in much more perceptive sight and hearing, but also increased sensitivity to discomfort and extreme temperatures.</description>
     <iconPath>Genes/HVT_Senses2</iconPath>
@@ -846,7 +846,7 @@
   
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_CaretakerGene</defName>
-    <label>child-rearing instinct</label>
+    <label>child empathy</label>
     <labelShortAdj>caretaker</labelShortAdj>
     <description>Carriers of this gene feel a keen desire to help raise children.</description>
     <iconPath>Genes/HVT_Caretaker</iconPath>
@@ -885,7 +885,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_MisopedistGene</defName>
-    <label>progeny intolerance</label>
+    <label>child antipathy</label>
     <labelShortAdj>caretaker</labelShortAdj>
     <description>Carriers of this gene are unable to recognize children as kin. To them, children occupy the uncanny valley, making them appear disturbing.</description>
     <iconPath>Genes/HVT_Misopedist</iconPath>
@@ -905,7 +905,7 @@
   
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_EnvironmentalistGene</defName>
-    <label>anti-pollution mood</label>
+    <label>pollution sadness</label>
     <labelShortAdj>environmentalist</labelShortAdj>
     <description>Dopamine uptake in carriers of this gene is much higher than normal, but is adversely affected by particles commonly found in pollution. In other words, while their mood is naturally higher, they are very unhappy in highly polluted areas.</description>
     <iconPath>Genes/HVT_Environmentalist</iconPath>
@@ -938,7 +938,7 @@
   
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_MechaphobeGene</defName>
-    <label>anti-mechanoid projection</label>
+    <label>mechanoid stun</label>
     <labelShortAdj>mechaphobe ability</labelShortAdj>
     <description>Carriers of this gene develop a special white matter-heavy organ adjacent to the thyroid gland which can emit a signal that confounds mechanoids. However, this reduces the carrier's bandwidth capabilities. Moreover, this gene does not provide means of boosting the signal to levels powerful enough to debilitate a mechanoid; the carrier must use bandwidth-enhancing technology or a mechlink.</description>
     <iconPath>Genes/HVT_Mechaphobe</iconPath>
@@ -977,7 +977,7 @@
   
   <GeneDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>HVT_AdherentGene</defName>
-    <label>dogmatic instinct</label>
+    <label>dogmatic</label>
     <labelShortAdj>adherent</labelShortAdj>
     <description>Carriers of this gene are more certain in their beliefs. Their opinions and moods are more strongly influenced by their ideoligions.</description>
     <iconPath>Genes/HVT_Adherent</iconPath>
@@ -1016,7 +1016,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>HVT_UnquestioningAdherentGene</defName>
-    <label>hyper-dogmatic instinct</label>
+    <label>hyper-dogmatic</label>
     <labelShortAdj>unquestioning adherent</labelShortAdj>
     <description>Carriers of this gene are absolutely certain in their beliefs. Their opinions and moods are much more strongly influenced by their ideoligions.</description>
     <iconPath>Genes/HVT_UA</iconPath>
@@ -1056,7 +1056,7 @@
   
   <GeneDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>HVT_ConformistGene</defName>
-    <label>groupthink behavior</label>
+    <label>groupthink</label>
     <labelShortAdj>conformist</labelShortAdj>
     <description>Carriers of this gene feel an irresistible pressure to conform to the beliefs of those surrounding them.</description>
     <iconPath>Genes/HVT_Conformist</iconPath>

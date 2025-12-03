@@ -2029,6 +2029,8 @@ namespace HautsTraitsRoyalty
         public static HediffDef HVT_Wraithform;
         public static HediffDef HVT_ZizBuff;
 
+        public static HistoryEventDef HVT_TransDiplomacy;
+
         public static EffecterDef HVT_Zomburst;
 
         public static ThingDef HVT_AlbatrossSquall;
@@ -2662,7 +2664,7 @@ namespace HautsTraitsRoyalty
                 {
                     if (f != this.pawn.Faction && f.def.humanlikeFaction && !f.def.PermanentlyHostileTo(FactionDefOf.PlayerColony) && f.HasGoodwill)
                     {
-                        Faction.OfPlayerSilentFail.TryAffectGoodwillWith(f, (int)Math.Ceiling((double)Math.Min(12, this.pawn.GetPsylinkLevel()) / 3), true, true, HistoryEventDefOf.ReachNaturalGoodwill, null);
+                        Faction.OfPlayerSilentFail.TryAffectGoodwillWith(f, (int)Math.Ceiling((double)Math.Min(12, this.pawn.GetPsylinkLevel()) / 3), true, true, HVTRoyaltyDefOf.HVT_TransDiplomacy, null);
                     }
                 }
             }
