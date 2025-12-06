@@ -4614,6 +4614,7 @@
 		  <li MayRequire="CETeam.CombatExtended">VenomBuildup</li>
 		  <li MayRequire="CETeam.CombatExtended">PrometheumSoaked</li>
 		  <li MayRequire="CETeam.CombatExtended">Tranquilizer</li>
+		  <li MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">BioferriteToxicity</li>
 		</hediffsToCure>
 		<victimScalar>PsychicSensitivity</victimScalar>
 		<severityLostOnCure>0.2</severityLostOnCure><!--this is -20% on hit for the above hediffs, which scale in severity from 0 to 1. If you add other hediffs to this list, keep this info in mind.-->
