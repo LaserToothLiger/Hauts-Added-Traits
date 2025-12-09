@@ -15,6 +15,25 @@
     <blockNormalThoughts>true</blockNormalThoughts>
     <minTicksBeforeRecovery>60</minTicksBeforeRecovery>
   </MentalStateDef>
+  <!--rambunctious-->
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>HVT_RambunctiousWandering</defName>
+    <label>rambunctious running</label>
+    <stateClass>MentalState_WanderConfused</stateClass>
+	<workerClass>HautsTraits.MentalStateWorker_WanderFast</workerClass>
+    <category>Misc</category>
+    <minTicksBeforeRecovery>3500</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>30000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.18</recoveryMtbDays>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <beginLetterLabel>rambunctious run</beginLetterLabel>
+    <beginLetter>{0} can't sit still anymore! [PAWN_pronoun] is going to go for a run.</beginLetter>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+    <recoveryMessage>{0} has finished running around.</recoveryMessage>
+    <baseInspectLine>Mental state: rambunctious running</baseInspectLine>
+    <inCaravanCanDo>false</inCaravanCanDo>
+  </MentalStateDef>
   <!--visionary-->
   <MentalStateDef ParentName="BaseMentalState">
     <defName>HVT_VisionaryEureka</defName>

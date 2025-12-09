@@ -178,15 +178,16 @@ namespace HautsTraits
                         }
                     }
                 }
-                InspirationDef randomAvailableInspirationDef = __instance.pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
                 TaggedString reasonText = "HVT_DaydreamerInspired".Translate().CapitalizeFirst().Formatted(__instance.pawn.Named("PAWN")).AdjustedFor(__instance.pawn, "PAWN", true).Resolve();
                 if (mentalBreakInspirationGainSet.Count != 0)
                 {
                     __instance.pawn.mindState.inspirationHandler.TryStartInspiration(mentalBreakInspirationGainSet.RandomElement<InspirationDef>(), reasonText, true);
-                }
-                else
-                {
-                    __instance.pawn.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef, reasonText, true);
+                } else {
+                    InspirationDef randomAvailableInspirationDef = __instance.pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
+                    if (randomAvailableInspirationDef != null)
+                    {
+                        __instance.pawn.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef, reasonText, true);
+                    }
                 }
             }
         }
@@ -2123,6 +2124,34 @@ namespace HautsTraits
             return base.StateCanOccur(pawn) && HVTUtility.NearWildAnimal(pawn);
         }
     }
+    public class JobGiver_WanderFast : JobGiver_Wander
+    {
+        public JobGiver_WanderFast()
+        {
+            this.wanderRadius = 7f;
+            this.locomotionUrgency = LocomotionUrgency.Sprint;
+            this.ticksBetweenWandersRange = new IntRange(125, 160);
+        }
+        protected override IntVec3 GetWanderRoot(Pawn pawn)
+        {
+            return pawn.Position;
+        }
+    }
+    public class MentalStateWorker_WanderFast : MentalStateWorker
+    {
+        public override bool StateCanOccur(Pawn pawn)
+        {
+            if (!base.StateCanOccur(pawn))
+            {
+                return false;
+            }
+            if (pawn.needs.rest != null && pawn.needs.rest.CurLevelPercentage < 0.1f)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
     public class MentalStateWorker_Eureka : MentalStateWorker
     {
         public override bool StateCanOccur(Pawn pawn)
@@ -3096,6 +3125,44 @@ namespace HautsTraits
             return !HVT_Mod.settings.disableStealthRaids && !HVT_Mod.settings.disableHardStealthRaids && parms.faction != null && parms.faction.def.humanlikeFaction && base.CanUseWith(parms, groupKind) && parms.faction.def.techLevel >= TechLevel.Industrial;
         }
     }
+    public class HediffCompProperties_WhyAreYouRunning : HediffCompProperties
+    {
+        public HediffCompProperties_WhyAreYouRunning()
+        {
+            this.compClass = typeof(HediffComp_WhyAreYouRunning);
+        }
+        public MentalStateDef mentalState;
+        public Dictionary<JobDef,float> triggeringJobs;
+    }
+    public class HediffComp_WhyAreYouRunning : HediffComp
+    {
+        public HediffCompProperties_WhyAreYouRunning Props
+        {
+            get
+            {
+                return (HediffCompProperties_WhyAreYouRunning)this.props;
+            }
+        }
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+        {
+            base.CompPostTickInterval(ref severityAdjustment, delta);
+            if (this.Pawn.IsHashIntervalTick(150,delta))
+            {
+                Pawn p = this.Pawn;
+                if (p.CurJobDef != null)
+                {
+                    if (!this.Props.triggeringJobs.NullOrEmpty() && this.Props.triggeringJobs.Keys.Contains(p.CurJobDef))
+                    {
+                        this.Props.triggeringJobs.TryGetValue(p.CurJobDef, out float chance);
+                        if (Rand.MTBEventOccurs(chance, 60000f, 150f) && this.Props.mentalState.Worker.StateCanOccur(p))
+                        {
+                            p.mindState.mentalStateHandler.TryStartMentalState(this.Props.mentalState, null, true, true, false, null, false, false, false);
+                        }
+                    }
+                }
+            }
+        }
+    }
     public class Hediff_HulkSmash : HediffWithComps
     {
         public override void Notify_PawnPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
@@ -3165,6 +3232,67 @@ namespace HautsTraits
                     {
                         this.pawn.story.traits.RemoveTrait(this.pawn.story.traits.allTraits[i]);
                         break;
+                    }
+                }
+            }
+        }
+    }
+    public class HediffCompProperties_Oneiromancy : HediffCompProperties
+    {
+        public HediffCompProperties_Oneiromancy()
+        {
+            this.compClass = typeof(HediffComp_Oneiromancy);
+        }
+        public ThoughtDef thought;
+        public int ticksPerStack;
+        public int checkInterval = 60;
+        public float numStacksToTrigger;
+        public float inspirationChancePerStack;
+        public float maxInspirationChance;
+        public string inspireString = "HVT_VividDreamerInspired";
+    }
+    public class HediffComp_Oneiromancy : HediffComp
+    {
+        public HediffCompProperties_Oneiromancy Props
+        {
+            get
+            {
+                return (HediffCompProperties_Oneiromancy)this.props;
+            }
+        }
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+        {
+            base.CompPostTickInterval(ref severityAdjustment, delta);
+            Pawn p = this.Pawn;
+            if (p.IsHashIntervalTick(this.Props.checkInterval, delta) && p.needs.mood != null)
+            {
+                Need_Rest nr = p.needs.rest;
+                if (nr != null)
+                {
+                    if (nr.Resting)
+                    {
+                        this.parent.Severity += this.Props.checkInterval;
+                    } else {
+                        float sev = this.parent.Severity;
+                        if (sev / this.Props.ticksPerStack >= this.Props.numStacksToTrigger)
+                        {
+                            if (p.mindState.inspirationHandler != null && Rand.Chance(Math.Min(this.Props.inspirationChancePerStack * sev / this.Props.ticksPerStack, this.Props.maxInspirationChance)))
+                            {
+                                InspirationDef randomAvailableInspirationDef = p.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
+                                if (randomAvailableInspirationDef != null)
+                                {
+                                    TaggedString reasonText = this.Props.inspireString.Translate().CapitalizeFirst().Formatted(p.Named("PAWN")).AdjustedFor(p, "PAWN", true).Resolve();
+                                    p.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef, reasonText, true);
+                                }
+                            }
+                            while (sev > this.Props.ticksPerStack)
+                            {
+                                Thought_Memory thought_Memory = ThoughtMaker.MakeThought(this.Props.thought, null);
+                                p.needs.mood.thoughts.memories.TryGainMemory(thought_Memory, null);
+                                sev -= this.Props.ticksPerStack;
+                            }
+                        }
+                        this.parent.Severity = this.parent.def.minSeverity;
                     }
                 }
             }

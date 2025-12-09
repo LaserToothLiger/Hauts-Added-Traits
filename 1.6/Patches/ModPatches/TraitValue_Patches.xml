@@ -172,7 +172,7 @@
 				  <value>
 					<li Class="SyrTraitValue.TraitValueExtension">
 					  <traitValues>
-						<li>-10</li>
+						<li>-20</li>
 					  </traitValues>
 					</li>
 				  </value>
@@ -223,6 +223,16 @@
 					<li Class="SyrTraitValue.TraitValueExtension">
 					  <traitValues>
 						<li>0</li>
+					  </traitValues>
+					</li>
+				  </value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>*/TraitDef[defName = "HVT_Rambunctious"]</xpath>
+				  <value>
+					<li Class="SyrTraitValue.TraitValueExtension">
+					  <traitValues>
+						<li>-15</li>
 					  </traitValues>
 					</li>
 				  </value>
@@ -403,6 +413,26 @@
 					<li Class="SyrTraitValue.TraitValueExtension">
 					  <traitValues>
 						<li>30</li>
+					  </traitValues>
+					</li>
+				  </value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>*/TraitDef[defName = "HVT_ChronicNightmares"]</xpath>
+				  <value>
+					<li Class="SyrTraitValue.TraitValueExtension">
+					  <traitValues>
+						<li>-10</li>
+					  </traitValues>
+					</li>
+				  </value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>*/TraitDef[defName = "HVT_VividDreams"]</xpath>
+				  <value>
+					<li Class="SyrTraitValue.TraitValueExtension">
+					  <traitValues>
+						<li>10</li>
 					  </traitValues>
 					</li>
 				  </value>

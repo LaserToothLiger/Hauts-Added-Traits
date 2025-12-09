@@ -31,6 +31,7 @@
 						<HVT_MetabolicFreak>0</HVT_MetabolicFreak>
 						<HVT_Outdoorsy>0</HVT_Outdoorsy>
 						<HVT_PeoplePleaser>0</HVT_PeoplePleaser>
+						<HVT_Rambunctious>0</HVT_Rambunctious>
 						<HVT_RepressedRage>0</HVT_RepressedRage>
 						<HVT_Reveller>0</HVT_Reveller>
 						<HVT_Sadist>0</HVT_Sadist>
@@ -46,6 +47,8 @@
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
 						<HVT_WeaponArtist>0</HVT_WeaponArtist>
+						<HVT_ChronicNightmares>0</HVT_ChronicNightmares>
+						<HVT_VividDreams>0</HVT_VividDreams>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>
@@ -115,11 +118,14 @@
 						<HVT_Lech>0</HVT_Lech>
 						<HVT_Lovesick>0</HVT_Lovesick>
 						<HVT_Mariner>0</HVT_Mariner>
+						<HVT_Rambunctious>0</HVT_Rambunctious>
 						<HVT_Sunbather>0</HVT_Sunbather>
 						<HVT_Tempestophile>0</HVT_Tempestophile>
 						<HVT_Tranquil>0</HVT_Tranquil>
 						<HVT_Vain>0</HVT_Vain>
 						<HVT_Visionary>0</HVT_Visionary>
+						<HVT_ChronicNightmares>0</HVT_ChronicNightmares>
+						<HVT_VividDreams>0</HVT_VividDreams>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Intolerant MayRequire="Ludeon.RimWorld.Ideology">0</HVT_Intolerant>
 						<HVT_RadicalThinker MayRequire="Ludeon.RimWorld.Ideology">0</HVT_RadicalThinker>
@@ -152,6 +158,7 @@
 						<HVT_Judgemental>0</HVT_Judgemental>
 						<HVT_Lovesick>0</HVT_Lovesick>
 						<HVT_PeoplePleaser>0</HVT_PeoplePleaser>
+						<HVT_Rambunctious>0</HVT_Rambunctious>
 						<HVT_RepressedRage>0</HVT_RepressedRage>
 						<HVT_Reveller>0</HVT_Reveller>
 						<HVT_Sadist>0</HVT_Sadist>
@@ -160,6 +167,7 @@
 						<HVT_Tranquil>0</HVT_Tranquil>
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vicious>0</HVT_Vicious>
+						<HVT_ChronicNightmares>0</HVT_ChronicNightmares>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Faithful MayRequire="Ludeon.RimWorld.Ideology">-2</HVT_Faithful>
 						<HVT_Faithful MayRequire="Ludeon.RimWorld.Ideology">-1</HVT_Faithful>
@@ -192,6 +200,7 @@
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
 						<HVT_WeaponArtist>0</HVT_WeaponArtist>
+						<HVT_VividDreams>0</HVT_VividDreams>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>
 						<HVT_Strong>1</HVT_Strong>
@@ -228,6 +237,7 @@
 						<HVT_Hotfoot>0</HVT_Hotfoot>
 						<HVT_Mariner>0</HVT_Mariner>
 						<HVT_Textile>0</HVT_Textile>
+						<HVT_ChronicNightmares>0</HVT_ChronicNightmares>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>
@@ -337,6 +347,7 @@
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_Visionary>0</HVT_Visionary>
 						<HVT_WeaponArtist>0</HVT_WeaponArtist>
+						<HVT_VividDreams>0</HVT_VividDreams>
 						<HVT_Humble>0</HVT_Humble>
 						<HVT_Prideful>1</HVT_Prideful>
 						<HVT_Prideful>2</HVT_Prideful>
@@ -378,6 +389,7 @@
 						<HVT_Lovesick>0</HVT_Lovesick>
 						<HVT_Mariner>0</HVT_Mariner>
 						<HVT_PeoplePleaser>0</HVT_PeoplePleaser>
+						<HVT_Rambunctious>0</HVT_Rambunctious>
 						<HVT_RepressedRage>0</HVT_RepressedRage>
 						<HVT_Reveller>0</HVT_Reveller>
 						<HVT_Sadist>0</HVT_Sadist>
@@ -389,6 +401,7 @@
 						<HVT_Vagabond>0</HVT_Vagabond>
 						<HVT_Vicious>0</HVT_Vicious>
 						<HVT_WeaponArtist>0</HVT_WeaponArtist>
+						<HVT_ChronicNightmares>0</HVT_ChronicNightmares>
 						<HVT_Imperceptive>0</HVT_Imperceptive>
 						<HVT_Perceptive>1</HVT_Perceptive>
 						<HVT_Perceptive>2</HVT_Perceptive>

@@ -566,6 +566,24 @@
 	</TraitDef>
 	
 	<TraitDef>
+		<defName>HVT_Rambunctious</defName>
+		<commonality>0.4</commonality>
+		<degreeDatas>
+		  <li>
+			<label>rambunctious</label>
+			<description>Sitting still is a frustrating chore for {PAWN_nameDef}. While praying, meditating, or even rarely while sleeping or resting, {PAWN_pronoun} may break out into an uncontrollable run that can last for up to half a day.</description>
+			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs><li><key>0</key><value><li>HVT_Ramby</li></value></li></grantedHediffs>
+            </li>
+        </modExtensions>
+		<conflictingTraits><li>HVT_Tranquil</li></conflictingTraits>
+	</TraitDef>
+	
+	<TraitDef>
 		<defName>HVT_RepressedRage</defName>
 		<commonality>1</commonality>
 		<degreeDatas>
@@ -1072,6 +1090,44 @@
 		</degreeDatas>
 		<conflictingTraits><li>AnnoyingVoice</li><li>CreepyBreathing</li><li>HVT_Forgettable</li><li MayRequire="RavingLegend.MoreTraits">RT_Unwanted</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
+	</TraitDef>
+	
+	<!--'dream' spectrum-->
+	<TraitDef>
+		<defName>HVT_ChronicNightmares</defName>
+		<commonality>0.4</commonality>
+		<degreeDatas>
+		  <li>
+			<label>chronic nightmares</label>
+			<description>{PAWN_nameDef} never sleeps well. The longer {PAWN_pronoun} stays asleep, the worse {PAWN_possessive} mood will be on waking up.</description>
+			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
+			<possessions>
+			  <WakeUp>2~4</WakeUp>
+			</possessions>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs><li><key>0</key><value><li>HVT_TheseNightmaresSureAreChronic</li></value></li></grantedHediffs>
+            </li>
+        </modExtensions>
+		<conflictingTraits><li>HVT_Tranquil</li><li>HVT_VividDreams</li></conflictingTraits>
+	</TraitDef>
+	<TraitDef>
+		<defName>HVT_VividDreams</defName>
+		<commonality>0.4</commonality>
+		<degreeDatas>
+		  <li>
+			<label>vivid dreams</label>
+			<description>After spending 6 continuous hours asleep, {PAWN_nameDef} enters an unusually potent dreaming state. Waking thereafter grants {PAWN_objective} mood and a chance to be inspired, both of which scale with additional time spent asleep.</description>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs><li><key>0</key><value><li>HVT_VividDreaming</li></value></li></grantedHediffs>
+            </li>
+        </modExtensions>
+		<conflictingTraits><li>HVT_Staid</li><li>HVT_ChronicNightmares</li></conflictingTraits>
 	</TraitDef>
 	
 	<!--'expectation' spectrum-->

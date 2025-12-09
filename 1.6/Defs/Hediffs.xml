@@ -405,6 +405,37 @@
 	</comps>
   </HediffDef>
   
+  <!--we need custom behavior for Rambunctious to work because trait-inflicted random mental states can't happen when a pawn is asleep-->
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_Ramby</defName>
+    <label>rambunctious</label>
+    <description>The 'Rambunctious' trait may cause this character to run around uncontrollably if meditating or praying, or more rarely while resting or sleeping.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+	<comps>
+	  <li Class="HautsTraits.HediffCompProperties_WhyAreYouRunning">
+		<mentalState>HVT_RambunctiousWandering</mentalState>
+		<triggeringJobs>
+			<li><key>Meditate</key><value>0.2</value></li>
+			<li><key>Pray</key><value>0.2</value></li>
+			<li><key>Wait_Asleep</key><value>1</value></li>
+			<li><key>LayDown</key><value>1</value></li>
+			<li><key>LayDownResting</key><value>1</value></li>
+			<li><key>LayDownAwake</key><value>1</value></li>
+		</triggeringJobs>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_Rambunctious</li>
+		</forcingTraits>
+	  </li>
+	</comps>
+  </HediffDef>
+  
   <!--repressed rage-->
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_RRUnleashed</defName>
@@ -766,6 +797,60 @@
 
 
   
+  
+  <!--chronic nightmares/vivid dreams-->
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_TheseNightmaresSureAreChronic</defName>
+    <label>chronic nightmares</label>
+    <description>My god... this street is full of elms...</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<minSeverity>0.001</minSeverity>
+	<initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+	<comps>
+	  <li Class="HautsTraits.HediffCompProperties_Oneiromancy">
+		<thought>HVT_BadDreams</thought>
+		<ticksPerStack>2500</ticksPerStack>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_ChronicNightmares</li>
+		</forcingTraits>
+	  </li>
+	</comps>
+  </HediffDef>
+  <HediffDef ParentName="HVT_TraitHediffBase">
+    <defName>HVT_VividDreaming</defName>
+    <label>vivid dreams</label>
+    <description>Oh darling, I've been dreaming\nThat you would give me everything I need\nThought I had found the meaning\nIt felt a little clearer in my sleep</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<minSeverity>0.001</minSeverity>
+	<initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+	<comps>
+	  <li Class="HautsTraits.HediffCompProperties_Oneiromancy">
+		<thought>HVT_GoodDreams</thought>
+		<ticksPerStack>2500</ticksPerStack>
+		<numStacksToTrigger>6</numStacksToTrigger>
+		<inspirationChancePerStack>0.015</inspirationChancePerStack>
+		<maxInspirationChance>0.25</maxInspirationChance>
+		<inspireString>HVT_VividDreamerInspired</inspireString>
+	  </li>
+	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
+		<forcingTraits>
+			<li>HVT_VividDreams</li>
+		</forcingTraits>
+	  </li>
+	</comps>
+  </HediffDef>
   <!--entitled/prideful-->
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_Entitlement</defName>

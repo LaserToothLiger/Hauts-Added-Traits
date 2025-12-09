@@ -32,6 +32,7 @@
 <HVT_VisionarySchematicDesc>Notes created by {PAWN_nameDef} during a visionary insight.</HVT_VisionarySchematicDesc>
 <HVT_VisionaryNovelTitle>Visionary ramblings by {PAWN_nameDef}</HVT_VisionaryNovelTitle>
 <HVT_VisionaryNovelDesc>Notes created by {PAWN_nameDef} during a visionary insight. These don't contain any actionable knowledge, but they make for fun reading (for a given definition of fun, at least).</HVT_VisionaryNovelDesc>
+<HVT_VividDreamerInspired>Upon waking, {PAWN_nameDef} recalled an especially compelling and inspiring dream.</HVT_VividDreamerInspired>
 <HVT_PeriodicConformation>Due to the Conformist trait, {PAWN_nameDef} has converted to {PAWN_possessive} faction's majority ideoligion.</HVT_PeriodicConformation>
 <HVT_HunterVsHorror>{INFECTED_nameDef}'s metalhorror emerged due to the vigilance of a keen monster hunter.</HVT_HunterVsHorror>
 <HVT_LostHumanity>{PAWN_nameDef} has become inhumanized. {PAWN_possessive} concern for health, family, friendship, and love have been broken.</HVT_LostHumanity>

@@ -772,6 +772,37 @@
     </stages>
   </ThoughtDef>
   
+  <!--chronic nightmares before Christmas (2025-12-07)-->
+  <ThoughtDef>
+    <defName>HVT_BadDreams</defName>
+    <durationDays>0.333</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>1.0</stackedEffectMultiplier>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>chronic nightmares</label>
+        <description>I don't want to fall asleep again. Don't let me go to sleep again!</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--chayula.png-->
+  <ThoughtDef>
+    <defName>HVT_GoodDreams</defName>
+    <durationDays>0.333</durationDays>
+    <stackLimit>20</stackLimit>
+    <stackedEffectMultiplier>1.0</stackedEffectMultiplier>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>vivid dreams</label>
+        <description>I just had a really beautiful dream.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
   <!--faithful vs doubtful-->
   <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>HVT_VsDoubtful</defName>
