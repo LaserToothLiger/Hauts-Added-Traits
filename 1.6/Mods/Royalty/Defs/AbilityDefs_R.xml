@@ -12,6 +12,8 @@
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <showGizmoOnWorldView>True</showGizmoOnWorldView>
+	<gizmoClass>HautsFramework.Command_AbilityCanBuffSelfOnCaravan</gizmoClass>
     <!--<aiCanUse>true</aiCanUse> unnecessary because it has to preempt the psycasting "AI", which works by overriding a pawn's current verb to use and therefore ignores the typical decision chain aiCanUse would be useful for
 		we do a little patching of our own instead in our source code-->
 	<iconPath>PsychicTraits/Genes/HVT_Perennial</iconPath>
@@ -481,8 +483,8 @@
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <!--<aiCanUse>true</aiCanUse> unnecessary because it has to preempt the psycasting "AI", which works by overriding a pawn's current verb to use and therefore ignores the typical decision chain aiCanUse would be useful for
-		we do a little patching of our own instead in our source code-->
+    <showGizmoOnWorldView>True</showGizmoOnWorldView>
+	<gizmoClass>HautsFramework.Command_AbilityCanBuffSelfOnCaravan</gizmoClass>
 	<iconPath>PsychicTraits/Genes/HVT_Perennial</iconPath>
 	<cooldownTicksRange>60000</cooldownTicksRange>
     <statBases>

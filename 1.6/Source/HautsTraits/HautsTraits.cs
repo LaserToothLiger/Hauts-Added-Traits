@@ -3149,7 +3149,7 @@ namespace HautsTraits
             if (this.Pawn.IsHashIntervalTick(150,delta))
             {
                 Pawn p = this.Pawn;
-                if (p.CurJobDef != null)
+                if (p.Spawned && p.CurJobDef != null && p.pather.Moving)
                 {
                     if (!this.Props.triggeringJobs.NullOrEmpty() && this.Props.triggeringJobs.Keys.Contains(p.CurJobDef))
                     {

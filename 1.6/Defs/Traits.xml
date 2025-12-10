@@ -571,7 +571,7 @@
 		<degreeDatas>
 		  <li>
 			<label>rambunctious</label>
-			<description>Sitting still is a frustrating chore for {PAWN_nameDef}. While praying, meditating, or even rarely while sleeping or resting, {PAWN_pronoun} may break out into an uncontrollable run that can last for up to half a day.</description>
+			<description>Sitting still is a frustrating chore for {PAWN_nameDef}. While praying, meditating, or even rarely while sleeping or resting, {PAWN_pronoun} may break out into an uncontrollable run.</description>
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
