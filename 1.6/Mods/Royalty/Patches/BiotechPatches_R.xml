@@ -31,46 +31,6 @@
 				</li>
 				<li Class="PatchOperationFindMod">
 					<mods>
-						<li>Alpha Mechs</li>
-					</mods>
-					<nomatch Class="PatchOperationSequence">
-						<operations>
-							<li Class="PatchOperationAdd">
-								<xpath>/Defs/HediffDef[defName="HVT_THediffApocriton"]/comps</xpath>
-								<value>
-								  <li Class="HautsTraitsRoyalty.HediffCompProperties_TheLastChipFactory">
-									<productionSet>
-										<li><key>SignalChip</key><value>144~288</value></li>
-										<li><key>PowerfocusChip</key><value>240~480</value></li>
-										<li><key>NanostructuringChip</key><value>360~720</value></li>
-									</productionSet>
-								  </li>
-								</value>
-							</li>
-						</operations>
-					</nomatch>
-					<match Class="PatchOperationSequence">
-						<operations>
-							<li Class="PatchOperationAdd">
-								<xpath>/Defs/HediffDef[defName="HVT_THediffApocriton"]/comps</xpath>
-								<value>
-								  <li Class="HautsTraitsRoyalty.HediffCompProperties_TheLastChipFactory">
-									<productionSet>
-										<li><key>SignalChip</key><value>144~288</value></li>
-										<li><key>PowerfocusChip</key><value>240~480</value></li>
-										<li><key>NanostructuringChip</key><value>360~720</value></li>
-										<li><key>AM_HyperLinkageChip</key><value>576~864</value></li>
-										<li><key>AM_StellarProcessingChip</key><value>720~1080</value></li>
-										<li><key>AM_QuantumMatrixChip</key><value>1200~2400</value></li>
-									</productionSet>
-								  </li>
-								</value>
-							</li>
-						</operations>
-					</match>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
 						<li>RPG Adventure Flavour Pack</li>
 					</mods>
 					<nomatch Class="PatchOperationSequence">

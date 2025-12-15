@@ -318,6 +318,7 @@
 		  <AM_SoulDrain MayRequire="sarg.alphamechs">0.9</AM_SoulDrain>
 		  <VREA_Sear MayRequire="vanillaracesexpanded.archon">0.9</VREA_Sear>
 		  <CoolPsycasts_SkipCut MayRequire="metalocif.coolerpsycasts">0.75</CoolPsycasts_SkipCut>
+		  <AArmoury_PsychicDamage MayRequire="sarg.alphaarmoury">0.75</AArmoury_PsychicDamage>
 		</damageFactors>
       </li>
     </stages>
@@ -1197,6 +1198,16 @@
 			<li>HVT_TTraitApocriton</li>
 		</forcingTraits>
 	  </li>
+	  <li Class="HautsTraitsRoyalty.HediffCompProperties_TheLastChipFactory" MayRequire="Ludeon.RimWorld.Biotech">
+		<productionSet>
+			<li>HVT_ChipTierOne</li>
+			<li>HVT_ChipTierTwo</li>
+			<li>HVT_ChipTierThree</li>
+			<li MayRequire="sarg.alphamechs">HVT_ChipTierFour</li>
+			<li MayRequire="sarg.alphamechs">HVT_ChipTierFive</li>
+			<li MayRequire="sarg.alphamechs">HVT_ChipTierSix</li>
+		</productionSet>
+	  </li>
 	</comps>
   </HediffDef>
 	  <HediffDef ParentName="HVT_TraitHediffBase">
@@ -1219,6 +1230,36 @@
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
 	  </HediffDef>
+	  <HautsTraitsRoyalty.ApocritonChipManufactureDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>HVT_ChipTierOne</defName>
+		<thing>SignalChip</thing>
+		<timerHours>144~288</timerHours>
+	  </HautsTraitsRoyalty.ApocritonChipManufactureDef>
+	  <HautsTraitsRoyalty.ApocritonChipManufactureDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>HVT_ChipTierTwo</defName>
+		<thing>PowerfocusChip</thing>
+		<timerHours>240~480</timerHours>
+	  </HautsTraitsRoyalty.ApocritonChipManufactureDef>
+	  <HautsTraitsRoyalty.ApocritonChipManufactureDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>HVT_ChipTierThree</defName>
+		<thing>NanostructuringChip</thing>
+		<timerHours>360~720</timerHours>
+	  </HautsTraitsRoyalty.ApocritonChipManufactureDef>
+	  <HautsTraitsRoyalty.ApocritonChipManufactureDef MayRequire="Ludeon.RimWorld.Biotech,sarg.alphamechs">
+		<defName>HVT_ChipTierFour</defName>
+		<thing>AM_HyperLinkageChip</thing>
+		<timerHours>576~864</timerHours>
+	  </HautsTraitsRoyalty.ApocritonChipManufactureDef>
+	  <HautsTraitsRoyalty.ApocritonChipManufactureDef MayRequire="Ludeon.RimWorld.Biotech,sarg.alphamechs">
+		<defName>HVT_ChipTierFive</defName>
+		<thing>AM_StellarProcessingChip</thing>
+		<timerHours>720~1080</timerHours>
+	  </HautsTraitsRoyalty.ApocritonChipManufactureDef>
+	  <HautsTraitsRoyalty.ApocritonChipManufactureDef MayRequire="Ludeon.RimWorld.Biotech,sarg.alphamechs">
+		<defName>HVT_ChipTierSix</defName>
+		<thing>AM_QuantumMatrixChip</thing>
+		<timerHours>1200~2400</timerHours>
+	  </HautsTraitsRoyalty.ApocritonChipManufactureDef>
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_THediffArcturan</defName>
     <label>transcendent arcturan</label>
@@ -1238,6 +1279,7 @@
 		  <EMP>0</EMP>
 		  <Taser MayRequire="CETeam.CombatExtended">0</Taser>
 		  <Electrical MayRequire="CETeam.CombatExtended">0</Electrical>
+		  <AArmoury_Voltaic MayRequire="sarg.alphaarmoury">0</AArmoury_Voltaic>
 		  <CoolPsycasts_GammaRadiation MayRequire="metalocif.coolerpsycasts">0.25</CoolPsycasts_GammaRadiation>
 		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
 		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
@@ -1253,6 +1295,8 @@
 		  <Neuralizer MayRequire="CETeam.CombatExtended">0.5</Neuralizer>
 		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0.5</Neuralizer_weak>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.5</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.5</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.5</AArmoury_Flame_Lesser>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1274,6 +1318,8 @@
 		<victimScalar>PsychicSensitivity</victimScalar>
 		<hediffsToRemoveSelf>
 		  <li>HeartAttack</li><!--we don't have to list the various coma hediffs bc it also removes any isBad hediffs w/ <=10% cap consciousness-->
+		  <li MayRequire="sarg.alphaarmoury">AArmoury_Electric</li>
+		  <li MayRequire="sarg.alphaarmoury">AArmoury_Flux</li>
 		</hediffsToRemoveSelf>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
@@ -1710,6 +1756,8 @@
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0</AArmoury_Flame_Lesser>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
@@ -1769,7 +1817,9 @@
 			  <Flame_Secondary MayRequire="CETeam.CombatExtended">1.5</Flame_Secondary>
 			  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">1.5</Flame_Secondary_Incendiary>
 			  <PrometheumFlame MayRequire="CETeam.CombatExtended">1.5</PrometheumFlame>
-		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">1.5</BioferriteFlame>
+			  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">1.5</BioferriteFlame>
+			  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">1.5</AArmoury_ThermalBlasts>
+			  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">1.5</AArmoury_Flame_Lesser>
 			</damageFactors>
 		  </li>
 		</stages>
@@ -1797,6 +1847,7 @@
         </capMods>
 		<damageFactors>
 		  <AM_SoulDrain MayRequire="sarg.alphamechs">0</AM_SoulDrain>
+		  <AArmoury_Orgasmatron MayRequire="sarg.alphaarmoury">0</AArmoury_Orgasmatron>
 		</damageFactors>
 		<becomeVisible>false</becomeVisible>
       </li>
@@ -1851,6 +1902,7 @@
 		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0</Neuralizer_weak>
 		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
 		  <NerveBioferrite MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</NerveBioferrite>
+		  <AArmoury_PsychicDamage MayRequire="sarg.alphaarmoury">0</AArmoury_PsychicDamage>
 		</damageFactors>
       </li>
     </stages>
@@ -1946,6 +1998,8 @@
 		  <CE_Laser MayRequire="CETeam.CombatExtended">0.2</CE_Laser>
 		  <Thermobaric MayRequire="CETeam.CombatExtended">0.2</Thermobaric>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.2</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.2</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.2</AArmoury_Flame_Lesser>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 		</damageFactors>
       </li>
@@ -2003,7 +2057,9 @@
 			  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.4</PrometheumFlame>
 			  <CE_Laser MayRequire="CETeam.CombatExtended">0.4</CE_Laser>
 			  <Thermobaric MayRequire="CETeam.CombatExtended">0.4</Thermobaric>
-		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.4</BioferriteFlame>
+			  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.4</BioferriteFlame>
+			  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.4</AArmoury_ThermalBlasts>
+			  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.4</AArmoury_Flame_Lesser>
 			  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
 			</damageFactors>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
@@ -2029,6 +2085,7 @@
 		  <EMP>0</EMP>
 		  <Taser MayRequire="CETeam.CombatExtended">0</Taser>
 		  <Electrical MayRequire="CETeam.CombatExtended">0</Electrical>
+		  <AArmoury_Voltaic MayRequire="sarg.alphaarmoury">0</AArmoury_Voltaic>
 		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
 		  <CE_Laser MayRequire="CETeam.CombatExtended">0.25</CE_Laser>
 		</damageFactors>
@@ -2212,6 +2269,8 @@
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.5</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.5</AArmoury_Flame_Lesser>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
@@ -2236,6 +2295,8 @@
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0</Flame_Secondary_Incendiary>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0</PrometheumFlame>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.5</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.5</AArmoury_Flame_Lesser>
 		  <Frostbite>0.15</Frostbite>
 		  <FSFFrostbite MayRequire="FrozenSnowFox.MorePsycastPowers">0.15</FSFFrostbite>
 		  <OTCCryo MayRequire="ObsidiaExpansion.Core">0.15</OTCCryo>
@@ -2326,6 +2387,8 @@
 		  <VEF_PermanentBurn>0.25</VEF_PermanentBurn>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.25</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.25</AArmoury_Flame_Lesser>
 		  <AcidBurn>0</AcidBurn>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0</AM_AcidSpit>
 		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0</OTCAcid>
@@ -2333,6 +2396,13 @@
 		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0</OMGNecrobane>
 		  <VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
+		  <AArmoury_AcidSpit MayRequire="sarg.alphaarmoury">0</AArmoury_AcidSpit>
+		  <AArmoury_Corrosive MayRequire="sarg.alphaarmoury">0</AArmoury_Corrosive>
+		  <AArmoury_InsectKiller MayRequire="sarg.alphaarmoury">0</AArmoury_InsectKiller>
+		  <AArmoury_AnomalyKiller MayRequire="sarg.alphaarmoury">0</AArmoury_AnomalyKiller>
+		  <AArmoury_NeedleProjectiles MayRequire="sarg.alphaarmoury">0</AArmoury_NeedleProjectiles>
+		  <AArmoury_MeleeTox MayRequire="sarg.alphaarmoury">0</AArmoury_MeleeTox>
+		  <AArmoury_BeeVenom MayRequire="sarg.alphaarmoury">0</AArmoury_BeeVenom>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		  <ArrowFire MayRequire="CETeam.CombatExtended">0.25</ArrowFire>
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.25</Flame_Secondary>
@@ -2343,6 +2413,7 @@
 		  <Electrical MayRequire="CETeam.CombatExtended">0.25</Electrical>
 		  <Flashbang MayRequire="CETeam.CombatExtended">0.25</Flashbang>
 		  <ArrowVenom MayRequire="CETeam.CombatExtended">0.25</ArrowVenom>
+		  <AArmoury_Voltaic MayRequire="sarg.alphaarmoury">0.25</AArmoury_Voltaic>
 		</damageFactors>
 	  </li>
     </stages>
@@ -3232,7 +3303,7 @@
 		<defName>HVT_LocustTimedLife</defName>
 		<label>Locustspawn</label>
 		<description>This being will return to nonexistence... or wherever it may have come from... after some time.</description>
-		<hediffClass>HautsTraitsRoyalty.Hediff_Locusta</hediffClass>
+		<hediffClass>HautsFramework.Hediff_VanishOnDownedToo</hediffClass>
 		<defaultLabelColor>(0.53, 0.53, 0.7)</defaultLabelColor>
 		<stages>
 		  <li>
@@ -3824,6 +3895,8 @@
 		  <Flame>0.15</Flame>
 		  <VEF_PermanentBurn>0.15</VEF_PermanentBurn>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.15</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.15</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.15</AArmoury_Flame_Lesser>
 		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
@@ -4015,6 +4088,8 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.8</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.8</Flame_Secondary_Incendiary>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.8</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.8</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.8</AArmoury_Flame_Lesser>
 		  <AcidBurn>0.9</AcidBurn>
 		  <VEF_SecondaryAcidBurn>0.9</VEF_SecondaryAcidBurn>
 		  <OTCAcid MayRequire="ObsidiaExpansion.Core">0.9</OTCAcid>
@@ -4022,6 +4097,13 @@
 		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0.9</OMGNecrobane>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0.9</AM_AcidSpit>
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0.9</ToxGas>
+		  <AArmoury_AcidSpit MayRequire="sarg.alphaarmoury">0.9</AArmoury_AcidSpit>
+		  <AArmoury_Corrosive MayRequire="sarg.alphaarmoury">0.9</AArmoury_Corrosive>
+		  <AArmoury_InsectKiller MayRequire="sarg.alphaarmoury">0.9</AArmoury_InsectKiller>
+		  <AArmoury_AnomalyKiller MayRequire="sarg.alphaarmoury">0.9</AArmoury_AnomalyKiller>
+		  <AArmoury_NeedleProjectiles MayRequire="sarg.alphaarmoury">0.9</AArmoury_NeedleProjectiles>
+		  <AArmoury_MeleeTox MayRequire="sarg.alphaarmoury">0.9</AArmoury_MeleeTox>
+		  <AArmoury_BeeVenom MayRequire="sarg.alphaarmoury">0.9</AArmoury_BeeVenom>
 		  <Beam>0.95</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.95</BeamBypassShields>
 		  <Vaporize>0.95</Vaporize>
@@ -4587,6 +4669,13 @@
 		  <OMGNecrobane MayRequire="ObsidiaExpansion.Core">0.25</OMGNecrobane>
 		  <AM_AcidSpit MayRequire="sarg.alphamechs">0.25</AM_AcidSpit>
 		  <ArrowVenom MayRequire="CETeam.CombatExtended">0.25</ArrowVenom>
+		  <AArmoury_AcidSpit MayRequire="sarg.alphaarmoury">0.25</AArmoury_AcidSpit>
+		  <AArmoury_Corrosive MayRequire="sarg.alphaarmoury">0.25</AArmoury_Corrosive>
+		  <AArmoury_InsectKiller MayRequire="sarg.alphaarmoury">0.25</AArmoury_InsectKiller>
+		  <AArmoury_AnomalyKiller MayRequire="sarg.alphaarmoury">0.25</AArmoury_AnomalyKiller>
+		  <AArmoury_NeedleProjectiles MayRequire="sarg.alphaarmoury">0.25</AArmoury_NeedleProjectiles>
+		  <AArmoury_MeleeTox MayRequire="sarg.alphaarmoury">0.25</AArmoury_MeleeTox>
+		  <AArmoury_BeeVenom MayRequire="sarg.alphaarmoury">0.25</AArmoury_BeeVenom>
 		</damageFactors>
       </li>
     </stages>
@@ -4615,6 +4704,9 @@
 		  <li MayRequire="CETeam.CombatExtended">PrometheumSoaked</li>
 		  <li MayRequire="CETeam.CombatExtended">Tranquilizer</li>
 		  <li MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">BioferriteToxicity</li>
+		  <li MayRequire="sarg.alphaarmoury">AArmoury_Paralysis</li>
+		  <li MayRequire="sarg.alphaarmoury">AArmoury_Chemburster</li>
+		  <li MayRequire="sarg.alphaarmoury">AArmoury_Flux</li>
 		</hediffsToCure>
 		<victimScalar>PsychicSensitivity</victimScalar>
 		<severityLostOnCure>0.2</severityLostOnCure><!--this is -20% on hit for the above hediffs, which scale in severity from 0 to 1. If you add other hediffs to this list, keep this info in mind.-->
@@ -5179,6 +5271,8 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.15</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.15</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.15</AArmoury_Flame_Lesser>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
@@ -5203,6 +5297,8 @@
 		  <Flame_Secondary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary>
 		  <Flame_Secondary_Incendiary MayRequire="CETeam.CombatExtended">0.15</Flame_Secondary_Incendiary>
 		  <BioferriteFlame MayRequire="CETeam.CombatExtended,Ludeon.RimWorld.Anomaly">0.15</BioferriteFlame>
+		  <AArmoury_ThermalBlasts MayRequire="sarg.alphaarmoury">0.15</AArmoury_ThermalBlasts>
+		  <AArmoury_Flame_Lesser MayRequire="sarg.alphaarmoury">0.15</AArmoury_Flame_Lesser>
 		  <Beam>0.25</Beam>
 		  <BeamBypassShields MayRequire="Ludeon.RimWorld.Odyssey">0.25</BeamBypassShields>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
@@ -5522,6 +5618,7 @@
         </capMods>
 		<damageFactors>
 		  <AM_SoulDrain MayRequire="sarg.alphamechs">0</AM_SoulDrain>
+		  <AArmoury_Orgasmatron MayRequire="sarg.alphaarmoury">0</AArmoury_Orgasmatron>
 		</damageFactors>
 		<becomeVisible>false</becomeVisible>
       </li>
@@ -5562,6 +5659,9 @@
       <li>
         <minSeverity>0.001</minSeverity>
         <label>inactive</label>
+		<damageFactors>
+		  <AArmoury_Orgasmatron MayRequire="sarg.alphaarmoury">0</AArmoury_Orgasmatron>
+		</damageFactors>
       </li>
       <li>
         <minSeverity>1</minSeverity>
@@ -5587,6 +5687,9 @@
           </li>
         </capMods>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+		<damageFactors>
+		  <AArmoury_Orgasmatron MayRequire="sarg.alphaarmoury">0</AArmoury_Orgasmatron>
+		</damageFactors>
       </li>
     </stages>
 	<comps>
@@ -5619,6 +5722,9 @@
 			  <IncomingDamageFactor>0.7</IncomingDamageFactor>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0.5</P42_AllergicSensitivity>
 			</statFactors>
+			<damageFactors>
+			  <AArmoury_Orgasmatron MayRequire="sarg.alphaarmoury">0</AArmoury_Orgasmatron>
+			</damageFactors>
 		  </li>
 		</stages>
 		<comps>
@@ -6209,6 +6315,13 @@
 		  <ToxGas MayRequire="Ludeon.RimWorld.Biotech">0</ToxGas>
 		  <ArrowVenom MayRequire="CETeam.CombatExtended">0</ArrowVenom>
 		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
+		  <AArmoury_AcidSpit MayRequire="sarg.alphaarmoury">0</AArmoury_AcidSpit>
+		  <AArmoury_Corrosive MayRequire="sarg.alphaarmoury">0</AArmoury_Corrosive>
+		  <AArmoury_InsectKiller MayRequire="sarg.alphaarmoury">0</AArmoury_InsectKiller>
+		  <AArmoury_AnomalyKiller MayRequire="sarg.alphaarmoury">0</AArmoury_AnomalyKiller>
+		  <AArmoury_NeedleProjectiles MayRequire="sarg.alphaarmoury">0</AArmoury_NeedleProjectiles>
+		  <AArmoury_MeleeTox MayRequire="sarg.alphaarmoury">0</AArmoury_MeleeTox>
+		  <AArmoury_BeeVenom MayRequire="sarg.alphaarmoury">0</AArmoury_BeeVenom>
 		  <PrometheumFlame MayRequire="CETeam.CombatExtended">0.25</PrometheumFlame>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
@@ -6277,6 +6390,10 @@
 			  <VEF_SecondaryAcidBurn>1.25</VEF_SecondaryAcidBurn>
 			  <ArrowVenom MayRequire="CETeam.CombatExtended">1.25</ArrowVenom>
 			  <Tranquilizer MayRequire="CETeam.CombatExtended">1.25</Tranquilizer>
+			  <AArmoury_AcidSpit MayRequire="sarg.alphaarmoury">1.25</AArmoury_AcidSpit>
+			  <AArmoury_Corrosive MayRequire="sarg.alphaarmoury">1.25</AArmoury_Corrosive>
+			  <AArmoury_InsectKiller MayRequire="sarg.alphaarmoury">1.25</AArmoury_InsectKiller>
+			  <AArmoury_AnomalyKiller MayRequire="sarg.alphaarmoury">1.25</AArmoury_AnomalyKiller>
 			</damageFactors>
 		  </li>
 		</stages>

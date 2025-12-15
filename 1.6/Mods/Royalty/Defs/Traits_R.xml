@@ -1866,6 +1866,11 @@
 					</grantedHediffs>
 					<hediffsToBrain>false</hediffsToBrain>
 				</li>
+				<li Class="HautsFramework.VanishOnDeath">
+					<sound>Hive_Spawn</sound>
+					<thingLeftBehind>Filth_Slime</thingLeftBehind>
+					<triggerOnRemoval>true</triggerOnRemoval>
+				</li>
 			</modExtensions>
 		</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1903,15 +1908,20 @@
 			  </li>
 			</degreeDatas>
 			<modExtensions>
-            <li Class="HautsFramework.TraitGrantedStuff">
-				<grantedHediffs>
-					<li>
-						<key>0</key><value><li>HVT_TranscendentHediff</li></value>
-					</li>
-				</grantedHediffs>
-				<hediffsToBrain>false</hediffsToBrain>
-            </li>
+				<li Class="HautsFramework.TraitGrantedStuff">
+					<grantedHediffs>
+						<li>
+							<key>0</key><value><li>HVT_TranscendentHediff</li></value>
+						</li>
+					</grantedHediffs>
+					<hediffsToBrain>false</hediffsToBrain>
+				</li>
 				<li Class="HautsFramework.CannotRemoveBionicsFrom" />
+				<li Class="HautsFramework.VanishOnDeath">
+					<sound>Hive_Spawn</sound>
+					<thingLeftBehind>Filth_Slime</thingLeftBehind>
+					<triggerOnRemoval>true</triggerOnRemoval>
+				</li>
 			</modExtensions>
 		</TraitDef>
 	<!--M-->

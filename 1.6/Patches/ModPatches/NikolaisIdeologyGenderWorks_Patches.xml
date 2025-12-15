@@ -31,6 +31,28 @@
 						</value>
 					</match>
 				</li>
+				<!--turkler said Asocial and Bookworm aren't much for intimacy and/or sexytimes, so they not in w Aphroditic-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="NikolaisIdeology_Aphroditic"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="NikolaisIdeology_Aphroditic"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Asocial</li>
+								<li>HVT_Bookworm</li>
+								<li MayRequire="Ludeon.RimWorld.Anomaly">HVT_Twisted</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="NikolaisIdeology_Aphroditic"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Asocial</li>
+							<li>HVT_Bookworm</li>
+							<li MayRequire="Ludeon.RimWorld.Anomaly">HVT_Twisted</li>
+						</value>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>

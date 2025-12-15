@@ -44,8 +44,6 @@ namespace HautsTraitsRoyalty
                           prefix: new HarmonyMethod(patchType, nameof(HautsTraitsRoyaltyGainTraitPrefix)));
             harmony.Patch(AccessTools.Method(typeof(TraitSet), nameof(TraitSet.GainTrait)),
                           postfix: new HarmonyMethod(patchType, nameof(HautsTraitsRoyaltyGainTraitPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(TraitSet), nameof(TraitSet.RemoveTrait)),
-                          postfix: new HarmonyMethod(patchType, nameof(HautsTraitsRoyaltyRemoveTraitPostfix)));
            harmony.Patch(AccessTools.Method(typeof(HautsUtility), nameof(HautsUtility.CharacterEditorCompat)),
                           postfix: new HarmonyMethod(patchType, nameof(HautsTraitsRoyaltyCharEditorCompatibility)));
             harmony.Patch(AccessTools.Method(typeof(MentalState), nameof(MentalState.RecoverFromState)),
@@ -236,11 +234,6 @@ namespace HautsTraitsRoyalty
                 List<Trait> traitsToRemove = new List<Trait>();
                 foreach (Trait t in __instance.allTraits)
                 {
-                    if (t.def == HVTRoyaltyDefOf.HVT_LocustClone)
-                    {
-                        PsychicAwakeningUtility.LocustVanish(pawn);
-                        return false;
-                    }
                     if (PsychicAwakeningUtility.IsAntipsychicTrait(t.def, t.Degree) || t.def == HVTRoyaltyDefOf.HVT_LatentPsychic)
                     {
                         traitsToRemove.Add(t);
@@ -353,13 +346,6 @@ namespace HautsTraitsRoyalty
                 {
                     pawn.abilities.GainAbility(wordcasts.RandomElement());
                 }
-            }
-        }
-        public static void HautsTraitsRoyaltyRemoveTraitPostfix(TraitSet __instance, Trait trait)
-        {
-            Pawn pawn = GetInstanceField(typeof(TraitSet), __instance, "pawn") as Pawn;
-            if (trait != null && (trait.def == HVTRoyaltyDefOf.HVT_LocustClone || trait.def == HVTRoyaltyDefOf.HVT_LovebugDoppel)) {
-                PsychicAwakeningUtility.LocustVanish(pawn);
             }
         }
         public static void HautsTraitsRoyaltyCharEditorCompatibility(Pawn p)
@@ -1089,22 +1075,13 @@ namespace HautsTraitsRoyalty
                 }
             }
         }
-        public static bool HautsTraitsTransDeath_KillPrefix(Pawn __instance)
+        public static void HautsTraitsTransDeath_KillPrefix(Pawn __instance)
         {
-            if (__instance.story != null)
+            Hediff wraith = __instance.health.hediffSet.GetFirstHediffOfDef(HVTRoyaltyDefOf.HVT_THediffWraith);
+            if (wraith != null && wraith.Severity >= 24f)
             {
-                if (__instance.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LocustClone) || __instance.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_LovebugDoppel))
-                {
-                    PsychicAwakeningUtility.LocustVanish(__instance);
-                    return false;
-                }
-                Hediff wraith = __instance.health.hediffSet.GetFirstHediffOfDef(HVTRoyaltyDefOf.HVT_THediffWraith);
-                if (wraith != null && wraith.Severity >= 24f)
-                {
-                    PsychicAwakeningUtility.WraithTransfer(__instance);
-                }
+                PsychicAwakeningUtility.WraithTransfer(__instance);
             }
-            return true;
         }
         public static void HautsTraitsTransDeath_KillPostfix(Pawn __instance)
         {
@@ -2664,7 +2641,7 @@ namespace HautsTraitsRoyalty
                 {
                     if (f != this.pawn.Faction && f.def.humanlikeFaction && !f.def.PermanentlyHostileTo(FactionDefOf.PlayerColony) && f.HasGoodwill)
                     {
-                        Faction.OfPlayerSilentFail.TryAffectGoodwillWith(f, (int)Math.Ceiling((double)Math.Min(12, this.pawn.GetPsylinkLevel()) / 3), true, true, HVTRoyaltyDefOf.HVT_TransDiplomacy, null);
+                        Faction.OfPlayerSilentFail.TryAffectGoodwillWith(f, (int)Math.Ceiling((double)Math.Min(12, this.pawn.GetPsylinkLevel()) / 3), false, true, HVTRoyaltyDefOf.HVT_TransDiplomacy, null);
                     }
                 }
             }
@@ -3063,17 +3040,6 @@ namespace HautsTraitsRoyalty
             }
         }
         private List<Pawn> pawnsToSpawn = new List<Pawn>();
-    }
-    public class Hediff_Locusta : HediffWithComps
-    {
-        public override void TickInterval(int delta)
-        {
-            base.TickInterval(delta);
-            if (this.pawn.Downed)
-            {
-                PsychicAwakeningUtility.LocustVanish(this.pawn);
-            }
-        }
     }
     public class Hediff_EchoKnight : HediffWithComps
     {
@@ -4825,13 +4791,18 @@ namespace HautsTraitsRoyalty
             }
         }
     }
+    public class ApocritonChipManufactureDef : Def
+    {
+        public ThingDef thing;
+        public IntRange timerHours;
+    }
     public class HediffCompProperties_TheLastChipFactory : HediffCompProperties
     {
         public HediffCompProperties_TheLastChipFactory()
         {
             this.compClass = typeof(HediffComp_TheLastChipFactory);
         }
-        public Dictionary<ThingDef, IntRange> productionSet;
+        public List<ApocritonChipManufactureDef> productionSet;
     }
     public class HediffComp_TheLastChipFactory : HediffComp
     {
@@ -4851,11 +4822,11 @@ namespace HautsTraitsRoyalty
             }
             if (this.Pawn.IsHashIntervalTick(2500, delta) && this.Pawn.inventory != null && (Faction.OfMechanoids == null || Faction.OfMechanoids.deactivated))
             {
-                foreach (KeyValuePair<ThingDef, IntRange> kvp in this.Props.productionSet)
+                foreach (ApocritonChipManufactureDef acmd in this.Props.productionSet)
                 {
-                    if (!this.productionQueues.ContainsAny((ChipProductionLine cpl) => cpl.thingDef == kvp.Key))
+                    if (!this.productionQueues.ContainsAny((ChipProductionLine cpl) => cpl.thingDef == acmd.thing))
                     {
-                        this.productionQueues.Add(new ChipProductionLine(kvp.Key,kvp.Value.RandomInRange));
+                        this.productionQueues.Add(new ChipProductionLine(acmd.thing,acmd.timerHours.RandomInRange));
                     }
                 }
                 foreach (ChipProductionLine cpl2 in this.productionQueues)
@@ -4864,8 +4835,8 @@ namespace HautsTraitsRoyalty
                     {
                         Thing thing = ThingMaker.MakeThing(cpl2.thingDef, null);
                         this.Pawn.inventory.innerContainer.TryAdd(thing, true);
-                        this.Props.productionSet.TryGetValue(cpl2.thingDef, out IntRange ir);
-                        cpl2.hoursRemaining = ir != null ? ir.RandomInRange : 24;
+                        ApocritonChipManufactureDef acmd2 = this.Props.productionSet.Where((ApocritonChipManufactureDef manuDef)=>manuDef.thing == cpl2.thingDef).RandomElement();
+                        cpl2.hoursRemaining = acmd2.timerHours.RandomInRange;
                     } else {
                         cpl2.hoursRemaining--;
                     }
@@ -7483,13 +7454,13 @@ namespace HautsTraitsRoyalty
                         battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(pawn, RulePackDefOf.DamageEvent_PowerBeam, this.instigator as Pawn);
                         Find.BattleLog.Add(battleLogEntry_DamageTaken);
                     }
-                    PulverizationBeam.tmpThings[i].TakeDamage(new DamageInfo(DamageDefOf.Bomb, (float)PulverizationBeam.DamageAmountRange.RandomInRange, 0f, -1f, this.instigator, null, this.weaponDef, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true)).AssociateWithLog(battleLogEntry_DamageTaken);
+                    PulverizationBeam.tmpThings[i].TakeDamage(new DamageInfo(DamageDefOf.Bomb, DamageDefOf.Bomb.defaultDamage* PulverizationBeam.DamageAmountRange.RandomInRange, DamageDefOf.Bomb.defaultArmorPenetration*2f, -1f, this.instigator, null, this.weaponDef, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true)).AssociateWithLog(battleLogEntry_DamageTaken);
                 }
             }
             PulverizationBeam.tmpThings.Clear();
         }
         public const float Radius = 17f;
-        private static readonly IntRange DamageAmountRange = new IntRange(45, 90);
+        private static readonly FloatRange DamageAmountRange = new FloatRange(0.9f, 1.8f);
         private static List<Thing> tmpThings = new List<Thing>();
     }
     public class ScenPart_ForcedLatentPsychic : ScenPart_PawnModifier
@@ -8422,16 +8393,6 @@ namespace HautsTraitsRoyalty
                     HautsUtility.LearnLanguage(pawn, null, 0.06f);
                 }
             }
-        }
-        public static void LocustVanish(Pawn pawn)
-        {
-            if (pawn.Spawned)
-            {
-                Thing thing = ThingMaker.MakeThing(ThingDefOf.Filth_Slime);
-                DefDatabase<SoundDef>.GetNamed("Hive_Spawn").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
-                GenPlace.TryPlaceThing(thing, pawn.Position, pawn.Map, ThingPlaceMode.Direct, null, null, default);
-            }
-            pawn.Destroy(DestroyMode.Vanish);
         }
         public static void MynahAbilityCopy(Pawn pawn, Pawn pawn2)
         {
