@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<!--<li>Dreamer's Dreams</li>-->
+			<li>Dreamer's Dreams (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--chronic nightmares cannot have good dreams-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="LegendaryDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="LegendaryDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="LegendaryDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="PleasantDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="PleasantDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_ChronicNightmares</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="PleasantDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_ChronicNightmares</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="ExcitingDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="ExcitingDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="ExcitingDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="AmazingDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="AmazingDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="AmazingDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="EpicDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="EpicDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="EpicDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_ChronicNightmares</li><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<!--Staid cannot have any at all, except for Pleasant and Unpleasant (and Sleepwalk ig)-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="FrighteningDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="FrighteningDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="FrighteningDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="DisturbingDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="DisturbingDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="DisturbingDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="TerrorisingDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="TerrorisingDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="TerrorisingDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/DreamersDream.DreamDef[@Name="InfernalDream"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="InfernalDream"]</xpath>
+						<value><nullifyingTraits><li>HVT_Staid</li></nullifyingTraits></value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/DreamersDream.DreamDef[@Name="InfernalDream"]/nullifyingTraits</xpath>
+						<value><li>HVT_Staid</li></value>
+					</match>
+				</li>
+				<!--Tranquil don't Sleepwalk. 0 needs to be patched too for some reason-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="Sleepwalker"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="Sleepwalker"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_Tranquil</li>
+								<li>HVT_Tranquil0</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="Sleepwalker"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_Tranquil</li>
+							<li>HVT_Tranquil0</li>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
