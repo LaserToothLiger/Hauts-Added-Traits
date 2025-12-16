@@ -1159,12 +1159,12 @@
 			<statFactors>
 			  <LifespanFactor>100000</LifespanFactor>
 			  <Hauts_ApparelWearRateFactor>0</Hauts_ApparelWearRateFactor>
-			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			</statFactors>
 			<statOffsets>
 			  <RestRateMultiplier>3</RestRateMultiplier>
 			  <Hauts_MechEnergyUsage MayRequire="Ludeon.RimWorld.Biotech">-0.3</Hauts_MechEnergyUsage>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.8</VacuumResistance>
 			</statOffsets>
 			<hungerRateFactor>0.25</hungerRateFactor>
 		  </li>
