@@ -2444,6 +2444,11 @@
         </capMods>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
 		<becomeVisible>false</becomeVisible>
+		<damageFactors>
+		  <GravBeam MayRequire="als.gravtech">0.1</GravBeam>
+		  <GravBlastShockwave MayRequire="als.gravtech">0.1</GravBlastShockwave>
+		  <GravBlastHammer MayRequire="als.gravtech">0.1</GravBlastHammer>
+		</damageFactors>
       </li>
     </stages>
 	<comps>
@@ -4979,6 +4984,11 @@
     <stages>
       <li>
 		<becomeVisible>false</becomeVisible>
+		<damageFactors>
+		  <GravBeam MayRequire="als.gravtech">0.1</GravBeam>
+		  <GravBlastShockwave MayRequire="als.gravtech">0.1</GravBlastShockwave>
+		  <GravBlastHammer MayRequire="als.gravtech">0.1</GravBlastHammer>
+		</damageFactors>
       </li>
     </stages>
     <comps>

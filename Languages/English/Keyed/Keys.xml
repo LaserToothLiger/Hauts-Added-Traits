@@ -89,7 +89,7 @@
 <HVT_WokeBrainwash>The use of a brainwash device has awakened {PAWN_nameDef} to {PAWN_possessive} psychic potential!</HVT_WokeBrainwash>
 <HVT_WokeByLeviathan>As a transcendent leviathan, {PAWN_nameDef} has developed a new awakening!</HVT_WokeByLeviathan>
 <HVT_AboutTransingLabel>Revelation</HVT_AboutTransingLabel>
-<HVT_AboutTransingTextPrefix>{PAWN_nameDef} knows, somehow, that awakening is not the full expression of {PAWN_possessive} potential; under the right conditions, {PAWN_pronoun} may be able to transcend, unlocking new abilities. {PAWN_pronoun} senses there are many possible ways to transcend, and is certain of one such method:</HVT_AboutTransingTextPrefix>
+<HVT_AboutTransingTextPrefix>{PAWN_nameDef} knows, somehow, that awakening is not the full expression of {PAWN_possessive} potential; under the right conditions, {PAWN_pronoun} may be able to transcend, unlocking new abilities. {PAWN_pronoun} has conceived of a method of transcendence (and senses that there are multiple other methods that could work as well):</HVT_AboutTransingTextPrefix>
 <HVT_AboutTransingAlpha>There is a slim chance to achieve transcendence by hearing the dying screams of an anima tree.</HVT_AboutTransingAlpha>
 <HVT_AboutTransingBravo>It is possible - though not guaranteed - to achieve transcendence by dying, or being resurrected.</HVT_AboutTransingBravo>
 <HVT_AboutTransingCharlie>Simply living long enough is sufficient to achieve transcendence. {PAWN_pronoun} does not know exactly how long that would take, but awakened individuals with a high amount of archite genes usually reach this point sooner.</HVT_AboutTransingCharlie>
