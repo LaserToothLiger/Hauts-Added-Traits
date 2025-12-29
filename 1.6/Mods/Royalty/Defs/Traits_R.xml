@@ -1724,6 +1724,7 @@
 			  <ShootingAccuracyFactor_Short>100</ShootingAccuracyFactor_Short>
 			  <ShootingAccuracyFactor_Medium>100</ShootingAccuracyFactor_Medium>
 			  <ShootingAccuracyFactor_Long>100</ShootingAccuracyFactor_Long>
+			  <VGE_GravshipTargeting MayRequire="vanillaexpanded.gravship">100</VGE_GravshipTargeting>
 			  <AimingAccuracy MayRequire="CETeam.CombatExtended">100</AimingAccuracy>
 			  <MeleeCritChance MayRequire="CETeam.CombatExtended">5</MeleeCritChance>
 			</statFactors>
@@ -2618,6 +2619,7 @@
 			  <Hauts_SurveySpeed>0.2</Hauts_SurveySpeed>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1</LanguageLearningAbility>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.75</PilotingAbility>
+			  <VGE_GravshipTargeting MayRequire="vanillaexpanded.gravship">0.2</VGE_GravshipTargeting>
 			  <Hauts_PilferingStealth>0.25</Hauts_PilferingStealth>
 			  <Hauts_MaxPilferingValue>60</Hauts_MaxPilferingValue>
 			</statOffsets>
@@ -3049,6 +3051,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.4</PilotingAbility>
+			  <VGE_GravshipTargeting MayRequire="vanillaexpanded.gravship">0.2</VGE_GravshipTargeting>
 			</statOffsets>
 			<statFactors>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>

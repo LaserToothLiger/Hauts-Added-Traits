@@ -828,9 +828,6 @@
     <stages>
       <li>
 		<becomeVisible>false</becomeVisible>
-		<statFactors>
-		  <Flammability>0</Flammability>
-		</statFactors>
       </li>
     </stages>
 	<comps>
@@ -842,6 +839,7 @@
 		<unaffectedDamageTypes><li>EMP</li></unaffectedDamageTypes>
 		<priority>10</priority>
 		<damageMultiplier>1</damageMultiplier><!--does not mitigate damage the usual way.-->
+		<removeBadAttachables>true</removeBadAttachables>
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -1346,6 +1344,7 @@
           <SmoothingSpeed>1</SmoothingSpeed>
           <ConstructionSpeed>1</ConstructionSpeed>
 		  <MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">1</MechRepairSpeed>
+		  <VGE_GravshipMaintenance MayRequire="vanillaexpanded.gravship">1</VGE_GravshipMaintenance>
 		  <PlantWorkSpeed>1</PlantWorkSpeed>
 		  <Hauts_BreachDamageFactor>0.15</Hauts_BreachDamageFactor>
         </statOffsets>
@@ -1669,6 +1668,9 @@
       </li>
       <li>
 		<minSeverity>0.1</minSeverity>
+		<statOffsets>
+		  <EBSG_BloodlossRecoveryBonus MayRequire="EBSG.Framework">99</EBSG_BloodlossRecoveryBonus>
+		</statOffsets>
 		<capMods>
           <li>
             <capacity>Moving</capacity>
@@ -2774,6 +2776,7 @@
 		<fleckOnBlock>ExplosionFlash</fleckOnBlock>
 		<throwDustPuffsOnBlock>true</throwDustPuffsOnBlock>
 		<priority>200</priority>
+		<removeBadAttachables>true</removeBadAttachables>
       </li>
 	</comps>
   </HediffDef>
@@ -5132,6 +5135,7 @@
 		<priority>15</priority>
 		<percentNeuralHeatOnHit>0.0025</percentNeuralHeatOnHit>
 		<switchToOnBreak>HVT_THediffScarab0</switchToOnBreak>
+		<removeBadAttachables>true</removeBadAttachables>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -5146,7 +5150,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_THediffScarab0</defName>
     <label>transcendent scarab (on cooldown)</label>
-    <description>Currently unable to intercept damage. Recharge faster by meditating</description>
+    <description>Currently unable to intercept damage. Recharge faster by meditating.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
 	<minSeverity>0.001</minSeverity>
@@ -5576,6 +5580,7 @@
 		<damageMultiplier>0</damageMultiplier>
 		<throwDustPuffsOnBlock>true</throwDustPuffsOnBlock>
 		<priority>100000</priority>
+		<removeBadAttachables>true</removeBadAttachables>
       </li>
       <li Class="HautsFramework.HediffCompProperties_DelayedResurrection">
         <chance>0.75</chance>
@@ -6840,6 +6845,7 @@
 		<fleckOnBlock>ExplosionFlash</fleckOnBlock>
 		<throwDustPuffsOnBlock>true</throwDustPuffsOnBlock>
 		<priority>2</priority>
+		<removeBadAttachables>true</removeBadAttachables>
       </li>
 	</comps>
   </HediffDef>
@@ -7302,6 +7308,7 @@
 		<fleckOnBlock>ExplosionFlash</fleckOnBlock>
 		<throwDustPuffsOnBlock>true</throwDustPuffsOnBlock>
 		<priority>3</priority>
+		<removeBadAttachables>true</removeBadAttachables>
       </li>
     </comps>
   </HediffDef>

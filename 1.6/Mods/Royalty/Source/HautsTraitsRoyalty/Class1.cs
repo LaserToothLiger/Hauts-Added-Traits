@@ -5180,10 +5180,10 @@ namespace HautsTraitsRoyalty
                 return (HediffCompProperties_PupilOfTheGrave)this.props;
             }
         }
-        public override void DoModificationInner(ref DamageInfo dinfo, ref bool absorbed, float amount)
+        public List<Thing> NearbyCorpses()
         {
             List<Thing> corpses = new List<Thing>();
-            foreach (Thing t in GenRadial.RadialDistinctThingsAround(this.Pawn.Position,this.Pawn.Map,this.Props.corpseSearchRadius,true).ToList())
+            foreach (Thing t in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.Props.corpseSearchRadius, true).ToList())
             {
                 if (t is Pawn p && ModsConfig.AnomalyActive && p.IsMutant)
                 {
@@ -5192,6 +5192,20 @@ namespace HautsTraitsRoyalty
                     corpses.Add(c);
                 }
             }
+            return corpses;
+        }
+        public override bool ShouldPreventAttachment(Thing attachment)
+        {
+            if (base.ShouldPreventAttachment(attachment))
+            {
+                List<Thing> corpses = this.NearbyCorpses();
+                return corpses.Count > 0;
+            }
+            return false;
+        }
+        public override void DoModificationInner(ref DamageInfo dinfo, ref bool absorbed, float amount)
+        {
+            List<Thing> corpses = this.NearbyCorpses();
             if (corpses.Count > 0)
             {
                 float initialDamage = dinfo.Amount;
@@ -5303,7 +5317,7 @@ namespace HautsTraitsRoyalty
         {
             foreach (Plant plant in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.FunctionalRange, true).OfType<Plant>().Distinct<Plant>())
             {
-                if (!plant.Blighted)
+                if (!plant.Blighted && plant.LifeStage > PlantLifeStage.Sowing)
                 {
                     plant.Growth += (this.Props.bonusPlantGrowth*this.Props.tickPeriodicity*plant.GrowthRateFactor_Fertility) / (60000f * plant.def.plant.growDays);
                     plant.DirtyMapMesh(plant.Map);
