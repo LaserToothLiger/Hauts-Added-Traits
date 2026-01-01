@@ -1350,8 +1350,14 @@
 			<description>{PAWN_nameDef} has had {PAWN_possessive} entire body replaced and augmented by a cyber-organic, archite-empowered material. {PAWN_pronoun} no longer bleeds, surgeries cannot fail on {PAWN_objective}, and {PAWN_possessive} bodily functions are greatly enhanced.\n\n{PAWN_possessive} psychic potential has been stymied as a result of this change; {PAWN_pronoun} can no longer gain new transcendences.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
+			  <ToxicResistance>1</ToxicResistance>
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">1</Mashed_Ashlands_AshResistance>
 			</statOffsets>
+			<statFactors>
+			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
+			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>

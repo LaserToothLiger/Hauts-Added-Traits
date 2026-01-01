@@ -1612,6 +1612,12 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
+								<xpath>Defs/HediffDef[defName = "HVT_THediffEiderduck"]/description</xpath>
+								<value>
+									<description>The down of the eider duck provides exemplary insulation. Tribal folklorists invoke the eider duck's name to describe mystics whose mere presence wards off dangerous temperatures.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
 								<xpath>Defs/HediffDef[defName = "HVT_THediffFossilPart"]/label</xpath>
 								<value>
 									<label>living earthen flesh</label>

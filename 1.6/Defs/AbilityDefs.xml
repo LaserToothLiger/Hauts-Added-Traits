@@ -329,7 +329,7 @@
         <canTargetMechs>true</canTargetMechs>
       </targetParams>
     </verbProperties>
-    <comps><!--can u believe this used 2 be even MORE complicated-->
+    <comps>
       <li Class = "CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
         <hediffDef>HVT_ScrambleMech</hediffDef>
@@ -346,7 +346,7 @@
         <stat>MechBandwidth</stat>
       </li>
       <li Class="CompProperties_AbilityFleckOnTarget">
-        <fleckDef>AtomizerFlashGrowing</fleckDef>
+        <fleckDef>HVT_MechaphobePulse</fleckDef>
       </li>
       <li Class="HautsFramework.CompProperties_AbilityRequiresMinimumStat">
         <compClass>HautsFramework.CompAbilityEffect_RequiresMinimumStat</compClass>
@@ -708,7 +708,7 @@
 		<durationMultiplier>PsychicSensitivity</durationMultiplier>
       </li>
       <li Class="CompProperties_AbilityFleckOnTarget">
-        <fleckDef>AtomizerFlashGrowing</fleckDef>
+        <fleckDef>HVT_MechaphobePulse</fleckDef>
       </li>
       <li Class="HautsFramework.CompProperties_AbilityRequiresMinimumStat">
         <compClass>HautsFramework.CompAbilityEffect_RequiresMinimumStat</compClass>

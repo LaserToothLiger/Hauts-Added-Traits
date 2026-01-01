@@ -18,6 +18,19 @@
 	  <drawSize>3</drawSize>
 	</graphicData>
   </ThingDef>
+  <FleckDef ParentName="FleckBase" MayRequire="Ludeon.RimWorld.Biotech">
+	<altitudeLayer>MoteOverhead</altitudeLayer>
+	<defName>HVT_MechaphobePulse</defName>
+	<solidTime>0.15</solidTime>
+	<fadeOutTime>0.1</fadeOutTime>
+	<growthRate>12</growthRate>
+	<graphicData>
+	  <drawSize>1</drawSize>
+	  <color>(255, 255, 255, 160)</color>
+	  <texPath>VFX/MechaphobeVFX</texPath>
+	  <shaderType>MoteGlow</shaderType>
+	</graphicData>
+  </FleckDef>
   <ThingDef ParentName="MoteBase" MayRequire="Ludeon.RimWorld.Royalty">
     <defName>HVT_ApocritonControlled</defName>
     <thingClass>MoteThrownAttached</thingClass>

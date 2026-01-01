@@ -1438,7 +1438,7 @@ namespace HautsTraitsRoyalty
                                 for (int i = thingList.Count - 1; i >= 0; i--)
                                 {
                                     Pawn pawn2;
-                                    if (thingList[i] is Fire)
+                                    if (thingList[i].def.HasModExtension<BadAttachable>())
                                     {
                                         thingList[i].Destroy(DestroyMode.Vanish);
                                     } else if ((pawn2 = (thingList[i] as Pawn)) != null) {
@@ -4903,6 +4903,7 @@ namespace HautsTraitsRoyalty
             this.compClass = typeof(HediffComp_BigBrain);
         }
         public float researchPerHour;
+        public float gravdataPerHour;
         public float darkKnowledgePerHour;
         public float skillPerHour;
         public StatDef allButPsyfocusScalar;
@@ -4925,12 +4926,16 @@ namespace HautsTraitsRoyalty
                 bool didResearch = false;
                 if (this.Pawn.Faction != null && this.Pawn.Faction == Faction.OfPlayerSilentFail)
                 {
-                    if (Find.ResearchManager.GetProject(null) != null)
+                    if (HautsUtility.AddGravdata(this.Pawn, this.Props.gravdataPerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) / 0.0825f))
                     {
-                        Find.ResearchManager.ResearchPerformed(this.Props.researchPerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) * Math.Max(0.08f,this.Pawn.GetStatValue(StatDefOf.ResearchSpeed)) / 0.0825f, this.Pawn);
                         didResearch = true;
-                    } else if (ModsConfig.AnomalyActive && (Find.ResearchManager.GetProject(KnowledgeCategoryDefOf.Basic) != null || Find.ResearchManager.GetProject(KnowledgeCategoryDefOf.Advanced) != null)) {
-                        Find.ResearchManager.ApplyKnowledge(KnowledgeCategoryDefOf.Advanced, this.Props.darkKnowledgePerHour*this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar)*Math.Max(0.08f,this.Pawn.GetStatValue(StatDefOf.EntityStudyRate))/10f);
+                    } else if (Find.ResearchManager.GetProject(null) != null) {
+                        Find.ResearchManager.ResearchPerformed(this.Props.researchPerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) * Math.Max(0.08f, this.Pawn.GetStatValue(StatDefOf.ResearchSpeed)) / 0.0825f, this.Pawn);
+                        didResearch = true;
+                    }
+                    else if (ModsConfig.AnomalyActive && (Find.ResearchManager.GetProject(KnowledgeCategoryDefOf.Basic) != null || Find.ResearchManager.GetProject(KnowledgeCategoryDefOf.Advanced) != null))
+                    {
+                        Find.ResearchManager.ApplyKnowledge(KnowledgeCategoryDefOf.Advanced, this.Props.darkKnowledgePerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) * Math.Max(0.08f, this.Pawn.GetStatValue(StatDefOf.EntityStudyRate)) / 10f);
                         didResearch = true;
                     }
                 }
