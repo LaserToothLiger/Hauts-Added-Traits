@@ -447,6 +447,7 @@
 		<comps>
 		  <li Class="CompProperties_DestroyAfterDelay">
 			<delayTicks>60000</delayTicks>
+			<displayCountdownOnLabel>true</displayCountdownOnLabel>
 		  </li>
 		  <li Class="HautsFramework.CompProperties_AuraEmitterHediff">
 			<hediffs>
@@ -887,6 +888,7 @@
 		<comps>
 		  <li Class="CompProperties_DestroyAfterDelay">
 			<delayTicks>60000</delayTicks>
+			<displayCountdownOnLabel>true</displayCountdownOnLabel>
 		  </li>
 		  <li Class="HautsFramework.CompProperties_AuraEmitterHediff">
 			<hediffs>

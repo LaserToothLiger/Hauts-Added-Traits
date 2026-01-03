@@ -410,7 +410,7 @@ namespace Hauts_VPE
                                     for (int i = thingList.Count - 1; i >= 0; i--)
                                     {
                                         Pawn pawn2;
-                                        if (thingList[i].def.HasModExtension<BadAttachable>())
+                                        if (thingList[i] is Fire)
                                         {
                                             thingList[i].Destroy(DestroyMode.Vanish);
                                         } else if ((pawn2 = (thingList[i] as Pawn)) != null) {
