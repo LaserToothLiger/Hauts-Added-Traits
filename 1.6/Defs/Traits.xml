@@ -655,7 +655,7 @@
 	
 	<TraitDef>
 		<defName>HVT_Skulker</defName>
-		<commonality>0.25</commonality>
+		<commonality>0.2</commonality>
 		<degreeDatas>
 		  <li>
 			<label>skulker</label>

@@ -157,6 +157,17 @@
 						<li>
 							<traitRequirements>
 								<li>
+									<def>HVT_Forgettable</def>
+								</li>
+								<li>
+									<def>HVT_Skulker</def>
+								</li>
+							</traitRequirements>
+							<hediff>HVT_PsychicBondSneak</hediff>
+						</li>
+						<li>
+							<traitRequirements>
+								<li>
 									<def>HVT_Mariner</def>
 								</li>
 							</traitRequirements>

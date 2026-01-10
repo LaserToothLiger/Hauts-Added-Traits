@@ -41,6 +41,18 @@
 		</stages>
 	</HediffDef>
 	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>HVT_PsychicBondSneak</defName>
+		<label>Psychic bond (Sneak)</label>
+		<description>Both psychically-bonded individuals benefit from increased pilfering stealth.</description>
+		<stages>
+			<li>
+				<statOffsets>
+				  <Hauts_PilferingStealth>0.15</Hauts_PilferingStealth>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>HVT_PsychicBondMariner</defName>
 		<label>Psychic bond (Aquatic)</label>
 		<description>Both psychically-bonded individuals benefit from increased speed in water.</description>
