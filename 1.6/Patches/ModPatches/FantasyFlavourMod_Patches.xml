@@ -1530,13 +1530,13 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/HediffDef[defName = "HVT_PsychicBlanking"]/label</xpath>
 								<value>
-									<label>nearby magic void</label>
+									<label>nearby magic blank</label>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/HediffDef[defName = "HVT_PsychicBlanking"]/description</xpath>
 								<value>
-									<description>The presence of a nearby magic void is dampening magic sensitivity.</description>
+									<description>The presence of a nearby magic blank is dampening magic sensitivity.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

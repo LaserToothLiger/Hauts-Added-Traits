@@ -46,6 +46,9 @@
 		</degreeDatas>
 		<conflictingPassions><li>Animals</li></conflictingPassions>
 		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li></conflictingTraits>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<TraitDef>
@@ -192,7 +195,7 @@
 			<description>{PAWN_nameDef} has an overactive imagination. At random, or if {PAWN_pronoun} becomes too stressed, {PAWN_pronoun} will retreat into {PAWN_possessive} imagination, resulting in a harmless mental break. After indulging {PAWN_possessive} imagination in such a way, {PAWN_pronoun} becomes inspired.</description>
 			<statOffsets>
 			  <WorkSpeedGlobal>-0.05</WorkSpeedGlobal>
-			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.50</VAEI_SanityLossMultiplier>
+			  <VAEI_SanityMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.30</VAEI_SanityMultiplier>
 			</statOffsets>
 			<allowedMeditationFocusTypes><li>Minimal</li></allowedMeditationFocusTypes>
 			<statFactors>
@@ -261,6 +264,9 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>Abrasive</li><li>HVT_Winsome</li><li MayRequire="RavingLegend.MoreTraits">RT_Celebrity</li></conflictingTraits>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<TraitDef>
@@ -293,7 +299,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	
@@ -398,6 +404,7 @@
 					</li>
 				</otherHediffsToRemoveOnRemoval>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	
@@ -431,6 +438,9 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>Asexual</li></conflictingTraits>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<TraitDef>
@@ -444,6 +454,9 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>Asexual</li><li MayRequire="Goji.TheSimsTraits">ST_NonCommital</li></conflictingTraits>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<TraitDef>
@@ -493,7 +506,7 @@
 		</degreeDatas>
 		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li><li MayRequire="RavingLegend.MoreTraits">RT_Gluttonous</li><li MayRequire="RavingLegend.MoreTraits">RT_Anorexic</li></conflictingTraits>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>7</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs>
 					<li>
@@ -540,6 +553,9 @@
 		</degreeDatas>
 		<conflictingTraits><li>Undergrounder</li></conflictingTraits>
 		<requiredWorkTags><li>PlantWork</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<TraitDef>
@@ -558,11 +574,11 @@
 			</skillGains>
 		  </li>
 		</degreeDatas>
+		<conflictingTraits><li>HVT_Asocial</li><li>HVT_Sadist</li></conflictingTraits>
+		<requiredWorkTags><li>Social</li></requiredWorkTags>
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Asocial</li><li>HVT_Sadist</li></conflictingTraits>
-		<requiredWorkTags><li>Social</li></requiredWorkTags>
 	</TraitDef>
 	
 	<TraitDef>
@@ -579,6 +595,7 @@
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs><li><key>0</key><value><li>HVT_Ramby</li></value></li></grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Tranquil</li></conflictingTraits>
 	</TraitDef>
@@ -679,7 +696,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>8</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>6</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	
@@ -739,6 +756,10 @@
 			<marketValueFactorOffset>-0.15</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
+		<conflictingTraits><li>TorturedArtist</li><li>HVT_Aestheticist</li><li>HVT_Bookworm</li><li>HVT_Daydreamer</li><li>HVT_Hedonist</li><li MayRequire="Goji.TheSimsTraits">ST_Bookworm</li><li MayRequire="Goji.TheSimsTraits">ST_PartyAnimal</li><li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Biotech">ST_Childish</li></conflictingTraits>
+		<exclusionTags><!--used for Obsidia Expansion - Paths and Stories-->
+		  <li>OEUnstableTrait</li>
+		</exclusionTags>
         <modExtensions>
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs>
@@ -748,10 +769,6 @@
 				</grantedHediffs>
             </li>
         </modExtensions>
-		<conflictingTraits><li>TorturedArtist</li><li>HVT_Aestheticist</li><li>HVT_Bookworm</li><li>HVT_Daydreamer</li><li>HVT_Hedonist</li><li MayRequire="Goji.TheSimsTraits">ST_Bookworm</li><li MayRequire="Goji.TheSimsTraits">ST_PartyAnimal</li><li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Biotech">ST_Childish</li></conflictingTraits>
-		<exclusionTags><!--used for Obsidia Expansion - Paths and Stories-->
-		  <li>OEUnstableTrait</li>
-		</exclusionTags>
 	</TraitDef>
 	
 	<TraitDef>
@@ -793,7 +810,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>Undergrounder</li></conflictingTraits>
 	</TraitDef>
@@ -839,7 +856,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>Nudist</li></conflictingTraits>
 		<requiredWorkTags><li>Crafting</li></requiredWorkTags>
@@ -912,7 +929,7 @@
 			  </li>
 			</degreeDatas>
 			<modExtensions>
-				<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
+				<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>6</value></li></chargeCosts></li>
 				<li Class="HautsFramework.TraitGrantedStuff">
 					<grantedHediffs>
 						<li>
@@ -947,10 +964,11 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
+		<conflictingTraits><li>HVT_Allegiant</li><li MayRequire="Goji.TheSimsTraits">ST_Loyal</li></conflictingTraits>
         <modExtensions>
             <li Class="HautsFramework.TraitGrantedStuff"><prisonerResolveFactor><li><key>0</key><value>1.5</value></li></prisonerResolveFactor></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Allegiant</li><li MayRequire="Goji.TheSimsTraits">ST_Loyal</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>
@@ -1003,7 +1021,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
 	</TraitDef>
@@ -1036,6 +1054,9 @@
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Drudge</li></conflictingTraits>
 		<requiredWorkTags><li>Intellectual</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<TraitDef>
@@ -1063,7 +1084,8 @@
 					</li>
 				</grantedHediffs>
 			</li>
-		</modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+        </modExtensions>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
 	</TraitDef>
 	
@@ -1090,6 +1112,9 @@
 		</degreeDatas>
 		<conflictingTraits><li>AnnoyingVoice</li><li>CreepyBreathing</li><li>HVT_Forgettable</li><li MayRequire="RavingLegend.MoreTraits">RT_Unwanted</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<!--'dream' spectrum-->
@@ -1110,6 +1135,7 @@
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs><li><key>0</key><value><li>HVT_TheseNightmaresSureAreChronic</li></value></li></grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Tranquil</li><li>HVT_VividDreams</li></conflictingTraits>
 	</TraitDef>
@@ -1126,6 +1152,7 @@
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs><li><key>0</key><value><li>HVT_VividDreaming</li></value></li></grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Staid</li><li>HVT_ChronicNightmares</li></conflictingTraits>
 	</TraitDef>
@@ -1160,7 +1187,7 @@
             <li Class="HautsFramework.ConceitedTrait" />
 			<li Class="HautsTraits.SpecificPNFChargeCost">
 				<chargeCosts>
-					<li><key>1</key><value>4</value></li>
+					<li><key>1</key><value>1</value></li>
 					<li><key>2</key><value>4</value></li>
 				</chargeCosts>
 			</li>
@@ -1186,6 +1213,9 @@
 		  <li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Royalty">ST_HighMaintenance</li>
 		</conflictingTraits>
 		<requiredWorkTags><li>ManualDumb</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>7</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	
 	<!--Sense "spectrum"-->
@@ -1219,6 +1249,7 @@
 					</li>
 				</grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Perceptive</li><li MayRequire="Goji.TheSimsTraits,Ludeon.RimWorld.Biotech">ST_Observant</li></conflictingTraits>
 	</TraitDef>
@@ -1268,6 +1299,12 @@
 					</li>
 				</grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost">
+				<chargeCosts>
+					<li><key>1</key><value>3</value></li>
+					<li><key>2</key><value>5</value></li>
+				</chargeCosts>
+			</li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Imperceptive</li></conflictingTraits>
 	</TraitDef>
@@ -1317,6 +1354,12 @@
 					<li><key>Female</key><value><li>Hulk</li></value></li>
 				</forcedBodyTypes>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost">
+				<chargeCosts>
+					<li><key>1</key><value>4</value></li>
+					<li><key>2</key><value>7</value></li>
+				</chargeCosts>
+			</li>
         </modExtensions>
 	</TraitDef>
 	
@@ -1383,8 +1426,8 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost">
 				<chargeCosts>
-					<li><key>-2</key><value>5</value></li>
-					<li><key>-1</key><value>3</value></li>
+					<li><key>-2</key><value>4</value></li>
+					<li><key>-1</key><value>2</value></li>
 					<li><key>1</key><value>3</value></li>
 					<li><key>2</key><value>5</value></li>
 				</chargeCosts>
@@ -1407,7 +1450,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Faithful</li><li MayRequire="RavingLegend.MoreTraits">RT_Stubborn</li><li MayRequire="RavingLegend.MoreTraits">RT_Gullible</li><li MayRequire="Goji.TheSimsTraits">ST_Devout</li></conflictingTraits>
 	</TraitDef>
@@ -1442,6 +1485,7 @@
 					</li>
 				</otherHediffsToRemoveOnRemoval>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Tolerant</li><li MayRequire="Goji.TheSimsTraits">ST_Naive</li></conflictingTraits>
 	</TraitDef>
@@ -1484,6 +1528,9 @@
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+        </modExtensions>
 		<conflictingTraits><li>HVT_Intolerant</li></conflictingTraits>
 	</TraitDef>
 		<!--freedom traits-->
@@ -1525,7 +1572,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
             <li Class="HautsFramework.ConceitedTrait" />
 		</modExtensions>
 		<conflictingTraits><li>Ascetic</li><li>HVT_Humble</li><li>HVT_Liberator</li><li MayRequire="Ludeon.RimWorld.Royalty">HVT_Anarchist</li></conflictingTraits>
@@ -1589,7 +1636,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_PersecutionComplex</li></conflictingTraits>
 	</TraitDef>
@@ -1619,6 +1666,7 @@
 					</li>
 				</grantedAbilities>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>8</value></li></chargeCosts></li>
         </modExtensions>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
 	</TraitDef>
@@ -1686,6 +1734,9 @@
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Faithful</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Ideology">
 		<defName>HVT_Superstitious</defName>
@@ -1709,6 +1760,7 @@
 					</li>
 				</grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	
@@ -1813,7 +1865,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Mechaphile</li></conflictingTraits>
 	</TraitDef>
@@ -1839,7 +1891,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Biotech">
@@ -1861,6 +1913,9 @@
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Asocial</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Biotech">
 		<defName>HVT_GenePurist</defName>
@@ -1890,7 +1945,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Anomaly">
@@ -1944,6 +1999,9 @@
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li MayRequire="Ludeon.RimWorld.Royalty">HVT_PsychicallyBlank</li></conflictingTraits>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
+        </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Anomaly">
 		<defName>HVT_MonsterHunter</defName>
@@ -1971,6 +2029,9 @@
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+        </modExtensions>
 		<conflictingTraits><li>HVT_MonsterLover</li></conflictingTraits>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
 	</TraitDef>
@@ -2005,6 +2066,9 @@
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+        </modExtensions>
 		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="Ludeon.RimWorld.Biotech">HVT_GenePurist</li><li MayRequire="RavingLegend.MoreTraits">RT_Weird</li></conflictingTraits>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Anomaly">
@@ -2057,6 +2121,7 @@
 					</li>
 				</grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_MonsterHunter</li><li MayRequire="RavingLegend.MoreTraits">RT_Weird</li></conflictingTraits>
 	</TraitDef>
@@ -2079,7 +2144,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 		<conflictingTraits><li>HVT_Skybound</li><li>HVT_CelestialCelerity</li></conflictingTraits>
 	</TraitDef>
@@ -2092,6 +2157,9 @@
 			<description>{PAWN_nameDef} yearns for the open sky and the feeling of the wind. {PAWN_pronoun} enjoys aerial travel of any kind, and {PAWN_pronoun} likes the sensation of being in high orbit.</description>
 		  </li>
 		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>2</value></li></chargeCosts></li>
+        </modExtensions>
 		<conflictingTraits><li>Undergrounder</li><li>HVT_Earthborne</li></conflictingTraits>
 	</TraitDef>
 	<!--the rest of the odyssey traits-->
@@ -2143,6 +2211,7 @@
 					</li>
 				</grantedHediffs>
             </li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
@@ -2190,7 +2259,7 @@
 		<conflictingTraits><li>HVT_Imperceptive</li></conflictingTraits>
 		<requiredWorkTags><li>Intellectual</li></requiredWorkTags>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>6</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>5</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
@@ -2211,7 +2280,7 @@
 		</degreeDatas>
 		<conflictingTraits><li MayRequire="Goji.TheSimsTraits">ST_Vegan</li></conflictingTraits>
         <modExtensions>
-			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef MayRequire="Ludeon.RimWorld.Odyssey">
@@ -2239,6 +2308,9 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>4</value></li></chargeCosts></li>
+        </modExtensions>
 		<requiredWorkTags><li>Animals</li></requiredWorkTags>
 	</TraitDef>
 	

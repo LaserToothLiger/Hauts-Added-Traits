@@ -1864,6 +1864,10 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>true</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Pain aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Echinoid aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Sea Urchin aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -1945,6 +1949,10 @@
 		<affectsHostiles>false</affectsHostiles>
 		<affectsSelf>false</affectsSelf>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Insulation aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Eiderduck aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Eiderduck aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -2866,6 +2874,10 @@
 		<affectsAllies>false</affectsAllies>
 		<affectsHostiles>true</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Greenery aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Ivy aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Ivy aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
 		<bonusPlantGrowth>4</bonusPlantGrowth>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
@@ -2994,6 +3006,10 @@
 		<lifeLeech>0.2</lifeLeech>
 		<psyfocusLeech>0.0035</psyfocusLeech>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Leeching aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Knapweed aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Knapweed aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -3024,6 +3040,10 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>false</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Healing aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Ladybug aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Ladybug aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
 		<exemptFilthTypes>
 		  <li MayRequire="Ludeon.RimWorld.Anomaly">Filth_RevenantSmear</li>
 		  <li MayRequire="Ludeon.RimWorld.Anomaly">Filth_RevenantBloodPool</li>
@@ -3259,6 +3279,10 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>false</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Brilliance aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Meerkat aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Meerkat aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -3487,6 +3511,10 @@
 		<affectsHostiles>true</affectsHostiles>
 		<affectsAllies>true</affectsAllies>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Mimicry aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Hill Mynah aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Hill Mynah aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -3948,6 +3976,10 @@
 		<affectsHostiles>false</affectsHostiles>
 		<affectsSelf>false</affectsSelf>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Protective aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Osprey aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Osprey aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -3959,7 +3991,7 @@
 	  <HediffDef ParentName="HVT_TraitHediffBase">
 		<defName>HVT_OspreyBuff</defName>
 		<label>transcendent protection</label>
-		<description>The presence of a nearby transcendent osprey protect this character from harm and fatigue. Incoming damage is reduced by 5.</description>
+		<description>The presence of a nearby transcendent osprey protects this character from harm and fatigue. Incoming damage is reduced by 5.</description>
 		<hediffClass>HautsFramework.Hediff_PreDamageModification</hediffClass>
 		<defaultLabelColor>(0.75, 0.75, 0.75)</defaultLabelColor>
 		<initialSeverity>0.1001</initialSeverity>
@@ -4116,6 +4148,10 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>false</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Vision aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Peacock aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Peacock aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -4557,6 +4593,10 @@
 		<affectsHostiles>true</affectsHostiles>
 		<affectsSelf>false</affectsSelf>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Endurance aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Poorwill aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Poorwill aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_GeneticResourceModifiers">
 		<drainRateFactors>
@@ -4642,6 +4682,10 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>true</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Bimodal aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Ptarmigan aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Ptarmigan aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -4766,6 +4810,10 @@
 		<affectsAllies>true</affectsAllies>
 		<affectsHostiles>false</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Levitation aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Quelea aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Quelea aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -5076,6 +5124,10 @@
 		<affectsDrones>false</affectsDrones>
 		<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid><!--it's so tiny this will almost always be better-->
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Glacial aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Sea Ice aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Sea Ice aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
 	  </li>
       <li Class="HautsFramework.HediffCompProperties_MeditationSeverity">
         <perMeditationTick>1</perMeditationTick>
@@ -5272,6 +5324,10 @@
 		<affectsHostiles>true</affectsHostiles>
 		<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Insectoid aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Spelopede aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Spelopede aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -6090,6 +6146,10 @@
 		<affectsMechs>false</affectsMechs>
 		<affectsDrones>false</affectsDrones>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Toxic aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Toxbuzzard aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Toxbuzzard aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -6329,6 +6389,10 @@
 		<affectsSelf>false</affectsSelf>
 		<affectsHostiles>true</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Fear aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Whalehead aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Whalehead aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
@@ -6819,6 +6883,10 @@
 		<affectsSelf>false</affectsSelf>
 		<affectsHostiles>false</affectsHostiles>
 		<mote>Hauts_DefaultAuraGraphic</mote>
+		<canToggleVisualization>true</canToggleVisualization>
+		<visLabel>Pacifism aura visibility</visLabel>
+		<visTooltip>Adjust the visibility of the Transcendent Seraph aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltip>
+		<visTooltipFantasy>Adjust the visibility of the Transcendent Seraph aura. This does not affect its function.\n\nIf this pawn stops being player-controlled, the aura's visibility will reset to unconditional visibility.</visTooltipFantasy>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
