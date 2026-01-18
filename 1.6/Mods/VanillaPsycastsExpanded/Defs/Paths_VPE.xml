@@ -390,8 +390,8 @@
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
 	
-  <!--Joyzone creates a large area in which pawns essentially some of the benefits of the Joy Addict trait. The skill learning boost works out to granting skill xp at 1.4x the rate a job would,
-	and it stacks multiplicatively with Joy Addict for some wacky high skill gain.-->
+  <!--Joyzone creates a large area in which pawns essentially some of the benefits of the Hedonist trait. The skill learning boost works out to granting skill xp at 1.4x the rate a job would,
+	and it stacks multiplicatively with Hedonist for some wacky high skill gain.-->
     <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>HVT_Joyzone</defName>
 		<label>joyzone</label>

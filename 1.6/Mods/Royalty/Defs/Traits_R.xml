@@ -1478,10 +1478,13 @@
 		<degreeDatas>
 		  <li>
 			<label>haastian psychic</label>
-			<description>{PAWN_nameDef} is a giant among psycasters, boasting massively expanded psychic sensitivity.</description>
+			<description>{PAWN_nameDef} is a giant among psycasters, boasting massively expanded psychic sensitivity and passive psyfocus regeneration.</description>
 			<statFactors>
 			  <PsychicSensitivity>3</PsychicSensitivity>
 			</statFactors>
+			<statOffsets>
+			  <Hauts_PsyfocusRegenRate>0.1</Hauts_PsyfocusRegenRate>
+			</statOffsets>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>

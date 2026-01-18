@@ -44,6 +44,7 @@
 			<range>12</range>
 			<chance>0.2</chance>
 			<faction>HoraxCult</faction>
+			<onFactionChangedLabel>HVT_CompromisedLetter</onFactionChangedLabel>
 			<onFactionChangeMessage>HVT_GotCompromised</onFactionChangeMessage>
 		  </li>
 		  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">

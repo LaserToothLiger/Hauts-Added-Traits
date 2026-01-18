@@ -32,7 +32,7 @@
 		<stages>
 			<li>
 				<statFactors>
-					<Hauts_SkillGainFromRecreation>0.5</Hauts_SkillGainFromRecreation>
+					<Hauts_SkillGainFromRecreation>1.5</Hauts_SkillGainFromRecreation>
 				</statFactors>
 				<statOffsets>
 					<Hauts_BoredomDropPerDay>0.02</Hauts_BoredomDropPerDay>
@@ -66,50 +66,13 @@
 			<label>in water</label>
 			<minSeverity>0.3</minSeverity>
 			<statFactors>
-			  <MoveSpeed>1.2</MoveSpeed>
-			</statFactors>
-		  </li>
-		  <li>
-			<minSeverity>10</minSeverity>
-		  </li>
-		  <li>
-			<statFactors>
-			  <MoveSpeed>1.01</MoveSpeed>
-			</statFactors>
-			<minSeverity>11</minSeverity>
-		  </li>
-		  <li>
-			<statFactors>
-			  <MoveSpeed>1.02</MoveSpeed>
-			</statFactors>
-			<minSeverity>12</minSeverity>
-		  </li>
-		  <li>
-			<statFactors>
-			  <MoveSpeed>1.04</MoveSpeed>
-			</statFactors>
-			<minSeverity>13</minSeverity>
-		  </li>
-		  <li>
-			<statFactors>
 			  <MoveSpeed>1.1</MoveSpeed>
 			</statFactors>
-			<minSeverity>14</minSeverity>
 		  </li>
 		</stages>
 		<comps>
 		  <li Class="HautsFramework.HediffCompProperties_WaterImmersionSeverity">
 			<rainCountsFor>0</rainCountsFor>
-			<baseSeverityCaravan>10</baseSeverityCaravan>
-			<severityPerCaravanRiverSize>
-			  <points>
-				<li>0, 0</li>
-				<li>4, 1</li>
-				<li>6, 2</li>
-				<li>14, 3</li>
-				<li>30, 4</li>
-			  </points>
-			</severityPerCaravanRiverSize>
 		  </li>
 		</comps>
 	</HediffDef>

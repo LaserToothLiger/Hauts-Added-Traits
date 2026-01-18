@@ -229,6 +229,19 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAddModExtension">
+		<xpath>/Defs/TraitDef[defName="PsychicSensitivity"]</xpath>
+		<value>
+			<li Class="HautsTraits.SpecificPNFChargeCost">
+				<chargeCosts>
+					<li><key>2</key><value>5</value></li>
+					<li><key>1</key><value>3</value></li>
+					<li><key>-1</key><value>2</value></li>
+					<li><key>-2</key><value>4</value></li>
+				</chargeCosts>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
 		<xpath>/Defs/TraitDef[defName="ShootingAccuracy"]</xpath>
 		<value>
 			<li Class="HautsTraits.SpecificPNFChargeCost">
@@ -262,6 +275,19 @@
 				</chargeCosts>
 			</li>
 		</value>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Biotech</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/TraitDef[defName="Recluse"]</xpath>
+			<value>
+				<li Class="HautsTraits.SpecificPNFChargeCost">
+					<chargeCosts><li><key>0</key><value>1</value></li></chargeCosts>
+				</li>
+			</value>
+		</match>
 	</Operation>
 
 </Patch>

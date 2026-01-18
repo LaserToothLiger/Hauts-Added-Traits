@@ -40,7 +40,7 @@
 <HVT_SFAIcon>Scout for Hostiles</HVT_SFAIcon>
 <HVT_SFATooltip>Skulkers in this caravan will use their talents for stealth to ascertain if there is an ambush lying in wait at this site without actually triggering the ambush. Skulkers with impaired senses may accidentally miss evidence of an ambush.</HVT_SFATooltip>
 <HVT_SFALabel>Scout for hostiles ({0}% success chance)</HVT_SFALabel>
-<HVT_TraitSerumLabel>{PAWN_nameDef} can now gain a trait from the list below. Rarer traits cost more charges, shown in parentheses.</HVT_TraitSerumLabel>
+<HVT_TraitSerumLabel>{PAWN_nameDef} can now gain a trait from the list below. Each trait costs one or more charges, as shown in parentheses.</HVT_TraitSerumLabel>
 <HVT_TraitSerumSuccess>{PAWN_nameDef} has gained the {0} trait.</HVT_TraitSerumSuccess>
 <HVT_SFAletter1>No hostiles detected at {0}</HVT_SFAletter1>
 <HVT_SFAoutcome1>No hostile parties were detected at {0}. However, if your scouts' senses were impaired, they may have missed evidence.</HVT_SFAoutcome1>
@@ -192,6 +192,7 @@
 <!--creepjoiner messages-->
 <HVT_EverlivingMightRez>Though {PAWN_nameDef} has just died, it may not yet be {PAWN_possessive} end. {PAWN_possessive} regeneration has the potential to revive {PAWN_objective}, though it isn't guaranteed. Revivification could take up to 1 day.</HVT_EverlivingMightRez>
 <HVT_EverlivingRez>Unnatural regeneration has brought {PAWN_nameDef} back to life!</HVT_EverlivingRez>
+<HVT_CompromisedLetter>{PAWN_nameDef} compromised</HVT_CompromisedLetter>
 <HVT_GotCompromised>The psycho-technological programming hidden in {PAWN_possessive} consciousness has been activated by a Horaxian cultist, causing {PAWN_nameDef} to rejoin the cult.</HVT_GotCompromised>
 <!--psychic awakening utility dictionary-->
 <HVT_WokeAugur>{PAWN_possessive} psychic sensitivity has undergone an immense, multiplicative boost.</HVT_WokeAugur>

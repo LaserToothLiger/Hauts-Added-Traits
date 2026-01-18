@@ -3599,6 +3599,7 @@ namespace HautsTraits
         public float range;
         public float chance;
         public FactionDef faction;
+        public string onFactionChangedLabel;
         public string onFactionChangeMessage;
     }
     public class HediffComp_ManchurianCandidacy : HediffComp
@@ -3621,9 +3622,25 @@ namespace HautsTraits
                     {
                         if (PawnUtility.ShouldSendNotificationAbout(this.Pawn))
                         {
-                            Messages.Message(this.Props.onFactionChangeMessage.Translate().CapitalizeFirst().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), this.Pawn, MessageTypeDefOf.NegativeEvent, true);
+                            Find.LetterStack.ReceiveLetter(this.Props.onFactionChangedLabel.Translate().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), this.Props.onFactionChangeMessage.Translate().Formatted(this.Pawn.Named("PAWN")).AdjustedFor(this.Pawn, "PAWN", true).Resolve(), LetterDefOf.ThreatBig, this.Pawn);
                         }
                         this.Pawn.SetFaction(p.Faction, p);
+                        if (p.lord != null)
+                        {
+                            if (this.Pawn.lord != null)
+                            {
+                                this.Pawn.lord.RemovePawn(this.Pawn);
+                            }
+                            p.lord.AddPawn(this.Pawn);
+                        } else if (Rand.Chance(0.5f)) {
+                            if (this.Pawn.lord != null)
+                            {
+                                this.Pawn.lord.RemovePawn(this.Pawn);
+                            }
+                            Lord lord = LordMaker.MakeNewLord(this.Pawn.Faction, new LordJob_AssaultColony(this.Pawn.Faction, true, true, false, false, false, false, true), this.Pawn.Map, null);
+                            lord.AddPawn(this.Pawn);
+                            this.Pawn.mindState.duty.def = DutyDefOf.AssaultColony;
+                        }
                         break;
                     }
                 }

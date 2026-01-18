@@ -3,7 +3,7 @@
   <ThingDef ParentName="MechSerumBase">
     <defName>HVT_PersonalityNeuroformatter</defName>
     <label>personality neuroformatter</label>
-    <description>An injector holding several capsules of mechanites capable of selectively editing the nervous system and adjacent tissues to change a subject's personality. The injector can be configured to give the subject any trait that can naturally spawn, though inflicting rarer traits uses more mechanites.</description>
+    <description>An injector holding several capsules of mechanites capable of selectively editing the nervous system and adjacent tissues to change a subject's personality. The injector can be configured to give the subject any trait that can naturally spawn, though some traits require more mechanites to inflict than others.</description>
     <graphicData>
       <texPath>Things/PersonalityNeuroformatter</texPath>
       <graphicClass>Graphic_Single</graphicClass>

@@ -1232,6 +1232,7 @@
 				<ComfyTemperatureMax>4.4</ComfyTemperatureMax>
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.10</P42_AllergicSensitivity>
 				<Suppressability MayRequire="CETeam.CombatExtended">-0.2</Suppressability>
+				<RimScent_SmellSensitivity MayRequire="reo.RimScent">-0.75</RimScent_SmellSensitivity>
 			</statOffsets>
 			<disablesNeeds>
 				<li>Comfort</li>
@@ -1267,6 +1268,7 @@
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">0.05</P42_AllergicSensitivity>
 				<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.2</NightVisionEfficiency>
 				<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.1</SmokeSensitivity>
+				<RimScent_SmellSensitivity MayRequire="reo.RimScent">0.5</RimScent_SmellSensitivity>
 			</statOffsets>
 			<possessions>
 			  <Apparel_Blindfold MayRequire="Ludeon.RimWorld.Ideology"/>
@@ -1282,6 +1284,7 @@
 				<P42_AllergicSensitivity MayRequire="phil42.allergies">0.10</P42_AllergicSensitivity>
 				<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.4</NightVisionEfficiency>
 				<SmokeSensitivity MayRequire="CETeam.CombatExtended">0.2</SmokeSensitivity>
+				<RimScent_SmellSensitivity MayRequire="reo.RimScent">1</RimScent_SmellSensitivity>
 			</statOffsets>
 			<possessions>
 			  <Apparel_Blindfold MayRequire="Ludeon.RimWorld.Ideology"/>
