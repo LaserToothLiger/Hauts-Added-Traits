@@ -5117,6 +5117,14 @@ namespace HautsTraitsRoyalty
                     if (this.Pawn.HostileTo(p))
                     {
                         GenExplosion.DoExplosion(this.Pawn.Position, this.Pawn.Map, this.Props.explosionRadius, this.Props.explosionType, this.Pawn, (int)(this.Props.explosionDmg.RandomInRange), -1f);
+                        if (this.Pawn.story != null && this.Pawn.story.traits.HasTrait(TraitDefOf.Pyromaniac))
+                        {
+                            Pawn_NeedsTracker pnt = this.Pawn.needs;
+                            if (pnt != null && pnt.mood != null && pnt.mood.thoughts != null && pnt.mood.thoughts.memories != null)
+                            {
+                                pnt.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.PyroUsed, null, null);
+                            }
+                        }
                         break;
                     }
                 }

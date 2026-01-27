@@ -2195,6 +2195,7 @@
             <chance>0.1</chance>
           </li>
 		</extraDamages>
+		<triggersPyroThought>true</triggersPyroThought>
 		<appliedViaAttacks>true</appliedViaAttacks>
 		<damageScaling>true</damageScaling>
 		<appliedViaPsycasts>true</appliedViaPsycasts>
