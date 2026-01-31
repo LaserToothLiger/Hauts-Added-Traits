@@ -26,6 +26,7 @@
       <drawAimPie>False</drawAimPie>
       <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
       <requireLineOfSight>False</requireLineOfSight>
+	  <targetable>false</targetable>
       <targetParams>
         <canTargetSelf>true</canTargetSelf>
         <canTargetPawns>false</canTargetPawns>
@@ -404,6 +405,7 @@
       <drawAimPie>False</drawAimPie>
       <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
       <requireLineOfSight>False</requireLineOfSight>
+	  <targetable>false</targetable>
       <targetParams>
         <canTargetSelf>true</canTargetSelf>
         <canTargetPawns>false</canTargetPawns>
