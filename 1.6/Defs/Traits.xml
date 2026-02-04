@@ -1050,6 +1050,9 @@
 			<possessions>
 			  <Schematic />
 			</possessions>
+			<skillGains>
+			  <Intellectual>4</Intellectual>
+			</skillGains>
 		  </li>
 		</degreeDatas>
 		<conflictingTraits><li>HVT_Drudge</li></conflictingTraits>

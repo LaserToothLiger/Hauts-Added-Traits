@@ -3078,6 +3078,7 @@
 			  <MentalBreakThreshold>0.2</MentalBreakThreshold>
 			  <PainShockThreshold>1.25</PainShockThreshold>
 			  <IncomingDamageFactor>0.8</IncomingDamageFactor>
+			  <Hauts_OverdoseSusceptibility>0.6</Hauts_OverdoseSusceptibility>
 			</statFactors>
 			<totalBleedFactor>0.25</totalBleedFactor>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
@@ -6658,6 +6659,7 @@
 		  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.05</NightVisionEfficiency>
         </statOffsets>
 		<statFactors>
+		  <Hauts_OverdoseSusceptibility>0.96</Hauts_OverdoseSusceptibility>
 		  <IncomingDamageFactor>0.98</IncomingDamageFactor>
 		  <MeleeCooldownFactor>0.98</MeleeCooldownFactor>
           <RangedCooldownFactor>0.98</RangedCooldownFactor>

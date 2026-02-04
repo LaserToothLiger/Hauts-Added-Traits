@@ -4,7 +4,7 @@
   <CreepJoinerBenefitDef>
     <defName>HVT_Evolved</defName>
     <label>evolved</label>
-    <letterExtra>{PAWN_nameDef} is abnormally strong and resistant to damage. Any harm {PAWN_pronoun} experiences fades away at an unnatural rate, and {PAWN_pronoun} seems to believe {PAWN_pronoun} might even be able to come back from death.</letterExtra>
+    <letterExtra>{PAWN_nameDef} is abnormally healthy and resistant to damage. Any harm {PAWN_pronoun} experiences fades away at an unnatural rate, and {PAWN_pronoun} seems to believe {PAWN_pronoun} might even be able to come back from death.</letterExtra>
     <traits>
       <HVT_Everliving/>
     </traits>
