@@ -421,6 +421,19 @@
 						<ArmorRating_Blunt>20</ArmorRating_Blunt>
 					</value>
 				</li>
+				<!--Osprey-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/HediffDef[defName="HVT_OspreyBuff"]/comps/li[@Class="HautsFramework.HediffCompProperties_DamageNegation"]/damageAdded</xpath>
+					<value>
+						<damageAdded>-7</damageAdded>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/HediffDef[defName="HVT_OspreyBuff"]/description</xpath>
+					<value>
+						<description>The presence of a nearby transcendent osprey protects this character from harm and fatigue. Incoming damage is reduced by 7.</description>
+					</value>
+				</li>
 				<!--Oxpecker-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/HediffDef[defName="HVT_OxpeckBless"]/stages/li/totalBleedFactor</xpath>

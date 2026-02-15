@@ -499,8 +499,8 @@
       <warmupTime>3.0</warmupTime>
       <targetParams>
         <canTargetBuildings>False</canTargetBuildings>
-        <neverTargetHostileFaction>True</neverTargetHostileFaction>
         <canTargetSubhumans>false</canTargetSubhumans>
+        <neverTargetHostileFaction>True</neverTargetHostileFaction>
       </targetParams>
     </verbProperties>
   </AbilityDef>
