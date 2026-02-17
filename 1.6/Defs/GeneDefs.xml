@@ -132,7 +132,7 @@
   
   <GeneDef>
     <defName>HVT_DaydreamerGene</defName>
-    <label>inspiring mental breaks</label>
+    <label>inspiring insanity</label>
     <labelShortAdj>daydreamer</labelShortAdj>
     <description>Carriers of this gene have particularly quixotic posterior cortexes composed of 'hyperdifferentiated' grey matter, producing an overactive imagination that dominates their consciousnesses while in extreme emotional states. They gain inspirations after completing any mental break, but the overactive imagination sponataneously activates in small bursts, slightly decreasing work speed and occasionally causing dazes.</description>
     <iconPath>Genes/HVT_Daydreamer</iconPath>
@@ -172,14 +172,14 @@
   
   <GeneDef>
     <defName>HVT_DrudgeGene</defName><!--as the description says, this one actually isn't one-to-one with the corresponding trait!-->
-    <label>simple task specialization</label>
+    <label>jack of all trades</label>
     <labelShortAdj>drudge</labelShortAdj>
     <description>Carriers of this gene become exceptionally adept at any tasks they can conceptualize. Unfortunately, this neurological effect also degrades their ability to retain advanced information, so they rapidly lose any non-combat, non-social skill levels above 10.\n\nUnlike the Drudge trait, this takes aptitude from genes into account.</description>
     <iconPath>Genes/HVT_Drudge</iconPath>
 	<displayCategory>HautsTraits</displayCategory>
     <displayOrderInCategory>5</displayOrderInCategory>
     <biostatCpx>6</biostatCpx>
-    <biostatMet>-2</biostatMet>
+    <biostatMet>0</biostatMet>
     <statOffsets>
 		<WorkSpeedGlobal>0.55</WorkSpeedGlobal>
 	</statOffsets>
@@ -215,7 +215,7 @@
     <defName>HVT_GraverGene</defName>
     <label>morbid tendency</label>
     <labelShortAdj>graver</labelShortAdj>
-    <description>Carriers of this gene not only lack the usual aversion to corpses, but instead have a strong positive reaction to them.</description>
+    <description>Carriers of this gene not only lack an aversion to corpses, they instead have a strong positive reaction to them.</description>
     <iconPath>Genes/HVT_Graver</iconPath>
     <displayCategory>HautsTraits</displayCategory>
     <displayOrderInCategory>6</displayOrderInCategory>
@@ -255,7 +255,7 @@
     <defName>HVT_HumbleGene</defName>
     <label>low expectations</label>
     <labelShortAdj>humble</labelShortAdj>
-    <description>Carriers of this gene never mentally acclimatize to having their needs taken care of; they are utterly incapable of taking any advantage for granted. As such, their expectation levels never progress past "low".</description>
+    <description>Carriers of this gene never mentally acclimatize to having their needs taken care of; they are utterly incapable of taking any advantage for granted. As such, their expectation levels never progress past "low".\n\n(Having a title or ideoligious role enables them to progress to "moderate" expectations, but no further.)</description>
     <iconPath>Genes/HVT_Humble</iconPath>
     <displayCategory>HautsTraits</displayCategory>
     <displayOrderInCategory>7</displayOrderInCategory>
@@ -320,7 +320,7 @@
   
   <GeneDef>
     <defName>HVT_RRGene</defName>
-    <label>uncontrollable rage</label>
+    <label>explosive rage</label>
     <labelShortAdj>repressed rage</labelShortAdj>
     <description>Carriers of this gene are prone to entering a berserk state upon being enraged. In this state, widespread but subtle physiological changes make them much harder to injure, while a flood of hormones dampens response to psychic stimuli and dramatically increases musclepower. While these changes overwhelm their ability to distinguish friend from foe, harming an ally may jolt them out of it.</description>
     <iconPath>Genes/HVT_RR</iconPath>
@@ -486,7 +486,7 @@
   
   <GeneDef>
     <defName>HVT_TempestophileGene</defName>
-    <label>weather enjoyment</label>
+    <label>weather affinity</label>
     <labelShortAdj>tempestophile</labelShortAdj>
     <description>Carriers of this gene experience changes in air pressure, humidity, temperature, ambient light, and even aerosol particulate as subtle, pleasing sensations.</description>
     <iconPath>Genes/HVT_Tempestophile</iconPath>
@@ -517,7 +517,7 @@
   
   <GeneDef>
     <defName>HVT_ViciousGene</defName>
-    <label>combat flow state</label>
+    <label>combat flow</label>
     <labelShortAdj>vicious</labelShortAdj>
     <description>Carriers of this gene develop specialized fast-twitch muscles and alterations in their cerebellum, which they can tap into to enter a state of hyper-coordination and immense strength. This is reliant on achieving a high concentration of a unique hormone that negatively impacts mood and is metabolized with every attack.</description>
     <iconPath>Genes/HVT_Vicious</iconPath>
