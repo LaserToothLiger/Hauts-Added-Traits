@@ -97,7 +97,7 @@
   <DamageDef Name="PsychicBlast">
     <defName>Hauts_PsychicBlast</defName>
     <label>psychic blast</label>
-    <workerClass>DamageWorker_AddInjury</workerClass>
+    <workerClass>HautsTraitsRoyalty.DamageWorker_AddInjuryPsyBlast</workerClass>
     <externalViolence>true</externalViolence>
     <isExplosive>true</isExplosive>
     <makesAnimalsFlee>true</makesAnimalsFlee>
@@ -146,6 +146,7 @@
       <damageDef>Hauts_PsychicBolt</damageDef>
       <damageAmountBase>22</damageAmountBase>
       <armorPenetrationBase>0.75</armorPenetrationBase>
+	  <stoppingPower>3</stoppingPower>
     </projectile>
   </ThingDef>
   <DamageDef Name="PsychicBolt">

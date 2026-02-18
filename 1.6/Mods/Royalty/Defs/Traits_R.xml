@@ -1276,10 +1276,10 @@
 			<description>{PAWN_nameDef} is immune to fire, poison, and most environmental phenomena.</description>
 			<statFactors>
 			  <Flammability>0</Flammability>
-			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
+			  <Hauts_OverdoseSusceptibility>0.2</Hauts_OverdoseSusceptibility>
 			</statFactors>
 			<statOffsets><!--yes, I know you get 100% toxic resistance at a value of 1. This is to make it so effects that would induce toxic susceptibility have to chew through an extreme amount of "overcapped" resistance.-->
 			  <ToxicResistance>100</ToxicResistance>
@@ -1289,6 +1289,7 @@
 			  <ArmorRating_Heat>1</ArmorRating_Heat>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">100</Mashed_Ashlands_AshResistance>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">1</ArmorRating_Electric>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 			</statOffsets>
 			<disallowedThoughts>
 			  <li>SoakingWet</li>
@@ -2496,13 +2497,13 @@
 			<statFactors>
 			  <JoyFallRateFactor>0.05</JoyFallRateFactor>
 			  <RestFallRateFactor>0.05</RestFallRateFactor>
-			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.9</VacuumResistance>
 			  <ThirstRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.05</ThirstRateMultiplier>
 			  <HygieneRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.05</HygieneRateMultiplier>
 			  <BladderRateMultiplier MayRequire="Dubwise.DubsBadHygiene">0.05</BladderRateMultiplier>
 			</statFactors>
 			<statOffsets>
 			  <Hauts_MechEnergyUsage MayRequire="Ludeon.RimWorld.Biotech">-0.5</Hauts_MechEnergyUsage>
+			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.9</VacuumResistance>
 			</statOffsets>
 		  </li>
 		</degreeDatas>

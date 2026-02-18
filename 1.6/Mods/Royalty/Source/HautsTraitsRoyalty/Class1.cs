@@ -2025,6 +2025,21 @@ namespace HautsTraitsRoyalty
         [MayRequireBiotech]
         public static GeneDef HVT_AUndyingGene;
     }
+    public class DamageWorker_AddInjuryPsyBlast : DamageWorker_AddInjury
+    {
+        protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
+        {
+            if (explosion.instigator != null && explosion.instigator.Faction != null && t.Faction != null && explosion.instigator.Faction == t.Faction)
+            {
+                if (t.HostileTo(explosion.instigator))
+                {
+                    base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
+                }
+                return;
+            }
+            base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
+        }
+    }
     public class Thought_Situational_RelationsWithEmpire : Thought_Situational
     {
         public override float MoodOffset()

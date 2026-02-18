@@ -2402,8 +2402,8 @@
 			  <label>psychic siege blast</label>
 			  <hasStandardCommand>true</hasStandardCommand>
 			  <defaultProjectile>HVT_PsychicFulmarProjectile</defaultProjectile>
-			  <warmupTime>25</warmupTime>
-			  <forcedMissRadius>5</forcedMissRadius>
+			  <warmupTime>21</warmupTime>
+			  <forcedMissRadius>3</forcedMissRadius>
 			  <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
 			  <minRange>29.9</minRange>
 			  <range>500</range>
@@ -7066,7 +7066,7 @@
         </capMods>
 		<statOffsets>
 			<PainShockThreshold>100</PainShockThreshold>
-		  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 		</statOffsets>
 		<statFactors>
 		  <InjuryHealingFactor>10</InjuryHealingFactor>
