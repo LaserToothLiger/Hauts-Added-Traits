@@ -534,6 +534,12 @@
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
+								<xpath>Defs/TraitDef[defName = "HVT_TTraitFlamingo"]/degreeDatas/li/description</xpath>
+								<value>
+									<description>{PAWN_nameDef} is immune to fire, poison, lightning disruption, and most environmental phenomena.</description>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitFodiator"]/degreeDatas/li/label</xpath>
 								<value>
 									<label>flying fish spirit</label>
@@ -1364,11 +1370,16 @@
 									<label>spirit of the harpy</label>
 								</value>
 							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitHarpy"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>On eating the corpse of a fellow awakened or transcendent mage, {PAWN_nameDef} will develop one of their awakenings or transcendences, as well as potentially gain increased magical attunement. Ordinary food, however, does little for {PAWN_objective}.</description>
-								</value>
+							<li Class="PatchOperationFindMod">
+								<mods>
+									<li>Biotech</li>
+								</mods>
+								<nomatch Class="PatchOperationReplace"><!--BiotechPatches_R contains the yes Biotech version-->
+									<xpath>Defs/TraitDef[defName = "HVT_TTraitHarpy"]/degreeDatas/li/description</xpath>
+									<value>
+										<description>On eating the corpse of a fellow awakened or transcendent mage, {PAWN_nameDef} will develop one of their awakenings or transcendences, as well as potentially gain increased magical attunement. Ordinary food, however, does little for {PAWN_objective}.</description>
+									</value>
+								</nomatch>
 							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitLeviathan"]/degreeDatas/li/label</xpath>

@@ -37,7 +37,7 @@
     <defName>HVT_AChanshiGene</defName>
     <label>meditation metabolism</label>
     <labelShortAdj>awakened chanshi</labelShortAdj>
-    <description>Carriers of this gene charge archites in their body via psychic energy extracted from meditation. While charging, these archites produce additional psyfocus as a byproduct, and they maintain the carrier's body.</description>
+    <description>Carriers of this gene charge archites in their body via psychic energy extracted from meditation. While charging, these archites produce additional psyfocus as a byproduct, and they maintain the carrier's body.\n\nEnables the use of all meditation focus types.</description>
     <iconPath>PsychicTraits/Genes/HVT_Chanshi</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
     <marketValueFactor>2</marketValueFactor>
@@ -120,9 +120,9 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_AEruditeGene</defName>
-    <label>innate psycasting knowledge</label>
+    <label>psycasting knowledge</label>
     <labelShortAdj>awakened erudite</labelShortAdj>
-    <description>Carriers of this gene gain additional psylink levels, as well as psytrainer-like modifications via archites which may cause them to develop additional expressions of psychic energy in various circumstances.</description>
+    <description>Carriers of this gene receive psytrainer-like archite-induced modifications which both grant additional psycasts and enable them to have up to one more transcendence than other awakened psycasters.</description>
     <iconPath>PsychicTraits/Genes/HVT_Erudite</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
     <marketValueFactor>2</marketValueFactor>
@@ -144,7 +144,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_AIncarnateGene</defName>
-    <label>psycast-derived empowerment</label>
+    <label>psycast-derived vigor</label>
     <labelShortAdj>awakened incarnate</labelShortAdj>
     <description>Carriers of this gene mutate in response to psycasting knowledge, becoming physically and mentally stronger for each psycast known.</description>
     <iconPath>PsychicTraits/Genes/HVT_Incarnate</iconPath>
@@ -171,7 +171,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_ALuminaryGene</defName>
-    <label>psycasting beacon</label>
+    <label>psychic beacon</label>
     <labelShortAdj>awakened luminary</labelShortAdj>
     <description>Carriers of this gene emit short-ranged ripples in the psychic manifold, which enhance the psycasting abilities of those nearby. However, this doesn't benefit the carrier.</description>
     <iconPath>PsychicTraits/Genes/HVT_Luminary</iconPath>
@@ -223,7 +223,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_APerennialGene</defName>
-    <label>psycasting power surge</label>
+    <label>psycasting surge</label>
     <labelShortAdj>awakened perennial</labelShortAdj>
     <description>Carriers of this gene develop a specialized lobe of archite-heavy grey matter. This lobe can be harnessed once a day to communicate with the archotechs at an unprecedented level of ease and clarity, granting an 'hour of power' in which psycasts cost much less to invoke.</description>
     <iconPath>PsychicTraits/Genes/HVT_Perennial</iconPath>
@@ -282,9 +282,9 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_ASiphonerGene</defName>
-    <label>psyfocus-producing digestion</label>
+    <label>psyfocus from food</label>
     <labelShortAdj>awakened siphoner</labelShortAdj>
-    <description>Carriers of this gene offload part of the behavior required to interact with the psychic field to their gut brain. For them, food not only provides physical nutrition; it also replenishes their psyfocus.</description>
+    <description>Carriers of this gene offload part of the behavior required to interact with the psychic field to their gut brain. For them, food not only provides physical nutrition - it also replenishes their psyfocus.</description>
     <iconPath>PsychicTraits/Genes/HVT_Siphoner</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
     <marketValueFactor>2</marketValueFactor>
@@ -313,7 +313,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HVT_ATitanGene</defName>
-    <label>psychic body reinforcement</label>
+    <label>psychic reinforcement</label>
     <labelShortAdj>awakened titan</labelShortAdj>
     <description>Carriers of this gene reinforce their bodies with psyfocus. Unspent psyfocus boosts their move speed, work speed, armor, healing, and immunity.</description>
     <iconPath>PsychicTraits/Genes/HVT_Titan</iconPath>
@@ -342,7 +342,7 @@
     <defName>HVT_AUndyingGene</defName>
     <label>reactive psyfocus defense</label>
     <labelShortAdj>awakened undying</labelShortAdj>
-    <description>Carriers of this gene are shrouded in a field that translates incoming physical harm into a psychic force, lowering their psyfocus instead of actually damaging them.</description>
+    <description>Carriers of this gene are shrouded in a field that translates incoming physical harm into a psychic force, lowering their psyfocus instead of actually damaging them (at a ratio of 3.5 damage to 1% psyfocus).\n\nIf the carrier also has the Awakened Undying trait, their effects will compound, and it will take 8 points of damage to deplete 1% psyfocus.</description>
     <iconPath>PsychicTraits/Genes/HVT_Undying</iconPath>
     <displayCategory>HautsAATraits</displayCategory>
     <marketValueFactor>2</marketValueFactor>

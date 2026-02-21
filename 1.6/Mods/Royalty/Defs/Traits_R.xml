@@ -1273,7 +1273,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic flamingo</label>
-			<description>{PAWN_nameDef} is immune to fire, poison, and most environmental phenomena.</description>
+			<description>{PAWN_nameDef} is immune to fire, poison, EMPs, and most environmental phenomena.</description>
 			<statFactors>
 			  <Flammability>0</Flammability>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
