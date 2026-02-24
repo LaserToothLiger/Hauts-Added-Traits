@@ -3309,6 +3309,9 @@
 			  <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">1.5</LanguageLearningAbility>
 			</statFactors>
+			<statOffsets>
+			  <SM_Minimum_Learning_Speed MayRequire="RedMattis.BigSmall.Core">0.2</SM_Minimum_Learning_Speed>
+			</statOffsets>
 		  </li>
 		</stages>
 		<comps>

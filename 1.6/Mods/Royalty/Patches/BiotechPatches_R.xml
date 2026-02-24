@@ -61,13 +61,13 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_AAugurGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline receive an immense bonus to magic sensitivity.</description>
+									<description>Members of this bloodline receive an immense bonus to magic sensitivity.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_AChanshiGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline meditate more effectively, can use any meditation focus type, and can take care of their basic needs simply by meditating.</description>
+									<description>Members of this bloodline meditate more effectively, can use any meditation focus type, and can take care of their basic needs simply by meditating.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -91,7 +91,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_ADelugeGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline have an affinity for cantrips, and use much less mana when casting them.</description>
+									<description>Members of this bloodline have an affinity for cantrips, and use much less mana when casting them.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -103,7 +103,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_AEruditeGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline remember spells learned by sorcerers in past lives. They know more spells and can have one more transcendence than other awakened sorcerers.</description>
+									<description>Members of this bloodline remember spells learned by sorcerers in past lives. They know more spells and can have one more transcendence than other awakened sorcerers.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -115,7 +115,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_AIncarnateGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline are empowered simply by learning spells. They gain physical and mental strength per each spell known.</description>
+									<description>Members of this bloodline are empowered simply by learning spells. They gain physical and mental strength per each spell known.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -127,7 +127,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_ALuminaryGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline stir the currents of magic with each beat of their heart, enhancing the spellcasting abilities of those nearby. However, this does not benefit the member.</description>
+									<description>Members of this bloodline stir the currents of magic with each beat of their heart, enhancing the spellcasting abilities of those nearby. However, this does not benefit the member.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -139,7 +139,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_AMantraistGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline continually gain mana.</description>
+									<description>Members of this bloodline continually gain mana.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -151,7 +151,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_APerennialGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline have the ability to enhance their own spellcasting. Once a day, they can enter an 'hour of power' in which spells cost much less to invoke.</description>
+									<description>Members of this bloodline have the ability to enhance their own spellcasting. Once a day, they can enter an 'hour of power' in which spells cost much less to invoke.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -163,7 +163,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_ASageGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline have exceptionally disciplined minds which excel at high-intensity spellcasting.</description>
+									<description>Members of this bloodline have exceptionally disciplined minds which excel at high-intensity spellcasting.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -175,7 +175,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_ASiphonerGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline extract mystic essence from any food they eat, gaining mana in the process.</description>
+									<description>Members of this bloodline extract mystic essence from any food they eat, gaining mana in the process.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -187,7 +187,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_ATitanGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline have an unusual way of storing mana. Unspent mana circulates through their bodies, boosting their move speed, work speed, armor, healing, and immunity.</description>
+									<description>Members of this bloodline have an unusual way of storing mana. Unspent mana circulates through their bodies, boosting their move speed, work speed, armor, healing, and immunity.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
@@ -199,7 +199,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/GeneDef[defName = "HVT_AUndyingGene"]/description</xpath>
 								<value>
-									<description>Members of this bloodline produce an aegis around their bodies which is powered by mana. Incoming harm depletes their mana instead of damaging them (at a ratio of 3.5 mana per 1% mana).\n\nIf the member also has the Awakened Undying trait, their effects will compound, and it will take 8 points of damage to deplete 1% mana.</description>
+									<description>Members of this bloodline produce an aegis around their bodies which is powered by mana. Incoming harm depletes their mana instead of damaging them (at a ratio of 3.5 mana per 1% mana).\n\nIf the member also has the Awakened Undying trait, their effects will compound, and it will take 8 points of damage to deplete 1% mana.\n\nAn individual can belong to only one awakened bloodline.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">
