@@ -939,11 +939,8 @@ namespace HautsTraitsRoyalty
                         pawn.story.traits.RemoveTrait(t);
                     }
                 }
-                if (pawn.health.hediffSet.HasHediff(HediffDefOf.PsychicAmplifier))
+                if (!pawn.health.hediffSet.HasHediff(HediffDefOf.PsychicAmplifier))
                 {
-                    PawnUtility.ChangePsylinkLevel(pawn, 1, false);
-                } else {
-                    PawnUtility.ChangePsylinkLevel(pawn, 1, false);
                     PawnUtility.ChangePsylinkLevel(pawn, 1, false);
                 }
                 if (geneDef == HVTRoyaltyDefOf.HVT_AEruditeGene)
