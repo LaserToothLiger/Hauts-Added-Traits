@@ -134,7 +134,6 @@
 		<scanForPawnsOnly>true</scanForPawnsOnly><!--this and the two fields below dictate its AI use. this is true bc otherwise the AI will "scan for targets" by looking at EVERYTHING within 44 cells, which is horrendously nonperformant-->
 		<onlyHostiles>true</onlyHostiles>
 		<periodicity>500</periodicity><!--AI only looks for targets this often (500ticks=5 times an hour)-->
-		<cooldownOnDeafen>360</cooldownOnDeafen>
 		<cooldownOnNonPsycasterKill>360</cooldownOnNonPsycasterKill>
 		<baseCooldownOnPsycasterKill>2500</baseCooldownOnPsycasterKill><!--this gets multiplied by the square of the pawn's psylink level. caps at the max of cooldownTicksRange-->
 		<hediffToGrant>HVT_ErinysBuff</hediffToGrant>
@@ -201,7 +200,7 @@
     <iconPath>PsychicTraits/Abilities/HVT_PkAlignment</iconPath>
     <warmupMote>Mote_WarmupWordOf</warmupMote>
     <warmupSound>Psycast_WordOf_Warmup</warmupSound>
-	<cooldownTicksRange>70~3600000</cooldownTicksRange>
+	<cooldownTicksRange>300~3600000</cooldownTicksRange>
     <stunTargetWhileCasting>True</stunTargetWhileCasting>
     <showPsycastEffects>True</showPsycastEffects>
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
@@ -232,7 +231,6 @@
         <compClass>HautsTraitsRoyalty.CompAbilityEffect_MindControl</compClass>
 		<goodwillImpact>-40</goodwillImpact>
 		<setsIdeo>true</setsIdeo>
-		<permanent>true</permanent>
 		<failsOnAwokens>false</failsOnAwokens>
 		<failsOnTrans>true</failsOnTrans>
 		<aiMinMarketValueToTarget>1000</aiMinMarketValueToTarget>

@@ -5444,7 +5444,7 @@
 		<chance>0.25</chance>
 		<chanceCap>1</chanceCap>
 		<chancePerVictimPsylink>-0.12</chancePerVictimPsylink>
-		<psylinkChanceMin>0.1</psylinkChanceMin>
+		<chanceMinimum>0.1</chanceMinimum>
 		<victimChanceScalar>PsychicSensitivity</victimChanceScalar>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">

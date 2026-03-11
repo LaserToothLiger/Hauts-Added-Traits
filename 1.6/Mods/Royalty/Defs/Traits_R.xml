@@ -158,7 +158,6 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <!--<li Class="HautsFramework.ExciseTraitExemption"/>-->
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs>
 					<li>
@@ -589,7 +588,7 @@
 			</statOffsets>
 			<statFactors>
 			  <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">1.25</MechBandwidth>
-			  <Hauts_MechCommandRange MayRequire="Ludeon.RimWorld.Biotech">1.2</Hauts_MechCommandRange>
+			  <MechRemoteControlDistanceOffset MayRequire="lts.I">1.2</MechRemoteControlDistanceOffset>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -2359,7 +2358,7 @@
 			  <VEF_VerbRangeFactor>1</VEF_VerbRangeFactor>
 			</statOffsets>
 			<statFactors>
-			  <Hauts_MechCommandRange MayRequire="Ludeon.RimWorld.Biotech">1.2</Hauts_MechCommandRange>
+			  <MechRemoteControlDistanceOffset MayRequire="lts.I">1.2</MechRemoteControlDistanceOffset>
 			</statFactors>
 		  </li>
 		</degreeDatas>

@@ -1,13 +1,8 @@
 ﻿using HarmonyLib;
-using HautsFramework;
 using HautsTraitsRoyalty;
-using RimWorld;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using VPE_Neurophage;
 
@@ -24,13 +19,14 @@ namespace HVT_VPE_Neurophagy
             harmony.Patch(methodInfo,
                           prefix: new HarmonyMethod(patchType, nameof(HVT_VPEN_ApexNeuorphagyPostfix)));
         }
+        //while the single-target Neurophage psycasts can just be slapped with the AbilityExtension that forbids targeting woke pawns, ApexNeurophagy is an AoE and therefore needs this patch to avoid moving around woke traits.
         public static bool HVT_VPEN_ApexNeuorphagyPostfix(Ability_MassNeurophagy __instance, Pawn CasterPawn, IntVec3 targetPoint)
         {
             bool flag = false;
             List<Pawn> list = new List<Pawn>();
             foreach (Pawn pawn in CasterPawn.Map.mapPawns.AllPawnsSpawned)
             {
-                if (pawn != CasterPawn && pawn.Position.InHorDistOf(targetPoint, __instance.def.radius) && !PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                if (pawn != CasterPawn && pawn.Position.InHorDistOf(targetPoint, __instance.def.radius) && !PsychicTraitAndGeneCheckUtility.IsAwakenedPsychic(pawn))
                 {
                     bool flag3 = pawn.Faction != CasterPawn.Faction;
                     if (flag3)

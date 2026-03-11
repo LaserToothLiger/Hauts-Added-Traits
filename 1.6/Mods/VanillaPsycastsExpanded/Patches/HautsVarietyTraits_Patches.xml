@@ -74,6 +74,18 @@
 			</value>
 		</match>
 	</Operation>
+	<!--VPE Puppeteer-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Psycasts Expanded - Puppeteer</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/VEF.Abilities.AbilityDef[defName="VPEP_Puppet"]/modExtensions</xpath>
+			<value>
+				<li Class="Hauts_VPE.AbilityExtension_CantTargetWoke" />
+			</value>
+		</match>
+	</Operation>
 	<!--fantasy renamings-->
 	<Operation Class="PatchOperationFindMod">
 		<mods>

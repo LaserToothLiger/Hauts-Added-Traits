@@ -452,17 +452,14 @@
 						<CarryBulk>1.1</CarryBulk>
 					</value>
 				</li>
-				<!--Scrub Jay
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/TraitDef[defName="HVT_TTraitScrubJay"]/degreeDatas/li/statFactors/CarryingCapacity</xpath>
-				</li>
+				<!--Scrub Jay-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitScrubJay"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>
 					<value>
 						<CarryWeight>150</CarryWeight>
 						<CarryBulk>150</CarryBulk>
 					</value>
-				</li>-->
+				</li>
 				<!--Sedge Warbler: half of CE's take on Shooting Frenzy-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitWarbler"]/degreeDatas/li/statOffsets/ShootingAccuracyPawn</xpath>

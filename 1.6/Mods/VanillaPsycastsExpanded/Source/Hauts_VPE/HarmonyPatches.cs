@@ -1,27 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Reflection;
 using UnityEngine;
 using RimWorld;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
 using Verse.Sound;
 using HarmonyLib;
-using HautsTraits;
-using MonoMod.Utils;
 using RimWorld.Planet;
 using VanillaPsycastsExpanded;
 using VEF.Abilities;
 using HautsTraitsRoyalty;
 using HautsFramework;
-using HautsFrameworkVPE;
 using VanillaPsycastsExpanded.Harmonist;
-using static UnityEngine.GraphicsBuffer;
-using System.Security.Cryptography;
 
 namespace Hauts_VPE
 {
@@ -34,8 +25,6 @@ namespace Hauts_VPE
             Harmony harmony = new Harmony(id: "rimworld.hautarche.hautsvpecompatibility.main");
             harmony.Patch(AccessTools.Method(typeof(Hediff_IncarnatePsycastsKnown), nameof(Hediff_IncarnatePsycastsKnown.VPECompat)),
                             postfix: new HarmonyMethod(patchType, nameof(HVT_VPE_Hediff_IncarnatePsycastsKnownPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(HautsUtility), nameof(HautsUtility.TotalPsyfocusRefund)),
-                            postfix: new HarmonyMethod(patchType, nameof(HVT_VPE_TotalPsyfocusRefundPostfix)));
             harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.GetPsyfocusUsedByPawn)),
                             postfix: new HarmonyMethod(patchType, nameof(HVT_VPE_GetPsyfocusUsedByPawnPostfix)));
             harmony.Patch(AccessTools.Method(typeof(AbilityExtension_Psycast), nameof(AbilityExtension_Psycast.ValidateTarget)),
@@ -60,6 +49,7 @@ namespace Hauts_VPE
             FieldInfo field = type.GetField(fieldName, bindFlags);
             return field.GetValue(instance);
         }
+        //incarnates' scaling works off of VPE psycasts instead of regular ones, necessary for obvious reasons
         public static void HVT_VPE_Hediff_IncarnatePsycastsKnownPostfix(ref float __result, Hediff_IncarnatePsycastsKnown __instance)
         {
             CompAbilities comp = __instance.pawn.GetComp<CompAbilities>();
@@ -76,13 +66,7 @@ namespace Hauts_VPE
                 __result = psycastsKnown;
             }
         }
-        public static void HVT_VPE_TotalPsyfocusRefundPostfix(ref float __result, Pawn pawn, float psyfocusCost, bool isWord, bool isSkip)
-        {
-            if (isWord && pawn.story != null && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitNightingale))
-            {
-                __result = Math.Max(__result, Math.Max(0f,psyfocusCost - 0.1f));
-            }
-        }
+        //bellbirds use more psyfocus to cast words, instead of having an awkward post-cast psyfocus subtraction offset. VPE lets us do that!
         public static void HVT_VPE_GetPsyfocusUsedByPawnPostfix(ref float __result, AbilityExtension_Psycast __instance, Pawn pawn)
         {
             if (__instance.abilityDef.abilityClass == typeof(Ability_WordOf) && pawn != null && pawn.story != null && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird))
@@ -94,6 +78,7 @@ namespace Hauts_VPE
                 }
             }
         }
+        //Dragon transcendence cannot be directly targeted by psycasts from hostile casters
         public static void HVT_VPE_ValidateTargetPostfix(ref bool __result, LocalTargetInfo target, VEF.Abilities.Ability ability, bool throwMessages = false)
         {
             if (target.Thing != null && target.Thing is Pawn p && p.story != null && p.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitDragon) && ability.pawn.HostileTo(p))
@@ -105,6 +90,27 @@ namespace Hauts_VPE
                 __result = false;
             }
         }
+        /*handles Bellbird and Glowworm transcendent effects.
+         * Bellbird needs to sidestep Group Link from the main target to ensure it can actually affect them, so it removes it from the target.
+         * The prefix puts in __state all the things a Glowworm is affecting with a skip psycast, as well as all the stuff in the lines between those things and their destinations, or all the things around themselves if teleported to own point.
+         *   Well, that's how it's supposed to work (and does work without VPE). Here, it always ends up just doing the latter: catalogue all things around the targets at their endpoint.
+         * The postfix deals skip damage to all things in __state, putting tiny little skipgate pinholes on top of them to show the visual destruction.
+         * The postfix itself also handles a couple other psychic trait effects. In order as coded:
+         * Erudites have a VPE-exclusive function to gain experience from casting, enabled here.
+         * Bouldermit can generate meteorites on casting 5th level casts, 10% chance. They also generate stone chunks and possibly (psyfocus cost-scaling chance) random metals on any psycast. This is anti-synergistic with psyfocus cost reductions,
+         *   but that's fine. Not all avenues of power need to compound.
+         * Electrophorus generates a psysens-scaling number of lightning strikes on random pawns not under a roof upon casting any psycast.
+         * Bellbirds have an inherent AoE to their Word psycasts (anyone in psylink level-scaling range who COULD be a valid target also gets hit).
+         * Canary has several additional effects on Word use (resistance reduction, mood boost, conversion attempt). Since this is also a Word rider, it is written as either running on the primary target if not also a Bellbird,
+         *   or running on all targets in the Bellbird's AoE if that's a concern.
+         * Diabolus coats an area around the target psycast with chemfuel puddles.
+         * Firefly generates a unique kind of solar pinhole with its own blinding aura (written just under the trait itself in Traits_R.xml) at the targeted point, or refreshes the duration of an existing such pinhole and recruits it
+         *   (the pinhole doesn't blind people if allied to its faction, initially set by its creator) if there is one already there.
+         * Oilbird has an aura that doesn't move with it; it has to be repositioned by casting a psycast, at which point it appears at the target point. This creates (or moves) the aura.
+         * Orcas generate a Waterskip effect at the target point.
+         * Termites deal damage in an AoE around the target point, but only to buildings. Radius is scaled by the psycast's level to the 1.7th power.
+         * Orb Weavers emit a pulse on their own location that adds to the growth of plants, repairs buildings, reduces the injury severity of a nearby non-hostile pawn, and repairs nearby non-hostile mechs for one repair tick.
+         *   The heal specifically scales off the random pawn's psysens.*/
         public static void HVT_VPE_CastPrefix(AbilityExtension_Psycast __instance, GlobalTargetInfo[] targets, VEF.Abilities.Ability ability, out List<Thing> __state)
         {
             __state = new List<Thing>();
@@ -115,7 +121,7 @@ namespace Hauts_VPE
                 {
                     target.health.RemoveHediff(target.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_GroupLink));
                 }
-                if (HautsUtility.IsSkipAbility(__instance.abilityDef) && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitGlowworm))
+                if (Stats_AbilityRangesUtility.IsSkipAbility(__instance.abilityDef) && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitGlowworm))
                 {
                     List<IntVec3> iv3s = new List<IntVec3>();
                     for (int i = 0; i < targets.Length; i += 2)
@@ -266,14 +272,14 @@ namespace Hauts_VPE
                         {
                             if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird))
                             {
-                                FleckMaker.Static(loc.ToIntVec3(), pawn.MapHeld, FleckDefOf.PsycastAreaEffect, 2f * Math.Max(2, pawn.GetPsylinkLevel()));
+                                FleckMaker.Static(loc.ToIntVec3(), pawn.MapHeld, FleckDefOf.PsycastAreaEffect, Math.Min(12f,1.5f * pawn.GetPsylinkLevel()));
                                 bool canary = pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCanary);
-                                List<Pawn> pawnsAround = GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, Math.Max(2, pawn.GetPsylinkLevel()), true).OfType<Pawn>().Distinct<Pawn>().ToList();
+                                List<Pawn> pawnsAround = GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, Math.Min(12f,1.5f * pawn.GetPsylinkLevel()), true).OfType<Pawn>().Distinct<Pawn>().ToList();
                                 if (pawnsAround.Count > 0)
                                 {
                                     for (int i = pawnsAround.Count - 1; i >= 0; i--)
                                     {
-                                        if (pawnsAround[i] == pawn || targets.Contains(pawnsAround[i]))
+                                        if (pawnsAround[i] == pawn)
                                         {
                                             pawnsAround.RemoveAt(i);
                                         }
@@ -305,7 +311,7 @@ namespace Hauts_VPE
                                             if (canary)
                                             {
                                                 didCanary = true;
-                                                PsychicAwakeningUtility.DoCanaryEffects(pawn, p);
+                                                PsychicPowerUtility.DoCanaryEffects(pawn, p);
                                             }
                                         }
                                     }
@@ -313,7 +319,7 @@ namespace Hauts_VPE
                             }
                             if (!didCanary && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCanary))
                             {
-                                PsychicAwakeningUtility.DoCanaryEffects(pawn, target);
+                                PsychicPowerUtility.DoCanaryEffects(pawn, target);
                             }
                         }
                         if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBouldermit))
@@ -471,7 +477,7 @@ namespace Hauts_VPE
                             List<Pawn> eligiblePatients = new List<Pawn>();
                             foreach (Pawn p in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, 6, true).OfType<Pawn>().Distinct<Pawn>())
                             {
-                                if (!p.HostileTo(pawn) && !pawn.HostileTo(p) && p.health.summaryHealth.SummaryHealthPercent < 1f)
+                                if (!p.HostileTo(pawn) && p.health.summaryHealth.SummaryHealthPercent < 1f)
                                 {
                                     eligiblePatients.Add(p);
                                 }
@@ -479,14 +485,14 @@ namespace Hauts_VPE
                             if (eligiblePatients.Count > 0)
                             {
                                 Pawn p = eligiblePatients.RandomElement<Pawn>();
-                                HautsUtility.StatScalingHeal(Math.Max(2f, Rand.Value * 10f), StatDefOf.PsychicSensitivity, p, p);
+                                HautsMiscUtility.StatScalingHeal(Math.Max(2f, Rand.Value * 10f), StatDefOf.PsychicSensitivity, p, p);
                             }
                         }
                         if (ModsConfig.BiotechActive)
                         {
                             foreach (Pawn pawn2 in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, 6, true).OfType<Pawn>().Distinct<Pawn>())
                             {
-                                if (!pawn.HostileTo(pawn2) && !pawn2.HostileTo(pawn) && pawn2.RaceProps.IsMechanoid && MechRepairUtility.CanRepair(pawn2))
+                                if (!pawn.HostileTo(pawn2) && pawn2.RaceProps.IsMechanoid && MechRepairUtility.CanRepair(pawn2))
                                 {
                                     for (int i = 0; i < Math.Floor(4f*pawn.GetStatValue(StatDefOf.PsychicSensitivity)); i++)
                                     {
@@ -505,7 +511,7 @@ namespace Hauts_VPE
             if (trait.def == VPE_DefOf.VPE_Thrall)
             {
                 Pawn pawn = GetInstanceField(typeof(TraitSet), __instance, "pawn") as Pawn;
-                if (PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                if (PsychicTraitAndGeneCheckUtility.IsAwakenedPsychic(pawn))
                 {
                     return false;
                 }
@@ -518,7 +524,7 @@ namespace Hauts_VPE
             foreach (GlobalTargetInfo globalTargetInfo in targets)
             {
                 Pawn pawn = globalTargetInfo.Thing as Pawn;
-                if (pawn != null && pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(pawn))
+                if (pawn != null && pawn.story != null && PsychicTraitAndGeneCheckUtility.IsAwakenedPsychic(pawn))
                 {
                     Messages.Message("HVT_StayedWoke".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, true);
                     return false;
@@ -528,7 +534,7 @@ namespace Hauts_VPE
         }
         public static bool HVT_VPE_MindControl_CompPostPostPrefix1(HediffComp_MindControl __instance)
         {
-            if (__instance.Pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(__instance.Pawn))
+            if (__instance.Pawn.story != null && PsychicTraitAndGeneCheckUtility.IsAwakenedPsychic(__instance.Pawn))
             {
                 Messages.Message("HVT_StayedWoke".Translate().CapitalizeFirst().Formatted(__instance.Pawn.Named("PAWN")).AdjustedFor(__instance.Pawn, "PAWN", true).Resolve(), __instance.Pawn, MessageTypeDefOf.RejectInput, true);
                 return false;
@@ -537,246 +543,8 @@ namespace Hauts_VPE
         }
         public static bool HVT_VPE_MindControl_CompPostPostPrefix2(HediffComp_MindControl __instance)
         {
-            if (__instance.Pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(__instance.Pawn))
+            if (__instance.Pawn.story != null && PsychicTraitAndGeneCheckUtility.IsAwakenedPsychic(__instance.Pawn))
             {
-                return false;
-            }
-            return true;
-        }
-    }
-    [DefOf]
-    public static class HautsTraitsVPEDefOf
-    {
-        static HautsTraitsVPEDefOf()
-        {
-            DefOfHelper.EnsureInitializedInCtor(typeof(HautsTraitsVPEDefOf));
-        }
-        public static HediffDef HVT_Dominicus;
-        public static HediffDef HVT_TabulaRasaAcumen;
-        public static HediffDef HVT_TabulaRasaTraitGiver;
-        public static BackstoryDef HVT_TabulaRasaChild;
-        public static BackstoryDef HVT_TabulaRasaAdult;
-    }
-    public class Ability_TabulaRasa : Ability_TargetCorpse
-    {
-        public override void Cast(params GlobalTargetInfo[] targets)
-        {
-            base.Cast(targets);
-            foreach (GlobalTargetInfo globalTargetInfo in targets)
-            {
-                Corpse corpse = globalTargetInfo.Thing as Corpse;
-                Pawn pawn = corpse.InnerPawn;
-                if (ResurrectionUtility.TryResurrectWithSideEffects(pawn))
-                {
-                    if (pawn.story != null)
-                    {
-                        List<Trait> traitsToRemove = new List<Trait>();
-                        foreach (Trait t in pawn.story.traits.allTraits)
-                        {
-                            if (!HautsUtility.IsExciseTraitExempt(t.def,false) || PsychicAwakeningUtility.IsAwakenedTrait(t.def) || PsychicAwakeningUtility.IsTranscendentTrait(t.def))
-                            {
-                                traitsToRemove.Add(t);
-                            }
-                        }
-                        foreach (Trait t in traitsToRemove)
-                        {
-                            pawn.story.traits.RemoveTrait(t);
-                        }
-                        if (this.pawn.Faction != null && pawn.Faction != null)
-                        {
-                            pawn.SetFaction(this.pawn.Faction);
-                        }
-                        if (ModsConfig.IdeologyActive && this.pawn.ideo != null && pawn.ideo != null)
-                        {
-                            pawn.ideo.SetIdeo(this.pawn.ideo.Ideo);
-                        }
-                        if (pawn.story.GetBackstory(BackstorySlot.Childhood) != null)
-                        {
-                            pawn.story.Childhood = HautsTraitsVPEDefOf.HVT_TabulaRasaChild;
-                        }
-                        if (pawn.story.GetBackstory(BackstorySlot.Adulthood) != null)
-                        {
-                            pawn.story.Adulthood = HautsTraitsVPEDefOf.HVT_TabulaRasaAdult;
-                        }
-                    }
-                    if (pawn.skills != null)
-                    {
-                        foreach (SkillRecord sr in pawn.skills.skills)
-                        {
-                            sr.Level = 0;
-                            int randPassion = (int)Math.Ceiling(Rand.Value * 5);
-                            if (randPassion <= 2)
-                            {
-                                sr.passion = Passion.None;
-                            } else if (randPassion <= 4) {
-                                sr.passion = Passion.Minor;
-                            } else {
-                                sr.passion = Passion.Major;
-                            }
-                        }
-                        pawn.skills.Notify_SkillDisablesChanged();
-                    }
-                    if (!this.pawn.health.hediffSet.HasHediff(HautsTraitsVPEDefOf.HVT_Dominicus))
-                    {
-                        Hediff_Catarina newPawnLink = (Hediff_Catarina)HediffMaker.MakeHediff(HautsTraitsVPEDefOf.HVT_Dominicus, this.pawn, null);
-                        this.pawn.health.AddHediff(newPawnLink);
-                        newPawnLink.thoseRisen.Add(pawn);
-                    } else {
-                        Hediff_Catarina pawnLink = (Hediff_Catarina)this.pawn.health.hediffSet.GetFirstHediffOfDef(HautsTraitsVPEDefOf.HVT_Dominicus);
-                        pawnLink.thoseRisen.Add(pawn);
-                    }
-                    pawn.Notify_DisabledWorkTypesChanged();
-                    Hediff hediff = HediffMaker.MakeHediff(HautsTraitsVPEDefOf.HVT_TabulaRasaAcumen, pawn, null);
-                    HediffComp_Disappears hediffComp_Disappears = hediff.TryGetComp<HediffComp_Disappears>();
-                    hediffComp_Disappears.ticksToDisappear = (int)(120000 * this.pawn.GetStatValue(StatDefOf.PsychicSensitivity));
-                    pawn.health.AddHediff(hediff, null, null, null);
-                    Hediff_TraitGiver hediff2 = (Hediff_TraitGiver)HediffMaker.MakeHediff(HautsTraitsVPEDefOf.HVT_TabulaRasaTraitGiver, pawn, null);
-                    pawn.health.AddHediff(hediff2, null, null, null);
-                    hediff2.resurrector = this.pawn;
-                }
-            }
-        }
-    }
-    public class Hediff_Catarina : Hediff
-    {
-        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
-        {
-            base.Notify_PawnDied(dinfo, culprit);
-            foreach (Pawn p in thoseRisen)
-            {
-                if (p.health.hediffSet.HasHediff(HautsTraitsVPEDefOf.HVT_TabulaRasaTraitGiver))
-                {
-                    Hediff_TraitGiver traitGiver = (Hediff_TraitGiver)p.health.hediffSet.GetFirstHediffOfDef(HautsTraitsVPEDefOf.HVT_TabulaRasaTraitGiver);
-                    traitGiver.resurrector = null;
-                }
-                p.Kill(null);
-            }
-            this.pawn.health.RemoveHediff(this);
-        }
-        public List<Pawn> thoseRisen = new List<Pawn>();
-    }
-    public class Hediff_TraitGiver : HediffWithComps
-    {
-        public override void PostAdd(DamageInfo? dinfo)
-        {
-            base.PostAdd(dinfo);
-            if (this.pawn.story == null || this.pawn.DevelopmentalStage.Baby() || this.pawn.DevelopmentalStage.Newborn())
-            {
-                this.Severity = -1f;
-            }
-        }
-        public override void PostRemoved()
-        {
-            base.PostRemoved();
-            if (this.resurrector != null && this.resurrector.health.hediffSet.HasHediff(HautsTraitsVPEDefOf.HVT_Dominicus))
-            {
-                Hediff_Catarina pawnLink = (Hediff_Catarina)this.resurrector.health.hediffSet.GetFirstHediffOfDef(HautsTraitsVPEDefOf.HVT_Dominicus);
-                pawnLink.thoseRisen.Remove(this.pawn);
-            }
-        }
-        public override void PostTickInterval(int delta)
-        {
-            base.PostTickInterval(delta);
-            if (this.pawn.IsHashIntervalTick(60, delta) && this.pawn.story != null)
-            {
-                if (Rand.MTBEventOccurs(2, 60000f, 60f))
-                {
-                    List<TraitDef> traitPool = new List<TraitDef>();
-                    foreach (TraitDef td in DefDatabase<TraitDef>.AllDefs)
-                    {
-                        if (!HautsUtility.IsExciseTraitExempt(td,false) && !this.pawn.story.traits.HasTrait(td))
-                        {
-                            bool toAdd = true;
-                            foreach (Trait t in this.pawn.story.traits.allTraits)
-                            {
-                                if (t.def.ConflictsWith(td))
-                                {
-                                    toAdd = false;
-                                }
-                            }
-                            foreach (SkillRecord sr in this.pawn.skills.skills)
-                            {
-                                if ((sr.TotallyDisabled && td.RequiresPassion(sr.def)) || (sr.passion != Passion.None && td.ConflictsWithPassion(sr.def)))
-                                {
-                                    toAdd = false;
-                                }
-                            }
-                            if (toAdd)
-                            {
-                                traitPool.Add(td);
-                            }
-                        }
-                    }
-                    TraitDef toGain = traitPool.RandomElement<TraitDef>();
-                    Trait trait = new Trait(toGain, PawnGenerator.RandomTraitDegree(toGain), false);
-                    this.pawn.story.traits.GainTrait(trait);
-                    TaggedString message;
-                    if (HautsUtility.IsHighFantasy())
-                    {
-                        message = "HVT_TabulaRasadFantasy".Translate(this.pawn.Name.ToStringShort, trait.Label);
-                    } else {
-                        message = "HVT_TabulaRasad".Translate(this.pawn.Name.ToStringShort, trait.Label);
-                    }
-                    if (this.pawn.story.traits.allTraits.Count >= HVT_Mod.settings.traitsMax)
-                    {
-                        message += "HVT_EndTabulaRasa".Translate(this.pawn.Name.ToStringShort);
-                    }
-                    Messages.Message(message, this.pawn, MessageTypeDefOf.NeutralEvent, true);
-                }
-                if (this.pawn.story.traits.allTraits.Count >= HVT_Mod.settings.traitsMax)
-                {
-                    this.Severity = -1f;
-                }
-            }
-        }
-        public Pawn resurrector = null;
-    }
-    public class AbilityExtension_ExciseTrait : AbilityExtension_AbilityMod
-    {
-        public override void Cast(GlobalTargetInfo[] targets, VEF.Abilities.Ability ability)
-        {
-            base.Cast(targets, ability);
-            foreach (GlobalTargetInfo globalTargetInfo in targets)
-            {
-                Pawn pawn = globalTargetInfo.Thing as Pawn;
-                if (pawn.story != null && pawn.story.traits.allTraits.Count > 0)
-                {
-                    List<Trait> allTakeableTraits = new List<Trait>();
-                    foreach (Trait t in pawn.story.traits.allTraits)
-                    {
-                        if (t.def.exclusionTags != null && t.def.exclusionTags.Contains("SexualOrientation"))
-                        {
-                            continue;
-                        }
-                        if (t.def != HVTRoyaltyDefOf.HVT_LatentPsychic && !PsychicAwakeningUtility.IsAwakenedTrait(t.def) && !PsychicAwakeningUtility.IsTranscendentTrait(t.def) && !HautsUtility.IsExciseTraitExempt(t.def,false))
-                        {
-                            allTakeableTraits.Add(t);
-                        }
-                    }
-                    if (allTakeableTraits.Count > 0)
-                    {
-                        Trait traitToRemove = allTakeableTraits.RandomElement();
-                        pawn.story.traits.RemoveTrait(traitToRemove, true);
-                        pawn.story.traits.RecalculateSuppression();
-                    } else {
-                        Messages.Message("HVT_ExciseTraitExemptionFailure".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, true);
-                    }
-                } else {
-                    Messages.Message("HVT_ExciseTraitTraitlessFailure".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, true);
-                }
-            }
-        }
-    }
-    public class AbilityExtension_CantTargetWoke : AbilityExtension_AbilityMod
-    {
-        public override bool ValidateTarget(LocalTargetInfo target, VEF.Abilities.Ability ability, bool showMessages = true)
-        {
-            if (target.Thing != null && target.Thing is Pawn p && p.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(p))
-            {
-                if (showMessages)
-                {
-                    Messages.Message("CannotUseAbility".Translate(ability.def.label) + ": " + "HVT_CantTargetWoke".Translate(), p, MessageTypeDefOf.RejectInput, false);
-                }
                 return false;
             }
             return true;

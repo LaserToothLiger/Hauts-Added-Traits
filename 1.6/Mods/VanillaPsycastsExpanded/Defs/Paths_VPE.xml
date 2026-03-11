@@ -100,8 +100,6 @@
 		<menuString>HVT_HediffMenu</menuString>
 		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
-        <onlyApplyToSelf>True</onlyApplyToSelf>
-        <!--<replaceExisting>true</replaceExisting>-->
       </li>
 	  <li Class = "CompProperties_AbilityRemoveHediff">
         <compClass>CompAbilityEffect_RemoveHediff</compClass>
@@ -270,8 +268,6 @@
 		<menuString>HVT_HediffMenu</menuString>
 		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
-        <onlyApplyToSelf>True</onlyApplyToSelf>
-        <!--<replaceExisting>true</replaceExisting>-->
       </li>
 	  <li Class = "CompProperties_AbilityRemoveHediff">
         <compClass>CompAbilityEffect_RemoveHediff</compClass>
@@ -687,8 +683,6 @@
 		<menuString>HVT_HediffMenu</menuString>
 		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
-        <onlyApplyToSelf>True</onlyApplyToSelf>
-        <!--<replaceExisting>true</replaceExisting>-->
       </li>
 	  <li Class = "CompProperties_AbilityRemoveHediff">
         <compClass>CompAbilityEffect_RemoveHediff</compClass>

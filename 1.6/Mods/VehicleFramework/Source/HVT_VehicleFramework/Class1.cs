@@ -1,12 +1,6 @@
 ﻿using HarmonyLib;
 using HautsTraits;
-using RimWorld.Planet;
-using RimWorld;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using Vehicles;
 using Vehicles.World;
@@ -28,6 +22,7 @@ namespace HVT_VehicleFramework
                                prefix: new HarmonyMethod(patchType, nameof(HVTSwitchToCaravanPrefix)));
             }
         }
+        //when aerial vehicles finish deploying, Skybound and Earthborne pawns should get the appropriate moodlets (and grav nausea in the latter case)
         public static void HVTFinalizeLandingPostfix(VehicleSkyfaller_Arriving __instance)
         {
             if (__instance.vehicle != null && __instance.vehicle.AllPawnsAboard != null)

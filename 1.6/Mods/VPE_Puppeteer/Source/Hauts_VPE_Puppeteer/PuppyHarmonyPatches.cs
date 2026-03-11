@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HarmonyLib;
-using HautsFramework;
 using HautsTraitsRoyalty;
 using VPEPuppeteer;
 using RimWorld;
@@ -23,8 +20,6 @@ namespace Hauts_VPE_Puppeteer
             Harmony harmony = new Harmony(id: "rimworld.hautarche.hautsvpepcompatibility.main");
             harmony.Patch(AccessTools.Method(typeof(TraitSet), nameof(TraitSet.GainTrait)),
                           postfix: new HarmonyMethod(patchType, nameof(HVT_VPEP_GainTraitPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(Ability_Puppet), nameof(Ability_Puppet.ValidateTarget)),
-                            postfix: new HarmonyMethod(patchType, nameof(HVT_VPEP_ValidateTargetPostfix)));
             harmony.Patch(AccessTools.Method(typeof(Ability_Puppet), nameof(Ability_Puppet.Cast)),
                             prefix: new HarmonyMethod(patchType, nameof(HVT_VPEP_CastPrefix)));
             harmony.Patch(AccessTools.Method(typeof(Ability_Puppet), nameof(Ability_Puppet.Cast)),
@@ -39,10 +34,11 @@ namespace Hauts_VPE_Puppeteer
             FieldInfo field = type.GetField(fieldName, bindFlags);
             return field.GetValue(instance);
         }
+        //being a Puppet prevents the acquisition of woke or trans traits. This naturally means that puppeting someone will not give them those traits.
         public static void HVT_VPEP_GainTraitPostfix(TraitSet __instance, Trait trait)
         {
             Pawn pawn = GetInstanceField(typeof(TraitSet), __instance, "pawn") as Pawn;
-            if (PsychicAwakeningUtility.IsAwakenedTrait(trait.def) || PsychicAwakeningUtility.IsTranscendentTrait(trait.def))
+            if (PsychicTraitAndGeneCheckUtility.IsAwakenedTrait(trait.def) || PsychicTraitAndGeneCheckUtility.IsTranscendentTrait(trait.def))
             {
                 Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VPEP_DefOf.VPEP_Puppet, false);
                 if (hediff != null)
@@ -51,6 +47,7 @@ namespace Hauts_VPE_Puppeteer
                 }
             }
         }
+        //Latent Psychic is not removed by the casting of Ability_Puppet. I mean, technically it is, we're just adding it back immediately after
         public static void HVT_VPEP_CastPrefix(out List<Trait> __state, Ability_Puppet __instance, GlobalTargetInfo[] targets)
         {
             Pawn pawn = targets[0].Thing as Pawn;
@@ -89,17 +86,7 @@ namespace Hauts_VPE_Puppeteer
                 }
             }
         }
-        public static void HVT_VPEP_ValidateTargetPostfix(ref bool __result, LocalTargetInfo target, bool showMessages)
-        {
-            if (target.Pawn != null && target.Pawn.story != null && PsychicAwakeningUtility.IsAwakenedPsychic(target.Pawn))
-            {
-                if (showMessages)
-                {
-                    Messages.Message("HVT_WontTargetAwakened".Translate(), MessageTypeDefOf.CautionInput, true);
-                }
-                __result = false;
-            }
-        }
+        //mind jump moves all psychic trait tree traits to the new big honcho.
         public static void HVT_VPEP_TransferMindPostfix(Pawn puppetToMaster, Pawn masterToPuppet)
         {
             if (puppetToMaster.story != null && masterToPuppet.story != null)
@@ -108,11 +95,11 @@ namespace Hauts_VPE_Puppeteer
                 List<Trait> transes = new List<Trait>();
                 foreach (Trait t in masterToPuppet.story.traits.allTraits)
                 {
-                    if (t.def == HVTRoyaltyDefOf.HVT_LatentPsychic || PsychicAwakeningUtility.IsAwakenedTrait(t.def))
+                    if (t.def == HVTRoyaltyDefOf.HVT_LatentPsychic || PsychicTraitAndGeneCheckUtility.IsAwakenedTrait(t.def))
                     {
                         psychicTraits.Add(t);
                     }
-                    else if (PsychicAwakeningUtility.IsTranscendentTrait(t.def))
+                    else if (PsychicTraitAndGeneCheckUtility.IsTranscendentTrait(t.def))
                     {
                         transes.Add(t);
                     }
