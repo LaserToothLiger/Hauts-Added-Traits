@@ -585,10 +585,10 @@
 			<statOffsets>
 			  <MechControlGroups MayRequire="Ludeon.RimWorld.Biotech">1</MechControlGroups>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.25</ArmorRating_Electric>
+			  <MechRemoteControlDistanceOffset MayRequire="Ludeon.RimWorld.Biotech,lts.I">12</MechRemoteControlDistanceOffset>
 			</statOffsets>
 			<statFactors>
 			  <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">1.25</MechBandwidth>
-			  <MechRemoteControlDistanceOffset MayRequire="lts.I">1.2</MechRemoteControlDistanceOffset>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -2356,10 +2356,8 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <VEF_VerbRangeFactor>1</VEF_VerbRangeFactor>
+			  <MechRemoteControlDistanceOffset MayRequire="Ludeon.RimWorld.Biotech,lts.I">12</MechRemoteControlDistanceOffset>
 			</statOffsets>
-			<statFactors>
-			  <MechRemoteControlDistanceOffset MayRequire="lts.I">1.2</MechRemoteControlDistanceOffset>
-			</statFactors>
 		  </li>
 		</degreeDatas>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>

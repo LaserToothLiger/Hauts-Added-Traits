@@ -38,6 +38,7 @@ namespace HautsTraits
                 return this.props as CompProperties_PNF;
             }
         }
+        public override float CostFactor => HVT_Mod.settings.pnfCostFactor;
         public override bool AllowStackWith(Thing other)
         {
             return false;

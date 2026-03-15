@@ -13,6 +13,8 @@ namespace HautsTraits
         public bool disableHardStealthRaids = true;
         //arising from a discussion on the balance of personality neuroformatters - you can now opt for them to be nerfed (by starting with less charges).
         public float pnfStartingCharges = 10;
+        //adjust the price of personality neuroformatter.
+        public float pnfCostFactor = 1f;
         /*I don't have a solid idea for how many transcendences a single pawn should be able to have. Originally, the idea was that you'd only ever have one at once. But around the time I hit twentiesh transes
          * I started thinking about synergies. Specifically, what if you had a Scarab (incoming damage is taken as neural heat gain if you wouldn't exceed the limiter) Hornet (consumes neural heat to fire explosive bolts)?
          * There's a handful of other clear two-trans synergies (T4Ts?) which has led me to settle on 2 as the default. But I think you should be able to stack an obscene number of transes on one pawn if you're
@@ -51,6 +53,7 @@ namespace HautsTraits
             Scribe_Values.Look(ref disableStealthRaids, "disableStealthRaids", false);
             Scribe_Values.Look(ref disableHardStealthRaids, "disableHardStealthRaids", true);
             Scribe_Values.Look(ref pnfStartingCharges, "pnfStartingCharges", 10f);
+            Scribe_Values.Look(ref pnfCostFactor, "pnfCostFactor", 1f);
             Scribe_Values.Look(ref maxTranscendences, "maxTranscendences", 2f);
             Scribe_Values.Look(ref wokeGeneTransSuccessChance, "wokeGeneTransSuccessChance", 0.6f);
             Scribe_Values.Look(ref visibleTransEffect, "visibleTransEffect", true);
@@ -155,9 +158,25 @@ namespace HautsTraits
             y += 32;
             string origStringPNF = displayPNF;
             displayPNF = Widgets.TextField(new Rect(x + 10, y, 50, 32), displayPNF);
-            if (!displayPNF.Equals(origString))
+            if (!displayPNF.Equals(origStringPNF))
             {
                 this.ParseInput(displayPNF, settings.pnfStartingCharges, 10, out settings.pnfStartingCharges);
+            }
+            y -= 32;
+            Rect pnf2Rect = new Rect(x + 5 + halfWidth, y, halfWidth - 15, 32);
+            float origPNF2 = settings.pnfCostFactor;
+            settings.pnfCostFactor = Widgets.HorizontalSlider(pnf2Rect, settings.pnfCostFactor, 1f, 25f, true, "HVT_SettingPNFCostFactor".Translate(), "1x", "25x", 0.01f);
+            TooltipHandler.TipRegion(pnf2Rect.LeftPart(1f), "HVT_TooltipPNFCostFactor".Translate());
+            if (origPNF2 != settings.pnfCostFactor)
+            {
+                displayPNF2 = settings.pnfCostFactor.ToStringByStyle(ToStringStyle.FloatTwo);
+            }
+            y += 32;
+            string origStringPNF2 = displayPNF2;
+            displayPNF2 = Widgets.TextField(new Rect(x + 5 + halfWidth, y, 50, 32), displayPNF2);
+            if (!displayPNF2.Equals(origStringPNF2))
+            {
+                this.ParseInput(displayPNF2, settings.pnfCostFactor, 6, out settings.pnfCostFactor);
             }
             //transcendence settings
             y += 70;
@@ -221,6 +240,6 @@ namespace HautsTraits
             return "Hauts' Added Traits";
         }
         public static HVT_Settings settings;
-        public string displayMin, displayMax, displayPNF, displayTransMax, displayWokeGeneChance;
+        public string displayMin, displayMax, displayPNF, displayPNF2, displayTransMax, displayWokeGeneChance;
     }
 }
