@@ -1350,6 +1350,13 @@
 		</degreeDatas>
 		<conflictingTraits><li MayRequire="RavingLegend.MoreTraits">RT_Weak</li></conflictingTraits>
         <modExtensions>
+			<li Class="HautsFramework.TraitGrantedStuff">
+				<forcedBodyTypes>
+					<li><key>Thin</key><value><li>Hulk</li></value></li>
+					<li><key>Male</key><value><li>Hulk</li></value></li>
+					<li><key>Female</key><value><li>Hulk</li></value></li>
+				</forcedBodyTypes>
+            </li>
 			<li Class="HautsTraits.SpecificPNFChargeCost">
 				<chargeCosts>
 					<li><key>1</key><value>4</value></li>
