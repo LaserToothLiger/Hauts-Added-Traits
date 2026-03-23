@@ -1,8 +1,10 @@
 ﻿using HautsFramework;
+using HautsTraits;
 using RimWorld;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -174,7 +176,7 @@ namespace HautsTraitsRoyalty
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
-            if (this.pawn.IsHashIntervalTick(60000, delta) && this.pawn.Faction != null && this.pawn.Faction == Faction.OfPlayerSilentFail)
+            if (this.pawn.IsHashIntervalTick(60000, delta) && this.gainGoodwill && this.pawn.Faction != null && this.pawn.Faction == Faction.OfPlayerSilentFail)
             {
                 foreach (Faction f in Find.FactionManager.AllFactionsVisible)
                 {
@@ -185,6 +187,32 @@ namespace HautsTraitsRoyalty
                 }
             }
         }
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            if (this.uiIcon == null)
+            {
+                this.uiIcon = ContentFinder<Texture2D>.Get("Things/Mote/PsycastSkipFlash", true);
+            }
+            Command_Action cmdRecall = new Command_Action
+            {
+                defaultLabel = "HVT_Budgie_ToggleLabel".Translate().Resolve(),
+                defaultDesc = (!this.gainGoodwill ? "HVT_Budgie_ToggleTooltipOn" : "HVT_Budgie_ToggleTooltipOff").Translate().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(),
+                icon = this.uiIcon,
+                action = delegate ()
+                {
+                    this.gainGoodwill = !this.gainGoodwill;
+                }
+            };
+            yield return cmdRecall;
+            yield break;
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<bool>(ref this.gainGoodwill, "gainGoodwill", true, false);
+        }
+        Texture2D uiIcon;
+        public bool gainGoodwill = true;
     }
     //pawns gain a psysens-scaling mood opinion of Cuckoos. The last time I checked, this also for some reason scales off the Cuckoo's psychic sensitivity. I have no idea why that is the case, but it's fine.
     public class ThoughtWorker_HVT_TCuckoo : ThoughtWorker

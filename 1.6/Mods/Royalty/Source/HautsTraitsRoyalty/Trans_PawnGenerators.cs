@@ -13,10 +13,9 @@ namespace HautsTraitsRoyalty
 {
     /*Psychic Aptenodytes (emperor penguins) cause Men in Black (or women, the gender has been explicitly unfixed in this case) to appear when any awakening condition is met. Kind of.
      * For conditions that can be triggered by meeting a passive requirement (e.g. Mastery's 15 levels in any skill), it's a small chance to trigger per hour.
-     * Mastery's 15 levels in any skill or Love's >=500 net positive opinion of others: 0.1% chance
-     * Life's being immune to an illness in a life-threatening stage: 7.5% chance (this is rarer to provoke, hence the much higher chance)
-     * The super secret sauce behind Aptenodytes is that the Death awakening works too. And you know what the Death awakening does? It resurrects you instantly.
-     * Resurrection also generates another MiB, but that's less the point compared to sleeper infinite-resurrection. You need a no-corpse method of killing them to get rid of them.*/
+     * -Mastery's 15 levels in any skill or Love's >=500 net positive opinion of others: 0.1% chance
+     * -Life's being immune to an illness in a life-threatening stage: 7.5% chance (this is rarer to provoke, hence the much higher chance)
+     * Although the Death awakening also works with Emperor Penguins, they don't instantly resurrect the way that Death-type Latent Psychics do; instead it's on a 6d delay. This is for balance reasons.*/
     public class Hediff_Aptenodytes : HediffWithComps
     {
         public override void PostTickInterval(int delta)
@@ -56,10 +55,9 @@ namespace HautsTraitsRoyalty
         {
             base.Notify_PawnDied(dinfo, culprit);
             Pawn pawnToRez = this.pawn.Corpse != null ? this.pawn.Corpse.InnerPawn : this.pawn;
-            if (ResurrectionUtility.TryResurrectWithSideEffects(pawnToRez))
-            {
-                PsychicPowerUtility.ColonyHuddle(this.pawn);
-            }
+            Messages.Message("HVT_PengwengCanRez".Translate().CapitalizeFirst().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve(), this.pawn.Corpse != null ? this.pawn.Corpse : null, MessageTypeDefOf.NeutralEvent, true);
+            HautsMiscUtility.StartDelayedResurrection(this.pawn, new IntRange(1440), "HVT_PengwengRez", true, true, true, null);
+            PsychicPowerUtility.ColonyHuddle(this.pawn);
         }
         public override void Notify_Resurrected()
         {

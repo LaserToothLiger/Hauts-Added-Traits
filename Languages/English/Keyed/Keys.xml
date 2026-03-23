@@ -127,12 +127,17 @@
 <HVT_TransCerebrexScream>As it died, the cerebrex core released a psychic signal of profound complexity, which affected {PAWN_nameDef} in some way. Resultantly, </HVT_TransCerebrexScream>
 <!--other woke and trans messages-->
 <HVT_CaravanAnimaRez>{PAWN_nameDef} was saved from death by the presence of a nearby anima tree!</HVT_CaravanAnimaRez>
-<HVT_PengwengGetLabel>Summoned stranger</HVT_PengwengGetLabel>
-<HVT_PengwengGetText>{0} sent out a transcendent call, and {1} has answered.</HVT_PengwengGetText>
+<HVT_Budgie_ToggleLabel>Toggle goodwill gain</HVT_Budgie_ToggleLabel>
+<HVT_Budgie_ToggleTooltipOn>Activate the transcendent powers of {PAWN_nameDef}, causing daily goodwill gain with all factions.\n\nCurrently: Off</HVT_Budgie_ToggleTooltipOn>
+<HVT_Budgie_ToggleTooltipOff>Suppress the transcendent powers of {PAWN_nameDef}, preventing daily goodwill gain with all factions.\n\nCurrently: On</HVT_Budgie_ToggleTooltipOff>
 <HVT_CockroachCanRez>As a transcendent cockroach, even death is insufficient to stop {PAWN_nameDef}. {PAWN_pronoun} will be restored to life within 3 to 15 days, unless {PAWN_possessive} body is destroyed.</HVT_CockroachCanRez>
 <HVT_CockroachRez>As a transcendent cockroach, even death is insufficient to stop {PAWN_nameDef}. {PAWN_possessive} impressive regenerative abilities have restored {PAWN_objective} to life!</HVT_CockroachRez>
 <HVT_Deimos>Transcendent disaster aversion</HVT_Deimos>
 <HVT_Deimos2>The transcendent powers of {0} were able to prevent the following event from occuring: {1}</HVT_Deimos2>
+<HVT_PengwengGetLabel>Summoned stranger</HVT_PengwengGetLabel>
+<HVT_PengwengGetText>{0} sent out a transcendent call, and {1} has answered.</HVT_PengwengGetText>
+<HVT_PengwengCanRez>As a transcendent emperor penguin, {PAWN_nameDef} can return from the dead. {PAWN_pronoun} will be restored to life after 6 days, unless {PAWN_possessive} body is destroyed.</HVT_PengwengCanRez>
+<HVT_PengwengRez>The transcendent powers of {PAWN_nameDef} have restored {PAWN_objective} to life!</HVT_PengwengRez>
 <HVT_MynahLearnAbility>As a transcendent mynah, {0} managed to learn the {1} ability by studying {2} during a conversation!</HVT_MynahLearnAbility>
 <HVT_PitohuiFP>{PAWN_nameDef} contracted food poisoning, but {PAWN_possessive} transcendent powers dealt with the issue immediately.</HVT_PitohuiFP>
 <HVT_PitohuiOD>{PAWN_nameDef} began overdosing on a drug, but {PAWN_possessive} transcendent powers dealt with the issue immediately.</HVT_PitohuiOD>
