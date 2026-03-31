@@ -300,6 +300,29 @@ namespace HautsTraitsRoyalty
                         AwakeningMethodsUtility.AwakenPsychicTalent(pawn, false, "", "", true);
                     }
                 }
+                //if the trans trait was blocked due to not having a woke trait or gene, remove any hediffs and abilities it was going to grant
+                if (!pawn.story.traits.HasTrait(trait.def))
+                {
+                    for (int i = pawn.health.hediffSet.hediffs.Count - 1; i >= 0; i--)
+                    {
+                        HediffComp_ForcedByOtherProperty fobp = pawn.health.hediffSet.hediffs[i].TryGetComp<HediffComp_ForcedByOtherProperty>();
+                        if (fobp != null && fobp.Props.forcingTraits.Contains(trait.def))
+                        {
+                            pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs[i]);
+                        }
+                    }
+                    if (pawn.abilities != null && pawn.abilities.abilities != null)
+                    {
+                        for (int i = pawn.abilities.abilities.Count - 1; i >= 0; i--)
+                        {
+                            CompAbilityEffect_ForcedByOtherProperty fobp = pawn.abilities.abilities[i].CompOfType<CompAbilityEffect_ForcedByOtherProperty>();
+                            if (fobp != null && fobp.Props.forcingTraits.Contains(trait.def))
+                            {
+                                pawn.abilities.RemoveAbility(pawn.abilities.abilities[i].def);
+                            }
+                        }
+                    }
+                }
             }
             if (trait.def.HasModExtension<GrantWordPsycast>() && pawn.abilities != null)
             {

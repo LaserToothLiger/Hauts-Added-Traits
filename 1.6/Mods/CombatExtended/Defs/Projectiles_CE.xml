@@ -18,7 +18,7 @@
   </ThingDef>
   
   <!--fulmar-->
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet" MayRequire="Ludeon.RimWorld.Royalty">
     <defName>HVT_PsychicFulmarProjectile_CE</defName>
     <label>psychic siege blast</label>
 	<graphicData>

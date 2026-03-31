@@ -618,6 +618,11 @@
 			  <VEF_EnergyShieldEnergyMaxFactor>0.35</VEF_EnergyShieldEnergyMaxFactor>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.4</ArmorRating_Electric>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_ElectricalDamageFactor>0</Hauts_ElectricalDamageFactor>
+			  <Hauts_HeatDamageFactor>0.5</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -968,6 +973,9 @@
 			<description>{PAWN_nameDef} is all but immune to high temperatures. In close-range combat, {PAWN_pronoun} repeatedly unleashes flame novas, and {PAWN_possessive} psycasts drench hostile entities and structures in chemfuel.</description>
 			<statFactors>
 			  <Flammability>0</Flammability>
+			  <Hauts_ColdDamageFactor>0.15</Hauts_ColdDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			  <Hauts_HeatDamageFactor>0</Hauts_HeatDamageFactor>
 			</statFactors>
 			<statOffsets>
 			  <ComfyTemperatureMax>1000</ComfyTemperatureMax>
@@ -1005,6 +1013,9 @@
 			  <ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.06</ActivitySuppressionRate>
 			  <Suppressability MayRequire="CETeam.CombatExtended">-1</Suppressability>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_PsychicDamageFactor>0</Hauts_PsychicDamageFactor>
+			</statFactors>
 			<disallowedThoughts>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">SpokeToDisturbingMood</li>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">HeardInhumanRambling</li>
@@ -1056,6 +1067,9 @@
 			<label>psychic echinoid</label>
 			<description>{PAWN_nameDef} radiates an aura of pain, and is unable to feel it {PAWN_objective}self. Foes who stay within the aura for too long also begin to lose consciousness.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statFactors>
+			  <Hauts_PsychicDamageFactor>0</Hauts_PsychicDamageFactor>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1084,6 +1098,9 @@
 			<statFactors>
 			  <Flammability>0</Flammability>
 			  <Radiation MayRequire="Dubwise.Rimatomics">0.2</Radiation>
+			  <Hauts_ColdDamageFactor>0.1</Hauts_ColdDamageFactor>
+			  <Hauts_HeatDamageFactor>0.1</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.2</Hauts_RadiationDamageFactor>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -1110,6 +1127,10 @@
 			<statOffsets>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.6</ArmorRating_Electric>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_ElectricalDamageFactor>0</Hauts_ElectricalDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1183,6 +1204,9 @@
 			<statOffsets>
 			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">1</NightVisionEfficiency>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -1246,6 +1270,9 @@
 			<description>{PAWN_nameDef} is favored by the flame. {PAWN_pronoun} is all but immune to high temperatures. While meditating, {PAWN_pronoun} emanates heat. {PAWN_possessive} psycasts can set nearby foes ablaze and inflict heatstroke on the victims; when {PAWN_pronoun} strikes, {PAWN_possessive} victims are scalded.</description>
 			<statFactors>
 			  <Flammability>0</Flammability>
+			  <Hauts_ColdDamageFactor>0.15</Hauts_ColdDamageFactor>
+			  <Hauts_HeatDamageFactor>0</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
 			</statFactors>
 			<statOffsets>
 			  <ComfyTemperatureMax>1000</ComfyTemperatureMax>
@@ -1279,6 +1306,12 @@
 			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
 			  <Hauts_OverdoseSusceptibility>0.2</Hauts_OverdoseSusceptibility>
+			  <Hauts_AcidDamageFactor>0</Hauts_AcidDamageFactor>
+			  <Hauts_ColdDamageFactor>0</Hauts_ColdDamageFactor>
+			  <Hauts_ElectricalDamageFactor>0</Hauts_ElectricalDamageFactor>
+			  <Hauts_HeatDamageFactor>0.15</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.15</Hauts_RadiationDamageFactor>
+			  <Hauts_ToxicDamageFactor>0</Hauts_ToxicDamageFactor>
 			</statFactors>
 			<statOffsets><!--yes, I know you get 100% toxic resistance at a value of 1. This is to make it so effects that would induce toxic susceptibility have to chew through an extreme amount of "overcapped" resistance.-->
 			  <ToxicResistance>100</ToxicResistance>
@@ -1532,6 +1565,9 @@
 			<statOffsets>
 			  <Hauts_SkipcastRangeFactor>1</Hauts_SkipcastRangeFactor>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_SkipDamageFactor>0.05</Hauts_SkipDamageFactor>
+			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -2179,6 +2215,9 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statFactors>
 			  <Flammability>0</Flammability>
+			  <Hauts_ColdDamageFactor>0</Hauts_ColdDamageFactor>
+			  <Hauts_HeatDamageFactor>0.15</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
 			</statFactors>
 			<statOffsets>
 			  <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
@@ -2190,7 +2229,7 @@
             <li Class="HautsFramework.TraitGrantedStuff">
 				<grantedHediffs>
 					<li>
-						<key>0</key><value><li>HVT_THediffNotothen</li><li>HVT_THediffNotothen2</li></value>
+						<key>0</key><value><li>HVT_THediffNotothen</li></value>
 					</li>
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
@@ -2435,6 +2474,8 @@
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
 			  <Hauts_RecyclingSpeed MayRequire="VanillaExpanded.Recycling">1.5</Hauts_RecyclingSpeed>
+			  <Hauts_AcidDamageFactor>0.25</Hauts_AcidDamageFactor>
+			  <Hauts_ToxicDamageFactor>0</Hauts_ToxicDamageFactor>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -2524,6 +2565,9 @@
 			<label>psychic ptarmigan</label>
 			<description>When {PAWN_nameDef} is happy, those near {PAWN_objective} gain a variety of benefits; when {PAWN_pronoun} is sad, nearby foes are demoralized and aggravated.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statFactors>
+			  <Hauts_PsychicDamageFactor>0</Hauts_PsychicDamageFactor>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>
@@ -2788,6 +2832,9 @@
 			<description>{PAWN_nameDef} is favored by the cold. {PAWN_pronoun} is all but immune to cold temperatures. While meditating, {PAWN_pronoun} saps heat from the environment. {PAWN_possessive} very presence chills {PAWN_possessive} foes; when {PAWN_pronoun} strikes, {PAWN_possessive} victims suffer from hypothermia.</description>
 			<statFactors>
 			  <Flammability>0</Flammability>
+			  <Hauts_ColdDamageFactor>0</Hauts_ColdDamageFactor>
+			  <Hauts_HeatDamageFactor>0.15</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
 			</statFactors>
 			<statOffsets>
 			  <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
@@ -2942,6 +2989,7 @@
 			</statOffsets>
 			<statFactors>
 			  <VAEI_SanityMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.25</VAEI_SanityMultiplier>
+			  <Hauts_PsychicDamageFactor>0</Hauts_PsychicDamageFactor>
 			</statFactors>
 			<disallowedThoughts>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">SpokeToDisturbingMood</li>
@@ -3140,6 +3188,10 @@
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">0.25</Mashed_Ashlands_AshResistance>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.5</SmokeSensitivity>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_AcidDamageFactor>0</Hauts_AcidDamageFactor>
+			  <Hauts_ToxicDamageFactor>0</Hauts_ToxicDamageFactor>
+			</statFactors>
 			<disallowedThoughts>
 			  <li MayRequire="Ludeon.RimWorld.Biotech">NoxiousHaze</li>
 			</disallowedThoughts>

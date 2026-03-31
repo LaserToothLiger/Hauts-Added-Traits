@@ -313,6 +313,10 @@
       <li>
         <label>???</label>
 		<becomeVisible>false</becomeVisible>
+		<statFactors>
+		  <Hauts_PsychicDamageFactor>0.9</Hauts_PsychicDamageFactor>
+		  <Hauts_SkipDamageFactor>0.75</Hauts_SkipDamageFactor>
+		</statFactors>
       </li>
 	  <!--this, and several of the transcendences, grant certain damage type resists. Those are assigned in the Framework in DamageFactorGroupDefs.xml because it's easier that way and because Sarg is Sarg whatchu gonna do-->
     </stages>
@@ -1270,7 +1274,6 @@
 		<damageFactors>
 		  <Neuralizer MayRequire="CETeam.CombatExtended">0.5</Neuralizer>
 		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0.5</Neuralizer_weak>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
 		</damageFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -1726,11 +1729,6 @@
     <stages>
       <li>
 		<becomeVisible>false</becomeVisible>
-		<damageFactors>
-		  <Vaporize>0.2</Vaporize>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
-		</damageFactors>
       </li>
     </stages>
     <comps>
@@ -1769,10 +1767,10 @@
 			<statOffsets>
 			  <Flammability>0.5</Flammability>
 			</statOffsets>
-			<damageFactors>
-			  <Vaporize>1.5</Vaporize>
-			  <Thermobaric MayRequire="CETeam.CombatExtended">1.5</Thermobaric>
-			</damageFactors>
+			<statFactors>
+			  <Hauts_HeatDamageFactor>1.5</Hauts_HeatDamageFactor>
+			  <Hauts_RadiationDamageFactor>1.5</Hauts_RadiationDamageFactor>
+			</statFactors>
 		  </li>
 		</stages>
 		<comps>
@@ -1932,10 +1930,7 @@
     <defaultLabelColor>(0.53, 0.53, 0.7)</defaultLabelColor>
     <stages>
       <li>
-		<damageFactors>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.3</Thermobaric>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.8</VQE_CryptoCut>
-		</damageFactors>
+		<becomeVisible>false</becomeVisible>
       </li>
     </stages>
     <comps>
@@ -1979,10 +1974,12 @@
 			<statFactors>
 				<Flammability>0.5</Flammability>
 				<Radiation MayRequire="Dubwise.Rimatomics">0.4</Radiation>
+				<Hauts_ColdDamageFactor>0.2</Hauts_ColdDamageFactor>
+				<Hauts_HeatDamageFactor>0.2</Hauts_HeatDamageFactor>
+				<Hauts_RadiationDamageFactor>0.4</Hauts_RadiationDamageFactor>
 			</statFactors>
 			<damageFactors>
 			  <Thermobaric MayRequire="CETeam.CombatExtended">0.65</Thermobaric>
-			  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.9</VQE_CryptoCut>
 			</damageFactors>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 		  </li>
@@ -2164,21 +2161,11 @@
         <minSeverity>0.001</minSeverity>
         <label>inactive</label>
 		<becomeVisible>false</becomeVisible>
-		<damageFactors>
-		  <Vaporize>0.2</Vaporize>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
-		</damageFactors>
       </li>
 	  <li>
         <minSeverity>1</minSeverity>
         <label>pushing heat</label>
 		<becomeVisible>false</becomeVisible>
-		<damageFactors>
-		  <Vaporize>0.2</Vaporize>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.5</Thermobaric>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.6</VQE_CryptoCut>
-		</damageFactors>
 	  </li>
     </stages>
     <comps>
@@ -2247,13 +2234,9 @@
       <li>
 		<becomeVisible>false</becomeVisible>
 		<damageFactors>
-		  <EMP>0</EMP>
 		  <Neuralizer MayRequire="CETeam.CombatExtended">0</Neuralizer>
 		  <Neuralizer_weak MayRequire="CETeam.CombatExtended">0</Neuralizer_weak>
 		  <Tranquilizer MayRequire="CETeam.CombatExtended">0</Tranquilizer>
-		  <Vaporize>0.2</Vaporize>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.25</Thermobaric>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
 		</damageFactors>
 	  </li>
     </stages>
@@ -3742,26 +3725,14 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_THediffNotothen2</defName>
     <label>transcendent notothen resistances</label>
-    <description>These are handled separately because otherwise they'd scale with the temperature.</description>
+    <description>Deprecated.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.0, 0.44, 0.9)</defaultLabelColor>
     <stages>
       <li>
 	    <becomeVisible>false</becomeVisible>
-		<damageFactors>
-		  <Vaporize>0.2</Vaporize>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.25</VQE_CryptoCut>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.75</Thermobaric>
-		</damageFactors>
       </li>
     </stages>
-	<comps>
-	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
-		<forcingTraits>
-			<li>HVT_TTraitNotothen</li>
-		</forcingTraits>
-	  </li>
-	</comps>
   </HediffDef>
   <!--O-->
   <HediffDef ParentName="HVT_TraitHediffBase">
@@ -3875,6 +3846,12 @@
             <postFactor>1.03</postFactor>
           </li>
         </capMods>
+		<statFactors>
+		  <Hauts_AcidDamageFactor>0.9</Hauts_AcidDamageFactor>
+		  <Hauts_HeatDamageFactor>0.9</Hauts_HeatDamageFactor>
+		  <Hauts_RadiationDamageFactor>0.9</Hauts_RadiationDamageFactor>
+		  <Hauts_ToxicDamageFactor>0.9</Hauts_ToxicDamageFactor>
+		</statFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
     </stages>
@@ -3929,10 +3906,11 @@
 		</statOffsets>
 		<statFactors>
 		  <MoveSpeed>2</MoveSpeed>
+		  <Hauts_AcidDamageFactor>0.5</Hauts_AcidDamageFactor>
+		  <Hauts_HeatDamageFactor>0.5</Hauts_HeatDamageFactor>
+		  <Hauts_RadiationDamageFactor>0.5</Hauts_RadiationDamageFactor>
+		  <Hauts_ToxicDamageFactor>0.5</Hauts_ToxicDamageFactor>
 		</statFactors>
-		<damageFactors>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.95</Thermobaric>
-		</damageFactors>
 		<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
@@ -4717,6 +4695,7 @@
 			<statFactors>
 				<JoyFallRateFactor>0</JoyFallRateFactor>
 				<RestFallRateFactor>0.6</RestFallRateFactor>
+				<Hauts_PsychicDamageFactor>0.5</Hauts_PsychicDamageFactor>
 			</statFactors>
 			<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 		  </li>
@@ -5088,22 +5067,12 @@
         <label>inactive</label>
 		<becomeVisible>false</becomeVisible>
 		<totalBleedFactor>0</totalBleedFactor>
-		<damageFactors>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.15</VQE_CryptoCut>
-		  <Vaporize>0.2</Vaporize>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.75</Thermobaric>
-		</damageFactors>
       </li>
 	  <li>
         <minSeverity>1</minSeverity>
         <label>pushing cold</label>
 		<becomeVisible>false</becomeVisible>
 		<totalBleedFactor>0</totalBleedFactor>
-		<damageFactors>
-		  <VQE_CryptoCut MayRequire="vanillaquestsexpanded.cryptoforge">0.15</VQE_CryptoCut>
-		  <Vaporize>0.2</Vaporize>
-		  <Thermobaric MayRequire="CETeam.CombatExtended">0.75</Thermobaric>
-		</damageFactors>
 	  </li>
     </stages>
     <comps>
@@ -6177,6 +6146,8 @@
 			  <ToxicResistance>0.1</ToxicResistance>
 			  <ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
 			  <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+			  <Hauts_AcidDamageFactor>1.25</Hauts_AcidDamageFactor>
+			  <Hauts_ToxicDamageFactor>1.25</Hauts_ToxicDamageFactor>
 			</statFactors>
 			<damageFactors>
 			  <Tranquilizer MayRequire="CETeam.CombatExtended">1.25</Tranquilizer>
