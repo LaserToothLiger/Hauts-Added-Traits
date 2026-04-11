@@ -7,6 +7,8 @@
 <HVT_TooltipSkulkerEvents>If this option is unchecked, hostile factions will use Skulkers in new, rare raid types that present unique challenges.</HVT_TooltipSkulkerEvents>
 <HVT_SettingSkulkerEvents2>Disable most dangerous Skulker events</HVT_SettingSkulkerEvents2>
 <HVT_TooltipSkulkerEvents2>If both this AND the previous setting are unchecked, hostile factions can use Skulkers in challenging and potentially unfair raid types.</HVT_TooltipSkulkerEvents2>
+<HVT_SettingStrengthBodyType>Strength traits can change body type</HVT_SettingStrengthBodyType>
+<HVT_TooltipStrengthBodyType>If enabled, the Mighty and Herculean traits cause humans that would have the "thin" or "average" body types to instead have the "hulk" body type.\n\nToggling this on or off will not change the body type of pawns that already have either trait.</HVT_TooltipStrengthBodyType>
 <HVT_GenePuristsHAR>Xenotypists hate aliens</HVT_GenePuristsHAR>
 <HVT_GenePuristsHARTooltip>If using a mod that allows for non-human sophonts (e.g. Humanoid Alien Races or Big and Small Genes Framework), pawns with the Xenotypist trait will hate those of different species, not just those of different xenotypes.</HVT_GenePuristsHARTooltip>
 <HVT_MonsterLoveXeno>Monster Lovers love different xenotypes</HVT_MonsterLoveXeno>

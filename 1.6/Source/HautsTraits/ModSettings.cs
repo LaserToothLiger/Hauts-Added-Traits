@@ -7,6 +7,8 @@ namespace HautsTraits
 {
     public class HVT_Settings : ModSettings
     {
+        //as per Steam user request, you can disable Mighty and Herculean turning thin/average bodies into hulks
+        public bool strengthTraitsChangeBodyType = true;
         /*people downloading a trait mod don't necessarily expect it to contain new challenges, especially not new ways to make raids harder. So, you can turn that feature off if you don't like it.
          * I DO want people to be surprised by skulker raids though, so the "easier" variants start on by default, and the "OH GOD OH FUCK" variants (Assassination, Sabotage) require a deliberate opt-in.*/
         public bool disableStealthRaids = false;
@@ -50,6 +52,7 @@ namespace HautsTraits
         public bool monsterLoveForAliens = false;
         public override void ExposeData()
         {
+            Scribe_Values.Look(ref strengthTraitsChangeBodyType, "strengthTraitsChangeBodyType", true);
             Scribe_Values.Look(ref disableStealthRaids, "disableStealthRaids", false);
             Scribe_Values.Look(ref disableHardStealthRaids, "disableHardStealthRaids", true);
             Scribe_Values.Look(ref pnfStartingCharges, "pnfStartingCharges", 10f);
@@ -78,11 +81,12 @@ namespace HautsTraits
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            //skulker event settings
+            //strength body type and skulker event settings
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect);
             listingStandard.CheckboxLabeled("HVT_SettingSkulkerEvents".Translate(), ref settings.disableStealthRaids, "HVT_TooltipSkulkerEvents".Translate());
             listingStandard.CheckboxLabeled("HVT_SettingSkulkerEvents2".Translate(), ref settings.disableHardStealthRaids, "HVT_TooltipSkulkerEvents2".Translate());
+            listingStandard.CheckboxLabeled("HVT_SettingStrengthBodyType".Translate(), ref settings.strengthTraitsChangeBodyType, "HVT_TooltipStrengthBodyType".Translate());
             if (ModsConfig.BiotechActive)
             {
                 listingStandard.CheckboxLabeled("HVT_GenePuristsHAR".Translate(), ref settings.genePuristsHateAliens, "HVT_GenePuristsHARTooltip".Translate());
@@ -103,7 +107,7 @@ namespace HautsTraits
             }
             displayMin = ((int)settings.traitsMin).ToString();
             displayMax = ((int)settings.traitsMax).ToString();
-            float x = inRect.xMin, y = inRect.yMin + 125, halfWidth = inRect.width * 0.5f;
+            float x = inRect.xMin, y = inRect.yMin + 155, halfWidth = inRect.width * 0.5f;
             float orig = settings.traitsMin;
             Rect traitsMinRect = new Rect(x + 10, y, halfWidth - 15, 32);
             settings.traitsMin = Widgets.HorizontalSlider(traitsMinRect, settings.traitsMin, 1f, 3f, true, "HVT_SettingMinTraits".Translate(), "1", "3", 1f);

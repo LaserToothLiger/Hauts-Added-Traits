@@ -1356,6 +1356,7 @@
 					<li><key>Male</key><value><li>Hulk</li></value></li>
 					<li><key>Female</key><value><li>Hulk</li></value></li>
 				</forcedBodyTypes>
+				<forcedBodyTypeWorker>HautsTraits.ForcedBodyTypeWorker_StrengthTraits</forcedBodyTypeWorker>
             </li>
 			<li Class="HautsTraits.SpecificPNFChargeCost">
 				<chargeCosts>
