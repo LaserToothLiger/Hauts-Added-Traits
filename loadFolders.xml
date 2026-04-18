@@ -22,5 +22,6 @@
 		<li IfModActive="SmashPhil.VehicleFramework">1.6/Mods/VehicleFramework</li>
 		<li IfModActive="CETeam.CombatExtended">1.6/Mods/CombatExtended</li>
 		<li IfModActive="VPE.Neurophage.Sentinel">1.6/Mods/VPE_Neurophage</li>
+		<li IfModActive="kahirDragoon.customrepublic">1.6/Mods/CustomRepublic</li>
 	</v1.6>
 </loadFolders>

@@ -10,19 +10,19 @@
 				<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/FactionDef[defName="VFEC_WesternRepublic"]</xpath>
 					<value>
-						<li Class="HautsTraitsRoyalty.AnarchistHatedFaction" />
+						<li Class="HautsTraits.AnarchistHatedFaction" />
 					</value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/FactionDef[defName="VFEC_CentralRepublic"]</xpath>
 					<value>
-						<li Class="HautsTraitsRoyalty.AnarchistHatedFaction" />
+						<li Class="HautsTraits.AnarchistHatedFaction" />
 					</value>
 				</li>
 				<li Class="PatchOperationAddModExtension">
 					<xpath>/Defs/FactionDef[defName="VFEC_EasternRepublic"]</xpath>
 					<value>
-						<li Class="HautsTraitsRoyalty.AnarchistHatedFaction" />
+						<li Class="HautsTraits.AnarchistHatedFaction" />
 					</value>
 				</li>
 			</operations>

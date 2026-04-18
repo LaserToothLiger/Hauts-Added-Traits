@@ -89,6 +89,7 @@
     <Compile Include="Hediffs_Ideology.cs" />
     <Compile Include="Thoughts_AnomalyTraits.cs" />
     <Compile Include="MentalStates.cs" />
+    <Compile Include="Thoughts_RoyaltyTraits_NonPsychic.cs" />
     <Compile Include="UtilityMethods.cs" />
     <Compile Include="ForcedBodyType_StrengthTraits.cs" />
   </ItemGroup>

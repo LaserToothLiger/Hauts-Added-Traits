@@ -2321,9 +2321,9 @@
 <!--this is a test trait that you can add to a pawn in Dev Mode. I made it after finding a dismayingly large number of mods whose authors seem to believe Melee DPS and Melee Armor Penetration do anything, even though it's
 	trivial to test and realize that 1) these stats are unmodifiable, 2) they are REPRESENTATIONS of the pawn's averaged dps and armor penetration from all melee attacks, and 3) they don't do anything*.
 	They exist purely so that you can click on a pawn, go to the info tab, and check APPROXIMATELY how likely they are to wreck shop in melee.
-	If you see them in a mod it is a sure and unfortunate sign that the author did not actually test their creation - and so there might be other things that don't work as advertised/at all.
-		*After all, if Melee DPS worked, the VanillaEx team would not need to have created a Melee Attack Damage Factor/Melee Attack Speed Factor stat, and Ludeon Studios would not have had to make Melee Damage Factor in 1.4 and
-		Melee Cooldown Factor in 1.5.
+	If you see a mod provide bonuses or maluses to these stats, it is a sure and unfortunate sign that the author did not actually test their creation - and so there might be other things that don't work as advertised/at all.
+		*After all, if Melee DPS determined a pawn's melee damage output (rather than the other way round), the VanillaEx team would not need to have created a Melee Attack Damage Factor/Melee Attack Speed Factor stat, and
+		Ludeon Studios would not have had to make Melee Damage Factor in 1.4 and Melee Cooldown Factor in 1.5.
 	Nowadays, this is my dud trait for testing purposes, as the defName indicates. I temporarily add new stats or DefModExtensions to it when working on them.-->
 	<TraitDef>
 		<defName>HVT_Test</defName>

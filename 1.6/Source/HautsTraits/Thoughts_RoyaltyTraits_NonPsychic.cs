@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace HautsTraitsRoyalty
+namespace HautsTraits
 {
     /*anarchists have a moodlet that is extremely negative while they belong to a, let's call them for future reference, "power-centralized" faction.
      * These are factions that either have royal titles or are tagged with the AnarchistHatedFaction DME.
      * If they don't belong to such a faction, they 
      * Apply the DME to any faction that lacks royal titles, but is nevertheless an obviously hierarchical institution with rigid power structures.
-     */
+     * you can also just use a Harmony patch to add additional qualifiers to Thought_Situational_RelationsWithEmpire.ShouldHateFaction - see the compat folder for Custom Republic as an example*/
     public class Thought_Situational_RelationsWithEmpire : Thought_Situational
     {
         public override float MoodOffset()
@@ -26,12 +26,16 @@ namespace HautsTraitsRoyalty
             float num = 0f;
             foreach (Faction f in Find.FactionManager.AllFactions)
             {
-                if (f.def.HasRoyalTitles || f.def.HasModExtension<AnarchistHatedFaction>())
+                if (Thought_Situational_RelationsWithEmpire.ShouldHateFaction(f))
                 {
                     num -= this.pawn.Faction.GoodwillWith(f) / 10;
                 }
             }
             return Math.Min(Math.Max(this.BaseMoodOffset * num,-20),20);
+        }
+        public static bool ShouldHateFaction(Faction f)
+        {
+            return f.def.HasRoyalTitles || f.def.HasModExtension<AnarchistHatedFaction>();
         }
     }
     public class AnarchistHatedFaction : DefModExtension
@@ -48,7 +52,7 @@ namespace HautsTraitsRoyalty
             {
                 return false;
             }
-            if (other.Faction.def.HasRoyalTitles || other.Faction.def.HasModExtension<AnarchistHatedFaction>())
+            if (Thought_Situational_RelationsWithEmpire.ShouldHateFaction(other.Faction))
             {
                 return ThoughtState.ActiveDefault;
             }
@@ -74,7 +78,7 @@ namespace HautsTraitsRoyalty
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-            if (!other.RaceProps.Humanlike || !RelationsUtility.PawnsKnowEachOther(p, other) || !other.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_Servile))
+            if (!other.RaceProps.Humanlike || !RelationsUtility.PawnsKnowEachOther(p, other) || !other.story.traits.HasTrait(HVTDefOf.HVT_Servile))
             {
                 return false;
             }
@@ -85,7 +89,7 @@ namespace HautsTraitsRoyalty
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-            if (!other.RaceProps.Humanlike || !RelationsUtility.PawnsKnowEachOther(p, other) || !other.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_Anarchist))
+            if (!other.RaceProps.Humanlike || !RelationsUtility.PawnsKnowEachOther(p, other) || !other.story.traits.HasTrait(HVTDefOf.HVT_Anarchist))
             {
                 return false;
             }
@@ -117,9 +121,7 @@ namespace HautsTraitsRoyalty
                         }
                     }
                 }
-            }
-            else if (pawn.GetCaravan() != null)
-            {
+            } else if (pawn.GetCaravan() != null) {
                 foreach (Pawn p in pawn.GetCaravan().pawns.InnerListForReading)
                 {
                     if (p != this.pawn && p.Faction != null && this.pawn.Faction == p.Faction)
@@ -142,9 +144,7 @@ namespace HautsTraitsRoyalty
                             }
                         }
                     }
-                }
-                else if (pawn.GetCaravan() != null)
-                {
+                } else if (pawn.GetCaravan() != null) {
                     foreach (Pawn p in pawn.GetCaravan().pawns.InnerListForReading)
                     {
                         if (p != this.pawn && p.Faction != null && this.pawn.Faction == p.Faction && p.ideo != null && p.ideo.Ideo == this.pawn.ideo.Ideo && p.ideo.Ideo.GetRole(p) != null)

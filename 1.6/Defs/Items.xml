@@ -49,10 +49,4 @@
     <allowedArchonexusCount>1</allowedArchonexusCount>
   </ThingDef>
   
-  <JobDef>
-    <defName>HVT_UseTraitGiverSerum</defName>
-    <driverClass>HautsTraits.JobDriver_UseTraitGiverSerum</driverClass>
-    <reportString>administering trait serum to TargetA.</reportString>
-    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-  </JobDef>
 </Defs>

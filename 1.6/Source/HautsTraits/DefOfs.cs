@@ -65,6 +65,10 @@ namespace HautsTraits
         public static TraitDef HVT_GenePurist;
         [MayRequireBiotech]
         public static TraitDef HVT_Mentor;
+        [MayRequireRoyalty]
+        public static TraitDef HVT_Anarchist;
+        [MayRequireRoyalty]
+        public static TraitDef HVT_Servile;
         [MayRequireAnomaly]
         public static TraitDef HVT_MonsterHunter;
         [MayRequireAnomaly]

@@ -452,6 +452,14 @@
 						<CarryBulk>1.1</CarryBulk>
 					</value>
 				</li>
+				<!--Robin-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/TraitDef[defName="HVT_TTraitRobin"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>
+					<value>
+						<CarryWeight>100</CarryWeight>
+						<CarryBulk>100</CarryBulk>
+					</value>
+				</li>
 				<!--Scrub Jay-->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/TraitDef[defName="HVT_TTraitScrubJay"]/degreeDatas/li/statFactors/VEF_MassCarryCapacity</xpath>

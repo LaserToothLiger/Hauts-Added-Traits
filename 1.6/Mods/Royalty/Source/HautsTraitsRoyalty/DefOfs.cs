@@ -10,8 +10,6 @@ namespace HautsTraitsRoyalty
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(HVTRoyaltyDefOf));
         }
-        public static TraitDef HVT_Anarchist;
-        public static TraitDef HVT_Servile;
         public static TraitDef HVT_LatentPsychic;
         public static TraitDef HVT_AwakenedAugur;
         public static TraitDef HVT_AwakenedChanshi;

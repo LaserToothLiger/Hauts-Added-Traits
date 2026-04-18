@@ -185,8 +185,7 @@ namespace HautsTraits
         }
         /*Repressed Rage sends a letter when a pawn the game ShouldSendNotificationAbout goes berserk because of it.
          * Tranquil pawns instantly end any mental state they enter.
-         * Most kinds of mental states (social fight, mood-induced, damage-induced, psycast-induced) induce a mood boost and 10% inspiration chance in Sadistics on the same map/caravan, but also give the mental stater negative opinion of the Sadistic
-         */
+         * Most kinds of mental states (social fight, mood-induced, damage-induced, psycast-induced) induce a mood boost and 10% inspiration chance in Sadistics on the same map/caravan, but also give the mental stater negative opinion of the Sadistic*/
         public static void HVTTryStartMentalStatePostfix(ref bool __result, MentalStateHandler __instance, MentalStateDef stateDef, bool causedByMood, bool causedByDamage, bool causedByPsycast)
         {
             Pawn pawn = GetInstanceField(typeof(MentalStateHandler), __instance, "pawn") as Pawn;
@@ -816,8 +815,7 @@ namespace HautsTraits
          * BirthdayBiologicalPostfix is for max traits set to 6 or higher. Since these require ludicrous amounts of growth moments (and they'd have to be jarringly distributed across years 4-13), instead some or all of them
          *   place TWO (or in 9mts' case, THREE) growth moments in one year. These "bonus growth moments" do not grant passions to avoid a scenario where a pawn can reach so many passions they CAN'T select new ones, and therefore
          *   can't finalize their Growth Moment choices.
-         * MakeChoicesPrefix/Postfix conserve growth points between uses of a conventional growth moment and bonus growth moments.
-         */
+         * MakeChoicesPrefix/Postfix conserve growth points between uses of a conventional growth moment and bonus growth moments.*/
         public static void HVTGeneratePawnPostfix(ref Pawn __result, PawnGenerationRequest request)
         {
             if (__result.story != null)

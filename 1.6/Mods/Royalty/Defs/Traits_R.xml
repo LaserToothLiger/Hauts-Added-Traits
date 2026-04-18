@@ -400,6 +400,7 @@
 			  <PsychicEntropyMax>3</PsychicEntropyMax>
 			  <MentalBreakThreshold>0.75</MentalBreakThreshold>
 			  <PainShockThreshold>1.5</PainShockThreshold>
+			  <Hauts_PsychicDamageFactor>0.3</Hauts_PsychicDamageFactor>
 			  <VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0</VAEI_SanityLossMultiplier>
 			  <Suppressability MayRequire="CETeam.CombatExtended">0.33</Suppressability>
 			</statFactors>

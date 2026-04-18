@@ -117,7 +117,7 @@ namespace HautsTraitsRoyalty
                 bool didResearch = false;
                 if (this.Pawn.Faction != null && this.Pawn.Faction == Faction.OfPlayerSilentFail)
                 {
-                    if (ModCompatibilityUtility.AddGravdata(this.Pawn, this.Props.gravdataPerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) / 0.0825f))
+                    if (ModCompatibilityUtility.AddGravdata(this.Pawn, this.Props.gravdataPerHour * this.Pawn.GetStatValue(this.Props.allButPsyfocusScalar) / 10f))
                     {
                         didResearch = true;
                     }

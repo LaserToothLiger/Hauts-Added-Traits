@@ -82,7 +82,6 @@
     <Compile Include="AwakeningMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioParts.cs" />
-    <Compile Include="Traits_NobilitySpectrum.cs" />
     <Compile Include="Trans_LifeAfterDeath.cs" />
     <Compile Include="Trans_ImmunityMechanics.cs" />
     <Compile Include="Trans_ResourceGenerators.cs" />

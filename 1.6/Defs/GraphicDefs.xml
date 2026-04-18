@@ -6,9 +6,9 @@
 	<thingClass>MoteAttached</thingClass>
 	<altitudeLayer>MoteOverhead</altitudeLayer>
 	<mote>
-		<fadeInTime>1.05</fadeInTime>
-		<fadeOutTime>1.05</fadeOutTime>
-		<solidTime>1.05</solidTime>
+		<fadeInTime>0.01</fadeInTime>
+		<fadeOutTime>0.01</fadeOutTime>
+		<solidTime>99999</solidTime>
 		<needsMaintenance>true</needsMaintenance>
 	</mote>
 	<graphicData>
@@ -36,13 +36,13 @@
     <thingClass>MoteThrownAttached</thingClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
-      <fadeInTime>0.3</fadeInTime>
-      <fadeOutTime>0.1</fadeOutTime>
-      <solidTime>9999</solidTime>
+      <fadeInTime>0.01</fadeInTime>
+      <fadeOutTime>0.01</fadeOutTime>
+      <solidTime>99999</solidTime>
       <needsMaintenance>true</needsMaintenance>
     </mote>
     <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Mote</graphicClass>
       <texPath>Things/Mote/SolarPinhole</texPath>
       <shaderType>MoteGlowDistorted</shaderType>
       <color>(160, 255, 222)</color>
@@ -61,16 +61,16 @@
     <altitudeLayer>Projectile</altitudeLayer>
     <mote>
       <fadeInTime>0.3</fadeInTime>
-      <fadeOutTime>0.1</fadeOutTime>
-      <solidTime>9999</solidTime>
+      <fadeOutTime>0.01</fadeOutTime>
+      <solidTime>99999</solidTime>
       <needsMaintenance>true</needsMaintenance>
     </mote>
     <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Mote</graphicClass>
       <texPath>Things/Mote/PsycastCast</texPath>
       <shaderType>MoteGlowDistorted</shaderType>
       <color>(33, 255, 211)</color>
-      <drawSize>2.2</drawSize>
+      <drawSize>1.8</drawSize>
       <shaderParameters>
         <_DistortionTex>/Other/Ripples</_DistortionTex>
         <_distortionIntensity>0.05</_distortionIntensity>
@@ -81,7 +81,7 @@
   </ThingDef>
   <ThingDef ParentName="MoteGlowDistorted" MayRequire="Ludeon.RimWorld.Royalty">
 		<defName>HVT_MatterPhasing</defName>
-		<thingClass>MoteAttached</thingClass>
+		<thingClass>MoteThrownAttached</thingClass>
 		<altitudeLayer>Projectile</altitudeLayer>
 		<mote>
 			<fadeInTime>0.1</fadeInTime>
@@ -90,7 +90,7 @@
 			<needsMaintenance>true</needsMaintenance>
 		</mote>
 		<graphicData>
-            <graphicClass>Graphic_Single</graphicClass>
+            <graphicClass>Graphic_Mote</graphicClass>
             <shaderType>MotePsychicSkipInner</shaderType>
             <texPath>Things/Mote/SkipInnerDimension</texPath>
             <shaderParameters>
@@ -104,7 +104,7 @@
                 <_outTime>0.0</_outTime>
                 <AgeSecs>1</AgeSecs>
             </shaderParameters>
-            <drawSize>2.1</drawSize>
+            <drawSize>1</drawSize>
             <color>(1, 1, 0.5, 0.8)</color>
 		</graphicData>
   </ThingDef>
@@ -220,7 +220,7 @@
       <needsMaintenance>true</needsMaintenance>
     </mote>
     <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Mote</graphicClass>
       <texPath>Things/Mote/SolarPinhole</texPath>
       <shaderType>MoteGlowDistorted</shaderType>
       <color>(229, 255, 215, 242)</color>
