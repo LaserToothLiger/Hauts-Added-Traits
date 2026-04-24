@@ -169,19 +169,49 @@ namespace HautsTraitsRoyalty
         public Faction newFaction;
         public Faction originalFaction = Faction.OfMechanoids;
     }
-    //every day, Budgies grant goodwill with all factions you could gain goodwill with. Magnitude scales w/ psylink level, up to a max of +2 at level 6 (or assuming no level cap e.g. VPE, +12 at 36). 
+    /*every day, Budgies grant goodwill with all factions you could gain goodwill with. Magnitude scales w/ psylink level, up to a max of +2 at level 6 (or assuming no level cap e.g. VPE, +12 at 36).
+     * Per user request, you can disable this functionality. I don't want it to be totally useless if you disable it, though, so if you toggle it off the periodic effect is instead skill xp and a small chance for inspiration.*/
     public class Hediff_Budgie : HediffWithComps
     {
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
-            if (this.pawn.IsHashIntervalTick(60000, delta) && this.gainGoodwill && this.pawn.Faction != null && this.pawn.Faction == Faction.OfPlayerSilentFail)
+            if (this.pawn.IsHashIntervalTick(60000, delta) && this.pawn.Faction != null && this.pawn.Faction == Faction.OfPlayerSilentFail)
             {
-                foreach (Faction f in Find.FactionManager.AllFactionsVisible)
+                if (this.gainGoodwill)
                 {
-                    if (f != this.pawn.Faction && f.def.humanlikeFaction && !f.def.PermanentlyHostileTo(FactionDefOf.PlayerColony) && f.HasGoodwill)
+                    foreach (Faction f in Find.FactionManager.AllFactionsVisible)
                     {
-                        Faction.OfPlayerSilentFail.TryAffectGoodwillWith(f, (int)Math.Ceiling((double)Math.Min(12, this.pawn.GetPsylinkLevel()) / 3), false, true, HVTRoyaltyDefOf.HVT_TransDiplomacy, null);
+                        if (f != this.pawn.Faction && f.def.humanlikeFaction && !f.def.PermanentlyHostileTo(FactionDefOf.PlayerColony) && f.HasGoodwill)
+                        {
+                            Faction.OfPlayerSilentFail.TryAffectGoodwillWith(f, (int)Math.Ceiling((double)Math.Min(12, this.pawn.GetPsylinkLevel()) / 3), false, true, HVTRoyaltyDefOf.HVT_TransDiplomacy, null);
+                        }
+                    }
+                } else {
+                    if (this.pawn.mindState.inspirationHandler != null && !this.pawn.Inspired && Rand.Chance(0.25f))
+                    {
+                        TaggedString reasonText = "HVT_BudgieInspired".Translate().CapitalizeFirst().Formatted(this.pawn.Named("PAWN")).AdjustedFor(this.pawn, "PAWN", true).Resolve();
+                        InspirationDef randomAvailableInspirationDef = this.pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
+                        if (randomAvailableInspirationDef != null)
+                        {
+                            this.pawn.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef, reasonText, true);
+                        }
+                    }
+                    if (this.pawn.skills != null)
+                    {
+                        int improvements = 3;
+                        foreach (SkillRecord sr in this.pawn.skills.skills.InRandomOrder())
+                        {
+                            if (!sr.TotallyDisabled)
+                            {
+                                sr.Learn(500*Math.Min(20,this.pawn.GetPsylinkLevel()),true,true);
+                                improvements--;
+                                if (improvements == 0)
+                                {
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
             }

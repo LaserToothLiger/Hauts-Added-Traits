@@ -64,7 +64,7 @@ namespace HautsTraitsRoyalty
                         float tolerance = this.Pawn.needs.joy.tolerances[jkd];
                         if (tolerance > 0f)
                         {
-                            GoodAndBadIncidentsUtility.MakeGoodEvent(this.Pawn);
+                            GoodAndBadIncidentsUtility.MakeGoodEvent(this.Pawn,0,null);
                             return;
                         }
                     }
@@ -130,7 +130,7 @@ namespace HautsTraitsRoyalty
             if (this.Severity == this.def.maxSeverity)
             {
                 this.Severity = 0.001f;
-                GoodAndBadIncidentsUtility.MakeGoodEvent(this.pawn);
+                GoodAndBadIncidentsUtility.MakeGoodEvent(this.pawn,0,null);
             }
         }
     }

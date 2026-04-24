@@ -232,6 +232,7 @@
 			</statOffsets>
 			<statFactors>
 			  <MeditationFocusGain>1.1</MeditationFocusGain>
+			  <CultivationSpeed MayRequire="Aranmaho.Xianxia">1.1</CultivationSpeed>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -759,7 +760,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic budgie</label>
-			<description>{PAWN_nameDef} has a far-reaching psychic influence that gradually improves relations with other factions.</description>
+			<description>{PAWN_nameDef} has a far-reaching psychic influence that gradually improves relations with other factions. This same influence can be turned inward, gradually granting experience in random skills and occasionally causing an inspiration. Only one effect - the goodwill improvement or the self-improvement - can be active at a time.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.5</LanguageLearningAbility>

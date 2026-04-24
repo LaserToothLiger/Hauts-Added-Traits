@@ -2335,6 +2335,7 @@
 			<statFactors>
 			  <MeleeDPS>100</MeleeDPS>
 			  <MeleeArmorPenetration>100</MeleeArmorPenetration>
+			  <!--<CultivationSpeed MayRequire="Aranmaho.Xianxia">3</CultivationSpeed>that's right. I've made him wuxiaslop.-->
 			</statFactors>
 			<statOffsets>
 			  <MeleeDPS>100</MeleeDPS>

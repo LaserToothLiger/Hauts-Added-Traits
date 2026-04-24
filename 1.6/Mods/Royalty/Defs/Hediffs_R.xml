@@ -317,6 +317,9 @@
 		  <Hauts_PsychicDamageFactor>0.9</Hauts_PsychicDamageFactor>
 		  <Hauts_SkipDamageFactor>0.75</Hauts_SkipDamageFactor>
 		</statFactors>
+		<statOffsets>
+		  <ArmorRating_Qi MayRequire="Aranmaho.Xianxia">0.15</ArmorRating_Qi>
+		</statOffsets>
       </li>
 	  <!--this, and several of the transcendences, grant certain damage type resists. Those are assigned in the Framework in DamageFactorGroupDefs.xml because it's easier that way and because Sarg is Sarg whatchu gonna do-->
     </stages>
@@ -889,6 +892,7 @@
         </capMods>
 		<statOffsets>
 		  <PsychicSensitivity>0.3</PsychicSensitivity>
+		  <ArmorRating_Qi MayRequire="Aranmaho.Xianxia">0.25</ArmorRating_Qi>
 		</statOffsets>
 		<statFactors>
 		  <RoyalFavorValue>4</RoyalFavorValue>

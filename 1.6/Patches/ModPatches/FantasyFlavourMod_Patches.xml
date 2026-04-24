@@ -356,7 +356,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitBudgerigar"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} appears in the dreams of sages and sensitives around the world, always in a favorable light. This gradually improves relations with other factions.</description>
+									<description>{PAWN_nameDef} appears in the dreams of sages and sensitives around the world, always in a favorable light. This gradually improves relations with other factions. This same mystic power can be turned inward, gradually granting experience in random skills and occasionally causing an inspiration. Only one effect - the goodwill improvement or the self-improvement - can be active at a time.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

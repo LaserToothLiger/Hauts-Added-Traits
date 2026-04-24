@@ -51,6 +51,7 @@
 	</statOffsets>
 	<statFactors>
 		<MeditationFocusGain>1.05</MeditationFocusGain>
+		<CultivationSpeed MayRequire="Aranmaho.Xianxia">1.05</CultivationSpeed>
 	</statFactors>
 	<modExtensions>
 		<li Class="VEF.Genes.GeneExtension">

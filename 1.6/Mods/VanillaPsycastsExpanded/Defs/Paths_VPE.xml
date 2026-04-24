@@ -16,7 +16,7 @@
 	<VEF.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>HVT_WordOfEnnui</defName>
 		<label>word of ennui</label>
-		<description>Speak to the target while psychically suppressing specific parts of their behavioral reward pathways, temporarily imparting the effects of a concern-nullifying trait of the target's choice. The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
+		<description>Speak to the target while psychically suppressing specific parts of their behavioral reward pathways, temporarily imparting the effects of a concern-nullifying trait of the target's choice (Ascetic, Asocial, Psychopath, Staid, or Teetotaler). The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
 		<iconPath>VPE/HVT_WordOfEnnui</iconPath>
 		<castTime>120</castTime>
 		<targetMode>Humanlike</targetMode>
@@ -100,12 +100,8 @@
 		<menuString>HVT_HediffMenu</menuString>
 		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
+		<removeThisAfterGrantingOption>HVT_WordOfEnnuiSelf</removeThisAfterGrantingOption>
       </li>
-	  <li Class = "CompProperties_AbilityRemoveHediff">
-        <compClass>CompAbilityEffect_RemoveHediff</compClass>
-		<hediffDef>HVT_WordOfEnnuiSelf</hediffDef>
-		<applyToSelf>true</applyToSelf>
-	  </li>
     </comps>
   </AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
@@ -184,7 +180,7 @@
   <VEF.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>HVT_WordOfVerve</defName>
 		<label>word of verve</label>
-		<description>Speak to the target while psychically stimulating their love for life, temporarily imparting the effects of a positive personality trait of the target's choice. The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
+		<description>Speak to the target while psychically stimulating their love for life, temporarily imparting the effects of a positive personality trait of the target's choice (Conversationalist, Humble, Kind, Sanguine, or Winsome). The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
 		<iconPath>VPE/HVT_WordOfVerve</iconPath>
 		<castTime>120</castTime>
 		<targetMode>Humanlike</targetMode>
@@ -268,12 +264,8 @@
 		<menuString>HVT_HediffMenu</menuString>
 		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
+		<removeThisAfterGrantingOption>HVT_WordOfVerveSelf</removeThisAfterGrantingOption>
       </li>
-	  <li Class = "CompProperties_AbilityRemoveHediff">
-        <compClass>CompAbilityEffect_RemoveHediff</compClass>
-		<hediffDef>HVT_WordOfVerveSelf</hediffDef>
-		<applyToSelf>true</applyToSelf>
-	  </li>
     </comps>
   </AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
@@ -596,7 +588,7 @@
   <VEF.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>HVT_WordOfGenius</defName>
 		<label>word of genius</label>
-		<description>Speak to the target while stimulating their abilities to process and synthesize information, temporarily imparting the effects of a skill- or productivity-boosting personality trait of the caster's choice. The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
+		<description>Speak to the target while stimulating their abilities to process and synthesize information, temporarily imparting the effects of a skill- or productivity-boosting personality trait of the caster's choice (Drudge, Great Memory, Too Smart, Tortured Artist, or Very Neurotic). The duration of this effect scales with the target's psychic sensitivity. Can’t restore a suppressed trait.</description>
 		<iconPath>VPE/HVT_WordOfGenius</iconPath>
 		<castTime>120</castTime>
 		<targetMode>Humanlike</targetMode>
@@ -683,12 +675,8 @@
 		<menuString>HVT_HediffMenu</menuString>
 		<autoSelectIfAI>false</autoSelectIfAI>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
+		<removeThisAfterGrantingOption>HVT_WordOfGeniusSelf</removeThisAfterGrantingOption>
       </li>
-	  <li Class = "CompProperties_AbilityRemoveHediff">
-        <compClass>CompAbilityEffect_RemoveHediff</compClass>
-		<hediffDef>HVT_WordOfGeniusSelf</hediffDef>
-		<applyToSelf>true</applyToSelf>
-	  </li>
     </comps>
   </AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">

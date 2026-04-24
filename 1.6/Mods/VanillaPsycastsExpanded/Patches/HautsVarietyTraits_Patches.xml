@@ -115,7 +115,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_WordOfEnnui"]/description</xpath>
 					<value>
-						<description>Speak mystic words to the target which instill apathy, temporarily imparting the effects of a concern-nullifying trait of your choice. The duration of this effect scales with the target's magic sensitivity.</description>
+						<description>Speak mystic words to the target which instill apathy, temporarily imparting the effects of a concern-nullifying trait of your choice (Ascetic, Asocial, Psychopath, Staid, or Teetotaler). The duration of this effect scales with the target's magic sensitivity.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -187,7 +187,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_WordOfVerve"]/description</xpath>
 					<value>
-						<description>Speak mystic words to the target which encourage a passion for life, temporarily imparting the effects of a positive personality trait of your choice. The duration of this effect scales with the target's magic sensitivity.</description>
+						<description>Speak mystic words to the target which encourage a passion for life, temporarily imparting the effects of a positive personality trait of your choice (Conversationalist, Humble, Kind, Sanguine, or Winsome). The duration of this effect scales with the target's magic sensitivity.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -271,7 +271,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_WordOfGenius"]/description</xpath>
 					<value>
-						<description>Speak mystic words to the target which greatly enhance one's talents, temporarily imparting the effects of a skill- or productivity-boosting trait. The duration of this effect scales with the target’s magic sensitivity.</description>
+						<description>Speak mystic words to the target which greatly enhance one's talents, temporarily imparting the effects of a skill- or productivity-boosting trait (Drudge, Great Memory, Too Smart, Tortured Artist, or Very Neurotic). The duration of this effect scales with the target’s magic sensitivity.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">

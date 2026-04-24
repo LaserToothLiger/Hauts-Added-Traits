@@ -467,9 +467,9 @@ namespace HautsTraitsRoyalty
             {
                 if (__instance.pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitRaven) && __instance.def != MentalStateDefOf.PanicFlee && __instance.def != MentalStateDefOf.SocialFighting && !__instance.causedByPsycast)
                 {
-                    for (int i = 0; i < Math.Max(1f,(int)Math.Floor(__instance.pawn.GetStatValue(StatDefOf.PsychicSensitivity))); i++)
+                    for (int i = 0; i < Math.Min(Math.Max(1f,(int)Math.Floor(__instance.pawn.GetStatValue(StatDefOf.PsychicSensitivity))),40); i++)
                     {
-                        GoodAndBadIncidentsUtility.MakeGoodEvent(__instance.pawn);
+                        GoodAndBadIncidentsUtility.MakeGoodEvent(__instance.pawn,0,null);
                     }
                 }
             }
@@ -481,7 +481,7 @@ namespace HautsTraitsRoyalty
             {
                 if (killed.RaceProps.Humanlike && killer.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitShrike) && Rand.Chance(Math.Max(0.01f * killer.GetStatValue(StatDefOf.PsychicSensitivity),0.15f)))
                 {
-                    GoodAndBadIncidentsUtility.MakeGoodEvent(killer);
+                    GoodAndBadIncidentsUtility.MakeGoodEvent(killer,0,null);
                 }
             }
         }

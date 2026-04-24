@@ -61,13 +61,9 @@ namespace Hauts_VPE
                             if (randPassion <= 2)
                             {
                                 sr.passion = Passion.None;
-                            }
-                            else if (randPassion <= 4)
-                            {
+                            } else if (randPassion <= 4) {
                                 sr.passion = Passion.Minor;
-                            }
-                            else
-                            {
+                            } else {
                                 sr.passion = Passion.Major;
                             }
                         }
@@ -78,9 +74,7 @@ namespace Hauts_VPE
                         Hediff_Catarina newPawnLink = (Hediff_Catarina)HediffMaker.MakeHediff(HautsTraitsVPEDefOf.HVT_Dominicus, this.pawn, null);
                         this.pawn.health.AddHediff(newPawnLink);
                         newPawnLink.thoseRisen.Add(pawn);
-                    }
-                    else
-                    {
+                    } else {
                         Hediff_Catarina pawnLink = (Hediff_Catarina)this.pawn.health.hediffSet.GetFirstHediffOfDef(HautsTraitsVPEDefOf.HVT_Dominicus);
                         pawnLink.thoseRisen.Add(pawn);
                     }
@@ -136,14 +130,22 @@ namespace Hauts_VPE
         public override void PostTickInterval(int delta)
         {
             base.PostTickInterval(delta);
-            if (this.pawn.IsHashIntervalTick(60, delta) && this.pawn.story != null)
+            if (this.pawn.IsHashIntervalTick(600, delta) && this.pawn.story != null)
             {
-                if (Rand.MTBEventOccurs(2, 60000f, 60f))
+                int traitCount = 0;
+                foreach (Trait t in this.pawn.story.traits.TraitsSorted)
                 {
-                    List<TraitDef> traitPool = new List<TraitDef>();
-                    foreach (TraitDef td in DefDatabase<TraitDef>.AllDefs)
+                    if (!TraitModExtensionUtility.IsExciseTraitExempt(t.def))
                     {
-                        if (!TraitModExtensionUtility.IsExciseTraitExempt(td, false) && !this.pawn.story.traits.HasTrait(td))
+                        traitCount++;
+                    }
+                }
+                if (Rand.MTBEventOccurs(2, 60000f, 600f))
+                {
+                    TraitDef toGain = null;
+                    foreach (TraitDef td in DefDatabase<TraitDef>.AllDefs.InRandomOrder())
+                    {
+                        if (td.GetGenderSpecificCommonality(this.pawn.gender) > 0f && !TraitModExtensionUtility.IsExciseTraitExempt(td, false) && !this.pawn.story.traits.HasTrait(td))
                         {
                             bool toAdd = true;
                             foreach (Trait t in this.pawn.story.traits.allTraits)
@@ -162,29 +164,30 @@ namespace Hauts_VPE
                             }
                             if (toAdd)
                             {
-                                traitPool.Add(td);
+                                toGain = td;
                             }
                         }
                     }
-                    TraitDef toGain = traitPool.RandomElement<TraitDef>();
-                    Trait trait = new Trait(toGain, PawnGenerator.RandomTraitDegree(toGain), false);
-                    this.pawn.story.traits.GainTrait(trait);
-                    TaggedString message;
-                    if (ModCompatibilityUtility.IsHighFantasy())
+                    if (toGain != null)
                     {
-                        message = "HVT_TabulaRasadFantasy".Translate(this.pawn.Name.ToStringShort, trait.Label);
+                        Trait trait = new Trait(toGain, PawnGenerator.RandomTraitDegree(toGain), false);
+                        this.pawn.story.traits.GainTrait(trait);
+                        traitCount++;
+                        TaggedString message;
+                        if (ModCompatibilityUtility.IsHighFantasy())
+                        {
+                            message = "HVT_TabulaRasadFantasy".Translate(this.pawn.Name.ToStringShort, trait.Label);
+                        } else {
+                            message = "HVT_TabulaRasad".Translate(this.pawn.Name.ToStringShort, trait.Label);
+                        }
+                        if (traitCount >= HVT_Mod.settings.traitsMax)
+                        {
+                            message += "HVT_EndTabulaRasa".Translate(this.pawn.Name.ToStringShort);
+                        }
+                        Messages.Message(message, this.pawn, MessageTypeDefOf.NeutralEvent, true);
                     }
-                    else
-                    {
-                        message = "HVT_TabulaRasad".Translate(this.pawn.Name.ToStringShort, trait.Label);
-                    }
-                    if (this.pawn.story.traits.allTraits.Count >= HVT_Mod.settings.traitsMax)
-                    {
-                        message += "HVT_EndTabulaRasa".Translate(this.pawn.Name.ToStringShort);
-                    }
-                    Messages.Message(message, this.pawn, MessageTypeDefOf.NeutralEvent, true);
                 }
-                if (this.pawn.story.traits.allTraits.Count >= HVT_Mod.settings.traitsMax)
+                if (traitCount >= HVT_Mod.settings.traitsMax)
                 {
                     this.Severity = -1f;
                 }
