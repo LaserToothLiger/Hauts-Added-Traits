@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbExt_CantTargetWoke.cs" />
+    <Compile Include="Abilities_TraitGrantingWords.cs" />
     <Compile Include="Ability_ExciseTrait.cs" />
     <Compile Include="Ability_TabulaRasa.cs" />
     <Compile Include="HarmonyPatches.cs" />

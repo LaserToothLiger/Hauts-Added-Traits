@@ -1,18 +1,18 @@
-﻿using System;
+﻿using HarmonyLib;
+using HautsFramework;
+using HautsTraitsRoyalty;
+using RimWorld;
+using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using RimWorld;
+using VanillaPsycastsExpanded;
+using VanillaPsycastsExpanded.Harmonist;
+using VEF.Abilities;
 using Verse;
 using Verse.Sound;
-using HarmonyLib;
-using RimWorld.Planet;
-using VanillaPsycastsExpanded;
-using VEF.Abilities;
-using HautsTraitsRoyalty;
-using HautsFramework;
-using VanillaPsycastsExpanded.Harmonist;
 
 namespace Hauts_VPE
 {
@@ -66,16 +66,12 @@ namespace Hauts_VPE
                 __result = psycastsKnown;
             }
         }
-        //bellbirds use more psyfocus to cast words, instead of having an awkward post-cast psyfocus subtraction offset. VPE lets us do that!
+        //bellbirds work differently in VPE; they get Group Link and it's free for them
         public static void HVT_VPE_GetPsyfocusUsedByPawnPostfix(ref float __result, AbilityExtension_Psycast __instance, Pawn pawn)
         {
-            if (__instance.abilityDef.abilityClass == typeof(Ability_WordOf) && pawn != null && pawn.story != null && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird))
+            if (__instance.abilityDef == DefDatabase<VEF.Abilities.AbilityDef>.GetNamedSilentFail("VPE_GroupLink") && pawn != null && pawn.story != null && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird))
             {
-                __result += 0.075f;
-                if (__result > 1f)
-                {
-                    __result = 1f;
-                }
+                __result = 0f;
             }
         }
         //Dragon transcendence cannot be directly targeted by psycasts from hostile casters
@@ -90,8 +86,7 @@ namespace Hauts_VPE
                 __result = false;
             }
         }
-        /*handles Bellbird and Glowworm transcendent effects.
-         * Bellbird needs to sidestep Group Link from the main target to ensure it can actually affect them, so it removes it from the target.
+        /*handles Glowworm transcendent effects.
          * The prefix puts in __state all the things a Glowworm is affecting with a skip psycast, as well as all the stuff in the lines between those things and their destinations, or all the things around themselves if teleported to own point.
          *   Well, that's how it's supposed to work (and does work without VPE). Here, it always ends up just doing the latter: catalogue all things around the targets at their endpoint.
          * The postfix deals skip damage to all things in __state, putting tiny little skipgate pinholes on top of them to show the visual destruction.
@@ -100,9 +95,8 @@ namespace Hauts_VPE
          * Bouldermit can generate meteorites on casting 5th level casts, 10% chance. They also generate stone chunks and possibly (psyfocus cost-scaling chance) random metals on any psycast. This is anti-synergistic with psyfocus cost reductions,
          *   but that's fine. Not all avenues of power need to compound.
          * Electrophorus generates a psysens-scaling number of lightning strikes on random pawns not under a roof upon casting any psycast.
-         * Bellbirds have an inherent AoE to their Word psycasts (anyone in psylink level-scaling range who COULD be a valid target also gets hit).
-         * Canary has several additional effects on Word use (resistance reduction, mood boost, conversion attempt). Since this is also a Word rider, it is written as either running on the primary target if not also a Bellbird,
-         *   or running on all targets in the Bellbird's AoE if that's a concern.
+         * Bellbird gains a small amount of psyfocus for casting a Word psycast if they don't have Group Link active
+         * Canary has several additional effects on Word use (resistance reduction, mood boost, conversion attempt).
          * Diabolus coats an area around the target psycast with chemfuel puddles.
          * Firefly generates a unique kind of solar pinhole with its own blinding aura (written just under the trait itself in Traits_R.xml) at the targeted point, or refreshes the duration of an existing such pinhole and recruits it
          *   (the pinhole doesn't blind people if allied to its faction, initially set by its creator) if there is one already there.
@@ -111,16 +105,12 @@ namespace Hauts_VPE
          * Termites deal damage in an AoE around the target point, but only to buildings. Radius is scaled by the psycast's level to the 1.7th power.
          * Orb Weavers emit a pulse on their own location that adds to the growth of plants, repairs buildings, reduces the injury severity of a nearby non-hostile pawn, and repairs nearby non-hostile mechs for one repair tick.
          *   The heal specifically scales off the random pawn's psysens.*/
-        public static void HVT_VPE_CastPrefix(AbilityExtension_Psycast __instance, GlobalTargetInfo[] targets, VEF.Abilities.Ability ability, out List<Thing> __state)
+        public static void HVT_VPE_CastPrefix(AbilityExtension_Psycast __instance, ref GlobalTargetInfo[] targets, VEF.Abilities.Ability ability, out List<Thing> __state)
         {
             __state = new List<Thing>();
-            if (ability.pawn != null && ability.pawn.story != null)
+            if (ability.pawn != null && ability.pawn.story != null && targets.Any() && targets[0].Thing != null)
             {
                 Pawn pawn = ability.pawn;
-                if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird) && targets[0].Thing is Pawn target && target.health.hediffSet.HasHediff(VPE_DefOf.VPE_GroupLink))
-                {
-                    target.health.RemoveHediff(target.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_GroupLink));
-                }
                 if (Stats_AbilityRangesUtility.IsSkipAbility(__instance.abilityDef) && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitGlowworm))
                 {
                     List<IntVec3> iv3s = new List<IntVec3>();
@@ -267,59 +257,21 @@ namespace Hauts_VPE
                     if (targets.Any<GlobalTargetInfo>()) {
                         Vector3 loc = ability.def.hasAoE ? ability.firstTarget.CenterVector3 : ((targets[0].Thing != null) ? targets[0].Thing.DrawPos : targets[0].Cell.ToVector3());
                         Map map = (targets[0].Thing != null) ? targets[0].Map : pawn.MapHeld;
-                        bool didCanary = false;
-                        if (__instance.abilityDef.abilityClass == typeof(Ability_WordOf) && targets[0].Thing is Pawn target)
+                        if (__instance.abilityDef.abilityClass == typeof(Ability_WordOf))
                         {
-                            if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird))
+                            if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCanary))
                             {
-                                FleckMaker.Static(loc.ToIntVec3(), pawn.MapHeld, FleckDefOf.PsycastAreaEffect, Math.Min(12f,1.5f * pawn.GetPsylinkLevel()));
-                                bool canary = pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCanary);
-                                List<Pawn> pawnsAround = GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, Math.Min(12f,1.5f * pawn.GetPsylinkLevel()), true).OfType<Pawn>().Distinct<Pawn>().ToList();
-                                if (pawnsAround.Count > 0)
+                                foreach (GlobalTargetInfo gti in targets)
                                 {
-                                    for (int i = pawnsAround.Count - 1; i >= 0; i--)
+                                    if (gti.Thing != null && gti.Thing is Pawn p)
                                     {
-                                        if (pawnsAround[i] == pawn)
-                                        {
-                                            pawnsAround.RemoveAt(i);
-                                        }
-                                    }
-                                    if (pawnsAround.Count > 0)
-                                    {
-                                        Hediff hediff = HediffMaker.MakeHediff(HautsDefOf.Hauts_PsycastLoopBreaker, pawn);
-                                        pawn.health.AddHediff(hediff);
-                                        foreach (Pawn p in pawnsAround)
-                                        {
-                                            bool canApplyTo = ability.AbilityModExtensions.All((AbilityExtension_AbilityMod x) => x.ValidateTarget(p, ability, false));
-                                            foreach (AbilityExtension_AbilityMod abilityExtension_AbilityMod in ability.AbilityModExtensions)
-                                            {
-                                                if (!abilityExtension_AbilityMod.CanApplyOn(p, ability, false))
-                                                {
-                                                    canApplyTo = false;
-                                                }
-                                            }
-                                            if (canApplyTo)
-                                            {
-                                                GlobalTargetInfo[] gti = new GlobalTargetInfo[targets.Count()];
-                                                gti[0] = p;
-                                                for (int i = targets.Count() - 1; i > 0; i--)
-                                                {
-                                                    gti[i] = targets[i];
-                                                }
-                                                ability.Cast(gti);
-                                            }
-                                            if (canary)
-                                            {
-                                                didCanary = true;
-                                                PsychicPowerUtility.DoCanaryEffects(pawn, p);
-                                            }
-                                        }
+                                        PsychicPowerUtility.DoCanaryEffects(pawn, p);
                                     }
                                 }
                             }
-                            if (!didCanary && pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitCanary))
+                            if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBellbird) && !pawn.health.hediffSet.HasHediff(VPE_DefOf.VPE_GroupLink) && pawn.psychicEntropy != null)
                             {
-                                PsychicPowerUtility.DoCanaryEffects(pawn, target);
+                                pawn.psychicEntropy.OffsetPsyfocusDirectly(0.1f);
                             }
                         }
                         if (pawn.story.traits.HasTrait(HVTRoyaltyDefOf.HVT_TTraitBouldermit))

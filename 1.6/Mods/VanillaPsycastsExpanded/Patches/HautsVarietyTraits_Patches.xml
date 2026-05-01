@@ -46,6 +46,28 @@
 	<Operation Class="PatchOperationRemove">
 		<xpath>/Defs/TraitDef/modExtensions/li[@Class="HautsTraitsRoyalty.GrantSkipPsycast"]</xpath>
 	</Operation>
+	<!--Bellbirds gain Group Link for free-->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/TraitDef[defName="HVT_TTraitBellbird"]/modExtensions/li[@Class="HautsFramework.TraitGrantedStuff"]/grantedVEFAbilities</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/TraitDef[defName="HVT_TTraitBellbird"]/modExtensions/li[@Class="HautsFramework.TraitGrantedStuff"]</xpath>
+			<value>
+				<grantedVEFAbilities>
+					<li>
+						<key>0</key><value><li>VPE_GroupLink</li></value>
+					</li>
+				</grantedVEFAbilities>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/TraitDef[defName="HVT_TTraitBellbird"]/modExtensions/li[@Class="HautsFramework.TraitGrantedStuff"]/grantedVEFAbilities</xpath>
+			<value>
+				<li>
+					<key>0</key><value><li>VPE_GroupLink</li></value>
+				</li>
+			</value>
+		</match>
+	</Operation>
 	<!--the corresponding genes for these awakenings get adjusted along the same lines.-->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
@@ -113,9 +135,9 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_WordOfEnnui"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_WordOfEnnui"]/description</xpath>
 					<value>
-						<description>Speak mystic words to the target which instill apathy, temporarily imparting the effects of a concern-nullifying trait of your choice (Ascetic, Asocial, Psychopath, Staid, or Teetotaler). The duration of this effect scales with the target's magic sensitivity.</description>
+						<description>Speak mystic words to the target which instill apathy, temporarily imparting the effects of a concern-nullifying trait of the caster's choice (Ascetic, Asocial, Psychopath, Staid, or Teetotaler). The duration of this effect scales with the target's magic sensitivity.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -179,15 +201,15 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_Joyzone"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_Joyzone"]/description</xpath>
 					<value>
 						<description>Lay an enchantment over the target area, preventing people inside it from getting bored and increasing their ability to learn from recreation.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_WordOfVerve"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_WordOfVerve"]/description</xpath>
 					<value>
-						<description>Speak mystic words to the target which encourage a passion for life, temporarily imparting the effects of a positive personality trait of your choice (Conversationalist, Humble, Kind, Sanguine, or Winsome). The duration of this effect scales with the target's magic sensitivity.</description>
+						<description>Speak mystic words to the target which encourage a passion for life, temporarily imparting the effects of a positive personality trait of the caster's choice (Conversationalist, Humble, Kind, Sanguine, or Winsome). The duration of this effect scales with the target's magic sensitivity.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -251,13 +273,13 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_ExciseTrait"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_ExciseTrait"]/description</xpath>
 					<value>
 						<description>Remove a random trait from the target.\n\nConsidered a hostile action. Will not remove sexuality traits, Latent Sorcery, awakenings, or transcendences.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_Viciousness"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_Viciousness"]/description</xpath>
 					<value>
 						<description>Stimulate a phenomenal talent for violence in the target, increasing their attack speed, accuracy, armor penetration, and damage for a duration scaling with the target’s magic sensitivity.</description>
 					</value>
@@ -269,7 +291,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_WordOfGenius"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_WordOfGenius"]/description</xpath>
 					<value>
 						<description>Speak mystic words to the target which greatly enhance one's talents, temporarily imparting the effects of a skill- or productivity-boosting trait (Drudge, Great Memory, Too Smart, Tortured Artist, or Very Neurotic). The duration of this effect scales with the target’s magic sensitivity.</description>
 					</value>
@@ -335,7 +357,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_MoveUnseen"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_MoveUnseen"]/description</xpath>
 					<value>
 						<description>Enhance the stealth capabilities the target, preventing them from being noticed by hostiles unless they attack or use abilities. The duration scales with the target’s magic sensitivity.</description>
 					</value>
@@ -347,19 +369,19 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_Wimpzone"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_Wimpzone"]/description</xpath>
 					<value>
 						<description>Lay an enchantment over the target area. Beings inside the field are more sensitive to pain, and mechanoids become more vulnerable to EMPs.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_MuscularInnervation"]/label</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_MuscularInnervation"]/label</xpath>
 					<value>
 						<label>enchantment of might</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_MuscularInnervation"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_MuscularInnervation"]/description</xpath>
 					<value>
 						<description>Empower anyone near the target point with great strength. Those affected gain higher melee damage and carry capacity for a duration scaling with their magic sensitivity.</description>
 					</value>
@@ -371,7 +393,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/VFECore.Abilities.AbilityDef[defName = "HVT_TabulaRasa"]/description</xpath>
+					<xpath>Defs/VEF.Abilities.AbilityDef[defName = "HVT_TabulaRasa"]/description</xpath>
 					<value>
 						<description>Weave spiritual strands into the target corpse, bringing it back to life with a totally new soul. It will be of the caster's faction, but it starts without any traits, skills, or backstory. Its learning speed is vastly increased for a duration based on the caster's magic sensitivity, and it will develop new traits roughly every 2 days until it reaches the maximum number of traits.\n\nBeware: should the caster die, all created souls who have not yet attained all their traits will perish as well.</description>
 					</value>
@@ -402,9 +424,15 @@
 				</li>
 			</operations>
 		</match>
-		<!--because I don't want to make ten jillion Harmony patches for every skip psycast that uses a bespoke derivative of VFECore.Abilities.Ability, I just accept that Glowworm works different w/ VPE. Not weaker, just... different.-->
+		<!--Bellbird is ultimately easier to handle this way. Also, because I don't want to make ten jillion Harmony patches for every skip psycast that uses a bespoke derivative of VEF.Abilities.Ability, I just accept that Glowworm works different w/ VPE. Not weaker, just... different.-->
 		<nomatch Class="PatchOperationSequence">
 			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/TraitDef[defName = "HVT_TTraitBellbird"]/degreeDatas/li/description</xpath>
+					<value>
+						<description>{PAWN_nameDef} has enhanced oratory abilities, and can use Group Link at will. If {PAWN_pronoun} casts a Word psycast without the benefit of Group Link, {PAWN_pronoun} regains 10% psyfocus.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/TraitDef[defName = "HVT_TTraitGlowworm"]/degreeDatas/li/description</xpath>
 					<value>

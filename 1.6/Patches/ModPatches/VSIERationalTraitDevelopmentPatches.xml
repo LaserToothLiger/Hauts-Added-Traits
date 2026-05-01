@@ -16,6 +16,7 @@
 						<HVT_Bookworm>0</HVT_Bookworm>
 						<HVT_Champion>0</HVT_Champion>
 						<HVT_Conversationalist>0</HVT_Conversationalist>
+						<HVT_Curmudgeon>0</HVT_Curmudgeon>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Drudge>0</HVT_Drudge>
 						<HVT_Forgettable>0</HVT_Forgettable>
@@ -108,6 +109,7 @@
 					<value>
 						<HVT_Allegiant>0</HVT_Allegiant>
 						<HVT_Asocial>0</HVT_Asocial>
+						<HVT_Curmudgeon>0</HVT_Curmudgeon>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Drudge>0</HVT_Drudge>
 						<HVT_Forgettable>0</HVT_Forgettable>
@@ -148,6 +150,7 @@
 						<HVT_Asocial>0</HVT_Asocial>
 						<HVT_Champion>0</HVT_Champion>
 						<HVT_Conversationalist>0</HVT_Conversationalist>
+						<HVT_Curmudgeon>0</HVT_Curmudgeon>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Forgettable>0</HVT_Forgettable>
 						<HVT_Graver>0</HVT_Graver>
@@ -232,6 +235,7 @@
 						<HVT_Agrizoophobe>0</HVT_Agrizoophobe>
 						<HVT_Asocial>0</HVT_Asocial>
 						<HVT_Bookworm>0</HVT_Bookworm>
+						<HVT_Curmudgeon>0</HVT_Curmudgeon>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hotfoot>0</HVT_Hotfoot>
@@ -272,6 +276,7 @@
 						<HVT_Bookworm>0</HVT_Bookworm>
 						<HVT_Champion>0</HVT_Champion>
 						<HVT_Conversationalist>0</HVT_Conversationalist>
+						<HVT_Curmudgeon>0</HVT_Curmudgeon>
 						<HVT_Daydreamer>0</HVT_Daydreamer>
 						<HVT_Hedonist>0</HVT_Hedonist>
 						<HVT_Hotfoot>0</HVT_Hotfoot>
@@ -380,6 +385,7 @@
 						<HVT_Aestheticist>0</HVT_Aestheticist>
 						<HVT_Allegiant>0</HVT_Allegiant>
 						<HVT_Asocial>0</HVT_Asocial>
+						<HVT_Curmudgeon>0</HVT_Curmudgeon>
 						<HVT_Forgettable>0</HVT_Forgettable>
 						<HVT_Graver>0</HVT_Graver>
 						<HVT_Hale>0</HVT_Hale>

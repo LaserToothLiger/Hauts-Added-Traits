@@ -18,6 +18,7 @@ namespace HautsTraits
         public static TraitDef HVT_Bookworm;
         public static TraitDef HVT_Champion;
         public static TraitDef HVT_Conversationalist;
+        public static TraitDef HVT_Curmudgeon;
         public static TraitDef HVT_Daydreamer;
         public static TraitDef HVT_Forgettable;
         public static TraitDef HVT_Graver;
@@ -88,6 +89,8 @@ namespace HautsTraits
 
         public static ThoughtDef HVT_Bibliophilia;
         public static ThoughtDef HVT_StimulatingConversation;
+        public static ThoughtDef HVT_CurmudgeonlyMood;
+        public static ThoughtDef HVT_CurmudgeonlyDislike;
         public static ThoughtDef HVT_ObservedLayingCorpseGraver;
         public static ThoughtDef HVT_LovesickLetdown;
         public static ThoughtDef HVT_RebuffedALovesick;

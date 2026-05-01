@@ -317,11 +317,42 @@
 									<label>bellbird spirit</label>
 								</value>
 							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/TraitDef[defName = "HVT_TTraitBellbird"]/degreeDatas/li/description</xpath>
-								<value>
-									<description>Word spells cast by {PAWN_nameDef} cost +7.5% mana but affect all valid targets nearby. The radius is equal to twice {PAWN_possessive} level of magical attunement.</description>
-								</value>
+							<li Class="PatchOperationFindMod">
+								<mods><!--Bellbird is easier to handle this way. Also, because I don't want to make ten jillion Harmony patches for every skip psycast that uses a bespoke derivative of VEF.Abilities.Ability, I just accept that Glowworm works different w/ VPE. Not weaker, just... different.-->
+									<li>Vanilla Psycasts Expanded</li>
+								</mods>
+								<match Class="PatchOperationSequence">
+									<operations>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitBellbird"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>{PAWN_nameDef} has enhanced oratory abilities, and can cast Group Link at will. If {PAWN_pronoun} casts a Word spell without the benefit of Group Link, {PAWN_pronoun} regains 10% mana.</description>
+											</value>
+										</li>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitGlowworm"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>When {PAWN_nameDef} uses a conjuration spell, interplanar backlash damages everything around the endpoint. The radius improves with {PAWN_possessive} attunement level, up to level 6.</description>
+											</value>
+										</li>
+									</operations>
+								</match>
+								<nomatch Class="PatchOperationSequence">
+									<operations>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitBellbird"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>Word spells cast by {PAWN_nameDef} cost +7.5% mana but affect all valid targets nearby. The radius is equal to twice {PAWN_possessive} level of magical attunement.</description>
+											</value>
+										</li>
+										<li Class="PatchOperationReplace">
+											<xpath>Defs/TraitDef[defName = "HVT_TTraitGlowworm"]/degreeDatas/li/description</xpath>
+											<value>
+												<description>When {PAWN_nameDef} uses a conjuration spell, interplanar backlash damages everything that isn't an ally between and around the target points. If {PAWN_pronoun} chooses for such a spell's start and end points to be the same (or uses a conjuration spell with a random destination), the the effect occurs only once, around the initial point, but its radius increases to that of {PAWN_possessive} attunement level.</description>
+											</value>
+										</li>
+									</operations>
+								</nomatch>
 							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitBluejay"]/degreeDatas/li/label</xpath>
@@ -607,23 +638,6 @@
 								<value>
 									<label>glowworm spirit</label>
 								</value>
-							</li>
-							<li Class="PatchOperationFindMod">
-								<mods><!--because I don't want to make ten jillion Harmony patches for every skip psycast that uses a bespoke derivative of VFECore.Abilities.Ability, I just accept that Glowworm works different w/ VPE. Not weaker, just... different.-->
-									<li>Vanilla Psycasts Expanded</li>
-								</mods>
-								<match Class="PatchOperationReplace">
-									<xpath>Defs/TraitDef[defName = "HVT_TTraitGlowworm"]/degreeDatas/li/description</xpath>
-									<value>
-										<description>When {PAWN_nameDef} uses a conjuration spell, interplanar backlash damages everything around the endpoint. The radius improves with {PAWN_possessive} attunement level, up to level 6.</description>
-									</value>
-								</match>
-								<nomatch Class="PatchOperationReplace">
-									<xpath>Defs/TraitDef[defName = "HVT_TTraitGlowworm"]/degreeDatas/li/description</xpath>
-									<value>
-										<description>When {PAWN_nameDef} uses a conjuration spell, interplanar backlash damages everything that isn't an ally between and around the target points. If {PAWN_pronoun} chooses for such a spell's start and end points to be the same (or uses a conjuration spell with a random destination), the the effect occurs only once, around the initial point, but its radius increases to that of {PAWN_possessive} attunement level.</description>
-									</value>
-								</nomatch>
 							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitGnat"]/degreeDatas/li/label</xpath>

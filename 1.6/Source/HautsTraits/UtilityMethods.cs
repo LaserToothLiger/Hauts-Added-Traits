@@ -32,6 +32,18 @@ namespace HautsTraits
             }
             return false;
         }
+        //handles Curmudgeons losing mood, and opinion of the other party, on social interaction (provided that the other party has at least 65% mood)
+        public static void DoCurmudgeonPenalties(Pawn curmudgeon, Pawn other)
+        {
+            if (curmudgeon.needs.mood != null && other.needs.mood != null && other.needs.mood.CurLevel >= 0.65f)
+            {
+                curmudgeon.needs.mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_CurmudgeonlyMood, null);
+                if (RelationsUtility.PawnsKnowEachOther(curmudgeon, other))
+                {
+                    curmudgeon.needs.mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_CurmudgeonlyDislike, other);
+                }
+            }
+        }
         //grants mood and possibly an inspiration to the recipient (the Sadistic pawn). The other pawn (which should be the pawn who mentally broke down) gains an opinion malus of the Sadistic, but obviously only if they know the Sadistic.
         public static void DoSadistMoodStuff(Pawn recipient, Pawn pawn)
         {

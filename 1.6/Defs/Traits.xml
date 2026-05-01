@@ -182,8 +182,23 @@
         <modExtensions>
 			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>3</value></li></chargeCosts></li>
         </modExtensions>
-		<conflictingTraits><li>HVT_Asocial</li><li MayRequire="Ludeon.RimWorld.Anomaly">Disturbing</li></conflictingTraits>
+		<conflictingTraits><li>HVT_Asocial</li><li>HVT_Curmudgeon</li><li MayRequire="Ludeon.RimWorld.Anomaly">Disturbing</li></conflictingTraits>
 		<requiredWorkTags><li>Social</li></requiredWorkTags>
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>HVT_Curmudgeon</defName>
+		<commonality>0.3</commonality>
+		<degreeDatas>
+		  <li>
+			<label>curmudgeon</label>
+			<description>{PAWN_nameDef} dislikes overt displays of happiness. {PAWN_pronoun} gets irritated when talking to anyone who is in a good mood, unless they share this particular outlook.</description>
+		  </li>
+		</degreeDatas>
+        <modExtensions>
+			<li Class="HautsTraits.SpecificPNFChargeCost"><chargeCosts><li><key>0</key><value>1</value></li></chargeCosts></li>
+        </modExtensions>
+		<conflictingTraits><li>Kind</li><li>HVT_Conversationalist</li></conflictingTraits>
 	</TraitDef>
 		
 	<TraitDef>

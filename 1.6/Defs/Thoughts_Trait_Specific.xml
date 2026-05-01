@@ -179,6 +179,37 @@
     </stages>
   </ThoughtDef>
   
+  <!--curmudgeon mood lost for social interaction with happy person-->
+  <ThoughtDef>
+    <defName>HVT_CurmudgeonlyMood</defName>
+    <durationDays>0.42</durationDays>
+    <stackLimit>6</stackLimit>
+    <stackedEffectMultiplier>1.0</stackedEffectMultiplier>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>curmudgeon irritated</label>
+        <description>I hate talking with happy people. They're so annoying.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--curmudgeon opinion malus of happy people they interact with-->
+  <ThoughtDef>
+    <defName>HVT_CurmudgeonlyDislike</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>2</durationDays>
+    <stages>
+      <li>
+        <label>curmudgeon vs happy</label>
+        <description>I hate talking with happy people. They're so annoying.</description>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
   <!--gravers LOVE skullspikes-->
   <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>HVT_SkullspikeGraver</defName>

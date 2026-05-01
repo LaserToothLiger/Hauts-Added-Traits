@@ -323,8 +323,10 @@ namespace HautsTraits
                 }
             }
         }
-        /*Conversationalists grant a stacking mood buff to anyone they interact with, provided that interaction isn't a slight or insult. This also handles Mentors granting skills to whoever they interact with.
-         * It has to be a skill they both have access to, and is preferably a shared passion, one of the mentee's passions, or one of the Mentor's passions, in that order. Scales with Mentor's instructive ability*/
+        /*Conversationalists grant a stacking mood buff to anyone they interact with, provided that interaction isn't a slight or insult.
+         * Curmudgeons lose mood and opinion when interacting with someone who is Content or Happy, mood-wise.
+         * This also handles Mentors granting skills to whoever they interact with.
+         *   It has to be a skill they both have access to, and is preferably a shared passion, one of the mentee's passions, or one of the Mentor's passions, in that order. Scales with Mentor's instructive ability*/
         public static void HVTTryInteractWithPostfix(Pawn_InteractionsTracker __instance, Pawn recipient, InteractionDef intDef)
         {
             Pawn pawn = GetInstanceField(typeof(Pawn_InteractionsTracker), __instance, "pawn") as Pawn;
@@ -336,6 +338,12 @@ namespace HautsTraits
                     {
                         recipient.needs.mood.thoughts.memories.TryGainMemory(HVTDefOf.HVT_StimulatingConversation, null);
                     }
+                }
+                if (pawn.story.traits.HasTrait(HVTDefOf.HVT_Curmudgeon) && (recipient.story == null || !recipient.story.traits.HasTrait(HVTDefOf.HVT_Curmudgeon)))
+                {
+                    HVTUtility.DoCurmudgeonPenalties(pawn, recipient);
+                } else if (recipient.story != null && recipient.story.traits.HasTrait(HVTDefOf.HVT_Curmudgeon) && !pawn.story.traits.HasTrait(HVTDefOf.HVT_Curmudgeon)) {
+                    HVTUtility.DoCurmudgeonPenalties(recipient, pawn);
                 }
                 if (ModsConfig.BiotechActive && pawn.story.traits.HasTrait(HVTDefOf.HVT_Mentor) && recipient.skills != null)
                 {

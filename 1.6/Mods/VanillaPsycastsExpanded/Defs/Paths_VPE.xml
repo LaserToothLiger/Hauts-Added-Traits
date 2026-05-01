@@ -20,7 +20,7 @@
 		<iconPath>VPE/HVT_WordOfEnnui</iconPath>
 		<castTime>120</castTime>
 		<targetMode>Humanlike</targetMode>
-		<durationTime>2500</durationTime>
+		<durationTime>5000</durationTime><!--these are in seconds. So that's 5 days.-->
 		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -31,79 +31,23 @@
 				<entropyGain>0</entropyGain>
 				<psychic>true</psychic>
 			</li>
-			<li Class="VEF.Abilities.AbilityExtension_Hediff">
-				<hediff>HVT_WordOfEnnuiSelf</hediff>
+			<li Class="Hauts_VPE.AbilityExtension_GiveHediffFromMenu">
+				<props>
+					<hediffs>
+						<li>HVT_Asceticism</li>
+						<li>HVT_Asociality</li>
+						<li>HVT_Psychopathy</li>
+						<li>HVT_Staidness</li>
+						<li>HVT_Teetotality</li>
+					</hediffs>
+					<menuString>HVT_HediffMenu</menuString>
+					<menuStringPlural>HVT_HediffMenuMulti</menuStringPlural>
+					<autoSelectIfAI>false</autoSelectIfAI>
+				</props>
+				<targetDurationScalar>PsychicSensitivity</targetDurationScalar>
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
-  <HediffDef ParentName = "PsycastHediffBase">
-    <defName>HVT_WordOfEnnuiSelf</defName>
-    <label>choose ennui trait</label>
-    <description>Choose a concern-nullifying trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
-    <isBad>false</isBad>
-	<everCurableByItem>false</everCurableByItem>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.0, 0.82, 0.82)</defaultLabelColor>
-    <comps>
-      <li Class="HediffCompProperties_GiveAbility">
-        <abilityDefs>
-          <li>HVT_WordOfEnnuiSelf</li>
-        </abilityDefs>
-      </li>
-    </comps>
-  </HediffDef>
-  <AbilityDef>
-    <defName>HVT_WordOfEnnuiSelf</defName>
-    <label>choose ennui trait</label>
-    <description>Choose a concern-nullifying trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
-    <jobDef>CastAbilityOnThing</jobDef>
-    <targetRequired>False</targetRequired>
-    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
-    <stunTargetWhileCasting>False</stunTargetWhileCasting>
-    <showPsycastEffects>False</showPsycastEffects>
-    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <hotKey>Misc12</hotKey>
-	<iconPath>VPE/HVT_WordOfEnnui</iconPath>
-	<cooldownTicksRange>0</cooldownTicksRange>
-    <statBases>
-      <Ability_Duration>5000</Ability_Duration>
-      <Ability_EffectRadius>0</Ability_EffectRadius>
-    </statBases>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <warmupTime>0</warmupTime>
-	  <range>0</range>
-      <drawAimPie>False</drawAimPie>
-	  <targetable>false</targetable>
-      <requireLineOfSight>False</requireLineOfSight>
-      <targetParams>
-        <canTargetSelf>true</canTargetSelf>
-        <canTargetPawns>false</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetAnimals>false</canTargetAnimals>
-        <canTargetHumans>false</canTargetHumans>
-        <canTargetMechs>false</canTargetMechs>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class = "HautsFramework.CompProperties_AbilityGiveHediffFromMenu">
-        <compClass>HautsFramework.CompAbilityEffect_GiveHediffFromMenu</compClass>
-        <hediffs>
-			<li>HVT_Asceticism</li>
-			<li>HVT_Asociality</li>
-			<li>HVT_Psychopathy</li>
-			<li>HVT_Staidness</li>
-			<li>HVT_Teetotality</li>
-		</hediffs>
-		<menuString>HVT_HediffMenu</menuString>
-		<autoSelectIfAI>false</autoSelectIfAI>
-        <durationMultiplier>PsychicSensitivity</durationMultiplier>
-		<removeThisAfterGrantingOption>HVT_WordOfEnnuiSelf</removeThisAfterGrantingOption>
-      </li>
-    </comps>
-  </AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_Asceticism</defName>
     <label>psychically-induced asceticism</label>
@@ -184,7 +128,7 @@
 		<iconPath>VPE/HVT_WordOfVerve</iconPath>
 		<castTime>120</castTime>
 		<targetMode>Humanlike</targetMode>
-		<durationTime>2500</durationTime>
+		<durationTime>5000</durationTime>
 		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -195,79 +139,23 @@
 				<entropyGain>0</entropyGain>
 				<psychic>true</psychic>
 			</li>
-			<li Class="VEF.Abilities.AbilityExtension_Hediff">
-				<hediff>HVT_WordOfVerveSelf</hediff>
+			<li Class="Hauts_VPE.AbilityExtension_GiveHediffFromMenu">
+				<props>
+					<hediffs>
+						<li>HVT_Charisma</li>
+						<li>HVT_HumilityHed</li>
+						<li>HVT_Kindness</li>
+						<li>HVT_Sanguinity</li>
+						<li>HVT_Winsomeness</li>
+					</hediffs>
+					<menuString>HVT_HediffMenu</menuString>
+					<menuStringPlural>HVT_HediffMenuMulti</menuStringPlural>
+					<autoSelectIfAI>false</autoSelectIfAI>
+				</props>
+				<targetDurationScalar>PsychicSensitivity</targetDurationScalar>
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
-  <HediffDef ParentName = "PsycastHediffBase">
-    <defName>HVT_WordOfVerveSelf</defName>
-    <label>choose verve trait</label>
-    <description>Choose a positive personality trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
-    <isBad>false</isBad>
-	<everCurableByItem>false</everCurableByItem>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.0, 0.82, 0.82)</defaultLabelColor>
-    <comps>
-      <li Class="HediffCompProperties_GiveAbility">
-        <abilityDefs>
-          <li>HVT_WordOfVerveSelf</li>
-        </abilityDefs>
-      </li>
-    </comps>
-  </HediffDef>
-  <AbilityDef>
-    <defName>HVT_WordOfVerveSelf</defName>
-    <label>choose verve trait</label>
-    <description>Choose a positive personality trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
-    <jobDef>CastAbilityOnThing</jobDef>
-    <targetRequired>False</targetRequired>
-    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
-    <stunTargetWhileCasting>False</stunTargetWhileCasting>
-    <showPsycastEffects>False</showPsycastEffects>
-    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <hotKey>Misc12</hotKey>
-	<iconPath>VPE/HVT_WordOfVerve</iconPath>
-	<cooldownTicksRange>0</cooldownTicksRange>
-    <statBases>
-      <Ability_Duration>5000</Ability_Duration>
-      <Ability_EffectRadius>0</Ability_EffectRadius>
-    </statBases>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <warmupTime>0</warmupTime>
-	  <range>0</range>
-      <drawAimPie>False</drawAimPie>
-	  <targetable>false</targetable>
-      <requireLineOfSight>False</requireLineOfSight>
-      <targetParams>
-        <canTargetSelf>true</canTargetSelf>
-        <canTargetPawns>false</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetAnimals>false</canTargetAnimals>
-        <canTargetHumans>false</canTargetHumans>
-        <canTargetMechs>false</canTargetMechs>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class = "HautsFramework.CompProperties_AbilityGiveHediffFromMenu">
-        <compClass>HautsFramework.CompAbilityEffect_GiveHediffFromMenu</compClass>
-        <hediffs>
-			<li>HVT_Charisma</li>
-			<li>HVT_HumilityHed</li>
-			<li>HVT_Kindness</li>
-			<li>HVT_Sanguinity</li>
-			<li>HVT_Winsomeness</li>
-		</hediffs>
-		<menuString>HVT_HediffMenu</menuString>
-		<autoSelectIfAI>false</autoSelectIfAI>
-        <durationMultiplier>PsychicSensitivity</durationMultiplier>
-		<removeThisAfterGrantingOption>HVT_WordOfVerveSelf</removeThisAfterGrantingOption>
-      </li>
-    </comps>
-  </AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_Charisma</defName>
     <label>psychically-induced charisma</label>
@@ -592,7 +480,7 @@
 		<iconPath>VPE/HVT_WordOfGenius</iconPath>
 		<castTime>120</castTime>
 		<targetMode>Humanlike</targetMode>
-		<durationTime>2500</durationTime>
+		<durationTime>5000</durationTime>
 		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -606,79 +494,23 @@
 				  <li>HVT_Joyzone</li>
 			    </prerequisites>
 			</li>
-			<li Class="VEF.Abilities.AbilityExtension_Hediff">
-				<hediff>HVT_WordOfGeniusSelf</hediff>
+			<li Class="Hauts_VPE.AbilityExtension_GiveHediffFromMenu">
+				<props>
+					<hediffs>
+						<li>HVT_Drudgery</li>
+						<li>HVT_GreatMemorization</li>
+						<li>HVT_Smartness</li>
+						<li>HVT_ArtisticTorture</li>
+						<li>HVT_Neuroticism</li>
+					</hediffs>
+					<menuString>HVT_HediffMenu</menuString>
+					<menuStringPlural>HVT_HediffMenuMulti</menuStringPlural>
+					<autoSelectIfAI>false</autoSelectIfAI>
+				</props>
+				<targetDurationScalar>PsychicSensitivity</targetDurationScalar>
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
-  <HediffDef ParentName = "PsycastHediffBase">
-    <defName>HVT_WordOfGeniusSelf</defName>
-    <label>choose genius trait</label>
-    <description>Choose a skill- or productivity-boosting trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
-    <isBad>false</isBad>
-	<everCurableByItem>false</everCurableByItem>
-    <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.0, 0.82, 0.82)</defaultLabelColor>
-    <comps>
-      <li Class="HediffCompProperties_GiveAbility">
-        <abilityDefs>
-          <li>HVT_WordOfGeniusSelf</li>
-        </abilityDefs>
-      </li>
-    </comps>
-  </HediffDef>
-  <AbilityDef>
-    <defName>HVT_WordOfGeniusSelf</defName>
-    <label>choose genius trait</label>
-    <description>Choose a skill- or productivity-boosting trait to temporarily gain. Duration scales with psychic sensitivity. Can't restore a suppressed trait.</description>
-    <jobDef>CastAbilityOnThing</jobDef>
-    <targetRequired>False</targetRequired>
-    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
-    <stunTargetWhileCasting>False</stunTargetWhileCasting>
-    <showPsycastEffects>False</showPsycastEffects>
-    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <hotKey>Misc12</hotKey>
-	<iconPath>VPE/HVT_WordOfGenius</iconPath>
-	<cooldownTicksRange>0</cooldownTicksRange>
-    <statBases>
-      <Ability_Duration>5000</Ability_Duration>
-      <Ability_EffectRadius>0</Ability_EffectRadius>
-    </statBases>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <warmupTime>0</warmupTime>
-	  <range>0</range>
-      <drawAimPie>False</drawAimPie>
-	  <targetable>false</targetable>
-      <requireLineOfSight>False</requireLineOfSight>
-      <targetParams>
-        <canTargetSelf>true</canTargetSelf>
-        <canTargetPawns>false</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetAnimals>false</canTargetAnimals>
-        <canTargetHumans>false</canTargetHumans>
-        <canTargetMechs>false</canTargetMechs>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class = "HautsFramework.CompProperties_AbilityGiveHediffFromMenu">
-        <compClass>HautsFramework.CompAbilityEffect_GiveHediffFromMenu</compClass>
-        <hediffs>
-			<li>HVT_Drudgery</li>
-			<li>HVT_GreatMemorization</li>
-			<li>HVT_Smartness</li>
-			<li>HVT_ArtisticTorture</li>
-			<li>HVT_Neuroticism</li>
-		</hediffs>
-		<menuString>HVT_HediffMenu</menuString>
-		<autoSelectIfAI>false</autoSelectIfAI>
-        <durationMultiplier>PsychicSensitivity</durationMultiplier>
-		<removeThisAfterGrantingOption>HVT_WordOfGeniusSelf</removeThisAfterGrantingOption>
-      </li>
-    </comps>
-  </AbilityDef>
   <HediffDef ParentName = "PsycastHediffBase">
     <defName>HVT_Drudgery</defName>
     <label>psychically-induced drudgery</label>

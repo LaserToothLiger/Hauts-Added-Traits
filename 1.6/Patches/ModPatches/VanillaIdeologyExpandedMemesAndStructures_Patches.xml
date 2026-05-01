@@ -123,7 +123,7 @@
 						</operations>
 					</match>
 				</li>
-				<!--Asocial likes Anon, hates Trader. Skulker likes Anon too-->
+				<!--Asocial likes Anon, hates Trader. Curmudgeon and Skulker like Anon too-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="VME_Anonymity"]/agreeableTraits</xpath>
 					<nomatch Class="PatchOperationAdd">
@@ -131,6 +131,7 @@
 						<value>
 							<agreeableTraits>
 								<li>HVT_Asocial</li>
+								<li>HVT_Curmudgeon</li>
 								<li>HVT_Skulker</li>
 							</agreeableTraits>
 						</value>
@@ -139,6 +140,7 @@
 						<xpath>/Defs/MemeDef[defName="VME_Anonymity"]/agreeableTraits</xpath>
 						<value>
 							<li>HVT_Asocial</li>
+							<li>HVT_Curmudgeon</li>
 							<li>HVT_Skulker</li>
 						</value>
 					</match>
