@@ -969,6 +969,8 @@ namespace HautsTraitsRoyalty
             if (wraith != null && wraith.Severity >= 24f)
             {
                 PsychicPowerUtility.WraithTransfer(__instance);
+            } else if (__instance.health.hediffSet.HasHediff(HVTRoyaltyDefOf.HVT_DulosisTimedLife)) {
+                __instance.SetFaction(null);
             }
         }
         //Transcendent Phoenixes automatically "cast" their resurrection ability on themselves when they die. Logically, this won't happen if the ability's on cooldown
