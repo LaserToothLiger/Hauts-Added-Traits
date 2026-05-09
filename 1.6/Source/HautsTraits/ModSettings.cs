@@ -66,7 +66,7 @@ namespace HautsTraits
             {
                 traitsMax = traitsMin;
             }
-            Scribe_Values.Look(ref traitsMax, "traitsMax", 1);
+            Scribe_Values.Look(ref traitsMax, "traitsMax", 3);
             Scribe_Values.Look(ref genePuristsHateAliens, "genePuristsHateAliens", false);
             Scribe_Values.Look(ref monsterLoveForXenos, "monsterLoveForXenos", false);
             Scribe_Values.Look(ref monsterLoveForAliens, "monsterLoveForAliens", false);
@@ -131,7 +131,7 @@ namespace HautsTraits
             y -= 32;
             orig = settings.traitsMax;
             Rect traitsMaxRect = new Rect(x + 5 + halfWidth, y, halfWidth - 15, 32);
-            settings.traitsMax = Widgets.HorizontalSlider(traitsMaxRect, settings.traitsMax, 3f, 9f, true, "HVT_SettingMaxTraits".Translate(), "3", "9", 1f);
+            settings.traitsMax = Widgets.HorizontalSlider(traitsMaxRect, settings.traitsMax, 3f, 12f, true, "HVT_SettingMaxTraits".Translate(), "3", "12", 1f);
             TooltipHandler.TipRegion(traitsMaxRect.LeftPart(1f), "HVT_TooltipMaxTraits".Translate());
             if (orig != settings.traitsMax)
             {

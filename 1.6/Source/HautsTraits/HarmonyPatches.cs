@@ -916,10 +916,49 @@ namespace HautsTraits
                             ageDependentMax = 3;
                         }
                         break;
+                    case 10:
+                        if (ageBiologicalYears > 13)
+                        {
+                            ageDependentMax = 10;
+                        } else if (ageBiologicalYears > 11) {
+                            ageDependentMax = 8;
+                        } else if (ageBiologicalYears > 9) {
+                            ageDependentMax = 6;
+                        } else if (ageBiologicalYears > 7) {
+                            ageDependentMax = 4;
+                        } else if (ageBiologicalYears > 5) {
+                            ageDependentMax = 2;
+                        }
+                        break;
+                    case 11:
+                        if (ageBiologicalYears > 13)
+                        {
+                            ageDependentMax = 11;
+                        } else if (ageBiologicalYears > 11) {
+                            ageDependentMax = 8;
+                        } else if (ageBiologicalYears > 9) {
+                            ageDependentMax = 5;
+                        } else if (ageBiologicalYears > 6) {
+                            ageDependentMax = 2;
+                        }
+                        break;
+                    case 12:
+                        if (ageBiologicalYears > 13)
+                        {
+                            ageDependentMax = 12;
+                        } else if (ageBiologicalYears > 11) {
+                            ageDependentMax = 9;
+                        } else if (ageBiologicalYears > 9) {
+                            ageDependentMax = 6;
+                        } else if (ageBiologicalYears > 6) {
+                            ageDependentMax = 3;
+                        }
+                        break;
                     default:
                         ageDependentMax = (int)HVT_Mod.settings.traitsMax;
                         break;
                 }
+                //Be assigned additional traits until you reach a random number within the min and max range. Min always no larger than max
                 int ageDependentMin = Math.Min((int)HVT_Mod.settings.traitsMin,ageDependentMax);
                 int howManyTraits = Rand.RangeInclusive(ageDependentMin, ageDependentMax);
                 int num = 10;
@@ -943,12 +982,12 @@ namespace HautsTraits
                 __result = true;
             }
             int traitsMax = (int)HVT_Mod.settings.traitsMax;
-            if ((traitsMax%3) == 0 && (age == 10 || age == 7))
+            if ((traitsMax % 3) == 0 && traitsMax != 12 && (age == 10 || age == 7))
             {
                 __result = true;
-            } else if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8) && (age == 11 || age == 9 || age == 6)) {
+            } else if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8 || traitsMax >= 11) && (age == 11 || age == 9 || age == 6)) {
                 __result = true;
-            } else if (traitsMax == 5 && (age == 11 || age == 9 || age == 7 || age == 5)) {
+            } else if ((traitsMax == 5 || traitsMax == 10) && (age == 11 || age == 9 || age == 7 || age == 5)) {
                 __result = true;
             }
         }
@@ -960,7 +999,7 @@ namespace HautsTraits
                 if (pawn != null)
                 {
                     int traitsMax = (int)HVT_Mod.settings.traitsMax;
-                    if (traitsMax == 4 || traitsMax == 7 || traitsMax == 8) {
+                    if (traitsMax == 4 || traitsMax == 7 || traitsMax == 8 || traitsMax >= 11) {
                         if ((float)__instance.AgeBiologicalYearsFloat < 7f)
                         {
                             __result /= 0.75f;
@@ -969,7 +1008,7 @@ namespace HautsTraits
                         {
                             __result *= 1.5f;
                         }
-                    } else if (traitsMax == 5) {
+                    } else if (traitsMax == 5 || traitsMax == 10) {
                         if ((float)__instance.AgeBiologicalYearsFloat < 7f)
                         {
                             __result /= 0.75f;
@@ -1011,6 +1050,30 @@ namespace HautsTraits
                         HVTUtility.DoBonusGrowthMoment(pawn);
                     }
                     break;
+                case 10:
+                    if (age == 5 || age == 7 || age == 9 || age == 11 || age == 13)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    break;
+                case 11:
+                    if (age == 6)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    if (age == 9 || age == 11 || age == 13)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    break;
+                case 12:
+                    if (age == 6 || age == 9 || age == 11 || age == 13)
+                    {
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                        HVTUtility.DoBonusGrowthMoment(pawn);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -1025,10 +1088,10 @@ namespace HautsTraits
             Pawn pawn = __instance.pawn;
             int age = pawn.ageTracker.AgeBiologicalYears;
             int traitsMax = (int)HVT_Mod.settings.traitsMax;
-            if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8) && (age == 10 || age == 7))
+            if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8 || traitsMax >= 11) && (age == 10 || age == 7))
             {
                 refundGrowthPoints = true;
-            } else if (traitsMax == 5 && age == 10) {
+            } else if ((traitsMax == 5 || traitsMax == 10) && age == 10) {
                 refundGrowthPoints = true;
             }
             if (refundGrowthPoints)
