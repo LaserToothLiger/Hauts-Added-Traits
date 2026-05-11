@@ -866,7 +866,7 @@ namespace HautsTraitsRoyalty
                 {
                     __result = true;
                     return;
-                }/*else {
+                }else {
                     bool hasAnyMFD = false;
                     foreach (Trait t in p.story.traits.allTraits)
                     {
@@ -888,7 +888,7 @@ namespace HautsTraitsRoyalty
                     {
                         __result = true;
                     }
-                }*/
+                }
             }
         }
         /*Handles the possibility of pawns gaining awakened or transcendent traits during their generation process
