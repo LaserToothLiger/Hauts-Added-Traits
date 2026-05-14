@@ -19,6 +19,11 @@ namespace HautsTraitsRoyalty
                 this.pawn.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
             }
         }
+        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
+        {
+            base.Notify_PawnDied(dinfo, culprit);
+            PawnDiedOrDownedThoughtsUtility.RemoveDiedThoughts(this.pawn);
+        }
         public override void Notify_Resurrected()
         {
             base.Notify_Resurrected();
