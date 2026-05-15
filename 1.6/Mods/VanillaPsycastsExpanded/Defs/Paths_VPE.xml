@@ -384,7 +384,7 @@
 			<needsMaintenance>true</needsMaintenance>
 		</mote>
 		<graphicData>
-		  <graphicClass>Graphic_PawnBodySilhouette</graphicClass>
+		  <graphicClass>HautsFramework.Graphic_PawnBodySilhouette_OkForAnimalsInBed</graphicClass>
 		  <color>(0.82745,1.0,0.52157,0.56)</color>
 		  <shaderType>MoteGlowDistorted</shaderType>
 		  <texPath>Things/Mote/SparkThrown</texPath>
@@ -763,7 +763,7 @@
 			<needsMaintenance>true</needsMaintenance>
 		</mote>
 		<graphicData>
-		  <graphicClass>Graphic_PawnBodySilhouette</graphicClass>
+		  <graphicClass>HautsFramework.Graphic_PawnBodySilhouette_OkForAnimalsInBed</graphicClass>
 		  <color>(1.0,0.65098,0.62353,0.56)</color>
 		  <shaderType>MoteGlowDistorted</shaderType>
 		  <texPath>Things/Mote/SparkThrown</texPath>

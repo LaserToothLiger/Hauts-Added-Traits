@@ -34,9 +34,7 @@ namespace HautsTraits
             if (hostFaction == Faction.OfPlayer)
             {
                 enumerable = enumerable.Concat(map.listerBuildings.allBuildingsColonist.Cast<Thing>());
-            }
-            else
-            {
+            } else {
                 enumerable = enumerable.Concat(from x in map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial)
                                                where x.Faction == hostFaction
                                                select x);
@@ -157,9 +155,7 @@ namespace HautsTraits
                         int randomCell = (int)(Rand.Value * map.listerBuildings.allBuildingsColonist.Count);
                         toSpawn = map.listerBuildings.allBuildingsColonist[randomCell].Position;
                         toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, (IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous && !p.Fogged(map));
-                    }
-                    else
-                    {
+                    } else {
                         CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous, map, CellFinder.EdgeRoadChance_Hostile, out toSpawn);
                     }
                 } while (!toSpawn.Standable(map));
@@ -230,9 +226,7 @@ namespace HautsTraits
                         int randomCell = (int)(Rand.Value * map.listerBuildings.allBuildingsColonist.Count);
                         toSpawn = map.listerBuildings.allBuildingsColonist[randomCell].Position;
                         toSpawn = CellFinder.RandomClosewalkCellNear(toSpawn, map, 2, (IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous && !p.Fogged(map));
-                    }
-                    else
-                    {
+                    } else {
                         CellFinder.TryFindRandomEdgeCellWith((IntVec3 p) => p.Standable(map) && !p.GetTerrain(map).dangerous, map, CellFinder.EdgeRoadChance_Hostile, out toSpawn);
                     }
                 } while (!toSpawn.Standable(map));
@@ -265,9 +259,7 @@ namespace HautsTraits
                 if (Rand.Value <= 0.01f)
                 {
                     ied = (Building_TrapExplosive)ThingMaker.MakeThing(HVTDefOf.Hauts_SabotageIED_AntigrainWarhead, null);
-                }
-                else
-                {
+                } else {
                     ied = (Building_TrapExplosive)ThingMaker.MakeThing(HVTDefOf.Hauts_SabotageIED_HighExplosive, null);
                 }
                 ied.SetFactionDirect(parms.faction);
