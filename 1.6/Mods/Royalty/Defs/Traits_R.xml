@@ -1048,6 +1048,9 @@
 			  <Hauts_RangedArmorPenetration>0.2</Hauts_RangedArmorPenetration>
 			  <Hauts_PsyfocusGainOnKill>0.01</Hauts_PsyfocusGainOnKill>
 			</statOffsets>
+			<statFactors>
+			  <OWD_NecroticEnergy MayRequire="6224Y.OneWithDeath">1.25</OWD_NecroticEnergy>
+			</statFactors>
 			<disallowedThoughts>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeadlifeDust</li>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathPall</li>
@@ -1520,6 +1523,7 @@
 			</statFactors>
 			<statOffsets>
 			  <Hauts_PsyfocusRegenRate>0.1</Hauts_PsyfocusRegenRate>
+			  <OWD_EnergyRegeneration MayRequire="6224Y.OneWithDeath">3</OWD_EnergyRegeneration>
 			</statOffsets>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -2011,6 +2015,7 @@
 			<statFactors>
 			  <MeditationFocusGain>1.5</MeditationFocusGain>
 			  <DeathrestEffectivenessFactor MayRequire="Ludeon.RimWorld.Biotech,lts.I">1.5</DeathrestEffectivenessFactor>
+			  <OWD_EnergyRegeneration MayRequire="6224Y.OneWithDeath">1.5</OWD_EnergyRegeneration>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -3246,6 +3251,9 @@
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathRefusalSickness</li>
 			</disallowedThoughts>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statFactors>
+			  <OWD_NecroticEnergy MayRequire="6224Y.OneWithDeath">1.25</OWD_NecroticEnergy>
+			</statFactors>
 		  </li>
 		</degreeDatas>
         <modExtensions>

@@ -6712,6 +6712,7 @@
 		  <Hauts_PsyfocusFromFood>0.0006</Hauts_PsyfocusFromFood>
 		  <Hauts_PsyfocusGainOnKill>0.0006</Hauts_PsyfocusGainOnKill>
           <Hauts_SkipcastRangeFactor>0.01</Hauts_SkipcastRangeFactor>
+		  <OWD_NecroticEnergy MayRequire="6224Y.OneWithDeath">5</OWD_NecroticEnergy>
         </statOffsets>
 		<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
       </li>

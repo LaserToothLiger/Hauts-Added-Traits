@@ -19,7 +19,19 @@ namespace HautsTraitsRoyalty
             if (this.pawn.Corpse.Map != null)
             {
 
-                List<Thing> animaTrees = this.pawn.Corpse.Map.listerThings.ThingsOfDef(ThingDefOf.Plant_TreeAnima);
+                List<Thing> animaTrees = new List<Thing>();
+                foreach (Thing t in this.pawn.Corpse.Map.listerThings.AllThings)
+                {
+                    CompSpawnSubplant css = t.TryGetComp<CompSpawnSubplant>();
+                    if (css != null)
+                    {
+                        CompPsylinkable cpl = t.TryGetComp<CompPsylinkable>();
+                        if (cpl != null)
+                        {
+                            animaTrees.Add(t);
+                        }
+                    }
+                }
                 if (animaTrees.Count > 0)
                 {
                     Thing animaTree = animaTrees.RandomElement<Thing>();
@@ -36,9 +48,7 @@ namespace HautsTraitsRoyalty
                     CompAbilityEffect_Teleport.SendSkipUsedSignal(this.pawn.Corpse.Position, this.pawn.Corpse);
                     ResurrectionUtility.TryResurrect(this.pawn.Corpse.InnerPawn);
                 }
-            }
-            else if (Rand.Value <= 0.1f)
-            {
+            } else if (Rand.Value <= 0.1f) {
                 if (ResurrectionUtility.TryResurrect(this.pawn.Corpse.InnerPawn))
                 {
                     if (PawnUtility.ShouldSendNotificationAbout(this.pawn))

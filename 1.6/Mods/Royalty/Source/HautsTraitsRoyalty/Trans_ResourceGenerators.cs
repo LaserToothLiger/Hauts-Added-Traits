@@ -287,9 +287,7 @@ namespace HautsTraitsRoyalty
                     tDef = (from tdef in DefDatabase<ThingDef>.AllDefsListForReading
                             where tdef.thingCategories != null && tdef.thingCategories.Contains(ThingCategoryDefOf.NeurotrainersPsycast)
                             select tdef).RandomElement();
-                }
-                else
-                {
+                } else {
                     tDef = (from tdef in DefDatabase<ThingDef>.AllDefsListForReading
                             where tdef.thingCategories != null && tdef.thingCategories.Contains(ThingCategoryDefOf.NeurotrainersSkill)
                             select tdef).RandomElement();
