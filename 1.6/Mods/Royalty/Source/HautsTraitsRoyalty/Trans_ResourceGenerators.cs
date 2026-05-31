@@ -171,12 +171,15 @@ namespace HautsTraitsRoyalty
         }
         public override void AffectSelf()
         {
-            foreach (Plant plant in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.FunctionalRange, true).OfType<Plant>().Distinct<Plant>())
+            if (this.Pawn.SpawnedOrAnyParentSpawned)
             {
-                if (!plant.Blighted && plant.LifeStage > PlantLifeStage.Sowing)
+                foreach (Plant plant in GenRadial.RadialDistinctThingsAround(this.Pawn.Position, this.Pawn.Map, this.FunctionalRange, true).OfType<Plant>().Distinct<Plant>())
                 {
-                    plant.Growth += (this.Props.bonusPlantGrowth * this.Props.tickPeriodicity * plant.GrowthRateFactor_Fertility) / (60000f * plant.def.plant.growDays);
-                    plant.DirtyMapMesh(plant.Map);
+                    if (!plant.Blighted && plant.LifeStage > PlantLifeStage.Sowing)
+                    {
+                        plant.Growth += (this.Props.bonusPlantGrowth * this.Props.tickPeriodicity * plant.GrowthRateFactor_Fertility) / (60000f * plant.def.plant.growDays);
+                        plant.DirtyMapMesh(plant.Map);
+                    }
                 }
             }
         }
