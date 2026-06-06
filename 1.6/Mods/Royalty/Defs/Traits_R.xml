@@ -619,6 +619,9 @@
 			  <Radiation MayRequire="Dubwise.Rimatomics">-0.35</Radiation>
 			  <VEF_EnergyShieldEnergyMaxFactor>0.35</VEF_EnergyShieldEnergyMaxFactor>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">0.4</ArmorRating_Electric>
+			  <HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</HeatNullNaniteResistance>
+			  <ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</ColdNullNaniteResistance>
+			  <RadiationResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.35</RadiationResistance>
 			</statOffsets>
 			<statFactors>
 			  <Hauts_ElectricalDamageFactor>0</Hauts_ElectricalDamageFactor>
@@ -1014,6 +1017,7 @@
 			<statOffsets>
 			  <ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.06</ActivitySuppressionRate>
 			  <Suppressability MayRequire="CETeam.CombatExtended">-1</Suppressability>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RageVirusResistance>
 			</statOffsets>
 			<statFactors>
 			  <Hauts_PsychicDamageFactor>0</Hauts_PsychicDamageFactor>
@@ -1099,6 +1103,8 @@
 			  <ComfyTemperatureMin>-25</ComfyTemperatureMin>
 			  <ComfyTemperatureMax>25</ComfyTemperatureMax>
 			  <ArmorRating_Heat>0.10</ArmorRating_Heat>
+			  <HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</HeatNullNaniteResistance>
+			  <ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</ColdNullNaniteResistance>
 			</statOffsets>
 			<statFactors>
 			  <Flammability>0</Flammability>
@@ -1327,6 +1333,9 @@
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">100</Mashed_Ashlands_AshResistance>
 			  <ArmorRating_Electric MayRequire="CETeam.CombatExtended">1</ArmorRating_Electric>
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+			  <HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">20</HeatNullNaniteResistance>
+			  <ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">20</ColdNullNaniteResistance>
+			  <RadiationResistance MayRequire="Snow.KraltechIndustries.Rebalanced">20</RadiationResistance>
 			</statOffsets>
 			<disallowedThoughts>
 			  <li>SoakingWet</li>
@@ -1391,6 +1400,12 @@
 			  <ToxicResistance>1</ToxicResistance>
 			  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">1</Mashed_Ashlands_AshResistance>
+			  <HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</HeatNullNaniteResistance>
+			  <ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</ColdNullNaniteResistance>
+			  <AntiOrgToxinResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</AntiOrgToxinResistance>
+			  <RadiationResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RadiationResistance>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RageVirusResistance>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
 			</statOffsets>
 			<statFactors>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
@@ -1541,6 +1556,7 @@
 			<allowedMeditationFocusTypes><li>Morbid</li></allowedMeditationFocusTypes>
 			<statOffsets>
 			  <Hauts_EntityDamageFactor MayRequire="Ludeon.RimWorld.Anomaly">0.5</Hauts_EntityDamageFactor>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
 			</statOffsets>
 			<disallowedThoughts>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeadlifeDust</li>
@@ -2476,6 +2492,12 @@
 			  <ToxicResistance>2000</ToxicResistance>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">0.5</Mashed_Ashlands_AshResistance>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-2</SmokeSensitivity>
+			  <HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">2000</HeatNullNaniteResistance>
+			  <ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">2000</ColdNullNaniteResistance>
+			  <AntiOrgToxinResistance MayRequire="Snow.KraltechIndustries.Rebalanced">2000</AntiOrgToxinResistance>
+			  <RadiationResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RadiationResistance>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">2000</RageVirusResistance>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
 			</statOffsets>
 			<statFactors>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
@@ -2510,6 +2532,11 @@
 			  <ToxicResistance>5</ToxicResistance>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">5</Mashed_Ashlands_AshResistance>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.4</SmokeSensitivity>
+			  <HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</HeatNullNaniteResistance>
+			  <ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</ColdNullNaniteResistance>
+			  <AntiOrgToxinResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</AntiOrgToxinResistance>
+			  <RadiationResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RadiationResistance>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</RageVirusResistance>
 			</statOffsets>
 			<statFactors>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
@@ -2644,6 +2671,8 @@
 			<statOffsets>
 			  <Hauts_MaxDryadFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</Hauts_MaxDryadFactor>
 			  <FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">0.2</FishingSpeed>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RageVirusResistance>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
 			</statOffsets>
 			<statFactors>
 			  <TameAnimalChance>2</TameAnimalChance>
@@ -2875,6 +2904,9 @@
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.1</PilotingAbility>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.5</P42_AllergicSensitivity>
 			  <Mashed_Ashlands_AshResistance MayRequire="SirMashedPotato.Ashlands">2</Mashed_Ashlands_AshResistance>
+			  <AntiOrgToxinResistance MayRequire="Snow.KraltechIndustries.Rebalanced">2</AntiOrgToxinResistance>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">2</RageVirusResistance>
+			  <NecrotionEnvironmentResistance MayRequire="zal.taofc">2</NecrotionEnvironmentResistance>
 			</statOffsets>
 			<statFactors>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
@@ -2993,6 +3025,7 @@
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <PsychicRitualQualityOffset MayRequire="Ludeon.RimWorld.Anomaly">0.2</PsychicRitualQualityOffset>
+			  <RageVirusResistance MayRequire="Snow.KraltechIndustries.Rebalanced">1</RageVirusResistance>
 			</statOffsets>
 			<statFactors>
 			  <VAEI_SanityMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.25</VAEI_SanityMultiplier>
@@ -3251,6 +3284,9 @@
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">DeathRefusalSickness</li>
 			</disallowedThoughts>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statOffsets>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
+			</statOffsets>
 			<statFactors>
 			  <OWD_NecroticEnergy MayRequire="6224Y.OneWithDeath">1.25</OWD_NecroticEnergy>
 			</statFactors>
@@ -3274,7 +3310,7 @@
 		<degreeDatas>
 		  <li>
 			<label>psychic sedge warbler</label>
-			<description>{PAWN_nameDef} benefits from weaker versions of multiple inspirations at once. Those affected by {PAWN_possessive} psycasts may become inspired as well.</description>
+			<description>{PAWN_nameDef} benefits from weaker versions of multiple inspirations at once (including +1 to the quality of any crafted item or building). Those affected by {PAWN_possessive} psycasts may become inspired as well.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
 			  <ShootingAccuracyPawn>4</ShootingAccuracyPawn><!--half of shoot frenzy-->
@@ -3455,6 +3491,9 @@
 			  <li>PsychicDrone</li>
 			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
 			</disallowedThoughts>
+			<statOffsets>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
+			</statOffsets>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -3512,6 +3551,9 @@
 			<label>psychic harpy</label>
 			<description>Ordinary food does little for {PAWN_nameDef}, but eating a psycaster will fully sate {PAWN_objective} for a long while as well as possibly grant a psylink level. On eating the corpse of a fellow awakened or transcendent psychic, {PAWN_pronoun} will assimilate all of their awakenings and up to one of their transcendences.</description>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
+			<statOffsets>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
+			</statOffsets>
 			<hungerRateFactor>1.5</hungerRateFactor>
 		  </li>
 		</degreeDatas>
@@ -3664,6 +3706,9 @@
 		  <li>
 			<label>psychic wraith</label>
 			<description>When {PAWN_nameDef} is slain, {PAWN_pronoun} will transfer {PAWN_possessive} consciousness into someone else, replacing their mind with {PAWN_possessive} own. For 24 hours afterward, {PAWN_pronoun} will be invulnerable to anything other than persona weapons, but will not be able to transfer to a new body.</description>
+			<statOffsets>
+			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
+			</statOffsets>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>

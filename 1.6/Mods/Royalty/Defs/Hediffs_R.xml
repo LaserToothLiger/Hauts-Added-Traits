@@ -1974,6 +1974,8 @@
 				<ComfyTemperatureMin>-25</ComfyTemperatureMin>
 				<ComfyTemperatureMax>25</ComfyTemperatureMax>
 				<ArmorRating_Heat>0.10</ArmorRating_Heat>
+				<HeatNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</HeatNullNaniteResistance>
+				<ColdNullNaniteResistance MayRequire="Snow.KraltechIndustries.Rebalanced">0.5</ColdNullNaniteResistance>
 			</statOffsets>
 			<statFactors>
 				<Flammability>0.5</Flammability>

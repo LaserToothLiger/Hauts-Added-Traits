@@ -1291,7 +1291,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/TraitDef[defName = "HVT_TTraitWarbler"]/degreeDatas/li/description</xpath>
 								<value>
-									<description>{PAWN_nameDef} is constantly inspired - whenever one inspiration ends, the next begins. Those affected by {PAWN_possessive} spells may become inspired as well.</description>
+									<description>{PAWN_nameDef} benefits from weaker versions of multiple inspirations at once (including +1 to the quality of any crafted item or building). Those affected by {PAWN_possessive} spells may become inspired as well.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

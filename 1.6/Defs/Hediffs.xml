@@ -500,6 +500,7 @@
 			<li>SadisticRage</li>
 			<li>SocialFighting</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology">BerserkTrance</li>
+			<li MayRequire="Snow.KraltechIndustries.Rebalanced">UnbridledRage</li>
 		</mentalStates>
 	  </li>
     </comps>
