@@ -960,6 +960,9 @@
 			<label>deimatic psychic</label>
 			<description>{PAWN_nameDef} repels vectors of harm on an abstract, indirect level. {PAWN_possessive} mere existence has a 50% chance to prevent many kinds of bad events from happening.\n\nHas no effect on events that occur as part of quests.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
+			<statFactors>
+			  <HackingStealth>2</HackingStealth>
+			</statFactors>
 			<statOffsets>
 			  <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
 			  <Hauts_PilferingStealth>0.5</Hauts_PilferingStealth>

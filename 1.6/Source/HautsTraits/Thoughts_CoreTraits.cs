@@ -94,6 +94,10 @@ namespace HautsTraits
     {
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
+            if (p.DevelopmentalStage.Juvenile())
+            {
+                return ThoughtState.Inactive;
+            }
             DirectPawnRelation directPawnRelation = LovePartnerRelationUtility.ExistingMostLikedLovePartnerRel(p, false);
             if (directPawnRelation == null)
             {
