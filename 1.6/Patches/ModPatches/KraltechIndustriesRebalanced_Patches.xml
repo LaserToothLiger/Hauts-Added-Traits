@@ -18,6 +18,33 @@
 						<li Class="HautsTraits.CatastrophistLikedCondition" />
 					</value>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Royalty</li>
+					</mods>
+					<match Class="PatchOperationFindMod">
+						<mods>
+							<li>Biotech</li>
+						</mods>
+						<match Class="PatchOperationConditional">
+							<xpath>/Defs/ThoughtDef[defName="DreadfulAura"]/nullifyingGenes</xpath>
+							<nomatch Class="PatchOperationAdd">
+								<xpath>/Defs/ThoughtDef[defName="DreadfulAura"]</xpath>
+								<value>
+									<nullifyingGenes>
+										<li>HVT_ASageGene</li>
+									</nullifyingGenes>
+								</value>
+							</nomatch>
+							<match Class="PatchOperationAdd">
+								<xpath>/Defs/ThoughtDef[defName="DreadfulAura"]/nullifyingGenes</xpath>
+								<value>
+									<li>HVT_ASageGene</li>
+								</value>
+							</match>
+						</match>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>

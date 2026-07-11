@@ -1983,6 +1983,7 @@
 				<Hauts_ColdDamageFactor>0.2</Hauts_ColdDamageFactor>
 				<Hauts_HeatDamageFactor>0.2</Hauts_HeatDamageFactor>
 				<Hauts_RadiationDamageFactor>0.4</Hauts_RadiationDamageFactor>
+				<VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0.5</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 			<damageFactors>
 			  <Thermobaric MayRequire="CETeam.CombatExtended">0.65</Thermobaric>

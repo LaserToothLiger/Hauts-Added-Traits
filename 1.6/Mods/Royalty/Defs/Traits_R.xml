@@ -408,6 +408,8 @@
 			<disallowedThoughts>
 			  <li>PsychicDrone</li>
 			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
+			  <li MayRequire="Snow.KraltechIndustries.Rebalanced">DreadfulAura</li>
+			  <li MayRequire="VanillaExpanded.VEE">VEE_SuperbloomPsychicDrone</li>
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
@@ -1115,6 +1117,7 @@
 			  <Hauts_ColdDamageFactor>0.1</Hauts_ColdDamageFactor>
 			  <Hauts_HeatDamageFactor>0.1</Hauts_HeatDamageFactor>
 			  <Hauts_RadiationDamageFactor>0.2</Hauts_RadiationDamageFactor>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
@@ -1220,6 +1223,7 @@
 			</statOffsets>
 			<statFactors>
 			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -1413,6 +1417,7 @@
 			<statFactors>
 			  <P42_AllergicSensitivity MayRequire="phil42.allergies">0</P42_AllergicSensitivity>
 			  <Radiation MayRequire="Dubwise.Rimatomics">0</Radiation>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -1486,6 +1491,7 @@
 			</statOffsets>
 			<statFactors>
 			  <SmokeSensitivity MayRequire="CETeam.CombatExtended">0</SmokeSensitivity>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0.5</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 			<disallowedThoughts>
 			  <li MayRequire="Ludeon.RimWorld.Biotech">NoxiousHaze</li>
@@ -2211,6 +2217,9 @@
 			<statOffsets>
 			  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">1</NightVisionEfficiency>
 			</statOffsets>
+			<statFactors>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0</VEF_SunSicknessBuildupMultiplier>
+			</statFactors>
 			<disallowedThoughts>
 			  <li>EnvironmentDark</li>
 			  <li MayRequire="Ludeon.RimWorld.Anomaly">SwallowedByDarkness</li>
@@ -2244,6 +2253,7 @@
 			  <Hauts_ColdDamageFactor>0</Hauts_ColdDamageFactor>
 			  <Hauts_HeatDamageFactor>0.15</Hauts_HeatDamageFactor>
 			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0.5</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 			<statOffsets>
 			  <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
@@ -2874,6 +2884,7 @@
 			  <Hauts_ColdDamageFactor>0</Hauts_ColdDamageFactor>
 			  <Hauts_HeatDamageFactor>0.15</Hauts_HeatDamageFactor>
 			  <Hauts_RadiationDamageFactor>0.25</Hauts_RadiationDamageFactor>
+			  <VEF_SunSicknessBuildupMultiplier MayRequire="VanillaExpanded.VEE">0.5</VEF_SunSicknessBuildupMultiplier>
 			</statFactors>
 			<statOffsets>
 			  <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
@@ -3493,6 +3504,8 @@
 			<disallowedThoughts>
 			  <li>PsychicDrone</li>
 			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
+			  <li MayRequire="Snow.KraltechIndustries.Rebalanced">DreadfulAura</li>
+			  <li MayRequire="VanillaExpanded.VEE">VEE_SuperbloomPsychicDrone</li>
 			</disallowedThoughts>
 			<statOffsets>
 			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>
