@@ -1301,6 +1301,11 @@
 		  <li>HeartAttack</li><!--we don't have to list the various coma hediffs bc it also removes any isBad hediffs w/ <=10% cap consciousness-->
 		  <li MayRequire="sarg.alphaarmoury">AArmoury_Electric</li>
 		  <li MayRequire="sarg.alphaarmoury">AArmoury_Flux</li>
+		  <li MayRequire="MrKociak.EMPAffectsBionics">EMPBI_CyberneticMalfunction</li>
+		  <li MayRequire="MrKociak.EMPAffectsBionics">EMPBI_CyberneticShortCircuit</li>
+		  <li MayRequire="MrKociak.EMPAffectsBionics">EMPBI_CyberneticOverheat</li>
+		  <li MayRequire="MrKociak.EMPAffectsBionics">EMPBI_CyberneticToxicLeak</li>
+		  <li MayRequire="MrKociak.EMPAffectsBionics">EMPBI_CyberneticNerveShock</li>
 		</hediffsToRemoveSelf>
       </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
@@ -2208,9 +2213,6 @@
 		</forcingTraits>
 	  </li>
     </comps>
-    <modExtensions>
-      <li Class="HautsFramework.NoEMPReaction" />
-	</modExtensions>
   </HediffDef>
 	  <ThingDef ParentName="EtherealThingBase">
 		<defName>HVT_InnerWildfire</defName>
@@ -4506,6 +4508,7 @@
 		  <li MayRequire="sarg.alphaarmoury">AArmoury_Flux</li>
 		  <li MayRequire="sarg.alphaanimals">AA_Paralysis</li>
 		  <li MayRequire="sarg.alphaanimals">AA_ToxicBuildup</li>
+		  <li MayRequire="MrKociak.EMPAffectsBionics">EMPBI_CyberneticToxicLeak</li>
 		</hediffsToCure>
 		<victimScalar>PsychicSensitivity</victimScalar>
 		<severityLostOnCure>0.2</severityLostOnCure><!--this is -20% on hit for the above hediffs, which scale in severity from 0 to 1. If you add other hediffs to this list, keep this info in mind.-->
