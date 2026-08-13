@@ -2280,6 +2280,7 @@
 		  <GravBeam MayRequire="als.gravtech">0.1</GravBeam>
 		  <GravBlastShockwave MayRequire="als.gravtech">0.1</GravBlastShockwave>
 		  <GravBlastHammer MayRequire="als.gravtech">0.1</GravBlastHammer>
+		  <VFEP_GravityHammerAttack MayRequire="OskarPotocki.VFE.Pirates">0.1</VFEP_GravityHammerAttack>
 		</damageFactors>
       </li>
     </stages>
@@ -4788,6 +4789,7 @@
 		  <GravBeam MayRequire="als.gravtech">0.1</GravBeam>
 		  <GravBlastShockwave MayRequire="als.gravtech">0.1</GravBlastShockwave>
 		  <GravBlastHammer MayRequire="als.gravtech">0.1</GravBlastHammer>
+		  <VFEP_GravityHammerAttack MayRequire="OskarPotocki.VFE.Pirates">0.1</VFEP_GravityHammerAttack>
 		</damageFactors>
       </li>
     </stages>

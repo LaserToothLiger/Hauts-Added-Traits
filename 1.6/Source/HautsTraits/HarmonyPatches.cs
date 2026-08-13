@@ -103,17 +103,12 @@ namespace HautsTraits
                           postfix: new HarmonyMethod(patchType, nameof(HVT_GetFloatMenuOptionsPostfix)));
             harmony.Patch(AccessTools.Method(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn), new[] { typeof(PawnGenerationRequest)}),
                            postfix: new HarmonyMethod(patchType, nameof(HVTGeneratePawnPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(GrowthUtility), nameof(GrowthUtility.IsGrowthBirthday)),
-                           postfix: new HarmonyMethod(patchType, nameof(HVTIsGrowthBirthdayPostfix)));
-            harmony.Patch(AccessTools.Property(typeof(Pawn_AgeTracker), nameof(Pawn_AgeTracker.GrowthPointsPerDay)).GetGetMethod(),
-                           postfix: new HarmonyMethod(patchType, nameof(HVTGrowthPointsPerDayPostfix)));
-            MethodInfo methodInfo2 = typeof(Pawn_AgeTracker).GetMethod("BirthdayBiological", BindingFlags.NonPublic | BindingFlags.Instance);
-            harmony.Patch(methodInfo2,
-                          postfix: new HarmonyMethod(patchType, nameof(HVTBirthdayBiologicalPostfix)));
-            harmony.Patch(AccessTools.Method(typeof(ChoiceLetter_GrowthMoment), nameof(ChoiceLetter_GrowthMoment.MakeChoices)),
-                           prefix: new HarmonyMethod(patchType, nameof(HVTMakeChoicesPrefix)));
-            harmony.Patch(AccessTools.Method(typeof(ChoiceLetter_GrowthMoment), nameof(ChoiceLetter_GrowthMoment.MakeChoices)),
-                           postfix: new HarmonyMethod(patchType, nameof(HVTMakeChoicesPostfix)));
+            if (ModsConfig.BiotechActive)
+            {
+                MethodInfo methodInfo2 = typeof(Pawn_AgeTracker).GetMethod("BirthdayBiological", BindingFlags.NonPublic | BindingFlags.Instance);
+                harmony.Patch(methodInfo2,
+                              prefix: new HarmonyMethod(patchType, nameof(HVTBirthdayBiologicalPostfix)));
+            }
             //tranquil should conflict with all violent-requiring traits, and its dummy should conflict with all traits it's been written to conflict with in XML.
             if (HVTDefOf.HVT_Tranquil.conflictingTraits == null)
             {
@@ -817,13 +812,8 @@ namespace HautsTraits
         /*the following all handle growth moments
          * GeneratePawnPostfix determines a random number of traits a newly generated pawn should have (within the min to max ranges specified by the mod settings, and subject to how many growth moments the pawn could logically have had at its age).
          *   It adds traits until that random number is reached. ExciseTraitExempt traits and sexuality traits don't count towards the limit
-         * IsGrowthBirthdayPostfix handles the interaction between the max traits mod setting and when and how many growth moments a pawn should have. See that setting's tooltip for breakdown.
-         * GrowthPointsPerDayPostfix is the compensatory mechanism for a higher density of growth moments resulting in shorter periods to accrue growth points. The increases are proportional to the reduction in time between growth moments.
-         *   This way, it is still feasible to achieve growth tier 8 even in the case of a max trait setting of 5 (growth moments at 5, 7, 9, 11, and 13, so just two years to accrue points each time; necessitates a +50% boost).
-         * BirthdayBiologicalPostfix is for max traits set to 6 or higher. Since these require ludicrous amounts of growth moments (and they'd have to be jarringly distributed across years 4-13), instead some or all of them
-         *   place TWO (or in 9mts' case, THREE) growth moments in one year. These "bonus growth moments" do not grant passions to avoid a scenario where a pawn can reach so many passions they CAN'T select new ones, and therefore
-         *   can't finalize their Growth Moment choices.
-         * MakeChoicesPrefix/Postfix conserve growth points between uses of a conventional growth moment and bonus growth moments.*/
+         * BirthdayBiologicalPostfix inflicts 'bonus growth moments' on certain birthdays, in accordance with the mod settings.These do not grant passions to avoid a scenario where a pawn can reach so many passions they CAN'T select new ones, and
+         *   therefore can't finalize their Growth Moment choices.*/
         public static void HVTGeneratePawnPostfix(ref Pawn __result, PawnGenerationRequest request)
         {
             if (__result.story != null)
@@ -831,132 +821,148 @@ namespace HautsTraits
                 int traitCount = __result.story.traits.allTraits.Count;
                 foreach (Trait t in __result.story.traits.allTraits)
                 {
-                    if (t.def.exclusionTags.Contains("SexualOrientation") || TraitModExtensionUtility.IsExciseTraitExempt(t.def))
+                    if (t.def.exclusionTags.Contains("SexualOrientation") || TraitModExtensionUtility.IsExciseTraitExempt(t.def) || t.def.GetGenderSpecificCommonality(__result.gender) <= 0f)
                     {
                         traitCount--;
                     }
                 }
-                int ageBiologicalYears = __result.ageTracker.AgeBiologicalYears;
-                int ageDependentMax = 0;
-                switch ((int)HVT_Mod.settings.traitsMax)
+                float traitsMax = HVT_Mod.settings.traitsMax;
+                if (traitsMax <= 3)
                 {
-                    case 3:
-                        if (ageBiologicalYears > 13) {
-                            ageDependentMax = 3;
-                        } else if (ageBiologicalYears > 10) {
-                            ageDependentMax = 2;
-                        } else if (ageBiologicalYears > 7) {
-                            ageDependentMax = 1;
-                        }
-                        break;
-                    case 4:
-                        if (ageBiologicalYears > 13) {
-                            ageDependentMax = 4;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 3;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 2;
-                        } else if (ageBiologicalYears > 6) {
-                            ageDependentMax = 1;
-                        }
-                        break;
-                    case 5:
-                        if (ageBiologicalYears > 13) {
-                            ageDependentMax = 5;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 4;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 3;
-                        } else if (ageBiologicalYears > 7) {
-                            ageDependentMax = 2;
-                        } else if (ageBiologicalYears > 5) {
-                            ageDependentMax = 1;
-                        }
-                        break;
-                    case 6:
-                        if (ageBiologicalYears > 13) {
-                            ageDependentMax = 6;
-                        } else if (ageBiologicalYears > 10) {
-                            ageDependentMax = 4;
-                        } else if (ageBiologicalYears > 7) {
-                            ageDependentMax = 2;
-                        }
-                        break;
-                    case 7:
-                        if (ageBiologicalYears > 13)
-                        {
-                            ageDependentMax = 7;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 5;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 3;
-                        } else if (ageBiologicalYears > 6) {
-                            ageDependentMax = 1;
-                        }
-                        break;
-                    case 8:
-                        if (ageBiologicalYears > 13)
-                        {
-                            ageDependentMax = 8;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 6;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 4;
-                        } else if (ageBiologicalYears > 6) {
-                            ageDependentMax = 2;
-                        }
-                        break;
-                    case 9:
-                        if (ageBiologicalYears > 13)
-                        {
-                            ageDependentMax = 9;
-                        } else if (ageBiologicalYears > 10) {
-                            ageDependentMax = 6;
-                        } else if (ageBiologicalYears > 7) {
-                            ageDependentMax = 3;
-                        }
-                        break;
-                    case 10:
-                        if (ageBiologicalYears > 13)
-                        {
-                            ageDependentMax = 10;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 8;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 6;
-                        } else if (ageBiologicalYears > 7) {
-                            ageDependentMax = 4;
-                        } else if (ageBiologicalYears > 5) {
-                            ageDependentMax = 2;
-                        }
-                        break;
-                    case 11:
-                        if (ageBiologicalYears > 13)
-                        {
-                            ageDependentMax = 11;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 8;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 5;
-                        } else if (ageBiologicalYears > 6) {
-                            ageDependentMax = 2;
-                        }
-                        break;
-                    case 12:
-                        if (ageBiologicalYears > 13)
-                        {
-                            ageDependentMax = 12;
-                        } else if (ageBiologicalYears > 11) {
-                            ageDependentMax = 9;
-                        } else if (ageBiologicalYears > 9) {
-                            ageDependentMax = 6;
-                        } else if (ageBiologicalYears > 6) {
-                            ageDependentMax = 3;
-                        }
-                        break;
-                    default:
-                        ageDependentMax = (int)HVT_Mod.settings.traitsMax;
-                        break;
+                    return;
+                }
+                int ageBiologicalYears = __result.ageTracker.AgeBiologicalYears;
+                int growthBirthdaysHad = 0;
+                int[] gages = ModCompatibilityUtility.GrowthMomentAgesFor(__result);
+                for (int i = 0; i < gages.Length; i++)
+                {
+                    if (ageBiologicalYears > gages[i])
+                    {
+                        growthBirthdaysHad++;
+                    }
+                }
+                int ageDependentMax = growthBirthdaysHad;
+                if (growthBirthdaysHad > 0)
+                {
+                    switch (traitsMax)
+                    {
+                        case 4:
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax++;
+                            }
+                            break;
+                        case 5:
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax++;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax++;
+                            }
+                            break;
+                        case 6:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax++;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax++;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax++;
+                            }
+                            break;
+                        case 7:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax++;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax++;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            break;
+                        case 8:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax++;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            break;
+                        case 9:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            break;
+                        case 10:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax += 3;
+                            }
+                            break;
+                        case 11:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax += 2;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax += 3;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax += 3;
+                            }
+                            break;
+                        case 12:
+                            if (growthBirthdaysHad > 0)
+                            {
+                                ageDependentMax += 3;
+                            }
+                            if (growthBirthdaysHad > 1)
+                            {
+                                ageDependentMax += 3;
+                            }
+                            if (growthBirthdaysHad > 2)
+                            {
+                                ageDependentMax += 3;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 //Be assigned additional traits until you reach a random number within the min and max range. Min always no larger than max
                 int ageDependentMin = Math.Min((int)HVT_Mod.settings.traitsMin,ageDependentMax);
@@ -974,129 +980,73 @@ namespace HautsTraits
                 }
             }
         }
-        public static void HVTIsGrowthBirthdayPostfix(ref bool __result, int age)
+        public static void HVTBirthdayBiologicalPostfix(Pawn_AgeTracker __instance, int birthdayAge)
         {
-            __result = false;
-            if (age == 13)
-            {
-                __result = true;
-            }
             int traitsMax = (int)HVT_Mod.settings.traitsMax;
-            if ((traitsMax % 3) == 0 && traitsMax != 12 && (age == 10 || age == 7))
+            if (traitsMax <= 3)
             {
-                __result = true;
-            } else if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8 || traitsMax >= 11) && (age == 11 || age == 9 || age == 6)) {
-                __result = true;
-            } else if ((traitsMax == 5 || traitsMax == 10) && (age == 11 || age == 9 || age == 7 || age == 5)) {
-                __result = true;
+                return;
             }
-        }
-        public static void HVTGrowthPointsPerDayPostfix(ref float __result, Pawn_AgeTracker __instance)
-        {
-            if (__result != 0f)
+            Pawn pawn = GetInstanceField(typeof(Pawn_AgeTracker), __instance, "pawn") as Pawn;
+            if (pawn.RaceProps.Humanlike)
             {
-                Pawn pawn = GetInstanceField(typeof(Pawn_AgeTracker), __instance, "pawn") as Pawn;
-                if (pawn != null)
+                int[] gages = ModCompatibilityUtility.GrowthMomentAgesFor(pawn);
+                int growthDayIndex = -1;
+                for (int i = 0; i < gages.Length; i++)
                 {
-                    int traitsMax = (int)HVT_Mod.settings.traitsMax;
-                    if (traitsMax == 4 || traitsMax == 7 || traitsMax == 8 || traitsMax >= 11) {
-                        if ((float)__instance.AgeBiologicalYearsFloat < 7f)
-                        {
-                            __result /= 0.75f;
-                        }
-                        if ((float)__instance.AgeBiologicalYearsFloat > 9f)
-                        {
-                            __result *= 1.5f;
-                        }
-                    } else if (traitsMax == 5 || traitsMax == 10) {
-                        if ((float)__instance.AgeBiologicalYearsFloat < 7f)
-                        {
-                            __result /= 0.75f;
-                        }
-                        __result *= 1.5f;
+                    if (birthdayAge == gages[i])
+                    {
+                        growthDayIndex = i;
+                        break;
                     }
                 }
-            }
-        }
-        public static void HVTBirthdayBiologicalPostfix(Pawn_AgeTracker __instance)
-        {
-            Pawn pawn = GetInstanceField(typeof(Pawn_AgeTracker), __instance, "pawn") as Pawn;
-            int age = pawn.ageTracker.AgeBiologicalYears;
-            int traitsMax = (int)HVT_Mod.settings.traitsMax;
-            switch (traitsMax)
-            {
-                case 6:
-                    if (age == 7 || age == 10 || age == 13)
+                if (growthDayIndex >= 0)
+                {
+                    switch (growthDayIndex)
                     {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
+                        case 0://first growth age (7th bday by default)
+                            if (traitsMax > 5)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            if (traitsMax > 8)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            if (traitsMax > 11)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            break;
+                        case 1://2nd growth age (10th bday by default)
+                            if (traitsMax > 4)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            if (traitsMax > 7)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            if (traitsMax > 10)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            break;
+                        case 2://3rd growth age (13th bday by default)
+                            HVTUtility.DoBonusGrowthMoment(pawn);
+                            if (traitsMax > 6)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            if (traitsMax > 9)
+                            {
+                                HVTUtility.DoBonusGrowthMoment(pawn);
+                            }
+                            break;
+                        default:
+                            break;
                     }
-                    break;
-                case 7:
-                    if (age == 9 || age == 11 || age == 13)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    break;
-                case 8:
-                    if (age == 6 || age == 9 || age == 11 || age == 13)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    break;
-                case 9:
-                    if (age == 7 || age == 10 || age == 13)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    break;
-                case 10:
-                    if (age == 5 || age == 7 || age == 9 || age == 11 || age == 13)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    break;
-                case 11:
-                    if (age == 6)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    if (age == 9 || age == 11 || age == 13)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    break;
-                case 12:
-                    if (age == 6 || age == 9 || age == 11 || age == 13)
-                    {
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                        HVTUtility.DoBonusGrowthMoment(pawn);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-        public static void HVTMakeChoicesPrefix(ref float __state, ChoiceLetter_GrowthMoment __instance)
-        {
-            __state = __instance.pawn.ageTracker.growthPoints;
-        }
-        public static void HVTMakeChoicesPostfix(float __state, ChoiceLetter_GrowthMoment __instance)
-        {
-            bool refundGrowthPoints = false;
-            Pawn pawn = __instance.pawn;
-            int age = pawn.ageTracker.AgeBiologicalYears;
-            int traitsMax = (int)HVT_Mod.settings.traitsMax;
-            if ((traitsMax == 4 || traitsMax == 7 || traitsMax == 8 || traitsMax >= 11) && (age == 10 || age == 7))
-            {
-                refundGrowthPoints = true;
-            } else if ((traitsMax == 5 || traitsMax == 10) && age == 10) {
-                refundGrowthPoints = true;
-            }
-            if (refundGrowthPoints)
-            {
-                pawn.ageTracker.growthPoints = __state;
+                }
             }
         }
     }

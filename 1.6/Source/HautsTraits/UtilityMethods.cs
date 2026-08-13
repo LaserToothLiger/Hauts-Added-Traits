@@ -155,9 +155,7 @@ namespace HautsTraits
         }
         /*generates a letter very akin to a regular growth moment. The crucial difference: it does not grant any passions, because if a pawn has so many passions that they can't select as many passion improvements
          * as the Growth Moment letter wants them to select, it won't let them finalize their decisions. This is almost never a problem in conventional play (or if you have Vanilla Skills Ex),
-         * but it can be a problem in this instance. This method is invoked on birthdays 6, 9, and 13 (the regular growth moments) if you have the Max Traits mod setting set to 6 or 9, since
-         * those just "stack" growth moments on the same birthdays instead of inducing a different spread over the 4-13 age range. If this granted the normal number of passions, a pawn with 9
-         * growth moments would run out of passion improvements to take and be unable to complete their last Growth Moment.*/
+         * but it can be a problem in this instance. Used for the Max Traits Per Pawn setting*/
         public static void DoBonusGrowthMoment(Pawn pawn)
         {
             if (pawn.story == null)
@@ -166,15 +164,6 @@ namespace HautsTraits
             }
             if (Faction.OfPlayer == null || pawn.Faction != Faction.OfPlayer)
             {
-                SkillDef sd = ChoiceLetter_GrowthMoment.PassionOptions(pawn, 2, true).FirstOrFallback(null);
-                if (sd != null && pawn.skills != null)
-                {
-                    SkillRecord skill = pawn.skills.GetSkill(sd);
-                    if (skill != null)
-                    {
-                        skill.passion = skill.passion.IncrementPassion();
-                    }
-                }
                 Trait t = PawnGenerator.GenerateTraitsFor(pawn, 1, null, true).FirstOrFallback(null);
                 if (t != null)
                 {

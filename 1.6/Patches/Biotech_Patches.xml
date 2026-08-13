@@ -5,13 +5,7 @@
 		  <li>Biotech</li>
 		</mods>
 		<match Class="PatchOperationSequence">
-			<operations><!--this allows growth moments to happen at age 9 when mod settings are configured to do so, since the game avoids handing out growth moments to pawns at the minimum age of their current lifestage-->
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="Human"]/race/lifeStageAges/li[def="HumanlikePreTeenager"]/minAge</xpath>
-					<value>
-						<minAge>8.99</minAge>
-					</value>
-				</li>
+			<operations>
 				<li Class="PatchOperationAdd"><!--duh-->
 					<xpath>Defs/PawnKindDef[@Name="MechanitorBase"]/disallowedTraits</xpath>
 					<value>

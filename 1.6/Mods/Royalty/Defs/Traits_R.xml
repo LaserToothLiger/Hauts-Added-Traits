@@ -563,7 +563,7 @@
 			<allowedMeditationFocusTypes><li>Natural</li></allowedMeditationFocusTypes>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
-			  <RBSF_NatureConnection MayRequire="Rooboid.Faun">0.35</RBSF_NatureConnection>
+			  <RBSF_NatureConnection MayRequireAnyOf="Rooboid.Faun,V.Rooboid.Faun">0.35</RBSF_NatureConnection>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -1722,7 +1722,7 @@
 			<description>{PAWN_nameDef} accelerates the growth of nearby plants and causes them to entangle nearby foes.</description>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 			<statOffsets>
-			  <RBSF_NatureConnection MayRequire="Rooboid.Faun">0.35</RBSF_NatureConnection>
+			  <RBSF_NatureConnection MayRequireAnyOf="Rooboid.Faun,V.Rooboid.Faun">0.35</RBSF_NatureConnection>
 			</statOffsets>
 		  </li>
 		</degreeDatas>
@@ -2777,7 +2777,7 @@
 			<label>psychic rook</label>
 			<description>{PAWN_nameDef} derives more usable material from harvesting plants, butchering animals, and mining. Animals {PAWN_pronoun} extracts resources from regrow that material quicker.</description>
 			<statOffsets>
-			  <RBSF_NatureConnection MayRequire="Rooboid.Faun">0.35</RBSF_NatureConnection>
+			  <RBSF_NatureConnection MayRequireAnyOf="Rooboid.Faun,V.Rooboid.Faun">0.35</RBSF_NatureConnection>
 			  <Hauts_MaxPilferingValue>80</Hauts_MaxPilferingValue>
 			</statOffsets>
 			<statFactors>

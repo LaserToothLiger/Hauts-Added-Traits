@@ -4,34 +4,52 @@
 		<mods>
 			<li>Biomes! Caverns</li>
 		</mods>
-		<match Class="PatchOperationFindMod">
-			<mods>
-				<li>Ideology</li>
-			</mods>
-			<match Class="PatchOperationSequence">
-				<operations>
-					<!--as Tunneler, so Cavern Dweller-->
-					<li Class="PatchOperationConditional">
-						<xpath>/Defs/MemeDef[defName="BMT_CavernDweller"]/disagreeableTraits</xpath>
-						<nomatch Class="PatchOperationAdd">
-							<xpath>/Defs/MemeDef[defName="BMT_CavernDweller"]</xpath>
-							<value>
-								<disagreeableTraits>
-									<li>HVT_Tempestophile</li>
-									<li>HVT_Outdoorsy</li>
-								</disagreeableTraits>
-							</value>
-						</nomatch>
-						<match Class="PatchOperationAdd">
-							<xpath>/Defs/MemeDef[defName="BMT_CavernDweller"]/disagreeableTraits</xpath>
-							<value>
-								<li>HVT_Tempestophile</li>
-								<li>HVT_Outdoorsy</li>
-							</value>
-						</match>
-					</li>
-				</operations>
-			</match>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Tempestophile lickin chops at these conditions, and Catastrophist likes the killer one-->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="BMT_GameCondition_PhosphoricLights"]</xpath>
+					<value>
+						<li Class="HautsTraits.TempestophileLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="BMT_SporeCloud"]</xpath>
+					<value>
+						<li Class="HautsTraits.TempestophileLikedCondition" />
+						<li Class="HautsTraits.CatastrophistLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Ideology</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--as Tunneler, so Cavern Dweller-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="BMT_CavernDweller"]/disagreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="BMT_CavernDweller"]</xpath>
+									<value>
+										<disagreeableTraits>
+											<li>HVT_Tempestophile</li>
+											<li>HVT_Outdoorsy</li>
+										</disagreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="BMT_CavernDweller"]/disagreeableTraits</xpath>
+									<value>
+										<li>HVT_Tempestophile</li>
+										<li>HVT_Outdoorsy</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 </Patch>
