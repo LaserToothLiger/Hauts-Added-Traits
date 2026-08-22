@@ -1370,6 +1370,7 @@
 			<description>{PAWN_nameDef} can induce sudden and unnatural movements in {PAWN_possessive} body, making {PAWN_objective} faster and better at dodging, allowing {PAWN_objective} to travel much farther with jump abilities, and even allowing {PAWN_objective} to leap great distances under {PAWN_possessive} own power.</description>
 			<statFactors>
 			  <MeleeDodgeChance>1.5</MeleeDodgeChance>
+			  <Hauts_GravityDamageFactor>0.1</Hauts_GravityDamageFactor>
 			</statFactors>
 			<statOffsets>
 			  <Hauts_JumpRangeFactor>1</Hauts_JumpRangeFactor>
@@ -2658,6 +2659,9 @@
 		  <li>
 			<label>psychic quelea</label>
 			<description>{PAWN_nameDef} is surrounded by a field of selectively weakened gravity, allowing {PAWN_objective} and nearby allies to hover (allowing them to ignore terrain movement penalties), and preventing them from triggering traps.</description>
+			<statFactors>
+			  <Hauts_GravityDamageFactor>0.1</Hauts_GravityDamageFactor>
+			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>
@@ -3165,6 +3169,7 @@
 			</statOffsets>
 			<statFactors>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
+			  <Hauts_SkipDamageFactor>0.05</Hauts_SkipDamageFactor>
 			</statFactors>
 		  </li>
 		</degreeDatas>
@@ -3191,6 +3196,9 @@
 			  <MeleeHitChance>5</MeleeHitChance>
 			  <Hauts_MeleeArmorPenetration>2</Hauts_MeleeArmorPenetration>
 			</statOffsets>
+			<statFactors>
+			  <Hauts_SkipDamageFactor>0.25</Hauts_SkipDamageFactor>
+			</statFactors>
 		  </li>
 		</degreeDatas>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
@@ -3745,6 +3753,9 @@
 		  <li>
 			<label>psychic ziz</label>
 			<description>{PAWN_nameDef} can call down destructive pillars of pulverizing force. {PAWN_pronoun} accumulates the energy to do so passively, but can speed this process up by meditating. {PAWN_pronoun} may also manifest an even more destructive effect, potent enough to obliterate cities, but this requires many days of meditation to charge.</description>
+			<statFactors>
+			  <Hauts_GravityDamageFactor>0</Hauts_GravityDamageFactor>
+			</statFactors>
 			<marketValueFactorOffset>3.5</marketValueFactorOffset>
 		  </li>
 		</degreeDatas>

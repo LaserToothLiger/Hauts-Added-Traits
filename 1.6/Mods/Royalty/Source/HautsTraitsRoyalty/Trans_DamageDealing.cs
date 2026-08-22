@@ -244,8 +244,7 @@ namespace HautsTraitsRoyalty
         }
     }
     /*Hornets have an invisible, controllable, independently-firing MVCF turret. This makes its range scale with both psychic sensitivity and verb range factor
-     * It consumes 0.5 neural heat with each shot, and cannot fire if the pawn has less than 1 neural heat remaining.
-     */
+     * It consumes 0.5 neural heat with each shot, and cannot fire if the pawn has less than 1 neural heat remaining.*/
     public class Hediff_HornetSting : HediffWithComps
     {
         public override void PostAdd(DamageInfo? dinfo)
@@ -362,21 +361,17 @@ namespace HautsTraitsRoyalty
                     if (zizBuff != null)
                     {
                         zizBuff.Severity = zizBuff.def.maxSeverity;
-                    }
-                    else
-                    {
+                    } else {
                         pawn.health.AddHediff(HVTRoyaltyDefOf.HVT_ZizBuff);
                     }
-                }
-                else
-                {
+                } else {
                     BattleLogEntry_DamageTaken battleLogEntry_DamageTaken = null;
                     if (pawn != null)
                     {
                         battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(pawn, RulePackDefOf.DamageEvent_PowerBeam, this.instigator as Pawn);
                         Find.BattleLog.Add(battleLogEntry_DamageTaken);
                     }
-                    PulverizationBeam.tmpThings[i].TakeDamage(new DamageInfo(DamageDefOf.Bomb, DamageDefOf.Bomb.defaultDamage * PulverizationBeam.DamageAmountRange.RandomInRange, DamageDefOf.Bomb.defaultArmorPenetration * 2f, -1f, this.instigator, null, this.weaponDef, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true)).AssociateWithLog(battleLogEntry_DamageTaken);
+                    PulverizationBeam.tmpThings[i].TakeDamage(new DamageInfo(HautsDefOf.Hauts_GravPulverization, HautsDefOf.Hauts_GravPulverization.defaultDamage * PulverizationBeam.DamageAmountRange.RandomInRange, HautsDefOf.Hauts_GravPulverization.defaultArmorPenetration * 2f, -1f, this.instigator, null, this.weaponDef, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true)).AssociateWithLog(battleLogEntry_DamageTaken);
                 }
             }
             PulverizationBeam.tmpThings.Clear();

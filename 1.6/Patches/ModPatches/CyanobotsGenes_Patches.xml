@@ -24,6 +24,24 @@
 						</value>
 					</match>
 				</li>
+				<!--these traits are logical antitheses-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TraitDef[defName="CYB_Unaffected"]/conflictingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="CYB_Unaffected"]</xpath>
+						<value>
+							<conflictingTraits>
+								<li>HVT_PeoplePleaser</li>
+							</conflictingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TraitDef[defName="CYB_Unaffected"]/conflictingTraits</xpath>
+						<value>
+							<li>HVT_PeoplePleaser</li>
+						</value>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>
