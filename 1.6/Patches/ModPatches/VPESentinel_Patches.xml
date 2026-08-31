@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch><!--mostly game conditions or weathers that need Tempestophile or Catastrophist patching. Deadlife adds a pawnkind that shouldn't have any psychically deafening traits, so it can't have PBlank either, and Trans Mosquitoes benefit from Bloodlight Pinhole like Bloodlust pawns do-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Aeromancer</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/GameConditionDef[defName="DeltaStreamSTNL"]</xpath>
+			<value>
+				<li Class="HautsTraits.TempestophileLikedCondition" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Deadlife</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="FriendDeathPallDeadlifeSTNL"]</xpath>
+					<value>
+						<li Class="HautsTraits.CatastrophistLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/PawnKindDef[defName="Horaxian_CorpseSTNL"]/disallowedTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="Horaxian_CorpseSTNL"]</xpath>
+						<value>
+							<disallowedTraits>
+								<li>HVT_PsychicallyBlank</li>
+							</disallowedTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="Horaxian_CorpseSTNL"]/disallowedTraits</xpath>
+						<value>
+							<li>HVT_PsychicallyBlank</li>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Geomancer</li>
+		</mods>
+		<match  Class="PatchOperationFindMod">
+			<mods>
+				<li>Odyssey</li>
+			</mods>
+			<match Class="PatchOperationAddModExtension">
+				<xpath>/Defs/GameConditionDef[defName="SandstormSTNL"]</xpath>
+				<value>
+					<li Class="HautsTraits.TempestophileLikedCondition" />
+				</value>
+			</match>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Hydromancer</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/GameConditionDef[defName="TorrentialRainSTNL"]</xpath>
+			<value>
+				<li Class="HautsTraits.TempestophileLikedCondition" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Luminis</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="VPE_NoctisApocalypsisSTNL" or defName="VPE_EternalNightSTNL"]</xpath>
+					<value>
+						<li Class="HautsTraits.CatastrophistLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/WeatherDef[defName="VPE_NoctisApocalypsisSTNL" or defName="VPE_EternalNightSTNL"]</xpath>
+					<value>
+						<li Class="HautsTraits.TempestophileDisLikedCondition" />
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Originium</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/GameConditionDef[defName="OriginiumPollutionSTNL"]</xpath>
+			<value>
+				<li Class="HautsTraits.TempestophileLikedCondition" />
+				<li Class="HautsTraits.CatastrophistLikedCondition" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Oripathy</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/GameConditionDef[defName="DeathPallSTNL" or defName="DarkWorldSTNL"]</xpath>
+			<value>
+				<li Class="HautsTraits.CatastrophistLikedCondition" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Pyromancer</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/GameConditionDef[defName="VPE_Pyromancer_Firestorm_Condition_STNL"]</xpath>
+			<value>
+				<li Class="HautsTraits.CatastrophistLikedCondition" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Umbra</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="VPE_UmbraPsychicDarknessSTNL"]</xpath>
+					<value>
+						<li Class="HautsTraits.CatastrophistLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/WeatherDef[defName="UmbraDarknessSTNL"]</xpath>
+					<value>
+						<li Class="HautsTraits.TempestophileDisLikedCondition" />
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Veincaster</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/GameConditionDef[defName="VPE_Veincaster_BloodStorm_STNL"]</xpath>
+					<value>
+						<li Class="HautsTraits.CatastrophistLikedCondition" />
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VPE_Veincaster_BloodlightPinhole_STNL"]/modExtensions/li[@Class="VPE_Veincaster.BloodlightPinholeModExt"]/traitDefsForBuff</xpath>
+					<value>
+						<li>HVT_TTraitMosquito</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>VPE - Voidweaver</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/GameConditionDef[defName="FriendDeathPallWEAVERSTNL" or defName="VPE_VoidStormSTNL"]</xpath>
+			<value>
+				<li Class="HautsTraits.CatastrophistLikedCondition" />
+			</value>
+		</match>
+	</Operation>
+</Patch>

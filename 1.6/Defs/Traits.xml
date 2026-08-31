@@ -1616,6 +1616,20 @@
 			  <li>SoldSlave_Know_Honorable_Mood</li>
 			  <li>EnslavedPrisoner_Know_Honorable</li>
 			  <li>EnslavedPrisoner_Know_Honorable_Mood</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_Slavery_HonorableIfFemale_SlavesInColony</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfFemale_Mood_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfFemale_Mood_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_Slavery_HonorableIfMale_SlavesInColony</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfMale_Mood_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfMale_Mood_M</li>
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>

@@ -21,6 +21,20 @@
 			  <li MayRequire="Ludeon.RimWorld.Ideology">SoldSlave_Know_Honorable_Mood</li>
 			  <li MayRequire="Ludeon.RimWorld.Ideology">EnslavedPrisoner_Know_Honorable</li>
 			  <li MayRequire="Ludeon.RimWorld.Ideology">EnslavedPrisoner_Know_Honorable_Mood</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_Slavery_HonorableIfFemale_SlavesInColony</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfFemale_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfFemale_Mood_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfFemale_Mood_F</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_Slavery_HonorableIfMale_SlavesInColony</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfMale_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_SoldSlave_Know_HonorableIfMale_Mood_M</li>
+			  <li MayRequire="Hautarche.HautsDeepenedMemes">HVMI_EnslavedPrisoner_Know_HonorableIfMale_Mood_M</li>
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
@@ -2353,7 +2367,7 @@
 			<description>{PAWN_nameDef} exudes a protective presence, flatly reducing the damage nearby allies take and slowing their fatigue.</description>
 			<hungerRateFactor>0.6</hungerRateFactor>
 			<statFactors>
-			  <PainShockThreshold>0.6</PainShockThreshold>
+			  <PainShockThreshold>1.5</PainShockThreshold>
 			  <RestFallRateFactor>0.6</RestFallRateFactor>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>
