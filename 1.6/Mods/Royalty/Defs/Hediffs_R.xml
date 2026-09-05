@@ -405,6 +405,10 @@
 		  <RestFallRateFactor>-0.005</RestFallRateFactor>
 		  <PawnTrapSpringChance>-0.005</PawnTrapSpringChance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.01</P42_AllergicSensitivity>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">0.04</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">0.04</HVMI_PureFleshHoningSlots_Foc>
+		  <HVMI_PureFleshHoningSlots_Int MayRequire="Hautarche.HautsDeepenedMemes">0.04</HVMI_PureFleshHoningSlots_Int>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">0.04</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
 		<statFactors>
 		  <RangedCooldownFactor>0.99</RangedCooldownFactor>
@@ -446,6 +450,10 @@
 		  <RestFallRateFactor>-0.004</RestFallRateFactor>
 		  <PawnTrapSpringChance>-0.004</PawnTrapSpringChance>
 		  <P42_AllergicSensitivity MayRequire="phil42.allergies">-0.01</P42_AllergicSensitivity>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">0.03</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">0.03</HVMI_PureFleshHoningSlots_Foc>
+		  <HVMI_PureFleshHoningSlots_Int MayRequire="Hautarche.HautsDeepenedMemes">0.03</HVMI_PureFleshHoningSlots_Int>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">0.03</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
 		<statFactors>
 		  <RangedCooldownFactor>0.99</RangedCooldownFactor>
@@ -1083,6 +1091,7 @@
 		  <VEF_MassCarryCapacity>5</VEF_MassCarryCapacity>
 		  <CarryWeight MayRequire="CETeam.CombatExtended">2.5</CarryWeight>
 		  <CarryBulk MayRequire="CETeam.CombatExtended">2</CarryBulk>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">0.0125</HVMI_PureFleshHoningSlots_Vit>
 		</statOffsets>
 		<becomeVisible>false</becomeVisible>
         <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
@@ -5440,6 +5449,10 @@
         <minSeverity>1</minSeverity>
 		<statOffsets>
 		  <Hauts_PsyfocusRegenRate>0.12</Hauts_PsyfocusRegenRate>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Foc>
+		  <HVMI_PureFleshHoningSlots_Int MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Int>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
 		</statOffsets>
 		<statFactors>
 		  <InjuryHealingFactor>4</InjuryHealingFactor>
@@ -5489,6 +5502,10 @@
 			<statOffsets>
 			  <PainShockThreshold>0.15</PainShockThreshold>
 			  <InjuryHealingFactor>0.35</InjuryHealingFactor>
+			  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+			  <HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Foc>
+			  <HVMI_PureFleshHoningSlots_Int MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Int>
+			  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
 			</statOffsets>
 			<statFactors>
 			  <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
@@ -5525,6 +5542,11 @@
             <postFactor>1.6</postFactor>
           </li>
         </capMods>
+		<statFactors>
+		  <Hauts_JumpRangeFactor>1.2</Hauts_JumpRangeFactor>
+		  <StaggerDurationFactor>0.1</StaggerDurationFactor>
+		  <PawnTrapSpringChance>0</PawnTrapSpringChance>
+		</statFactors>
         <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
       </li>
       <li>
@@ -5648,6 +5670,8 @@
           <MeleeDamageFactor>0.5</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
 		  <InjuryHealingFactor>1</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5667,6 +5691,8 @@
           <MeleeDamageFactor>0.6</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.3</ImmunityGainSpeed>
 		  <InjuryHealingFactor>1.2</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5686,6 +5712,8 @@
           <MeleeDamageFactor>0.7</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.35</ImmunityGainSpeed>
 		  <InjuryHealingFactor>1.4</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5705,6 +5733,8 @@
           <MeleeDamageFactor>0.8</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.4</ImmunityGainSpeed>
 		  <InjuryHealingFactor>1.6</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5724,6 +5754,8 @@
           <MeleeDamageFactor>0.9</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.45</ImmunityGainSpeed>
 		  <InjuryHealingFactor>1.8</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5743,6 +5775,8 @@
           <MeleeDamageFactor>1</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.5</ImmunityGainSpeed>
 		  <InjuryHealingFactor>2</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5762,6 +5796,8 @@
           <MeleeDamageFactor>1.1</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.55</ImmunityGainSpeed>
 		  <InjuryHealingFactor>2.2</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5781,6 +5817,8 @@
           <MeleeDamageFactor>1.2</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.6</ImmunityGainSpeed>
 		  <InjuryHealingFactor>2.4</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5800,6 +5838,8 @@
           <MeleeDamageFactor>1.3</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.65</ImmunityGainSpeed>
 		  <InjuryHealingFactor>2.6</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5819,6 +5859,8 @@
           <MeleeDamageFactor>1.4</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.7</ImmunityGainSpeed>
 		  <InjuryHealingFactor>2.8</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">2</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5838,6 +5880,8 @@
           <MeleeDamageFactor>1.5</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.75</ImmunityGainSpeed>
 		  <InjuryHealingFactor>3</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5857,6 +5901,8 @@
           <MeleeDamageFactor>1.6</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.8</ImmunityGainSpeed>
 		  <InjuryHealingFactor>3.2</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5876,6 +5922,8 @@
           <MeleeDamageFactor>1.7</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.85</ImmunityGainSpeed>
 		  <InjuryHealingFactor>3.4</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5895,6 +5943,8 @@
           <MeleeDamageFactor>1.8</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.9</ImmunityGainSpeed>
 		  <InjuryHealingFactor>3.6</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
@@ -5914,11 +5964,13 @@
           <MeleeDamageFactor>1.9</MeleeDamageFactor>
 		  <ImmunityGainSpeed>0.95</ImmunityGainSpeed>
 		  <InjuryHealingFactor>3.8</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">3</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
 	  <li>
         <minSeverity>20</minSeverity>
-        <label>20 Art</label>
+        <label>20-29 Art</label>
 		<becomeVisible>false</becomeVisible>
 		<capMods>
 		  <li><capacity>BloodPumping</capacity><offset>2</offset></li>
@@ -5933,6 +5985,176 @@
           <MeleeDamageFactor>2</MeleeDamageFactor>
 		  <ImmunityGainSpeed>1</ImmunityGainSpeed>
 		  <InjuryHealingFactor>4</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">4</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">4</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>30</minSeverity>
+        <label>30-39 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>3</offset></li>
+		  <li><capacity>Breathing</capacity><offset>3</offset></li>
+		  <li><capacity>Hearing</capacity><offset>3</offset></li>
+		  <li><capacity>Sight</capacity><offset>3</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>3</PawnBeauty>
+          <VEF_MassCarryCapacity>750</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">750</CarryWeight>
+          <MeleeDamageFactor>3</MeleeDamageFactor>
+		  <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+		  <InjuryHealingFactor>6</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">6</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">6</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>40</minSeverity>
+        <label>40-49 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>4</offset></li>
+		  <li><capacity>Breathing</capacity><offset>4</offset></li>
+		  <li><capacity>Hearing</capacity><offset>4</offset></li>
+		  <li><capacity>Sight</capacity><offset>4</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>4</PawnBeauty>
+          <VEF_MassCarryCapacity>1000</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">1000</CarryWeight>
+          <MeleeDamageFactor>4</MeleeDamageFactor>
+		  <ImmunityGainSpeed>2</ImmunityGainSpeed>
+		  <InjuryHealingFactor>8</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">8</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">8</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>50</minSeverity>
+        <label>50-59 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>5</offset></li>
+		  <li><capacity>Breathing</capacity><offset>5</offset></li>
+		  <li><capacity>Hearing</capacity><offset>5</offset></li>
+		  <li><capacity>Sight</capacity><offset>5</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>5</PawnBeauty>
+          <VEF_MassCarryCapacity>1250</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">1250</CarryWeight>
+          <MeleeDamageFactor>5</MeleeDamageFactor>
+		  <ImmunityGainSpeed>2.5</ImmunityGainSpeed>
+		  <InjuryHealingFactor>10</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">10</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">10</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>60</minSeverity>
+        <label>60-69 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>6</offset></li>
+		  <li><capacity>Breathing</capacity><offset>6</offset></li>
+		  <li><capacity>Hearing</capacity><offset>6</offset></li>
+		  <li><capacity>Sight</capacity><offset>6</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>6</PawnBeauty>
+          <VEF_MassCarryCapacity>1500</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">1500</CarryWeight>
+          <MeleeDamageFactor>6</MeleeDamageFactor>
+		  <ImmunityGainSpeed>3</ImmunityGainSpeed>
+		  <InjuryHealingFactor>12</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">12</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">12</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>70</minSeverity>
+        <label>70-79 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>7</offset></li>
+		  <li><capacity>Breathing</capacity><offset>7</offset></li>
+		  <li><capacity>Hearing</capacity><offset>7</offset></li>
+		  <li><capacity>Sight</capacity><offset>7</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>7</PawnBeauty>
+          <VEF_MassCarryCapacity>1750</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">1750</CarryWeight>
+          <MeleeDamageFactor>7</MeleeDamageFactor>
+		  <ImmunityGainSpeed>3.5</ImmunityGainSpeed>
+		  <InjuryHealingFactor>14</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">14</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">14</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>80</minSeverity>
+        <label>80-89 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>8</offset></li>
+		  <li><capacity>Breathing</capacity><offset>8</offset></li>
+		  <li><capacity>Hearing</capacity><offset>8</offset></li>
+		  <li><capacity>Sight</capacity><offset>8</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>8</PawnBeauty>
+          <VEF_MassCarryCapacity>2000</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2000</CarryWeight>
+          <MeleeDamageFactor>8</MeleeDamageFactor>
+		  <ImmunityGainSpeed>4</ImmunityGainSpeed>
+		  <InjuryHealingFactor>16</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">16</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">16</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>90</minSeverity>
+        <label>90-99 Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>9</offset></li>
+		  <li><capacity>Breathing</capacity><offset>9</offset></li>
+		  <li><capacity>Hearing</capacity><offset>9</offset></li>
+		  <li><capacity>Sight</capacity><offset>9</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>9</PawnBeauty>
+          <VEF_MassCarryCapacity>2250</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2250</CarryWeight>
+          <MeleeDamageFactor>9</MeleeDamageFactor>
+		  <ImmunityGainSpeed>4.5</ImmunityGainSpeed>
+		  <InjuryHealingFactor>18</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">18</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">18</HVMI_PureFleshHoningSlots_Vit>
+        </statOffsets>
+      </li>
+	  <li>
+        <minSeverity>100</minSeverity>
+        <label>100+ Art</label>
+		<becomeVisible>false</becomeVisible>
+		<capMods>
+		  <li><capacity>BloodPumping</capacity><offset>10</offset></li>
+		  <li><capacity>Breathing</capacity><offset>10</offset></li>
+		  <li><capacity>Hearing</capacity><offset>10</offset></li>
+		  <li><capacity>Sight</capacity><offset>10</offset></li>
+		</capMods>
+        <statOffsets>
+          <PawnBeauty>10</PawnBeauty>
+          <VEF_MassCarryCapacity>2500</VEF_MassCarryCapacity>
+		  <CarryWeight MayRequire="CETeam.CombatExtended">2500</CarryWeight>
+          <MeleeDamageFactor>10</MeleeDamageFactor>
+		  <ImmunityGainSpeed>5</ImmunityGainSpeed>
+		  <InjuryHealingFactor>20</InjuryHealingFactor>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">20</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">20</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
       </li>
     </stages>
@@ -6648,6 +6870,8 @@
 		  <Hauts_PilferingStealth>0.025</Hauts_PilferingStealth>
 		  <SmokeSensitivity MayRequire="CETeam.CombatExtended">-0.01</SmokeSensitivity>
 		  <NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.05</NightVisionEfficiency>
+		  <HVMI_PureFleshHoningSlots_Dex MayRequire="Hautarche.HautsDeepenedMemes">0.05</HVMI_PureFleshHoningSlots_Dex>
+		  <HVMI_PureFleshHoningSlots_Vit MayRequire="Hautarche.HautsDeepenedMemes">0.05</HVMI_PureFleshHoningSlots_Vit>
         </statOffsets>
 		<statFactors>
 		  <Hauts_OverdoseSusceptibility>0.96</Hauts_OverdoseSusceptibility>
@@ -6804,6 +7028,8 @@
 		  <Hauts_PsyfocusFromFood>0.0001</Hauts_PsyfocusFromFood>
 		  <Hauts_PsyfocusGainOnKill>0.0001</Hauts_PsyfocusGainOnKill>
           <Hauts_SkipcastRangeFactor>0.0075</Hauts_SkipcastRangeFactor>
+		  <HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">0.00625</HVMI_PureFleshHoningSlots_Foc>
+		  <HVMI_PureFleshHoningSlots_Int MayRequire="Hautarche.HautsDeepenedMemes">0.00625</HVMI_PureFleshHoningSlots_Int>
 		</statOffsets>
 		<becomeVisible>false</becomeVisible>
         <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>

@@ -186,7 +186,6 @@
 						<value>
 							<agreeableTraits>
 								<li>HVT_Humble</li>
-								<li>HVT_Liberator</li>
 								<li>HVT_PersecutionComplex</li>
 							</agreeableTraits>
 						</value>
@@ -195,7 +194,6 @@
 						<xpath>/Defs/MemeDef[defName="Guilty"]/agreeableTraits</xpath>
 						<value>
 							<li>HVT_Humble</li>
-							<li>HVT_Liberator</li>
 							<li>HVT_PersecutionComplex</li>
 						</value>
 					</match>

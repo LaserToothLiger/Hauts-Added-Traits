@@ -51,7 +51,7 @@
 	</statOffsets>
 	<statFactors>
 		<MeditationFocusGain>1.05</MeditationFocusGain>
-		<CultivationSpeed MayRequire="Aranmaho.Xianxia">1.05</CultivationSpeed>
+		<CultivationSpeed MayRequire="Aranmaho.Xianxia">1.02</CultivationSpeed>
 	</statFactors>
 	<modExtensions>
 		<li Class="VEF.Genes.GeneExtension">
@@ -123,6 +123,8 @@
 	<statOffsets>
 		<PsychicSensitivity>0.15</PsychicSensitivity>
 		<RoyalFavorValue>3</RoyalFavorValue>
+		<HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Foc>
+		<HVMI_PureFleshHoningSlots_Int MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Int>
 	</statOffsets>
 	<modExtensions>
 		<li Class="HautsTraits.SuperPsychicGene">
@@ -241,11 +243,15 @@
 	<statOffsets>
 		<PsychicSensitivity>0.15</PsychicSensitivity>
 		<RoyalFavorValue>3</RoyalFavorValue>
+		<HVMI_PureFleshHoningSlots_Foc MayRequire="Hautarche.HautsDeepenedMemes">1</HVMI_PureFleshHoningSlots_Foc>
 	</statOffsets>
 	<statFactors>
 		<PsychicEntropyMax>2.8</PsychicEntropyMax>
 		<MentalBreakThreshold>0.85</MentalBreakThreshold>
 		<PainShockThreshold>1.25</PainShockThreshold>
+		<Hauts_PsychicDamageFactor>0.5</Hauts_PsychicDamageFactor>
+		<VAEI_SanityLossMultiplier MayRequire="VanillaExpanded.VAnomalyEInsanity">0.65</VAEI_SanityLossMultiplier>
+		<Suppressability MayRequire="CETeam.CombatExtended">0.75</Suppressability>
 	</statFactors>
 	<modExtensions>
 		<li Class="HautsTraits.SuperPsychicGene">

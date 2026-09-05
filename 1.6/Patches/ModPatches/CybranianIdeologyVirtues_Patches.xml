@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Cybranian - Ideology Virtues</li><!--so whether or not most of this takes effect is mod loading-order dependent. This patch works much better if you load C-IV above HAT, but this truly has such a small impact on gameplay i'm not going to throw a fit and demand it be so.-->
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationConditional"><!--C-IV adds this path but it only has associatedPreferredTraits. If C-IV loaded above HAT, we'll use a conditional to add our disapprovals. If below HAT, doesn't matter - C-IV would override any patch.-->
+					<xpath>/Defs/MemeDef[defName="AnimalPersonhood"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="AnimalPersonhood"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="AnimalPersonhood"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedDisapprovedTraits>
+									<li>HVT_Agrizoophobe</li>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
+								</associatedDisapprovedTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="AnimalPersonhood"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+							<value>
+								<li>HVT_Agrizoophobe</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--C-IV adds this path w/ preferred. If C-IV loaded above HAT, we're gucci. If below, again, doesn't matter.-->
+					<xpath>/Defs/MemeDef[defName="Blindsight"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Blindsight"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<HVT_Perceptive>1</HVT_Perceptive>
+							<HVT_Perceptive>2</HVT_Perceptive>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Blindsight-->
+					<xpath>/Defs/MemeDef[defName="Cannibal"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Cannibal"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Graver</li>
+							<li MayRequire="Ludeon.RimWorld.Anomaly">HVT_Twisted</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Blindsight, pluuuus...-->
+					<xpath>/Defs/MemeDef[defName="Collectivist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Collectivist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Allegiant</li>
+							<li>HVT_Champion</li>
+							<li>HVT_Conversationalist</li>
+							<li>HVT_Humble</li>
+							<li>HVT_Winsome</li>
+							<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Caretaker</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">HVT_Servile</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--it also has a predefined disapproved field-->
+					<xpath>/Defs/MemeDef[defName="Collectivist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Collectivist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li>HVT_Hysteric</li>
+							<li>HVT_Judgemental</li>
+							<li>HVT_Sadist</li>
+							<li>HVT_Vagabond</li>
+							<HVT_Prideful>1</HVT_Prideful>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Animal Personhood-->
+					<xpath>/Defs/MemeDef[defName="Darkness"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="Darkness"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Darkness"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedDisapprovedTraits>
+									<li>HVT_Sunbather</li>
+								</associatedDisapprovedTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Darkness"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+							<value>
+								<li>HVT_Sunbather</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Collectivist-->
+					<xpath>/Defs/MemeDef[defName="FleshPurity"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="FleshPurity"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li MayRequire="Ludeon.RimWorld.Biotech">HVT_GenePurist</li>
+							<li MayRequire="Ludeon.RimWorld.Anomaly">HVT_MonsterHunter</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="FleshPurity"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="FleshPurity"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li MayRequire="Ludeon.RimWorld.Anomaly">HVT_MonsterLover</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Collectivist-->
+					<xpath>/Defs/MemeDef[defName="Guilty"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Guilty"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Humble</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="Guilty"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Guilty"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li>HVT_Vain</li>
+							<HVT_Prideful>1</HVT_Prideful>
+							<HVT_Prideful>2</HVT_Prideful>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--Human Primacy is the first of these that does not have a preexisting C-IV patch. We can do WHATEVER we want; well ok what if another mod does a patch.-->
+					<xpath>/Defs/MemeDef[defName="HumanPrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>/Defs/MemeDef[defName="HumanPrimacy"]</xpath>
+						<value>
+							<li Class="IdeologyVirtues.DefModExtension_MemeDefVirtues">
+								<associatedPreferredTraits>
+									<li>HVT_Agrizoophobe</li>
+								</associatedPreferredTraits>
+							</li>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="HumanPrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="HumanPrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedPreferredTraits>
+									<li>HVT_Agrizoophobe</li>
+								</associatedPreferredTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="HumanPrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+							<value>
+								<li>HVT_Agrizoophobe</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Collectivist, buuuuut...-->
+					<xpath>/Defs/MemeDef[defName="Individualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Individualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Vain</li>
+							<HVT_Prideful>1</HVT_Prideful>
+							<HVT_Prideful>2</HVT_Prideful>
+							<li>HVT_Liberator</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">HVT_Anarchist</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--...also the same boat as Animal Personhood-->
+					<xpath>/Defs/MemeDef[defName="Individualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="Individualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Individualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedDisapprovedTraits>
+									<li>HVT_Intolerant</li>
+									<li>HVT_Subjugator</li>
+									<li>HVT_Conformist</li>
+								</associatedDisapprovedTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Individualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+							<value>
+								<li>HVT_Intolerant</li>
+								<li>HVT_Subjugator</li>
+								<li>HVT_Conformist</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--same boat as Human Primacy. er, sort of. we have both preferred and disapproved to add in.-->
+					<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>/Defs/MemeDef[defName="Loyalist"]</xpath>
+						<value>
+							<li Class="IdeologyVirtues.DefModExtension_MemeDefVirtues">
+								<associatedPreferredTraits>
+									<HVT_Faithful>1</HVT_Faithful>
+									<HVT_Faithful>2</HVT_Faithful>
+									<li>HVT_Intolerant</li>
+									<li>HVT_Conformist</li>
+								</associatedPreferredTraits>
+								<associatedDisapprovedTraits>
+									<HVT_Faithful>-2</HVT_Faithful>
+									<HVT_Faithful>-1</HVT_Faithful>
+									<li>HVT_Tolerant</li>
+									<li>HVT_RadicalThinker</li>
+								</associatedDisapprovedTraits>
+							</li>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+									<value>
+										<associatedPreferredTraits>
+											<HVT_Faithful>1</HVT_Faithful>
+											<HVT_Faithful>2</HVT_Faithful>
+											<li>HVT_Intolerant</li>
+											<li>HVT_Conformist</li>
+										</associatedPreferredTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+									<value>
+										<HVT_Faithful>1</HVT_Faithful>
+										<HVT_Faithful>2</HVT_Faithful>
+										<li>HVT_Intolerant</li>
+										<li>HVT_Conformist</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+									<value>
+										<associatedDisapprovedTraits>
+											<HVT_Faithful>-2</HVT_Faithful>
+											<HVT_Faithful>-1</HVT_Faithful>
+											<li>HVT_Tolerant</li>
+											<li>HVT_RadicalThinker</li>
+										</associatedDisapprovedTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Loyalist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+									<value>
+										<HVT_Faithful>-2</HVT_Faithful>
+										<HVT_Faithful>-1</HVT_Faithful>
+										<li>HVT_Tolerant</li>
+										<li>HVT_RadicalThinker</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Human Primacy-->
+					<xpath>/Defs/MemeDef[defName="NaturePrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>/Defs/MemeDef[defName="NaturePrimacy"]</xpath>
+						<value>
+							<li Class="IdeologyVirtues.DefModExtension_MemeDefVirtues">
+								<associatedPreferredTraits>
+									<li>HVT_Outdoorsy</li>
+									<li>HVT_Tempestophile</li>
+									<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Environmentalist</li>
+								</associatedPreferredTraits>
+							</li>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="NaturePrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="NaturePrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedPreferredTraits>
+									<li>HVT_Outdoorsy</li>
+									<li>HVT_Tempestophile</li>
+									<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Environmentalist</li>
+								</associatedPreferredTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="NaturePrimacy"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+							<value>
+								<li>HVT_Outdoorsy</li>
+								<li>HVT_Tempestophile</li>
+								<li MayRequire="Ludeon.RimWorld.Biotech">HVT_Environmentalist</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--uh... so C-IV adds Nudist as a disapproved trait for Nudism? in case they fix that up, we'll treat it like Animal Personhood-->
+					<xpath>/Defs/MemeDef[defName="Nudism"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="Nudism"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Nudism"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedDisapprovedTraits>
+									<li>HVT_HVT_Textile</li>
+								</associatedDisapprovedTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Nudism"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+							<value>
+								<li>HVT_Textile</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--lacks a predefined preferred field...-->
+					<xpath>/Defs/MemeDef[defName="Proselytizer"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="Proselytizer"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Proselytizer"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedPreferredTraits>
+									<li>HVT_Proclaimer</li>
+								</associatedPreferredTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Proselytizer"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+							<value>
+								<li>HVT_Proclaimer</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--...does have a predefined disapproved field-->
+					<xpath>/Defs/MemeDef[defName="Proselytizer"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Proselytizer"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li>HVT_RadicalThinker</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--boat as Collectivist-->
+					<xpath>/Defs/MemeDef[defName="Raider"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Raider"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Skulker</li>
+							<li>HVT_Vicious</li>
+							<li>HVT_WeaponArtist</li>
+							<li>HVT_Subjugator</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="Raider"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Raider"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li>HVT_Bookworm</li>
+							<li>HVT_Drudge</li>
+							<li>HVT_Tranquil</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--as Human Primacy-->
+					<xpath>/Defs/MemeDef[defName="Rancher"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>/Defs/MemeDef[defName="Rancher"]</xpath>
+						<value>
+							<li Class="IdeologyVirtues.DefModExtension_MemeDefVirtues">
+								<associatedPreferredTraits>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
+								</associatedPreferredTraits>
+							</li>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="Rancher"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Rancher"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedPreferredTraits>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+									<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
+								</associatedPreferredTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Rancher"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+							<value>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Angler</li>
+								<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Pescatarian</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--as Collectivist-->
+					<xpath>/Defs/MemeDef[defName="Supremacist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Supremacist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Subjugator</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="Supremacist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Supremacist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li>HVT_Liberator</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--as Collectivist-->
+					<xpath>/Defs/MemeDef[defName="Transhumanist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Transhumanist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+						<value>
+							<li>HVT_Visionary</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="Transhumanist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="Transhumanist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<value>
+							<li MayRequire="Ludeon.RimWorld.Biotech">HVT_GenePurist</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional"><!--as Animal Perosnhood-->
+					<xpath>/Defs/MemeDef[defName="Tunneler"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+					<match Class="PatchOperationConditional">
+						<xpath>/Defs/MemeDef[defName="Tunneler"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Tunneler"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+							<value>
+								<associatedDisapprovedTraits>
+									<li>HVT_Sunbather</li>
+									<li>HVT_Tempestophile</li>
+								</associatedDisapprovedTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/MemeDef[defName="Tunneler"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+							<value>
+								<li>HVT_Sunbather</li>
+								<li>HVT_Tempestophile</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Biotech</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAddModExtension">
+								<xpath>/Defs/MemeDef[defName="Bloodfeeding"]</xpath>
+								<value>
+									<li Class="IdeologyVirtues.DefModExtension_MemeDefVirtues">
+										<associatedPreferredTraits>
+										</associatedPreferredTraits>
+										<associatedDisapprovedTraits>
+										</associatedDisapprovedTraits>
+									</li>
+								</value>
+							</li>
+							<li Class="PatchOperationConditional"><!--does have a predefined preferred field...-->
+								<xpath>/Defs/MemeDef[defName="Bloodfeeding"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Bloodfeeding"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+									<value>
+										<li>HVT_Hale</li>
+										<li MayRequire="Ludeon.RimWorld.Anomaly">HVT_MonsterLover</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional"><!--...but lacks a predefined disapproved field-->
+								<xpath>/Defs/MemeDef[defName="Bloodfeeding"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+								<match Class="PatchOperationConditional">
+									<xpath>/Defs/MemeDef[defName="Bloodfeeding"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+									<nomatch Class="PatchOperationAdd">
+										<xpath>/Defs/MemeDef[defName="Bloodfeeding"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+										<value>
+											<associatedDisapprovedTraits>
+												<li>HVT_GenePurist</li>
+											</associatedDisapprovedTraits>
+										</value>
+									</nomatch>
+									<match Class="PatchOperationAdd">
+										<xpath>/Defs/MemeDef[defName="Bloodfeeding"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+										<value>
+											<li>HVT_GenePurist</li>
+										</value>
+									</match>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Anomaly</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationConditional"><!--as Collectivist-->
+								<xpath>/Defs/MemeDef[defName="Inhuman"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Inhuman"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+									<value>
+										<li>HVT_Twisted</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Inhuman"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Inhuman"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+									<value>
+										<li>HVT_Tranquil</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional"><!--as Collectivist-->
+								<xpath>/Defs/MemeDef[defName="Ritualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Ritualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+									<value>
+										<li>HVT_Superstitious</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="Ritualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+								<match Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="Ritualist"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+									<value>
+										<li MayRequire="Ludeon.RimWorld.Royalty">HVT_PsychicallyBlank</li>
+									</value>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Odyssey</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationConditional"><!--as Loyalist-->
+								<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+								<nomatch Class="PatchOperationAddModExtension">
+									<xpath>/Defs/MemeDef[defName="Shipborn"]</xpath>
+									<value>
+										<li Class="IdeologyVirtues.DefModExtension_MemeDefVirtues">
+											<associatedPreferredTraits>
+												<li>HVT_Skybound</li>
+											</associatedPreferredTraits>
+											<associatedDisapprovedTraits>
+												<li>HVT_Earthborne</li>
+											</associatedDisapprovedTraits>
+										</li>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationSequence">
+									<operations>
+										<li Class="PatchOperationConditional">
+											<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+											<nomatch Class="PatchOperationAdd">
+												<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+												<value>
+													<associatedPreferredTraits>
+														<li>HVT_Skybound</li>
+													</associatedPreferredTraits>
+												</value>
+											</nomatch>
+											<match Class="PatchOperationAdd">
+												<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedPreferredTraits</xpath>
+												<value>
+													<li>HVT_Skybound</li>
+												</value>
+											</match>
+										</li>
+										<li Class="PatchOperationConditional">
+											<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+											<nomatch Class="PatchOperationAdd">
+												<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]</xpath>
+												<value>
+													<associatedDisapprovedTraits>
+														<li>HVT_Earthborne</li>
+													</associatedDisapprovedTraits>
+												</value>
+											</nomatch>
+											<match Class="PatchOperationAdd">
+												<xpath>/Defs/MemeDef[defName="Shipborn"]/modExtensions/li[@Class="IdeologyVirtues.DefModExtension_MemeDefVirtues"]/associatedDisapprovedTraits</xpath>
+												<value>
+													<li>HVT_Earthborne</li>
+												</value>
+											</match>
+										</li>
+									</operations>
+								</match>
+							</li>
+						</operations>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

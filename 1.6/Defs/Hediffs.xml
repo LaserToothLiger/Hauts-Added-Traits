@@ -494,7 +494,8 @@
 	  <li Class="HautsFramework.HediffCompProperties_SeverityDuringSpecificMentalStates">
 		<severityInState>10</severityInState>
 		<anyMentalState>false</anyMentalState>
-		<mentalStates>
+		<anyAggroMentalState>true</anyAggroMentalState>
+		<!--<mentalStates>
 			<li>Berserk</li>
 			<li>MurderousRage</li>
 			<li>SadisticRage</li>
@@ -502,7 +503,7 @@
 			<li MayRequire="Ludeon.RimWorld.Ideology">BerserkTrance</li>
 			<li MayRequire="zal.archotechweaponry">ArchotechWrath</li>
 			<li MayRequire="Snow.KraltechIndustries.Rebalanced">UnbridledRage</li>
-		</mentalStates>
+		</mentalStates>-->
 	  </li>
     </comps>
   </HediffDef>
