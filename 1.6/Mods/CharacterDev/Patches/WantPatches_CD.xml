@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  
+  <!--certain traits disable/prevent certain wants
+		Allegiant-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBanished"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBanished"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Allegiant</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBanished"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Allegiant</li>
+		</value>
+	</match>
+  </Operation>
+  <!--Asocial-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantHostDinnerParty"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantHostDinnerParty"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Asocial</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantHostDinnerParty"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Asocial</li>
+		</value>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantAttendedParty"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantAttendedParty"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Asocial</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantAttendedParty"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Asocial</li>
+		</value>
+	</match>
+  </Operation>
+  <!--MF-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantEatFood"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantEatFood"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_MetabolicFreak</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantEatFood"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_MetabolicFreak</li>
+		</value>
+	</match>
+  </Operation>
+  <!--Staid-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantGetInspiration"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantGetInspiration"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Staid</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantGetInspiration"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Staid</li>
+		</value>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantNewEntertainmentBuilding"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantNewEntertainmentBuilding"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Staid</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantNewEntertainmentBuilding"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Staid</li>
+		</value>
+	</match>
+  </Operation>
+  <!--Tranquil-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantFeelCatharsis"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantFeelCatharsis"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Tranquil</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantFeelCatharsis"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Tranquil</li>
+		</value>
+	</match>
+  </Operation>
+  <!--Humble-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeRich"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeRich"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Humble</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeRich"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Humble</li>
+		</value>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeExtremelyRich"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeExtremelyRich"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Humble</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeExtremelyRich"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Humble</li>
+		</value>
+	</match>
+  </Operation>
+  
+  <!--DLC or mod-exclusive invalidities-->
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+	  <li>Royalty</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeNoble"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeNoble"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Humble</li>
+					  <li>HVT_Anarchist</li>
+					  <li>HVT_Servile</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeNoble"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Humble</li>
+				  <li>HVT_Anarchist</li>
+				  <li>HVT_Servile</li>
+				</value>
+			</match>
+		  </li>
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantHearAnimaScream"]/requiredTraits</xpath>
+			<value>
+			  <li>HVT_PsychicallyBlank</li>
+			</value>
+		  </li>
+		</operations>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+	  <li>Ideology</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeIdeologicalFigure"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeIdeologicalFigure"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Humble</li>
+					  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Anarchist</li>
+					  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Servile</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeIdeologicalFigure"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Humble</li>
+				  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Anarchist</li>
+				  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Servile</li>
+				</value>
+			</match>
+		  </li>
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeLeader"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeLeader"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Humble</li>
+					  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Anarchist</li>
+					  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Servile</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeLeader"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Humble</li>
+				  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Anarchist</li>
+				  <li MayRequire="Ludeon.RimWorld.Royalty">HVT_Servile</li>
+				</value>
+			</match>
+		  </li>
+		</operations>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+	  <li>Biotech</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+		  <!--Caretaker-->
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantKillChild"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantKillChild"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Caretaker</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantKillChild"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Caretaker</li>
+				</value>
+			</match>
+		  </li>
+		  <!--Mechaphobe, Environmentalist-->
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeMechanitor"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeMechanitor"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Mechaphobe</li>
+					  <li>HVT_Environmentalist</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBecomeMechanitor"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Mechaphobe</li>
+				  <li>HVT_Environmentalist</li>
+				</value>
+			</match>
+		  </li>
+		</operations>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+	  <li>Odyssey</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations><!--sall Earthborne, baybee-->
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantSeeSpace"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantSeeSpace"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Earthborne</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantSeeSpace"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Earthborne</li>
+				</value>
+			</match>
+		  </li>
+		  <li Class="PatchOperationFindMod">
+			<mods>
+			  <li>Progression: Education</li>
+			</mods>
+			<match Class="PatchOperationFindMod">
+				<mods>
+				  <li>Vehicle Framework</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+					  <li Class="PatchOperationAdd">
+						<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantLearnAerialPiloting"]/invalidTraits</xpath>
+						<value>
+						  <li>HVT_Earthborne</li>
+						</value>
+					  </li>
+					  <li Class="PatchOperationConditional">
+						<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantLearnOrbitalPiloting"]/invalidTraits</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantLearnOrbitalPiloting"]</xpath>
+							<value>
+								<invalidTraits>
+								  <li>HVT_Earthborne</li>
+								</invalidTraits>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantLearnOrbitalPiloting"]/invalidTraits</xpath>
+							<value>
+							  <li>HVT_Earthborne</li>
+							</value>
+						</match>
+					  </li>
+					</operations>
+				</match>
+			</match>
+		  </li>
+		</operations>
+	</match>
+  </Operation>
+  
+</Patch>

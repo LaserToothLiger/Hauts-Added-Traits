@@ -6,6 +6,123 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<!--these traits have beef w specific precepts forced by and exclusive to Pain is Divine. so they also null those precepts' thoughts-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="AM_PainIsDivine"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_PainIsDivine"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Aestheticist</li>
+								<HVT_Perceptive>1</HVT_Perceptive>
+								<HVT_Perceptive>2</HVT_Perceptive>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_PainIsDivine"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Aestheticist</li>
+							<HVT_Perceptive>1</HVT_Perceptive>
+							<HVT_Perceptive>2</HVT_Perceptive>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThoughtDef[defName="AM_Disfigurement_Preferred_Social"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="AM_Disfigurement_Preferred_Social"]</xpath>
+						<value>
+							<nullifyingTraits>
+								<li>HVT_Aestheticist</li>
+							</nullifyingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="AM_Disfigurement_Preferred_Social"]/nullifyingTraits</xpath>
+						<value>
+							<li>HVT_Aestheticist</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThoughtDef[defName="AM_Disfigurement_Preferred"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="AM_Disfigurement_Preferred"]</xpath>
+						<value>
+							<nullifyingTraits>
+								<li>HVT_Aestheticist</li>
+							</nullifyingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="AM_Disfigurement_Preferred"]/nullifyingTraits</xpath>
+						<value>
+							<li>HVT_Aestheticist</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThoughtDef[defName="AM_Comfort_DiscomfortPreferred"]/nullifyingTraitDegrees</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="AM_Comfort_DiscomfortPreferred"]</xpath>
+						<value>
+							<nullifyingTraitDegrees>
+								<HVT_Perceptive>1</HVT_Perceptive>
+								<HVT_Perceptive>2</HVT_Perceptive>
+							</nullifyingTraitDegrees>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="AM_Comfort_DiscomfortPreferred"]/nullifyingTraitDegrees</xpath>
+						<value>
+							<HVT_Perceptive>1</HVT_Perceptive>
+							<HVT_Perceptive>2</HVT_Perceptive>
+						</value>
+					</match>
+				</li>
+				<!--Outdoorsy, Sunbather, Tempestophile vs Deep Devotion cause they werent fine w Tunneler, but also Metafreak doesn't care for its insane dietary restrictions-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="AM_DeepDevotion"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_DeepDevotion"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_MetabolicFreak</li>
+								<li>HVT_Sunbather</li>
+								<li>HVT_Tempestophile</li>
+								<li>HVT_Outdoorsy</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_DeepDevotion"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_MetabolicFreak</li>
+							<li>HVT_Sunbather</li>
+							<li>HVT_Tempestophile</li>
+							<li>HVT_Outdoorsy</li>
+						</value>
+					</match>
+				</li>
+				<!--Textiles obviously hate the even stronger Nudism-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/MemeDef[defName="AM_NakedTruth"]/disagreeableTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_NakedTruth"]</xpath>
+						<value>
+							<disagreeableTraits>
+								<li>HVT_Textile</li>
+							</disagreeableTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/MemeDef[defName="AM_NakedTruth"]/disagreeableTraits</xpath>
+						<value>
+							<li>HVT_Textile</li>
+						</value>
+					</match>
+				</li>
 				<!--Aestheticist likes Artist; hates Iconoclast; Daydreamer and Hedonist also like Artist-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="AM_Artist"]/agreeableTraits</xpath>

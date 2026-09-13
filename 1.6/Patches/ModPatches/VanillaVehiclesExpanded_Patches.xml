@@ -10,119 +10,116 @@
 					<mods>
 						<li>Ideology</li>
 					</mods>
-					<match Class="PatchOperationFindMod">
-						<mods>
-							<li>Odyssey</li>
-						</mods>
-						<match Class="PatchOperationSequence">
-							<operations>
-								<!--Globetrotters love travelin'-->
-								<li Class="PatchOperationConditional">
+					<match Class="PatchOperationSequence">
+						<operations>
+							<!--Vagabonds and Globetrotters love travelin'-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="VVE_Travelers"]/agreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="VVE_Travelers"]</xpath>
+									<value>
+										<agreeableTraits>
+											<li>HVT_Vagabond</li>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
+										</agreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
 									<xpath>/Defs/MemeDef[defName="VVE_Travelers"]/agreeableTraits</xpath>
-									<nomatch Class="PatchOperationAdd">
-										<xpath>/Defs/MemeDef[defName="VVE_Travelers"]</xpath>
-										<value>
-											<agreeableTraits>
-												<li>HVT_Globetrotter</li>
-											</agreeableTraits>
-										</value>
-									</nomatch>
-									<match Class="PatchOperationAdd">
-										<xpath>/Defs/MemeDef[defName="VVE_Travelers"]/agreeableTraits</xpath>
-										<value>
-											<li>HVT_Globetrotter</li>
-										</value>
-									</match>
-								</li>
-								<!--Earthborne/Skybound d/aw/ Skyseekers-->
-								<li Class="PatchOperationConditional">
+									<value>
+										<li>HVT_Vagabond</li>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Globetrotter</li>
+									</value>
+								</match>
+							</li>
+							<!--Earthborne/Skybound d/aw/ Skyseekers-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]/agreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]</xpath>
+									<value>
+										<agreeableTraits>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Skybound</li>
+										</agreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
 									<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]/agreeableTraits</xpath>
-									<nomatch Class="PatchOperationAdd">
-										<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]</xpath>
-										<value>
-											<agreeableTraits>
-												<li>HVT_Skybound</li>
-											</agreeableTraits>
-										</value>
-									</nomatch>
-									<match Class="PatchOperationAdd">
-										<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]/agreeableTraits</xpath>
-										<value>
-											<li>HVT_Skybound</li>
-										</value>
-									</match>
-								</li>
-								<li Class="PatchOperationConditional">
+									<value>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Skybound</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]/disagreeableTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]</xpath>
+									<value>
+										<disagreeableTraits>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Earthborne</li>
+										</disagreeableTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
 									<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]/disagreeableTraits</xpath>
-									<nomatch Class="PatchOperationAdd">
-										<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]</xpath>
-										<value>
-											<disagreeableTraits>
-												<li>HVT_Earthborne</li>
-											</disagreeableTraits>
-										</value>
-									</nomatch>
-									<match Class="PatchOperationAdd">
-										<xpath>/Defs/MemeDef[defName="VVE_Skyseekers"]/disagreeableTraits</xpath>
-										<value>
-											<li>HVT_Earthborne</li>
-										</value>
-									</match>
-								</li>
-								<!--earthborne can't be made to like flying, and skybound can't be made to hate it-->
-								<li Class="PatchOperationConditional">
+									<value>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Earthborne</li>
+									</value>
+								</match>
+							</li>
+							<!--earthborne can't be made to like flying, and skybound can't be made to hate it-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Approved"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Approved"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Earthborne</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
 									<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Approved"]/nullifyingTraits</xpath>
-									<nomatch Class="PatchOperationAdd">
-										<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Approved"]</xpath>
-										<value>
-											<nullifyingTraits>
-												<li>HVT_Earthborne</li>
-											</nullifyingTraits>
-										</value>
-									</nomatch>
-									<match Class="PatchOperationAdd">
-										<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Approved"]/nullifyingTraits</xpath>
-										<value>
-											<li>HVT_Earthborne</li>
-										</value>
-									</match>
-								</li>
-								<li Class="PatchOperationConditional">
+									<value>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Earthborne</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Required"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Required"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Earthborne</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
 									<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Required"]/nullifyingTraits</xpath>
-									<nomatch Class="PatchOperationAdd">
-										<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Required"]</xpath>
-										<value>
-											<nullifyingTraits>
-												<li>HVT_Earthborne</li>
-											</nullifyingTraits>
-										</value>
-									</nomatch>
-									<match Class="PatchOperationAdd">
-										<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Required"]/nullifyingTraits</xpath>
-										<value>
-											<li>HVT_Earthborne</li>
-										</value>
-									</match>
-								</li>
-								<li Class="PatchOperationConditional">
+									<value>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Earthborne</li>
+									</value>
+								</match>
+							</li>
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Horrible"]/nullifyingTraits</xpath>
+								<nomatch Class="PatchOperationAdd">
+									<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Horrible"]</xpath>
+									<value>
+										<nullifyingTraits>
+											<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Skybound</li>
+										</nullifyingTraits>
+									</value>
+								</nomatch>
+								<match Class="PatchOperationAdd">
 									<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Horrible"]/nullifyingTraits</xpath>
-									<nomatch Class="PatchOperationAdd">
-										<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Horrible"]</xpath>
-										<value>
-											<nullifyingTraits>
-												<li>HVT_Skybound</li>
-											</nullifyingTraits>
-										</value>
-									</nomatch>
-									<match Class="PatchOperationAdd">
-										<xpath>/Defs/ThoughtDef[defName="VVE_Flying_Horrible"]/nullifyingTraits</xpath>
-										<value>
-											<li>HVT_Skybound</li>
-										</value>
-									</match>
-								</li>
-							</operations>
-						</match>
+									<value>
+										<li MayRequire="Ludeon.RimWorld.Odyssey">HVT_Skybound</li>
+									</value>
+								</match>
+							</li>
+						</operations>
 					</match>
 				</li>
 			</operations>

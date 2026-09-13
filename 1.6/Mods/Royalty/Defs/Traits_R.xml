@@ -427,6 +427,7 @@
 			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
 			  <li MayRequire="Snow.KraltechIndustries.Rebalanced">DreadfulAura</li>
 			  <li MayRequire="VanillaExpanded.VEE">VEE_SuperbloomPsychicDrone</li>
+			  <li MayRequire="DimonSever000.Events.Specific">PsyStorm</li>
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
@@ -3600,6 +3601,7 @@
 			  <li MayRequire="Ludeon.RimWorld.Biotech">HateAura</li>
 			  <li MayRequire="Snow.KraltechIndustries.Rebalanced">DreadfulAura</li>
 			  <li MayRequire="VanillaExpanded.VEE">VEE_SuperbloomPsychicDrone</li>
+			  <li MayRequire="DimonSever000.Events.Specific">PsyStorm</li>
 			</disallowedThoughts>
 			<statOffsets>
 			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>

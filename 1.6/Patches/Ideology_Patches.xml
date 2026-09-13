@@ -390,13 +390,6 @@
 						</value>
 					</match>
 				</li>
-				<!--Vains hate PiV-->
-				<li Class="PatchOperationAdd"> 
-					<xpath>/Defs/MemeDef[defName="PainIsVirtue"]/agreeableTraits</xpath>
-					<value>
-						<li>HVT_PersecutionComplex</li>
-					</value>
-				</li>
 				<!--Tolerants, Libs, and Anarchists hate Supremacist-->
 				<li Class="PatchOperationConditional">
 					<xpath>/Defs/MemeDef[defName="Supremacist"]/disagreeableTraits</xpath>
