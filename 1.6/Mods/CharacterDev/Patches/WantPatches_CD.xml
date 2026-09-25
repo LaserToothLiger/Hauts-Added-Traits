@@ -1,7 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
+  <!--certain traits have specific variants of existing wants that are more common but less rewarding; thus, they can't get the normal version of the want-->
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantGetLovin"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantGetLovin"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Lech</li>
+			  <li>HVT_Lovesick</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantGetLovin"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_Lech</li>
+		  <li>HVT_Lovesick</li>
+		</value>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantAttendedParty"]/invalidTraits</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantAttendedParty"]</xpath>
+		<value>
+			<invalidTraits>
+			  <li>HVT_Reveller</li>
+			</invalidTraits>
+		</value>
+	</nomatch>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantAttendedParty"]/invalidTraits</xpath>
+		<value>
+		  <li>HVT_WantReveller</li>
+		</value>
+	</match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+	  <li>Odyssey</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantSeeNewPlace"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantSeeNewPlace"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Globetrotter</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantSeeNewPlace"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Globetrotter</li>
+				</value>
+			</match>
+		  </li>
+		  <li Class="PatchOperationConditional">
+			<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQE_WantContainersOpened"]/invalidTraits</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQE_WantContainersOpened"]</xpath>
+				<value>
+					<invalidTraits>
+					  <li>HVT_Scavenger</li>
+					</invalidTraits>
+				</value>
+			</nomatch>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQE_WantContainersOpened"]/invalidTraits</xpath>
+				<value>
+				  <li>HVT_Scavenger</li>
+				</value>
+			</match>
+		  </li>
+		</operations>
+	</match>
+  </Operation>
   
-  <!--certain traits disable/prevent certain wants
+  <!--certain traits disable/prevent certain wants due to logical reasons
 		Allegiant-->
   <Operation Class="PatchOperationConditional">
 	<xpath>/Defs/WantsAndQuirks.WantDef[defName="WQ_WantBanished"]/invalidTraits</xpath>

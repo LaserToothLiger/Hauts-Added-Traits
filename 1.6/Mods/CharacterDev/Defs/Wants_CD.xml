@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--Variations of existing wants that are particular to specific traits, and a smidge less rewarding; the regular versions are disabled for these traits
+	Lech, Lovesick-->
+	<WantsAndQuirks.WantDef>
+        <defName>HVT_WantLechOrLovesick</defName>
+        <label>get lovin'</label>
+        <description>I need lovin' so badly.</description>
+        <iconPath>UI/WantIcons/Lovin</iconPath>
+        <reward>450</reward>
+        <commonality>1.3</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_Thought</workerClass>
+        <completedByThought>GotSomeLovin</completedByThought>
+        <requiredTraits>
+            <li>HVT_Lech</li>
+			<li>HVT_Lovesick</li>
+        </requiredTraits>
+		<requiredTraitsAny>true</requiredTraitsAny>
+    </WantsAndQuirks.WantDef>
+	<!--Reveller-->
+	<WantsAndQuirks.WantDef>
+        <defName>HVT_WantReveller</defName>
+        <label>attend a party</label>
+        <description>I absolutely must go to a fun party.</description>
+        <iconPath>UI/WantIcons/Party</iconPath>
+        <reward>900</reward>
+        <commonality>1.4</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_Thought</workerClass>
+        <completedByThought>AttendedParty</completedByThought>
+        <minimumTechLevel>Medieval</minimumTechLevel>
+        <invalidHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </invalidHediffs>
+        <requiredTraits>
+            <li>HVT_Reveller</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+	<!--Globetrotter-->
+	<WantsAndQuirks.WantDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>HVT_WantGlobetrotter</defName>
+        <label>see a new place</label>
+        <description>I'd like to broaden my experiences by visiting a new place.</description>
+        <iconPath>UI/WantIcons/Discover</iconPath>
+        <reward>1000</reward>
+        <commonality>1</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_SeeNewPlace</workerClass>
+        <requiredTraits>
+            <li>HVT_Globetrotter</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+	<!--Treasure Seeker-->
+	<WantsAndQuirks.WantDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>HVT_WantScavenger</defName>
+        <label>open containers</label>
+        <description>I'd like to hunt for treasure by unboxing some things. Five containers should do it.</description>
+        <iconPath>UI/WantIcons/Unboxing</iconPath>
+        <reward>1000</reward>
+        <commonality>0.2</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_RecordChange</workerClass>
+        <targetRecord>ContainersOpened</targetRecord>
+        <countThreshold>5</countThreshold>
+        <minimumTechLevel>Medieval</minimumTechLevel>
+        <requiredTraits>
+            <li>HVT_Scavenger</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+    <!--NEW Wants
+	Hedonist-->
+    <WantsAndQuirks.WantDef>
+        <defName>HVT_WantHedonist</defName>
+        <label>have some fun</label>
+        <description>I should spend some time just having fun. About three days of recreation should do it.</description>
+        <iconPath>UI/WantIcons/WatchTV</iconPath>
+        <reward>400</reward>
+        <commonality>1</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_Record</workerClass>
+        <targetRecord>TimeGettingJoy</targetRecord>
+        <countThreshold>180000</countThreshold>
+        <requiredTraits>
+            <li>HVT_Hedonist</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+	<!--Sadistic-->
+	<WantsAndQuirks.WantDef>
+        <defName>HVT_WantSadist</defName>
+        <label>witness a mental break</label>
+        <description>I want to look on as someone breaks down in utter agony.</description>
+        <iconPath>UI/WantIcons/CalmDown</iconPath>
+        <reward>500</reward>
+        <commonality>1.2</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_Thought</workerClass>
+        <completedByThought>HVT_SadistSawMentalBreak</completedByThought>
+        <requiredTraits>
+            <li>HVT_Sadist</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+	<!--Vicious-->
+    <WantsAndQuirks.WantDef>
+        <defName>HVT_WantVicious</defName>
+        <label>wreak devastation</label>
+        <description>I need to lay down the hurt; on what, it doesn't matter. A thousand damage should do it.</description>
+        <iconPath>UI/WantIcons/Slaughter</iconPath>
+        <reward>400</reward>
+        <commonality>1000</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_Record</workerClass>
+        <targetRecord>DamageDealt</targetRecord>
+        <countThreshold>1000</countThreshold>
+        <requiredTraits>
+            <li>HVT_Vicious</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+	<!--Mechaphobe-->
+    <WantsAndQuirks.WantDef MayRequire="Ludeon.RimWorld.Biotech">
+        <defName>HVT_WantMechaphobe</defName>
+        <label>massacre mechanoids</label>
+        <description>I should turn mechanoids into junk. Ten should do it.</description>
+        <iconPath>UI/WantIcons/KillMechanoid</iconPath>
+        <reward>400</reward>
+        <commonality>1000</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_Record</workerClass>
+        <targetRecord>KillsMechanoids</targetRecord>
+        <countThreshold>10</countThreshold>
+        <requiredTraits>
+            <li>HVT_Mechaphobe</li>
+        </requiredTraits>
+    </WantsAndQuirks.WantDef>
+	
+</Defs>
