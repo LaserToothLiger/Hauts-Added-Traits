@@ -98,13 +98,13 @@
     <WantsAndQuirks.WantDef>
         <defName>HVT_WantVicious</defName>
         <label>wreak devastation</label>
-        <description>I need to lay down the hurt; on what, it doesn't matter. A thousand damage should do it.</description>
+        <description>I need to lay down the hurt; on what, it doesn't matter. Ten thousand damage should do it.</description>
         <iconPath>UI/WantIcons/Slaughter</iconPath>
         <reward>400</reward>
-        <commonality>1000</commonality>
+        <commonality>1</commonality>
         <workerClass>WantsAndQuirks.WantWorker_Record</workerClass>
         <targetRecord>DamageDealt</targetRecord>
-        <countThreshold>1000</countThreshold>
+        <countThreshold>10000</countThreshold>
         <requiredTraits>
             <li>HVT_Vicious</li>
         </requiredTraits>
@@ -116,7 +116,7 @@
         <description>I should turn mechanoids into junk. Ten should do it.</description>
         <iconPath>UI/WantIcons/KillMechanoid</iconPath>
         <reward>400</reward>
-        <commonality>1000</commonality>
+        <commonality>1</commonality>
         <workerClass>WantsAndQuirks.WantWorker_Record</workerClass>
         <targetRecord>KillsMechanoids</targetRecord>
         <countThreshold>10</countThreshold>
