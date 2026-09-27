@@ -69,13 +69,13 @@
     <WantsAndQuirks.WantDef>
         <defName>HVT_WantHedonist</defName>
         <label>have some fun</label>
-        <description>I should spend some time just having fun. About three days of recreation should do it.</description>
+        <description>I should spend a lot of time just having fun.</description>
         <iconPath>UI/WantIcons/WatchTV</iconPath>
         <reward>400</reward>
         <commonality>1</commonality>
         <workerClass>WantsAndQuirks.WantWorker_Record</workerClass>
         <targetRecord>TimeGettingJoy</targetRecord>
-        <countThreshold>180000</countThreshold>
+        <countThreshold>1800000</countThreshold>
         <requiredTraits>
             <li>HVT_Hedonist</li>
         </requiredTraits>

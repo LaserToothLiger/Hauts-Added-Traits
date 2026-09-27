@@ -572,7 +572,7 @@ namespace HautsTraits
         public static void HVTSkulkerHostilesNotClickablePostfix(ref bool __result, Thing t)
         {
             Pawn pawn;
-            if ((pawn = (t as Pawn)) != null && (pawn.Faction == null || pawn.HostileTo(Faction.OfPlayer)) && (pawn.story != null) && (!pawn.Downed) && (!pawn.IsPrisoner) && (!pawn.IsSlave))
+            if ((pawn = (t as Pawn)) != null && !HVT_Mod.settings.skulkersAreSelectable && (pawn.Faction == null || pawn.HostileTo(Faction.OfPlayer)) && (pawn.story != null) && (!pawn.Downed) && (!pawn.IsPrisoner) && (!pawn.IsSlave))
             {
                 if (pawn.story.traits.HasTrait(HVTDefOf.HVT_Skulker))
                 {
