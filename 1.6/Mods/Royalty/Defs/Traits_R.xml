@@ -2863,6 +2863,7 @@
 			<statFactors>
 			  <ButcheryFleshEfficiency>2</ButcheryFleshEfficiency>
 			  <ButcheryMechanoidEfficiency>2</ButcheryMechanoidEfficiency>
+			  <AC_StackShreddingEfficiency MayRequire="hlx.UltratechAlteredCarbon">2</AC_StackShreddingEfficiency>
 			  <EL_ArcheologySpeed MayRequire="ellit.Archeology">1.1</EL_ArcheologySpeed>
 			</statFactors>
 			<marketValueFactorOffset>2.75</marketValueFactorOffset>

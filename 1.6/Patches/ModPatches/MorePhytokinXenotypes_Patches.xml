@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>More Phytokin Xenotypes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Humanlike entities can't be Monster Hunters, to prevent them from having some narratively weird thought combos-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/GeneDef[defName="MPX_Gene_HumanoidEntity"]/suppressedTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName="MPX_Gene_HumanoidEntity"]</xpath>
+						<value>
+							<suppressedTraits>
+								<li><def>HVT_MonsterHunter</def></li>
+							</suppressedTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName="MPX_Gene_HumanoidEntity"]/suppressedTraits</xpath>
+						<value>
+							<li><def>HVT_MonsterHunter</def></li>
+						</value>
+					</match>
+				</li>
+				<!--Monster Lovers feel positively about humanlike entities-->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThoughtDef[defName="MPX_HumanlikeEntitySocial"]</xpath>
+					<value>
+						<li Class="HautsFramework.ModifyingTraits">
+							<multiplierTraits>
+							  <li>
+								<key>HVT_MonsterLover</key>
+								<value>0.5</value>
+							  </li>
+							</multiplierTraits>
+							<forcePositive>
+							  <li>HVT_MonsterLover</li>
+							</forcePositive>
+						</li>
+					</value>
+				</li>
+				<!--Twisteds can eat meat mush-->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThoughtDef[defName="MPX_AteMeatMush" or defName="MPX_AteCookedMeatMush"]/nullifyingTraits</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="MPX_AteMeatMush" or defName="MPX_AteCookedMeatMush"]</xpath>
+						<value>
+							<nullifyingTraits>
+								<li>HVT_Twisted</li>
+							</nullifyingTraits>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThoughtDef[defName="MPX_AteMeatMush" or defName="MPX_AteCookedMeatMush"]/nullifyingTraits</xpath>
+						<value>
+							<li>HVT_Twisted</li>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

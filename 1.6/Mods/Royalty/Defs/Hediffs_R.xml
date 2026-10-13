@@ -5376,7 +5376,7 @@
     <maxSeverity>10000.1</maxSeverity>
 	<comps>
 	  <li Class="HautsTraitsRoyalty.HediffCompProperties_InASwaddle">
-		<severityToTrigger>400</severityToTrigger>
+		<severityToTrigger>1000</severityToTrigger>
 	  </li>
 	  <li Class="HautsFramework.HediffCompProperties_ForcedByOtherProperty">
 		<forcingTraits>
