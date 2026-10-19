@@ -1513,7 +1513,7 @@
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/AbilityDef[defName = "HVT_ThunderbirdAbility"]/description</xpath>
 								<value>
-									<description>Knocks the target out for 3 days and has an additional effect depending on the target:\n-Ordinary individuals are transformed into Latent Sorcerers. This incurs no cooldown.\n-Latent Sorcerers have a 33% chance to become awakened.\n-Awakened Sorcerers have a 33% chance to gain a second awakening; this cannot grant someone more than two awakened traits.</description>
+									<description>Knocks the target out for 3 days and has an additional effect depending on the target:\n-Ordinary individuals are transformed into Latent Sorcerers.\n-Latent Sorcerers have a 33% chance to become awakened.\n-Awakened Sorcerers have a 33% chance to gain a second awakening; this cannot grant someone more than two awakened traits.</description>
 								</value>
 							</li>
 							<li Class="PatchOperationReplace">

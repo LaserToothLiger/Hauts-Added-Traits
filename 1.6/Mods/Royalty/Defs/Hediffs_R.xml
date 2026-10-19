@@ -3560,8 +3560,10 @@
 			<Hauts_PsyfocusRegenRate>0.08</Hauts_PsyfocusRegenRate>
 			<PsychicEntropyRecoveryRate>0.65</PsychicEntropyRecoveryRate>
 			<PsychicSensitivity>0.24</PsychicSensitivity>
-			<RestFallRateFactor>0</RestFallRateFactor>
 		</statOffsets>
+		<statFactors>
+			<RestFallRateFactor>0</RestFallRateFactor>
+		</statFactors>
 		<capMods>
           <li>
             <capacity>Moving</capacity>
@@ -3581,8 +3583,10 @@
 			<Hauts_PsyfocusRegenRate>0.06</Hauts_PsyfocusRegenRate>
 			<PsychicEntropyRecoveryRate>0.48</PsychicEntropyRecoveryRate>
 			<PsychicSensitivity>0.18</PsychicSensitivity>
-			<RestFallRateFactor>0</RestFallRateFactor>
 		</statOffsets>
+		<statFactors>
+			<RestFallRateFactor>0</RestFallRateFactor>
+		</statFactors>
 		<capMods>
           <li>
             <capacity>Moving</capacity>
@@ -3602,8 +3606,10 @@
 			<Hauts_PsyfocusRegenRate>0.04</Hauts_PsyfocusRegenRate>
 			<PsychicEntropyRecoveryRate>0.32</PsychicEntropyRecoveryRate>
 			<PsychicSensitivity>0.12</PsychicSensitivity>
-			<RestFallRateFactor>0</RestFallRateFactor>
 		</statOffsets>
+		<statFactors>
+			<RestFallRateFactor>0</RestFallRateFactor>
+		</statFactors>
 		<capMods>
           <li>
             <capacity>Moving</capacity>
@@ -3623,8 +3629,10 @@
 			<Hauts_PsyfocusRegenRate>0.02</Hauts_PsyfocusRegenRate>
 			<PsychicEntropyRecoveryRate>0.16</PsychicEntropyRecoveryRate>
 			<PsychicSensitivity>0.06</PsychicSensitivity>
-			<RestFallRateFactor>0</RestFallRateFactor>
 		</statOffsets>
+		<statFactors>
+			<RestFallRateFactor>0</RestFallRateFactor>
+		</statFactors>
 		<capMods>
           <li>
             <capacity>Moving</capacity>
@@ -6799,7 +6807,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_DragonsHoard</defName>
     <label>transcendent dragonhoard</label>
-    <description>Psychic dragons steal from the psionic matrices of other psycasters they slay, creating a hoard of energy which grants psychic sensitivity, psyfocus regen, longevity, damage reduction, and regeneration.</description>
+    <description>Psychic dragons steal from the psionic matrices of other psycasters that have died nearby, creating a hoard of energy which grants psychic sensitivity, psyfocus regen, longevity, damage reduction, and regeneration.</description>
 	<hediffClass>HautsTraitsRoyalty.Hediff_DragonsHoard</hediffClass>
     <defaultLabelColor>(1, 0.95, 0.6)</defaultLabelColor>
 	<initialSeverity>0.001</initialSeverity>
@@ -7143,7 +7151,7 @@
   <HediffDef ParentName="HVT_TraitHediffBase">
     <defName>HVT_LeeringSphinx</defName>
     <label>leering sphinx</label>
-    <description>Due to failed use of the psychic instruction ability, this character's psychic presence has become deleteriously tangled. The 'leering sphinx', as it is called by tribal folklorists, isn't harmful at the outset. However, if the condition builds up too much - due to three failed uses of psychic instruction - the victim perishes suddenly.</description>
+    <description>Due to failed use of the psychic riddle ability, this character's psychic presence has become deleteriously tangled. The 'leering sphinx', as it is called by tribal folklorists, isn't harmful at the outset. However, if the condition builds up too much - due to three failed psychic riddles - the victim perishes suddenly.</description>
 	<hediffClass>HautsTraitsRoyalty.Hediff_LeeringSphinx</hediffClass>
     <defaultLabelColor>(0.8, 0.18, 0)</defaultLabelColor>
 	<initialSeverity>0.001</initialSeverity>

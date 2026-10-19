@@ -299,7 +299,7 @@
   <AbilityDef>
     <defName>HVT_ThunderbirdAbility</defName>
     <label>psychic seeding</label>
-    <description>Knocks the target out for 3 days and has an additional effect depending on the target:\n-Ordinary individuals are transformed into Latent Psychics. This incurs no cooldown.\n-Latent Psychics have a 33% chance to become awakened.\n-Awakened Psychics have a 33% chance to gain a second awakening; this cannot grant someone more than two awakened traits.</description>
+    <description>Knocks the target out for 3 days and has an additional effect depending on the target:\n-Ordinary individuals are transformed into Latent Psychics.\n-Latent Psychics have a 33% chance to become awakened.\n-Awakened Psychics have a 33% chance to gain a second awakening; this cannot grant someone more than two awakened traits.</description>
     <jobDef>CastAbilityOnThingMelee</jobDef>
     <iconPath>PsychicTraits/Abilities/HVT_PkWisdom</iconPath>
     <warmupMote>Mote_WarmupWordOf</warmupMote>

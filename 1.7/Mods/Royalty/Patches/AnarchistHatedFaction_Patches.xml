@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch><!--despite not having a royalty tracker, these factions are unmistakably institutions the Anarchist trait should hate-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Rimsenal Faction Pack - Federation</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/FactionDef[defName="FPC"]</xpath>
+			<value>
+				<li Class="HautsTraits.AnarchistHatedFaction" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Starcraft Arsenal</li>
+		</mods><!--Raynor's Raiders? Bout time you boys showed up!-->
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/FactionDef[defName="TerranDominion" or defName="TerranConfederacy"]</xpath>
+			<value>
+				<li Class="HautsTraits.AnarchistHatedFaction" />
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Classical</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/FactionDef[defName="VFEC_WesternRepublic" or defName="VFEC_CentralRepublic" or defName="VFEC_EasternRepublic"]</xpath>
+			<value>
+				<li Class="HautsTraits.AnarchistHatedFaction" />
+			</value>
+		</match>
+	</Operation>
+</Patch>

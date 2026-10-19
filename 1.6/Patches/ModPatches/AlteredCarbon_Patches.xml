@@ -8,6 +8,7 @@
 			<xpath>/Defs/AlteredCarbon.StackSavingOptions[defName="AC_StackSavingOptions"]/ignoresTraits</xpath>
 			<value>
 				<li>HVT_Hale</li>
+				<li>HVT_MetabolicFreak</li>
 				<li>HVT_Strong</li>
 				<li MayRequire="Ludeon.RimWorld.Royalty">HVT_PsychicallyBlank</li>
 				<li MayRequire="Ludeon.RimWorld.Royalty">HVT_LatentPsychic</li>

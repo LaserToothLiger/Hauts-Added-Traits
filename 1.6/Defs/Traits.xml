@@ -2025,7 +2025,7 @@
 			</statOffsets>
 			<allowedMeditationFocusTypes><li>Void</li></allowedMeditationFocusTypes>
 			<randomMentalState>HVT_SightstealerAttack</randomMentalState>
-			<randomMentalStateMtbDaysMoodCurve><points><li>(0, 20)</li></points></randomMentalStateMtbDaysMoodCurve>
+			<randomMentalStateMtbDaysMoodCurve><points><li>(0, 30)</li></points></randomMentalStateMtbDaysMoodCurve>
 			<possessions>
 			  <Shard>1~2</Shard>
 			</possessions>
