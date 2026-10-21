@@ -13,6 +13,12 @@
 						<label>avid reader</label>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace"> 
+					<xpath>/Defs/TraitDef[defName="ST_Narcissist"]/degreeDatas/li/label</xpath>
+					<value>
+						<label>narcissist</label>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>
