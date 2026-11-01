@@ -1379,6 +1379,7 @@
 		<forcingTraits>
 			<li>HVT_TTraitBellbird</li>
 			<li>HVT_TTraitCanary</li>
+			<li>HVT_TTraitCuckoo</li>
 			<li>HVT_TTraitNightingale</li>
 		</forcingTraits>
 	  </li>

@@ -38,7 +38,7 @@ namespace HautsTraits
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(this.def.hediff, false);
             if (firstHediffOfDef != null)
             {
-                return base.MoodMultiplier(p) * firstHediffOfDef.Severity;
+                return Math.Min(base.MoodMultiplier(p) * firstHediffOfDef.Severity,40f);
             }
             return base.MoodMultiplier(p);
         }

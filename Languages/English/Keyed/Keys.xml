@@ -34,6 +34,7 @@
 <HVT_RepressedRaging>{PAWN_nameDef} has unleashed {PAWN_possessive} repressed rage! Watch out - {PAWN_pronoun} is incredibly dangerous so long as {PAWN_pronoun} remains in this violent mental state.</HVT_RepressedRaging>
 <HVT_RROnDamage>Caused by the Repressed Rage trait responding to damage.</HVT_RROnDamage>
 <HVT_SadistInspiration>The suffering of {0} has inspired {1}!</HVT_SadistInspiration>
+<HVT_YouCannotSelectThisSkulker>{0} could not be selected. Reason: is a wildman or hostile combatant with the Skulker trait.</HVT_YouCannotSelectThisSkulker>
 <HVT_VisionarySchematicTitle>Visionary insights by {PAWN_nameDef}</HVT_VisionarySchematicTitle>
 <HVT_VisionarySchematicDesc>Notes created by {PAWN_nameDef} during a visionary insight.</HVT_VisionarySchematicDesc>
 <HVT_VisionaryNovelTitle>Visionary ramblings by {PAWN_nameDef}</HVT_VisionaryNovelTitle>

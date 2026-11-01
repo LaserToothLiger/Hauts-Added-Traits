@@ -712,6 +712,10 @@
       <li Class="CompProperties_AbilityFleckOnTarget">
         <fleckDef>HVT_MechaphobePulse</fleckDef>
       </li>
+      <li Class="HautsFramework.CompProperties_AbilityCooldownStatScaling">
+        <compClass>HautsFramework.CompAbilityEffect_CooldownStatScaling</compClass>
+        <stat>MechBandwidth</stat>
+      </li>
       <li Class="HautsFramework.CompProperties_AbilityRequiresMinimumStat">
         <compClass>HautsFramework.CompAbilityEffect_RequiresMinimumStat</compClass>
 		<minStats>

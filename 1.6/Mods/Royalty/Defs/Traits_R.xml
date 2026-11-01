@@ -428,6 +428,7 @@
 			  <li MayRequire="Snow.KraltechIndustries.Rebalanced">DreadfulAura</li>
 			  <li MayRequire="VanillaExpanded.VEE">VEE_SuperbloomPsychicDrone</li>
 			  <li MayRequire="DimonSever000.Events.Specific">PsyStorm</li>
+			  <li MayRequire="tsoa.arsenal">TSOA_AnimaArrowScream</li>
 			</disallowedThoughts>
 		  </li>
 		</degreeDatas>
@@ -976,6 +977,14 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
+            <li Class="HautsFramework.TraitGrantedStuff">
+				<grantedHediffs>
+					<li>
+						<key>0</key><value><li>HVT_THediffBNC</li></value>
+					</li>
+				</grantedHediffs>
+				<hediffsToBrain>false</hediffsToBrain>
+            </li>
             <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCuckoo</descKey><descKeyFantasy>HVT_TransCuckooFantasy</descKeyFantasy><category>transcendence</category></li>
         </modExtensions>
 	</TraitDef>
@@ -3603,6 +3612,7 @@
 			  <li MayRequire="Snow.KraltechIndustries.Rebalanced">DreadfulAura</li>
 			  <li MayRequire="VanillaExpanded.VEE">VEE_SuperbloomPsychicDrone</li>
 			  <li MayRequire="DimonSever000.Events.Specific">PsyStorm</li>
+			  <li MayRequire="tsoa.arsenal">TSOA_AnimaArrowScream</li>
 			</disallowedThoughts>
 			<statOffsets>
 			  <NecrotionResistance MayRequire="zal.taofc">1</NecrotionResistance>

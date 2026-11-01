@@ -591,16 +591,18 @@ namespace HautsTraits
                 GatheringDefOf.Party.Worker.TryExecute(__instance.pawn.Map, __instance.pawn);
             }
         }
-        //hostile, non-downed, non-captured skulkers cannot be selected, just like what Vanilla... Armor(?) Expanded's ghillie suits do
+        //hostile, non-downed, non-captured skulkers cannot be selected, just like what Vanilla... Armor(?) Expanded's ghillie suits do. Pops a message and a letter the first time it happens to you
         public static void HVTSkulkerHostilesNotClickablePostfix(ref bool __result, Thing t)
         {
-            Pawn pawn;
-            if ((pawn = (t as Pawn)) != null && !HVT_Mod.settings.skulkersAreSelectable && (pawn.Faction == null || pawn.HostileTo(Faction.OfPlayer)) && (pawn.story != null) && (!pawn.Downed) && (!pawn.IsPrisoner) && (!pawn.IsSlave))
+            if (t is Pawn pawn && !HVT_Mod.settings.skulkersAreSelectable && (pawn.Faction == null || pawn.HostileTo(Faction.OfPlayer)) && !pawn.Downed && !pawn.IsPrisoner && !pawn.IsSlave && pawn.story != null && pawn.story.traits.HasTrait(HVTDefOf.HVT_Skulker))
             {
-                if (pawn.story.traits.HasTrait(HVTDefOf.HVT_Skulker))
+                if (!PlayerKnowledgeDatabase.IsComplete(HVTDefOf.HVT_SkulkerUnselectability))
                 {
-                    __result = false;
+                    Messages.Message("HVT_YouCannotSelectThisSkulker".Translate().CapitalizeFirst().Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true).Resolve(), pawn, MessageTypeDefOf.RejectInput, true);
+                    Find.LetterStack.ReceiveLetter(HVTDefOf.HVT_SkulkerUnselectability.label, HVTDefOf.HVT_SkulkerUnselectability.description, LetterDefOf.NeutralEvent, pawn, null, null, null, null, 0, true);
+                    PlayerKnowledgeDatabase.SetKnowledge(HVTDefOf.HVT_SkulkerUnselectability, 1f);
                 }
+                __result = false;
             }
         }
         //intolerants always get a mood malus for being the recipient of a conversion attempt

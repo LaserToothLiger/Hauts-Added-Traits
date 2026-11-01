@@ -1122,8 +1122,6 @@
 			  <TradePriceImprovement>0.02</TradePriceImprovement>
 			  <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.09</ConversionPower>
 			  <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.03</SuppressionPower>
-			  <RecruitRelationshipDamage MayRequire="Orion.Hospitality">5</RecruitRelationshipDamage>
-			  <ForcedRecruitRelationshipDamage MayRequire="Orion.Hospitality">5</ForcedRecruitRelationshipDamage>
 			  <!--<RecruitEffectivity MayRequire="Orion.Hospitality">0.125</RecruitEffectivity> This doesn't work for some reason-->
 			</statOffsets>
 		  </li>

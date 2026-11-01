@@ -111,6 +111,8 @@ namespace HautsTraits
         [MayRequireOdyssey]
         public static ThoughtDef HVT_TheSnackThatSmilesBack;
 
+        public static ConceptDef HVT_SkulkerUnselectability;
+
         public static JobDef HVT_UseTraitGiverSerum;
         public static JobDef HVT_DisarmExplosive;
 

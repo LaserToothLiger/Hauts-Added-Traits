@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!--Although this shows up in the Learning Helper, its main purpose is to flash a message once-ever-per-player when you try selecting a pawn rendered unselectable by Skulkerness.-->
+  <ConceptDef>
+    <defName>HVT_SkulkerUnselectability</defName>
+    <label>Hostile and wild Skulkers</label>
+    <priority>50</priority>
+    <needsOpportunity>true</needsOpportunity>
+    <gameMode>Entry</gameMode>
+    <helpText>Pawns with the Skulker trait have such a gift for stealth that they can conceal information about themselves. Hostile or wild Skulkers cannot be selected, unless they're downed or imprisoned.</helpText>
+	<description>Pawns with the Skulker trait have such a gift for stealth that they can conceal information about themselves. Hostile or wild Skulkers cannot be selected, unless they're downed or imprisoned.</description>
+  </ConceptDef>
+
+</Defs>
