@@ -368,7 +368,7 @@
 			</possessions>
 		  </li>
 		</degreeDatas>
-		<conflictingTraits><li>HVT_Staid</li></conflictingTraits>
+		<conflictingTraits><li>Ascetic</li><li>HVT_Staid</li></conflictingTraits>
 	</TraitDef>
 	
 	<TraitDef>

@@ -1310,6 +1310,7 @@
 				<scanByPawnListerNotByGrid>false</scanByPawnListerNotByGrid>
 				<affectNeutrals>false</affectNeutrals>
 				<affectOwnFaction>false</affectOwnFaction>
+				<affectCreator>false</affectCreator>
 				<requiredStat>PsychicSensitivity</requiredStat>
 				<color>(1.0,1.0,0.78,0.35)</color>
 			  </li>

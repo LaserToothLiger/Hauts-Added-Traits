@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Justiciar Valor</li>
+		</mods>
+		<match Class="PatchOperationAdd"><!--justiciars don't get to have conceited traits. Sniper, Anarchist, and Servile are also poor fits for what should be obv reasons-->
+			<xpath>/Defs/PawnKindDef[defName="MJV_Justiciar"]/disallowedTraits</xpath>
+			<value>
+				<li>HVT_Judgemental</li>
+				<li>HVT_Sadist</li>
+				<li>HVT_Sniper</li>
+				<li>HVT_Vain</li>
+				<li>HVT_Prideful</li>
+				<li MayRequire="Ludeon.RimWorld.Ideology">HVT_Subjugator</li>
+				<li>HVT_Anarchist</li>
+				<li>HVT_Servile</li>
+			</value>
+		</match>
+	</Operation>
+	
+</Patch>
