@@ -209,7 +209,7 @@ namespace HautsTraits
                 Rect inRect2 = new Rect(x, y, inRect.width, 65);
                 Listing_Standard l2 = new Listing_Standard();
                 l2.Begin(inRect2);
-                l2.CheckboxLabeled("HVT_SettingVisibleFXTrans".Translate(), ref settings.visibleTransEffect, "HVT_TooltipVisibleFXTrans".Translate());
+                l2.CheckboxLabeled("HVT_SettingVisibleFXTrans".Translate(), ref settings.visibleTransEffect, "HVT_TooltipVisibleFXTransPostWaylith".Translate());
                 l2.CheckboxLabeled("HVT_SettingTransHints".Translate(), ref settings.enableTranscendenceHints, "HVT_TooltipTransHints".Translate());
                 l2.End();
                 y += 70;

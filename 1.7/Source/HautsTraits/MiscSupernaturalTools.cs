@@ -1,13 +1,18 @@
-﻿using RimWorld;
+﻿using HautsFramework;
+using RimWorld;
 using Verse;
 
 namespace HautsTraits
 {
-    /*these are useful for the Royalty content, flagging a trait or gene as woke, or a trait as trans.
-     * If it wasn't obvious, I hadn't figured out shorts yet (e.g. Tradeability). I'd definitely SEEN them by the time I started working on the psychic traits
-     * but I think I still wasn't sure at the time if they were really that simple or if dnSpy was just fucking with me and occluding vital information as usual.
-     * All this to say, were I to recreate these knowing what I know now, those string fields would instead have been a short that goes like Normal, Woke, Trans, Mythic or something like that.*/
-    public class SuperPsychicTrait : DefModExtension
+    /*these are useful for the Royalty content, flagging a trait or gene as woke, or trans, or the super-rare "mythic" trans.*/
+    public enum SuperPsychicTraitCategory : byte
+    {
+        None,
+        Awakening,
+        Transcendence,
+        Mythic
+    }
+    public class SuperPsychicTrait : ExciseTraitExempt
     {
         public SuperPsychicTrait()
         {
@@ -15,7 +20,7 @@ namespace HautsTraits
         }
         public string descKey;
         public string descKeyFantasy;
-        public string category;
+        public SuperPsychicTraitCategory category;
     }
     public class SuperPsychicGene : DefModExtension
     {

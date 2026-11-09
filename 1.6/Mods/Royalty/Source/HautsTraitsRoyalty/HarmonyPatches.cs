@@ -148,15 +148,14 @@ namespace HautsTraitsRoyalty
             {
                 if (t.HasModExtension<SuperPsychicTrait>())
                 {
-                    if (t.GetModExtension<SuperPsychicTrait>().category == "awakening")
+                    if (t.GetModExtension<SuperPsychicTrait>().category == SuperPsychicTraitCategory.Awakening)
                     {
                         PsychicTraitAndGeneCheckUtility.AddAwakeningTrait(t);
-                    } else if (t.GetModExtension<SuperPsychicTrait>().category == "transcendence") {
+                    } else if (t.GetModExtension<SuperPsychicTrait>().category == SuperPsychicTraitCategory.Transcendence) {
                         PsychicTraitAndGeneCheckUtility.AddTranscendentTrait(t);
-                    } else if (t.GetModExtension<SuperPsychicTrait>().category == "mythic") {
+                    } else if (t.GetModExtension<SuperPsychicTrait>().category == SuperPsychicTraitCategory.Mythic) {
                         PsychicTraitAndGeneCheckUtility.AddMythicTranscendentTrait(t);
                     }
-                    TraitModExtensionUtility.AddExciseTraitExemption(t);
                 }
             }
             foreach (GeneDef g in DefDatabase<GeneDef>.AllDefs)

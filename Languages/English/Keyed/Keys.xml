@@ -25,6 +25,7 @@
 <HVT_TooltipMaxTrans>The maximum number of times an awakened psychic can achieve transcendence in the normal course of play.</HVT_TooltipMaxTrans>
 <HVT_SettingVisibleFXTrans>Visible distortion around transcendent pawns</HVT_SettingVisibleFXTrans>
 <HVT_TooltipVisibleFXTrans>If this option is unchecked, transcendent pawns will no longer emanate a visible distortion effect. (It is on by default so that you can tell at a glance if a raider is transcendent)\n\nAlso governs the visible distortions around freshly awakened pawns.</HVT_TooltipVisibleFXTrans>
+<HVT_TooltipVisibleFXTransPostWaylith>If this option is unchecked, transcendent colonists will no longer emanate a visible distortion effect. (Non-player transcendent pawns always have a visible distortion, so that you can tell at a glance if a raider is transcendent)\n\nAlso governs the visible distortions around freshly awakened pawns.</HVT_TooltipVisibleFXTransPostWaylith>
 <HVT_SettingTransHints>Enable transcendence method hints</HVT_SettingTransHints>
 <HVT_TooltipTransHints>If enabled, shortly after awakening (or being hired, or spawned) awakened colonists will generate a "Revelation" letter that tells the player about one of the possible transcendence methods. Disable this if, for some reason, you don't want hints.</HVT_TooltipTransHints>
 <HVT_SettingWokeGenes>Chance awakened genes can grant transcendence</HVT_SettingWokeGenes>

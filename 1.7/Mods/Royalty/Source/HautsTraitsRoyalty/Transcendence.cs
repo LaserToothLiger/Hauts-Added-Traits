@@ -27,7 +27,7 @@ namespace HautsTraitsRoyalty
         }
         public override bool DisableMote()
         {
-            return !HVT_Mod.settings.visibleTransEffect;
+            return !HVT_Mod.settings.visibleTransEffect && this.Pawn.Faction == Faction.OfPlayerSilentFail;
         }
         public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {

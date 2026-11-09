@@ -121,10 +121,6 @@ namespace HautsTraits
                 {
                     tranquilConflicts.Add(td);
                 }
-                if (td.HasModExtension<SuperPsychicTrait>())
-                {
-                    TraitModExtensionUtility.AddExciseTraitExemption(td);
-                }
             }
             HVTDefOf.HVT_Tranquil.conflictingTraits = tranquilConflicts;
             HVTDefOf.HVT_Tranquil0.conflictingTraits = tranquilConflicts;

@@ -229,7 +229,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeAugur</descKey><descKeyFantasy>HVT_WokeAugurFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeAugur</descKey><descKeyFantasy>HVT_WokeAugurFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -258,7 +258,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeChanshi</descKey><descKeyFantasy>HVT_WokeChanshiFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeChanshi</descKey><descKeyFantasy>HVT_WokeChanshiFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -278,7 +278,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeDeluge</descKey><descKeyFantasy>HVT_WokeDelugeFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeDeluge</descKey><descKeyFantasy>HVT_WokeDelugeFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -299,7 +299,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeErudite</descKey><descKeyFantasy>HVT_WokeEruditeFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeErudite</descKey><descKeyFantasy>HVT_WokeEruditeFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -325,7 +325,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeIncarnate</descKey><descKeyFantasy>HVT_WokeIncarnateFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeIncarnate</descKey><descKeyFantasy>HVT_WokeIncarnateFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -351,7 +351,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeLuminary</descKey><descKeyFantasy>HVT_WokeLuminaryFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeLuminary</descKey><descKeyFantasy>HVT_WokeLuminaryFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -371,7 +371,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeMantraist</descKey><descKeyFantasy>HVT_WokeMantraistFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeMantraist</descKey><descKeyFantasy>HVT_WokeMantraistFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -397,7 +397,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokePerennial</descKey><descKeyFantasy>HVT_WokePerennialFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokePerennial</descKey><descKeyFantasy>HVT_WokePerennialFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -433,7 +433,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeSage</descKey><descKeyFantasy>HVT_WokeSageFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeSage</descKey><descKeyFantasy>HVT_WokeSageFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -460,7 +460,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeSiphoner</descKey><descKeyFantasy>HVT_WokeSiphonerFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeSiphoner</descKey><descKeyFantasy>HVT_WokeSiphonerFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -486,7 +486,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeTitan</descKey><descKeyFantasy>HVT_WokeTitanFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeTitan</descKey><descKeyFantasy>HVT_WokeTitanFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_AwakenedTrait">
@@ -513,7 +513,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeUndying</descKey><descKeyFantasy>HVT_WokeUndyingFantasy</descKeyFantasy><category>awakening</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_WokeUndying</descKey><descKeyFantasy>HVT_WokeUndyingFantasy</descKeyFantasy><category>Awakening</category></li>
         </modExtensions>
 	</TraitDef>
 	
@@ -549,7 +549,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAlbatross</descKey><descKeyFantasy>HVT_TransAlbatrossFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAlbatross</descKey><descKeyFantasy>HVT_TransAlbatrossFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -570,7 +570,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAnaconda</descKey><descKeyFantasy>HVT_TransAnacondaFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAnaconda</descKey><descKeyFantasy>HVT_TransAnacondaFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -595,7 +595,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAnimalume</descKey><descKeyFantasy>HVT_TransAnimalumeFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAnimalume</descKey><descKeyFantasy>HVT_TransAnimalumeFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -624,7 +624,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransApocriton</descKey><descKeyFantasy>HVT_TransApocritonFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransApocriton</descKey><descKeyFantasy>HVT_TransApocritonFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -661,7 +661,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransArcturan</descKey><descKeyFantasy>HVT_TransArcturanFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransArcturan</descKey><descKeyFantasy>HVT_TransArcturanFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--B-->
@@ -684,7 +684,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBeaver</descKey><descKeyFantasy>HVT_TransBeaver</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBeaver</descKey><descKeyFantasy>HVT_TransBeaver</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -709,7 +709,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBellbird</descKey><descKeyFantasy>HVT_TransBellbirdFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBellbird</descKey><descKeyFantasy>HVT_TransBellbirdFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.GrantWordPsycast" />
         </modExtensions>
 	</TraitDef>
@@ -743,7 +743,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBluejay</descKey><descKeyFantasy>HVT_TransBluejayFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBluejay</descKey><descKeyFantasy>HVT_TransBluejayFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -756,7 +756,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBouldermit</descKey><descKeyFantasy>HVT_TransBouldermitFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBouldermit</descKey><descKeyFantasy>HVT_TransBouldermitFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -777,7 +777,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBowerbird</descKey><descKeyFantasy>HVT_TransBowerbirdFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBowerbird</descKey><descKeyFantasy>HVT_TransBowerbirdFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -803,7 +803,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBudgie</descKey><descKeyFantasy>HVT_TransBudgieFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBudgie</descKey><descKeyFantasy>HVT_TransBudgieFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--C-->
@@ -826,7 +826,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCanary</descKey><descKeyFantasy>HVT_TransCanaryFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCanary</descKey><descKeyFantasy>HVT_TransCanaryFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.GrantWordPsycast" />
         </modExtensions>
 	</TraitDef>
@@ -844,7 +844,7 @@
 		</degreeDatas>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCassowary</descKey><descKeyFantasy>HVT_TransCassowaryFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCassowary</descKey><descKeyFantasy>HVT_TransCassowaryFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -870,7 +870,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCockatiel</descKey><descKeyFantasy>HVT_TransCockatielFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCockatiel</descKey><descKeyFantasy>HVT_TransCockatielFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -898,7 +898,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCockroach</descKey><descKeyFantasy>HVT_TransCockroach</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCockroach</descKey><descKeyFantasy>HVT_TransCockroach</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -927,7 +927,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCranchiid</descKey><descKeyFantasy>HVT_TransCranchiidFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCranchiid</descKey><descKeyFantasy>HVT_TransCranchiidFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -951,7 +951,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCrane</descKey><descKeyFantasy>HVT_TransCraneFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCrane</descKey><descKeyFantasy>HVT_TransCraneFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -985,7 +985,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCuckoo</descKey><descKeyFantasy>HVT_TransCuckooFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransCuckoo</descKey><descKeyFantasy>HVT_TransCuckooFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--D-->
@@ -1006,7 +1006,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDeimatic</descKey><descKeyFantasy>HVT_TransDeimatic</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDeimatic</descKey><descKeyFantasy>HVT_TransDeimatic</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1037,7 +1037,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDiabolus</descKey><descKeyFantasy>HVT_TransDiabolusFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDiabolus</descKey><descKeyFantasy>HVT_TransDiabolusFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1076,7 +1076,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDove</descKey><descKeyFantasy>HVT_TransDoveFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDove</descKey><descKeyFantasy>HVT_TransDoveFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1104,7 +1104,7 @@
 		</degreeDatas>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDulotic</descKey><descKeyFantasy>HVT_TransDuloticFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDulotic</descKey><descKeyFantasy>HVT_TransDuloticFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--E-->
@@ -1129,7 +1129,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEchinoid</descKey><descKeyFantasy>HVT_TransEchinoidFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEchinoid</descKey><descKeyFantasy>HVT_TransEchinoidFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1165,7 +1165,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEiderduck</descKey><descKeyFantasy>HVT_TransEiderduckFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEiderduck</descKey><descKeyFantasy>HVT_TransEiderduckFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1193,7 +1193,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransElectrophorus</descKey><descKeyFantasy>HVT_TransElectrophorusFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransElectrophorus</descKey><descKeyFantasy>HVT_TransElectrophorusFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1217,7 +1217,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAptenodytes</descKey><descKeyFantasy>HVT_TransAptenodytesFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransAptenodytes</descKey><descKeyFantasy>HVT_TransAptenodytesFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1242,7 +1242,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEvergreen</descKey><descKeyFantasy>HVT_TransEvergreenFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEvergreen</descKey><descKeyFantasy>HVT_TransEvergreenFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--F-->
@@ -1272,7 +1272,7 @@
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
 			<li Class="HautsFramework.UnaffectedByDarkness" />
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFirefly</descKey><descKeyFantasy>HVT_TransFireflyFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFirefly</descKey><descKeyFantasy>HVT_TransFireflyFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	  <ThingDef ParentName="EtherealThingBase">
@@ -1345,7 +1345,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFirehawk</descKey><descKeyFantasy>HVT_TransFirehawkFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFirehawk</descKey><descKeyFantasy>HVT_TransFirehawkFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1395,7 +1395,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFlamingo</descKey><descKeyFantasy>HVT_TransFlamingo</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFlamingo</descKey><descKeyFantasy>HVT_TransFlamingo</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1429,7 +1429,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFodiator</descKey><descKeyFantasy>HVT_TransFodiatorFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFodiator</descKey><descKeyFantasy>HVT_TransFodiatorFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.LivingGravAnchor" />
         </modExtensions>
 	</TraitDef>
@@ -1467,7 +1467,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFossil</descKey><descKeyFantasy>HVT_TransFossilFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFossil</descKey><descKeyFantasy>HVT_TransFossilFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1498,7 +1498,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFulmar</descKey><descKeyFantasy>HVT_TransFulmarFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransFulmar</descKey><descKeyFantasy>HVT_TransFulmarFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--G-->
@@ -1512,7 +1512,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransGlowworm</descKey><descKeyFantasy>HVT_TransGlowwormFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransGlowworm</descKey><descKeyFantasy>HVT_TransGlowwormFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.GrantSkipPsycast" />
         </modExtensions>
 	</TraitDef>
@@ -1552,7 +1552,7 @@
 					</li>
 				</otherHediffsToRemoveOnRemoval>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransGnat</descKey><descKeyFantasy>HVT_TransGnatFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransGnat</descKey><descKeyFantasy>HVT_TransGnatFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1575,7 +1575,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransGoldfinch</descKey><descKeyFantasy>HVT_TransGoldfinchFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransGoldfinch</descKey><descKeyFantasy>HVT_TransGoldfinchFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--H-->
@@ -1599,7 +1599,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHaast</descKey><descKeyFantasy>HVT_TransHaastFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHaast</descKey><descKeyFantasy>HVT_TransHaastFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1630,7 +1630,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHarby</descKey><descKeyFantasy>HVT_TransHarbyFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHarby</descKey><descKeyFantasy>HVT_TransHarbyFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1657,7 +1657,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHeron</descKey><descKeyFantasy>HVT_TransHeronFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHeron</descKey><descKeyFantasy>HVT_TransHeronFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.GrantSkipPsycast" />
         </modExtensions>
 	</TraitDef>
@@ -1682,7 +1682,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHoneybee</descKey><descKeyFantasy>HVT_TransHoneybeeFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHoneybee</descKey><descKeyFantasy>HVT_TransHoneybeeFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1709,7 +1709,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHornet</descKey><descKeyFantasy>HVT_TransHornetFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHornet</descKey><descKeyFantasy>HVT_TransHornetFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1738,7 +1738,7 @@
 				</otherHediffsToRemoveOnRemoval>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHummingbird</descKey><descKeyFantasy>HVT_TransHummingbirdFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHummingbird</descKey><descKeyFantasy>HVT_TransHummingbirdFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--I-->
@@ -1764,7 +1764,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransIndigo</descKey><descKeyFantasy>HVT_TransIndigoFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransIndigo</descKey><descKeyFantasy>HVT_TransIndigoFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1788,7 +1788,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransIvy</descKey><descKeyFantasy>HVT_TransIvyFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransIvy</descKey><descKeyFantasy>HVT_TransIvyFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--J-->
@@ -1813,7 +1813,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransJackdaw</descKey><descKeyFantasy>HVT_TransJackdawFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransJackdaw</descKey><descKeyFantasy>HVT_TransJackdawFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--K-->
@@ -1837,7 +1837,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransKea</descKey><descKeyFantasy>HVT_TransKeaFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransKea</descKey><descKeyFantasy>HVT_TransKeaFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1876,7 +1876,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransKingfisher</descKey><descKeyFantasy>HVT_TransKingfisherFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransKingfisher</descKey><descKeyFantasy>HVT_TransKingfisherFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1901,7 +1901,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransKnapweed</descKey><descKeyFantasy>HVT_TransKnapweedFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransKnapweed</descKey><descKeyFantasy>HVT_TransKnapweedFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--L-->
@@ -1926,7 +1926,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLadybug</descKey><descKeyFantasy>HVT_TransLadybugFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLadybug</descKey><descKeyFantasy>HVT_TransLadybugFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1950,7 +1950,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLeghorn</descKey><descKeyFantasy>HVT_TransLeghornFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLeghorn</descKey><descKeyFantasy>HVT_TransLeghornFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -1975,7 +1975,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLocust</descKey><descKeyFantasy>HVT_TransLocustFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLocust</descKey><descKeyFantasy>HVT_TransLocustFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 		<TraitDef ParentName="HVT_TransTrait">
@@ -2035,7 +2035,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLovebug</descKey><descKeyFantasy>HVT_TransLovebug</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLovebug</descKey><descKeyFantasy>HVT_TransLovebug</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 		<TraitDef ParentName="HVT_TransTrait">
@@ -2090,7 +2090,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMagpie</descKey><descKeyFantasy>HVT_TransMagpieFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMagpie</descKey><descKeyFantasy>HVT_TransMagpieFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2124,7 +2124,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMayfly</descKey><descKeyFantasy>HVT_TransMayflyFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMayfly</descKey><descKeyFantasy>HVT_TransMayflyFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2150,7 +2150,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMeerkat</descKey><descKeyFantasy>HVT_TransMeerkatFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMeerkat</descKey><descKeyFantasy>HVT_TransMeerkatFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2179,7 +2179,7 @@
 				</otherHediffsToRemoveOnRemoval>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMite</descKey><descKeyFantasy>HVT_TransMiteFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMite</descKey><descKeyFantasy>HVT_TransMiteFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2205,7 +2205,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMosquito</descKey><descKeyFantasy>HVT_TransMosquitoFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMosquito</descKey><descKeyFantasy>HVT_TransMosquitoFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2229,7 +2229,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMusang</descKey><descKeyFantasy>HVT_TransMusangFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMusang</descKey><descKeyFantasy>HVT_TransMusangFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2254,7 +2254,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMynah</descKey><descKeyFantasy>HVT_TransMynahFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransMynah</descKey><descKeyFantasy>HVT_TransMynahFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--N-->
@@ -2277,7 +2277,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNightingale</descKey><descKeyFantasy>HVT_TransNightingaleFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNightingale</descKey><descKeyFantasy>HVT_TransNightingaleFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.GrantWordPsycast" />
         </modExtensions>
 	</TraitDef>
@@ -2311,7 +2311,7 @@
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
 			<li Class="HautsFramework.UnaffectedByDarkness" />
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNoctule</descKey><descKeyFantasy>HVT_TransNoctuleFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNoctule</descKey><descKeyFantasy>HVT_TransNoctuleFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2343,7 +2343,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNotothen</descKey><descKeyFantasy>HVT_TransNotothenFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransNotothen</descKey><descKeyFantasy>HVT_TransNotothenFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--O-->
@@ -2368,7 +2368,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOilbird</descKey><descKeyFantasy>HVT_TransOilbirdFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOilbird</descKey><descKeyFantasy>HVT_TransOilbirdFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2381,7 +2381,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOrbWeaver</descKey><descKeyFantasy>HVT_TransOrbWeaverFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOrbWeaver</descKey><descKeyFantasy>HVT_TransOrbWeaverFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2417,7 +2417,7 @@
 				</otherHediffsToRemoveOnRemoval>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOrca</descKey><descKeyFantasy>HVT_TransOrcaFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOrca</descKey><descKeyFantasy>HVT_TransOrcaFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2444,7 +2444,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOsprey</descKey><descKeyFantasy>HVT_TransOspreyFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOsprey</descKey><descKeyFantasy>HVT_TransOspreyFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2470,7 +2470,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOxpecker</descKey><descKeyFantasy>HVT_TransOxpeckerFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransOxpecker</descKey><descKeyFantasy>HVT_TransOxpeckerFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--P-->
@@ -2496,7 +2496,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPeacock</descKey><descKeyFantasy>HVT_TransPeacockFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPeacock</descKey><descKeyFantasy>HVT_TransPeacockFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2523,7 +2523,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPelican</descKey><descKeyFantasy>HVT_TransPelicanFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPelican</descKey><descKeyFantasy>HVT_TransPelicanFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2548,7 +2548,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPeregrine</descKey><descKeyFantasy>HVT_TransPeregrineFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPeregrine</descKey><descKeyFantasy>HVT_TransPeregrineFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2572,7 +2572,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBat</descKey><descKeyFantasy>HVT_TransBatFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransBat</descKey><descKeyFantasy>HVT_TransBatFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2612,7 +2612,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPitohui</descKey><descKeyFantasy>HVT_TransPitohuiFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPitohui</descKey><descKeyFantasy>HVT_TransPitohuiFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2650,7 +2650,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPolux</descKey><descKeyFantasy>HVT_TransPoluxFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPolux</descKey><descKeyFantasy>HVT_TransPoluxFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2684,7 +2684,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPoorwill</descKey><descKeyFantasy>HVT_TransPoorwillFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPoorwill</descKey><descKeyFantasy>HVT_TransPoorwillFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2711,7 +2711,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPtar</descKey><descKeyFantasy>HVT_TransPtarFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPtar</descKey><descKeyFantasy>HVT_TransPtarFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--Q-->
@@ -2734,7 +2734,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuahog</descKey><descKeyFantasy>HVT_TransQuahogFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuahog</descKey><descKeyFantasy>HVT_TransQuahogFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2758,7 +2758,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuelea</descKey><descKeyFantasy>HVT_TransQueleaFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuelea</descKey><descKeyFantasy>HVT_TransQueleaFantasy</descKeyFantasy><category>Transcendence</category></li>
 			<li Class="HautsTraitsRoyalty.LivingGravAnchor" />
         </modExtensions>
 	</TraitDef>
@@ -2791,7 +2791,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuokka</descKey><descKeyFantasy>HVT_TransQuokkaFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransQuokka</descKey><descKeyFantasy>HVT_TransQuokkaFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--R-->
@@ -2827,7 +2827,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransRaven</descKey><descKeyFantasy>HVT_TransRavenFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransRaven</descKey><descKeyFantasy>HVT_TransRavenFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2857,7 +2857,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransRobin</descKey><descKeyFantasy>HVT_TransRobinFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransRobin</descKey><descKeyFantasy>HVT_TransRobinFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2881,7 +2881,7 @@
 		</degreeDatas>
 		<requiredWorkTags><li>ManualSkilled</li><li>Commoner</li></requiredWorkTags>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransRook</descKey><descKeyFantasy>HVT_TransRookFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransRook</descKey><descKeyFantasy>HVT_TransRookFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--S-->
@@ -2912,7 +2912,7 @@
 				</otherHediffsToRemoveOnRemoval>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransScarab</descKey><descKeyFantasy>HVT_TransScarabFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransScarab</descKey><descKeyFantasy>HVT_TransScarabFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2936,7 +2936,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransScarlet</descKey><descKeyFantasy>HVT_TransScarletFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransScarlet</descKey><descKeyFantasy>HVT_TransScarletFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2962,7 +2962,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransScrubJay</descKey><descKeyFantasy>HVT_TransScrubJayFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransScrubJay</descKey><descKeyFantasy>HVT_TransScrubJayFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -2994,7 +2994,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSeaIce</descKey><descKeyFantasy>HVT_TransSeaIceFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSeaIce</descKey><descKeyFantasy>HVT_TransSeaIceFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3032,7 +3032,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransShearwater</descKey><descKeyFantasy>HVT_TransShearwaterFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransShearwater</descKey><descKeyFantasy>HVT_TransShearwaterFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3051,7 +3051,7 @@
 		</degreeDatas>
 		<requiredWorkTags><li>Violent</li></requiredWorkTags>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransShrike</descKey><descKeyFantasy>HVT_TransShrikeFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransShrike</descKey><descKeyFantasy>HVT_TransShrikeFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3072,7 +3072,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSpelopede</descKey><descKeyFantasy>HVT_TransSpelopedeFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSpelopede</descKey><descKeyFantasy>HVT_TransSpelopedeFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3099,7 +3099,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransStoat</descKey><descKeyFantasy>HVT_TransStoatFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransStoat</descKey><descKeyFantasy>HVT_TransStoatFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3122,7 +3122,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransStork</descKey><descKeyFantasy>HVT_TransStorkFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransStork</descKey><descKeyFantasy>HVT_TransStorkFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3156,7 +3156,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransStrix</descKey><descKeyFantasy>HVT_TransStrixFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransStrix</descKey><descKeyFantasy>HVT_TransStrixFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3177,7 +3177,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSwan</descKey><descKeyFantasy>HVT_TransSwanFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSwan</descKey><descKeyFantasy>HVT_TransSwanFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3201,7 +3201,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSwift</descKey><descKeyFantasy>HVT_TransSwiftFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSwift</descKey><descKeyFantasy>HVT_TransSwiftFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--T-->
@@ -3225,7 +3225,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTanager</descKey><descKeyFantasy>HVT_TransTanagerFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTanager</descKey><descKeyFantasy>HVT_TransTanagerFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3247,7 +3247,7 @@
 		</degreeDatas>
 		<requiredWorkTags><li>Mining</li></requiredWorkTags>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTermite</descKey><descKeyFantasy>HVT_TransTermiteFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTermite</descKey><descKeyFantasy>HVT_TransTermiteFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3276,7 +3276,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTern</descKey><descKeyFantasy>HVT_TransTernFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTern</descKey><descKeyFantasy>HVT_TransTernFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3304,7 +3304,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransThrumbo</descKey><descKeyFantasy>HVT_TransThrumboFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransThrumbo</descKey><descKeyFantasy>HVT_TransThrumboFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3328,7 +3328,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTMN</descKey><descKeyFantasy>HVT_TransTMNFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransTMN</descKey><descKeyFantasy>HVT_TransTMNFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3362,7 +3362,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransToxbuzzard</descKey><descKeyFantasy>HVT_TransToxbuzzardFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransToxbuzzard</descKey><descKeyFantasy>HVT_TransToxbuzzardFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--U-->
@@ -3387,7 +3387,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransUhu</descKey><descKeyFantasy>HVT_TransUhuFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransUhu</descKey><descKeyFantasy>HVT_TransUhuFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--V-->
@@ -3420,7 +3420,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransVulture</descKey><descKeyFantasy>HVT_TransVultureFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransVulture</descKey><descKeyFantasy>HVT_TransVultureFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--W-->
@@ -3452,7 +3452,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWarbler</descKey><descKeyFantasy>HVT_TransWarblerFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWarbler</descKey><descKeyFantasy>HVT_TransWarblerFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3476,7 +3476,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWQ</descKey><descKeyFantasy>HVT_TransWQFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWQ</descKey><descKeyFantasy>HVT_TransWQFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3493,7 +3493,7 @@
 		</degreeDatas>
 		<requiredWorkTags><li>Crafting</li></requiredWorkTags>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWeaverbird</descKey><descKeyFantasy>HVT_TransWeaverbird</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWeaverbird</descKey><descKeyFantasy>HVT_TransWeaverbird</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3525,7 +3525,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWhalehead</descKey><descKeyFantasy>HVT_TransWhaleheadFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWhalehead</descKey><descKeyFantasy>HVT_TransWhaleheadFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3551,7 +3551,7 @@
 				</otherHediffsToRemoveOnRemoval>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWoodpecker</descKey><descKeyFantasy>HVT_TransWoodpeckerFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWoodpecker</descKey><descKeyFantasy>HVT_TransWoodpeckerFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--X-->
@@ -3574,7 +3574,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransXerigium</descKey><descKeyFantasy>HVT_TransXerigiumFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransXerigium</descKey><descKeyFantasy>HVT_TransXerigiumFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--Y-->
@@ -3597,7 +3597,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransYellowjacket</descKey><descKeyFantasy>HVT_TransYellowjacketFantasy</descKeyFantasy><category>transcendence</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransYellowjacket</descKey><descKeyFantasy>HVT_TransYellowjacketFantasy</descKeyFantasy><category>Transcendence</category></li>
         </modExtensions>
 	</TraitDef>
 	<!--Mythic-->
@@ -3622,7 +3622,7 @@
 		  </li>
 		</degreeDatas>
         <modExtensions>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDragon</descKey><descKeyFantasy>HVT_TransDragonFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransDragon</descKey><descKeyFantasy>HVT_TransDragonFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3642,7 +3642,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEgregore</descKey><descKeyFantasy>HVT_TransEgregoreFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransEgregore</descKey><descKeyFantasy>HVT_TransEgregoreFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3665,7 +3665,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransErinys</descKey><descKeyFantasy>HVT_TransErinysFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransErinys</descKey><descKeyFantasy>HVT_TransErinysFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3690,7 +3690,7 @@
 				</grantedHediffs>
 				<hediffsToBrain>false</hediffsToBrain>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHarpy</descKey><descKeyFantasy>HVT_TransHarpyFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransHarpy</descKey><descKeyFantasy>HVT_TransHarpyFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3713,7 +3713,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLeviathan</descKey><descKeyFantasy>HVT_TransLeviathanFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransLeviathan</descKey><descKeyFantasy>HVT_TransLeviathanFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3733,7 +3733,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPhoenix</descKey><descKeyFantasy>HVT_TransPhoenixFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransPhoenix</descKey><descKeyFantasy>HVT_TransPhoenixFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3758,7 +3758,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSeraph</descKey><descKeyFantasy>HVT_TransSeraphFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSeraph</descKey><descKeyFantasy>HVT_TransSeraphFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3781,7 +3781,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSiren</descKey><descKeyFantasy>HVT_TransSiren</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSiren</descKey><descKeyFantasy>HVT_TransSiren</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3801,7 +3801,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSphinx</descKey><descKeyFantasy>HVT_TransSphinxFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransSphinx</descKey><descKeyFantasy>HVT_TransSphinxFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3821,7 +3821,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransThunderbird</descKey><descKeyFantasy>HVT_TransThunderbirdFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransThunderbird</descKey><descKeyFantasy>HVT_TransThunderbirdFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3844,7 +3844,7 @@
 					</li>
 				</grantedHediffs>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWraith</descKey><descKeyFantasy>HVT_TransWraithFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransWraith</descKey><descKeyFantasy>HVT_TransWraithFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 	<TraitDef ParentName="HVT_TransTrait">
@@ -3872,7 +3872,7 @@
 					</li>
 				</grantedAbilities>
             </li>
-            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransZiz</descKey><descKeyFantasy>HVT_TransZizFantasy</descKeyFantasy><category>mythic</category></li>
+            <li Class="HautsTraits.SuperPsychicTrait"><descKey>HVT_TransZiz</descKey><descKeyFantasy>HVT_TransZizFantasy</descKeyFantasy><category>Mythic</category></li>
         </modExtensions>
 	</TraitDef>
 </Defs>
